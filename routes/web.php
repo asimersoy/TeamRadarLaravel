@@ -1,11 +1,24 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+//Route::get("/", "HomeController@index")->name("home");
+
+Route::get("/", [HomeController::class, 'index'])->name('home');
+
+
+
+
+use Illuminate\Support\Facades\Redis;
+
+Route::get('/redis-test', function () {
+    Redis::set('foo', 'bar');
+    return Redis::get('foo'); // should return "bar"
+});
+
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

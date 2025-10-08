@@ -1,66 +1,44 @@
-@import 'tailwindcss';
+/* Tailwind v3 entry */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Flux styles (this @import is fine with Vite) */
 @import '../../vendor/livewire/flux/dist/flux.css';
 
-@source '../views';
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
-@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
-    --color-zinc-50: #fafafa;
-    --color-zinc-100: #f5f5f5;
-    --color-zinc-200: #e5e5e5;
-    --color-zinc-300: #d4d4d4;
-    --color-zinc-400: #a3a3a3;
-    --color-zinc-500: #737373;
-    --color-zinc-600: #525252;
-    --color-zinc-700: #404040;
-    --color-zinc-800: #262626;
-    --color-zinc-900: #171717;
-    --color-zinc-950: #0a0a0a;
-
-    --color-accent: var(--color-neutral-800);
-    --color-accent-content: var(--color-neutral-800);
-    --color-accent-foreground: var(--color-white);
+/* Your custom classes */
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)), rgba(18,24,49,0.9);
+  backdrop-filter: blur(8px);
 }
 
-@layer theme {
-    .dark {
-        --color-accent: var(--color-white);
-        --color-accent-content: var(--color-white);
-        --color-accent-foreground: var(--color-neutral-800);
-    }
+.grid-lines {
+  background:
+    linear-gradient(transparent 23px, rgba(255,255,255,.04) 24px),
+    linear-gradient(90deg, transparent 23px, rgba(255,255,255,.04) 24px);
+  background-size: 24px 24px;
 }
+
+
+.panel { 
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)), rgba(18,24,49,0.9); backdrop-filter: blur(8px); 
+}
+
+.rank-pill { 
+    border-image: linear-gradient(90deg,#ffd166,#72d6f5) 1; border-width:1px; border-style:solid; 
+}
+
+.glow { 
+    box-shadow: 0 0 0 2px rgba(76,201,240,.15), 0 8px 30px rgba(76,201,240,.15); 
+}
+    
 
 @layer base {
+  body {
+    /* make Tailwind set it… */
+    @apply bg-bg-900 text-ink-100;
 
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
-        border-color: var(--color-gray-200, currentColor);
-    }
+    /* …and harden it in case a vendor CSS sets body { background:#fff } */
+    background-color: #0b1020 !important;
+  }
 }
-
-[data-flux-field]:not(ui-radio, ui-checkbox) {
-    @apply grid gap-2;
-}
-
-[data-flux-label] {
-    @apply  !mb-0 !leading-tight;
-}
-
-input:focus[data-flux-control],
-textarea:focus[data-flux-control],
-select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
-}
-
-/* \[:where(&)\]:size-4 {
-    @apply size-4;
-} */

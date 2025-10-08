@@ -141,9 +141,25 @@ return [
     |
     */
 
-    'redis' => [
+    /*'redis' => [
 
         'client' => env('REDIS_CLIENT', 'phpredis'),
+
+        'clientPub' => [ // second client socket to the same server
+            'url' => env('REDIS_URL'),
+            'host' => env('REDIS_HOST', 'redis'),
+            'password' => env('REDIS_PASSWORD'),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => env('REDIS_DB', 0),
+        ],
+
+        'clientSub' => [
+            'url' => env('REDIS_URL'),
+            'host' => env('REDIS_HOST', 'redis'),
+            'password' => env('REDIS_PASSWORD'),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => env('REDIS_DB', 0),
+        ],
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
@@ -153,7 +169,7 @@ return [
 
         'default' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', 'redis'),
             'username' => env('REDIS_USERNAME'),
             'password' => env('REDIS_PASSWORD'),
             'port' => env('REDIS_PORT', '6379'),
@@ -162,13 +178,43 @@ return [
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', 'redis'),
             'username' => env('REDIS_USERNAME'),
             'password' => env('REDIS_PASSWORD'),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
-    ],
+    ],*/
+
+
+
+
+    'redis' => [
+    'client' => env('REDIS_CLIENT', 'predis'),
+
+    'sub' => [
+        'host' => env('REDIS_HOST', 'redis'),
+        'port' => env('REDIS_PORT', 6379),
+        'password' => env('REDIS_PASSWORD'),
+        'database' => env('REDIS_DB', 0),
+        'timeout' => 5.0,
+        'read_timeout' => 0,   // block forever
+        'read_write_timeout' => 0,
+        'persistent' => false, // important for subscriber
+        ],
+
+    'pub' => [
+        'host' => env('REDIS_HOST', 'redis'),
+        'port' => env('REDIS_PORT', 6379),
+        'password' => env('REDIS_PASSWORD'),
+        'database' => env('REDIS_DB', 0),
+        'timeout' => 5.0,
+        'read_timeout' => 0,
+        'read_write_timeout' => 0,
+        'persistent' => true,
+        ],
+    ]
+
 
 ];

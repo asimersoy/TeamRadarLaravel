@@ -73,55 +73,94 @@ new #[Layout('components.layouts.auth')] class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to log in')" />
+<div class="max-w-md mx-auto py-12">
+    <!-- Card -->
+    <div class="panel rounded-xl shadow-card border border-white/10 overflow-hidden">
 
-    <!-- Session Status -->
-    <x-auth-session-status class="text-center" :status="session('status')" />
+        <!-- Tabs / selector (links) -->
+        <div class="px-6 pt-5">
+            <div class="relative inline-flex rounded-lg border border-white/10 bg-bg-800/60 p-1">
+                <a href="{{ route('login') }}"
+                   class="px-4 py-2 text-sm font-medium rounded-md transition
+                          {{ request()->routeIs('login') ? 'bg-brand-500 text-bg-900' : 'text-ink-300 hover:text-ink-100' }}">
+                    {{ __('Login') }}
+                </a>
+                <a href="{{ route('register') }}"
+                   class="px-4 py-2 text-sm font-medium rounded-md transition
+                          {{ request()->routeIs('register') ? 'bg-brand-500 text-bg-900' : 'text-ink-300 hover:text-ink-100' }}">
+                    {{ __('Register') }}
+                </a>
+            </div>
+        </div>
 
-    <form method="POST" wire:submit="login" class="flex flex-col gap-6">
-        <!-- Email Address -->
-        <flux:input
-            wire:model="email"
-            :label="__('Email address')"
-            type="email"
-            required
-            autofocus
-            autocomplete="email"
-            placeholder="email@example.com"
-        />
+        <!-- Header -->
+        <div class="px-6 pt-5">
+            <h1 class="text-xl font-semibold">{{ __('Welcome back') }}</h1>
+            <p class="mt-1 text-sm text-ink-300">
+                {{ __('Log in to continue to your account') }}
+            </p>
 
-        <!-- Password -->
-        <div class="relative">
-            <flux:input
-                wire:model="password"
-                :label="__('Password')"
-                type="password"
-                required
-                autocomplete="current-password"
-                :placeholder="__('Password')"
-                viewable
-            />
-
-            @if (Route::has('password.request'))
-                <flux:link class="absolute end-0 top-0 text-sm" :href="route('password.request')" wire:navigate>
-                    {{ __('Forgot your password?') }}
-                </flux:link>
+            <!-- Session Status -->
+            @if (session('status'))
+                <div class="mt-3 text-sm text-center text-ink-300">
+                    {{ session('status') }}
+                </div>
             @endif
         </div>
 
-        <!-- Remember Me -->
-        <flux:checkbox wire:model="remember" :label="__('Remember me')" />
+        <!-- Form -->
+        <div class="px-6 pb-6 pt-4">
+            <form method="POST" wire:submit="login" class="space-y-5">
+                @csrf
 
-        <div class="flex items-center justify-end">
-            <flux:button variant="primary" type="submit" class="w-full">{{ __('Log in') }}</flux:button>
-        </div>
-    </form>
+                <!-- Email -->
+                <div>
+                <label for="email" class="block text-sm mb-1 text-zinc-300">{{ __('Email') }}</label>
+                <input id="email" type="email" wire:model="email"
+                        class="w-full h-11 rounded-lg 
+                                bg-zinc-800 border border-zinc-700 
+                                px-3 text-zinc-100 placeholder-zinc-400
+                                focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400"
+                        placeholder="you@example.com" autocomplete="email">
+                @error('email') <div class="mt-1 text-red-500 text-sm">{{ $message }}</div> @enderror
+                </div>
 
-    @if (Route::has('register'))
-        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
-            <span>{{ __('Don\'t have an account?') }}</span>
-            <flux:link :href="route('register')" wire:navigate>{{ __('Sign up') }}</flux:link>
+                <!-- Password -->
+                <div>
+                <label for="password" class="block text-sm mb-1 text-zinc-300">{{ __('Password') }}</label>
+                <input id="password" type="password" wire:model="password"
+                        class="w-full h-11 rounded-lg bg-bg-700/60
+                                bg-zinc-800 border border-zinc-700 
+                                px-3 text-zinc-100 placeholder-zinc-400
+                                focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400"
+                        placeholder="••••••••" autocomplete="current-password">
+                @error('password') <div class="mt-1 text-red-500 text-sm">{{ $message }}</div> @enderror
+                </div>
+
+
+                <!-- Remember me -->
+                <div class="flex items-center justify-between">
+                    <label class="inline-flex items-center gap-2 text-sm text-ink-300">
+                        <input type="checkbox" wire:model="remember"
+                            class="rounded border-white/20 bg-bg-800/60 text-brand-500 focus:ring-brand-500/40">
+                        <span>{{ __('Remember me') }}</span>
+                    </label>
+                    <!-- Forgot Password -->
+                    @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}"
+                           class="text-sm text-brand-400 hover:text-brand-300 transition">
+                            {{ __('Forgot your password?') }}
+                        </a>
+                    @endif
+                </div>
+                
+
+                <!-- Submit -->
+                <button type="submit"
+                        class="w-full h-11 rounded-lg bg-brand-500 hover:bg-brand-600 text-bg-900 font-medium transition">
+                    {{ __('Login') }}
+                </button>
+            </form>
         </div>
-    @endif
+    </div>
 </div>

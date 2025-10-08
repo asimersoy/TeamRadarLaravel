@@ -1,0 +1,150 @@
+services:
+  # --- Laravel (PHP-FPM) ---
+  app:
+    image: php:8.3-fpm-alpine
+    container_name: lg-app
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    environment:
+      PHP_FPM_PM_MAX_CHILDREN: 8
+    depends_on:
+      - mysql
+      - redis
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    #command: >
+    #  sh -lc "
+    #  apk add --no-cache git bash libpng-dev oniguruma-dev autoconf g++ make icu-dev zlib-dev sqlite sqlite-dev netcat-openbsd
+    #  && docker-php-ext-configure intl
+    #  && docker-php-ext-install pdo pdo_mysql pdo_sqlite intl
+    #  && pecl install redis && docker-php-ext-enable redis
+    #  && php-fpm -F
+    #  "
+
+    command: |
+      sh -lc '
+        set -e
+        apk add --no-cache \
+          git bash libpng-dev oniguruma-dev autoconf g++ make zlib-dev sqlite sqlite-dev \
+          icu-libs icu-dev pkgconf netcat-openbsd icu-data-full
+        export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+        docker-php-ext-configure intl
+        docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_sqlite intl
+        if ! php -m | grep -qi "^igbinary$"; then printf "\n" | pecl install -o -f igbinary && docker-php-ext-enable igbinary; fi
+        if ! php -m | grep -qi "^redis$"; then printf "\n" | pecl install -o -f redis && docker-php-ext-enable redis; fi
+        php-fpm -F
+      '
+
+
+
+
+
+
+
+
+      
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 9000"]
+      interval: 5s
+      timeout: 3s
+      retries: 40
+  
+    # --- Vite Dev Server ---
+  vite:
+    image: node:20-alpine
+    container_name: lg-vite
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - vite_node_modules:/var/www/html/node_modules
+    command: sh -lc "npm install && npm run dev"
+    ports:
+      - "5173:5173"
+    depends_on:
+      - app
+
+
+
+  # --- Nginx for Laravel ---
+  nginx:
+    image: nginx:alpine
+    container_name: lg-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      app:
+        condition: service_healthy
+
+
+  # --- MySQL 8 (kept but you can ignore in dev) ---
+  mysql:
+    image: mysql:8
+    container_name: lg-mysql
+    # command: --default-authentication-plugin=mysql_native_password # obsolete
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+    # If host port 3306 is busy, either comment out ports or map a different one:
+    # ports:
+    #   - "3307:3306"
+
+  # --- Redis 7 ---
+  redis:
+    image: redis:7-alpine
+    container_name: lg-redis
+    command: redis-server --appendonly yes
+    # No host port binding; services talk over the docker network.
+    # ports:
+    #   - "6379:6379"
+
+  # --- Node WebSocket Gateway (Apex LiveAPI) ---
+  ws-gateway:
+    image: node:20-alpine
+    container_name: lg-ws-gateway
+    working_dir: /srv/gateway
+    volumes:
+      - ./gateway:/srv/gateway
+      - gateway_node_modules:/srv/gateway/node_modules  # named volume for deps
+    environment:
+      REDIS_URL: redis://redis:6379
+      PORT: 8443
+      ALLOW_JSON: "true"
+    # Use npm ci if you have package-lock.json; use npm install otherwise
+    command: sh -lc "npm ci && node index.mjs"
+    depends_on:
+      - redis
+    ports:
+      - "8443:8443"
+
+  verify-worker:
+    image: php:8.3-fpm-alpine
+    container_name: lg-verify-worker
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - redis
+    environment:
+      REDIS_CLIENT: ${REDIS_CLIENT:-predis}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    command: sh -lc "php artisan liveapi:verify-worker"
+    restart: unless-stopped
+
+
+
+
+
+volumes:
+  mysql_data:
+  gateway_node_modules:
+  vite_node_modules:
+

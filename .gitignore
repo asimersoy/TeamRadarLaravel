@@ -6,6 +6,8 @@
 /storage/*.key
 /storage/pail
 /vendor
+/gateway/node_modules
+/database/*.sqlite
 .env
 .env.backup
 .env.production
