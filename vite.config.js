@@ -12,6 +12,7 @@ export default defineConfig({
     cors: true,
     host: true,
     port: 5173,
+    origin: 'http://localhost:5173',
     watch: {
       usePolling: true,
     },

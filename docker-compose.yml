@@ -106,38 +106,38 @@ services:
     #   - "6379:6379"
 
   # --- Node WebSocket Gateway (Apex LiveAPI) ---
-  ws-gateway:
-    image: node:20-alpine
-    container_name: lg-ws-gateway
-    working_dir: /srv/gateway
-    volumes:
-      - ./gateway:/srv/gateway
-      - gateway_node_modules:/srv/gateway/node_modules  # named volume for deps
-    environment:
-      REDIS_URL: redis://redis:6379
-      PORT: 8443
-      ALLOW_JSON: "true"
-    # Use npm ci if you have package-lock.json; use npm install otherwise
-    command: sh -lc "npm ci && node index.mjs"
-    depends_on:
-      - redis
-    ports:
-      - "8443:8443"
+  # ws-gateway:
+  #   image: node:20-alpine
+  #   container_name: lg-ws-gateway
+  #   working_dir: /srv/gateway
+  #   volumes:
+  #     - ./gateway:/srv/gateway
+  #     - gateway_node_modules:/srv/gateway/node_modules  # named volume for deps
+  #   environment:
+  #     REDIS_URL: redis://redis:6379
+  #     PORT: 8443
+  #     ALLOW_JSON: "true"
+  #   # Use npm ci if you have package-lock.json; use npm install otherwise
+  #   command: sh -lc "npm ci && node index.mjs"
+  #   depends_on:
+  #     - redis
+  #   ports:
+  #     - "8443:8443"
 
-  verify-worker:
-    image: php:8.3-fpm-alpine
-    container_name: lg-verify-worker
-    working_dir: /var/www/html
-    volumes:
-      - ./:/var/www/html
-    depends_on:
-      - redis
-    environment:
-      REDIS_CLIENT: ${REDIS_CLIENT:-predis}
-      REDIS_HOST: redis
-      REDIS_PORT: 6379
-    command: sh -lc "php artisan liveapi:verify-worker"
-    restart: unless-stopped
+  # verify-worker:
+  #   image: php:8.3-fpm-alpine
+  #   container_name: lg-verify-worker
+  #   working_dir: /var/www/html
+  #   volumes:
+  #     - ./:/var/www/html
+  #   depends_on:
+  #     - redis
+  #   environment:
+  #     REDIS_CLIENT: ${REDIS_CLIENT:-predis}
+  #     REDIS_HOST: redis
+  #     REDIS_PORT: 6379
+  #   command: sh -lc "php artisan liveapi:verify-worker"
+  #   restart: unless-stopped
 
 
 
@@ -145,6 +145,6 @@ services:
 
 volumes:
   mysql_data:
-  gateway_node_modules:
+  # gateway_node_modules:
   vite_node_modules:
 
