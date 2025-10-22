@@ -8,6 +8,9 @@
 
 syntax = "proto3";
 
+//Moved up here by me because the js proto library does not like import coming after other "top level statements"(I think that means message definitions)
+import "google/protobuf/any.proto";
+
 package rtech.liveapi;
 
 
@@ -814,7 +817,7 @@ message Request
 // Used by the game to send data to any connected clients
 //////////////////////////////////////////////////////////////////////
 
-import "google/protobuf/any.proto";
+//import "google/protobuf/any.proto"; //Comented out by me because the js proto library does not like import coming after other "top level statements"(I think that means message definitions)
 
 // Message used to indicate the status of a request
 // Generally, it is used to provide a plain text, detailed response in case of failures or problems

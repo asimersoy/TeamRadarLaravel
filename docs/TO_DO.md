@@ -2,6 +2,7 @@
 
 1. Apex Game Client Websocket Connection.
     - Implement protobuf in node server.
+        - protobuf imported, now switched the json decode code to protobuf decode code
     - Figure out a way to send the client requests.
     - a way to connect the laravel backend with the node websocket server.
 
