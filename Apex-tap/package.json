@@ -4,9 +4,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "node index.mjs"
+    "start": "node index.mjs",
+    "proto:generate": "npx pbjs -t static-module -w es6 -o generated/liveapi.js ../docs/LiveAPI/events.proto && npx pbts -o generated/liveapi.d.ts generated/liveapi.js"
   },
   "dependencies": {
+    "protobufjs": "^7.3.2",
     "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "protobufjs-cli": "^1.1.1"
   }
 }
