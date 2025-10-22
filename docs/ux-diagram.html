@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TeamRadar Relay — UX Diagrams</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif; margin: 24px; }
+      h1 { margin: 0 0 4px; }
+      h2 { margin: 20px 0 8px; }
+      .meta { color: #666; margin-bottom: 18px; }
+      .block { margin: 16px 0; }
+      .mermaid { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+  </head>
+  <body>
+    <h1>TeamRadar — PSK Auth and Presence Flow</h1>
+    <div class="meta">Open this file in a browser to view the updated diagrams (Site → Game → Node WS → Redis → Laravel → DB). Source: <code>docs/ux-diagram.md</code></div>
+
+    <h2>1) End-to-End Flow</h2>
+    <pre class="mermaid block">
+flowchart LR
+  U[User]
+  S[Website (Laravel Web)]
+  G[Game Client<br/>(Launch Options)]
+  N[Node WebSocket Server]
+  R[(Redis)]
+  L[Laravel Backend<br/>(Consumer/Queue Worker)]
+  D[(Database)]
+
+  U -->|Sign in &amp; request PSK| S
+  S -->|Display PSK| U
+  S -->|"User pastes PSK into game <br/>launch options"| G
+
+  G -->|Connect WS| N
+  G -->|Send auth message <br/>{ psk, client_info }| N
+
+  N -->|Publish auth event <br/>{ psk, ws_id }| R
+  R -->|auth event| L
+  L -->|Lookup by PSK<br/>set online = true<br/>identifier = ws_id| D
+
+  L -->|Resolve ws_id by PSK| D
+  L -->|Publish downlink <br/>{ ws_id, cmd }| R
+  R -->|downlink event| N
+  N -->|WS send { cmd }| G
+    </pre>
+
+    <h2>2) Auth + Presence Sequence</h2>
+    <pre class="mermaid block">
+sequenceDiagram
+  participant User as User
+  participant Site as Website (Laravel)
+  participant Game as Game Client
+  participant Node as Node WS Server
+  participant Redis as Redis
+  participant App as Laravel Backend
+  participant DB as Database
+
+  User->>Site: Sign in → request PSK
+  Site-->>User: Show PSK
+  User->>Game: Put PSK into launch options
+
+  Game->>Node: WS connect
+  Game->>Node: send { psk, client_info }
+  Node->>Redis: PUBLISH auth { psk, ws_id }
+  App->>Redis: SUBSCRIBE auth (running)
+  Redis-->>App: auth { psk, ws_id }
+  App->>DB: UPDATE users SET online=1, identifier=ws_id WHERE psk=...
+  App-->>Node: (optional) ack/validation
+  Node-->>Game: (optional) ws ack
+    </pre>
+
+    <h2>3) Backend → Client Messaging</h2>
+    <pre class="mermaid block">
+sequenceDiagram
+  participant App as Laravel Backend
+  participant DB as Database
+  participant Redis as Redis
+  participant Node as Node WS Server
+  participant Game as Game Client
+
+  App->>DB: SELECT identifier FROM users WHERE psk=...
+  DB-->>App: ws_id
+  App->>Redis: PUBLISH downlink.ws.{ws_id} { cmd, data }
+  Redis-->>Node: downlink.ws.{ws_id} payload
+  Node-->>Game: WS send { cmd, data }
+    </pre>
+
+    <h2>4) Components at a Glance</h2>
+    <pre class="mermaid block">
+flowchart TB
+  subgraph Frontend
+    S[Site (Laravel Web)]
+    G[Game Client]
+  end
+
+  subgraph Transport
+    N[Node WS]
+    R[(Redis)]
+  end
+
+  subgraph Backend
+    L[Laravel Workers]
+    D[(DB)]
+  end
+
+  S -.issues PSK .-> G
+  G -->|WS + PSK| N
+  N -->|publish| R
+  R -->|deliver| L
+  L -->|persist presence| D
+    </pre>
+  </body>
+  </html>
