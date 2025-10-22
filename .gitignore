@@ -23,3 +23,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Apex TAP log file
+apex-tap/logs/*
+
+apex-tap/node_modules
