@@ -220,6 +220,8 @@ wss.on("connection", (ws, req) => {
   ws.on("message", async (data, isBinary) => {
     const buffer = Buffer.isBuffer(data) ? data : Buffer.from(data);
 
+    isBinary = true; // FOR TESTING ONLY: force binary path
+    
     if (isBinary) {
       log(`[${ws._id}] PROTO ${buffer.byteLength} bytes`);
       try { binLog.write(buffer); } catch {}
