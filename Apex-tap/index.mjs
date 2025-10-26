@@ -195,7 +195,7 @@ function getConnsForPsk(psk) {
 
 ensureProtoRoot().catch(() => {}); // kick off schema loading so startup issues surface early
 
-const wss = new WebSocketServer({ host: "127.0.0.1", port: PORT }, () => {
+const wss = new WebSocketServer({ host: "127.0.0.1", port: PORT, skipUTF8Validation: true }, () => {
   log(`[tap] Listening for Apex LiveAPI on ws://127.0.0.1:${PORT}`);
   log(`    AUTOPONG=${AUTOPONG}  PSK=${PSK ? "(set)" : "(not set)"}`);
 });
@@ -203,6 +203,11 @@ const wss = new WebSocketServer({ host: "127.0.0.1", port: PORT }, () => {
 wss.on("connection", (ws, req) => {
   ws._id = randomUUID();
   log(`+ connection ${ws._id} from ${req.socket.remoteAddress}`);
+
+
+  ws._socket.on("data", chunk => log(`[${ws._id}] raw frame header: ${chunk[0].toString(16)}`));
+
+  //log(`[${ws._id}] frame opcode = ${isBinary ? "binary" : "text"}`);
 
   /*if(ws._psk) { // there is no psk provided until we parse a message that includes it
     addConnForPsk(ws._psk, ws); // so make this check inside message handler
@@ -214,14 +219,40 @@ wss.on("connection", (ws, req) => {
     return;
   }*/
 
-  // Send a hello (optional)
+    //isBinary = true; // FOR TESTING ONLY: force binary path
+    
+// Send a hello (optional)
   safeSend(ws, { hello: "apex-tap", connId: ws._id, ts: Date.now() });
 
-  ws.on("message", async (data, isBinary) => {
-    const buffer = Buffer.isBuffer(data) ? data : Buffer.from(data);
+  let x = 0;
 
-    isBinary = true; // FOR TESTING ONLY: force binary path
+  ws.on("message", async (data, isBinary) => {
+
+    const request = {
+      preSharedKey: PSK,
+      withAck: true,
+      customMatch_CreateLobby: {}
+      //customMatch_SendChat: { text: "Hello from tap" }  // pick any one action from the Request.oneof
+    };
+
+    if(x == 0){
+      log(request);//
+      
+      const encoded = await encodeRequestPayload(request);
+
+      log(encoded);//
+
+      if (encoded) safeSend(ws, encoded);
+      x++;
+    }
+
+
+
+
     
+  log(`[${ws._id}] frame opcode = ${isBinary ? "binary" : "text"}`);
+   
+
     if (isBinary) {
       log(`[${ws._id}] PROTO ${buffer.byteLength} bytes`);
       try { binLog.write(buffer); } catch {}
