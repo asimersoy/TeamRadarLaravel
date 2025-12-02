@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../teamradar-relay"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TeamRadarLaravel"
+	}
+}
