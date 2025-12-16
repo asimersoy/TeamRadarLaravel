@@ -3,31 +3,31 @@
 @section('content')
 <div class="max-w-6xl mx-auto px-4 py-16">
     <div class="grid md:grid-cols-3 gap-8">
-        
+
         <!-- Left Column: User Stats -->
         <div class="md:col-span-1 space-y-6">
             <div class="panel rounded-xl shadow-card p-6">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-16 h-16 rounded bg-bg-800 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-400">
-                        {{ substr(auth()->user()->name, 0, 1) }}
+                        {{ substr(auth()->user()->gameAccounts->first()->game_username ?? auth()->user()->name, 0, 1) }}
                     </div>
                     <div>
-                        <h2 class="text-xl font-semibold">{{ auth()->user()->name }}</h2>
+                        <h2 class="text-xl font-semibold">{{ auth()->user()->gameAccounts->first()->game_username ?? auth()->user()->name }}</h2>
                         <div class="text-sm text-ink-300">Level 42</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4">
                     <div>
                         <div class="flex justify-between text-sm mb-1">
                             <span class="text-ink-300">Rank</span>
-                            <span class="font-medium text-accent-500">Gold II</span>
+                            <span class="font-medium text-accent-500">{{ auth()->user()->gameAccounts->first()->valorant_rank_name ?? 'Unranked' }}</span>
                         </div>
                         <div class="h-2 bg-bg-800 rounded-full overflow-hidden">
                             <div class="h-full bg-accent-500 w-2/3"></div>
                         </div>
                     </div>
-                    
+
                     <div>
                         <div class="flex justify-between text-sm mb-1">
                             <span class="text-ink-300">Reputation</span>
@@ -63,7 +63,7 @@
         <!-- Middle/Right: Matchmaking Interface -->
         <div class="md:col-span-2">
             <div class="panel rounded-xl shadow-card p-8 h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
-                
+
                 <!-- Background decoration -->
                 <div class="absolute inset-0 -z-10 opacity-10"
                      style="background: radial-gradient(circle at 50% 50%, rgba(76,201,240,0.4), transparent 70%);"></div>

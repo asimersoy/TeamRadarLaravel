@@ -25,8 +25,12 @@ Route::view('dashboard', 'dashboard')
     ->name('dashboard');
 
 Route::view('matchmaking', 'matchmaking')
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified', \App\Http\Middleware\EnsureGameAccountExists::class.':valorant'])
     ->name('matchmaking');
+
+Route::get('setup/{game}', \App\Livewire\SetupGameAccount::class)
+    ->middleware(['auth', 'verified'])
+    ->name('setup.game');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');

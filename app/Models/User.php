@@ -47,6 +47,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function gameAccounts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(GameAccount::class);
+    }
+
     /**
      * Get the user's initials
      */

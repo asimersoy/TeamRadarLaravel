@@ -1,7 +1,9 @@
 services:
   # --- Laravel (PHP-FPM) ---
   app:
-    image: php:8.3-fpm-alpine
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
     container_name: lg-app
     working_dir: /var/www/html
     volumes:
@@ -13,35 +15,7 @@ services:
       - redis
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    #command: >
-    #  sh -lc "
-    #  apk add --no-cache git bash libpng-dev oniguruma-dev autoconf g++ make icu-dev zlib-dev sqlite sqlite-dev netcat-openbsd
-    #  && docker-php-ext-configure intl
-    #  && docker-php-ext-install pdo pdo_mysql pdo_sqlite intl
-    #  && pecl install redis && docker-php-ext-enable redis
-    #  && php-fpm -F
-    #  "
-
-    command: |
-      sh -lc '
-        set -e
-        apk add --no-cache \
-          git bash libpng-dev oniguruma-dev autoconf g++ make zlib-dev sqlite sqlite-dev \
-          icu-libs icu-dev pkgconf netcat-openbsd icu-data-full
-        export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
-        docker-php-ext-configure intl
-        docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_sqlite intl
-        if ! php -m | grep -qi "^igbinary$"; then printf "\n" | pecl install -o -f igbinary && docker-php-ext-enable igbinary; fi
-        if ! php -m | grep -qi "^redis$"; then printf "\n" | pecl install -o -f redis && docker-php-ext-enable redis; fi
-        php-fpm -F
-      '
-
-
-
-
-
-
-
+    command: ["php-fpm", "-F"]
 
       
     healthcheck:
@@ -52,13 +26,14 @@ services:
   
     # --- Vite Dev Server ---
   vite:
-    image: node:20-alpine
+    build:
+      context: .
+      dockerfile: docker/vite/Dockerfile
     container_name: lg-vite
     working_dir: /var/www/html
     volumes:
       - ./:/var/www/html
       - vite_node_modules:/var/www/html/node_modules
-    command: sh -lc "npm install && npm run dev"
     ports:
       - "5173:5173"
     depends_on:
@@ -147,4 +122,3 @@ volumes:
   mysql_data:
   # gateway_node_modules:
   vite_node_modules:
-
