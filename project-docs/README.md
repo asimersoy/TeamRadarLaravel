@@ -30,6 +30,11 @@ Start with:
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.
 
+## Current Operations
+
+- [Workspace and repository layout](operations/workspace-layout.md)
+- [Completed workspace-nesting route](routes/MIGRATION-2026-09-03-workspace-nesting.md)
+
 ## Legacy Reconstruction
 
 ### Product

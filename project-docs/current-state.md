@@ -8,24 +8,35 @@
 
 ## Verified Workspace State
 
-- Repository and primary local-project boundary:
+- Primary local-project/workspace boundary:
   `/Users/asime/Github/TeamRadarLaravel`
-- The broader `/Users/asime/Github` folder was removed from the project after
-  the TeamRadar root was made primary. Outside access may be requested for a
-  specific need and is subject to review; it is not routine project access.
+- Active Git repository boundary:
+  `/Users/asime/Github/TeamRadarLaravel/TeamRadarRepository`
+- The primary workspace root is intentionally non-Git. Its separate
+  `sources/`, `scratch/`, `outputs/`, and `snapshots/` areas follow the tracked
+  [workspace-layout policy](operations/workspace-layout.md).
+- The broader `/Users/asime/Github` folder remains outside the project. Access
+  to another external path may be requested for a specific need and is subject
+  to review; it is not routine project access.
 - The existing conversation retains `/Users/asime/Github` as its recorded
-  starting directory, so repository commands use the TeamRadar root explicitly.
-  The project registry identifies `TeamRadar` at the repository path.
-- Recovery baseline: `new-development` at
-  `e6dc582c0d1b0d8bbb9c9ec60f0c7dddfcf13279`, with a clean working tree before
-  this readiness-record update.
+  starting directory, so repository commands use the nested repository path
+  explicitly. The project registry identifies `TeamRadar` at the outer
+  workspace path.
+- Relocation baseline: clean `new-development` at
+  `66515eb25988c45f260a4a8f74ac9ad36bdc4e82` immediately before and after the
+  move, before this workspace-record update.
 - Local branches: `master` at `3822e61` tracking `origin/master`, and the
   current `new-development` branch with no configured upstream. The readiness
   records build additively on the reconstruction commit.
-- One worktree exists at the repository root; no submodules are configured.
-- Repository read and write access passed. Parent-folder read access remained
-  available during the audit, but no parent write, sibling-repository, or
-  out-of-scope mutation was attempted.
+- One worktree exists at the nested repository root; no submodules are
+  configured.
+- Pre/post relocation checks matched HEAD, refs, Git config, tracked index
+  entries, ignored-state digest, file count, symlink count, and repository
+  status. Only `.git/index` bytes changed when Git refreshed its stat cache;
+  staged file identities remained identical.
+- A full 42 MB pre-move archive is stored under the outer `snapshots/` directory
+  with SHA-256
+  `d12fd824b9e0b8314cc005e9d5a989cfa316118d73672658a0832ae4339db1b5`.
 - The four recovered relay commits (`402a3f3`, `b1852b7`, `f0006bd`, and
   `5997de0`) remain readable Git commit objects.
 - Running Compose services at inspection: none
@@ -36,8 +47,11 @@
 - The workflow package is project-neutral and remains unchanged.
 - Current owner decisions are limited to reconstruction-first, no required code
   reuse, folder-level separation of workflow from project records,
-  evidence-backed execution, and use of the repository root as the normal
-  workspace boundary. See the [decision register](governance/decisions.md).
+  evidence-backed execution, and separation of the non-Git workspace from the
+  nested Git repository. See the [decision register](governance/decisions.md).
+- The portable workflow package remains the primary canonical general workflow.
+  TeamRadar-specific workflow adaptations belong in separate project records;
+  outer workspace notes are routing aids only.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No new TeamRadar product scope, architecture, technology, data collection,
@@ -49,7 +63,8 @@
 - **Completed:** workflow orientation, repository and branch recovery audit,
   memory-dump review, reachable history review, read-only recovery of the
   orphaned Electron relay history, the organized historical dossier, and the
-  owner decision sequence for rewrite readiness.
+  owner decision sequence for rewrite readiness. The repository was also moved
+  intact into the approved nested workspace layout.
 - **In progress:** owner review of whether the historical reconstruction is
   sufficient and, once that gate closes, definition of the current product.
 - **Next:** owner answers Gate 0 in the
@@ -73,8 +88,11 @@
 - The 2026-09-03 recovery audit verified the registered TeamRadar project path,
   repository read/write access, branch tips, worktree/submodule state, the
   reconstruction commit and its 22-file/2,752-insertion documentation change,
-  and
-  recovered relay object availability.
+  and recovered relay object availability.
+- The 2026-09-03 workspace migration preserved all 18,365 regular files, 23
+  relative symlinks, Git refs/configuration/index identity, ignored state, and
+  known dangling historical objects. The outer directory is not a Git
+  repository.
 
 ## Gates
 

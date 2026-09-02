@@ -3,6 +3,26 @@
 These instructions apply to the TeamRadar repository. They connect the
 project-neutral workflow system to the separate project-specific record tree.
 
+## Workspace Layout
+
+The repository normally lives at
+`/Users/asime/Github/TeamRadarLaravel/TeamRadarRepository` inside a non-Git
+workspace container. If `../WORKSPACE.md` exists, it describes local routing
+and non-versioned storage, but it is not project authority.
+
+- The canonical general workflow remains
+  `portable-project-workflow-system/` and must stay project-neutral.
+- TeamRadar-specific workflow adaptations and operating decisions belong under
+  `project-docs/`, especially `project-docs/operations/` and the governance
+  registers.
+- Prefer `../scratch/` for volatile task work and artifact builders,
+  `../outputs/<thread-id>/` for generated deliverables, `../sources/` for raw
+  local inputs, and `../snapshots/` for recovery material.
+- Nothing outside the repository becomes a durable decision, approval,
+  requirement, completion record, or project fact until promoted into a
+  tracked project record with evidence.
+- Run Git from this repository root. The parent workspace must remain non-Git.
+
 ## Mandatory Entry Path
 
 Before substantive work:

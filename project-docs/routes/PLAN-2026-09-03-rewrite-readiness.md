@@ -10,6 +10,14 @@
 - **Baseline:** clean `new-development` at
   `e6dc582c0d1b0d8bbb9c9ec60f0c7dddfcf13279`
 
+## Workspace-Location Update
+
+The workspace-location findings below describe the audit before the repository
+was nested. On 2026-09-03, `DEC-006` superseded `DEC-005` and the repository
+moved intact to `TeamRadarRepository/` under the same primary workspace. The
+planning gate remains current; the completed migration and its verification are
+recorded in `MIGRATION-2026-09-03-workspace-nesting.md`.
+
 ## Routed Procedures
 
 - Current scope, requirements, data ownership, architecture gates, and
@@ -36,7 +44,7 @@
 
 ## Authority And Boundaries
 
-- **Controlling decisions:** `DEC-001` through `DEC-005` in
+- **Controlling decisions:** `DEC-001` through `DEC-006` in
   `../governance/decisions.md`.
 - **Included:** read-only continuity audit; current-state reconciliation;
   workspace-boundary decision; blocking-question inventory; owner decision

@@ -81,7 +81,7 @@
 ## DEC-005 - Use The Repository Root As The Local Project Boundary
 
 - **Date:** 2026-09-03
-- **Status:** approved
+- **Status:** superseded
 - **Decision owner:** project owner
 - **Decision:** Use `/Users/asime/Github/TeamRadarLaravel` as the primary local
   project folder and normal workspace boundary. Remove the broader
@@ -101,4 +101,38 @@
 - **Return condition:** revisit only if the project acquires a durable,
   documented dependency outside the repository.
 - **Supersedes:** none
+- **Superseded by:** `DEC-006`
+
+## DEC-006 - Separate The Non-Git Workspace From The Canonical Repository
+
+- **Date:** 2026-09-03
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Keep `/Users/asime/Github/TeamRadarLaravel` as the primary
+  non-Git workspace container and move the complete active Git repository into
+  its `TeamRadarRepository/` child. Keep the canonical project-neutral workflow
+  package versioned and unchanged inside that repository. Record
+  TeamRadar-specific workflow adaptations separately under `project-docs/`.
+  Use outer `sources/`, `scratch/`, `outputs/`, and `snapshots/` folders for
+  non-versioned material according to the tracked workspace-layout policy.
+- **Reason:** Allow raw inputs, volatile builders, generated artifacts, and
+  recovery archives to live outside Git without expanding application
+  `.gitignore`, while preserving one authoritative workflow and one active
+  repository history.
+- **Alternatives considered:** keep the Git repository at the workspace root;
+  move the canonical workflow package outside Git; or put all generated/local
+  material inside ignored repository folders. The owner selected the nested
+  repository and explicitly retained the canonical workflow package as primary.
+- **Consequences:** The outer workspace is routing/storage only and cannot
+  become a competing source of truth. Durable project facts, decisions,
+  approvals, plans, and completion evidence remain tracked. Git commands must
+  target `TeamRadarRepository/`. App-level Git/worktree actions require target
+  verification because the primary workspace folder itself is non-Git.
+- **Affected records:** root `AGENTS.md`, `project-docs/current-state.md`,
+  `project-docs/operations/workspace-layout.md`, active planning records, and
+  workspace migration evidence
+- **Return condition:** revisit if the repository is renamed, split into
+  multiple active repositories, or a generated artifact is intentionally made
+  a tracked product asset.
+- **Supersedes:** `DEC-005`
 - **Superseded by:** none

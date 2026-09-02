@@ -41,8 +41,9 @@ rejected decisions, unless the owner explicitly rejects them.
 - Keep reusable workflow records separate from TeamRadar records (`DEC-003`).
 - Route work, preserve unrelated work, separate evidence classes, and require
   evidence-backed completion (`DEC-004`).
-- Use the TeamRadar repository root as the normal local workspace boundary;
-  request reviewed external access only when specifically needed (`DEC-005`).
+- Keep the canonical general workflow and TeamRadar-specific records separated
+  inside the nested Git repository, with workspace-only sources, scratch,
+  outputs, and snapshots outside Git (`DEC-006`).
 
 ### Unapproved Assumptions
 
