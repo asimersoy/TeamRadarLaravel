@@ -52,3 +52,75 @@ requirements for the rewrite.
   particular subsystem; or omit irrelevant historical areas before redesign.
 - **Evidence needed:** owner review feedback.
 - **Resolved by:** none
+
+## OQ-004 - What Is The Current Product Charter And Permitted-Use Boundary?
+
+- **Status:** open
+- **Decision owner:** project owner
+- **Needed by:** approval of a current product brief
+- **Blocks:** treating TeamRadar as a teammate finder, selecting a game or
+  audience, making public promises, or authorizing an implementation plan.
+- **Does not block:** reviewing the legacy reconstruction or discussing current
+  alternatives as proposals.
+- **Known context:** The legacy idea centered on finding behaviorally compatible
+  teammates, but the owner intends to change specifications and boundaries.
+  No legacy purpose, name interpretation, anti-toxicity claim, or permitted use
+  is inherited.
+- **Decision components:** present problem, target outcome, allowed uses,
+  prohibited uses, explicit non-goals, audience/age/geography, and claims the
+  product may or may not make.
+- **Decision aid:**
+  [rewrite owner decision sequence](../planning/rewrite-owner-decision-sequence.md)
+- **Resolved by:** none
+
+## OQ-005 - What Is The First User And Market Wedge?
+
+- **Status:** open
+- **Decision owner:** project owner
+- **Needed by:** current user journeys and MVP scope
+- **Blocks:** game/platform integration research, queue design, surface design,
+  and meaningful acceptance criteria.
+- **Does not block:** comparing candidate wedges without implementation.
+- **Known context:** The legacy record contains conflicting Apex and Valorant
+  phases and never settled region, platform, language, age, casual/competitive,
+  solo/partial-party, or one-session/persistent-team boundaries.
+- **Decision components:** initial game and mode, platform/cross-play, launch
+  region/language, primary user segment, party shape, and relationship duration.
+- **Resolved by:** none
+
+## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
+
+- **Status:** open
+- **Decision owner:** project owner; qualified review may be required after a
+  concrete flow exists
+- **Needed by:** matching specification, data inventory, privacy review, and
+  trust/safety acceptance criteria
+- **Blocks:** collecting player or session data, ordering or excluding users,
+  displaying reputation, accepting reviews/reports, or designing moderation.
+- **Does not block:** selecting lower-risk alternatives and explicit non-goals.
+- **Known context:** The legacy project proposed preference matching, honor,
+  weighted reviews, session evidence, and reports but implemented no complete
+  criteria, fairness controls, appeal path, retention rule, or rollback method.
+- **Decision components:** directory versus queue versus recommendation;
+  matching inputs and explanations; whether reputation affects information,
+  ordering, or eligibility; review/report scope; moderation/appeals; account and
+  integration evidence; field-level purpose, retention, deletion, and access.
+- **Resolved by:** none
+
+## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
+
+- **Status:** open
+- **Decision owner:** project owner
+- **Needed by:** technical specification and implementation plan
+- **Blocks:** selecting a stack, architecture, deployment model, milestone plan,
+  budget, release target, or definition of done.
+- **Does not block:** architecture-neutral product decisions and targeted
+  feasibility research.
+- **Known context:** Laravel/Livewire/MySQL is only a legacy implementation;
+  React, Node/NestJS, PostgreSQL, Redis, a desktop relay, Docker, and various
+  deployment paths are historical evidence or proposals, not current choices.
+- **Decision components:** validation goal and success measures, business model,
+  product surfaces, delivery horizon/resources, integration constraints,
+  availability/security expectations, environments, release strategy, and
+  testable completion evidence.
+- **Resolved by:** none

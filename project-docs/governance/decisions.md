@@ -77,3 +77,28 @@
   verification, and residual risk.
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-005 - Use The Repository Root As The Local Project Boundary
+
+- **Date:** 2026-09-03
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Use `/Users/asime/Github/TeamRadarLaravel` as the primary local
+  project folder and normal workspace boundary. Remove the broader
+  `/Users/asime/Github` folder from the project. When a specific external path
+  or operation is needed, the agent may request narrowly scoped access and the
+  request will be reviewed for approval or rejection.
+- **Reason:** Keep routine TeamRadar work focused and isolated without making
+  legitimate, reviewed external access impossible.
+- **Alternatives considered:** retain the entire GitHub parent as an attached
+  workspace folder; not selected.
+- **Consequences:** Repository commands must target the TeamRadar root. Sibling
+  repositories and other external files are outside ordinary project scope.
+  Approval for one external action does not authorize unrelated access or
+  expand product scope.
+- **Affected records:** `project-docs/current-state.md`, active task routes, and
+  execution reports that rely on external files
+- **Return condition:** revisit only if the project acquires a durable,
+  documented dependency outside the repository.
+- **Supersedes:** none
+- **Superseded by:** none

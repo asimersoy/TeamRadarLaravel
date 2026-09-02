@@ -6,10 +6,12 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-The project is reconstructing the legacy idea before the owner defines the new
-specification, product boundary, and permitted-use boundary. Everything under
-`legacy/` describes historical intent or implementation; it is not a current
-build specification.
+The legacy reconstruction is ready for owner acceptance, and current-product
+decision framing has begun. The owner must still close or continue the
+historical review, then define the rewrite's purpose, permitted-use boundary,
+audience, MVP journey, decision/data behavior, and delivery constraints before
+an implementation plan can be approved. Everything under `legacy/` describes
+historical intent or implementation; it is not a current build specification.
 
 Start with:
 
@@ -17,7 +19,16 @@ Start with:
 2. [Decision register](governance/decisions.md)
 3. [Open questions](governance/open-questions.md)
 4. [Deferred work](governance/deferred-work.md)
-5. [Active task route](routes/AUDIT-2026-09-02-legacy-reconstruction.md)
+5. [Owner decision sequence](planning/rewrite-owner-decision-sequence.md)
+6. [Active task route](routes/PLAN-2026-09-03-rewrite-readiness.md)
+
+## Current Planning
+
+- [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
+- [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
+
+These records organize decisions; they do not approve a product brief,
+technical specification, implementation plan, or code change.
 
 ## Legacy Reconstruction
 
