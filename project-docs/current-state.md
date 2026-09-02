@@ -19,8 +19,9 @@
 - Recovery baseline: `new-development` at
   `e6dc582c0d1b0d8bbb9c9ec60f0c7dddfcf13279`, with a clean working tree before
   this readiness-record update.
-- Local branches: `master` at `3822e61` tracking `origin/master`, and
-  `new-development` at the reconstruction commit with no configured upstream.
+- Local branches: `master` at `3822e61` tracking `origin/master`, and the
+  current `new-development` branch with no configured upstream. The readiness
+  records build additively on the reconstruction commit.
 - One worktree exists at the repository root; no submodules are configured.
 - Repository read and write access passed. Parent-folder read access remained
   available during the audit, but no parent write, sibling-repository, or
