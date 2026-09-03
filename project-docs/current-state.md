@@ -1,6 +1,6 @@
 # TeamRadar Current State
 
-- **Last updated:** 2026-09-03
+- **Last updated:** 2026-09-04
 - **Status:** workflow-governance owner decision required before product review
 - **Objective:** settle how future workflow changes, approvals, specifications,
   reviews, and commits are handled; then resume the current-product decision
@@ -52,8 +52,10 @@
   evidence-backed execution, and separation of the non-Git workspace from the
   nested Git repository. See the [decision register](governance/decisions.md).
 - The portable workflow package remains the primary canonical general workflow.
-  TeamRadar-specific workflow adaptations belong in separate project records;
-  outer workspace notes are routing aids only.
+  `DEC-007` protects its single canonical copy from modification without
+  explicit advance owner approval. TeamRadar-specific workflow adaptations
+  belong in separate project records; outer workspace notes are routing aids
+  only.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No new TeamRadar product scope, architecture, technology, data collection,

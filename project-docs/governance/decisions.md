@@ -136,3 +136,38 @@
   a tracked product asset.
 - **Supersedes:** `DEC-005`
 - **Superseded by:** none
+
+## DEC-007 - Protect The Canonical Workflow And Extend Through Project Records
+
+- **Date:** 2026-09-04
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Keep exactly one canonical
+  `portable-project-workflow-system/` folder. Do not modify it without the
+  owner's explicit advance approval for the exact change. Design normal
+  TeamRadar work so project-specific paths, operating rules, guidelines,
+  decisions, routes, and future specifications are added or changed under
+  `project-docs/` instead. If the primary agent discovers a genuinely reusable
+  workflow gap, it may report or propose a general change but must not apply it
+  to the canonical package without that approval.
+- **Reason:** The owner wants the portable package to remain a stable primary
+  workflow and expects normal project evolution to occur entirely through the
+  TeamRadar-specific record tree.
+- **Alternatives considered:** create an original copy plus a mutable
+  TeamRadar/story-specific copy, or allow routine agent edits to the portable
+  package. The owner corrected and withdrew the duplicate-copy idea before any
+  such filesystem action occurred; neither alternative was selected.
+- **Consequences:** The canonical package has one identity and cannot drift
+  through project work. TeamRadar-specific extensions must remain visibly
+  separate and may not weaken or contradict the canonical system. A conflict
+  or apparent need to change the package is an owner gate.
+- **Affected records:** repository `AGENTS.md`,
+  `project-docs/operations/workspace-layout.md`, current state, active
+  workflow-governance review, and future project-specific operating and
+  specification records
+- **Return condition:** only an explicit owner-approved portable-workflow
+  change may reopen the package; that task must be separately routed, scoped,
+  validated with the package validator, and committed as its own coherent unit.
+- **Related decisions:** strengthens `DEC-003` and `DEC-006`
+- **Supersedes:** none
+- **Superseded by:** none

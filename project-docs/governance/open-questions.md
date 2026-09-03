@@ -141,9 +141,14 @@ requirements for the rewrite.
   separate authorization for remote or destructive actions. It does not decide
   the owner's preferred approval phrasing, threshold for TeamRadar-specific
   operating-rule changes, or future specification approval shape.
+- **Partial decision:** Component 1 is resolved by `DEC-007`. There is one
+  canonical portable workflow folder; no duplicate mutable copy will be
+  created, and the folder cannot be changed without explicit advance owner
+  approval. Normal additions and modifications belong in project-specific
+  records. Components 2 through 8 remain open.
 - **Decision components:**
-  1. whether any change to the portable canonical workflow requires advance
-     explicit owner approval;
+  1. **Resolved by `DEC-007`:** any change to the portable canonical workflow
+     requires advance explicit owner approval;
   2. when the primary agent may create or refine a TeamRadar-specific operating
      rule under `project-docs/operations/`;
   3. what wording or interaction constitutes owner approval versus discussion;
@@ -156,10 +161,10 @@ requirements for the rewrite.
      independent low-risk items to be batched; and
   8. whether the project owner is the sole approving authority unless another
      reviewer and review scope are explicitly named.
-- **Options/tradeoffs:** adopt the primary agent's recommended defaults for all
-  eight components; modify individual defaults; or require advance owner
-  approval for every workflow, documentation, and commit action at the cost of
-  slower iteration.
-- **Evidence needed:** explicit owner answers to the eight components. No
+- **Options/tradeoffs:** adopt the primary agent's recommended defaults for
+  components 2 through 8; modify individual defaults; or require advance owner
+  approval for every project-specific workflow, documentation, and commit
+  action at the cost of slower iteration.
+- **Evidence needed:** explicit owner answers to components 2 through 8. No
   product evidence is needed for this governance decision.
 - **Resolved by:** none

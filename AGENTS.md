@@ -12,6 +12,10 @@ and non-versioned storage, but it is not project authority.
 
 - The canonical general workflow remains
   `portable-project-workflow-system/` and must stay project-neutral.
+- Keep exactly one canonical workflow package. Do not modify any file under
+  `portable-project-workflow-system/` without the project owner's explicit
+  advance approval for that change. Report a generally reusable gap as a
+  proposal; do not create a mutable TeamRadar copy of the package.
 - TeamRadar-specific workflow adaptations and operating decisions belong under
   `project-docs/`, especially `project-docs/operations/` and the governance
   registers.

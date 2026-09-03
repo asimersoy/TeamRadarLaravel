@@ -15,9 +15,11 @@
   `../../portable-project-workflow-system/docs/procedures/external-review.md`
 - Owner review advances while product planning waits: yes ->
   `../../portable-project-workflow-system/docs/procedures/deferral-and-owner-review.md`
+- The owner corrected an interrupted answer before implementation: yes ->
+  `../../portable-project-workflow-system/docs/procedures/interruption-and-recovery.md`
 - Product planning, application implementation, delegation, content, research,
   decision/ranking safety, privacy/data/legal, design, migration, deployment,
-  experiment, or interruption/recovery: no
+  or experiment: no
 
 ## Required Reading
 
@@ -26,7 +28,7 @@
   workflow-coverage system records
 - TeamRadar current state and live governance registers
 - TeamRadar workspace-layout operating policy
-- The three selected procedures above
+- The four selected procedures above
 
 ## Scope
 
@@ -49,13 +51,26 @@
 - **Stop when:** an answer is ambiguous, conflicts with the canonical workflow,
   would silently authorize product work, or assigns authority to an unnamed
   reviewer.
-- **Commit boundary:** first record the owner-input-required route and question;
-  after the owner's answer, create or update only the TeamRadar-specific
-  decisions, operating policy, state, and route records needed to implement it.
+- **Commit boundary:** record each resolved component as a coherent
+  TeamRadar-specific decision and update only the operating policy, state,
+  question, and route records needed to implement it.
+
+## Owner Decisions Recorded
+
+- **2026-09-04 — Component 1:** approved as `DEC-007`. Keep one canonical
+  portable workflow package, require explicit advance owner approval to modify
+  it, and place normal project-specific extensions elsewhere under
+  `project-docs/`.
+- **Correction/recovery:** an interrupted owner message initially described an
+  original/mutable folder pair while the owner was switching from a different
+  story-writing workflow. The owner corrected that statement before any action.
+  Repository inspection showed no partial copy, rename, or package change; the
+  corrected one-package instruction is authoritative.
 
 ## Intended Verification
 
-- Reconcile every owner answer against the eight `OQ-008` components.
+- Reconcile every owner answer against the eight `OQ-008` components; component
+  1 is recorded and components 2 through 8 remain open.
 - Confirm the portable workflow package remains unchanged unless its exact
   change is separately approved.
 - Check project-document links, `git diff --check`, complete diff scope, current

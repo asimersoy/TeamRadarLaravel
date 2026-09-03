@@ -55,10 +55,16 @@ record before a commit, handoff, intentional stop, or completion report.
 
 ## General Workflow Versus Project-Specific Rules
 
+- Keep one canonical `portable-project-workflow-system/` folder. Do not create
+  an original/mutable pair or edit the package without explicit advance owner
+  approval for the exact change (`DEC-007`).
 - Do not add TeamRadar paths, product facts, technology choices, or owner
   decisions to `portable-project-workflow-system/`.
 - Put recurring TeamRadar-only operating rules under `project-docs/operations/`
   and material choices in `project-docs/governance/decisions.md`.
+- If a generally reusable workflow gap appears, record or report it as a
+  proposal. Continue through project-specific extensions when possible; do not
+  apply the proposal to the canonical package without approval.
 - The portable workflow's optional `.codex-local/` scratch pattern remains a
   valid generic example. TeamRadar maps that non-authoritative purpose to the
   outer `scratch/` directory so no repository ignore rule is required.
