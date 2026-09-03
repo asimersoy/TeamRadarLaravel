@@ -1,10 +1,12 @@
 # TeamRadar Current State
 
 - **Last updated:** 2026-09-03
-- **Status:** owner decisions required before implementation planning
-- **Objective:** close or continue the legacy review, then define the current
-  TeamRadar product and use boundary before creating an implementation plan
-- **Current route:** [PLAN-2026-09-03](routes/PLAN-2026-09-03-rewrite-readiness.md)
+- **Status:** workflow-governance owner decision required before product review
+- **Objective:** settle how future workflow changes, approvals, specifications,
+  reviews, and commits are handled; then resume the current-product decision
+  sequence
+- **Current route:**
+  [GOVERNANCE-2026-09-03](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
 
 ## Verified Workspace State
 
@@ -65,11 +67,12 @@
   orphaned Electron relay history, the organized historical dossier, and the
   owner decision sequence for rewrite readiness. The repository was also moved
   intact into the approved nested workspace layout.
-- **In progress:** owner review of whether the historical reconstruction is
-  sufficient and, once that gate closes, definition of the current product.
-- **Next:** owner answers Gate 0 in the
-  [decision sequence](planning/rewrite-owner-decision-sequence.md), followed by
-  one bounded current-product decision group at a time.
+- **In progress:** owner settlement of the future workflow-change, approval,
+  specification, review, and commit conventions in
+  [OQ-008](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work).
+- **Next:** after `OQ-008` is resolved and recorded, return to Gate 0 in the
+  [product decision sequence](planning/rewrite-owner-decision-sequence.md),
+  followed by one bounded current-product decision group at a time.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -96,6 +99,9 @@
 
 ## Gates
 
+- At the owner's direction, current-product decisions remain paused until
+  [OQ-008](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work)
+  is resolved.
 - Historical reconstruction cannot be called exhaustive until
   [OQ-001](governance/open-questions.md#oq-001---is-more-legacy-evidence-available)
   is resolved, but the owner may accept the current corpus as sufficient

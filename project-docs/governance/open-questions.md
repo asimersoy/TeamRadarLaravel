@@ -124,3 +124,42 @@ requirements for the rewrite.
   availability/security expectations, environments, release strategy, and
   testable completion evidence.
 - **Resolved by:** none
+
+## OQ-008 - What Workflow Governance Conventions Should Control Future Work?
+
+- **Status:** open
+- **Decision owner:** project owner
+- **Needed by:** resumption of current-product decision sessions
+- **Blocks:** beginning the product charter and specification approval sequence.
+- **Does not block:** read-only review of the canonical workflow, legacy
+  evidence, repository state, or proposed governance alternatives.
+- **Known context:** `DEC-003`, `DEC-004`, and `DEC-006` make the portable
+  workflow primary, separate TeamRadar-specific records, require documented
+  routing and evidence-backed completion, and keep local-only material outside
+  Git. The canonical workflow already defines authority order, record classes,
+  owner and agent roles, review independence, additive local commits, and
+  separate authorization for remote or destructive actions. It does not decide
+  the owner's preferred approval phrasing, threshold for TeamRadar-specific
+  operating-rule changes, or future specification approval shape.
+- **Decision components:**
+  1. whether any change to the portable canonical workflow requires advance
+     explicit owner approval;
+  2. when the primary agent may create or refine a TeamRadar-specific operating
+     rule under `project-docs/operations/`;
+  3. what wording or interaction constitutes owner approval versus discussion;
+  4. how material decision reversals and minor record corrections are versioned;
+  5. whether future specifications use a modular `project-docs/specs/` suite
+     with per-module status and approval;
+  6. whether the primary agent continues making coherent verified local commits
+     without asking for ceremonial approval each time;
+  7. whether owner review proceeds one bounded decision at a time while allowing
+     independent low-risk items to be batched; and
+  8. whether the project owner is the sole approving authority unless another
+     reviewer and review scope are explicitly named.
+- **Options/tradeoffs:** adopt the primary agent's recommended defaults for all
+  eight components; modify individual defaults; or require advance owner
+  approval for every workflow, documentation, and commit action at the cost of
+  slower iteration.
+- **Evidence needed:** explicit owner answers to the eight components. No
+  product evidence is needed for this governance decision.
+- **Resolved by:** none

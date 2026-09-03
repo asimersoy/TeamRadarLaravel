@@ -6,11 +6,11 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-The legacy reconstruction is ready for owner acceptance, and current-product
-decision framing has begun. The owner must still close or continue the
-historical review, then define the rewrite's purpose, permitted-use boundary,
-audience, MVP journey, decision/data behavior, and delivery constraints before
-an implementation plan can be approved. Everything under `legacy/` describes
+The workspace migration is complete. At the owner's direction, current-product
+decisions are paused until the future workflow-change, approval, specification,
+review, and commit conventions are settled. After that governance gate closes,
+the owner may close or continue the historical review and begin the bounded
+current-product decision sequence. Everything under `legacy/` describes
 historical intent or implementation; it is not a current build specification.
 
 Start with:
@@ -19,11 +19,13 @@ Start with:
 2. [Decision register](governance/decisions.md)
 3. [Open questions](governance/open-questions.md)
 4. [Deferred work](governance/deferred-work.md)
-5. [Owner decision sequence](planning/rewrite-owner-decision-sequence.md)
-6. [Active task route](routes/PLAN-2026-09-03-rewrite-readiness.md)
+5. [Workflow-governance owner question](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work)
+6. [Active workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
+7. [Queued product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
 
+- [Workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
 
