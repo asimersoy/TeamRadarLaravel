@@ -6,12 +6,12 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-The workspace migration is complete. At the owner's direction, current-product
-decisions are paused until the future workflow-change, approval, specification,
-review, and commit conventions are settled. After that governance gate closes,
-the owner may close or continue the historical review and begin the bounded
-current-product decision sequence. Everything under `legacy/` describes
-historical intent or implementation; it is not a current build specification.
+The workspace migration and workflow-governance review are complete. The
+repository is ready for the owner to close or continue the historical review
+and then begin the bounded current-product decision sequence. No product brief,
+specification module, implementation plan, or code change has been approved.
+Everything under `legacy/` describes historical intent or implementation; it
+is not a current build specification.
 
 Start with:
 
@@ -19,22 +19,24 @@ Start with:
 2. [Decision register](governance/decisions.md)
 3. [Open questions](governance/open-questions.md)
 4. [Deferred work](governance/deferred-work.md)
-5. [Workflow-governance owner question](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work)
-6. [Active workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
-7. [Queued product decision sequence](planning/rewrite-owner-decision-sequence.md)
+5. [TeamRadar workflow governance](operations/workflow-governance.md)
+6. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
+7. [Active product-readiness route](routes/PLAN-2026-09-03-rewrite-readiness.md)
 
 ## Current Planning
 
-- [Workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
+- [Specification index](specs/README.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.
 
 ## Current Operations
 
+- [Workflow governance](operations/workflow-governance.md)
 - [Workspace and repository layout](operations/workspace-layout.md)
+- [Completed workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
 - [Completed workspace-nesting route](routes/MIGRATION-2026-09-03-workspace-nesting.md)
 
 ## Legacy Reconstruction

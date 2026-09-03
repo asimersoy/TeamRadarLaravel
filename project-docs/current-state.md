@@ -1,12 +1,10 @@
 # TeamRadar Current State
 
 - **Last updated:** 2026-09-04
-- **Status:** workflow-governance owner decision required before product review
-- **Objective:** settle how future workflow changes, approvals, specifications,
-  reviews, and commits are handled; then resume the current-product decision
-  sequence
-- **Current route:**
-  [GOVERNANCE-2026-09-03](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)
+- **Status:** workflow governance settled; product Gate 0 is next
+- **Objective:** close or continue the legacy review, then define the current
+  TeamRadar product and use boundary before implementation planning
+- **Current route:** [PLAN-2026-09-03](routes/PLAN-2026-09-03-rewrite-readiness.md)
 
 ## Verified Workspace State
 
@@ -47,15 +45,21 @@
 ## Current Authority
 
 - The workflow package is project-neutral and remains unchanged.
-- Current owner decisions are limited to reconstruction-first, no required code
-  reuse, folder-level separation of workflow from project records,
-  evidence-backed execution, and separation of the non-Git workspace from the
-  nested Git repository. See the [decision register](governance/decisions.md).
+- Current owner decisions cover reconstruction-first, no required code reuse,
+  workflow/project-record separation, evidence-backed execution, the nested
+  workspace boundary, protection of the canonical workflow, and the
+  TeamRadar-specific workflow-governance contract. See the
+  [decision register](governance/decisions.md).
 - The portable workflow package remains the primary canonical general workflow.
   `DEC-007` protects its single canonical copy from modification without
   explicit advance owner approval. TeamRadar-specific workflow adaptations
   belong in separate project records; outer workspace notes are routing aids
   only.
+- `DEC-008` and the
+  [workflow-governance policy](operations/workflow-governance.md) control
+  TeamRadar-specific rule changes, approvals, decision supersession,
+  specification gates, commit boundaries, controlled operations, review
+  batching, and reviewer authority.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No new TeamRadar product scope, architecture, technology, data collection,
@@ -68,13 +72,13 @@
   memory-dump review, reachable history review, read-only recovery of the
   orphaned Electron relay history, the organized historical dossier, and the
   owner decision sequence for rewrite readiness. The repository was also moved
-  intact into the approved nested workspace layout.
-- **In progress:** owner settlement of the future workflow-change, approval,
-  specification, review, and commit conventions in
-  [OQ-008](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work).
-- **Next:** after `OQ-008` is resolved and recorded, return to Gate 0 in the
-  [product decision sequence](planning/rewrite-owner-decision-sequence.md),
-  followed by one bounded current-product decision group at a time.
+  intact into the approved nested workspace layout, and the TeamRadar-specific
+  workflow-governance contract is approved.
+- **In progress:** no product decision is yet approved; owner review is ready
+  to resume at Gate 0.
+- **Next:** answer Gate 0 in the
+  [product decision sequence](planning/rewrite-owner-decision-sequence.md), then
+  proceed through bounded current-product decision groups.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -98,12 +102,14 @@
   relative symlinks, Git refs/configuration/index identity, ignored state, and
   known dangling historical objects. The outer directory is not a Git
   repository.
+- The 2026-09-04 workflow-governance review resolved all eight `OQ-008`
+  components. The scoped project-document diff passed relative-link and
+  `git diff --check` validation, and the portable workflow package remained
+  unchanged. No application test was required for this documentation-only
+  decision unit.
 
 ## Gates
 
-- At the owner's direction, current-product decisions remain paused until
-  [OQ-008](governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work)
-  is resolved.
 - Historical reconstruction cannot be called exhaustive until
   [OQ-001](governance/open-questions.md#oq-001---is-more-legacy-evidence-available)
   is resolved, but the owner may accept the current corpus as sufficient

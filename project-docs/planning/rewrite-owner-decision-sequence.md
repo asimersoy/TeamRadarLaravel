@@ -44,6 +44,11 @@ rejected decisions, unless the owner explicitly rejects them.
 - Keep the canonical general workflow and TeamRadar-specific records separated
   inside the nested Git repository, with workspace-only sources, scratch,
   outputs, and snapshots outside Git (`DEC-006`).
+- Protect the single canonical workflow from unapproved changes and put normal
+  extensions in TeamRadar-specific records (`DEC-007`).
+- Apply the approved TeamRadar workflow-governance contract for changes,
+  approvals, specifications, commits, controlled operations, review batching,
+  and reviewer authority (`DEC-008`).
 
 ### Unapproved Assumptions
 

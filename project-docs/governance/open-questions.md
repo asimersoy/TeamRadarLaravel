@@ -127,44 +127,44 @@ requirements for the rewrite.
 
 ## OQ-008 - What Workflow Governance Conventions Should Control Future Work?
 
-- **Status:** open
+- **Status:** resolved 2026-09-04
 - **Decision owner:** project owner
 - **Needed by:** resumption of current-product decision sessions
-- **Blocks:** beginning the product charter and specification approval sequence.
-- **Does not block:** read-only review of the canonical workflow, legacy
-  evidence, repository state, or proposed governance alternatives.
-- **Known context:** `DEC-003`, `DEC-004`, and `DEC-006` make the portable
-  workflow primary, separate TeamRadar-specific records, require documented
-  routing and evidence-backed completion, and keep local-only material outside
-  Git. The canonical workflow already defines authority order, record classes,
-  owner and agent roles, review independence, additive local commits, and
-  separate authorization for remote or destructive actions. It does not decide
-  the owner's preferred approval phrasing, threshold for TeamRadar-specific
-  operating-rule changes, or future specification approval shape.
-- **Partial decision:** Component 1 is resolved by `DEC-007`. There is one
-  canonical portable workflow folder; no duplicate mutable copy will be
-  created, and the folder cannot be changed without explicit advance owner
-  approval. Normal additions and modifications belong in project-specific
-  records. Components 2 through 8 remain open.
+- **Blocks:** nothing; this formerly blocked the product charter and
+  specification approval sequence.
+- **Does not block:** current-product owner review may now begin.
+- **Known context before resolution:** `DEC-003`, `DEC-004`, and `DEC-006` make
+  the portable workflow primary, separate TeamRadar-specific records, require
+  documented routing and evidence-backed completion, and keep local-only
+  material outside Git. The canonical workflow already defines authority
+  order, record classes, owner and agent roles, review independence, additive
+  local commits, and separate authorization for remote or destructive actions.
+  Before this review, they did not decide the owner's preferred approval
+  phrasing, threshold for TeamRadar-specific operating-rule changes, or future
+  specification approval shape.
+- **Resolution:** Component 1 is resolved by `DEC-007`; components 2 through 8
+  are resolved by `DEC-008` and the linked TeamRadar-specific
+  [workflow-governance policy](../operations/workflow-governance.md).
 - **Decision components:**
   1. **Resolved by `DEC-007`:** any change to the portable canonical workflow
      requires advance explicit owner approval;
-  2. when the primary agent may create or refine a TeamRadar-specific operating
-     rule under `project-docs/operations/`;
-  3. what wording or interaction constitutes owner approval versus discussion;
-  4. how material decision reversals and minor record corrections are versioned;
-  5. whether future specifications use a modular `project-docs/specs/` suite
-     with per-module status and approval;
-  6. whether the primary agent continues making coherent verified local commits
-     without asking for ceremonial approval each time;
-  7. whether owner review proceeds one bounded decision at a time while allowing
-     independent low-risk items to be batched; and
-  8. whether the project owner is the sole approving authority unless another
-     reviewer and review scope are explicitly named.
-- **Options/tradeoffs:** adopt the primary agent's recommended defaults for
-  components 2 through 8; modify individual defaults; or require advance owner
-  approval for every project-specific workflow, documentation, and commit
-  action at the cost of slower iteration.
-- **Evidence needed:** explicit owner answers to components 2 through 8. No
-  product evidence is needed for this governance decision.
-- **Resolved by:** none
+  2. **Resolved by `DEC-008`:** routine approved-policy applications may be
+     created directly; material governance changes require advance approval;
+  3. **Resolved by `DEC-008`:** ordinary unambiguous approval is sufficient for
+     non-critical choices, with restatement and recording; critical choices
+     require deliberate explicit confirmation;
+  4. **Resolved by `DEC-008`:** material changes supersede through a new
+     decision; minor corrections may be edited in place;
+  5. **Resolved by `DEC-008`:** use modular specifications and require the
+     applicable approved set per implementation slice unless explicitly
+     overridden;
+  6. **Resolved by `DEC-008`:** create coherent, independently viable local
+     commits without per-file or ceremonial commit approval;
+  7. **Resolved by `DEC-008`:** keep high-stakes decisions bounded and permit
+     agent-judged batching of independent low-risk choices; and
+  8. **Resolved by `DEC-008`:** the current owner is the sole authority unless
+     another authority or specialist input is explicitly named and scoped.
+- **Options/tradeoffs:** resolved by the owner; rejected alternatives are
+  recorded in `DEC-008`.
+- **Evidence needed:** none; the owner answered all eight components.
+- **Resolved by:** `DEC-007` and `DEC-008`

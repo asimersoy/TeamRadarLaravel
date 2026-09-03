@@ -44,7 +44,7 @@ recorded in `MIGRATION-2026-09-03-workspace-nesting.md`.
 
 ## Authority And Boundaries
 
-- **Controlling decisions:** `DEC-001` through `DEC-006` in
+- **Controlling decisions:** `DEC-001` through `DEC-008` in
   `../governance/decisions.md`.
 - **Included:** read-only continuity audit; current-state reconciliation;
   workspace-boundary decision; blocking-question inventory; owner decision

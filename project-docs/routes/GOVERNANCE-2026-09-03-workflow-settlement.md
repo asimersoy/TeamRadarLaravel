@@ -3,9 +3,10 @@
 - **Objective:** settle how future workflow changes, TeamRadar-specific
   operating rules, approvals, specifications, owner review, and commits are
   handled before starting current-product decisions
-- **Status:** owner-input-required
+- **Status:** completed
 - **Owner:** project owner
 - **Started:** 2026-09-03
+- **Completed:** 2026-09-04
 
 ## Routed Procedures
 
@@ -39,7 +40,7 @@
 - **Excluded:** current product charter, permitted-use boundary, target users,
   features, matching or reputation behavior, data collection, architecture,
   technology, implementation, release, and all legacy-code changes.
-- **Dependencies:** explicit owner resolution of
+- **Dependencies:** resolved by explicit owner resolution of
   [OQ-008](../governance/open-questions.md#oq-008---what-workflow-governance-conventions-should-control-future-work).
 - **Risks:** treating discussion as approval, allowing a project rule to weaken
   the canonical workflow, duplicating authority across files, or starting
@@ -66,12 +67,24 @@
   story-writing workflow. The owner corrected that statement before any action.
   Repository inspection showed no partial copy, rename, or package change; the
   corrected one-package instruction is authoritative.
+- **2026-09-04 — Components 2 through 8:** approved as `DEC-008`. The owner
+  approved bounded agent authority for routine project-specific rules;
+  contextual approval semantics; traceable decision changes; modular
+  specification gates with narrow explicit overrides; independently viable
+  local commits; exact advance authorization for controlled operations;
+  risk-scaled decision batching; and sole-owner authority unless another
+  reviewer or specialist input is explicitly named and scoped.
 
-## Intended Verification
+## Verification
 
-- Reconcile every owner answer against the eight `OQ-008` components; component
-  1 is recorded and components 2 through 8 remain open.
-- Confirm the portable workflow package remains unchanged unless its exact
-  change is separately approved.
-- Check project-document links, `git diff --check`, complete diff scope, current
-  state, decision supersession, commit state, and remote-action state.
+- All eight `OQ-008` components reconciled to `DEC-007`, `DEC-008`, and
+  `../operations/workflow-governance.md`.
+- The portable workflow package has no diff.
+- All relative project-document links resolve and `git diff --check` passes.
+- The complete diff is limited to repository routing plus TeamRadar-specific
+  governance, operations, planning, route, state, and specification-index
+  records. No legacy application or historical evidence changed.
+- No application test was run because this unit changes documentation and
+  authority records only.
+- No push, pull, pull request, deployment, destructive action, publication, or
+  history rewrite occurred.

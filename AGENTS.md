@@ -19,6 +19,9 @@ and non-versioned storage, but it is not project authority.
 - TeamRadar-specific workflow adaptations and operating decisions belong under
   `project-docs/`, especially `project-docs/operations/` and the governance
   registers.
+- Apply `project-docs/operations/workflow-governance.md` for TeamRadar-specific
+  approval semantics, decision changes, specification gates, commit design,
+  controlled operations, review batching, and reviewer authority.
 - Prefer `../scratch/` for volatile task work and artifact builders,
   `../outputs/<thread-id>/` for generated deliverables, `../sources/` for raw
   local inputs, and `../snapshots/` for recovery material.

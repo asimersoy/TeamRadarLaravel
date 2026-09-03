@@ -171,3 +171,61 @@
 - **Related decisions:** strengthens `DEC-003` and `DEC-006`
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-008 - Adopt The TeamRadar Workflow Governance Contract
+
+- **Date:** 2026-09-04
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Apply the TeamRadar-specific operating contract in
+  `project-docs/operations/workflow-governance.md`:
+  1. the primary agent may create or refine project-specific rules that merely
+     apply approved policy, but must obtain owner approval before changing
+     authority, approval requirements, gates, risk tolerance, scope, or the
+     definition of done;
+  2. unambiguous ordinary owner language may approve non-critical choices; the
+     agent must restate and durably record the precise interpretation, while
+     critical choices require a deliberate explicit confirmation even though
+     no magic approval phrase is required;
+  3. material decision changes receive a new superseding decision, minor
+     corrections may be edited in place with Git history, and apparent
+     contradictions require clarification;
+  4. future specifications use a modular `project-docs/specs/` suite, and each
+     implementation slice requires its applicable specifications to be
+     approved unless the owner explicitly records a narrow override;
+  5. local commits are additive, coherent, reversible, independently sound
+     units rather than one commit per file; deployable changes must be safe to
+     push or deploy without depending on a later commit for correctness;
+  6. pushes, pull requests, deployments, destructive operations, and history
+     rewrites require separate exact authorization, including before beginning
+     execution of a plan that intends one of those operations;
+  7. owner review uses bounded decision groups, with high-stakes matters kept
+     small and independent low-risk, low-tradeoff, easily reversible choices
+     batchable at the primary agent's judgment; and
+  8. the current owner is the sole approving authority unless the owner
+     explicitly names another owner or reviewer and their domain and scope, or
+     explicitly identifies pasted specialist input as approved for a stated
+     domain.
+- **Reason:** Establish predictable interaction, approval, specification,
+  review, and version-control behavior before product decisions begin while
+  avoiding unnecessary cost and ceremonial back-and-forth.
+- **Alternatives considered:** require a fixed approval keyword; require owner
+  approval for every project-document change and local commit; create one
+  monolithic specification; commit per file; batch all decisions regardless of
+  risk; or infer reviewer authority from unattributed material. None was
+  selected.
+- **Consequences:** Routine approved-policy applications can proceed and be
+  reported afterward. Material governance changes remain owner gates. Explicit
+  overrides are narrow, restated, and recorded; they do not grant unrelated
+  remote, destructive, production, publication, or history-rewrite authority.
+  Commit boundaries must be chosen around independently viable units, not file
+  count.
+- **Affected records:** repository `AGENTS.md`, current state, open questions,
+  `project-docs/operations/workflow-governance.md`, specification index,
+  planning records, and active/completed task routes
+- **Return condition:** revisit only through an explicit owner instruction that
+  identifies the affected convention; record material changes as a new
+  superseding decision and assess dependent specifications, plans, and commits.
+- **Related decisions:** implements `DEC-003`, `DEC-004`, and `DEC-007`
+- **Supersedes:** none
+- **Superseded by:** none
