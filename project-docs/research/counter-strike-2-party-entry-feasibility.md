@@ -1,8 +1,8 @@
 # QGuard Counter-Strike 2 Party-Entry Feasibility
 
 - **Record type:** current focused research findings
-- **Status:** authoritative-source research complete; owner game-selection
-  review and live verification required
+- **Status:** research complete; Looking to Play test proposal superseded by
+  `DEC-019`; Steam communication/group follow-up recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-011`, `DEC-013`, and `DEC-015` through `DEC-018`, plus the
@@ -11,6 +11,16 @@
 - **Date sensitivity:** high; recheck before a live test, integration
   specification, or implementation
 - **Implementation authority:** none
+
+## Current Disposition
+
+On 2026-09-06, the owner decided that Looking to Play does not work for
+QGuard's intended flow. `DEC-019` therefore rejects it as a product route and
+cancels the live-test proposal below before activation. The documented feature
+facts remain valid historical research; they no longer route work.
+
+The current alternative assessment is the
+[Steam non-friend communication and group report](steam-nonfriend-communication-and-group-feasibility.md).
 
 ## Executive Finding
 
@@ -41,17 +51,16 @@ implemented in the game/AppID context. They do not give an unrelated QGuard
 application Valve's CS2 publisher access or a supported right to automate the
 CS2 client.
 
-The practical conclusion is **`supported-with-conditions`**: CS2 deserves a
-current two-account test and an owner comparison with Valorant. It should not
-replace Valorant in the decision register until the owner deliberately chooses
-that change and the tested flow is sufficiently deterministic for matched
-QGuard users.
+At the time of this pass, the research conclusion was
+**`supported-with-conditions`** and proposed a two-account test. `DEC-019`
+subsequently rejected the method for product-fit reasons, so this conclusion
+must not be read as a current recommendation.
 
 ## Party-Entry Options
 
 | Candidate mechanism | Friendship-free? | QGuard fit | Evidence state |
 |---|---|---|---|
-| Looking to Play: recipient advertises availability; host finds and invites them; recipient accepts in CS2 | Yes in the documented model | Plausible, but exact QGuard users must reliably appear and identify one another in the regional list | Current-CS2 existence established by 2023 first-party release notes; exact 2026 behavior and reliability untested |
+| Looking to Play: recipient advertises availability; host finds and invites them; recipient accepts in CS2 | Yes in the documented model | Rejected for QGuard by `DEC-019` | Current-CS2 existence established by 2023 first-party release notes; exact 2026 behavior was not tested before rejection |
 | Nearby/Public Lobby: host exposes a lobby to nearby players; recipients select it from Public Lobbies | Yes in the documented model | Plausible, but discovery may be noisy, region-limited, and open to unintended joiners | First-party CS:GO-era page remains hosted; current CS2 controls unverified |
 | Steam Group Lobby: host publishes the lobby to a selected Steam Group; group members join it | Yes after shared group membership | More targeted than a regional list, but adds persistent group membership and may expose community association | First-party CS:GO-era page remains hosted; current CS2 controls unverified |
 | Normal Steam/CS2 lobby invite to an already-known account | Not established for arbitrary non-friends through current player UI | Good if a supported targeting control exists | Steamworks can invite a valid SteamID at the game-code level; current CS2 player-facing arbitrary-user targeting was not documented |
@@ -60,11 +69,12 @@ QGuard users.
 | Connect to a community/dedicated server by IP or Discord server link | Can be friendship-free | Does not solve the ordinary Premier/Competitive party requirement | Officially documented, but excluded by the task's counting rule |
 | QGuard programmatically creates, invites, or joins the CS2 lobby | Not a supported QGuard capability on current evidence | Would be low-friction, but crosses client-control and provider-access boundaries | Steamworks features belong to the implementing game/AppID; protected lobby Web APIs require publisher access |
 
-## Most Promising User-Mediated Flow
+## Superseded Looking To Play Flow Proposal
 
-The first flow to test is Looking to Play because current CS2 release evidence
-names it directly and it avoids both friendship and persistent Steam Group
-membership:
+This was the first flow proposed for testing because current CS2 release
+evidence names it directly and it avoids both friendship and persistent Steam
+Group membership. `DEC-019` supersedes the proposal; the sequence is retained
+only to show what was assessed:
 
 1. QGuard identifies the intended host and recipients using their verified
    SteamIDs and displays the Steam persona information needed to recognize one
@@ -81,11 +91,12 @@ enough. If list membership is regional, short-lived, limited, ranked, filtered,
 or nondeterministic, it may satisfy “possible without friends” while still
 failing QGuard's low-friction goal.
 
-Steam Group Lobby and Nearby/Public Lobby are ordered fallback experiments.
-They should be tested only through controls visibly available in the current
-client. QGuard must not construct an undocumented URI, scrape presence, read
-client memory, or simulate input to turn an old or internal mechanism into an
-assumed product feature.
+Steam Group Lobby and Nearby/Public Lobby were identified as fallback
+experiments. The current Steam communication/group assessment now owns that
+route. Any test must use controls visibly available in the current client;
+QGuard must not construct an undocumented URI, scrape presence, read client
+memory, or simulate input to turn an old or internal mechanism into an assumed
+product feature.
 
 ## Identity And Rank Follow-Through
 
@@ -151,7 +162,7 @@ This is a provider-policy fit assessment, not legal advice or Valve approval.
 
 | Dimension | Counter-Strike 2 | Valorant |
 |---|---|---|
-| Friendship-free party entry | Credible: Looking to Play directly supports non-friend invitations; Nearby and Steam Group lobbies are additional historical first-party candidates | Credible: host can copy the official lobby link and share it anywhere |
+| Friendship-free party entry | Feature evidence exists for Looking to Play, but the owner rejected it for QGuard; Steam Group lobbies remain a historical first-party candidate | Credible: host can copy the official lobby link and share it anywhere |
 | Deterministic delivery to an exact QGuard match | Unproven; depends on exact users appearing in or finding the relevant list/lobby | Unproven for the precise non-Riot-friend/non-Discord-friend recipient, but direct link delivery is simpler if it passes |
 | Third-party programmatic party control | Not supported for QGuard on current evidence | No public supported ordinary-party control found |
 | Web identity | Official third-party Steam OpenID is documented | Riot identity/player data requires the applicable approved RSO path |
@@ -164,7 +175,11 @@ identity story is easier, while Valorant currently has the cleaner documented
 handoff. Both need current behavioral verification before QGuard relies on the
 party-entry mechanism.
 
-## Required Live Verification
+## Superseded Live-Verification Proposal
+
+`DEC-019` cancels this Looking to Play test before activation. It may not be
+run or used as a current acceptance gate unless a later owner decision
+explicitly restores it.
 
 ### Phase A - Looking To Play
 
@@ -210,6 +225,12 @@ Investigate CS2 as another possible game. If a friendship-free party path
 exists, pursue its bounded feasibility rather than assuming Valorant is the
 only option. Valorant remains available if CS2 is not suitable.
 
+### Subsequent Owner Decision
+
+Looking to Play does not work for QGuard's intended flow and is no longer a
+party-entry candidate (`DEC-019`). This is a product-fit decision, not a claim
+that the Steam/CS2 feature no longer exists.
+
 ### Verified Facts
 
 The claims above supported by first-party Valve, Steam, CS2, and Discord
@@ -218,8 +239,8 @@ ledger](game-api-source-ledger.md).
 
 ### Bounded Inferences
 
-- Looking to Play is likely the strongest current no-friend experiment because
-  it is expressly named in CS2 release notes.
+- Before `DEC-019`, Looking to Play was assessed as the strongest documented
+  no-friend experiment because it is expressly named in CS2 release notes.
 - Steam Group and Nearby lobbies may still work, but their CS:GO-era UI
   descriptions require present-client verification.
 - A direct link would be preferable, but no current official CS2 source found
@@ -227,35 +248,31 @@ ledger](game-api-source-ledger.md).
 
 ### Proposals
 
-- Run the two-phase verification packet above before selecting CS2.
-- If Phase A passes, compare its measured time and steps against the Valorant
-  lobby-link test rather than deciding from documentation alone.
+- **Superseded by `DEC-019`:** run the Looking to Play verification packet and
+  compare it with Valorant.
+- **Current:** investigate Steam group chat and Community Group membership as
+  separate communication and possible party-entry routes.
 
 ### Open Owner Decision
 
-The current `DEC-018` Valorant selection has not been superseded. The owner must
-decide whether to:
-
-1. keep Valorant selected and retain CS2 as a researched fallback; or
-2. supersede `DEC-018`, make CS2 the provisional first candidate, and run the
-   CS2 live test before the Valorant test; or
-3. keep both candidates open until both user-mediated party flows are tested.
+The current `DEC-018` Valorant selection has not been superseded. Whether CS2
+remains a candidate now depends on the separate Steam Community Group/current-
+CS2 lobby assessment and later owner disposition, not Looking to Play.
 
 ### Unperformed And Deferred Work
 
 - No live CS2 or Valorant test, Steam Group action, OpenID registration, Web API
   call, client inspection, credentials, provider contact, or implementation
   occurred.
-- Current CS2 UI behavior, deterministic exact-user discovery, rank retrieval,
-  and any direct party link remain unverified.
+- Current Steam group-chat and CS2 Community Group lobby behavior, rank
+  retrieval, and any direct party link remain unverified.
 
 ## Recheck Triggers
 
-- Recheck official CS2 feature availability immediately before live testing
-  and implementation.
-- Recheck if Valve changes Looking to Play, lobby privacy, Prime/Premier
-  eligibility, OpenID/Web API terms, Subscriber Agreement automation language,
-  or exposes a supported party link/API.
+- Recheck Looking to Play only if the owner later reopens the rejected route.
+- Recheck lobby privacy, Prime/Premier eligibility, OpenID/Web API terms,
+  Subscriber Agreement automation language, or any supported party link/API;
+  recheck Looking to Play only after an owner reopening.
 - Route any proposed SteamID, profile, rank, group-membership, lobby, block, or
   communication data through a field-level privacy and security review before
   collection.

@@ -106,12 +106,14 @@ Historical unknowns do not automatically become requirements.
   (`DEC-015`). `DEC-016` prefers friendship-free ordinary-party entry and
   treats a friend/invite flow as a higher-friction fallback. `DEC-018` selects
   Valorant as the initial game subject to the non-friend lobby-link test before
-  reliance. Later CS2 research found a credible non-friend Looking to Play
-  route and historical first-party Nearby/Steam Group lobby routes, all still
-  requiring current behavioral verification. The owner has not yet said
-  whether that evidence replaces Valorant, remains a fallback, or keeps both
-  candidates open. Mode, platform/cross-play, launch region/language, primary
-  user, party shape, and relationship duration remain open.
+  reliance. Later CS2 research found a documented non-friend Looking to Play
+  route, but the owner rejected it for QGuard under `DEC-019`. Steam research
+  now shows a promising group-chat text/voice path and public/request-based
+  Community Group membership; whether a Community Group still permits non-
+  friend ordinary-party entry in current CS2 is unverified. The owner has not
+  yet said whether a passing group route would replace Valorant, remain a
+  fallback, or keep both games open. Mode, platform/cross-play, launch region/
+  language, primary user, party shape, and relationship duration remain open.
 - **Decision components:** **currently approved but reopened for comparison:**
   Valorant as initial game under `DEC-018`. **Open:** whether CS2 supersedes or
   joins that direction; mode, platform/cross-play, launch region/language,
@@ -219,8 +221,9 @@ Historical unknowns do not automatically become requirements.
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
 - **Blocks:** replacing the current first-game decision without owner approval;
-  treating either the Valorant link or CS2 Looking to Play as dependable;
-  approving the rank/access integration; or approving client automation.
+  treating either the Valorant link or a Steam Community Group-to-CS2 party
+  path as dependable; approving the rank/access integration; or approving
+  client automation.
 - **Does not block:** product-charter decisions that do not depend on a game or
   integration, or current authoritative-source research.
 - **Known context:** The owner values reliable rank retrieval and local-client
@@ -244,21 +247,24 @@ Historical unknowns do not automatically become requirements.
   [general findings](../research/game-api-feasibility-findings.md) and focused
   [party-entry findings](../research/party-entry-and-policy-fit.md). A later
   [CS2 follow-up](../research/counter-strike-2-party-entry-feasibility.md)
-  established a credible official non-friend route through Looking to Play and
-  a documented Steam OpenID identity path. It found no current player-visible
-  shareable ordinary-party link/code, supported QGuard lobby-control interface,
-  or all-player current-rank endpoint. Exact-user discovery and present client
-  behavior require a live test.
+  established feature evidence for Looking to Play and a documented Steam
+  OpenID identity path, but `DEC-019` rejects Looking to Play for QGuard. The
+  later [Steam communication/group follow-up](../research/steam-nonfriend-communication-and-group-feasibility.md)
+  found shareable group-chat links with text/voice and non-friend Community
+  Group admission. It found no supported QGuard chat/group management API, and
+  no current first-party confirmation that the old Steam Group Lobby path still
+  works in CS2. Current behavioral tests remain required.
 - **Owner decision:** Select Valorant for current product planning. Before
   relying on its official link, test two current accounts in a supported PC
   region/client state where the recipient is neither the host's Riot friend nor
   formal Discord friend (`DEC-018`). This remains current but is now subject to
   a deliberate owner comparison with CS2; the research alone did not
   supersede it.
-- **Evidence needed:** owner disposition of the reopened comparison; the
-  applicable scoped two-account party-entry test or tests; the selected rank
-  behavior and provider-access path; and fresh provider evidence before any
-  integration specification or application.
+- **Evidence needed:** owner disposition of the remaining comparison; the
+  applicable scoped group-chat and Community Group/CS2 party tests; the
+  Valorant link test if Valorant reliance advances; the selected rank behavior
+  and provider-access path; and fresh provider evidence before any integration
+  specification or application.
 - **Resolved by:** `DEC-018` remains current for game selection; integration
   and reopened comparison unresolved
 
@@ -282,16 +288,17 @@ Historical unknowns do not automatically become requirements.
   formation remains the friend/invite flow. `DEC-017` keeps a conditional
   prototype-first Riot application path available when the Valorant flow needs
   RSO. `DEC-018` selects Valorant and requires the non-friend link test before
-  reliance. CS2 Looking to Play now provides another credible friendship-free
-  route, but it is discovery-and-invite rather than a direct link/code, so its
-  place in the preference order and its acceptable discovery friction remain
-  owner decisions.
+  reliance. `DEC-019` rejects CS2 Looking to Play. Steam group-chat invitation
+  links may solve text/voice coordination without friendship, while a Steam
+  Community Group may provide the old group-lobby bridge. Communication and
+  group membership do not prove current CS2 party entry, and persistent group
+  membership creates separate privacy, moderation, and admission friction.
 - **Options/tradeoffs:** use the later-approved QGuard or Discord coordination
-  surface with a passing Valorant link; use a passing CS2 Looking to Play flow;
-  keep both available; or return to the owner before using friend invites,
-  another party flow, another game, or a materially different Custom Match
-  product. Rank still requires an approved official, partial, or truthfully
-  labelled fallback behavior.
+  surface with a passing Valorant link; use Steam Chat for communication only;
+  accept a passing Community Group-to-CS2 party flow; or return to the owner
+  before using friend invites, another party flow, another game, or a
+  materially different Custom Match product. Rank still requires an approved
+  official, partial, or truthfully labelled fallback behavior.
 - **Evidence needed:** `OQ-009` research findings, the applicable party-entry
   live test or tests, plus the owner's alternate flow proposals and tolerance
   for added user friction.

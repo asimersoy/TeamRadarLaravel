@@ -18,6 +18,12 @@ This report's comparative conclusions are scoped to Valorant and Apex. A later
 a credible non-friend Looking to Play route and reopened the owner comparison;
 it did not supersede `DEC-018` by itself.
 
+On 2026-09-06, the owner rejected Looking to Play as a QGuard flow under
+`DEC-019`. The feature finding remains historical evidence, not a current
+proposal. Steam group chat can plausibly provide non-friend text/voice, while
+the distinct Community Group-to-current-CS2 party route remains unverified in
+the [Steam follow-up](steam-nonfriend-communication-and-group-feasibility.md).
+
 Valorant now has the closest documented match to the owner's preferred party
 flow. Riot and Discord's official PC integration lets a lobby host copy a
 party link and place it in a Discord server, direct message, or elsewhere. This
@@ -177,9 +183,11 @@ reliance in a specification or implementation, not further product planning.
 If it fails, the workflow returns to the owner before substituting another
 party flow or game.
 
-The later CS2 evidence reopens the comparison without changing this recorded
-disposition. See the decision register's subsequent review note under
-`DEC-018`.
+The later CS2 evidence initially reopened the comparison without changing this
+recorded disposition. `DEC-019` then rejected Looking to Play while leaving the
+distinct Steam Community Group/current-CS2 route under review. See the decision
+register's subsequent review note under `DEC-018` and the current Steam follow-
+up.
 
 ### Open Questions
 

@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-018`
+- **Authority:** `DEC-009` through `DEC-019`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -61,14 +61,14 @@ offers an approval-gated opt-in LFG/RSO path and an official user-mediated
 lobby link; Apex's documented LiveAPI lobby control is for Custom Matches. See
 the [research findings](../research/game-api-feasibility-findings.md).
 
-A subsequent first-party CS2 review found a credible friendship-free ordinary-
-party route through Looking to Play, plus historical Nearby/Public and Steam
-Group lobby routes that warrant present-client testing. It found no current
-official player-visible shareable ordinary-party link/code, supported QGuard
-lobby-control interface, or all-player exact-rank endpoint. Steam OpenID does
-provide an official account-identity path. CS2 is therefore a serious
-conditional candidate, not a newly approved first game. See the
-[CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md).
+A subsequent first-party CS2 review found feature evidence for Looking to Play,
+but `DEC-019` rejects that mechanism for QGuard. Steam OpenID still provides an
+official account-identity path. Research now continues only through the
+separate possibility that Steam Community Group membership permits non-friend
+entry into a current ordinary CS2 party. The official description of that
+bridge is CS:GO-era and needs present-client verification. See the
+[CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md)
+and [Steam communication/group follow-up](../research/steam-nonfriend-communication-and-group-feasibility.md).
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
@@ -76,14 +76,13 @@ official friendship-free ordinary-lobby code/link, and use the documented
 friend/invite/accept flow only as a fallback. A Custom Match, Private Match, or
 tournament code does not satisfy the normal public/ranked-party need unless the
 owner later changes the product boundary. Valorant has an official user-copied
-PC lobby-link candidate; CS2 has a documented non-friend Looking to Play route
-whose exact-user usability is unverified; Apex has no comparable documented
-feature in the reviewed first-party material. Looking to Play is not itself a
-link/code and therefore requires an owner decision about where it belongs in
-the approved preference order. Before QGuard may depend on either live
-candidate, the applicable scoped two-account test must pass. `DEC-018` still
-specifically requires the Valorant test while its selection remains current.
-See the focused
+PC lobby-link candidate; `DEC-019` rejects CS2 Looking to Play; and Apex has no
+comparable documented feature in the reviewed first-party material. Steam
+group-chat links may solve non-friend text/voice coordination, but are not CS2
+party links. A Community Group-to-CS2 lobby path remains a separate unverified
+candidate. Before QGuard may depend on either game path, the applicable scoped
+two-account test must pass. `DEC-018` still specifically requires the Valorant
+test while its selection remains current. See the focused
 [party-entry and policy findings](../research/party-entry-and-policy-fit.md).
 
 If the approved Valorant flow requires RSO, a provider-independent working or
@@ -100,10 +99,16 @@ Discord bot might instead create temporary private text and voice rooms for
 matched groups, with possible session-audio retention so an operator could
 review evidence after a report.
 
-That Discord and voice behavior is a proposal, not an approved foundation or
-implementation requirement. Temporary voice rooms without recording, session
-recording for later report review, participant-submitted evidence, and live or
-automated monitoring are separate choices. See the
+Steam group chat is now another researched coordination proposal. It can
+provide text and voice to group members and may admit non-friends through a
+shareable link, subject to a behavioral test. No supported QGuard interface was
+found for automatically creating or cleaning up those rooms, and Steam voice
+does not provide QGuard with a documented recording or monitoring interface.
+
+The Discord and Steam coordination options are proposals, not approved
+foundations or implementation requirements. Temporary voice rooms without
+recording, session recording for later report review, participant-submitted
+evidence, and live or automated monitoring are separate choices. See the
 [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
 
 ### Rank Source

@@ -18,6 +18,11 @@ This report compares the original Valorant and Apex candidates. The later
 credible non-friend Looking to Play route and reopens the owner comparison; it
 does not retroactively change the bounded findings below.
 
+On 2026-09-06, the owner rejected Looking to Play as a QGuard flow under
+`DEC-019`. The historical CS2 finding remains evidence about the feature, not
+a current recommendation. The remaining Steam alternative is assessed in the
+[non-friend communication and group follow-up](steam-nonfriend-communication-and-group-feasibility.md).
+
 The reviewed public first-party material does not document a supported path in
 either candidate that provides both:
 

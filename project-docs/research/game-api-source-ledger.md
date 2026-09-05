@@ -4,8 +4,8 @@
 - **Status:** current research pass complete; recheck before implementation
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-018`, plus
-  the owner's 2026-09-05 instruction to investigate CS2 as another candidate
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-019`, plus
+  the owner's 2026-09-05 and 2026-09-06 CS2/Steam research instructions
 - **Created:** 2026-09-05
 - **Implementation authority:** none
 
@@ -48,10 +48,16 @@
 | STM-003 | Steam / Valve | [User Authentication and Ownership](https://partner.steamgames.com/doc/features/auth) | 2026-09-05 | Third-party websites can use Steam OpenID to authenticate a user and obtain the user's SteamID | Identifies the account only; does not prove rank, Prime state, lobby, or provider approval | Current first-party developer documentation |
 | STM-004 | Steam / Valve | [Steam Web API reference](https://partner.steamgames.com/doc/webapi/ISteamUserStats) | 2026-09-05 | Generic user-stat, achievement, and schema methods; keys and AppIDs govern access | No reviewed first-party entry states that all-player current CS Rating or per-map Skill Groups are exposed | Current first-party API reference |
 | STM-005 | Steam / Valve | [Steam Web API Terms of Use](https://steamcommunity.com/dev/apiterms) | 2026-09-05 | Permits documented Web API use subject to end-user request, privacy/storage disclosure, key protection, no implied endorsement, service limits, and no unfair advantage | Legal text is not interpreted as a QGuard approval; last-updated label is 2010 | Current first-party terms page |
-| STM-006 | Steam / Valve | [Steam Subscriber Agreement](https://store.steampowered.com/subscriber_agreement/english) | 2026-09-05 | Restricts unauthorized software controlling Steam/game interfaces and non-human-controlled automation interacting with Steam services | Applies directly to client-control proposals, not as a blanket objection to manual official LFG/lobby actions; not legal advice | Current first-party agreement; accessed 2026-09-05 |
+| STM-006 | Steam / Valve | [Steam Subscriber Agreement](https://store.steampowered.com/subscriber_agreement/english) | 2026-09-06 | Restricts unauthorized software controlling Steam/game interfaces and non-human-controlled automation interacting with Steam services | Applies directly to client-control proposals, not as a blanket objection to manual official LFG/lobby/chat actions; not legal advice | Current first-party agreement; revision date 2026-04-20 |
 | CS2-007 | Counter-Strike / Valve | [CS2 Competitive Skill Groups and Profile Rank](https://help.steampowered.com/en/faqs/view/3204-9FB1-967F-1AC6) | 2026-09-05 | Assigned per-map Competitive Skill Groups are shown in party lobbies and to players sharing the lobby; distinguishes Skill Group, CS Rating, and Profile Rank | In-client visibility is not a QGuard API and does not establish all-player Premier-rating access | Current first-party support documentation |
 | CS2-008 | Counter-Strike / Valve | [CS2 Prime Status and Free to Play](https://help.steampowered.com/en/faqs/view/4D81-BB44-4F5C-9B6B) | 2026-09-05 | Prime is required for CS Rating and Competitive Skill Groups; Premier requires Prime and Profile Level 10 | Product eligibility facts, not a data-access interface | Current first-party support documentation |
 | CS2-009 | Counter-Strike / Valve | [Release Notes for 2019-05-14](https://blog.counter-strike.net/fi/2019/05/24198/) | 2026-09-05 | Players can advertise for party invitations, other parties can invite them from Looking to Play, and recipients can accept from the main menu | CS:GO-era release notes; current CS2 UI and exact-user discovery require a live test | Historical first-party release notes; 2019-05-14 |
+| STM-007 | Steam / Valve | [Steam Chat feature page](https://steamcommunity.com/updates/chatupdate?l=english) | 2026-09-06 | Persistent group chats; multiple text and voice channels; invitation links shareable inside or outside Steam; web/client joining; encrypted server-relayed voice | Product page originated with the 2018 Chat update; it does not expressly state a current tested non-friend invitation or provide a management API | First-party product documentation; features labelled available to everyone |
+| STM-008 | Steam / Valve | [Steam Friends & Chat support](https://help.steampowered.com/en/faqs/view/595C-42F4-3B66-E02F) | 2026-09-06 | Current user-visible group-chat creation/saving and group voice-channel flow; group members can freely join a voice channel | Creation instructions begin with selected friends; page does not fully describe external group-chat invitation-link prerequisites or automation | Current first-party support documentation |
+| STM-009 | Steam / Valve | [Steam Community Groups support](https://help.steampowered.com/en/faqs/view/4030-BC19-140F-45DA) | 2026-09-06 | Public self-join, restricted membership request, closed/invite-only rules, role administration, ten-group ownership limit, immutable names, and deletion only after all members leave | Direct member invitations are limited to friends; Community Group membership is distinct from a saved chat-group invitation | Current first-party support documentation |
+| STM-010 | Steam / Valve | [Steam community-content rules](https://help.steampowered.com/en/faqs/view/6862-8119-C23E-EA7B) | 2026-09-06 | Public or private Community Groups include a discussion hub, announcement system, and group chatroom | Does not establish CS2 party linkage or a QGuard management interface | Current first-party support documentation |
+| STM-011 | Steam / Valve | [ISteamParties reference](https://partner.steamgames.com/doc/api/ISteamParties) | 2026-09-06 | An implementing game can advertise its own multiplayer session as a party beacon in a Steam chat-room group and supply the join string | Game/AppID-side Steamworks integration; no evidence CS2 exposes this to QGuard or implements a QGuard-usable beacon | Current first-party developer documentation |
+| STM-012 | Steam / Valve | [Steamworks Web API reference](https://partner.steamgames.com/doc/webapi) | 2026-09-06 | Inventory of supported current Web API interfaces and methods | No public chat-group creation, invite-link, membership, voice-channel, or Community Group creation method was found in the reviewed inventory | Current first-party developer reference; negative finding bounded to reviewed inventory |
 | DIS-CS2-001 | Discord | [Game Servers](https://support.discord.com/hc/en-us/articles/35370817986839-Game-Servers) | 2026-09-05 | Discord documents sharing/joining a CS2 dedicated/community game server and recommends Steam favorites | Server connection is not an ordinary Premier/Competitive pre-match party | Current first-party product documentation; 2026 |
 | APEX-001 | Apex Legends / EA | [Revelry Patch Notes: LiveAPI 2.0](https://www.ea.com/technology/news/revelry-patch-notes) | 2026-09-05 | Official PC LiveAPI; WebSockets/Protobuf; ten lobby requests specifically for Custom Match | Detailed schema lives in game installation; announcement does not document ordinary-party control | First-party release notes; 2023 |
 | APEX-002 | Apex Legends / EA | [Arsenal Patch Notes: LiveAPI improvements](https://www.ea.com/en-gb/playtesting/news/arsenal-patch-notes) | 2026-09-05 | WSS, PSK request validation, broadcast delay, and documentation additions | Historical update; detailed current schema still in game installation | First-party release notes; 2023 |
@@ -98,3 +104,16 @@ material establishes a current-CS2 lineage for Looking to Play and documents
 historical Nearby and Steam Group lobby paths that do not require Steam
 friendship. Their present exact-user reliability remains a live-test question,
 not a negative conclusion.
+
+The 2026-09-06 Steam communication/group follow-up additionally found no
+documented public interface that lets QGuard create a saved Steam group chat,
+generate its invitation link, manage a Steam voice channel, add/remove chat
+members, or create/manage a Steam Community Group. `ISteamParties` lets an
+implementing game advertise its own join string in a chat-room group; it does
+not establish CS2 implementation or third-party QGuard control over AppID 730.
+
+Positive findings remain separate: Steam documents group-chat links shareable
+outside Steam, text and voice channels, public Community Group self-join, and
+restricted membership requests. A current two-account test is still required
+for the exact non-friend group-chat invitation, while current CS2 group-lobby
+behavior remains unverified.

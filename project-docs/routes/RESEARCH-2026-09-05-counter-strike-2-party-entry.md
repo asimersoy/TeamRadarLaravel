@@ -5,8 +5,9 @@
   ordinary matchmaking party without first becoming Steam friends, and, if it
   does, continue far enough into rank, access, and policy constraints to show
   whether CS2 merits an owner game-selection review alongside Valorant
-- **Status:** research complete; owner game-selection comparison and live
-  verification remain open; no game-selection change approved
+- **Status:** research complete; the later owner decision in `DEC-019`
+  rejected the proposed Looking to Play route, while a separate Steam group
+  route remains under review; no game-selection change approved
 - **Owner:** primary Codex agent for research; project owner for any product or
   game-selection decision
 - **Started:** 2026-09-05
@@ -129,11 +130,17 @@ developer does not by itself establish a QGuard-usable CS2 flow.
 
 - `DEC-018` remains current because the research instruction did not
   unambiguously select CS2 over Valorant.
-- The owner must choose whether CS2 is a fallback, supersedes Valorant as the
-  provisional first candidate, or stays co-equal until both flows are tested.
-- A two-account current-client test is required before QGuard relies on Looking
-  to Play. No account, client, credential, API call, provider contact, or live
-  experiment occurred in this route.
+- On 2026-09-06, the owner rejected Looking to Play for QGuard under `DEC-019`.
+  The proposed Looking to Play test is cancelled and is no longer an open gate.
+- A separate follow-up now owns the remaining Steam questions: whether non-
+  friends can share a Steam text/voice space and whether Steam Community Group
+  membership still provides current CS2 ordinary-party entry. See the
+  [Steam communication and group route](RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md).
+- The owner must later decide whether a passing Community Group route makes CS2
+  a fallback, supersedes Valorant as the provisional first candidate, or keeps
+  both candidates open for comparison.
+- No account, client, credential, API call, provider contact, or live experiment
+  occurred in this route.
 
 ## Verification
 

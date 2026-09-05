@@ -559,3 +559,32 @@ kept Valorant available; it did not unambiguously select a new first game.
 `DEC-018` therefore remains the approved selection until the owner deliberately
 keeps it, supersedes it with CS2, or keeps both candidates open for testing.
 See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feasibility.md).
+
+## DEC-019 - Reject Looking To Play As A QGuard Party-Entry Flow
+
+- **Date:** 2026-09-06
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Do not use or test Looking to Play as QGuard's CS2 party-entry
+  route. Continue investigating whether non-friends can share a Steam text or
+  voice chat or join the same Steam Community Group, while keeping communication
+  success separate from proof of ordinary CS2 party entry.
+- **Reason:** The owner determined that Looking to Play does not work for the
+  intended QGuard flow. No more specific rationale is recorded, so this is a
+  product-fit decision rather than a factual claim that Valve removed or broke
+  the feature.
+- **Alternatives considered:** retain Looking to Play as the first CS2 live-
+  test candidate. The owner rejected that direction.
+- **Consequences:** The proposed Looking to Play test is cancelled before
+  activation and must not route future CS2 planning. Steam group chat may still
+  solve communication, while Steam Community Group membership may justify a
+  separate current-client party-entry test. Neither result silently changes
+  the current Valorant selection in `DEC-018`.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-009`,
+  `OQ-010`, CS2 research, source ledger, and owner decision sequence
+- **Return condition:** revisit Looking to Play only through a later explicit
+  owner decision supported by a changed product flow or material new evidence.
+- **Related decisions:** applies `DEC-008`, `DEC-011`, `DEC-016`, and `DEC-018`
+- **Supersedes:** the unapproved Looking to Play live-test proposal in the
+  2026-09-05 CS2 findings; no approved decision
+- **Superseded by:** none

@@ -37,10 +37,13 @@ explicitly rejects them.
 - The current public-source research does not show either Valorant or Apex
   fully providing both exact all-player current rank and programmatic ordinary
   party formation; Valorant is the closer approval-gated candidate.
-- A later first-party CS2 review establishes a credible non-friend ordinary-
-  party path through Looking to Play and official Steam OpenID identity, but no
-  current direct party link/code, QGuard lobby-control interface, or exact all-
-  player rank endpoint. Present-client exact-user discovery is untested.
+- A later first-party CS2 review established feature evidence for Looking to
+  Play and official Steam OpenID identity, but the owner rejected Looking to
+  Play for QGuard under `DEC-019`.
+- Steam supports a promising link-invited group chat with text/voice and non-
+  friend Community Group admission. Shared communication does not prove shared
+  CS2 party entry; the old Community Group lobby bridge is unverified in the
+  current client and QGuard has no documented management API.
 - Valorant is the current approved game under `DEC-018`, but the owner has
   reopened it for comparison with CS2. No current stack, dependable party-entry
   integration, data flow, decision system, deployment, or implementation
@@ -82,6 +85,8 @@ explicitly rejects them.
   later Valorant RSO application without presuming access (`DEC-017`).
 - Select Valorant as the initial game and require a scoped two-account
   non-friend lobby-link test before relying on the link (`DEC-018`).
+- Reject Looking to Play as a QGuard party-entry flow while researching Steam
+  non-friend chat, voice, and Community Group alternatives (`DEC-019`).
 
 ### Unapproved Assumptions
 
@@ -124,7 +129,9 @@ and focused
 neither Valorant nor Apex publicly documents both complete current-rank
 coverage and ordinary-party automation. The later
 [CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md)
-add a third serious candidate.
+added a third candidate before the owner rejected its Looking to Play route.
+The [Steam communication/group follow-up](../research/steam-nonfriend-communication-and-group-feasibility.md)
+now owns the remaining CS2 alternative.
 
 - Valorant was closer in the original pair: Riot recognizes approval-gated opt-in LFG tools, RSO and
   official match/leaderboard APIs exist, and PC users can copy a Riot lobby link
@@ -139,24 +146,25 @@ add a third serious candidate.
   official user-mediated joining. They matter if QGuard would automate an
   ordinary client through an unauthorized interface or extract game data by an
   unauthorized method.
-- CS2 Looking to Play expressly supports advertising for and receiving party
-  invitations without prior friendship, and Valve's 2023 CS2 notes establish
-  that the feature carried into CS2. Whether a host can reliably locate the
-  exact QGuard-matched account is unverified. Old first-party Nearby/Public and
-  Steam Group lobby flows warrant current-client checks but are not current
-  guarantees. No current official direct CS2 party link/code was found.
+- `DEC-019` rejects Looking to Play for QGuard without asserting that Valve
+  removed the feature.
+- Steam group-chat invitation links plausibly admit non-friends into shared
+  text and voice, while public or request-based Community Groups admit non-
+  friends by documented rules. Neither fact establishes CS2 party entry. The
+  old Steam Group Lobby flow warrants a current-client check but is not a
+  current guarantee; no current official direct CS2 party link/code was found.
 - The owner selected Valorant after reviewing the original findings. PC remains the
   provisional context for the documented lobby-link candidate; no complete
   platform, region, mode, rank, integration, coordination, or provider-
   application boundary is approved. The later CS2 instruction reopened the
   comparison but did not unambiguously supersede `DEC-018`.
 
-The next bounded decision is whether to keep Valorant selected and retain CS2
-as fallback, supersede `DEC-018` so CS2 is tested first, or keep both candidates
-open until both user-mediated flows are tested. Until then, `DEF-001` remains
-required before Valorant-link reliance, and no CS2 flow is dependable without
-the scoped current-client test. The owner-proposed Discord coordination and
-voice-recording possibilities remain separate unapproved choices in the
+The next bounded decision is whether the remaining Steam route is worth two
+live tests: non-friend group-chat text/voice entry, then Community Group-to-
+current-CS2 party entry. Until then, `DEC-018` keeps Valorant selected and
+`DEF-001` remains required before Valorant-link reliance. The owner-proposed
+Discord coordination and voice-recording possibilities remain separate
+unapproved choices in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

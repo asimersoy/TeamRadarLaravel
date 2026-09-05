@@ -42,10 +42,13 @@ The historical gate is closed as sufficient for redesign. The current
 [game API findings](../research/game-api-feasibility-findings.md) informed the
 owner's Valorant selection in `DEC-018` but do not themselves constitute a
 specification. The later
-[CS2 findings](../research/counter-strike-2-party-entry-feasibility.md) reopen
-the game comparison without superseding that decision. The non-friend Valorant
-lobby-link test remains `DEF-001`; the proposed CS2 Looking to Play test is not
-yet an approved or deferred implementation dependency.
+[CS2 findings](../research/counter-strike-2-party-entry-feasibility.md) reopened
+the game comparison without superseding that decision. `DEC-019` subsequently
+rejects Looking to Play for QGuard. The
+[Steam communication/group findings](../research/steam-nonfriend-communication-and-group-feasibility.md)
+leave current CS2 Community Group party entry unverified. The non-friend
+Valorant lobby-link test remains `DEF-001`; neither Steam live test is an
+approved or deferred implementation dependency.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,
