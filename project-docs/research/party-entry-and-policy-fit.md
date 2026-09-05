@@ -5,7 +5,7 @@
   `DEC-018`; later CS2 comparison is recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-020`
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck before integration specification,
   provider application, or implementation
@@ -23,6 +23,9 @@ On 2026-09-06, the owner rejected Looking to Play as a QGuard flow under
 proposal. Steam group chat can plausibly provide non-friend text/voice, while
 the distinct Community Group-to-current-CS2 party route remains unverified in
 the [Steam follow-up](steam-nonfriend-communication-and-group-feasibility.md).
+`DEC-020` then clarified that the desired coordination group must support
+automated or semi-automated assembly. The resulting Valorant/CS2 comparison is
+in the [Discord coordination and game-join report](discord-coordination-and-game-join-comparison.md).
 
 Valorant now has the closest documented match to the owner's preferred party
 flow. Riot and Discord's official PC integration lets a lobby host copy a
@@ -184,10 +187,11 @@ If it fails, the workflow returns to the owner before substituting another
 party flow or game.
 
 The later CS2 evidence initially reopened the comparison without changing this
-recorded disposition. `DEC-019` then rejected Looking to Play while leaving the
-distinct Steam Community Group/current-CS2 route under review. See the decision
-register's subsequent review note under `DEC-018` and the current Steam follow-
-up.
+recorded disposition. `DEC-019` rejected Looking to Play, and `DEC-020`
+clarified that persistent Steam Community Group membership is not the desired
+coordination model. The current Discord comparison reinforces Valorant's
+relative position without behaviorally proving its exact link case. See the
+decision register's subsequent review note under `DEC-018`.
 
 ### Open Questions
 

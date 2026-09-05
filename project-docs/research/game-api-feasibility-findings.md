@@ -5,7 +5,7 @@
   `DEC-018`; later CS2 comparison is recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-020`
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck provider facts before an implementation
   slice or provider application
@@ -20,8 +20,11 @@ does not retroactively change the bounded findings below.
 
 On 2026-09-06, the owner rejected Looking to Play as a QGuard flow under
 `DEC-019`. The historical CS2 finding remains evidence about the feature, not
-a current recommendation. The remaining Steam alternative is assessed in the
+a current recommendation. The Steam alternative is assessed in the
 [non-friend communication and group follow-up](steam-nonfriend-communication-and-group-feasibility.md).
+`DEC-020` later clarified the semi-automatable conversation criterion; the
+current cross-game result is in the
+[Discord coordination and game-join comparison](discord-coordination-and-game-join-comparison.md).
 
 The reviewed public first-party material does not document a supported path in
 either candidate that provides both:

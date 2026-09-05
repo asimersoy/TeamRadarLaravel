@@ -1,9 +1,11 @@
 # QGuard Discord Coordination And Voice-Evidence Options
 
 - **Record type:** current owner proposal and future decision packet
-- **Status:** proposal only; owner review and research required
+- **Status:** coordination feasibility researched; owner selection and separate
+  voice-evidence research/review required
 - **Decision owner:** project owner
-- **Authority:** owner proposal recorded 2026-09-05; no implementation authority
+- **Authority:** owner proposals recorded 2026-09-05 and the clarified
+  coordination criterion in `DEC-020`; no implementation authority
 - **Created:** 2026-09-05
 - **Update trigger:** coordination-surface, Discord, voice-data, report-evidence,
   moderation, or permitted-use decision
@@ -14,6 +16,9 @@ Preserve the owner's Discord-room and voice-evidence idea without treating it
 as an approved feature, technical fact, provider permission, or legal
 conclusion. Keep it separate from the approved Valorant lobby-link flow so a
 lower-risk coordination choice does not silently authorize voice collection.
+
+The current technical comparison is recorded in the
+[Discord coordination and game-join report](../research/discord-coordination-and-game-join-comparison.md).
 
 ## Owner Proposal
 
@@ -30,12 +35,21 @@ retroactively if it was never captured. “Monitor,” continuous recording,
 short-lived buffering, human review, and automated speech analysis are distinct
 behaviors and are not interchangeable.
 
+The owner later clarified that the desired coordination “group” is a multi-
+person conversation comparable to a one-to-one chat window expanded to the
+matched team. It should be supported through API, automation, or semi-
+automation and offer link, code, OAuth, or comparable participant entry. A
+persistent Steam Community Group is not the intended communication object
+(`DEC-020`).
+
 ## Separated Options, Not Decisions
 
 | Option | Coordination behavior | Voice evidence | Main tradeoff |
 |---|---|---|---|
 | QGuard-native room | QGuard holds the lobby link and group text | None by default | Keeps the first flow independent of Discord server membership |
-| Temporary Discord room without recording | A bot-managed text/voice area holds the group and lobby link | No QGuard audio capture | Adds Discord dependency but avoids the recording data flow |
+| Temporary private channels in a QGuard Discord server without recording | A bot creates a matched-user text/voice area and can display the lobby link | No QGuard audio capture | Strongest documented automation model; users must join or be added to the persistent server |
+| Discord application-created Group DM | OAuth-authorized users appear in a DM-like group conversation | Human participants can start a call; no bot participant | Exact UI fit, but documented endpoint originated with deprecated GameBridge, is capped at ten active Group DMs, and cannot contain bots |
+| Human-created Discord Group DM with invite link | A human seeds a Group DM and a member shares its 48-hour link | Human participants can start a call | Manual creation normally starts from friends; ten-member maximum and non-friend acceptance still need a test |
 | Temporary Discord room with bounded session recording | The room is created for matched users and audio is captured for a defined report window | An authorized reviewer can access the recording only under approved conditions | May improve report evidence but creates substantial consent, privacy, security, retention, moderation, and operating obligations |
 | Participant-submitted evidence | Discord voice may be used, but QGuard does not record every session | A reporter may submit evidence under a later approved policy | Lower routine collection, but incomplete and potentially manipulable evidence |
 | Live or automated monitoring | A person or system evaluates speech during play | May create alerts, scores, or evidence | Highest sensitivity and complexity; separate from after-report review |
@@ -53,6 +67,19 @@ Discord voice is used.
   does not inherit or approve any legacy implementation.
 - The approved Valorant link flow needs a coordination surface for sharing the
   link, but it does not require voice collection.
+- Discord's current API supports bot-created text and voice channels,
+  permission overwrites, constrained server invitations, OAuth `guilds.join`
+  admission, member/role management, and channel deletion inside an existing
+  server.
+- Discord no longer supports applications creating new servers. The viable
+  server design requires one human-created and human-owned QGuard server.
+- Discord documents application-created Group DMs using users' `gdm.join`
+  tokens, but identifies the endpoint with the deprecated GameBridge SDK,
+  limits it to ten active Group DMs, and does not permit a bot user inside a
+  Group DM.
+- Riot/Discord document a host-copied Valorant lobby link. No current first-
+  party source reviewed establishes a comparable CS2 Discord Game Invite for
+  ordinary Premier or Competitive parties.
 
 ## Assumptions Not Made
 
@@ -71,23 +98,30 @@ Discord voice is used.
 
 1. Is Discord coordination required, optional, or only a fallback to a
    QGuard-native room?
-2. Is a temporary voice channel part of the first product journey, and must
-   users belong to the QGuard Discord server?
-3. Is QGuard voice capture needed at all? If yes, is it full-session recording,
+2. If Discord is selected, is the supported server/private-channel model
+   acceptable, or is placement in the Direct Messages list important enough to
+   pursue the constrained Group DM endpoint?
+3. Should users join through a short-lived server invite, consent to OAuth
+   `guilds.join`, or use a combination? Does membership persist after the match?
+4. Is a temporary voice channel part of the first product journey?
+5. Is QGuard voice capture needed at all? If yes, is it full-session recording,
    a bounded rolling buffer, participant-triggered capture, or another model?
-4. Who is recorded, who can review, what events unlock access, and what can the
+6. Who is recorded, who can review, what events unlock access, and what can the
    evidence affect: information, warnings, honor, eligibility, restrictions,
    or account status?
-5. What notice, affirmative consent, recording indicator, age/geography limit,
+7. What notice, affirmative consent, recording indicator, age/geography limit,
    report deadline, retention/deletion, export/correction, encryption, access
    logging, incident response, and appeal behavior apply?
-6. Which Discord developer/product rules and qualified privacy/legal, security,
+8. Which Discord developer/product rules and qualified privacy/legal, security,
    moderation, and safeguarding reviews gate the concrete design?
 
 ## Required Evidence Before Approval
 
-- Current first-party Discord capability and policy research for the exact bot,
-  channel, voice-receive, recording, storage, and deletion model.
+- The current coordination capability research is complete at the product-
+  comparison level. Before implementation, recheck the exact selected bot,
+  channel, invite/OAuth, member, message-access, and deletion interfaces.
+- Current first-party Discord capability and policy research for any proposed
+  voice-receive, recording, storage, transcription, and deletion model.
 - A field-level data-flow inventory covering raw audio, derived transcripts or
   classifications, metadata, reports, recipients, logs, backups, and deletion.
 - A threat and abuse assessment covering covert recording, impersonation,
@@ -102,11 +136,17 @@ Discord voice is used.
 ## Current Classification
 
 - **Owner decision:** Valorant and its official lobby-link candidate are
-  selected under `DEC-018`.
+  selected under `DEC-018`; `DEC-020` defines the coordination-group criterion.
 - **Owner proposal:** temporary Discord coordination rooms and possible
   report-reviewable session audio.
-- **Open question:** whether Discord and any voice capture belong in the
-  product, and under what complete safeguards.
+- **Research result:** a bot-managed private text/voice channel pair inside an
+  existing QGuard Discord server is the strongest supported coordination
+  candidate. A Group DM is only an experimental/weak alternative. Valorant has
+  a host-copied party link; no comparable CS2 Discord party handoff is
+  established.
+- **Open question:** whether Discord is selected, which admission/lifecycle
+  model applies, and whether any voice capture belongs in the product under a
+  complete safeguard set.
 - **Deferred work:** no Discord or recording work. No recording implementation
   has been approved and postponed; this remains an unapproved proposal/queued
   decision packet. The separate Valorant link test is `DEF-001` in the

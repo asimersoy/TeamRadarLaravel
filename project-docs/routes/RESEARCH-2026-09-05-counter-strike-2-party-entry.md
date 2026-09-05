@@ -132,13 +132,14 @@ developer does not by itself establish a QGuard-usable CS2 flow.
   unambiguously select CS2 over Valorant.
 - On 2026-09-06, the owner rejected Looking to Play for QGuard under `DEC-019`.
   The proposed Looking to Play test is cancelled and is no longer an open gate.
-- A separate follow-up now owns the remaining Steam questions: whether non-
-  friends can share a Steam text/voice space and whether Steam Community Group
-  membership still provides current CS2 ordinary-party entry. See the
+- A later follow-up answered the bounded Steam communication questions, and
+  `DEC-020` clarified that manual chat and persistent Community Group membership
+  do not meet the preferred coordination criterion. See the
   [Steam communication and group route](RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md).
-- The owner must later decide whether a passing Community Group route makes CS2
-  a fallback, supersedes Valorant as the provisional first candidate, or keeps
-  both candidates open for comparison.
+- The current cross-game conclusion is owned by the
+  [Discord coordination route](RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md):
+  Discord communication is feasible for CS2, but an ordinary CS2 party handoff
+  is not established; Valorant remains selected under `DEC-018`.
 - No account, client, credential, API call, provider contact, or live experiment
   occurred in this route.
 

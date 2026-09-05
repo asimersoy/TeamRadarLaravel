@@ -2,7 +2,8 @@
 
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
-  Valorant while the CS2 comparison and integration verification remain open
+  Valorant while coordination selection, party verification, and integration
+  boundaries remain open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -46,9 +47,13 @@ specification. The later
 the game comparison without superseding that decision. `DEC-019` subsequently
 rejects Looking to Play for QGuard. The
 [Steam communication/group findings](../research/steam-nonfriend-communication-and-group-feasibility.md)
-leave current CS2 Community Group party entry unverified. The non-friend
-Valorant lobby-link test remains `DEF-001`; neither Steam live test is an
-approved or deferred implementation dependency.
+show that manual Steam chat and persistent Community Groups do not meet the
+preferred criterion clarified by `DEC-020`. The
+[Discord coordination/game-join findings](../research/discord-coordination-and-game-join-comparison.md)
+establish a supported bot-managed server-channel candidate, confirm the
+Valorant host-copied link, and find no current CS2 Discord party handoff. The
+non-friend Valorant lobby-link test remains `DEF-001`; no Discord or CS2 live
+test is an approved or deferred implementation dependency.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

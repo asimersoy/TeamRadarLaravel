@@ -5,7 +5,7 @@
   `DEC-019`; Steam communication/group follow-up recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-015` through `DEC-018`, plus the
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-015` through `DEC-020`, plus the
   owner's 2026-09-05 instruction to investigate CS2 as another candidate
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck before a live test, integration
@@ -19,8 +19,11 @@ QGuard's intended flow. `DEC-019` therefore rejects it as a product route and
 cancels the live-test proposal below before activation. The documented feature
 facts remain valid historical research; they no longer route work.
 
-The current alternative assessment is the
-[Steam non-friend communication and group report](steam-nonfriend-communication-and-group-feasibility.md).
+The later owner clarification makes a semi-automatable multi-person
+conversation the desired coordination object. See the
+[Steam non-friend communication and group report](steam-nonfriend-communication-and-group-feasibility.md)
+for the superseded manual/persistent options and the current
+[Discord coordination and game-join comparison](discord-coordination-and-game-join-comparison.md).
 
 ## Executive Finding
 
@@ -250,14 +253,18 @@ ledger](game-api-source-ledger.md).
 
 - **Superseded by `DEC-019`:** run the Looking to Play verification packet and
   compare it with Valorant.
-- **Current:** investigate Steam group chat and Community Group membership as
-  separate communication and possible party-entry routes.
+- **Superseded by `DEC-020`:** investigate manual Steam group chat and
+  persistent Community Group membership as the next routes.
+- **Current:** use the Discord comparison to separate automatable multi-person
+  communication from actual CS2 party entry.
 
 ### Open Owner Decision
 
-The current `DEC-018` Valorant selection has not been superseded. Whether CS2
-remains a candidate now depends on the separate Steam Community Group/current-
-CS2 lobby assessment and later owner disposition, not Looking to Play.
+The current `DEC-018` Valorant selection has not been superseded. Current first-
+party evidence supports Discord communication for CS2 but not an ordinary CS2
+party handoff. Whether the owner wants a current-client Discord test or another
+CS2 route remains open; it no longer depends on treating persistent Community
+Group membership as the desired communication object.
 
 ### Unperformed And Deferred Work
 

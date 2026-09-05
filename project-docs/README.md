@@ -11,14 +11,16 @@ has approved the QGuard name and several product foundations, and has accepted
 the simplified historical reconstruction as sufficient for redesign without an
 exhaustiveness claim. The owner selected Valorant after the Apex/Valorant API
 and party-entry research, then asked for CS2 to be investigated as another
-candidate. The owner has since rejected Looking to Play for QGuard. Steam
-supports a credible non-friend group-chat path with text and voice, but shared
-chat does not itself prove shared CS2 party entry; the old Community Group lobby
-bridge requires a current-client test. `DEC-018` still selects Valorant until
-the owner deliberately resolves the remaining comparison. Rank behavior and
-the complete product boundary remain open. Temporary Discord rooms and voice
-recording are proposals only. No implementation plan or code change is
-approved. Everything under `legacy/` remains historical evidence.
+candidate. The owner has since rejected Looking to Play for QGuard and clarified
+that the desired coordination group is a semi-automatable multi-person chat,
+not primarily a persistent Steam Community Group. Discord can support bot-
+created private per-match text/voice channels in an existing server. Valorant
+has an official host-copied party link for that room; no comparable current CS2
+Discord party handoff was established. `DEC-018` still selects Valorant. Rank
+behavior, Discord selection/lifecycle, and the complete product boundary remain
+open. Voice recording is a separate proposal only. No implementation plan or
+code change is approved. Everything under `legacy/` remains historical
+evidence.
 
 Start with:
 
@@ -28,7 +30,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Latest Steam communication/group research route](routes/RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md)
+7. [Latest Discord coordination/game-join research route](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -41,6 +43,7 @@ Start with:
 - [Current Valorant-selection and Discord-proposal route](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
 - [Completed CS2 party-entry research route](routes/RESEARCH-2026-09-05-counter-strike-2-party-entry.md)
 - [Completed Steam non-friend communication/group route](routes/RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md)
+- [Completed Discord coordination/game-join comparison route](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
 - [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)
 
@@ -52,6 +55,7 @@ Start with:
 - [Party entry and provider-policy fit](research/party-entry-and-policy-fit.md)
 - [Counter-Strike 2 party-entry feasibility](research/counter-strike-2-party-entry-feasibility.md)
 - [Steam non-friend communication/group feasibility](research/steam-nonfriend-communication-and-group-feasibility.md)
+- [Discord coordination and game-join comparison](research/discord-coordination-and-game-join-comparison.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.

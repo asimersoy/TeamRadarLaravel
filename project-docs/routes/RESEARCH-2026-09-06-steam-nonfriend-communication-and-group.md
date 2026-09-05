@@ -4,8 +4,8 @@
   friends can enter the same Steam text chat, voice chat, or Community Group,
   and whether any such relationship also supplies a current supported route
   into the same ordinary CS2 matchmaking party
-- **Status:** authoritative-source research complete; live behavior and owner
-  product disposition remain open
+- **Status:** research complete; later owner clarification in `DEC-020` makes
+  Discord comparison the current route rather than the proposed Steam tests
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06
@@ -96,15 +96,22 @@
 
 ## Remaining Gates
 
-- A two-account non-friend test must verify the group-chat invitation, text, and
-  voice behavior before a specification relies on it.
-- A separate current-client test using a deliberately scoped Steam Community
-  Group must establish whether CS2 group-lobby discovery still exists and works
-  for an ordinary Premier or Competitive party.
+- `DEC-020` clarifies that the desired coordination object needs supported
+  automation or semi-automation and is not primarily a persistent Steam
+  Community Group. The proposed Steam group-chat and Community Group tests are
+  no longer the next active route.
+- If the owner later accepts manual Steam chat as a fallback, a two-account non-
+  friend test must verify its invitation, text, and voice behavior before a
+  specification relies on it.
+- If the owner later reopens persistent Community Group membership, a separate
+  current-client test must establish whether CS2 group-lobby discovery still
+  works for an ordinary Premier or Competitive party.
 - Creating a persistent external group or using accounts changes external state
   and requires a separately approved test packet and exact authorization.
 - Communication success alone does not justify selecting CS2. `DEC-018` keeps
   Valorant selected until the owner explicitly supersedes it.
+- The current comparison and remaining Discord/game-party gates are recorded in
+  the [Discord research route](RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md).
 
 ## Verification
 

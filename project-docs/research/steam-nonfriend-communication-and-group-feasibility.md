@@ -1,11 +1,11 @@
 # QGuard Steam Non-Friend Communication And Group Feasibility
 
 - **Record type:** focused current research findings
-- **Status:** authoritative-source research complete; live verification and
-  owner product disposition required
+- **Status:** research complete; `DEC-020` clarifies that manual Steam chat and
+  persistent Community Groups do not meet the preferred coordination criterion
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-019`, and the
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-020`, and the
   owner's 2026-09-06 request to investigate Steam communication/group paths
 - **Research date:** 2026-09-06
 - **Date sensitivity:** high; recheck before testing or specification
@@ -15,6 +15,16 @@
 
 **Yes: Steam provides a credible way for non-friends to share a Steam text and
 voice space. That does not by itself put them into the same CS2 party.**
+
+### Current Disposition After Owner Clarification
+
+`DEC-020` clarifies that QGuard's desired “group” is a multi-person conversation
+that can be created or entered through a supported automated or semi-automated
+path. A persistent Steam Community Group is not the intended coordination
+object. The Steam group-chat link remains a documented manual capability, but
+the absence of a supported QGuard creation and lifecycle API means it does not
+meet the preferred automation criterion. The current comparison continues in
+the [Discord coordination and game-join report](discord-coordination-and-game-join-comparison.md).
 
 Steam's official Chat page documents persistent group chats with multiple text
 and voice channels and invitation links shareable inside or outside Steam.
@@ -178,7 +188,11 @@ the separate owner proposal to retain audio for report review without a new,
 supported capture design and the already-recorded consent, privacy, security,
 retention, moderation, provider-policy, and qualified-review gates.
 
-## Required Live Verification
+## Previously Proposed Live Verification
+
+`DEC-020` means neither test is the next active route. They are retained so the
+conditions are explicit if the owner later accepts manual Steam chat or
+persistent Community Group membership as a fallback.
 
 ### Test A - Non-Friend Group Chat
 
@@ -241,18 +255,20 @@ terms are indexed in the [game API source ledger](game-api-source-ledger.md).
 
 ### Proposals
 
-- Run Test A before treating Steam Chat as the communication layer.
-- Run Test B before keeping CS2 as a game candidate on the strength of Steam
-  group membership.
+- **Superseded by `DEC-020`:** run Test A before treating manual Steam Chat as
+  the preferred communication layer.
+- **Not currently routed:** run Test B before keeping CS2 as a game candidate on
+  the strength of persistent Steam Community Group membership. The historical
+  bridge remains evidence, but it is not the clarified communication object.
 - Keep group-chat communication and CS2 party entry as separately passing or
   failing capabilities.
 
 ### Open Owner Questions
 
-- If Test B passes, is persistent QGuard Community Group membership acceptable
+- Would the owner later reopen persistent Steam Community Group membership
   despite public visibility, admission friction, and unintended-lobby exposure?
-- Is manual Steam Chat creation/link sharing acceptable, or does QGuard require
-  an automatically managed per-session room?
+- If the supported Discord route fails, would the owner accept manual Steam
+  Chat creation/link sharing as a fallback?
 - Does Steam voice merely coordinate the team, or must the approved system
   later preserve reviewable report evidence?
 

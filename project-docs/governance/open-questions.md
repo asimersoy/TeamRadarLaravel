@@ -107,18 +107,20 @@ Historical unknowns do not automatically become requirements.
   treats a friend/invite flow as a higher-friction fallback. `DEC-018` selects
   Valorant as the initial game subject to the non-friend lobby-link test before
   reliance. Later CS2 research found a documented non-friend Looking to Play
-  route, but the owner rejected it for QGuard under `DEC-019`. Steam research
-  now shows a promising group-chat text/voice path and public/request-based
-  Community Group membership; whether a Community Group still permits non-
-  friend ordinary-party entry in current CS2 is unverified. The owner has not
-  yet said whether a passing group route would replace Valorant, remain a
-  fallback, or keep both games open. Mode, platform/cross-play, launch region/
-  language, primary user, party shape, and relationship duration remain open.
-- **Decision components:** **currently approved but reopened for comparison:**
-  Valorant as initial game under `DEC-018`. **Open:** whether CS2 supersedes or
-  joins that direction; mode, platform/cross-play, launch region/language,
-  primary user segment, party shape, and relationship duration.
-- **Resolved by:** `DEC-018` remains current; new comparison unresolved
+  route, but the owner rejected it for QGuard under `DEC-019`. `DEC-020` then
+  clarified that the desired coordination group is a semi-automatable multi-
+  person chat rather than a persistent Steam Community Group. Current Discord
+  research shows the same bot-managed communication room can support either
+  game, but only Valorant has an evidenced host-copied ordinary-party link. No
+  comparable current CS2 Discord handoff is established. Mode, platform/cross-
+  play, launch region/language, primary user, party shape, and relationship
+  duration remain open.
+- **Decision components:** **currently approved:** Valorant as initial game
+  under `DEC-018`. **Open:** whether the Discord coordination finding is enough
+  to close the CS2 comparison unless later evidence changes; mode, platform/
+  cross-play, launch region/language, primary user segment, party shape, and
+  relationship duration.
+- **Resolved by:** `DEC-018` remains current; later wedge components unresolved
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
@@ -142,12 +144,18 @@ Historical unknowns do not automatically become requirements.
   flow (`DEC-015`). The owner has now proposed temporary bot-managed QGuard
   Discord rooms and possible session-audio retention for operator review after
   a report. That is a proposal, not approval to create rooms, capture voice, or
-  use recordings as evidence. See the
+  use recordings as evidence. `DEC-020` defines the desired communication object
+  and automation criterion. Current first-party research finds that bot-created
+  private text/voice channels in an existing QGuard Discord server can meet that
+  criterion; application-created Group DMs are a constrained alternative. No
+  Discord surface is selected yet. See the
   [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
-  integration evidence; Discord coordination; whether any voice is captured;
+  integration evidence; whether Discord-server membership is acceptable;
+  invite versus OAuth admission; post-match membership/access cleanup; whether
+  any voice is captured;
   and field-level purpose, consent, retention, deletion, access, security,
   evidentiary effect, and qualified review.
 - **Resolved by:** none
@@ -216,14 +224,13 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
-- **Status:** game comparison reopened after CS2 research; `DEC-018` remains
-  current; party-entry verification and rank/access boundaries open
+- **Status:** Discord comparison complete; `DEC-018` remains current; Valorant
+  party-entry verification and rank/access boundaries remain open
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
 - **Blocks:** replacing the current first-game decision without owner approval;
-  treating either the Valorant link or a Steam Community Group-to-CS2 party
-  path as dependable; approving the rank/access integration; or approving
-  client automation.
+  treating the Valorant link or any CS2 Discord party handoff as dependable;
+  approving the rank/access integration; or approving client automation.
 - **Does not block:** product-charter decisions that do not depend on a game or
   integration, or current authoritative-source research.
 - **Known context:** The owner values reliable rank retrieval and local-client
@@ -253,20 +260,26 @@ Historical unknowns do not automatically become requirements.
   found shareable group-chat links with text/voice and non-friend Community
   Group admission. It found no supported QGuard chat/group management API, and
   no current first-party confirmation that the old Steam Group Lobby path still
-  works in CS2. Current behavioral tests remain required.
+  works in CS2. `DEC-020` clarified that neither persistent Community Group
+  membership nor a manual chat is the preferred coordination model. The
+  [Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md)
+  establishes supported bot-created private server text/voice channels and
+  constrained link/OAuth admission. It confirms the host-copied Valorant link
+  but finds no current first-party Discord Game Invite for an ordinary CS2
+  party. Application-created Group DMs are documented but weak because of
+  their deprecated-SDK origin, ten-active-room cap, and lack of a bot member.
 - **Owner decision:** Select Valorant for current product planning. Before
   relying on its official link, test two current accounts in a supported PC
   region/client state where the recipient is neither the host's Riot friend nor
-  formal Discord friend (`DEC-018`). This remains current but is now subject to
-  a deliberate owner comparison with CS2; the research alone did not
-  supersede it.
-- **Evidence needed:** owner disposition of the remaining comparison; the
-  applicable scoped group-chat and Community Group/CS2 party tests; the
-  Valorant link test if Valorant reliance advances; the selected rank behavior
-  and provider-access path; and fresh provider evidence before any integration
-  specification or application.
-- **Resolved by:** `DEC-018` remains current for game selection; integration
-  and reopened comparison unresolved
+  formal Discord friend (`DEC-018`). This remains current and is reinforced,
+  not behaviorally proven, by the Discord comparison.
+- **Evidence needed:** owner disposition of Discord coordination; `DEF-001`
+  before Valorant-link reliance; the selected rank behavior and provider-access
+  path; and fresh provider evidence before any integration specification or
+  application. A CS2 Discord test is optional unapproved work, not current
+  evidence of a supported route.
+- **Resolved by:** `DEC-018` remains current for game selection; coordination,
+  behavioral verification, rank, and provider access unresolved
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
@@ -288,18 +301,19 @@ Historical unknowns do not automatically become requirements.
   formation remains the friend/invite flow. `DEC-017` keeps a conditional
   prototype-first Riot application path available when the Valorant flow needs
   RSO. `DEC-018` selects Valorant and requires the non-friend link test before
-  reliance. `DEC-019` rejects CS2 Looking to Play. Steam group-chat invitation
-  links may solve text/voice coordination without friendship, while a Steam
-  Community Group may provide the old group-lobby bridge. Communication and
-  group membership do not prove current CS2 party entry, and persistent group
-  membership creates separate privacy, moderation, and admission friction.
+  reliance. `DEC-019` rejects CS2 Looking to Play. `DEC-020` requires the
+  evaluated communication-group route to be automatable or semi-automatable and
+  link/code/OAuth accessible. Bot-created private Discord server channels meet
+  that coordination criterion as a researched candidate. Valorant can place its
+  host-copied party link in that room; no equivalent current CS2 Discord party
+  handoff is established. Communication still does not prove game-party entry.
 - **Options/tradeoffs:** use the later-approved QGuard or Discord coordination
-  surface with a passing Valorant link; use Steam Chat for communication only;
-  accept a passing Community Group-to-CS2 party flow; or return to the owner
-  before using friend invites, another party flow, another game, or a
-  materially different Custom Match product. Rank still requires an approved
-  official, partial, or truthfully labelled fallback behavior.
-- **Evidence needed:** `OQ-009` research findings, the applicable party-entry
-  live test or tests, plus the owner's alternate flow proposals and tolerance
-  for added user friction.
+  surface with a passing Valorant link; accept a constrained Discord Group DM;
+  relax the criterion to manual Steam chat or friend-based party formation; or
+  return to the owner before using another party flow, game, or materially
+  different Custom Match product. Rank still requires an approved official,
+  partial, or truthfully labelled fallback behavior.
+- **Evidence needed:** `OQ-009` findings, owner coordination-surface selection,
+  the applicable party-entry live test, plus the owner's alternate flow
+  proposals and tolerance for added user friction.
 - **Resolved by:** `DEC-018` for the preferred game/link direction only

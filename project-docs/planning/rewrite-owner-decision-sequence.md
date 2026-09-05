@@ -40,14 +40,17 @@ explicitly rejects them.
 - A later first-party CS2 review established feature evidence for Looking to
   Play and official Steam OpenID identity, but the owner rejected Looking to
   Play for QGuard under `DEC-019`.
-- Steam supports a promising link-invited group chat with text/voice and non-
-  friend Community Group admission. Shared communication does not prove shared
-  CS2 party entry; the old Community Group lobby bridge is unverified in the
-  current client and QGuard has no documented management API.
-- Valorant is the current approved game under `DEC-018`, but the owner has
-  reopened it for comparison with CS2. No current stack, dependable party-entry
-  integration, data flow, decision system, deployment, or implementation
-  boundary has been approved.
+- Steam supports manual link-invited group chat, but QGuard has no documented
+  creation or lifecycle API. Discord supports bot-created private server text/
+  voice channels with constrained invite or OAuth admission; its application-
+  created Group DM is a weaker legacy-constrained option.
+- Valorant can place an official host-copied ordinary-party link in the Discord
+  room. No current first-party evidence establishes an equivalent CS2 Discord
+  Game Invite, so Discord solves CS2 communication but not party entry.
+- Valorant is the current approved game under `DEC-018`; CS2 was researched as
+  an additional candidate without superseding that decision. No current stack,
+  dependable party-entry integration, data flow, decision system, deployment,
+  or implementation boundary has been approved.
 
 ### Approved Owner Decisions Already In Force
 
@@ -87,6 +90,9 @@ explicitly rejects them.
   non-friend lobby-link test before relying on the link (`DEC-018`).
 - Reject Looking to Play as a QGuard party-entry flow while researching Steam
   non-friend chat, voice, and Community Group alternatives (`DEC-019`).
+- Evaluate coordination groups as semi-automatable multi-person conversations
+  with supported link/code/OAuth entry, not primarily as persistent Steam
+  Community Groups (`DEC-020`).
 
 ### Unapproved Assumptions
 
@@ -131,7 +137,9 @@ coverage and ordinary-party automation. The later
 [CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md)
 added a third candidate before the owner rejected its Looking to Play route.
 The [Steam communication/group follow-up](../research/steam-nonfriend-communication-and-group-feasibility.md)
-now owns the remaining CS2 alternative.
+found manual coordination but no supported QGuard management API. The later
+[Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md)
+now owns the cross-game coordination conclusion.
 
 - Valorant was closer in the original pair: Riot recognizes approval-gated opt-in LFG tools, RSO and
   official match/leaderboard APIs exist, and PC users can copy a Riot lobby link
@@ -148,23 +156,29 @@ now owns the remaining CS2 alternative.
   unauthorized method.
 - `DEC-019` rejects Looking to Play for QGuard without asserting that Valve
   removed the feature.
-- Steam group-chat invitation links plausibly admit non-friends into shared
-  text and voice, while public or request-based Community Groups admit non-
-  friends by documented rules. Neither fact establishes CS2 party entry. The
-  old Steam Group Lobby flow warrants a current-client check but is not a
-  current guarantee; no current official direct CS2 party link/code was found.
+- `DEC-020` clarifies that a viable communication group should be a semi-
+  automatable multi-person conversation with supported link/code/OAuth entry,
+  not primarily persistent community membership. Steam's manual chat does not
+  meet that preferred criterion.
+- Discord can automate private text/voice channels and matched-user access in a
+  human-owned QGuard server. Its Group DM API is not recommended as the primary
+  route because it originated with deprecated GameBridge, is capped at ten
+  active groups, and cannot contain bots.
+- Valorant has an official host-copied lobby link that can be placed in the
+  Discord room. No current first-party evidence establishes a comparable CS2
+  Discord party handoff; the same Discord room is communication only for CS2.
 - The owner selected Valorant after reviewing the original findings. PC remains the
   provisional context for the documented lobby-link candidate; no complete
   platform, region, mode, rank, integration, coordination, or provider-
   application boundary is approved. The later CS2 instruction reopened the
   comparison but did not unambiguously supersede `DEC-018`.
 
-The next bounded decision is whether the remaining Steam route is worth two
-live tests: non-friend group-chat text/voice entry, then Community Group-to-
-current-CS2 party entry. Until then, `DEC-018` keeps Valorant selected and
-`DEF-001` remains required before Valorant-link reliance. The owner-proposed
-Discord coordination and voice-recording possibilities remain separate
-unapproved choices in the
+The next bounded decision is whether to select the Discord-server/private-
+channel model as required, optional, or fallback coordination. If selected,
+the next decisions are short-lived invite versus `guilds.join` admission and
+whether server membership persists after a match. `DEC-018` keeps Valorant
+selected, and `DEF-001` remains required before Valorant-link reliance. Voice
+recording remains a separate unapproved choice in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

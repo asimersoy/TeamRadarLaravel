@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-019`
+- **Authority:** `DEC-009` through `DEC-020`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -64,11 +64,20 @@ the [research findings](../research/game-api-feasibility-findings.md).
 A subsequent first-party CS2 review found feature evidence for Looking to Play,
 but `DEC-019` rejects that mechanism for QGuard. Steam OpenID still provides an
 official account-identity path. Research now continues only through the
-separate possibility that Steam Community Group membership permits non-friend
-entry into a current ordinary CS2 party. The official description of that
-bridge is CS:GO-era and needs present-client verification. See the
+separate communication and party-entry alternatives. The official description
+of a Community Group-to-party bridge is CS:GO-era and needs present-client
+verification, but the later owner clarification does not treat persistent
+Community Group membership as the desired coordination model. See the
 [CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md)
 and [Steam communication/group follow-up](../research/steam-nonfriend-communication-and-group-feasibility.md).
+
+The owner then clarified that the requested coordination group is a multi-
+person chat comparable to a group DM, with supported API, automation, or semi-
+automation and link/code/OAuth entry (`DEC-020`). Discord can provide bot-
+created private text/voice channels in an existing server. Valorant can place
+its host-copied lobby link in that room; no current first-party evidence
+establishes a comparable CS2 Discord party handoff. See the
+[Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md).
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
@@ -104,6 +113,18 @@ provide text and voice to group members and may admit non-friends through a
 shareable link, subject to a behavioral test. No supported QGuard interface was
 found for automatically creating or cleaning up those rooms, and Steam voice
 does not provide QGuard with a documented recording or monitoring interface.
+Under `DEC-020`, it is a manual fallback rather than the preferred coordination
+candidate. A persistent Steam Community Group is not the desired chat object.
+
+Current Discord research finds that the strongest supported candidate is one
+human-owned QGuard server with bot-created private per-match text and voice
+channels. Users can enter through constrained server invitations or OAuth
+`guilds.join`, and the bot can manage permissions and channel cleanup. Discord
+Group DMs more closely resemble the requested UI, but their documented
+application-creation endpoint originated with deprecated GameBridge, is capped
+at ten active Group DMs, and cannot contain a bot. These findings do not select
+the Discord-server model or approve its data flow, implementation, membership
+lifecycle, or message/voice collection.
 
 The Discord and Steam coordination options are proposals, not approved
 foundations or implementation requirements. Temporary voice rooms without

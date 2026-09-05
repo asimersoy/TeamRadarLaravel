@@ -1,14 +1,13 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-06
-- **Status:** Looking to Play rejected for QGuard; Steam non-friend text/voice
-  communication is promising, while current CS2 Community Group party entry is
-  unverified; `DEC-018` still selects Valorant
-- **Objective:** determine whether a verified Steam Community Group-to-CS2
-  party flow keeps CS2 viable while separating communication success from game-
-  party success
+- **Status:** Discord can support automated private per-match text/voice rooms;
+  Valorant has a host-copied party-link handoff, while no comparable current CS2
+  Discord party handoff is established; `DEC-018` still selects Valorant
+- **Objective:** obtain the owner's coordination-surface disposition while
+  preserving the separate Valorant behavioral gate and the bounded CS2 finding
 - **Current route:**
-  [RESEARCH-2026-09-06 Steam non-friend communication and group](routes/RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md)
+  [RESEARCH-2026-09-06 Discord coordination and game join comparison](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
 
 ## Verified Workspace State
 
@@ -84,6 +83,11 @@
   research without superseding `DEC-018`. `DEC-019` now rejects Looking to Play
   as a QGuard product route while authorizing research into Steam non-friend
   chat, voice, and Community Group alternatives.
+- `DEC-020` clarifies that the requested coordination “group” is a multi-person
+  conversation comparable to a group DM, with supported automation or semi-
+  automation and link/code/OAuth entry. Persistent Steam Community Groups are
+  not the intended coordination object. This criterion does not itself select
+  Discord or authorize implementation or data collection.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
@@ -120,19 +124,24 @@
   establish a promising manual non-friend group-chat path for text/voice,
   public/request-based Community Group admission, and the absence of a
   documented QGuard management API. Current CS2 group-lobby behavior remains
-  unverified.
-- **In progress:** owner review of whether the Steam communication/group route
-  merits live verification. `DEF-001` remains the required Valorant-link test.
-  Rank fallback, provider access, complete wedge, and coordination surface
-  remain open. The
+  unverified. The later
+  [Discord coordination/game-join findings](research/discord-coordination-and-game-join-comparison.md)
+  establish supported bot-created private server text/voice channels and
+  constrained link/OAuth admission, identify application-created Group DMs as
+  a weak legacy-constrained alternative, confirm Valorant's host-copied lobby
+  link, and find no current first-party CS2 Discord party handoff.
+- **In progress:** owner review of whether to select the Discord-server/private-
+  channel model as QGuard's coordination surface. `DEF-001` remains the required
+  Valorant-link test. Rank fallback, provider access, complete wedge, exact
+  Discord admission/lifecycle, and coordination fallback remain open. The
   [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
   records temporary rooms and possible recording as an unapproved proposal.
-- **Next:** if the owner wants to keep pursuing CS2, define and separately
-  authorize two tests: non-friend Steam group-chat text/voice entry, then a
-  Community Group-to-current-CS2 ordinary-party test. If the second test is not
-  worth its persistent-membership/privacy friction or fails, retain Valorant as
-  the selected direction and return to `DEF-001` when its prerequisites are
-  ready. Voice capture remains a separate later decision.
+- **Next:** owner decides whether Discord-server membership and bot-created
+  private per-match text/voice channels are the preferred, optional, or fallback
+  coordination model. If accepted, settle invite versus `guilds.join` admission
+  and post-match membership/access cleanup. Valorant remains selected and
+  `DEF-001` remains the party-link reliance gate. A CS2 Discord Game Invite
+  test, Group DM proof, and all voice capture remain optional unapproved work.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -212,6 +221,16 @@
   passed, and the portable workflow package and legacy application remained
   unchanged. Application runtime tests and the portable-system validator were
   not run because this unit changes project records only.
+- The 2026-09-06 Discord comparison reviewed current first-party Discord,
+  Riot/Valorant, Valve/CS2, and Steam material; separated Group DMs from server
+  channels and shared communication from game-party entry; and recorded the
+  owner's coordination criterion in `DEC-020`. No application, account, bot,
+  server, Group DM, channel, invite, OAuth grant, role, message, voice, game
+  client, provider contact, automation, or personal-data collection was used.
+  All relative links across 44 project Markdown files resolved, `git diff
+  --check` passed, and the portable workflow package and legacy application
+  remained unchanged. Application runtime tests and the portable-system
+  validator were not run because this unit changes project records only.
 
 ## Gates
 
@@ -226,18 +245,25 @@
   authorize client automation.
 - Looking to Play exists in the researched record but is rejected for QGuard by
   `DEC-019`; no Looking to Play test may route current work.
-- Steam group-chat links provide a promising non-friend text/voice path, but no
-  supported QGuard API for creating or managing those chats was found and the
-  exact non-friend link flow remains behaviorally untested.
-- Public or request-based Community Group admission avoids friendship, but the
-  official group-to-ordinary-lobby description is CS:GO-era. Current CS2
-  behavior and exact all-player rank retrieval remain unverified.
+- Manual Steam group-chat links provide a promising non-friend text/voice path,
+  but no supported QGuard creation/management API was found. Under `DEC-020`,
+  they do not meet the preferred coordination criterion. Persistent Steam
+  Community Groups are not the requested communication object.
+- Discord server/private-channel coordination is technically supported but not
+  yet selected. A human-owned QGuard server, user consent/admission, exact
+  permissions and lifecycle, data minimization, and failure behavior remain
+  owner/specification gates.
+- Discord application-created Group DMs are not a dependable default: the
+  documented endpoint originated with deprecated GameBridge, is capped at ten
+  active groups, and cannot contain a bot.
 - The Valorant party link is the accepted candidate direction but remains
   provisionally viable. `DEF-001` must verify non-friend acceptance before a
   specification or implementation relies on it.
-- The Steam findings do not supersede `DEC-018`, authorize either live test,
-  approve persistent QGuard Steam membership, or make communication success
-  evidence of CS2 party entry.
+- No current first-party CS2 Discord Game Invite was established. Discord room
+  success is not CS2 party-entry evidence, and no CS2 live test is authorized.
+- The Discord findings do not supersede `DEC-018`, authorize a Discord
+  application/server/bot, approve persistent membership, or authorize message
+  or voice collection.
 - Discord room creation and voice recording are not approved. In particular,
   later report review would require prior audio capture and retention and
   therefore cannot be introduced as an incidental bot feature.

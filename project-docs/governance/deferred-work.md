@@ -1,6 +1,6 @@
 # TeamRadar Deferred Work
 
-Status: active 2026-09-05
+Status: active 2026-09-06
 
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
@@ -10,8 +10,8 @@ postpones it with a return condition.
 
 ## DEF-001 - Verify Valorant Non-Friend Lobby-Link Acceptance
 
-- **Status:** deferred; required before Valorant-link reliance; execution order
-  awaits the remaining Steam Community Group/CS2 comparison
+- **Status:** deferred; required before Valorant-link reliance; execution awaits
+  an approved test packet and exact account/client authorization
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-018` selects Valorant and requires a scoped
@@ -20,13 +20,12 @@ postpones it with a return condition.
 - **Objective:** prove that a current recipient who is neither the host's Riot
   friend nor formal Discord friend can join the host's intended ordinary
   Valorant party by clicking the official host-copied link.
-- **Reason postponed:** the owner rejected CS2 Looking to Play but is
-  investigating whether a Steam Community Group still enables non-friend CS2
-  party entry. The owner has not decided whether that test should precede or
-  end the comparison with Valorant. The exact PC region, ordinary mode, two
-  suitable accounts/clients, test environment, credential handling, and
-  authorization have not been selected. No live account/client action is
-  authorized by the documentation decision.
+- **Reason postponed:** the Discord comparison reinforces Valorant as the only
+  current candidate with an evidenced host-copied ordinary-party link, but that
+  evidence does not prove the exact non-friend case. The PC region, ordinary
+  mode, two suitable accounts/clients, test environment, credential handling,
+  and execution authorization have not been selected. No live account/client
+  action is authorized by the research or documentation decisions.
 - **Dependencies:** approved test packet; supported current PC clients and
   region; two accounts with the required non-friend relationship; safe handling
   of any credentials outside project records; and fresh feature/policy recheck.
@@ -40,7 +39,7 @@ postpones it with a return condition.
   limitation without recording credentials or unnecessary personal data.
 - **Owner recheck:** required if the test fails, the feature materially changes,
   or the proposed flow would substitute friend invites, another integration,
-  or another game. The CS2/Steam research does not cancel this deferred
+  or another game. The CS2/Steam/Discord research does not cancel this deferred
   commitment unless the owner explicitly supersedes `DEC-018` and decides its
   disposition.
 - **Invalidation:** Riot feature, client, region, account-linking, privacy, or

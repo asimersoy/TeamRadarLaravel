@@ -588,3 +588,42 @@ See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feas
 - **Supersedes:** the unapproved Looking to Play live-test proposal in the
   2026-09-05 CS2 findings; no approved decision
 - **Superseded by:** none
+
+## DEC-020 - Clarify The Match-Coordination Group Criterion
+
+- **Date:** 2026-09-06
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** When evaluating an external “group” for matched QGuard users,
+  treat the desired object as a multi-person conversation comparable to a
+  one-to-one chat window expanded to the matched team, rather than primarily a
+  persistent Steam Community Group. A viable candidate must offer a supported
+  API, automation, or semi-automation path that makes it easy to assemble the
+  matched users and lets participants enter through a generated link, code,
+  OAuth handoff, or comparable supported mechanism.
+- **Reason:** The group exists to help newly matched people find and communicate
+  with one another with low friction. A manually administered persistent
+  community does not by itself provide the requested per-match experience.
+- **Alternatives considered:** manual Steam group chat; persistent Steam
+  Community Group; Discord Group DM; bot-managed private channels in a QGuard
+  Discord server. The owner requested research rather than selecting one.
+- **Consequences:** Steam Community Group membership is no longer the default
+  interpretation of “group” for coordination. Steam chat, Discord Group DM,
+  and Discord server-channel approaches are evaluated against the clarified
+  automation and participant-entry criterion. Communication success remains
+  separate from ordinary game-party entry. The decision does not select
+  Discord, approve a bot/server dependency, authorize account or provider
+  action, authorize message/voice collection, or supersede Valorant selection
+  in `DEC-018`.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-006`,
+  `OQ-009`, `OQ-010`, Discord/Steam research, source ledger, and owner decision
+  sequence
+- **Return condition:** revisit if the owner accepts persistent community
+  membership or fully manual coordination, requires Direct Messages placement,
+  or chooses a QGuard-native communication surface instead.
+- **Related decisions:** refines the evaluated flow under `DEC-015`, applies the
+  friction preference in `DEC-016`, and narrows the alternatives left by
+  `DEC-019`
+- **Supersedes:** the unapproved assumption that a Steam Community Group could
+  satisfy the owner's requested communication-group experience
+- **Superseded by:** none
