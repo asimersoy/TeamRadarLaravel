@@ -10,11 +10,13 @@ The workspace migration and workflow-governance review are complete. The owner
 has approved the QGuard name and several product foundations, and has accepted
 the simplified historical reconstruction as sufficient for redesign without an
 exhaustiveness claim. The owner selected Valorant after the Apex/Valorant API
-and party-entry research. Its official lobby link requires a scoped non-friend
-test before reliance; rank behavior and the complete product boundary remain
-open. Temporary Discord rooms and voice recording are proposals only. No
-implementation plan or code change is approved. Everything under `legacy/`
-remains historical evidence.
+and party-entry research, then asked for CS2 to be investigated as another
+candidate. The CS2 review found a credible non-friend Looking to Play route,
+but its exact-user reliability requires a current client test. `DEC-018` still
+selects Valorant until the owner deliberately resolves the reopened comparison.
+Rank behavior and the complete product boundary remain open. Temporary Discord
+rooms and voice recording are proposals only. No implementation plan or code
+change is approved. Everything under `legacy/` remains historical evidence.
 
 Start with:
 
@@ -24,7 +26,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Active Valorant-selection route](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
+7. [Latest CS2 party-entry research route](routes/RESEARCH-2026-09-05-counter-strike-2-party-entry.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -35,6 +37,7 @@ Start with:
 - [Completed initial game-API research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
 - [Completed party-entry and policy-fit route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
 - [Current Valorant-selection and Discord-proposal route](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
+- [Completed CS2 party-entry research route](routes/RESEARCH-2026-09-05-counter-strike-2-party-entry.md)
 - [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)
 
@@ -44,6 +47,7 @@ Start with:
 - [Game API feasibility findings](research/game-api-feasibility-findings.md)
 - [Game API source ledger](research/game-api-source-ledger.md)
 - [Party entry and provider-policy fit](research/party-entry-and-policy-fit.md)
+- [Counter-Strike 2 party-entry feasibility](research/counter-strike-2-party-entry-feasibility.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.

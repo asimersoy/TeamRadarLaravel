@@ -1,7 +1,8 @@
 # QGuard Game API Feasibility Findings
 
 - **Record type:** current research findings
-- **Status:** research complete; owner selected Valorant under `DEC-018`
+- **Status:** Apex/Valorant research complete; owner selected Valorant under
+  `DEC-018`; later CS2 comparison is recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
@@ -11,6 +12,11 @@
 - **Implementation authority:** none
 
 ## Executive Finding
+
+This report compares the original Valorant and Apex candidates. The later
+[Counter-Strike 2 follow-up](counter-strike-2-party-entry-feasibility.md) adds a
+credible non-friend Looking to Play route and reopens the owner comparison; it
+does not retroactively change the bounded findings below.
 
 The reviewed public first-party material does not document a supported path in
 either candidate that provides both:
@@ -43,7 +49,8 @@ qualifies from the reviewed public first-party evidence.
 The focused
 [party-entry and provider-policy follow-up](party-entry-and-policy-fit.md)
 adds an important distinction: Valorant's official PC Discord integration is
-the only evidenced friendship-free ordinary-lobby candidate. Apex still has no
+the only evidenced friendship-free ordinary-lobby candidate in that two-game
+comparison. Apex still has no
 documented equivalent. The relevant provider restriction is unauthorized
 client control or data extraction, not external LFG coordination or official
 user-mediated joining.

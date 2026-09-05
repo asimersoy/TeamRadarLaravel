@@ -541,3 +541,21 @@
   `DEC-016`; makes the conditional `DEC-017` relevant to later planning
 - **Supersedes:** none
 - **Superseded by:** none
+
+### Subsequent Review Note - 2026-09-05
+
+The owner later asked for Counter-Strike 2 to be researched as another possible
+game if its ordinary parties can be joined without Steam friendship. The
+bounded first-party review found a credible user-mediated path through
+Looking to Play, with historical Nearby/Public and Steam Group lobby paths
+also suitable for current-client testing. It did not find a current official
+player-visible shareable CS2 party link/code or a supported QGuard interface
+for controlling AppID 730 lobbies. Exact-player discovery and present client
+behavior remain unverified.
+
+This evidence reopens the comparison but does not itself supersede this
+decision. The owner's wording invited CS2 follow-through as a possibility and
+kept Valorant available; it did not unambiguously select a new first game.
+`DEC-018` therefore remains the approved selection until the owner deliberately
+keeps it, supersedes it with CS2, or keeps both candidates open for testing.
+See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feasibility.md).

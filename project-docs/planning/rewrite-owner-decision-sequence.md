@@ -37,8 +37,14 @@ explicitly rejects them.
 - The current public-source research does not show either Valorant or Apex
   fully providing both exact all-player current rank and programmatic ordinary
   party formation; Valorant is the closer approval-gated candidate.
-- No current stack, game, integration, data flow, decision system, deployment,
-  or implementation boundary has been approved.
+- A later first-party CS2 review establishes a credible non-friend ordinary-
+  party path through Looking to Play and official Steam OpenID identity, but no
+  current direct party link/code, QGuard lobby-control interface, or exact all-
+  player rank endpoint. Present-client exact-user discovery is untested.
+- Valorant is the current approved game under `DEC-018`, but the owner has
+  reopened it for comparison with CS2. No current stack, dependable party-entry
+  integration, data flow, decision system, deployment, or implementation
+  boundary has been approved.
 
 ### Approved Owner Decisions Already In Force
 
@@ -115,13 +121,14 @@ sequence.
 The initial [game API findings](../research/game-api-feasibility-findings.md)
 and focused
 [party-entry findings](../research/party-entry-and-policy-fit.md) show that
-neither candidate publicly documents both complete current-rank coverage and
-ordinary-party automation.
+neither Valorant nor Apex publicly documents both complete current-rank
+coverage and ordinary-party automation. The later
+[CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md)
+add a third serious candidate.
 
-- Valorant is closer: Riot recognizes approval-gated opt-in LFG tools, RSO and
+- Valorant was closer in the original pair: Riot recognizes approval-gated opt-in LFG tools, RSO and
   official match/leaderboard APIs exist, and PC users can copy a Riot lobby link
-  into a Discord server, DM, or elsewhere. This is the only evidenced candidate
-  for friendship-free ordinary-party entry. Exact non-friend recipient
+  into a Discord server, DM, or elsewhere. Exact non-friend recipient
   prerequisites, all-player current rank, and third-party ordinary-party
   automation are not fully documented.
 - Apex LiveAPI is legitimate for PC Custom Matches, but its lobby requests do
@@ -132,17 +139,24 @@ ordinary-party automation.
   official user-mediated joining. They matter if QGuard would automate an
   ordinary client through an unauthorized interface or extract game data by an
   unauthorized method.
-- The owner selected Valorant after reviewing these findings. PC remains the
+- CS2 Looking to Play expressly supports advertising for and receiving party
+  invitations without prior friendship, and Valve's 2023 CS2 notes establish
+  that the feature carried into CS2. Whether a host can reliably locate the
+  exact QGuard-matched account is unverified. Old first-party Nearby/Public and
+  Steam Group lobby flows warrant current-client checks but are not current
+  guarantees. No current official direct CS2 party link/code was found.
+- The owner selected Valorant after reviewing the original findings. PC remains the
   provisional context for the documented lobby-link candidate; no complete
   platform, region, mode, rank, integration, coordination, or provider-
-  application boundary is approved.
+  application boundary is approved. The later CS2 instruction reopened the
+  comparison but did not unambiguously supersede `DEC-018`.
 
-The host-copied lobby-link flow is accepted as the candidate direction. Before
-QGuard relies on it, `DEF-001` must verify non-friend joining with two current
-accounts. That verification does not block further product planning. The next
-bounded product discussion can address minimum rank evidence, while the owner-
-proposed Discord coordination and voice-recording possibilities remain separate
-unapproved choices in the
+The next bounded decision is whether to keep Valorant selected and retain CS2
+as fallback, supersede `DEC-018` so CS2 is tested first, or keep both candidates
+open until both user-mediated flows are tested. Until then, `DEF-001` remains
+required before Valorant-link reliance, and no CS2 flow is dependable without
+the scoped current-client test. The owner-proposed Discord coordination and
+voice-recording possibilities remain separate unapproved choices in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

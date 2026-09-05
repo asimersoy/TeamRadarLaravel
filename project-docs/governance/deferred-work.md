@@ -10,7 +10,8 @@ postpones it with a return condition.
 
 ## DEF-001 - Verify Valorant Non-Friend Lobby-Link Acceptance
 
-- **Status:** deferred; required before reliance
+- **Status:** deferred; required before Valorant-link reliance; execution order
+  awaits the reopened CS2/Valorant comparison
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-018` selects Valorant and requires a scoped
@@ -19,10 +20,11 @@ postpones it with a return condition.
 - **Objective:** prove that a current recipient who is neither the host's Riot
   friend nor formal Discord friend can join the host's intended ordinary
   Valorant party by clicking the official host-copied link.
-- **Reason postponed:** the exact PC region, ordinary mode, two suitable
-  accounts/clients, test environment, credential handling, and authorization
-  have not been selected. No live account/client action is authorized by the
-  documentation decision.
+- **Reason postponed:** the owner has not yet decided whether the new CS2
+  candidate should be tested before, after, or alongside Valorant. The exact PC
+  region, ordinary mode, two suitable accounts/clients, test environment,
+  credential handling, and authorization have not been selected. No live
+  account/client action is authorized by the documentation decision.
 - **Dependencies:** approved test packet; supported current PC clients and
   region; two accounts with the required non-friend relationship; safe handling
   of any credentials outside project records; and fresh feature/policy recheck.
@@ -36,6 +38,7 @@ postpones it with a return condition.
   limitation without recording credentials or unnecessary personal data.
 - **Owner recheck:** required if the test fails, the feature materially changes,
   or the proposed flow would substitute friend invites, another integration,
-  or another game.
+  or another game. The CS2 research does not cancel this deferred commitment
+  unless the owner explicitly supersedes `DEC-018` and decides its disposition.
 - **Invalidation:** Riot feature, client, region, account-linking, privacy, or
   policy changes may invalidate a prior pass and require a fresh test.

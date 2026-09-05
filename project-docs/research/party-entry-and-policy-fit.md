@@ -1,7 +1,8 @@
 # QGuard Party Entry And Provider-Policy Fit
 
 - **Record type:** current focused research findings
-- **Status:** research complete; owner selected Valorant under `DEC-018`
+- **Status:** Apex/Valorant research complete; owner selected Valorant under
+  `DEC-018`; later CS2 comparison is recorded separately
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
@@ -11,6 +12,11 @@
 - **Implementation authority:** none
 
 ## Executive Finding
+
+This report's comparative conclusions are scoped to Valorant and Apex. A later
+[Counter-Strike 2 follow-up](counter-strike-2-party-entry-feasibility.md) found
+a credible non-friend Looking to Play route and reopened the owner comparison;
+it did not supersede `DEC-018` by itself.
 
 Valorant now has the closest documented match to the owner's preferred party
 flow. Riot and Discord's official PC integration lets a lobby host copy a
@@ -46,7 +52,7 @@ assisted flow.
 
 | Owner preference | Valorant | Apex Legends | Current fit |
 |---|---|---|---|
-| Official Discord/server-based direct join or shareable ordinary-lobby link without first adding an in-game friend | `supported-with-conditions`: official PC integration lets a host copy a lobby link into a Discord server, DM, or elsewhere; exact non-friend recipient prerequisites remain unverified | `not found`: Discord documents the generic mechanism, but no Apex-specific first-party support was found | Valorant is the only evidenced candidate for this tier |
+| Official Discord/server-based direct join or shareable ordinary-lobby link without first adding an in-game friend | `supported-with-conditions`: official PC integration lets a host copy a lobby link into a Discord server, DM, or elsewhere; exact non-friend recipient prerequisites remain unverified | `not found`: Discord documents the generic mechanism, but no Apex-specific first-party support was found | Valorant is the only evidenced candidate for this tier among the two games assessed in this report |
 | Other official shareable code/link for an ordinary party | The Riot/Discord lobby link is the evidenced mechanism; no separate public party code was found | `not found`: the documented code is for Private Match, not an ordinary public/ranked party | No separate mechanism established |
 | Add friend, then invite and accept | `supported`: normal manual recovery path; direct Discord friend-list invitations additionally require formal Discord friendship and linked accounts | `supported`: EA documents find friend, accept request, invite, and accept | Functional last resort, with the owner-identified adoption friction |
 | QGuard programmatically creates/joins the ordinary party | `undocumented/unverified`: no public party operation is listed | `undocumented/unverified`: LiveAPI lobby requests are for Custom Match | Not an approved dependency |
@@ -170,6 +176,10 @@ join the intended ordinary party through the official link. The test gates
 reliance in a specification or implementation, not further product planning.
 If it fails, the workflow returns to the owner before substituting another
 party flow or game.
+
+The later CS2 evidence reopens the comparison without changing this recorded
+disposition. See the decision register's subsequent review note under
+`DEC-018`.
 
 ### Open Questions
 

@@ -1,13 +1,14 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-05
-- **Status:** Valorant selected for initial planning; lobby-link verification,
+- **Status:** CS2 feasibility research complete; `DEC-018` still selects
+  Valorant pending a deliberate owner comparison; both party-entry mechanisms,
   rank behavior, and product boundary remain open
-- **Objective:** continue bounded Valorant product decisions while preventing
-  unverified lobby-link behavior or the Discord voice proposal from becoming
-  implementation assumptions
+- **Objective:** decide whether CS2 replaces, follows, or is tested alongside
+  Valorant while preventing unverified party behavior from becoming an
+  implementation assumption
 - **Current route:**
-  [PLAN-2026-09-05 Valorant selection and Discord voice proposal](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
+  [RESEARCH-2026-09-05 Counter-Strike 2 party entry](routes/RESEARCH-2026-09-05-counter-strike-2-party-entry.md)
 
 ## Verified Workspace State
 
@@ -79,6 +80,9 @@
 - `DEC-018` selects Valorant as the initial game and requires a scoped
   two-account non-friend lobby-link test before a specification or
   implementation may depend on that capability.
+- The owner's later instruction adds CS2 as a serious candidate for bounded
+  research. It does not unambiguously supersede `DEC-018`; the comparison has
+  returned to the owner after the evidence pass.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
@@ -104,16 +108,23 @@
   verify the Valorant lobby-link candidate, the absence of an evidenced Apex
   equivalent, and the exact boundary where provider terms affect QGuard.
   Owner review selected Valorant and set the link test gate in `DEC-018`.
-- **In progress:** bounded Valorant product decisions. The required lobby-link
-  verification is `DEF-001`; rank fallback, Riot access, complete wedge, and
-  coordination surface remain open. The
+  The later
+  [CS2 party-entry findings](research/counter-strike-2-party-entry-feasibility.md)
+  establish a credible non-friend Looking to Play path, a supported Steam
+  OpenID identity path, and the limits of QGuard-accessible Steam lobby and rank
+  interfaces.
+- **In progress:** owner comparison of Valorant and CS2. `DEF-001` remains the
+  required Valorant-link verification; a CS2 Looking to Play test is proposed
+  but not yet approved or deferred. Rank fallback, provider access, complete
+  wedge, and coordination surface remain open. The
   [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
   records temporary rooms and possible recording as an unapproved proposal.
-- **Next:** continue with minimum acceptable rank evidence or another bounded
-  owner-selected product question. Activate `DEF-001` before any integration
-  specification relies on the lobby link. Review Discord coordination and
-  voice capture separately when their data and moderation consequences become
-  decision-relevant.
+- **Next:** owner decides whether to keep Valorant first with CS2 as fallback,
+  supersede `DEC-018` so CS2 is tested first, or keep both candidates open until
+  both flows are tested. Then define and authorize the applicable live-test
+  packet before relying on either party-entry mechanism. Review Discord
+  coordination and voice capture separately when their data and moderation
+  consequences become decision-relevant.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -175,6 +186,15 @@
   workflow package and legacy application remained unchanged. Application
   runtime tests and the portable-system validator were not run because this
   unit changes project records only.
+- The 2026-09-05 CS2 follow-up reviewed current and historical first-party
+  Valve, Steam, CS2, and Discord material; distinguished ordinary parties from
+  community/dedicated servers and developer AppID APIs; and separated manual
+  user flows from restricted client automation. It used no account, client,
+  credential, provider contact, API call, interception, or personal-data
+  collection. All relative links across 40 project Markdown files resolved,
+  `git diff --check` passed, and the portable workflow package and legacy
+  application remained unchanged. Application runtime tests and the portable-
+  system validator were not run because this unit changes project records only.
 
 ## Gates
 
@@ -187,9 +207,16 @@
 - The owner selected Valorant; the research itself still does not constitute
   Riot approval, prove private interfaces absent, approve a rank fallback, or
   authorize client automation.
+- CS2 has a credible documented non-friend Looking to Play path, but no current
+  direct player-visible party link/code or supported QGuard lobby-control path
+  was found. Exact-user discovery, current client behavior, and exact all-player
+  rank retrieval remain unverified.
 - The Valorant party link is the accepted candidate direction but remains
   provisionally viable. `DEF-001` must verify non-friend acceptance before a
   specification or implementation relies on it.
+- The CS2 findings reopen owner comparison only. They do not supersede
+  `DEC-018`, authorize a live test, or place Looking to Play into the approved
+  party-entry preference order.
 - Discord room creation and voice recording are not approved. In particular,
   later report review would require prior audio capture and retention and
   therefore cannot be introduced as an incidental bot feature.

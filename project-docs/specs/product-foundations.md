@@ -32,7 +32,9 @@ or compatible teammates.
 
 ### Initial Game And Integration Direction
 
-Valorant is the selected initial game for current QGuard product planning.
+Valorant remains the selected initial game for current QGuard product planning
+under `DEC-018`; later CS2 evidence has reopened that selection for deliberate
+owner comparison but has not silently replaced it.
 Apex Legends was not selected because the bounded public first-party research
 found no evidenced Apex path satisfying the preferred friendship-free
 ordinary-party flow. This is a current feasibility-led decision, not an
@@ -53,23 +55,35 @@ capability, access path, policy permission, or implementation method is assumed.
 If a selected capability proves unavailable, unsupported, impermissible, or too
 fragile, alternate QGuard flows return to the owner before substitution.
 
-The research found that neither candidate publicly documents both complete
+The initial research found that neither Valorant nor Apex publicly documents both complete
 rank coverage and ordinary-party automation. Valorant was selected because it
 offers an approval-gated opt-in LFG/RSO path and an official user-mediated
 lobby link; Apex's documented LiveAPI lobby control is for Custom Matches. See
 the [research findings](../research/game-api-feasibility-findings.md).
+
+A subsequent first-party CS2 review found a credible friendship-free ordinary-
+party route through Looking to Play, plus historical Nearby/Public and Steam
+Group lobby routes that warrant present-client testing. It found no current
+official player-visible shareable ordinary-party link/code, supported QGuard
+lobby-control interface, or all-player exact-rank endpoint. Steam OpenID does
+provide an official account-identity path. CS2 is therefore a serious
+conditional candidate, not a newly approved first game. See the
+[CS2 party-entry findings](../research/counter-strike-2-party-entry-feasibility.md).
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
 official friendship-free ordinary-lobby code/link, and use the documented
 friend/invite/accept flow only as a fallback. A Custom Match, Private Match, or
 tournament code does not satisfy the normal public/ranked-party need unless the
-owner later changes the product boundary. Valorant now has an official
-user-copied PC lobby-link candidate; Apex has no comparable documented feature
-in the reviewed first-party material. Before QGuard may depend on the Valorant
-link, a scoped two-account test must prove that a recipient who is neither the
-host's Riot friend nor formal Discord friend can join the intended ordinary
-party through it. See `DEC-018` and the focused
+owner later changes the product boundary. Valorant has an official user-copied
+PC lobby-link candidate; CS2 has a documented non-friend Looking to Play route
+whose exact-user usability is unverified; Apex has no comparable documented
+feature in the reviewed first-party material. Looking to Play is not itself a
+link/code and therefore requires an owner decision about where it belongs in
+the approved preference order. Before QGuard may depend on either live
+candidate, the applicable scoped two-account test must pass. `DEC-018` still
+specifically requires the Valorant test while its selection remains current.
+See the focused
 [party-entry and policy findings](../research/party-entry-and-policy-fit.md).
 
 If the approved Valorant flow requires RSO, a provider-independent working or
