@@ -1,7 +1,7 @@
-# TeamRadar Specification Index
+# QGuard Specification Index
 
 - **Record type:** current specification index
-- **Status:** initialized; no current-product specification is approved
+- **Status:** initialized; product foundations partially approved
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -10,10 +10,10 @@
 
 ## Purpose
 
-This directory will contain the modular current-product specification suite.
-It is intentionally empty of product requirements until the owner resolves the
-current product decisions. Legacy evidence does not populate or approve a
-module automatically.
+This directory contains the modular current-product specification suite.
+Legacy evidence does not populate or approve a module automatically. Only the
+specific owner decisions recorded in current governance may enter a current
+specification as approved content.
 
 ## Module Contract
 
@@ -34,6 +34,8 @@ records an explicit narrow override under the workflow-governance policy.
 
 ## Current Modules
 
-None. Creating this index establishes document structure only; it approves no
-TeamRadar product, use boundary, feature, architecture, technology, data flow,
-content, implementation, or release decision.
+- [Product foundations](product-foundations.md) — partially approved; not
+  implementation-ready
+
+No current module approves a complete product/use boundary, game selection,
+architecture, technology, data flow, implementation plan, or release.

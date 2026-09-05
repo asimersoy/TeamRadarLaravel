@@ -1,8 +1,7 @@
-# TeamRadar Open Questions
+# QGuard Open Questions
 
-These questions concern the current reconstruction phase. Historical unknowns
-inside the old idea are cataloged separately and do not automatically become
-requirements for the rewrite.
+These questions cover the remaining historical gate and current QGuard product
+decisions. Historical unknowns do not automatically become requirements.
 
 ## OQ-001 - Is More Legacy Evidence Available?
 
@@ -23,19 +22,23 @@ requirements for the rewrite.
 
 ## OQ-002 - How Should The Apex/Valorant Historical Conflict Be Interpreted?
 
-- **Status:** open
+- **Status:** narrowed 2026-09-05
 - **Decision owner:** project owner
 - **Needed by:** final historical-canon label
 - **Blocks:** calling either game the indisputable final old direction.
-- **Does not block:** documenting both phases and source confidence.
+- **Does not block:** current API feasibility research or current game
+  selection after that research.
 - **Known context:** Reachable Git chronology switches from Apex work to a
   Valorant prototype in December 2025. The later owner-provided reconstruction
-  says the retained idea returned to an Apex pubs workflow.
-- **Options/tradeoffs:** accept the memory record as the later historical
-  decision; retain both as alternate late phases; or resolve with another dated
-  source.
-- **Evidence needed:** owner correction/confirmation or additional dated
-  evidence.
+  says the retained idea returned to an Apex pubs workflow. The owner clarified
+  that the switches reflected concern about changing API/client capabilities,
+  not a durable current preference for either game. Historical chronology must
+  not choose the current game (`DEC-011`).
+- **Options/tradeoffs:** retain both as feasibility-driven historical phases,
+  or seek a stricter chronological final label if that distinction remains
+  valuable.
+- **Evidence needed:** a further owner chronology correction or additional
+  dated evidence only if an indisputable final-old-game label is still desired.
 - **Resolved by:** none
 
 ## OQ-003 - Has The Historical Reconstruction Captured The Intended Level Of Detail?
@@ -47,7 +50,10 @@ requirements for the rewrite.
 - **Does not block:** owner review one document at a time.
 - **Known context:** The reconstruction covers product intent, journeys,
   features, matching/honor, game integration, architecture, data/security,
-  interface, operations, implementation state, chronology, and conflicts.
+  interface, operations, implementation state, chronology, and conflicts. The
+  owner has corrected the QGuard/TeamRadar naming interpretation and clarified
+  that legacy capability intent and achieved outcome matter more than ordinary
+  implementation method.
 - **Options/tradeoffs:** accept this depth; request deeper reconstruction of a
   particular subsystem; or omit irrelevant historical areas before redesign.
 - **Evidence needed:** owner review feedback.
@@ -58,14 +64,15 @@ requirements for the rewrite.
 - **Status:** open
 - **Decision owner:** project owner
 - **Needed by:** approval of a current product brief
-- **Blocks:** treating TeamRadar as a teammate finder, selecting a game or
+- **Blocks:** approving QGuard's complete purpose/use boundary, selecting a game or
   audience, making public promises, or authorizing an implementation plan.
 - **Does not block:** reviewing the legacy reconstruction or discussing current
   alternatives as proposals.
-- **Known context:** The legacy idea centered on finding behaviorally compatible
-  teammates, but the owner intends to change specifications and boundaries.
-  No legacy purpose, name interpretation, anti-toxicity claim, or permitted use
-  is inherited.
+- **Known context:** `DEC-009` selects QGuard as the product name. `DEC-010`
+  makes behavioral honor/reliability, distinct from rank, the central concept.
+  `DEC-011` prioritizes a working product over a predetermined first game.
+  Present problem wording, target outcome, permitted/prohibited uses, audience,
+  and public claims remain open; no legacy anti-toxicity promise is inherited.
 - **Decision components:** present problem, target outcome, allowed uses,
   prohibited uses, explicit non-goals, audience/age/geography, and claims the
   product may or may not make.
@@ -78,12 +85,14 @@ requirements for the rewrite.
 - **Status:** open
 - **Decision owner:** project owner
 - **Needed by:** current user journeys and MVP scope
-- **Blocks:** game/platform integration research, queue design, surface design,
-  and meaningful acceptance criteria.
-- **Does not block:** comparing candidate wedges without implementation.
+- **Blocks:** selecting the first game/platform wedge, queue design, surface
+  design, and meaningful acceptance criteria.
+- **Does not block:** the bounded Apex/Valorant API feasibility research.
 - **Known context:** The legacy record contains conflicting Apex and Valorant
   phases and never settled region, platform, language, age, casual/competitive,
-  solo/partial-party, or one-session/persistent-team boundaries.
+  solo/partial-party, or one-session/persistent-team boundaries. `DEC-011`
+  makes selection feasibility-led, starts research with Apex and Valorant,
+  leaves other games possible, and makes party size game-dependent.
 - **Decision components:** initial game and mode, platform/cross-play, launch
   region/language, primary user segment, party shape, and relationship duration.
 - **Resolved by:** none
@@ -101,6 +110,10 @@ requirements for the rewrite.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
+  `DEC-010` approves behavioral honor as the central concept and keeps it
+  separate from rank. `DEC-013` prefers authoritative API-derived rank and
+  requires a report/correction/operator-resolution path if self-declared rank
+  is later approved as a fallback. Exact effects and safeguards remain open.
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
@@ -168,3 +181,43 @@ requirements for the rewrite.
   recorded in `DEC-008`.
 - **Evidence needed:** none; the owner answered all eight components.
 - **Resolved by:** `DEC-007` and `DEC-008`
+
+## OQ-009 - What Current Game APIs Can QGuard Reliably And Permissibly Use?
+
+- **Status:** research required
+- **Decision owner:** project owner after research; primary agent owns research
+- **Needed by:** first-game and integration-boundary decision
+- **Blocks:** selecting Apex, Valorant, or another game based on rank retrieval
+  or automated party/lobby assumptions; approving any client automation.
+- **Does not block:** product-charter decisions that do not depend on a game or
+  integration, or current authoritative-source research.
+- **Known context:** The owner values reliable rank retrieval and local-client
+  party/lobby creation/joining because they may substantially reduce user
+  friction, but neither is an absolute product requirement. Legacy API claims
+  are stale and current capability, access, permission, and stability are
+  unknown (`DEC-011`, `DEC-013`).
+- **Options/tradeoffs:** supported official integration; approval-gated or
+  conditional integration; partial integration plus fallback; manual/no
+  integration; or another game after the initial candidates are assessed.
+- **Evidence needed:** the current authoritative-source matrix defined in
+  [the API research brief](../research/game-api-feasibility.md).
+- **Resolved by:** none
+
+## OQ-010 - What QGuard Flow Applies If Preferred Game Integrations Are Not Viable?
+
+- **Status:** open; intentionally sequenced after `OQ-009`
+- **Decision owner:** project owner
+- **Needed by:** first-game selection and smallest complete user journey
+- **Blocks:** approving the rank fallback, party-formation flow, and associated
+  friction/acceptance criteria when preferred APIs are unavailable.
+- **Does not block:** API research or documenting owner-proposed alternatives as
+  proposals.
+- **Known context:** API-derived rank and automated or assisted party formation
+  are preferred but not mandatory. Self-declared rank with reports is one
+  bounded fallback direction; the owner has additional alternate project flows
+  to discuss after current API capabilities are known.
+- **Options/tradeoffs:** intentionally deferred until research distinguishes
+  supported, conditional, unavailable, and unverified capabilities.
+- **Evidence needed:** `OQ-009` research findings plus the owner's alternate
+  flow proposals and tolerance for added user friction.
+- **Resolved by:** none

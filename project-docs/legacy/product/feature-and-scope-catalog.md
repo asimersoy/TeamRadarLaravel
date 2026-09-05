@@ -10,7 +10,7 @@ that it is complete, secure, tested, or approved for reuse.
 
 | Area | Capability | Historical state | Evidence/confidence | Rewrite status |
 | --- | --- | --- | --- | --- |
-| Identity | TeamRadar product name | remembered final name | memory record plus Electron package/product name; QueueGuard remains in Laravel UI | undecided for new specification beyond owner's current project label |
+| Identity | QGuard product name; TeamRadar internal/working name | owner-corrected historical interpretation | owner correction dated 2026-09-05; TeamRadar appears in docs/relay and QueueGuard in Laravel UI | QGuard approved by `DEC-009`; no filesystem/package/public rename implied |
 | Marketing | Public landing page | implemented prototype | `resources/views/landing.blade.php` | no legacy public claim approved |
 | Accounts | Registration/login/email flows | implemented starter scaffolding | Laravel auth views/routes/tests | evidence only |
 | Accounts | Game account model | implemented prototype | `Game`, `GameAccount`, migrations, relationship | evidence only |

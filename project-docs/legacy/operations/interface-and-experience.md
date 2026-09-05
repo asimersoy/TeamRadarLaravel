@@ -10,8 +10,10 @@
 
 The Laravel interface is branded **QueueGuard**, including page titles, header,
 authentication shell, registration copy, and footer. Project documents and the
-Electron package use **TeamRadar**. The memory reconstruction identifies
-TeamRadar as the final name and QueueGuard as a mistaken temporary codename.
+Electron package use **TeamRadar**. The initial memory reconstruction treated
+TeamRadar as final, but the owner corrected that interpretation on 2026-09-05:
+TeamRadar was an internal/working name and **QGuard** is the selected current
+product name.
 
 No surviving brand system, logo decision, visual identity brief, or naming
 decision record exists beyond those occurrences.

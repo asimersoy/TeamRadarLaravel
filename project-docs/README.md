@@ -1,4 +1,4 @@
-# TeamRadar Project Records
+# QGuard Project Records
 
 This directory is the canonical home for TeamRadar-specific records. The
 reusable workflow system remains separate in
@@ -6,12 +6,13 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-The workspace migration and workflow-governance review are complete. The
-repository is ready for the owner to close or continue the historical review
-and then begin the bounded current-product decision sequence. No product brief,
-specification module, implementation plan, or code change has been approved.
-Everything under `legacy/` describes historical intent or implementation; it
-is not a current build specification.
+The workspace migration and workflow-governance review are complete. The owner
+has approved the QGuard name and several product foundations while correcting
+the legacy reconstruction. Gate 0 remains open until the owner confirms that
+the corrected historical intent/outcome record is sufficient. Current Apex and
+Valorant API feasibility must then be researched before selecting the first
+game or integration boundary. No implementation plan or code change is
+approved. Everything under `legacy/` remains historical evidence.
 
 Start with:
 
@@ -20,14 +21,21 @@ Start with:
 3. [Open questions](governance/open-questions.md)
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
-6. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
-7. [Active product-readiness route](routes/PLAN-2026-09-03-rewrite-readiness.md)
+6. [Product foundations](specs/product-foundations.md)
+7. [Active foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
+8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
 
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
+- [Current product-foundation/API route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
 - [Specification index](specs/README.md)
+
+## Current Research
+
+- [Game API feasibility brief](research/game-api-feasibility.md)
+- [Game API source ledger](research/game-api-source-ledger.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.

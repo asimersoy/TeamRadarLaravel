@@ -1,10 +1,13 @@
-# TeamRadar Current State
+# QGuard Current State
 
-- **Last updated:** 2026-09-04
-- **Status:** workflow governance settled; product Gate 0 is next
-- **Objective:** close or continue the legacy review, then define the current
-  TeamRadar product and use boundary before implementation planning
-- **Current route:** [PLAN-2026-09-03](routes/PLAN-2026-09-03-rewrite-readiness.md)
+- **Last updated:** 2026-09-05
+- **Status:** owner corrections recorded; Gate 0 confirmation and API research
+  remain before game/integration selection
+- **Objective:** close the corrected historical-intent review, research current
+  Apex/Valorant integration capabilities, then continue the bounded QGuard
+  product decision sequence
+- **Current route:**
+  [PLAN-2026-09-05](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
 
 ## Verified Workspace State
 
@@ -60,11 +63,16 @@
   TeamRadar-specific rule changes, approvals, decision supersession,
   specification gates, commit boundaries, controlled operations, review
   batching, and reviewer authority.
+- Current product decisions select the **QGuard** name, behavioral honor as the
+  central concept, feasibility-led game selection, authoritative API-derived
+  rank as preferred over declaration, bounded reporting for inaccurate fallback
+  declarations, and capability/outcome extraction rather than inheritance of
+  legacy implementation shape (`DEC-009` through `DEC-013`).
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
-- No new TeamRadar product scope, architecture, technology, data collection,
-  matching criteria, moderation policy, deployment, or permitted-use boundary
-  has been approved.
+- No complete product/use boundary, initial game, API integration, matching
+  criteria, honor formula/effect, moderation policy, architecture, technology,
+  deployment, or implementation plan has been approved.
 
 ## Work State
 
@@ -73,12 +81,14 @@
   orphaned Electron relay history, the organized historical dossier, and the
   owner decision sequence for rewrite readiness. The repository was also moved
   intact into the approved nested workspace layout, and the TeamRadar-specific
-  workflow-governance contract is approved.
-- **In progress:** no product decision is yet approved; owner review is ready
-  to resume at Gate 0.
-- **Next:** answer Gate 0 in the
-  [product decision sequence](planning/rewrite-owner-decision-sequence.md), then
-  proceed through bounded current-product decision groups.
+  workflow-governance contract is approved. Owner corrections and the approved
+  product foundations are recorded in `DEC-009` through `DEC-013`.
+- **In progress:** Gate 0 remains open while the owner decides whether the
+  corrected historical intent/outcome record is sufficient. Current API
+  capability claims remain unverified.
+- **Next:** confirm Gate 0, then execute the bounded
+  [game API feasibility research](research/game-api-feasibility.md) before
+  selecting the first game/integration boundary and continuing product groups.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -107,15 +117,26 @@
   `git diff --check` validation, and the portable workflow package remained
   unchanged. No application test was required for this documentation-only
   decision unit.
+- The 2026-09-05 QGuard foundation update reconciled the owner's naming,
+  honor, rank-source, integration-research, and legacy-evidence decisions. The
+  workflow validator passed, all relative links across 32 project Markdown
+  files resolved, `git diff --check` passed, and the portable workflow and
+  legacy application remained unchanged. Current API research and application
+  runtime tests were not part of this documentation-only unit.
 
 ## Gates
 
+- The QGuard naming correction, honor foundation, feasibility-led game
+  direction, rank-source preference, and legacy-evidence treatment are approved
+  only to the extent recorded in `DEC-009` through `DEC-013`.
 - Historical reconstruction cannot be called exhaustive until
   [OQ-001](governance/open-questions.md#oq-001---is-more-legacy-evidence-available)
   is resolved, but the owner may accept the current corpus as sufficient
   context without claiming exhaustiveness.
 - The Apex/Valorant chronology remains a visible provenance conflict under
   [OQ-002](governance/open-questions.md#oq-002---how-should-the-apexvalorant-historical-conflict-be-interpreted).
+- No current Apex, Valorant, or other game API/client capability is assumed
+  until the research brief is completed from current authoritative sources.
 - No implementation starts until the current product charter, use boundary,
   MVP journey, matching/reputation treatment, data behavior, technical
   specification, and testable completion criteria are approved.

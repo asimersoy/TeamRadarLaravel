@@ -12,7 +12,7 @@ final rejection itself.
 
 | Old approach | Remembered later treatment | Evidence note |
 | --- | --- | --- |
-| QueueGuard as final product name | superseded by TeamRadar | QueueGuard survives in Laravel UI; TeamRadar appears in docs and relay package |
+| QGuard/QueueGuard as final product name was superseded by TeamRadar | corrected on 2026-09-05; TeamRadar was an internal/working name and QGuard is preferred | QueueGuard survives in Laravel UI; TeamRadar appears in docs and relay package; current `DEC-009` selects QGuard |
 | Automatic Apex friend requests | dropped | no surviving implementation; rejection is memory-supported |
 | Automatic ordinary public/ranked lobby joining | dropped | custom-match API experiments do not provide this flow |
 | Building normal pubs around custom-match lobbies | rejected | Apex requests/proto show custom-match exploration; memory explains mismatch |
@@ -42,8 +42,9 @@ requirements.
 
 ### Game Scope
 
-- final historical authority between late Valorant code and remembered Apex
-  return;
+- exact final historical chronology between late Valorant code and remembered
+  Apex return; the owner clarified that changing API feasibility drove the
+  shifts and the chronology must not select the current game;
 - which game would follow Apex;
 - platform and cross-play boundaries; and
 - whether multi-game identity was architectural or merely aspirational.

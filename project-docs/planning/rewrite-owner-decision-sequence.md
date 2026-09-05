@@ -1,4 +1,4 @@
-# TeamRadar Rewrite Owner Decision Sequence
+# QGuard Rewrite Owner Decision Sequence
 
 - **Record type:** current owner-review packet
 - **Status:** owner-input-required
@@ -49,6 +49,16 @@ rejected decisions, unless the owner explicitly rejects them.
 - Apply the approved TeamRadar workflow-governance contract for changes,
   approvals, specifications, commits, controlled operations, review batching,
   and reviewer authority (`DEC-008`).
+- Use QGuard as the current product name (`DEC-009`).
+- Make behavioral honor/reliability, distinct from skill/rank, the central
+  product concept (`DEC-010`).
+- Select the initial game from current feasibility evidence, beginning with
+  Apex and Valorant rather than inheriting either (`DEC-011`).
+- Promote legacy capability intent and achieved outcome, not ordinary legacy
+  implementation shape (`DEC-012`).
+- Prefer permitted authoritative API rank; treat self-declaration as a
+  truthfully labelled fallback with report and resolution requirements
+  (`DEC-013`).
 
 ### Unapproved Assumptions
 
@@ -73,6 +83,17 @@ systems behind explicit evidence and owner gates. The owner may revise the
 sequence.
 
 ## Gate 0 - Close Or Continue Legacy Reconstruction
+
+### Owner Corrections Recorded 2026-09-05
+
+- QGuard is the selected current name; TeamRadar was an internal/working name,
+  not the preferred product name replacing QGuard.
+- Apex/Valorant shifts reflected changing integration-feasibility concerns and
+  must not choose the current game.
+- Legacy intent and observable outcome matter; ordinary implementation method
+  does not, except when API/integration difficulty makes it decision-relevant.
+- These corrections are recorded, but the owner has not yet explicitly said
+  that no further historical intent/outcome reconstruction is needed.
 
 ### Decision Required
 
@@ -100,7 +121,7 @@ Is the current historical dossier sufficient context for redesign?
 
 Answer these before selecting a game, feature list, or stack:
 
-1. What present-day problem does TeamRadar solve, in one sentence?
+1. What present-day problem does QGuard solve, in one sentence?
 2. What outcome should a user achieve that ordinary game matchmaking, Discord,
    forums, or existing LFG tools do not provide well enough?
 3. Which uses are permitted: one-session grouping, persistent teams, ranked
@@ -244,9 +265,13 @@ Only after Groups 1-7 are sufficiently settled:
 phased execution plan, acceptance tests, release gates, rollback plan, and
 explicit authorization to begin implementation. This closes `OQ-007`.
 
-## Proposed Low-Dependency Baseline For Owner Reaction
+## Superseded Agent Baseline - Do Not Use For Current Routing
 
-This is an agent proposal only, offered to make tradeoffs concrete:
+- **Status:** superseded by `DEC-011`
+- **Reason:** this proposal assumed manual invitations and no privileged API
+  integration before the owner required current API feasibility to be assessed.
+
+The superseded proposal was:
 
 - one game, one primary mode, and one launch region/language;
 - web-first accounts, declared game handle, and a small preference set;

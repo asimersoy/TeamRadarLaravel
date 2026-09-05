@@ -3,8 +3,9 @@
 - **Record type:** historical decision-system reconstruction
 - **Status:** draft for owner review
 - **Current authority:** none
-- **Risk note:** the old concept could affect who is shown, matched, trusted,
-  restricted, or punished; no such mechanism is approved for the rewrite
+- **Risk note:** the owner now approves behavioral honor as QGuard's central
+  concept, but no score, weighting, visibility, matching, eligibility,
+  restriction, punishment, or moderation mechanism is approved
 
 ## Intended Separation Of Signals
 
@@ -16,6 +17,9 @@ The old idea treated two broad dimensions as different:
 
 The project did not intend honor to be a disguised win-rate score. Legacy copy
 focused on communication, teamwork, quitting, toxicity, and good standing.
+The owner confirmed this behavioral-honor versus mechanical-rank separation for
+current QGuard in `DEC-010`; the details below remain historical evidence and
+open design questions.
 
 ## Matching Classification
 

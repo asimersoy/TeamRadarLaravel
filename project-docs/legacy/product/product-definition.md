@@ -8,10 +8,13 @@
 
 ## Identity
 
-The remembered final name was **TeamRadar**. **QueueGuard** appeared throughout
-the Laravel UI as a temporary codename or label. The current owner also refers
-to the project as TeamRadar, but the historical claim that QueueGuard was
-formally superseded is supplied mainly by the memory reconstruction.
+The original reconstruction treated **TeamRadar** as the final name and
+**QueueGuard** as a temporary codename. On 2026-09-05, the owner corrected that
+interpretation: TeamRadar was an internal/working name used before QGuard and
+appeared again in later internal material; it did not supersede QGuard as the
+preferred product name. The current product decision selects **QGuard**. The
+legacy Laravel UI's **QueueGuard** spelling remains evidence of the prototype,
+not the approved current spelling.
 
 ## Core Problem
 
@@ -61,6 +64,10 @@ This shape is coherent with the repository's earlier Apex integration work,
 but its “final” status is not fully corroborated because the latest reachable
 product commit switched the app toward Valorant. See
 [contradictions and confidence](../../evidence/contradictions-and-confidence.md).
+The owner later clarified that these game switches reflected changing API and
+local-client feasibility concerns; they do not express a current game
+preference. Self-declared rank was an integration-constrained fallback, not the
+desired product source.
 
 ## Product Boundaries Remembered For The Apex MVP
 
@@ -94,6 +101,10 @@ product commit switched the app toward Valorant. See
 
 Most exclusion labels above come from the memory reconstruction. The repository
 shows that several were explored, but not always the exact rejection decision.
+The 2026-09-05 owner correction means automatic rank retrieval should not be
+read as an undesirable capability: it was excluded from that remembered MVP
+because it appeared unavailable, and is preferred for current QGuard if a
+permitted reliable API exists.
 
 ## Audience
 
@@ -150,6 +161,8 @@ defined as historical decisions and must not be fabricated retroactively.
 
 ## What This Record Does Not Decide
 
-It does not decide that the rewrite will target Apex, use a relay, use rank or
-honor, collect reviews, use Laravel, or retain any old MVP boundary. Those are
-future owner decisions.
+This historical record does not decide that the rewrite will target Apex, use a
+relay, collect particular data, use Laravel, or retain the old MVP boundary.
+Current decisions separately select QGuard, establish behavioral honor as the
+central concept, and require current API feasibility research; those decisions
+come from the owner, not from this reconstruction.

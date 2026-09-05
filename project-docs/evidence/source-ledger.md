@@ -25,6 +25,10 @@
 | CUR-002 | Owner instruction, 2026-09-02 | Reconstruct old idea first; owner will later change specifications, product boundary, and permitted-use boundary | Historical reconstruction remains non-authoritative for the rewrite |
 | CUR-003 | Owner instruction, 2026-09-02 | Keep workflow/guidelines separate from project-specific records, including folder separation | Controls current documentation layout |
 | CUR-004 | Owner instruction, 2026-09-02 | Route tasks, preserve unrelated work, separate information classes, and require evidence-backed completion | Controls working method, not product scope |
+| CUR-005 | Owner correction/decision, 2026-09-05 | QGuard is the selected current product name; TeamRadar was an internal/working name and did not supersede QGuard as preferred name | Does not authorize filesystem, package, domain, remote, or public rename operations |
+| CUR-006 | Owner product direction, 2026-09-05 | Behavioral honor is the central concept and distinct from rank; authoritative API rank is preferred; inaccurate declaration fallback requires reporting and resolution | Does not define the score, matching effects, moderation procedure, data flow, or implementation |
+| CUR-007 | Owner product/research direction, 2026-09-05 | Initial game selection is feasibility-led; begin current API research with Apex and Valorant; rank retrieval and local-client party/lobby automation are high-value but optional | Provides research and decision criteria, not evidence that any current capability exists or is permitted |
+| CUR-008 | Owner legacy-evidence rule, 2026-09-05 | Promote old capability intent and achieved outcome; ignore ordinary implementation method unless technically difficult, API-specific, or feasibility-relevant | Does not approve copying legacy code, architecture, or technology |
 
 ## Supplied Memory Reconstruction
 

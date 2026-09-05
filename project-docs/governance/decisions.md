@@ -1,4 +1,4 @@
-# TeamRadar Decision Register
+# QGuard Decision Register
 
 ## DEC-001 - Reconstruct Before Redesign
 
@@ -227,5 +227,148 @@
   identifies the affected convention; record material changes as a new
   superseding decision and assess dependent specifications, plans, and commits.
 - **Related decisions:** implements `DEC-003`, `DEC-004`, and `DEC-007`
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-009 - Use QGuard As The Product Name
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Use **QGuard** as the current product name. TeamRadar was an
+  internal/working name used before QGuard and later appeared again in internal
+  materials; it did not supersede QGuard as the preferred product name.
+- **Reason:** The owner prefers QGuard and corrected the earlier reconstructed
+  naming sequence.
+- **Alternatives considered:** TeamRadar and the legacy UI spelling QueueGuard;
+  neither is selected as the current product name.
+- **Consequences:** Current product records and future specifications use
+  QGuard. Historical files retain the names they actually used. Existing local
+  repository/workspace paths remain unchanged because no filesystem, Git
+  remote, package, domain, or public rename was authorized by this naming
+  decision.
+- **Affected records:** current state, specification index, product planning,
+  historical naming reconstruction, confidence matrix, and source ledger
+- **Return condition:** revisit only through an explicit product-naming
+  decision; separately scope any repository, package, domain, or public rename.
+- **Supersedes:** the current-name assumption attached to the earlier
+  reconstruction; no numbered current decision
+- **Superseded by:** none
+
+## DEC-010 - Make Behavioral Honor The Central Product Concept
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** QGuard's central product concept is an honor/reliability system
+  representing teammate behavior rather than mechanical skill or rank. The
+  intended loop uses post-play teammate feedback and reporting to build or
+  correct that signal. Exact review eligibility, questions, scoring, weighting,
+  visibility, matching effects, sanctions, abuse controls, explanation,
+  correction, appeal, retention, and rollback remain undecided.
+- **Reason:** The owner confirmed that the honor system is the main idea of the
+  project and that the reconstructed separation between honor and rank matches
+  the intended concept.
+- **Alternatives considered:** treat honor as a secondary feature, a skill
+  score, or an inherited legacy formula. None was selected.
+- **Consequences:** Future product framing must preserve the behavioral/skill
+  distinction and route consequential honor effects through decision-safety,
+  moderation, privacy, testing, and owner-review gates. No public anti-toxicity,
+  safety, compatibility, or outcome claim is approved by this decision.
+- **Affected records:** product-foundation specification, `OQ-004`, `OQ-006`,
+  product decision sequence, matching/trust specifications, and research needs
+- **Return condition:** the detailed honor design requires later bounded owner
+  decisions and any applicable qualified reviews before implementation.
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-011 - Select The Initial Game Through Current Integration Feasibility
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Do not select the initial game from historical Apex/Valorant
+  chronology or owner preference alone. Prioritize delivering a working QGuard
+  product. Start current feasibility research with Apex Legends and Valorant;
+  other games remain possible. Treat reliable rank retrieval and low-friction
+  local-client party/lobby creation and joining as high-value preferred
+  capabilities, not absolute requirements. If they are unavailable,
+  unsupported, impermissible, or too fragile, return to the owner with evidence
+  and discuss alternate product flows before selecting the game/integration
+  boundary. Required party size follows the selected game.
+- **Reason:** Client and server API capabilities changed during and after the
+  old project. The game choice matters less to the owner than finding a viable,
+  low-friction path to a working product.
+- **Alternatives considered:** inherit Apex, inherit Valorant, choose by game
+  preference before research, or make rank/lobby automation mandatory. None was
+  selected.
+- **Consequences:** Legacy API claims are not current facts. Fresh official
+  research must examine capability, access, policy, stability, platform scope,
+  authentication, and operational constraints. No API use, client automation,
+  reverse engineering, game selection, or implementation is approved yet.
+- **Affected records:** product-foundation specification, API research brief,
+  `OQ-002`, `OQ-005`, `OQ-009`, `OQ-010`, and product decision sequence
+- **Return condition:** owner selects the initial game and integration boundary
+  after reviewing the current research and fallback tradeoffs.
+- **Supersedes:** the unapproved agent proposal to assume manual invites and no
+  privileged integration for the first validation
+- **Superseded by:** none
+
+## DEC-012 - Extract Legacy Capability Intent, Not Legacy Implementation Shape
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Use old implementations to identify what capability they tried
+  to achieve and what observable outcome they actually achieved. Do not copy
+  their implementation method, code structure, architecture, or technology into
+  current specifications merely because it exists. Preserve implementation
+  detail as decision-relevant evidence only when the capability is technically
+  difficult, integration-specific, API-dependent, or the method itself proves
+  a material feasibility constraint or failure mode.
+- **Reason:** The owner values the old project's intent and achieved behavior,
+  but generally does not care how ordinary capabilities were implemented.
+- **Alternatives considered:** ignore all old implementation evidence or treat
+  the old architecture as the rewrite baseline. Neither was selected.
+- **Consequences:** Current specifications describe approved QGuard behavior,
+  outcomes, constraints, and acceptance evidence. Historical implementation
+  audits remain available for provenance but cannot choose the new stack or
+  architecture. Integration-specific lessons may be cited with their limits.
+- **Affected records:** product-foundation specification, legacy records,
+  product decision sequence, future technical specifications, and plans
+- **Return condition:** each promoted legacy lesson must identify whether it is
+  intent, verified outcome, constraint, failure evidence, or an unapproved
+  implementation detail.
+- **Related decisions:** implements `DEC-002`
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-013 - Prefer Authoritative Rank Retrieval And Bound The Fallback
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Prefer obtaining current player rank from a permitted and
+  sufficiently reliable official game API, whether server-side or through a
+  legitimate local-client integration. Self-declared rank is a fallback created
+  by integration limitations, not the desired source. If a future approved
+  slice uses self-declaration, label it truthfully and include a report,
+  correction, and operator-resolution path for inaccurate declarations. The
+  exact evidence, consequences, appeal, retention, and abuse controls remain
+  undecided.
+- **Reason:** Incorrect self-declared rank can create poor matches and an
+  unpleasant experience before a report is resolved.
+- **Alternatives considered:** trust declarations without correction, describe
+  declarations as verified, or require API rank as an absolute launch blocker.
+  None was selected.
+- **Consequences:** Rank-source feasibility is part of the current API research.
+  No collection method is approved until capability, access, policy, accuracy,
+  data flow, and fallback tradeoffs are reviewed. Rank remains separate from
+  behavioral honor.
+- **Affected records:** product-foundation specification, API research brief,
+  `OQ-005`, `OQ-006`, `OQ-009`, identity/data specifications, and moderation
+  planning
+- **Return condition:** owner approves the rank source and, if necessary, the
+  complete self-declaration/report-resolution fallback for the selected game.
 - **Supersedes:** none
 - **Superseded by:** none

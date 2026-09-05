@@ -103,3 +103,23 @@ then establish:
 - future owner changes to specification and product/use boundaries.
 
 These are current process decisions, not old product decisions.
+
+## 2026-09-05 - Owner Naming, Product-Foundation, And Feasibility Correction
+
+The owner corrected and narrowed the reconstruction:
+
+- QGuard is the preferred current product name; TeamRadar was an
+  internal/working name rather than the public name that superseded QGuard;
+- the Apex/Valorant shifts reflected changing API and local-client feasibility
+  concerns, not a current game preference;
+- behavioral honor/reliability, distinct from rank, is the central current
+  product concept;
+- API-derived rank and automated/assisted party formation are preferred
+  friction-reducing capabilities but are not absolute requirements;
+- current official capabilities and policies must be researched before a game
+  or integration boundary is selected; and
+- legacy capability intent and achieved outcome matter, while ordinary legacy
+  implementation method does not carry into the rewrite.
+
+This entry records current owner authority and correction. It does not claim
+that any present game API capability exists or is permitted.

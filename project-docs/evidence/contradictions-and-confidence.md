@@ -21,7 +21,7 @@ good or should be reused.
 | Historical claim | Supporting evidence | Counterevidence/gap | Confidence |
 | --- | --- | --- | --- |
 | The project was about finding better teammates and reducing toxic/unreliable experiences | landing/matchmaking UI, overview, memory dump | public language overstates unimplemented capability | high as old intent |
-| TeamRadar was the final old name and QueueGuard temporary | TeamRadar docs/relay plus memory; current owner says TeamRadar | QueueGuard is pervasive in latest Laravel UI; no dated rename record | medium |
+| TeamRadar was the final old name and QueueGuard temporary | initial memory reconstruction plus TeamRadar docs/relay | owner corrected this on 2026-09-05: TeamRadar was internal/working and QGuard is preferred; QueueGuard is pervasive in the Laravel UI | corrected; prior claim superseded |
 | Apex was the final old MVP game | early tracked Apex work and detailed memory reconstruction | latest reachable implementation/TO_DO switches to Valorant | medium-low pending owner resolution |
 | Valorant was a detour/future game | memory reconstruction | tracked chronology ends on Valorant prototype with explicit focus switch | low-medium |
 | The core Apex flow formed parties for ordinary pubs rather than replacing matchmaking | detailed memory record; custom-match API mismatch is technically coherent | no private-room/manual-invite implementation or primary decision record | medium |
@@ -48,14 +48,17 @@ good or should be reused.
 
 The latest reachable Git authority says “Switch the project focus to valorant.”
 The memory reconstruction says the later retained architecture returned to
-Apex. Since current work is historical reconstruction rather than selecting a
-new game, both remain visible.
+Apex. The owner clarified on 2026-09-05 that changing API and local-client
+capabilities drove these shifts. Both historical phases remain visible, but
+neither selects the current game; current official feasibility evidence will.
 
 ### 2. Product Name
 
 TeamRadar appears in project/relay materials; QueueGuard remains the actual web
-brand. Memory resolves this toward TeamRadar, but the implementation was never
-fully renamed.
+brand. The owner corrected the earlier memory interpretation: TeamRadar was an
+internal/working name used before QGuard and appeared again internally, while
+**QGuard** is the selected current product name. This resolves the current name
+without rewriting what historical artifacts were called.
 
 ### 3. Local WebSocket Role
 
@@ -90,7 +93,8 @@ PostgreSQL are remembered discussions. No final rewrite stack exists.
 
 The highest-confidence statement is:
 
-> TeamRadar was an unfinished behavior-focused teammate-finder concept. The
+> QGuard, also internally called TeamRadar in historical material, was an
+> unfinished behavior-focused teammate-finder concept. The
 > repository first explored an Apex LiveAPI/relay architecture and later built a
 > small Valorant-oriented account/matchmaking UI prototype. A detailed memory
 > reconstruction describes the preferred old concept as returning to Apex pubs:
@@ -106,7 +110,8 @@ new specification.
 ## Owner Review Needed
 
 - confirm whether the remembered Apex return should be treated as the final old
-  decision despite missing dated primary evidence;
+  chronological phase despite missing dated primary evidence, only if that
+  historical label still matters after the feasibility clarification;
 - correct any “remembered firm” rule that was only an idea;
 - supply any missing relay/backend/design repositories or dumps;
 - identify areas that need deeper historical extraction; and
