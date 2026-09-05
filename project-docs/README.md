@@ -7,12 +7,12 @@ reusable workflow system remains separate in
 ## Current Phase
 
 The workspace migration and workflow-governance review are complete. The owner
-has approved the QGuard name and several product foundations while correcting
-the legacy reconstruction. Gate 0 remains open until the owner confirms that
-the corrected historical intent/outcome record is sufficient. Current Apex and
-Valorant API feasibility must then be researched before selecting the first
-game or integration boundary. No implementation plan or code change is
-approved. Everything under `legacy/` remains historical evidence.
+has approved the QGuard name and several product foundations, and has accepted
+the simplified historical reconstruction as sufficient for redesign without an
+exhaustiveness claim. The initial Apex/Valorant API research pass is complete
+and awaits owner review before a game, fallback, or integration boundary is
+selected. No implementation plan or code change is approved. Everything under
+`legacy/` remains historical evidence.
 
 Start with:
 
@@ -22,19 +22,21 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Active foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
+7. [Active API-research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
 
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
-- [Current product-foundation/API route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
+- [Completed product-foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
+- [Current game-API research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
 - [Specification index](specs/README.md)
 
 ## Current Research
 
 - [Game API feasibility brief](research/game-api-feasibility.md)
+- [Game API feasibility findings](research/game-api-feasibility-findings.md)
 - [Game API source ledger](research/game-api-source-ledger.md)
 
 These records organize decisions; they do not approve a product brief,

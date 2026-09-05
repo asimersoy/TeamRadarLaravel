@@ -123,3 +123,35 @@ The owner corrected and narrowed the reconstruction:
 
 This entry records current owner authority and correction. It does not claim
 that any present game API capability exists or is permitted.
+
+## 2026-09-05 - Historical Gate Closure And Incremental Decision Sequence
+
+The owner accepted the simplified historical reconstruction as sufficient for
+redesign without requiring exhaustiveness or a memory-only resolution of the
+Apex/Valorant chronology. General legacy reconstruction therefore stops; later
+evidence and bounded, current-decision-specific checks remain possible.
+
+The owner also directed that current QGuard decisions be made gradually through
+focused discussions. Game/API feasibility comes first. PC is only a
+provisional working direction; alternate rank/party flows follow the research
+if needed; and the applicable law/review details wait for a concrete product
+and data flow. This sequencing does not waive the approved per-slice
+specification gate.
+
+## 2026-09-05 - Initial Current Game-API Research Pass
+
+The bounded current-source pass found no public first-party path in either
+Valorant or Apex that fully combines exact current rank for every participant
+with programmatic ordinary public/ranked-party formation.
+
+Valorant is the closer candidate: Riot recognizes opt-in LFG products subject
+to registration/approval, provides approval-gated RSO plus match/leaderboard
+APIs, and now supports a PC user copying a Riot lobby link and sharing it
+anywhere. Exact all-player current rank and third-party ordinary-party control
+remain undocumented.
+
+Apex LiveAPI is an official PC interface, but EA describes its lobby requests
+as Custom Match controls. The reviewed current first-party material exposes no
+general player-rank API or ordinary-party command set, and Private Battle
+Royale requires at least 30 players. These are research findings only; no game,
+fallback, integration, provider application, or implementation was approved.

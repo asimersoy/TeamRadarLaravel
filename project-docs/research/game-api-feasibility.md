@@ -1,11 +1,12 @@
 # QGuard Game API Feasibility Research Brief
 
 - **Record type:** current research brief
-- **Status:** required; execution pending
+- **Status:** initial research pass complete; owner decision required
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-011` and `DEC-013`
 - **Created:** 2026-09-05
+- **Completed:** 2026-09-05
 - **Date sensitivity:** high; legacy platform/API claims are not current facts
 - **Implementation authority:** none
 
@@ -14,6 +15,13 @@
 Determine which game and integration boundary can support a working,
 low-friction first QGuard product. Begin with Apex Legends and Valorant. The
 research informs, but does not make, the owner's game or fallback-flow decision.
+
+The initial results are recorded in the
+[game API feasibility findings](game-api-feasibility-findings.md). The public
+first-party evidence does not show either game satisfying both preferred
+capabilities completely. Valorant is the closer candidate through an
+approval-gated opt-in LFG path and a user-mediated lobby link; Apex LiveAPI's
+documented lobby control is limited to Custom Matches.
 
 ## Research Questions
 
@@ -73,3 +81,13 @@ an alternate product flow.
 - risk and feasibility findings separated from product recommendations;
 - viable integration boundaries and fallback options; and
 - owner decision still required for the first game and implementation scope.
+
+## Research-Pass Result
+
+- The [source ledger](game-api-source-ledger.md) records the first-party
+  sources, access dates, source limits, and local legacy corroboration.
+- The [findings](game-api-feasibility-findings.md) provide the requested
+  side-by-side capability/policy matrix, explicit unknowns, separated
+  assessment, candidate boundaries, and recheck triggers.
+- No provider approval, game selection, fallback acceptance, or implementation
+  authority follows from completing this research pass.

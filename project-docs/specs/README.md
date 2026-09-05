@@ -1,7 +1,8 @@
 # QGuard Specification Index
 
 - **Record type:** current specification index
-- **Status:** initialized; product foundations partially approved
+- **Status:** product foundations partially approved; API findings under owner
+  review
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -36,6 +37,11 @@ records an explicit narrow override under the workflow-governance policy.
 
 - [Product foundations](product-foundations.md) — partially approved; not
   implementation-ready
+
+The historical gate is closed as sufficient for redesign. The current
+[game API findings](../research/game-api-feasibility-findings.md) narrow the
+next game/integration discussion but do not constitute a specification or game
+selection.
 
 No current module approves a complete product/use boundary, game selection,
 architecture, technology, data flow, implementation plan, or release.

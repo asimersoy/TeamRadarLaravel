@@ -29,6 +29,8 @@
 | CUR-006 | Owner product direction, 2026-09-05 | Behavioral honor is the central concept and distinct from rank; authoritative API rank is preferred; inaccurate declaration fallback requires reporting and resolution | Does not define the score, matching effects, moderation procedure, data flow, or implementation |
 | CUR-007 | Owner product/research direction, 2026-09-05 | Initial game selection is feasibility-led; begin current API research with Apex and Valorant; rank retrieval and local-client party/lobby automation are high-value but optional | Provides research and decision criteria, not evidence that any current capability exists or is permitted |
 | CUR-008 | Owner legacy-evidence rule, 2026-09-05 | Promote old capability intent and achieved outcome; ignore ordinary implementation method unless technically difficult, API-specific, or feasibility-relevant | Does not approve copying legacy code, architecture, or technology |
+| CUR-009 | Owner historical-gate decision, 2026-09-05 | Simplified reconstruction is sufficient for redesign; no exhaustive claim or memory-only chronology answer is required | Later evidence/corrections may still be added; targeted historical inspection remains possible |
+| CUR-010 | Owner decision-sequencing direction, 2026-09-05 | Start with game/API research; make later product decisions gradually in focused discussions; PC is provisional; fallback and concrete legal-review details come later | Does not select PC, a game, a fallback, jurisdiction, data flow, or implementation slice |
 
 ## Supplied Memory Reconstruction
 

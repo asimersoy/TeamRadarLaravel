@@ -3,7 +3,7 @@
 - **Objective:** record the owner's QGuard product foundations and legacy
   corrections, distinguish approved decisions from research-dependent choices,
   and frame the current game/API feasibility gate without assuming capability
-- **Status:** owner-input-required; research execution pending
+- **Status:** completed 2026-09-05; research continued under a separate route
 - **Owner:** project owner; primary Codex agent integrates records and performs
   later authorized research
 - **Started:** 2026-09-05
@@ -46,8 +46,9 @@
   automation; designing alternative flows; settling honor formula/effects;
   implementation; legacy code changes; filesystem/repository/public rename;
   provider contact; live-client experiments; remote or destructive action.
-- **Dependencies:** Gate 0 owner confirmation; current official source access;
-  later owner decisions on researched tradeoffs.
+- **Dependencies:** satisfied for this route. Gate 0 was closed by `DEC-014`;
+  current research continued under
+  [RESEARCH-2026-09-05](RESEARCH-2026-09-05-game-api-feasibility.md).
 - **Risks:** turning historical implementation into a requirement; confusing
   desired API capability with documented availability or permission; merging
   rank and honor; overclaiming what QGuard can prevent; or treating a research
@@ -78,6 +79,7 @@
   application code/configuration are unchanged.
 - API research and application runtime tests were not run because this unit
   only records owner decisions and frames the next research gate.
-- Gate 0, current API findings, the first-game/integration choice, and the
-  remaining product decisions are unresolved. No remote, destructive,
+- Gate 0 was resolved after this foundation unit by `DEC-014`. API findings,
+  the first-game/integration choice, and remaining product decisions continue
+  under later records. No remote, destructive,
   production, deployment, publication, or history-rewrite action occurred.

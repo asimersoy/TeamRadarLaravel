@@ -1,7 +1,7 @@
 # Legacy Contradictions And Confidence
 
 - **Record type:** final evidence reconciliation matrix
-- **Status:** draft for owner review
+- **Status:** accepted as sufficient historical context; not exhaustive
 - **Purpose:** prevent the historical narrative from appearing more certain
   than its sources justify
 
@@ -22,7 +22,7 @@ good or should be reused.
 | --- | --- | --- | --- |
 | The project was about finding better teammates and reducing toxic/unreliable experiences | landing/matchmaking UI, overview, memory dump | public language overstates unimplemented capability | high as old intent |
 | TeamRadar was the final old name and QueueGuard temporary | initial memory reconstruction plus TeamRadar docs/relay | owner corrected this on 2026-09-05: TeamRadar was internal/working and QGuard is preferred; QueueGuard is pervasive in the Laravel UI | corrected; prior claim superseded |
-| Apex was the final old MVP game | early tracked Apex work and detailed memory reconstruction | latest reachable implementation/TO_DO switches to Valorant | medium-low pending owner resolution |
+| Apex was the final old MVP game | early tracked Apex work and detailed memory reconstruction | latest reachable implementation/TO_DO switches to Valorant | retained ambiguity; no final label required |
 | Valorant was a detour/future game | memory reconstruction | tracked chronology ends on Valorant prototype with explicit focus switch | low-medium |
 | The core Apex flow formed parties for ordinary pubs rather than replacing matchmaking | detailed memory record; custom-match API mismatch is technically coherent | no private-room/manual-invite implementation or primary decision record | medium |
 | Rank was self-declared in MVP | Valorant code/TODO plus memory | no Apex queue reconfirmation implementation | medium-high as old simplification |
@@ -50,7 +50,9 @@ The latest reachable Git authority says “Switch the project focus to valorant.
 The memory reconstruction says the later retained architecture returned to
 Apex. The owner clarified on 2026-09-05 that changing API and local-client
 capabilities drove these shifts. Both historical phases remain visible, but
-neither selects the current game; current official feasibility evidence will.
+neither selects the current game. The owner accepted this ambiguity on
+2026-09-05 rather than answering uncertain chronology from memory; current
+feasibility and later product decisions control the new game.
 
 ### 2. Product Name
 
@@ -107,12 +109,14 @@ The highest-confidence statement is:
 This wording reports evidence and uncertainty without making the old idea the
 new specification.
 
-## Owner Review Needed
+The owner accepted this bounded statement as sufficient for redesign on
+2026-09-05 without claiming exhaustive historical canon.
 
-- confirm whether the remembered Apex return should be treated as the final old
-  chronological phase despite missing dated primary evidence, only if that
-  historical label still matters after the feasibility clarification;
-- correct any “remembered firm” rule that was only an idea;
-- supply any missing relay/backend/design repositories or dumps;
-- identify areas that need deeper historical extraction; and
-- explicitly close the reconstruction before beginning new boundary decisions.
+## Future Update Triggers
+
+- new primary historical evidence or an owner correction;
+- a current decision that exposes a specific historical gap material to that
+  decision; or
+- evidence that a remembered firm rule was only an idea.
+
+General legacy mining remains closed under `DEC-014`.

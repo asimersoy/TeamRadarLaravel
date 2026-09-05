@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-013`
+- **Authority:** `DEC-009` through `DEC-015`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -36,7 +36,8 @@ The initial game is not selected. Apex Legends and Valorant are the first
 research candidates, but another game remains possible. Selection is based on
 the feasibility of delivering a working, sufficiently low-friction QGuard
 experience rather than inheriting the old project's final game or architecture.
-Party size follows the selected game.
+Party size follows the selected game. PC is a provisional working direction,
+not an approved launch-platform boundary.
 
 Two high-value preferred capabilities are:
 
@@ -50,6 +51,13 @@ These capabilities are desirable but not absolute requirements. No present API
 capability, access path, policy permission, or implementation method is assumed.
 If current research finds them unavailable, unsupported, impermissible, or too
 fragile, alternate QGuard flows return to the owner before game selection.
+
+The initial research pass found that neither candidate publicly documents both
+complete rank coverage and ordinary-party automation. Valorant is the closer
+candidate through an approval-gated opt-in LFG/RSO path and a user-mediated
+lobby link; Apex's documented LiveAPI lobby control is for Custom Matches. See
+the [research findings](../research/game-api-feasibility-findings.md). These
+facts do not select a game or approve a fallback.
 
 ### Rank Source
 
@@ -72,12 +80,24 @@ Their ordinary implementation shape, code, architecture, and technology are
 not inherited. A legacy intention becomes a current requirement only through an
 explicit owner decision.
 
+### Decision And Implementation Sequence
+
+The historical reconstruction is sufficient for redesign without an
+exhaustiveness claim. Current decisions will be settled gradually in bounded,
+dependency-aware discussions rather than through one bulk questionnaire. This
+does not weaken the implementation gate: every specification required by a
+particular implementation slice must be approved before that slice starts
+unless the owner records a narrow explicit override.
+
+Compliance with applicable law is required. The actual jurisdiction, data
+obligations, and qualified-review needs remain open until the product flow,
+participants, locations, data fields, recipients, and retention are concrete.
+
 ## Open Product Decisions
 
-- Whether the historical reconstruction is now sufficient to close Gate 0.
 - The precise present-day user problem, outcome, permitted uses, prohibited
   uses, audience, and public-claim boundary.
-- Current official API/client capabilities and policies for Apex and Valorant.
+- The acceptable response to the documented rank and party-formation gaps.
 - The first game, platform, region, mode, and party/user segment.
 - The fallback coordination and rank flows if preferred integrations are not
   viable.

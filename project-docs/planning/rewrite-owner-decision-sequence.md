@@ -10,15 +10,18 @@
 
 ## Purpose
 
-This packet orders the decisions needed before an evidence-backed TeamRadar
+This packet organizes the decisions needed before an evidence-backed QGuard
 implementation plan can exist. It is a decision agenda, not a product brief,
 specification, roadmap, backlog, or authorization to write code.
 
-The order intentionally settles product and permitted-use boundaries before
-matching rules, data flows, architecture, or technology. After each owner
-answer, the approved choice belongs in the decision register and the affected
-open question is closed or narrowed. Unselected options remain proposals, not
-rejected decisions, unless the owner explicitly rejects them.
+The sequence is dependency guidance, not one large questionnaire. Under
+`DEC-015`, each area may take many focused discussions and is settled when it
+becomes relevant to a product or implementation slice. Product and
+permitted-use boundaries still precede any implementation whose correctness or
+risk depends on them. After each owner answer, the approved choice belongs in
+the decision register and the affected open question is closed or narrowed.
+Unselected options remain proposals, not rejected decisions, unless the owner
+explicitly rejects them.
 
 ## Evidence And Authority Separation
 
@@ -31,6 +34,9 @@ rejected decisions, unless the owner explicitly rejects them.
   operations.
 - The latest reachable code moved toward Valorant, while the later memory
   reconstruction describes an Apex return.
+- The current public-source research does not show either Valorant or Apex
+  fully providing both exact all-player current rank and programmatic ordinary
+  party formation; Valorant is the closer approval-gated candidate.
 - No current stack, game, integration, data flow, decision system, deployment,
   or implementation boundary has been approved.
 
@@ -59,6 +65,10 @@ rejected decisions, unless the owner explicitly rejects them.
 - Prefer permitted authoritative API rank; treat self-declaration as a
   truthfully labelled fallback with report and resolution requirements
   (`DEC-013`).
+- Accept the simplified historical reconstruction as sufficient for redesign
+  without claiming exhaustiveness (`DEC-014`).
+- Settle product decisions gradually around current feasibility; treat PC as
+  provisional and preserve per-slice specification approval (`DEC-015`).
 
 ### Unapproved Assumptions
 
@@ -68,8 +78,8 @@ assumption until the owner decides it:
 - TeamRadar remains a video-game teammate finder.
 - The first game is Apex Legends or Valorant.
 - Users enter a realtime queue rather than browse a directory or invite links.
-- Rank, behavior, honor, reviews, reports, or session verification belong in
-  the new product.
+- The exact form and effect of honor, reviews, reports, matching, or session
+  verification are inherited from the old product.
 - A desktop relay, official game API, Redis, realtime sockets, Laravel, React,
   Node, or any particular database is needed.
 - “Anti-toxicity,” “verified,” “safe,” or “compatible” can be promised publicly.
@@ -82,44 +92,40 @@ or privileged integrations. This ordering keeps expensive and consequential
 systems behind explicit evidence and owner gates. The owner may revise the
 sequence.
 
-## Gate 0 - Close Or Continue Legacy Reconstruction
+## Gate 0 - Historical Reconstruction
 
-### Owner Corrections Recorded 2026-09-05
+- **Status:** closed 2026-09-05 by `DEC-014`.
+- **Result:** the simplified dossier is sufficient for redesign without an
+  exhaustiveness claim. The Apex/Valorant chronology remains a visible,
+  non-blocking provenance ambiguity. The owner need not reconstruct it from
+  memory.
+- **Return condition:** new evidence/correction or a current decision that
+  exposes a specific bounded historical gap.
 
-- QGuard is the selected current name; TeamRadar was an internal/working name,
-  not the preferred product name replacing QGuard.
-- Apex/Valorant shifts reflected changing integration-feasibility concerns and
-  must not choose the current game.
-- Legacy intent and observable outcome matter; ordinary implementation method
-  does not, except when API/integration difficulty makes it decision-relevant.
-- These corrections are recorded, but the owner has not yet explicitly said
-  that no further historical intent/outcome reconstruction is needed.
+## Current Feasibility Checkpoint
 
-### Decision Required
+The initial [game API findings](../research/game-api-feasibility-findings.md)
+show that neither candidate publicly documents both complete current-rank
+coverage and ordinary-party automation.
 
-Is the current historical dossier sufficient context for redesign?
+- Valorant is closer: Riot recognizes approval-gated opt-in LFG tools, RSO and
+  official match/leaderboard APIs exist, and PC users can copy a Riot lobby link
+  to share anywhere. Exact all-player current rank and third-party ordinary
+  party automation are not documented.
+- Apex LiveAPI is legitimate for PC Custom Matches, but its lobby requests do
+  not establish ordinary public/ranked party control. No public first-party
+  player-rank API was found.
+- PC remains provisional. No game, fallback, integration, or provider
+  application is approved.
 
-### Options
-
-1. **Accept as sufficient context without claiming exhaustiveness
-   (agent recommendation).** Keep the Apex/Valorant provenance conflict visible
-   and begin a clean current-product charter.
-2. **Request bounded corrections or deeper extraction.** Name the subsystem or
-   historical claim that needs more work.
-3. **Add more evidence first.** Supply another repository, branch, chat dump,
-   screenshot, design, or correction before redesign begins.
-
-### Effect
-
-- Option 1 resolves the sufficiency gate in `OQ-003`. It can also close
-  `OQ-001` if the owner states that no further evidence is currently being
-  sought, without claiming that the reconstruction is exhaustive. `OQ-002`
-  may remain a historical uncertainty that does not select the new game.
-- Options 2 or 3 keep the reconstruction route active only for the named gap.
+The next bounded discussion is the minimum acceptable rank evidence and
+party-formation flow. That answer determines whether to deepen the Valorant
+boundary, consider a materially different Apex flow, or research another game.
 
 ## Decision Group 1 - Current Product Charter And Use Boundary
 
-Answer these before selecting a game, feature list, or stack:
+Settle these before approving any slice whose behavior or claims depend on the
+charter; they do not need to be answered in one sitting:
 
 1. What present-day problem does QGuard solve, in one sentence?
 2. What outcome should a user achieve that ordinary game matchmaking, Discord,
@@ -147,8 +153,8 @@ claim limits. This closes or narrows `OQ-004`.
 6. What team size and availability assumptions apply?
 
 **Closure evidence:** a named primary user, launch context, and explicit
-out-of-scope segments. This closes or narrows `OQ-005` and enables current
-platform-capability research.
+out-of-scope segments. This closes or narrows `OQ-005` and determines which
+provider facts require a fresh recheck or deeper research.
 
 ## Decision Group 3 - Smallest Complete MVP Journey
 
@@ -247,7 +253,8 @@ resource constraints, business non-goals, and operational service boundary.
 
 ## Decision Group 8 - Technical Specification And Implementation Plan
 
-Only after Groups 1-7 are sufficiently settled:
+Only after the relevant components of Groups 1-7 are sufficiently settled for
+the intended implementation slice:
 
 1. Compare architectures against the approved journey, data flow, risk, and
    operating constraints; do not select a stack for legacy familiarity alone.
@@ -290,13 +297,15 @@ whether behavior-based trust is core now or a later hypothesis.
 
 ## Review Method
 
-1. Resolve Gate 0.
-2. Review one decision group at a time in the order above.
+1. Keep Gate 0 closed unless its recorded return condition occurs.
+2. Review one bounded decision group or dependency cluster at a time; a group
+   may take many discussions.
 3. Record exact owner decisions immediately in
    `../governance/decisions.md` and update affected open questions.
-4. Research current game/platform/provider facts only after the corresponding
-   scope choice makes that research relevant.
+4. Recheck current game/platform/provider facts when a concrete boundary or
+   implementation slice makes them relevant.
 5. Do not turn an unanswered item into an assumption inside architecture or
    code.
-6. Do not create an implementation plan until all blocking closure evidence is
-   present and reconciled.
+6. Do not create an implementation plan for a slice until all specifications
+   and blocking closure evidence applicable to that slice are approved and
+   reconciled, unless the owner records a narrow explicit override.

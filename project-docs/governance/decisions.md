@@ -372,3 +372,69 @@
   complete self-declaration/report-resolution fallback for the selected game.
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-014 - Close The Historical Reconstruction Gate As Sufficient
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Treat the current simplified historical reconstruction as
+  sufficient context for redesign. Do not claim that the corpus is exhaustive,
+  and do not require the owner to reconstruct uncertain Apex/Valorant chronology
+  from memory. Preserve the visible provenance limits, accept later evidence or
+  corrections if they arise, and perform no further general legacy mining
+  unless a current decision exposes a specific evidence gap.
+- **Reason:** The future product will differ from the old one, and the present
+  understanding is adequate for beginning current-product decisions.
+- **Alternatives considered:** keep Gate 0 open for exhaustive reconstruction,
+  require a definitive final-old-game label, or deepen every historical
+  subsystem before research. None was selected.
+- **Consequences:** `OQ-001`, `OQ-002`, and `OQ-003` are resolved for the
+  redesign phase without erasing uncertainty. Legacy records remain evidence,
+  not current product requirements. Targeted historical inspection remains
+  available only when it can materially resolve a current question.
+- **Affected records:** current state, open questions, chronology, source and
+  confidence records, owner decision sequence, and product foundations
+- **Return condition:** reopen only for new owner evidence/correction or a
+  specific current decision that cannot be made responsibly without bounded
+  historical verification.
+- **Related decisions:** completes the gate established by `DEC-001` and applies
+  the evidence rule in `DEC-012`
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-015 - Sequence Current Product Decisions Incrementally Around Feasibility
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Begin with the current game/API feasibility research, then
+  settle the current QGuard product in bounded, dependency-aware discussions as
+  each decision becomes relevant. Do not require the complete charter,
+  matching, honor, moderation, data, business, or technical design to be
+  answered as one initial questionnaire. Treat PC as a provisional working
+  direction rather than an approved launch-platform boundary. Discuss alternate
+  rank and party-formation flows after preferred integrations prove incomplete,
+  and determine the applicable-law and qualified-review requirements from the
+  eventual concrete jurisdictions and data flow. `DEC-008` still requires all
+  specifications applicable to an implementation slice to be approved before
+  that slice begins unless the owner explicitly records a narrow override.
+- **Reason:** The owner expects each large product area to require multiple
+  focused discussions, while API feasibility can narrow the immediate game and
+  interaction choices.
+- **Alternatives considered:** force all decision groups to close before any
+  feasibility research; treat PC as already selected; design fallback flows
+  before confirming the integration gaps; or defer legal compliance entirely.
+  None was selected.
+- **Consequences:** Open questions are sequenced prompts, not a demand for one
+  bulk answer. API findings may narrow the next discussion but cannot select a
+  game. PC, launch market, and legal/privacy conclusions remain open until
+  approved with sufficient detail.
+- **Affected records:** current state, product foundations, open questions,
+  research records, owner decision sequence, and future specification routes
+- **Return condition:** revisit if the owner changes the preferred decision
+  order, promotes PC to an approved boundary, or authorizes an implementation
+  slice through an explicit narrow override.
+- **Related decisions:** applies `DEC-008`, `DEC-011`, and `DEC-013`
+- **Supersedes:** none
+- **Superseded by:** none

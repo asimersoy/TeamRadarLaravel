@@ -1,31 +1,35 @@
 # QGuard Open Questions
 
-These questions cover the remaining historical gate and current QGuard product
-decisions. Historical unknowns do not automatically become requirements.
+These questions cover current QGuard product decisions and retained historical
+limits. Under `DEC-015`, they are settled gradually in bounded discussions when
+their dependencies become relevant; they are not one initial questionnaire.
+Historical unknowns do not automatically become requirements.
 
 ## OQ-001 - Is More Legacy Evidence Available?
 
-- **Status:** open
+- **Status:** resolved 2026-09-05 for the redesign phase
 - **Decision owner:** project owner
 - **Needed by:** closure of the legacy reconstruction
-- **Blocks:** claiming that the reconstruction is exhaustive.
-- **Does not block:** reviewing and organizing the available evidence.
+- **Blocks:** nothing; the reconstruction is accepted as sufficient without an
+  exhaustiveness claim.
+- **Does not block:** current product planning or bounded current research.
 - **Known context:** The current corpus includes one 726-line owner-provided
   reconstruction, the tracked Laravel repository, its reachable history, and a
   recovered unreachable Electron relay history. No separate relay repository
   is present in the workspace.
-- **Options/tradeoffs:** close with this corpus, or add old chats, dumps,
-  screenshots, branches, repositories, design files, or corrections.
-- **Evidence needed:** additional sources or owner confirmation that the corpus
-  is sufficient.
-- **Resolved by:** none
+- **Resolution:** The owner confirmed that the simplified reconstruction is
+  sufficient because the new product will differ from the historical one. New
+  evidence or corrections may still be incorporated if they arise.
+- **Evidence needed:** none for current phase closure.
+- **Resolved by:** `DEC-014`
 
 ## OQ-002 - How Should The Apex/Valorant Historical Conflict Be Interpreted?
 
-- **Status:** narrowed 2026-09-05
+- **Status:** resolved 2026-09-05 as a retained non-blocking ambiguity
 - **Decision owner:** project owner
-- **Needed by:** final historical-canon label
-- **Blocks:** calling either game the indisputable final old direction.
+- **Needed by:** no current decision; retained for provenance
+- **Blocks:** nothing. Neither game may be called the indisputable final old
+  direction on current evidence.
 - **Does not block:** current API feasibility research or current game
   selection after that research.
 - **Known context:** Reachable Git chronology switches from Apex work to a
@@ -34,30 +38,30 @@ decisions. Historical unknowns do not automatically become requirements.
   that the switches reflected concern about changing API/client capabilities,
   not a durable current preference for either game. Historical chronology must
   not choose the current game (`DEC-011`).
-- **Options/tradeoffs:** retain both as feasibility-driven historical phases,
-  or seek a stricter chronological final label if that distinction remains
-  valuable.
-- **Evidence needed:** a further owner chronology correction or additional
-  dated evidence only if an indisputable final-old-game label is still desired.
-- **Resolved by:** none
+- **Resolution:** Retain both as feasibility-driven historical phases. The
+  owner is not required to answer uncertain chronology from memory, and a
+  stricter final-old-game label is unnecessary for redesign.
+- **Evidence needed:** none unless new primary evidence is supplied later.
+- **Resolved by:** `DEC-014`
 
 ## OQ-003 - Has The Historical Reconstruction Captured The Intended Level Of Detail?
 
-- **Status:** open
+- **Status:** resolved 2026-09-05
 - **Decision owner:** project owner
 - **Needed by:** transition to new product planning
-- **Blocks:** closing the documentation-reconstruction phase.
-- **Does not block:** owner review one document at a time.
+- **Blocks:** nothing; the documentation-reconstruction phase is closed.
+- **Does not block:** later corrections or decision-specific historical checks.
 - **Known context:** The reconstruction covers product intent, journeys,
   features, matching/honor, game integration, architecture, data/security,
   interface, operations, implementation state, chronology, and conflicts. The
   owner has corrected the QGuard/TeamRadar naming interpretation and clarified
   that legacy capability intent and achieved outcome matter more than ordinary
   implementation method.
-- **Options/tradeoffs:** accept this depth; request deeper reconstruction of a
-  particular subsystem; or omit irrelevant historical areas before redesign.
-- **Evidence needed:** owner review feedback.
-- **Resolved by:** none
+- **Resolution:** The owner accepted a simplified reconstruction as sufficient.
+  Future historical inspection must be bounded to a current decision-relevant
+  gap rather than resume general reconstruction.
+- **Evidence needed:** none for phase closure.
+- **Resolved by:** `DEC-014`
 
 ## OQ-004 - What Is The Current Product Charter And Permitted-Use Boundary?
 
@@ -92,7 +96,9 @@ decisions. Historical unknowns do not automatically become requirements.
   phases and never settled region, platform, language, age, casual/competitive,
   solo/partial-party, or one-session/persistent-team boundaries. `DEC-011`
   makes selection feasibility-led, starts research with Apex and Valorant,
-  leaves other games possible, and makes party size game-dependent.
+  leaves other games possible, and makes party size game-dependent. PC is the
+  owner's provisional working direction, not an approved platform boundary
+  (`DEC-015`).
 - **Decision components:** initial game and mode, platform/cross-play, launch
   region/language, primary user segment, party shape, and relationship duration.
 - **Resolved by:** none
@@ -114,6 +120,9 @@ decisions. Historical unknowns do not automatically become requirements.
   separate from rank. `DEC-013` prefers authoritative API-derived rank and
   requires a report/correction/operator-resolution path if self-declared rank
   is later approved as a fallback. Exact effects and safeguards remain open.
+  Compliance with applicable law is a current constraint, while the actual
+  jurisdiction and qualified-review need wait for a concrete product and data
+  flow (`DEC-015`).
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
@@ -184,7 +193,7 @@ decisions. Historical unknowns do not automatically become requirements.
 
 ## OQ-009 - What Current Game APIs Can QGuard Reliably And Permissibly Use?
 
-- **Status:** research required
+- **Status:** initial research pass complete 2026-09-05; owner decision required
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
 - **Blocks:** selecting Apex, Valorant, or another game based on rank retrieval
@@ -199,13 +208,20 @@ decisions. Historical unknowns do not automatically become requirements.
 - **Options/tradeoffs:** supported official integration; approval-gated or
   conditional integration; partial integration plus fallback; manual/no
   integration; or another game after the initial candidates are assessed.
-- **Evidence needed:** the current authoritative-source matrix defined in
-  [the API research brief](../research/game-api-feasibility.md).
+- **Research result:** Neither candidate has a documented public path that
+  fully provides both exact current rank for every participant and ordinary
+  public/ranked-party automation. Valorant is closer through an approval-gated
+  opt-in LFG/RSO path and a user-mediated lobby link. Apex LiveAPI's documented
+  lobby control is for Custom Matches. See the
+  [findings](../research/game-api-feasibility-findings.md).
+- **Evidence needed:** owner review of the researched boundary; fresh provider
+  evidence before any implementation specification or application.
 - **Resolved by:** none
 
 ## OQ-010 - What QGuard Flow Applies If Preferred Game Integrations Are Not Viable?
 
-- **Status:** open; intentionally sequenced after `OQ-009`
+- **Status:** open; ready for bounded owner discussion after the `OQ-009`
+  research pass
 - **Decision owner:** project owner
 - **Needed by:** first-game selection and smallest complete user journey
 - **Blocks:** approving the rank fallback, party-formation flow, and associated
@@ -215,9 +231,13 @@ decisions. Historical unknowns do not automatically become requirements.
 - **Known context:** API-derived rank and automated or assisted party formation
   are preferred but not mandatory. Self-declared rank with reports is one
   bounded fallback direction; the owner has additional alternate project flows
-  to discuss after current API capabilities are known.
-- **Options/tradeoffs:** intentionally deferred until research distinguishes
-  supported, conditional, unavailable, and unverified capabilities.
+  to discuss after current API capabilities are known. The research now shows
+  incomplete coverage in both candidates; Valorant has an official
+  user-mediated lobby link while Apex ordinary party formation remains manual.
+- **Options/tradeoffs:** approval-gated Valorant with incomplete rank coverage
+  and a user-mediated lobby link; a more manual Apex flow; a materially
+  different Custom Match product; or research another game after the owner
+  defines the minimum acceptable fallback.
 - **Evidence needed:** `OQ-009` research findings plus the owner's alternate
   flow proposals and tolerance for added user friction.
 - **Resolved by:** none

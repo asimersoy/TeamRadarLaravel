@@ -1,13 +1,12 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-05
-- **Status:** owner corrections recorded; Gate 0 confirmation and API research
-  remain before game/integration selection
-- **Objective:** close the corrected historical-intent review, research current
-  Apex/Valorant integration capabilities, then continue the bounded QGuard
-  product decision sequence
+- **Status:** Gate 0 closed; initial Apex/Valorant API research complete and
+  awaiting owner review
+- **Objective:** choose the next bounded QGuard game/integration discussion from
+  current capability evidence without treating research as product approval
 - **Current route:**
-  [PLAN-2026-09-05](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
+  [RESEARCH-2026-09-05](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
 
 ## Verified Workspace State
 
@@ -68,6 +67,10 @@
   rank as preferred over declaration, bounded reporting for inaccurate fallback
   declarations, and capability/outcome extraction rather than inheritance of
   legacy implementation shape (`DEC-009` through `DEC-013`).
+- `DEC-014` closes the historical gate as sufficient for redesign without an
+  exhaustiveness claim. `DEC-015` requires gradual, bounded product discussions,
+  keeps PC provisional, sequences fallback discussion after API research, and
+  preserves the specification gate for each implementation slice.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, initial game, API integration, matching
@@ -82,13 +85,16 @@
   owner decision sequence for rewrite readiness. The repository was also moved
   intact into the approved nested workspace layout, and the TeamRadar-specific
   workflow-governance contract is approved. Owner corrections and the approved
-  product foundations are recorded in `DEC-009` through `DEC-013`.
-- **In progress:** Gate 0 remains open while the owner decides whether the
-  corrected historical intent/outcome record is sufficient. Current API
-  capability claims remain unverified.
-- **Next:** confirm Gate 0, then execute the bounded
-  [game API feasibility research](research/game-api-feasibility.md) before
-  selecting the first game/integration boundary and continuing product groups.
+  product foundations are recorded in `DEC-009` through `DEC-013`. Gate 0 is
+  closed by `DEC-014`, and the initial current-source Apex/Valorant API pass is
+  recorded in the
+  [game API feasibility findings](research/game-api-feasibility-findings.md).
+- **In progress:** owner review of the documented rank-coverage and
+  ordinary-party-formation gaps. No first game, fallback, provider application,
+  or integration boundary has been selected.
+- **Next:** discuss the minimum acceptable party-formation and rank fallback,
+  then either evaluate the approval-gated Valorant boundary in more detail or
+  expand the same research matrix to another PC game.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -123,20 +129,26 @@
   files resolved, `git diff --check` passed, and the portable workflow and
   legacy application remained unchanged. Current API research and application
   runtime tests were not part of this documentation-only unit.
+- The 2026-09-05 API research pass reviewed current first-party Riot, Valorant,
+  Discord, EA, and Apex sources; distinguished ordinary parties from Custom
+  Matches; and preserved bounded negative findings. It used no credentials,
+  provider contact, live client, reverse engineering, data collection, or
+  automation. The workflow validator passed, all relative links across 34
+  project Markdown files resolved, `git diff --check` passed, and the portable
+  workflow package and legacy application remained unchanged. Application
+  runtime tests were not required for this research/documentation unit.
 
 ## Gates
 
 - The QGuard naming correction, honor foundation, feasibility-led game
   direction, rank-source preference, and legacy-evidence treatment are approved
   only to the extent recorded in `DEC-009` through `DEC-013`.
-- Historical reconstruction cannot be called exhaustive until
-  [OQ-001](governance/open-questions.md#oq-001---is-more-legacy-evidence-available)
-  is resolved, but the owner may accept the current corpus as sufficient
-  context without claiming exhaustiveness.
-- The Apex/Valorant chronology remains a visible provenance conflict under
-  [OQ-002](governance/open-questions.md#oq-002---how-should-the-apexvalorant-historical-conflict-be-interpreted).
-- No current Apex, Valorant, or other game API/client capability is assumed
-  until the research brief is completed from current authoritative sources.
-- No implementation starts until the current product charter, use boundary,
-  MVP journey, matching/reputation treatment, data behavior, technical
-  specification, and testable completion criteria are approved.
+- Historical reconstruction is sufficient for redesign but is not described as
+  exhaustive. The Apex/Valorant chronology remains a visible provenance limit,
+  not a current blocker or game-selection rule.
+- The research pass does not constitute Riot/EA approval, prove private
+  interfaces absent, select a game, accept a fallback, or authorize client
+  automation.
+- No implementation slice starts until every specification required for that
+  slice and its testable completion criteria are approved, unless the owner
+  records a narrow explicit override under `DEC-008`.
