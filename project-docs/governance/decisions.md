@@ -438,3 +438,66 @@
 - **Related decisions:** applies `DEC-008`, `DEC-011`, and `DEC-013`
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-016 - Prefer Friendship-Free Ordinary-Party Entry
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Evaluate ordinary-party entry in this preference order:
+  1. an official direct Discord join or official shareable ordinary-lobby link
+     that lets matched players join without first becoming in-game friends;
+  2. another official shareable ordinary-lobby code or link with the same
+     friendship-free outcome; and
+  3. only as a fallback, adding one another in game and using the normal
+     friend/invite/accept flow.
+  A Custom Match, Private Match, or tournament join code is not a substitute
+  for the intended normal public/ranked party flow unless the owner later
+  changes the product boundary. Requiring friend additions is material user
+  friction and counts against a candidate, but is not yet an absolute veto.
+- **Reason:** The owner expects adding unfamiliar matched players to an in-game
+  friends list to deter use. A native join action or shareable ordinary-lobby
+  link would remove a large part of QGuard's party-formation friction.
+- **Alternatives considered:** treat all manual party flows as equivalent, or
+  count Apex Custom Match control as ordinary-party support. Neither was
+  selected.
+- **Consequences:** Research must distinguish ordinary parties from private or
+  custom matches and must verify recipient prerequisites, not merely the
+  existence of a generic Discord feature. This decision does not select a game,
+  approve a fallback, or authorize QGuard to automate a game client.
+- **Affected records:** game API research, product foundations, `OQ-005`,
+  `OQ-009`, `OQ-010`, and the owner decision sequence
+- **Return condition:** revisit when the owner decides whether the evidenced
+  Valorant lobby-link flow is sufficient or proposes a different fallback.
+- **Related decisions:** narrows the preferred capability in `DEC-011`
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-017 - Keep A Prototype-First Valorant RSO Path Available
+
+- **Date:** 2026-09-05
+- **Status:** approved as a conditional planning direction
+- **Decision owner:** project owner
+- **Decision:** If Valorant is later selected and the approved product needs
+  RSO or other production-level Riot API access, QGuard may plan a provider
+  application around a working or mostly testable product prototype. Screens
+  and flows that depend on unavailable RSO data may use clearly identified
+  mock or placeholder data for the review artifact, with real integration only
+  after Riot grants the necessary access.
+- **Reason:** Valorant offers no personal key, while Riot explicitly accepts a
+  working site, mostly testable prototype, mockup, or rendering that clearly
+  demonstrates the intended user flow as application evidence.
+- **Alternatives considered:** reject Valorant solely because RSO is gated, or
+  assume access before review. Neither was selected.
+- **Consequences:** A future plan must separate provider-independent prototype
+  work from access-dependent implementation. This conditional direction does
+  not select Valorant; authorize implementation, publication, provider contact,
+  or submission; accept provider terms; use credentials; or presume approval.
+- **Affected records:** game API research, product foundations, `OQ-009`,
+  `OQ-010`, and future provider-application planning
+- **Return condition:** activate only after an owner-approved Valorant product
+  boundary identifies which flows and data require RSO, followed by separate
+  authorization for implementation and provider contact/submission.
+- **Related decisions:** applies `DEC-008`, `DEC-011`, `DEC-013`, and `DEC-015`
+- **Supersedes:** none
+- **Superseded by:** none

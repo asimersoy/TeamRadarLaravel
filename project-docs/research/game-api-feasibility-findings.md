@@ -1,10 +1,11 @@
 # QGuard Game API Feasibility Findings
 
 - **Record type:** current research findings
-- **Status:** internal research pass complete; owner decision required
+- **Status:** initial and focused follow-up research complete; owner decision
+  required
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-015`
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015`, `DEC-016`, and `DEC-017`
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck provider facts before an implementation
   slice or provider application
@@ -38,6 +39,14 @@ These are research findings, not a game selection. If exact current rank and
 ordinary-party automation become hard requirements, neither candidate
 currently qualifies from the reviewed public first-party evidence.
 
+The focused
+[party-entry and provider-policy follow-up](party-entry-and-policy-fit.md)
+adds an important distinction: Valorant's official PC Discord integration is
+the only evidenced friendship-free ordinary-lobby candidate. Apex still has no
+documented equivalent. The relevant provider restriction is unauthorized
+client control or data extraction, not external LFG coordination or official
+user-mediated joining.
+
 ## Capability Matrix
 
 | Capability | Valorant | Apex Legends |
@@ -48,10 +57,10 @@ currently qualifies from the reviewed public first-party evidence.
 | Rank evidence from completed play | `supported-with-conditions`: match history plus match details can expose the match participant's `competitiveTier`; this is a completed-match value, not guaranteed current rank | `unknown`: LiveAPI is gameplay/custom-match oriented and the reviewed public material does not document a reusable account-rank lookup |
 | Leaderboard rank/rating | `supported-with-conditions`: official act leaderboard exposes rank/RR, but only for leaderboard members and identity fields may be omitted for anonymized players | `unknown`: no public first-party leaderboard/player-rank API was found |
 | Create/invite/join an ordinary public/ranked party through a public API | `undocumented/unverified`: no party, invite, or lobby operation appears in the official public API list | `undocumented/unverified`: LiveAPI lobby commands are explicitly for Custom Matches |
-| User-mediated party handoff | `supported-with-conditions`: on PC, a user can copy a Riot/Discord lobby link and share it anywhere; account linking, region availability, current clients, and a user action are required | `supported`: users can search/add friends, send a game invite, and accept the invite in the lobby; this is a manual in-game flow |
+| User-mediated party handoff | `supported-with-conditions`: on PC, a user can copy a Riot/Discord lobby link into a server, DM, or elsewhere; exact non-friend recipient prerequisites remain unverified | `supported-with-friction`: users must use the documented search/add-friend/invite/accept flow |
 | Custom/private match automation | `undocumented/unverified`: no public lobby-creation endpoint appears in the official API list | `supported-with-conditions`: PC LiveAPI documents Custom Match create/join/ready/matchmaking/team/settings requests |
 | Suitability of custom match for a normal small squad | Not established | `unsupported` for the documented Private Battle Royale path: it requires at least 30 players |
-| Safe basis for undocumented client automation | No. Riot registration, audit, game-integrity rules, and current enforcement make explicit provider authorization necessary | No. EA's current agreement restricts unauthorized interface modification, interception, mining, and data extraction |
+| Safe basis for undocumented client automation | No. Riot's terms prohibit unauthorized programs and automation that interact with Riot Services | No. EA's current agreement restricts unauthorized automated access, interface modification, interception, mining, and data extraction |
 
 The outcome terms above use the vocabulary defined in the
 [research brief](game-api-feasibility.md). `Unknown` and
@@ -88,9 +97,9 @@ they mean it is not a safe project dependency on the reviewed evidence.
   friends from Valorant or copy a lobby link and share it in a Discord server
   or anywhere else. Region support, account linking, and current clients affect
   availability.
-- Valorant Patch 13.05 says Riot has begun penalizing detected use of stream
-  sniping and instalock tools. This does not specifically classify party tools,
-  but it is current evidence that client automation cannot be assumed benign.
+- Discovery through the integrated Riot friends list requires a formal Discord
+  friendship and linked Riot/Discord accounts. The separately documented lobby
+  link can be posted into a server, DM, or elsewhere.
 
 ### Bounded Interpretation
 
@@ -102,8 +111,11 @@ they mean it is not a safe project dependency on the reviewed evidence.
   covered players. It is not a complete rank source for QGuard's population.
 - The Riot/Discord lobby link is the strongest documented low-friction party
   handoff found. The safe interpretation is a user copies the link and QGuard
-  transmits it to matched users. No reviewed source authorizes QGuard to derive,
-  generate, scrape, or invoke the link on a user's behalf.
+  transmits it to matched users. This removes a documented need for the host to
+  add every recipient in Valorant, but first-party material does not explicitly
+  enumerate every non-friend recipient prerequisite. No reviewed source
+  authorizes QGuard to derive, generate, scrape, or invoke the link on a user's
+  behalf.
 - Discord's Social SDK does not fill this gap. Its lobby/invite APIs are for a
   game developer to integrate and ship inside its own game; they do not grant a
   third-party LFG product control over Valorant's party.
@@ -172,11 +184,13 @@ rank-missing behavior, a concrete data flow, and later privacy/legal review.
 
 ### Candidate Integration Boundary, Not Yet Approved
 
-The presently evidenced Apex boundary is manual ordinary-party coordination,
-with no approved rank integration. Custom Match automation is available only
-for a materially different product flow. This makes Apex a weaker fit than
-Valorant for the two preferred capabilities, while leaving open an owner-led
-fallback or a different Apex product shape.
+The presently evidenced Apex boundary is manual ordinary-party coordination
+through the friend/invite flow, with no approved rank integration. No
+Apex-specific Discord Join or shareable ordinary-lobby link/code was found.
+Custom Match automation is available only for a materially different product
+flow. This makes Apex a weaker fit than Valorant for the two preferred
+capabilities, while leaving open an owner-led fallback or a different Apex
+product shape.
 
 ## Policy, Data, And Operational Constraints
 
@@ -191,8 +205,10 @@ fallback or a different Apex product shape.
 - Riot prohibits alternative skill-ranking systems. QGuard's behavioral honor
   concept must remain clearly separate from official rank and cannot be
   presented as a replacement MMR/ELO.
-- EA's agreement and anti-cheat rules make undocumented client data extraction
-  or control an unacceptable assumption.
+- Riot and EA restrictions reviewed here do not establish a conflict for a
+  standalone LFG service or official user-mediated join flow. They directly
+  constrain a different design: unauthorized client automation, memory access,
+  interception, scraping, interface modification, or gate bypass.
 - Provider compliance does not replace applicable-law review. The exact launch
   jurisdictions, ages, data fields, recipients, retention, moderation flow, and
   business/operator identity remain undecided, so no legal conclusion is made
@@ -229,6 +245,11 @@ separately from current provider authority.
 - PC is only a provisional working direction.
 - Alternate flows are discussed after the research result, not assumed before
   it.
+- Friendship-free ordinary-party entry is preferred over a friend/invite flow,
+  and Custom/Private Match codes do not satisfy the normal-party need.
+- If Valorant is selected and RSO is required, a provider-independent prototype
+  with clearly mocked RSO-dependent flows may support a later application; it
+  does not presume access.
 
 ### Assumptions
 
@@ -239,20 +260,20 @@ availability in a chosen region, or acceptance of a fallback flow.
 ### Agent Assessment
 
 Valorant is the stronger of the two researched candidates for QGuard's desired
-first-game integration, but only if an approval-gated product and a
-user-mediated lobby-link step are acceptable and the rank-coverage gap can be
-handled honestly. Apex does not presently meet either preferred capability for
-ordinary public/ranked play from the reviewed official evidence.
+first-game integration. Its party side is provisionally viable if a host-copied
+official lobby link is acceptable and the remaining non-friend acceptance edge
+is closed before reliance. The approval gate and incomplete rank coverage
+remain. Apex does not presently meet either preferred capability for ordinary
+public/ranked play from the reviewed official evidence.
 
 ### Proposals For Owner Discussion
 
-1. Explore a Valorant-first boundary using RSO, official historical/leaderboard
-   data, honest rank status, and a user-copied lobby link.
-2. If a manual host step or incomplete rank coverage is unacceptable, define
-   the minimum acceptable fallback and expand the same research matrix to other
-   PC games.
-3. Consider Apex only with an explicitly different manual or Custom Match
-   product flow; do not treat its LiveAPI as ordinary-party automation.
+1. Decide whether the host copying one official Valorant lobby link into QGuard
+   is sufficiently low friction.
+2. If yes, close the non-friend recipient edge through a scoped live test or
+   provider confirmation and then settle the rank-missing behavior.
+3. If no, neither candidate meets the preferred ordinary-party threshold;
+   discuss the owner's alternate flows or expand the matrix to other PC games.
 
 These are proposals only. The next discussion should settle the acceptable
 party-formation and rank fallback boundary before selecting a game.

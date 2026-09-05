@@ -1,12 +1,13 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-05
-- **Status:** Gate 0 closed; initial Apex/Valorant API research complete and
-  awaiting owner review
-- **Objective:** choose the next bounded QGuard game/integration discussion from
-  current capability evidence without treating research as product approval
+- **Status:** Gate 0 closed; party-entry and provider-policy follow-up complete
+  and awaiting owner review
+- **Objective:** decide whether the official host-copied Valorant lobby link is
+  an acceptable low-friction party step, without treating research as product
+  or provider approval
 - **Current route:**
-  [RESEARCH-2026-09-05](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
+  [RESEARCH-2026-09-05 party entry and policy fit](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
 
 ## Verified Workspace State
 
@@ -71,6 +72,10 @@
   exhaustiveness claim. `DEC-015` requires gradual, bounded product discussions,
   keeps PC provisional, sequences fallback discussion after API research, and
   preserves the specification gate for each implementation slice.
+- `DEC-016` prefers friendship-free ordinary-party entry and treats the
+  friend/invite path as a material-friction fallback. `DEC-017` keeps a
+  prototype-first Valorant RSO application path conditionally available without
+  authorizing implementation, provider contact, or submission.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, initial game, API integration, matching
@@ -89,12 +94,17 @@
   closed by `DEC-014`, and the initial current-source Apex/Valorant API pass is
   recorded in the
   [game API feasibility findings](research/game-api-feasibility-findings.md).
-- **In progress:** owner review of the documented rank-coverage and
-  ordinary-party-formation gaps. No first game, fallback, provider application,
-  or integration boundary has been selected.
-- **Next:** discuss the minimum acceptable party-formation and rank fallback,
-  then either evaluate the approval-gated Valorant boundary in more detail or
-  expand the same research matrix to another PC game.
+  The focused
+  [party-entry and policy findings](research/party-entry-and-policy-fit.md)
+  verify the Valorant lobby-link candidate, the absence of an evidenced Apex
+  equivalent, and the exact boundary where provider terms affect QGuard.
+- **In progress:** owner review of whether a host-copied official Valorant lobby
+  link is acceptable and when non-friend acceptance must be verified. No first
+  game, rank fallback, provider application, or integration boundary has been
+  selected.
+- **Next:** settle that bounded party-entry decision. If accepted, discuss
+  minimum acceptable rank evidence; if rejected, discuss the owner's alternate
+  flows or authorize research into other games.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -137,6 +147,16 @@
   project Markdown files resolved, `git diff --check` passed, and the portable
   workflow package and legacy application remained unchanged. Application
   runtime tests were not required for this research/documentation unit.
+- The 2026-09-05 focused party-entry follow-up rechecked first-party Riot,
+  Valorant, Discord, EA, and Apex sources; distinguished Valorant's official
+  lobby link from its formal Discord-friend discovery; found no current
+  first-party Apex Discord Join or ordinary-lobby link/code; and mapped provider
+  restrictions only to the QGuard actions they actually affect. No account,
+  client, credential, provider contact, automation, interception, or data
+  collection was used. The workflow validator passed, all relative links across
+  36 project Markdown files resolved, `git diff --check` passed, and the
+  portable workflow package and legacy application remained unchanged.
+  Application runtime tests were not required for this documentation-only unit.
 
 ## Gates
 
@@ -149,6 +169,10 @@
 - The research pass does not constitute Riot/EA approval, prove private
   interfaces absent, select a game, accept a fallback, or authorize client
   automation.
+- The Valorant party link is provisionally viable, not yet owner-accepted.
+  First-party material supports sharing it in a server, DM, or elsewhere but
+  does not explicitly enumerate every non-friend recipient prerequisite; that
+  edge remains a live-test or provider-confirmation gate before reliance.
 - No implementation slice starts until every specification required for that
   slice and its testable completion criteria are approved, unless the owner
   records a narrow explicit override under `DEC-008`.

@@ -98,7 +98,8 @@ Historical unknowns do not automatically become requirements.
   makes selection feasibility-led, starts research with Apex and Valorant,
   leaves other games possible, and makes party size game-dependent. PC is the
   owner's provisional working direction, not an approved platform boundary
-  (`DEC-015`).
+  (`DEC-015`). `DEC-016` prefers friendship-free ordinary-party entry and
+  treats a friend/invite flow as a higher-friction fallback.
 - **Decision components:** initial game and mode, platform/cross-play, launch
   region/language, primary user segment, party shape, and relationship duration.
 - **Resolved by:** none
@@ -191,9 +192,10 @@ Historical unknowns do not automatically become requirements.
 - **Evidence needed:** none; the owner answered all eight components.
 - **Resolved by:** `DEC-007` and `DEC-008`
 
-## OQ-009 - What Current Game APIs Can QGuard Reliably And Permissibly Use?
+## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
-- **Status:** initial research pass complete 2026-09-05; owner decision required
+- **Status:** initial and focused follow-up research complete 2026-09-05; owner
+  decision required
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
 - **Blocks:** selecting Apex, Valorant, or another game based on rank retrieval
@@ -211,11 +213,19 @@ Historical unknowns do not automatically become requirements.
 - **Research result:** Neither candidate has a documented public path that
   fully provides both exact current rank for every participant and ordinary
   public/ranked-party automation. Valorant is closer through an approval-gated
-  opt-in LFG/RSO path and a user-mediated lobby link. Apex LiveAPI's documented
-  lobby control is for Custom Matches. See the
-  [findings](../research/game-api-feasibility-findings.md).
-- **Evidence needed:** owner review of the researched boundary; fresh provider
-  evidence before any implementation specification or application.
+  opt-in LFG/RSO path and an official user-mediated lobby link. The link can be
+  shared in a Discord server, DM, or elsewhere, but exact non-friend recipient
+  prerequisites have not been live-verified. Apex LiveAPI's documented lobby
+  control is for Custom Matches, and no Apex-specific Discord Join or shareable
+  ordinary-lobby code/link was found. The scoped policy review found no
+  anti-cheat conflict for external LFG or official user-mediated joining;
+  unauthorized client automation or extraction remains restricted. See the
+  [general findings](../research/game-api-feasibility-findings.md) and focused
+  [party-entry findings](../research/party-entry-and-policy-fit.md).
+- **Evidence needed:** owner review of the researched boundary; a scoped live
+  test or provider confirmation for Valorant non-friend link acceptance; and
+  fresh provider evidence before any implementation specification or
+  application.
 - **Resolved by:** none
 
 ## OQ-010 - What QGuard Flow Applies If Preferred Game Integrations Are Not Viable?
@@ -231,13 +241,18 @@ Historical unknowns do not automatically become requirements.
 - **Known context:** API-derived rank and automated or assisted party formation
   are preferred but not mandatory. Self-declared rank with reports is one
   bounded fallback direction; the owner has additional alternate project flows
-  to discuss after current API capabilities are known. The research now shows
-  incomplete coverage in both candidates; Valorant has an official
-  user-mediated lobby link while Apex ordinary party formation remains manual.
-- **Options/tradeoffs:** approval-gated Valorant with incomplete rank coverage
-  and a user-mediated lobby link; a more manual Apex flow; a materially
-  different Custom Match product; or research another game after the owner
-  defines the minimum acceptable fallback.
+  to discuss after current API capabilities are known. `DEC-016` now orders the
+  party paths: official friendship-free join/link, another official
+  friendship-free ordinary-lobby code/link, then friend/invite as the last
+  fallback. Valorant has an official user-copied lobby link; Apex ordinary party
+  formation remains the friend/invite flow. `DEC-017` keeps a conditional
+  prototype-first Riot application path available if Valorant is selected and
+  needs RSO.
+- **Options/tradeoffs:** approval-gated Valorant with incomplete rank coverage,
+  a host-copied official lobby link, and a remaining recipient-verification
+  edge; a more manual Apex friend/invite flow; a materially different Custom
+  Match product only after changing the product boundary; the owner's other
+  alternate flows; or research another game.
 - **Evidence needed:** `OQ-009` research findings plus the owner's alternate
   flow proposals and tolerance for added user friction.
 - **Resolved by:** none

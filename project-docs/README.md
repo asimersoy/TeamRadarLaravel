@@ -9,10 +9,10 @@ reusable workflow system remains separate in
 The workspace migration and workflow-governance review are complete. The owner
 has approved the QGuard name and several product foundations, and has accepted
 the simplified historical reconstruction as sufficient for redesign without an
-exhaustiveness claim. The initial Apex/Valorant API research pass is complete
-and awaits owner review before a game, fallback, or integration boundary is
-selected. No implementation plan or code change is approved. Everything under
-`legacy/` remains historical evidence.
+exhaustiveness claim. The Apex/Valorant API research and focused party-entry
+follow-up are complete and await owner review before a game, fallback, or
+integration boundary is selected. No implementation plan or code change is
+approved. Everything under `legacy/` remains historical evidence.
 
 Start with:
 
@@ -22,7 +22,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Active API-research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
+7. [Active party-entry research route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -30,7 +30,8 @@ Start with:
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
 - [Completed product-foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
-- [Current game-API research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
+- [Completed initial game-API research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
+- [Current party-entry and policy-fit route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
 - [Specification index](specs/README.md)
 
 ## Current Research
@@ -38,6 +39,7 @@ Start with:
 - [Game API feasibility brief](research/game-api-feasibility.md)
 - [Game API feasibility findings](research/game-api-feasibility-findings.md)
 - [Game API source ledger](research/game-api-source-ledger.md)
+- [Party entry and provider-policy fit](research/party-entry-and-policy-fit.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.

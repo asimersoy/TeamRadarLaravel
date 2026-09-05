@@ -1,7 +1,8 @@
 # QGuard Game API Feasibility Research Brief
 
 - **Record type:** current research brief
-- **Status:** initial research pass complete; owner decision required
+- **Status:** initial and focused party-entry follow-up complete; owner decision
+  required
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-011` and `DEC-013`
@@ -22,6 +23,13 @@ first-party evidence does not show either game satisfying both preferred
 capabilities completely. Valorant is the closer candidate through an
 approval-gated opt-in LFG path and a user-mediated lobby link; Apex LiveAPI's
 documented lobby control is limited to Custom Matches.
+
+The owner's clarified party-entry hierarchy and the exact policy fit are
+recorded in the
+[party-entry follow-up](party-entry-and-policy-fit.md). Valorant has the only
+documented candidate for friendship-free ordinary-lobby entry; Apex's current
+documented path requires the friend/invite flow. Generic anti-cheat material is
+not treated as a blocker for external LFG or an official user-mediated join.
 
 ## Research Questions
 

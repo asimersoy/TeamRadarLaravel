@@ -69,6 +69,11 @@ explicitly rejects them.
   without claiming exhaustiveness (`DEC-014`).
 - Settle product decisions gradually around current feasibility; treat PC as
   provisional and preserve per-slice specification approval (`DEC-015`).
+- Prefer an official friendship-free ordinary-party join/link, use another
+  official friendship-free ordinary-lobby code/link next, and treat
+  friend/invite as the last fallback (`DEC-016`).
+- Keep a conditional, provider-independent prototype path available for a
+  later Valorant RSO application without presuming access (`DEC-017`).
 
 ### Unapproved Assumptions
 
@@ -105,22 +110,33 @@ sequence.
 ## Current Feasibility Checkpoint
 
 The initial [game API findings](../research/game-api-feasibility-findings.md)
-show that neither candidate publicly documents both complete current-rank
-coverage and ordinary-party automation.
+and focused
+[party-entry findings](../research/party-entry-and-policy-fit.md) show that
+neither candidate publicly documents both complete current-rank coverage and
+ordinary-party automation.
 
 - Valorant is closer: Riot recognizes approval-gated opt-in LFG tools, RSO and
   official match/leaderboard APIs exist, and PC users can copy a Riot lobby link
-  to share anywhere. Exact all-player current rank and third-party ordinary
-  party automation are not documented.
+  into a Discord server, DM, or elsewhere. This is the only evidenced candidate
+  for friendship-free ordinary-party entry. Exact non-friend recipient
+  prerequisites, all-player current rank, and third-party ordinary-party
+  automation are not fully documented.
 - Apex LiveAPI is legitimate for PC Custom Matches, but its lobby requests do
   not establish ordinary public/ranked party control. No public first-party
-  player-rank API was found.
+  player-rank API, Apex-specific Discord Join, or shareable ordinary-party
+  link/code was found. The documented ordinary flow requires adding a friend.
+- The reviewed terms do not establish a cheating conflict for external LFG or
+  official user-mediated joining. They matter if QGuard would automate an
+  ordinary client through an unauthorized interface or extract game data by an
+  unauthorized method.
 - PC remains provisional. No game, fallback, integration, or provider
   application is approved.
 
-The next bounded discussion is the minimum acceptable rank evidence and
-party-formation flow. That answer determines whether to deepen the Valorant
-boundary, consider a materially different Apex flow, or research another game.
+The next bounded decision is whether a host copying the official Valorant lobby
+link into QGuard is an acceptable party-formation step and when the remaining
+non-friend acceptance edge must be verified. If accepted, the discussion can
+move to minimum rank evidence; if rejected, the owner can introduce alternate
+flows or authorize research into other games.
 
 ## Decision Group 1 - Current Product Charter And Use Boundary
 

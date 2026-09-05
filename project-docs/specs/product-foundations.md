@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-015`
+- **Authority:** `DEC-009` through `DEC-017`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -59,6 +59,24 @@ lobby link; Apex's documented LiveAPI lobby control is for Custom Matches. See
 the [research findings](../research/game-api-feasibility-findings.md). These
 facts do not select a game or approve a fallback.
 
+For ordinary-party entry, prefer an official direct Discord join or shareable
+ordinary-lobby link that avoids an in-game friend addition, then another
+official friendship-free ordinary-lobby code/link, and use the documented
+friend/invite/accept flow only as a fallback. A Custom Match, Private Match, or
+tournament code does not satisfy the normal public/ranked-party need unless the
+owner later changes the product boundary. Valorant now has an official
+user-copied PC lobby-link candidate; Apex has no comparable documented feature
+in the reviewed first-party material. Exact non-friend recipient prerequisites
+for the Valorant link still require verification. See the focused
+[party-entry and policy findings](../research/party-entry-and-policy-fit.md).
+
+If Valorant is later selected and its approved QGuard flow requires RSO, a
+provider-independent working or mostly testable prototype may use clearly
+identified mock data for RSO-dependent screens when applying for production
+access. This conditional path does not authorize building or publishing the
+prototype, contacting Riot, submitting an application, using credentials, or
+assuming approval.
+
 ### Rank Source
 
 API-derived rank is preferred over self-declaration when the source is
@@ -98,6 +116,8 @@ participants, locations, data fields, recipients, and retention are concrete.
 - The precise present-day user problem, outcome, permitted uses, prohibited
   uses, audience, and public-claim boundary.
 - The acceptable response to the documented rank and party-formation gaps.
+- Whether a host-copied Valorant lobby link is sufficiently low friction and
+  when its non-friend acceptance edge must be verified.
 - The first game, platform, region, mode, and party/user segment.
 - The fallback coordination and rank flows if preferred integrations are not
   viable.
