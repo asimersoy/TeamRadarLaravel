@@ -68,8 +68,9 @@ Historical unknowns do not automatically become requirements.
 - **Status:** open
 - **Decision owner:** project owner
 - **Needed by:** approval of a current product brief
-- **Blocks:** approving QGuard's complete purpose/use boundary, selecting a game or
-  audience, making public promises, or authorizing an implementation plan.
+- **Blocks:** approving QGuard's complete purpose/use boundary or audience,
+  making public promises, or authorizing an implementation plan. The first-game
+  choice was made separately under `DEC-018`.
 - **Does not block:** reviewing the legacy reconstruction or discussing current
   alternatives as proposals.
 - **Known context:** `DEC-009` selects QGuard as the product name. `DEC-010`
@@ -86,12 +87,15 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
-- **Status:** open
+- **Status:** partially resolved 2026-09-05; Valorant selected, remaining wedge
+  components open
 - **Decision owner:** project owner
 - **Needed by:** current user journeys and MVP scope
-- **Blocks:** selecting the first game/platform wedge, queue design, surface
-  design, and meaningful acceptance criteria.
-- **Does not block:** the bounded Apex/Valorant API feasibility research.
+- **Blocks:** selecting the platform/region/mode/audience remainder of the
+  initial wedge, queue design, surface design, and meaningful acceptance
+  criteria. The game itself is no longer blocked.
+- **Does not block:** current Valorant rank research or planning the required
+  lobby-link test.
 - **Known context:** The legacy record contains conflicting Apex and Valorant
   phases and never settled region, platform, language, age, casual/competitive,
   solo/partial-party, or one-session/persistent-team boundaries. `DEC-011`
@@ -99,10 +103,14 @@ Historical unknowns do not automatically become requirements.
   leaves other games possible, and makes party size game-dependent. PC is the
   owner's provisional working direction, not an approved platform boundary
   (`DEC-015`). `DEC-016` prefers friendship-free ordinary-party entry and
-  treats a friend/invite flow as a higher-friction fallback.
-- **Decision components:** initial game and mode, platform/cross-play, launch
-  region/language, primary user segment, party shape, and relationship duration.
-- **Resolved by:** none
+  treats a friend/invite flow as a higher-friction fallback. `DEC-018` selects
+  Valorant as the initial game subject to the non-friend lobby-link test before
+  reliance. Mode, platform/cross-play, launch region/language, primary user,
+  party shape, and relationship duration remain open.
+- **Decision components:** **resolved:** initial game. **Open:** mode,
+  platform/cross-play, launch region/language, primary user segment, party
+  shape, and relationship duration.
+- **Resolved by:** `DEC-018` for initial game only
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
@@ -123,11 +131,17 @@ Historical unknowns do not automatically become requirements.
   is later approved as a fallback. Exact effects and safeguards remain open.
   Compliance with applicable law is a current constraint, while the actual
   jurisdiction and qualified-review need wait for a concrete product and data
-  flow (`DEC-015`).
+  flow (`DEC-015`). The owner has now proposed temporary bot-managed QGuard
+  Discord rooms and possible session-audio retention for operator review after
+  a report. That is a proposal, not approval to create rooms, capture voice, or
+  use recordings as evidence. See the
+  [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
-  integration evidence; field-level purpose, retention, deletion, and access.
+  integration evidence; Discord coordination; whether any voice is captured;
+  and field-level purpose, consent, retention, deletion, access, security,
+  evidentiary effect, and qualified review.
 - **Resolved by:** none
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
@@ -194,12 +208,13 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
-- **Status:** initial and focused follow-up research complete 2026-09-05; owner
-  decision required
+- **Status:** narrowed by `DEC-018`; Valorant selected, lobby-link verification
+  and rank/access boundary open
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
-- **Blocks:** selecting Apex, Valorant, or another game based on rank retrieval
-  or automated party/lobby assumptions; approving any client automation.
+- **Blocks:** treating non-friend Valorant lobby-link joining as a dependable
+  product capability, approving the rank/access integration, or approving any
+  client automation. It no longer blocks the initial game choice.
 - **Does not block:** product-charter decisions that do not depend on a game or
   integration, or current authoritative-source research.
 - **Known context:** The owner values reliable rank retrieval and local-client
@@ -222,18 +237,21 @@ Historical unknowns do not automatically become requirements.
   unauthorized client automation or extraction remains restricted. See the
   [general findings](../research/game-api-feasibility-findings.md) and focused
   [party-entry findings](../research/party-entry-and-policy-fit.md).
-- **Evidence needed:** owner review of the researched boundary; a scoped live
-  test or provider confirmation for Valorant non-friend link acceptance; and
-  fresh provider evidence before any implementation specification or
-  application.
-- **Resolved by:** none
+- **Owner decision:** Select Valorant for current product planning. Before
+  relying on its official link, test two current accounts in a supported PC
+  region/client state where the recipient is neither the host's Riot friend nor
+  formal Discord friend (`DEC-018`).
+- **Evidence needed:** the scoped two-account link test; the selected rank
+  behavior and provider-access path; and fresh provider evidence before any
+  integration specification or application.
+- **Resolved by:** `DEC-018` for game selection only
 
-## OQ-010 - What QGuard Flow Applies If Preferred Game Integrations Are Not Viable?
+## OQ-010 - What QGuard Flow Applies When A Preferred Valorant Integration Is Unavailable?
 
-- **Status:** open; ready for bounded owner discussion after the `OQ-009`
-  research pass
+- **Status:** partially resolved by `DEC-018`; link-test failure and rank
+  fallback remain open
 - **Decision owner:** project owner
-- **Needed by:** first-game selection and smallest complete user journey
+- **Needed by:** the smallest complete user journey and its recovery behavior
 - **Blocks:** approving the rank fallback, party-formation flow, and associated
   friction/acceptance criteria when preferred APIs are unavailable.
 - **Does not block:** API research or documenting owner-proposed alternatives as
@@ -246,13 +264,14 @@ Historical unknowns do not automatically become requirements.
   friendship-free ordinary-lobby code/link, then friend/invite as the last
   fallback. Valorant has an official user-copied lobby link; Apex ordinary party
   formation remains the friend/invite flow. `DEC-017` keeps a conditional
-  prototype-first Riot application path available if Valorant is selected and
-  needs RSO.
-- **Options/tradeoffs:** approval-gated Valorant with incomplete rank coverage,
-  a host-copied official lobby link, and a remaining recipient-verification
-  edge; a more manual Apex friend/invite flow; a materially different Custom
-  Match product only after changing the product boundary; the owner's other
-  alternate flows; or research another game.
+  prototype-first Riot application path available when the Valorant flow needs
+  RSO. `DEC-018` selects Valorant and requires the non-friend link test before
+  reliance.
+- **Options/tradeoffs:** if the link passes, use the later-approved QGuard or
+  Discord coordination surface; if it fails, return to the owner before using
+  friend invites, another party flow, another game, or a materially different
+  Custom Match product. Rank still requires an approved official, partial, or
+  truthfully labelled fallback behavior.
 - **Evidence needed:** `OQ-009` research findings plus the owner's alternate
   flow proposals and tolerance for added user friction.
-- **Resolved by:** none
+- **Resolved by:** `DEC-018` for the preferred game/link direction only

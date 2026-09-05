@@ -501,3 +501,43 @@
 - **Related decisions:** applies `DEC-008`, `DEC-011`, `DEC-013`, and `DEC-015`
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-018 - Select Valorant Subject To Lobby-Link Verification
+
+- **Date:** 2026-09-05
+- **Status:** approved
+- **Decision owner:** project owner
+- **Decision:** Select Valorant as QGuard's initial game for current product
+  planning because the bounded current-source research found no evidenced Apex
+  path that satisfies the preferred friendship-free ordinary-party flow, while
+  Valorant provides an official host-copied lobby link. The candidate flow is:
+  the host creates an ordinary Valorant party, copies the official lobby link
+  into the approved QGuard coordination surface, and matched users click it to
+  join. Before a specification or implementation may depend on this capability,
+  a scoped two-account test must prove that a current recipient who is neither
+  the host's Riot friend nor formal Discord friend can join the intended
+  ordinary party through the official link in the supported PC region/client
+  state.
+- **Reason:** Apex's documented ordinary flow requires friend addition, which
+  the owner considers material adoption friction. Valorant's official link is
+  the only researched candidate that may remove that step.
+- **Alternatives considered:** keep both games unselected; select Apex despite
+  the friend requirement; or treat the published Valorant description as
+  sufficient behavioral proof without a live acceptance check. None was
+  selected.
+- **Consequences:** Valorant, not Apex, is the first-game planning direction.
+  “Pass before reliance” means the link test gates any requirement, acceptance
+  criterion, or code path that assumes non-friend joining works; it does not
+  block further product decisions or provider-independent design. The broader
+  platform, region, mode, rank fallback, Discord coordination surface, and RSO
+  integration remain undecided. The test is required but is not authorized or
+  performed by this decision. If it fails, return to the owner before adopting
+  friend invites, another party flow, or another game.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-009`,
+  `OQ-010`, game research conclusions, and the owner decision sequence
+- **Return condition:** revisit after the scoped lobby-link test, a material
+  Riot feature change, or an owner change to the first-game or party boundary.
+- **Related decisions:** fulfills the selection process in `DEC-011` and applies
+  `DEC-016`; makes the conditional `DEC-017` relevant to later planning
+- **Supersedes:** none
+- **Superseded by:** none

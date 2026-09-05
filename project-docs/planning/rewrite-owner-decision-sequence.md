@@ -74,6 +74,8 @@ explicitly rejects them.
   friend/invite as the last fallback (`DEC-016`).
 - Keep a conditional, provider-independent prototype path available for a
   later Valorant RSO application without presuming access (`DEC-017`).
+- Select Valorant as the initial game and require a scoped two-account
+  non-friend lobby-link test before relying on the link (`DEC-018`).
 
 ### Unapproved Assumptions
 
@@ -81,7 +83,8 @@ The following may sound natural because of the old project, but each remains an
 assumption until the owner decides it:
 
 - TeamRadar remains a video-game teammate finder.
-- The first game is Apex Legends or Valorant.
+- That selecting Valorant also settles its mode, region, audience, complete
+  platform boundary, rank behavior, provider access, or coordination surface.
 - Users enter a realtime queue rather than browse a directory or invite links.
 - The exact form and effect of honor, reviews, reports, matching, or session
   verification are inherited from the old product.
@@ -129,14 +132,18 @@ ordinary-party automation.
   official user-mediated joining. They matter if QGuard would automate an
   ordinary client through an unauthorized interface or extract game data by an
   unauthorized method.
-- PC remains provisional. No game, fallback, integration, or provider
-  application is approved.
+- The owner selected Valorant after reviewing these findings. PC remains the
+  provisional context for the documented lobby-link candidate; no complete
+  platform, region, mode, rank, integration, coordination, or provider-
+  application boundary is approved.
 
-The next bounded decision is whether a host copying the official Valorant lobby
-link into QGuard is an acceptable party-formation step and when the remaining
-non-friend acceptance edge must be verified. If accepted, the discussion can
-move to minimum rank evidence; if rejected, the owner can introduce alternate
-flows or authorize research into other games.
+The host-copied lobby-link flow is accepted as the candidate direction. Before
+QGuard relies on it, `DEF-001` must verify non-friend joining with two current
+accounts. That verification does not block further product planning. The next
+bounded product discussion can address minimum rank evidence, while the owner-
+proposed Discord coordination and voice-recording possibilities remain separate
+unapproved choices in the
+[Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary
 

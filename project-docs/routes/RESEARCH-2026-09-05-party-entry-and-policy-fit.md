@@ -3,7 +3,7 @@
 - **Objective:** verify the owner-defined friendship-free ordinary-party entry
   hierarchy for Valorant and Apex Legends, and determine which provider-policy
   constraints actually apply to QGuard's planned actions
-- **Status:** internal research pass complete; owner decision required
+- **Status:** completed; owner selected Valorant under `DEC-018`
 - **Owner:** primary Codex agent for research; project owner for product choice
 - **Started:** 2026-09-05
 - **Research completed:** 2026-09-05
@@ -72,9 +72,11 @@
 
 ## Review And Stop Conditions
 
-- **Required reviewer:** project owner for whether a host-copied Valorant lobby
-  link is an acceptable party-entry flow and whether its final recipient
-  prerequisites must be verified before selecting Valorant.
+- **Owner disposition:** the host-copied Valorant lobby link is the selected
+  candidate party-entry flow, and `DEF-001` must verify non-friend acceptance
+  before reliance (`DEC-018`).
+- **Required future reviewer:** project owner for the result of `DEF-001`, the
+  rank/access boundary, and any fallback after a failed test.
 - **Future reviews:** Riot application review if authorized; field-level
   privacy/legal review after the concrete flow exists; security/trust review
   after accounts, honor, reports, and moderation are specified.

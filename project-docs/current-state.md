@@ -1,13 +1,13 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-05
-- **Status:** Gate 0 closed; party-entry and provider-policy follow-up complete
-  and awaiting owner review
-- **Objective:** decide whether the official host-copied Valorant lobby link is
-  an acceptable low-friction party step, without treating research as product
-  or provider approval
+- **Status:** Valorant selected for initial planning; lobby-link verification,
+  rank behavior, and product boundary remain open
+- **Objective:** continue bounded Valorant product decisions while preventing
+  unverified lobby-link behavior or the Discord voice proposal from becoming
+  implementation assumptions
 - **Current route:**
-  [RESEARCH-2026-09-05 party entry and policy fit](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
+  [PLAN-2026-09-05 Valorant selection and Discord voice proposal](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
 
 ## Verified Workspace State
 
@@ -76,11 +76,16 @@
   friend/invite path as a material-friction fallback. `DEC-017` keeps a
   prototype-first Valorant RSO application path conditionally available without
   authorizing implementation, provider contact, or submission.
+- `DEC-018` selects Valorant as the initial game and requires a scoped
+  two-account non-friend lobby-link test before a specification or
+  implementation may depend on that capability.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
-- No complete product/use boundary, initial game, API integration, matching
-  criteria, honor formula/effect, moderation policy, architecture, technology,
-  deployment, or implementation plan has been approved.
+- No complete product/use boundary, platform/region/mode/audience wedge, rank or
+  API integration, coordination surface, matching criteria, honor
+  formula/effect, moderation policy, architecture, technology, deployment, or
+  implementation plan has been approved. Temporary Discord rooms and voice
+  recording remain an owner proposal, not a product decision.
 
 ## Work State
 
@@ -98,13 +103,17 @@
   [party-entry and policy findings](research/party-entry-and-policy-fit.md)
   verify the Valorant lobby-link candidate, the absence of an evidenced Apex
   equivalent, and the exact boundary where provider terms affect QGuard.
-- **In progress:** owner review of whether a host-copied official Valorant lobby
-  link is acceptable and when non-friend acceptance must be verified. No first
-  game, rank fallback, provider application, or integration boundary has been
-  selected.
-- **Next:** settle that bounded party-entry decision. If accepted, discuss
-  minimum acceptable rank evidence; if rejected, discuss the owner's alternate
-  flows or authorize research into other games.
+  Owner review selected Valorant and set the link test gate in `DEC-018`.
+- **In progress:** bounded Valorant product decisions. The required lobby-link
+  verification is `DEF-001`; rank fallback, Riot access, complete wedge, and
+  coordination surface remain open. The
+  [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
+  records temporary rooms and possible recording as an unapproved proposal.
+- **Next:** continue with minimum acceptable rank evidence or another bounded
+  owner-selected product question. Activate `DEF-001` before any integration
+  specification relies on the lobby link. Review Discord coordination and
+  voice capture separately when their data and moderation consequences become
+  decision-relevant.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -157,6 +166,15 @@
   36 project Markdown files resolved, `git diff --check` passed, and the
   portable workflow package and legacy application remained unchanged.
   Application runtime tests were not required for this documentation-only unit.
+- The 2026-09-05 owner follow-up selected Valorant, defined the precise
+  non-friend link-test gate, and separated temporary Discord coordination from
+  report-reviewable voice recording. The recording idea is preserved as a
+  proposal with explicit future privacy, consent, security, moderation,
+  provider-policy, and qualified-review gates. All relative links across 38
+  project Markdown files resolved, `git diff --check` passed, and the portable
+  workflow package and legacy application remained unchanged. Application
+  runtime tests and the portable-system validator were not run because this
+  unit changes project records only.
 
 ## Gates
 
@@ -166,13 +184,15 @@
 - Historical reconstruction is sufficient for redesign but is not described as
   exhaustive. The Apex/Valorant chronology remains a visible provenance limit,
   not a current blocker or game-selection rule.
-- The research pass does not constitute Riot/EA approval, prove private
-  interfaces absent, select a game, accept a fallback, or authorize client
-  automation.
-- The Valorant party link is provisionally viable, not yet owner-accepted.
-  First-party material supports sharing it in a server, DM, or elsewhere but
-  does not explicitly enumerate every non-friend recipient prerequisite; that
-  edge remains a live-test or provider-confirmation gate before reliance.
+- The owner selected Valorant; the research itself still does not constitute
+  Riot approval, prove private interfaces absent, approve a rank fallback, or
+  authorize client automation.
+- The Valorant party link is the accepted candidate direction but remains
+  provisionally viable. `DEF-001` must verify non-friend acceptance before a
+  specification or implementation relies on it.
+- Discord room creation and voice recording are not approved. In particular,
+  later report review would require prior audio capture and retention and
+  therefore cannot be introduced as an incidental bot feature.
 - No implementation slice starts until every specification required for that
   slice and its testable completion criteria are approved, unless the owner
   records a narrow explicit override under `DEC-008`.

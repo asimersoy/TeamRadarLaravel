@@ -9,10 +9,12 @@ reusable workflow system remains separate in
 The workspace migration and workflow-governance review are complete. The owner
 has approved the QGuard name and several product foundations, and has accepted
 the simplified historical reconstruction as sufficient for redesign without an
-exhaustiveness claim. The Apex/Valorant API research and focused party-entry
-follow-up are complete and await owner review before a game, fallback, or
-integration boundary is selected. No implementation plan or code change is
-approved. Everything under `legacy/` remains historical evidence.
+exhaustiveness claim. The owner selected Valorant after the Apex/Valorant API
+and party-entry research. Its official lobby link requires a scoped non-friend
+test before reliance; rank behavior and the complete product boundary remain
+open. Temporary Discord rooms and voice recording are proposals only. No
+implementation plan or code change is approved. Everything under `legacy/`
+remains historical evidence.
 
 Start with:
 
@@ -22,7 +24,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Active party-entry research route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
+7. [Active Valorant-selection route](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -31,7 +33,9 @@ Start with:
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
 - [Completed product-foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)
 - [Completed initial game-API research route](routes/RESEARCH-2026-09-05-game-api-feasibility.md)
-- [Current party-entry and policy-fit route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
+- [Completed party-entry and policy-fit route](routes/RESEARCH-2026-09-05-party-entry-and-policy-fit.md)
+- [Current Valorant-selection and Discord-proposal route](routes/PLAN-2026-09-05-valorant-selection-and-discord-voice-proposal.md)
+- [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)
 
 ## Current Research

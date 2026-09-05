@@ -1,8 +1,8 @@
 # QGuard Specification Index
 
 - **Record type:** current specification index
-- **Status:** product foundations partially approved; API findings under owner
-  review
+- **Status:** product foundations partially approved; Valorant selected and
+  integration verification open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -39,9 +39,10 @@ records an explicit narrow override under the workflow-governance policy.
   implementation-ready
 
 The historical gate is closed as sufficient for redesign. The current
-[game API findings](../research/game-api-feasibility-findings.md) narrow the
-next game/integration discussion but do not constitute a specification or game
-selection.
+[game API findings](../research/game-api-feasibility-findings.md) informed the
+owner's Valorant selection in `DEC-018` but do not themselves constitute a
+specification. The non-friend lobby-link test remains `DEF-001`.
 
-No current module approves a complete product/use boundary, game selection,
-architecture, technology, data flow, implementation plan, or release.
+No current module approves a complete product/use boundary, platform/region/
+mode/audience wedge, rank or coordination data flow, architecture, technology,
+implementation plan, or release.

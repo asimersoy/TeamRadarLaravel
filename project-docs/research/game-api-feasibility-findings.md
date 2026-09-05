@@ -1,11 +1,10 @@
 # QGuard Game API Feasibility Findings
 
 - **Record type:** current research findings
-- **Status:** initial and focused follow-up research complete; owner decision
-  required
+- **Status:** research complete; owner selected Valorant under `DEC-018`
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015`, `DEC-016`, and `DEC-017`
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck provider facts before an implementation
   slice or provider application
@@ -35,9 +34,11 @@ reviewed does not expose an ordinary-party API or a public player-rank API.
 Private Battle Royale matches also require at least 30 players, so Custom Match
 control does not satisfy the intended small-party public/ranked flow.
 
-These are research findings, not a game selection. If exact current rank and
-ordinary-party automation become hard requirements, neither candidate
-currently qualifies from the reviewed public first-party evidence.
+These findings did not select a game by themselves. After review, the owner
+selected Valorant under `DEC-018`, with a two-account non-friend lobby-link test
+required before QGuard may rely on that capability. If exact current rank and
+ordinary-party automation become hard requirements, neither candidate fully
+qualifies from the reviewed public first-party evidence.
 
 The focused
 [party-entry and provider-policy follow-up](party-entry-and-policy-fit.md)
@@ -264,19 +265,19 @@ first-game integration. Its party side is provisionally viable if a host-copied
 official lobby link is acceptable and the remaining non-friend acceptance edge
 is closed before reliance. The approval gate and incomplete rank coverage
 remain. Apex does not presently meet either preferred capability for ordinary
-public/ranked play from the reviewed official evidence.
+public/ranked play from the reviewed official evidence. The owner subsequently
+selected Valorant subject to that verification gate (`DEC-018`).
 
-### Proposals For Owner Discussion
+### Remaining Planning Questions
 
-1. Decide whether the host copying one official Valorant lobby link into QGuard
-   is sufficiently low friction.
-2. If yes, close the non-friend recipient edge through a scoped live test or
-   provider confirmation and then settle the rank-missing behavior.
-3. If no, neither candidate meets the preferred ordinary-party threshold;
-   discuss the owner's alternate flows or expand the matrix to other PC games.
+1. Define and run the separately authorized non-friend lobby-link test before
+   integration reliance.
+2. Settle the rank-missing behavior and Riot access/application boundary.
+3. Decide whether the coordination surface is QGuard-native, bot-managed
+   Discord, or another approved flow; treat any voice recording separately.
 
-These are proposals only. The next discussion should settle the acceptable
-party-formation and rank fallback boundary before selecting a game.
+The test is `DEF-001`; the rank and coordination questions remain open. No
+implementation or provider application is authorized.
 
 ## Research Limits And Recheck Triggers
 

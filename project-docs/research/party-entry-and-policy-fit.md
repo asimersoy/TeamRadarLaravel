@@ -1,13 +1,13 @@
 # QGuard Party Entry And Provider-Policy Fit
 
 - **Record type:** current focused research findings
-- **Status:** internal research pass complete; owner decision required
+- **Status:** research complete; owner selected Valorant under `DEC-018`
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015`, `DEC-016`, and `DEC-017`
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-018`
 - **Research date:** 2026-09-05
-- **Date sensitivity:** high; recheck before game selection, provider
-  application, or implementation
+- **Date sensitivity:** high; recheck before integration specification,
+  provider application, or implementation
 - **Implementation authority:** none
 
 ## Executive Finding
@@ -140,7 +140,10 @@ blanket objection to QGuard's external, user-mediated flow.
 - Do not treat Apex Custom/Private Match control as a solution for normal
   small-party public/ranked play.
 - Keep the conditional prototype-first Valorant RSO application path described
-  in `DEC-017` available if Valorant is later selected.
+  in `DEC-017` available when the approved flow needs it.
+- Select Valorant as the initial game and require a non-friend two-account link
+  test before the official lobby link becomes a dependable product capability
+  (`DEC-018`).
 
 ### Verified Facts
 
@@ -158,30 +161,30 @@ lobby link and the documented Apex friend/private-match flows are distinct.
 - No provider approval, future API scope, region, client state, or link lifetime
   is assumed.
 
-### Agent Proposal For Owner Review
+### Owner Disposition After Research
 
-Treat Valorant party formation as **provisionally viable** if a matched host
-copying one official lobby link into QGuard is acceptable. Before a game is
-finally selected or that flow is specified, close the remaining acceptance
-edge with either a scoped two-account live test or first-party provider
-confirmation. If the manual host copy is not acceptable, neither researched
-candidate currently meets the preferred ordinary-party threshold and the next
-step is to discuss the owner's alternate flows or research other games.
+Valorant is the initial game for current product planning. Its party formation
+remains **provisionally viable** until the required test proves that a current
+recipient who is neither the host's Riot friend nor formal Discord friend can
+join the intended ordinary party through the official link. The test gates
+reliance in a specification or implementation, not further product planning.
+If it fails, the workflow returns to the owner before substituting another
+party flow or game.
 
 ### Open Questions
 
-1. Does the owner accept a host-copied official Valorant lobby link as
-   sufficiently low-friction party formation?
-2. Must non-friend link acceptance be verified before selecting Valorant, or
-   may it be an explicit pre-implementation gate?
-3. If the party flow is accepted, what rank evidence or fallback is acceptable
+1. Which supported PC region, intended ordinary mode, accounts, and client
+   states form the exact test packet?
+2. What rank evidence or fallback is acceptable
    when the official API cannot provide exact current rank for every user?
 
 ### Deferred Work
 
-No work is newly deferred. A live-client test, Riot application, prototype,
-implementation, and broader game search remain unapproved future actions, not
-approved work intentionally postponed.
+The required link test is recorded as `DEF-001` in the
+[deferred-work register](../governance/deferred-work.md) until its mode, region,
+accounts, environment, and exact authorization are ready. A Riot application,
+prototype, implementation, and broader game search remain unapproved future
+actions rather than deferred commitments.
 
 ## Research Limits And Recheck Triggers
 

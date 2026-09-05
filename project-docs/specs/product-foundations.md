@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-017`
+- **Authority:** `DEC-009` through `DEC-018`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -32,12 +32,13 @@ or compatible teammates.
 
 ### Initial Game And Integration Direction
 
-The initial game is not selected. Apex Legends and Valorant are the first
-research candidates, but another game remains possible. Selection is based on
-the feasibility of delivering a working, sufficiently low-friction QGuard
-experience rather than inheriting the old project's final game or architecture.
-Party size follows the selected game. PC is a provisional working direction,
-not an approved launch-platform boundary.
+Valorant is the selected initial game for current QGuard product planning.
+Apex Legends was not selected because the bounded public first-party research
+found no evidenced Apex path satisfying the preferred friendship-free
+ordinary-party flow. This is a current feasibility-led decision, not an
+inheritance from the old project. PC remains the provisional context for the
+documented Valorant lobby-link candidate, not a complete approved launch-
+platform, region, mode, or audience boundary.
 
 Two high-value preferred capabilities are:
 
@@ -49,15 +50,14 @@ Two high-value preferred capabilities are:
 
 These capabilities are desirable but not absolute requirements. No present API
 capability, access path, policy permission, or implementation method is assumed.
-If current research finds them unavailable, unsupported, impermissible, or too
-fragile, alternate QGuard flows return to the owner before game selection.
+If a selected capability proves unavailable, unsupported, impermissible, or too
+fragile, alternate QGuard flows return to the owner before substitution.
 
-The initial research pass found that neither candidate publicly documents both
-complete rank coverage and ordinary-party automation. Valorant is the closer
-candidate through an approval-gated opt-in LFG/RSO path and a user-mediated
+The research found that neither candidate publicly documents both complete
+rank coverage and ordinary-party automation. Valorant was selected because it
+offers an approval-gated opt-in LFG/RSO path and an official user-mediated
 lobby link; Apex's documented LiveAPI lobby control is for Custom Matches. See
-the [research findings](../research/game-api-feasibility-findings.md). These
-facts do not select a game or approve a fallback.
+the [research findings](../research/game-api-feasibility-findings.md).
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
@@ -66,16 +66,31 @@ friend/invite/accept flow only as a fallback. A Custom Match, Private Match, or
 tournament code does not satisfy the normal public/ranked-party need unless the
 owner later changes the product boundary. Valorant now has an official
 user-copied PC lobby-link candidate; Apex has no comparable documented feature
-in the reviewed first-party material. Exact non-friend recipient prerequisites
-for the Valorant link still require verification. See the focused
+in the reviewed first-party material. Before QGuard may depend on the Valorant
+link, a scoped two-account test must prove that a recipient who is neither the
+host's Riot friend nor formal Discord friend can join the intended ordinary
+party through it. See `DEC-018` and the focused
 [party-entry and policy findings](../research/party-entry-and-policy-fit.md).
 
-If Valorant is later selected and its approved QGuard flow requires RSO, a
-provider-independent working or mostly testable prototype may use clearly
-identified mock data for RSO-dependent screens when applying for production
-access. This conditional path does not authorize building or publishing the
-prototype, contacting Riot, submitting an application, using credentials, or
-assuming approval.
+If the approved Valorant flow requires RSO, a provider-independent working or
+mostly testable prototype may use clearly identified mock data for RSO-
+dependent screens when applying for production access. This conditional path
+does not authorize building or publishing the prototype, contacting Riot,
+submitting an application, using credentials, or assuming approval.
+
+### Coordination And Voice Evidence
+
+The official lobby link may be shared through a QGuard-native room or another
+later-approved coordination surface. The owner has proposed that a QGuard
+Discord bot might instead create temporary private text and voice rooms for
+matched groups, with possible session-audio retention so an operator could
+review evidence after a report.
+
+That Discord and voice behavior is a proposal, not an approved foundation or
+implementation requirement. Temporary voice rooms without recording, session
+recording for later report review, participant-submitted evidence, and live or
+automated monitoring are separate choices. See the
+[Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
 
 ### Rank Source
 
@@ -115,12 +130,15 @@ participants, locations, data fields, recipients, and retention are concrete.
 
 - The precise present-day user problem, outcome, permitted uses, prohibited
   uses, audience, and public-claim boundary.
-- The acceptable response to the documented rank and party-formation gaps.
-- Whether a host-copied Valorant lobby link is sufficiently low friction and
-  when its non-friend acceptance edge must be verified.
-- The first game, platform, region, mode, and party/user segment.
+- The acceptable response to the documented rank-coverage gap.
+- The test result for non-friend acceptance of the official Valorant lobby
+  link and the recovery path if it fails.
+- The platform, region, mode, and party/user segment beyond the selected game.
 - The fallback coordination and rank flows if preferred integrations are not
   viable.
+- Whether Discord coordination or voice belongs in the product and whether any
+  session recording is justified under a complete approved data, consent,
+  moderation, security, provider-policy, and qualified-review boundary.
 - The complete matching, honor, review, report, moderation, data, security,
   business, operational, and validation specifications.
 

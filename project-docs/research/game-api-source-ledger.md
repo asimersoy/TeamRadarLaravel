@@ -4,7 +4,7 @@
 - **Status:** current research pass complete; recheck before implementation
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-016`, and `DEC-017`
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-018`
 - **Created:** 2026-09-05
 - **Implementation authority:** none
 

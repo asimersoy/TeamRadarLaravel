@@ -1,11 +1,10 @@
 # QGuard Game API Feasibility Research Brief
 
 - **Record type:** current research brief
-- **Status:** initial and focused party-entry follow-up complete; owner decision
-  required
+- **Status:** research complete; owner selected Valorant under `DEC-018`
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011` and `DEC-013`
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-018`
 - **Created:** 2026-09-05
 - **Completed:** 2026-09-05
 - **Date sensitivity:** high; legacy platform/API claims are not current facts
@@ -88,7 +87,8 @@ an alternate product flow.
 - explicit unknowns and inaccessible/gated documentation;
 - risk and feasibility findings separated from product recommendations;
 - viable integration boundaries and fallback options; and
-- owner decision still required for the first game and implementation scope.
+- owner decision recorded for the first game, with implementation scope and
+  verification still open.
 
 ## Research-Pass Result
 
@@ -97,5 +97,7 @@ an alternate product flow.
 - The [findings](game-api-feasibility-findings.md) provide the requested
   side-by-side capability/policy matrix, explicit unknowns, separated
   assessment, candidate boundaries, and recheck triggers.
-- No provider approval, game selection, fallback acceptance, or implementation
-  authority follows from completing this research pass.
+- No provider approval, fallback acceptance, or implementation authority
+  follows from completing this research pass. The later owner decision in
+  `DEC-018` selects Valorant and separately requires live verification before
+  reliance on the lobby link.

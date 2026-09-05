@@ -3,7 +3,7 @@
 - **Objective:** determine whether current official Apex Legends and Valorant
   interfaces can permissibly support reliable rank evidence and low-friction
   ordinary-party formation for QGuard
-- **Status:** internal research pass complete; owner decision required
+- **Status:** completed; owner selected Valorant under `DEC-018`
 - **Owner:** primary Codex agent for research; project owner for product choice
 - **Started:** 2026-09-05
 - **Research completed:** 2026-09-05
@@ -71,8 +71,11 @@
 
 ## Review And Stop Conditions
 
-- **Required reviewer:** project owner for the acceptable rank/party fallback,
-  initial game, and integration boundary.
+- **Owner disposition:** Valorant selected for initial planning; non-friend
+  lobby-link verification and rank/access behavior remain open under `DEC-018`,
+  `DEF-001`, and `OQ-009`.
+- **Required future reviewer:** project owner for the acceptable rank fallback
+  and complete integration boundary.
 - **Future reviews:** provider approval; privacy/legal review after the launch
   jurisdictions and data flow exist; security and trust/safety review after the
   account, honor, report, and moderation flows exist.
