@@ -13,6 +13,8 @@
 - **Implementation authority:** test-only; no product implementation
 - **Update trigger:** test-environment availability, source/client change,
   executed case, invalid result, owner scope change, or completed analysis
+- **Resource and order companion:**
+  [coordination test resources and sequence](coordination-test-resources-and-sequence.md)
 
 ## Owner Direction
 
@@ -59,7 +61,9 @@ The following are conditional diagnostics, not mandatory before `OQ-011`:
 
 ## Readiness Inputs
 
-Before live execution, identify without putting credentials in project records:
+Before live execution, identify without putting credentials in project records.
+The complete per-case allocation and contamination-safe order are in the
+[resource and sequence plan](coordination-test-resources-and-sequence.md):
 
 - two concurrent participant client sessions—such as the owner's Windows PC
   plus a consenting remote participant—on systems where current Valorant, Riot
@@ -67,9 +71,10 @@ Before live execution, identify without putting credentials in project records:
 - two consenting Riot/Valorant accounts, two consenting Steam/CS2 accounts,
   and two consenting Discord participant accounts with the required non-friend
   relationships;
-- one additional ordinary Discord account that is not assigned to the test room
-  so isolation can be checked; an administrator account is not a valid outsider
-  control because administrator permissions bypass channel restrictions;
+- one additional ordinary Discord outsider account that is not assigned to the
+  test room and one separate Discord owner/administrator account; neither
+  participants nor the outsider may hold `ADMINISTRATOR`, because the server
+  owner and administrators bypass channel restrictions;
 - the starting Riot↔Discord link state of each Valorant participant;
 - a human-owned disposable or explicitly approved test Discord server and a
   test application/bot with only the required permissions;
@@ -81,10 +86,13 @@ Before live execution, identify without putting credentials in project records:
   approval to create a new persistent group after acknowledging that Steam
   groups cannot simply be deleted by an operator.
 
-Accounts may overlap across providers when appropriate, but relationship,
-linking, region, client, and network states must remain explicit. Credentials,
-tokens, complete lobby URLs, full account identifiers, and full IP addresses
-must not enter tracked records, screenshots, chat, or logs.
+Accounts may overlap across providers when appropriate. The clean reusable core
+is two participant bundles—Riot/Discord/Steam A and B—on two PCs. The complete
+Discord-room proof adds two Discord-only human controls and one bot identity;
+it does not require two more gaming PCs. Relationship, linking, region, client,
+and network states must remain explicit. Credentials, tokens, complete lobby
+URLs, full account identifiers, and full IP addresses must not enter tracked
+records, screenshots, chat, or logs.
 
 ## Common Controls And Result Vocabulary
 
@@ -127,6 +135,12 @@ role reversal because timing and visibility are material.
 5. Confirm the exact external targets before creating a Discord channel,
    invitation, OAuth grant, chat, or group membership.
 
+Run the phases in the resource plan's wave order. Start with the neutral-relay
+Valorant copied-link cases before A and B join the test Discord server, and
+preserve their nonfriend states until all nonfriend cases finish. Begin with the
+host linked and recipient unlinked when safely available; link the recipient
+only after the unlinked result is recorded.
+
 ## Phase 1 - Valorant Official Copied-Link Path
 
 Execute the detailed procedure in the
@@ -139,9 +153,12 @@ Execute the detailed procedure in the
   friend joins the host's ordinary party through the official copied link.
 - **`VAL-LINK-2`:** vary only the recipient's Riot↔Discord link state to find
   whether linking is required for host only or for every participant.
-- **`VAL-LINK-3`:** deliver fresh official links once through private Discord
-  text and once through a neutral non-Discord relay. This distinguishes a Riot
-  feature prerequisite from a Discord delivery-surface prerequisite.
+- **`VAL-LINK-3N`:** deliver fresh official links through a neutral non-Discord
+  relay before server membership is introduced.
+- **`VAL-LINK-3D`:** later deliver fresh official links through private Discord
+  text and compare the result with `VAL-LINK-3N`. Together these subcases
+  distinguish a Riot feature prerequisite from a Discord delivery-surface
+  prerequisite.
 - **`VAL-LINK-4`:** without changing account-link state, compare (a) host link
   generation with Discord connected versus fully closed and (b) recipient
   acceptance from the neutral relay with Discord connected versus fully closed.
@@ -159,7 +176,9 @@ short-lived bearer secret and use a fresh link where the comparison permits.
   Ask-to-Join surfaces for the non-friend Valorant host. Verify actual Valorant
   ordinary-party membership if an action exists.
 - **`CS2-GI-1`:** repeat the same Discord-surface test for a non-Steam-friend
-  ordinary CS2 Premier/Competitive party.
+  ordinary CS2 party. Use non-Premier Competitive for the first observation;
+  Premier is unnecessary to test handoff and would add Prime/profile-level
+  prerequisites.
 - **`VAL-DIRECT-2` (conditional):** establish formal Discord friendship and use
   the documented direct-friend route as a positive control only when necessary
   to distinguish a broken setup from a non-friend restriction. Remove the
@@ -176,9 +195,14 @@ create a server for every match.
 - **`DCS-1 — creation`:** using a test bot through documented Discord APIs,
   create one private text channel and one private voice channel for a test
   match. Record required bot permissions and errors.
-- **`DCS-2 — constrained-invite admission`:** admit the two non-friend test
-  participants through the selected short-lived/use-limited server invitation
-  and grant only match-room access. Record all human consent steps.
+- **`DCS-2A — targeted-invite admission`:** first test Discord's documented
+  target-user invite list with role assignment, short expiry, and use limit.
+  Admit the two non-friend participants and grant only match-room access. Prove
+  that an unlisted user cannot accept, and record every human consent step.
+- **`DCS-2B — ordinary-invite fallback`:** only if `DCS-2A` is unavailable or
+  fails for a supported reason, test an ordinary short-lived/use-limited invite
+  and record its targeting/manual-role gap. Do not treat it as equivalent to a
+  targeted invite.
 - **`DCS-3 — matched-user access`:** prove both participants can see the roster/
   instructions, exchange a harmless test message, and join/leave the voice
   channel. Do not record or monitor audio.
@@ -199,11 +223,12 @@ tracking, voice recording, or provider-side deletion guarantees.
 ## Phase 4 - Steam And Current CS2 Alternatives
 
 - **`STM-CHAT-1 — non-friend group chat`:** through visible Steam UI, have a
-  human create/save a group chat and its official invite link. Deliver it
-  outside Steam; test non-friend web/client admission, mutual text, voice-
-  channel join/leave, re-entry, member visibility, invitation revocation, and
-  cleanup. Record whether an existing friend is required to seed the chat and
-  which lifecycle actions remain manual.
+  human create/save a group chat and its official invite link. If the current
+  UI requires an existing friend to seed creation, use a separate consenting
+  seed account; A and B must remain nonfriends. Deliver the link outside Steam;
+  test non-friend web/client admission, mutual text, voice-channel join/leave,
+  re-entry, member visibility, invitation revocation, and cleanup. Record the
+  seed requirement and every lifecycle action that remains manual.
 - **`CS2-OBS-1 — current low-cost observations`:** in current CS2 UI, inspect
   whether an ordinary lobby exposes an official copyable link/code or a Nearby/
   Public Lobby route usable by the exact non-friend account. Do not derive a

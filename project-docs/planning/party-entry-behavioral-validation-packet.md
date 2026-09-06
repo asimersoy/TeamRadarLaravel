@@ -13,6 +13,8 @@
 - **Implementation authority:** none
 - **Update trigger:** available test environment, provider/client change,
   changed party-entry requirement, or completed test
+- **Resource and order companion:**
+  [coordination test resources and sequence](coordination-test-resources-and-sequence.md)
 
 ## Purpose
 
@@ -37,12 +39,17 @@ program so communication and game-party evidence remain separate.
 ## Evidence Baseline
 
 Current source URLs, access dates, and claim limits are indexed in the
-[game API source ledger](../research/game-api-source-ledger.md).
+[game API source ledger](../research/game-api-source-ledger.md). The 2026-09-07
+rollout and roadmap recheck is in
+[Discord party-entry current state and roadmap](../research/discord-party-entry-current-and-roadmap.md).
 
 ### Verified Current Facts
 
 - After Riot/Discord account linking, Riot says a PC user can copy a Valorant
   lobby link and share it with a Discord server or elsewhere.
+- Riot and Valorant sources now describe the League/Valorant integration as
+  shipped during 2026, subject to region support; it is not merely a future
+  Valorant feature.
 - Riot separately documents inviting formal Discord friends directly from the
   Valorant social panel. That action is not the copied-link mechanism, and
   shared-server/channel membership is not formal Discord friendship.
@@ -81,16 +88,19 @@ declining.
 |---|---|---|---|---|
 | VAL-LINK-1 | Valorant official host-copied lobby link | Host and recipient are neither Riot friends nor formal Discord friends; both can access the same controlled private relay | Can the recipient click the posted official link and enter the host's ordinary party? | Required before reliance under `DEC-018` |
 | VAL-LINK-2 | Valorant official link, recipient-linking variation | Same relationship state; recipient's Riot/Discord link state differs from the passing baseline | Must every recipient link Riot and Discord, or only the host? | Determines onboarding prerequisite and fallback copy |
-| VAL-LINK-3 | Valorant official link, delivery-surface variation | Same accounts and party state; link is delivered once through Discord text and once through a neutral non-Discord relay | Is Discord merely the host's account-link prerequisite, or also required for recipient delivery/acceptance? | Determines whether a QGuard-native room can carry the link |
+| VAL-LINK-3N / VAL-LINK-3D | Valorant official link, delivery-surface variation | Same accounts and party state; neutral relay runs before server membership, then Discord text runs later | Is Discord merely the host's account-link prerequisite, or also required for recipient delivery/acceptance? | Determines whether a QGuard-native room can carry the link |
 | VAL-LINK-4 | Valorant official link, Discord runtime variation | Account-link and relationship state remain fixed; Discord is connected versus fully closed separately for host generation and recipient acceptance | Must Discord be running/reachable when the host creates or the recipient opens the link? | Distinguishes account-link history from a live Discord runtime dependency |
 | VAL-DIRECT-1 | Riot's direct Discord-friend invite from Valorant | Shared test server but no formal Discord friendship | Does any direct in-client invite action expose the non-friend recipient? | Control case; documented friend route is not assumed to work for matched strangers |
 | VAL-GI-1 | Discord generic Game Invite with Valorant | No formal Discord friendship and no Riot friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter the ordinary party? | Optional lower-friction route; does not replace `VAL-LINK-1` |
-| CS2-GI-1 | Discord generic Game Invite with CS2 | No formal Discord or Steam friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter an ordinary CS2 Premier/Competitive party? | Could reopen CS2 party-entry comparison if repeatable and supportable |
+| CS2-GI-1 | Discord generic Game Invite with CS2 | No formal Discord or Steam friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter an ordinary non-Premier Competitive party? | Could reopen CS2 party-entry comparison if repeatable and supportable |
 | VAL-NET-1 | Valorant/Discord feature under the owner's Turkish test constraint | Discord/browser use a VPN while Riot remains on the home-region path when split tunneling is available | Is the feature visible and usable without routing Valorant through the VPN? | Validates the local test setup only; does not prove official Turkish support |
 
-Two accounts are enough to validate the entry mechanism. A later specification
-may require a full-team capacity/recovery test. For an ordinary five-player
-Valorant team, the intended final shape is one host plus four joiners.
+Two accounts and two concurrent PCs are enough to validate the entry mechanism.
+Use distinct Riot and Discord identities for each participant, keep A/B
+nonfriends, link the host first, and preserve an unlinked recipient state for
+the first attempt when safely available. A later specification may require a
+full-team capacity/recovery test. For an ordinary five-player Valorant team,
+the intended final shape is one host plus four joiners.
 
 ## Controlled Variables
 
@@ -118,21 +128,21 @@ not proof that the capability is absent.
 ## Procedure A - Valorant Official Lobby Link
 
 1. Recheck the current Riot/Discord feature page and applicable policy.
-2. Use two consenting current PC test accounts. Confirm
-   that they are neither Riot friends nor formal Discord friends. They may both
-   be members of the same consented private Discord test server because that
-   approximates one candidate relationship without selecting the production
-   backbone.
+2. Use two consenting current PC test accounts. Confirm that they are neither
+   Riot friends nor formal Discord friends. Run the neutral-relay cases before
+   they join the test Discord server; later server membership is a separate
+   controlled state.
 3. Link the host's Riot and Discord accounts through the official consent flow
    if not already linked. Record but do not expose the recipient's starting
    link state.
 4. The human host creates an ordinary Valorant party with an open slot and uses
    the official client/integration control to copy its lobby link.
-5. The host manually posts the link in the private Discord test channel. On a
-   separate fresh link/party attempt, transmit it through a neutral private
-   non-Discord relay that approximates QGuard's future host-link field. QGuard
-   may later relay or pin this host-supplied text, but it does not generate the
-   Riot link.
+5. First transmit fresh links through a neutral private non-Discord relay that
+   approximates QGuard's future host-link field (`VAL-LINK-3N`). After the
+   neutral cases and Discord-server admission, run a separate fresh-link
+   attempt through the private Discord channel (`VAL-LINK-3D`). QGuard may
+   later relay or pin this host-supplied text, but it does not generate the Riot
+   link.
 6. The recipient clicks the link and follows only official Riot/Discord/client
    prompts. Record whether client update, Riot/Discord linking, authentication,
    or another prerequisite is requested.
@@ -169,10 +179,11 @@ without Riot or Discord friend addition and without unauthorized automation.
 requiring official account linking is not a failure of the link, but it becomes
 a material QGuard onboarding dependency that requires owner review.
 
-`VAL-LINK-3` passes only if the same official link type works when carried by a
-private non-Discord relay. It proves delivery-surface independence for the
-tested client state, not that the host can obtain the feature without a linked
-Discord account or that Riot officially supports it in Turkey.
+`VAL-LINK-3N` passes only if the same official link type works when carried by a
+private non-Discord relay. `VAL-LINK-3D` records the later Discord-text
+comparison. A neutral pass proves delivery-surface independence for the tested
+client state, not that the host can obtain the feature without a linked Discord
+account or that Riot officially supports it in Turkey.
 
 `VAL-LINK-4` records host and recipient runtime requirements separately. A
 closed-Discord pass does not remove the documented account-linking prerequisite;

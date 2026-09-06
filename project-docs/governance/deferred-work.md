@@ -38,6 +38,11 @@ postpones it with a return condition.
   Discord access requires a VPN in the test location, record split/full-tunnel
   mode and endpoint country as confounding variables rather than treating VPN
   operation as product approval.
+- **Readiness order:** use the two-PC Wave 1 allocation in the
+  [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md):
+  run the neutral relay before Discord-server membership, start with host linked
+  and recipient unlinked when safely available, and preserve all nonfriend
+  relationships through the required cases.
 - **Implementation state:** no experiment or client action performed.
 - **Return condition:** begin live execution when the combined program's
   readiness inputs are available. Complete it before approving an integration
@@ -82,6 +87,10 @@ postpones it with a return condition.
   per tested relationship; non-friend conditions; an ordinary joinable party;
   source/policy recheck; safe credential handling outside project records; and
   the approved execution packet.
+- **Readiness order:** reuse participant bundles A/B only after the neutral
+  Valorant-link wave. For CS2, begin with a non-Premier Competitive party; Prime
+  and profile level 10 are needed only if a later test specifically requires
+  Premier.
 - **Implementation state:** no experiment or client action performed.
 - **Return condition:** begin live execution alongside `DEF-001` when the test
   environment is available. Valorant's generic case is a friction comparison;
@@ -116,19 +125,22 @@ postpones it with a return condition.
   credential handling, evidence location, or cleanup owner is available in the
   current repository task. No live Discord action has occurred.
 - **Dependencies:** current Discord source recheck; human-owned disposable or
-  approved test server; minimally permissioned bot; two participant accounts
-  and an ordinary non-admin outsider; constrained invite; optional
-  `guilds.join` OAuth only if needed; VPN/UDP state where relevant; and the
-  combined execution program.
+  approved test server; minimally permissioned bot; two ordinary participant
+  accounts, an ordinary non-admin outsider, and a separate owner/admin account;
+  targeted-user/role-bearing invite first, ordinary constrained invite only as
+  fallback, optional `guilds.join` OAuth only if needed; VPN/UDP state where
+  relevant; and the combined execution program.
 - **Implementation state:** no application, bot, channel, invitation, OAuth
   grant, role, message, voice connection, permission, or deletion performed.
 - **Return condition:** activate live execution when the readiness inputs are
   named. A valid result is required before `OQ-011` selects Discord as primary
   or required coordination.
-- **Verification required:** `DCS-1` through `DCS-5`, including creation,
-  admission, matched access, outsider isolation, expired/revoked states,
+- **Verification required:** `DCS-1` through `DCS-5`, including targeted-user
+  and role-bearing admission (`DCS-2A`), ordinary-invite fallback only when
+  needed (`DCS-2B`), matched access, outsider isolation, expired/revoked states,
   join/leave without recording, cleanup, unrelated-state preservation, and
-  exact permission/error evidence.
+  exact permission/error evidence. Owner/admin access is not isolation proof
+  because it bypasses channel overwrites.
 - **Owner recheck:** required if Discord needs broader permissions/data than
   planned, channel deletion cannot provide the intended lifecycle, a VPN becomes
   a product dependency, or the test would introduce message surveillance or
@@ -154,9 +166,10 @@ postpones it with a return condition.
   non-friend case and current lifecycle have not been behaviorally verified.
   No live Steam account, chat, link, message, or voice action has occurred.
 - **Dependencies:** current Steam source/client recheck; two consenting accounts
-  that are not friends and share no starting chat/group; safe invite-link
-  handling; benign test message; voice join/leave without recording; evidence
-  location; and cleanup owner.
+  that are not friends and share no starting chat/group; an optional separate
+  consenting Steam friend to seed chat creation if the current UI requires one;
+  safe invite-link handling; benign test message; voice join/leave without
+  recording; evidence location; and cleanup owner.
 - **Implementation state:** no test performed.
 - **Return condition:** run with the combined program before the owner closes
   the cross-option coordination comparison.
@@ -169,6 +182,7 @@ postpones it with a return condition.
   or provider-policy changes.
 - **Execution packet:**
   [combined validation program](../planning/coordination-and-party-entry-validation-program.md)
+  and [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
 
 ## DEF-005 - Verify Current CS2 Friendship-Free Alternative Paths
 

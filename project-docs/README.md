@@ -27,11 +27,15 @@ settling exact availability. Under `DEC-023`, the owner has deliberately
 postponed the critical `OQ-011` coordination decision until one combined test
 program validates the Valorant link, game-specific Discord Invite/Join,
 Discord private-room lifecycle, Steam non-friend group chat, and current CS2
-alternatives. Live execution awaits the required Windows/client/account test
-environment and exact evidence/cleanup setup. Looking to Play remains rejected,
-and voice recording remains a separate proposal only. No implementation plan
-or code change is approved. Everything under `legacy/` remains historical
-evidence.
+alternatives. The 2026-09-07 resource/roadmap follow-up establishes that the
+Riot/Discord integration already shipped for Valorant, defines a clean two-PC
+participant topology, identifies four human Discord identities for rigorous
+server-room isolation, adds targeted-user/role-bearing invite admission, and
+selects the neutral-relay Valorant link as Wave 1. Live execution awaits the
+owner's confirmation of that Wave 1 environment. Looking to Play remains
+rejected, and voice recording remains a separate proposal only. No
+implementation plan or code change is approved. Everything under `legacy/`
+remains historical evidence.
 
 Start with:
 
@@ -41,8 +45,9 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Current coordination and party-entry validation route](routes/PLAN-2026-09-07-coordination-and-party-entry-validation.md)
-8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
+7. [Current test-resource and Discord-roadmap route](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
+8. [Coordination test resources and sequence](planning/coordination-test-resources-and-sequence.md)
+9. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
 
@@ -58,7 +63,9 @@ Start with:
 - [Completed party-handoff validation and coordination-gate route](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
 - [Completed Discord-dependency and restricted-region route](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
 - [Current coordination and party-entry validation route](routes/PLAN-2026-09-07-coordination-and-party-entry-validation.md)
+- [Current test-resource and Discord-roadmap route](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
 - [Coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md)
+- [Coordination test resources and sequence](planning/coordination-test-resources-and-sequence.md)
 - [Party-entry behavioral validation packet](planning/party-entry-behavioral-validation-packet.md)
 - [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)
@@ -72,6 +79,7 @@ Start with:
 - [Counter-Strike 2 party-entry feasibility](research/counter-strike-2-party-entry-feasibility.md)
 - [Steam non-friend communication/group feasibility](research/steam-nonfriend-communication-and-group-feasibility.md)
 - [Discord coordination and game-join comparison](research/discord-coordination-and-game-join-comparison.md)
+- [Discord-assisted party entry: current state and roadmap](research/discord-party-entry-current-and-roadmap.md)
 
 These records organize decisions; they do not approve a product brief,
 technical specification, implementation plan, or code change.

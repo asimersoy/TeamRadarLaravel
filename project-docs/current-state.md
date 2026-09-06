@@ -1,14 +1,16 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-07
-- **Status:** combined coordination and party-entry validation scope activated;
-  live execution awaits accounts, Windows clients, consent, exact external test
-  targets, redacted evidence location, and cleanup ownership; `OQ-011` selection
-  deliberately waits for the resulting comparison
-- **Objective:** execute the decision-blocking test program before choosing a
-  coordination backbone or dependable party-handoff path
+- **Status:** test resources and order are now defined; Wave 1 live execution
+  awaits owner confirmation of two Riot/Discord participant pairs whose A/B
+  accounts are nonfriends on each provider, two concurrent PCs, link states,
+  VPN mode, neutral relay, and redacted evidence/cleanup setup; `OQ-011` still
+  waits for the full comparison
+- **Objective:** provision and execute the neutral-relay Valorant link wave,
+  then continue through the documented coordination/party-entry waves before
+  choosing a backbone or dependable handoff path
 - **Current route:**
-  [PLAN-2026-09-07 Coordination and party-entry validation](routes/PLAN-2026-09-07-coordination-and-party-entry-validation.md)
+  [RESEARCH-2026-09-07 Test resources and Discord roadmap](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
 
 ## Verified Workspace State
 
@@ -160,6 +162,17 @@
   Discord room alone provides no evidenced party-entry action. It also bounds
   Turkey/VPN observations as test variables rather than product or legal
   conclusions.
+- **Completed:** the 2026-09-07
+  [test-resource and Discord-roadmap research](research/discord-party-entry-current-and-roadmap.md)
+  confirms that Riot's League/Valorant integration already shipped in 2026,
+  preserves the unresolved nonfriend and recipient-link cases, finds no current
+  first-party CS2 ordinary-party Discord handoff, and bounds Discord LFG
+  Channels as an ARC Raiders-only named experiment with no request path or
+  Valorant/CS2 commitment. The linked
+  [resource and sequence plan](planning/coordination-test-resources-and-sequence.md)
+  splits every test, defines the two-PC/two-participant core and separate
+  Discord owner/outsider controls, incorporates targeted-user/role-bearing
+  invites, and selects neutral-relay Valorant link testing as Wave 1.
 - **In progress:** readiness for the
   [coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md).
   `DEF-001` through `DEF-005` now cover the Valorant link, generic Discord game
@@ -167,14 +180,17 @@
   current CS2 alternatives. Live execution has not started because the named
   Windows/client/account environment and evidence/cleanup setup are not
   available to this repository task; the current execution host reports
-  `Darwin arm64`. Rank fallback, provider access, complete
-  wedge, and voice evidence remain outside this test program.
-- **Next:** identify the Windows machine and consenting test accounts, record
-  the relationship/link-state baseline, select the human-owned Discord test
-  server and evidence/cleanup locations, then execute the phases in the program.
-  Obtain separate exact approval before creating any new persistent Steam
-  Community Group. After valid results, reconcile the mechanism matrix and
-  return `OQ-011` to the owner. Do not ask for the product choice before then.
+  `Darwin arm64`. Rank fallback, provider access, complete wedge, and voice
+  evidence remain outside this test program.
+- **Next:** owner confirms the seven Wave 1 readiness items in the
+  [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
+  Then freeze the account/client/network matrix and run `ENV-1`, `ENV-2`,
+  `VAL-NET-1`, and the neutral `VAL-LINK-*` cases. Do not prepare or mutate the
+  Discord server/bot or Steam group until its later wave is ready. Obtain
+  separate exact approval before creating any new persistent Steam Community
+  Group. After all decision-blocking results, reconcile the mechanism matrix
+  and return `OQ-011` to the owner; do not ask for the product choice before
+  then.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -298,6 +314,13 @@
   `project-docs/`; the portable workflow package and legacy application remain
   unchanged. Application/runtime tests and the portable-system validator were
   not run because this unit creates the test program rather than executing it.
+- The 2026-09-07 test-resource/roadmap follow-up reviewed only public first-
+  party sources, split and sequenced every active/conditional test, and created
+  no live provider state. The workflow validator passed, all relative links
+  across 52 project Markdown files resolved, `git diff --check` passed, and the
+  changed-path review found no change under the protected portable workflow
+  package or legacy application. Application/client tests were not required
+  because this unit prepares rather than executes the live test waves.
 
 ## Gates
 

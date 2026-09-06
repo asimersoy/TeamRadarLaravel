@@ -373,6 +373,14 @@ Historical unknowns do not automatically become requirements.
   documentation alone. Execute the copied-link, game-specific Discord Join,
   Discord private-room lifecycle, Steam group-chat, and current CS2 alternative
   tests first, then return the reconciled comparison (`DEC-023`).
+- **Readiness result:** the
+  [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
+  splits every case and preserves a clean order. Two participant bundles on two
+  gaming PCs cover the core game tests. A rigorous Discord-room test additionally
+  needs an ordinary outsider and a separate owner/admin identity because
+  administrators bypass channel restrictions. Targeted-user/role-bearing
+  invites are the preferred first Discord admission case. The neutral-relay
+  Valorant copied-link cases run first.
 - **Option A consequence:** every matched user can coordinate and receive the
   link inside QGuard without joining a Discord server. At minimum QGuard owns
   roster/readiness, host assignment, link submission, access isolation, expiry,
