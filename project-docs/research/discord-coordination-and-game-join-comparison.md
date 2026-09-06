@@ -2,11 +2,11 @@
 
 - **Record type:** focused current research findings and comparison report
 - **Status:** authoritative-source research complete; designated-human-host
-  direction accepted; coordination-backbone decision and behavioral execution
-  remain open
+  direction accepted; exact party-entry mechanisms separated; coordination-
+  backbone decision and behavioral execution remain open
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-015` through `DEC-021`, and the owner's
+- **Authority:** `DEC-011`, `DEC-015` through `DEC-022`, and the owner's
   2026-09-06 request for a Discord comparison across Valorant and CS2
 - **Research date:** 2026-09-06
 - **Date sensitivity:** high; recheck before testing, provider review, or
@@ -15,12 +15,14 @@
 
 ## Executive Finding
 
-**Discord can provide the automated or semi-automated multi-person text/voice
-space QGuard needs. Valorant can then provide a user-mediated ordinary-party
-link; CS2 currently cannot be shown to provide an equivalent Discord handoff.**
+**A Valorant lobby link and a Discord-rendered game Join/Invite action are
+different mechanisms. Riot documents a host-copied lobby link that may be
+shared through Discord or elsewhere; current evidence does not establish that
+matched non-friends merely placed in the same Discord room receive a working
+game-specific Join action.**
 
-The strongest communication design is one persistent, human-owned QGuard
-Discord server with bot-created private text and voice channels for each match.
+One supported communication design is a persistent, human-owned QGuard Discord
+server with bot-created private text and voice channels for each match.
 Discord's current API expressly supports channel creation and deletion,
 member/role permission overwrites, expiring and use-limited server invitations,
 and adding an OAuth-authorized user to a server. Participants do not need to be
@@ -53,6 +55,22 @@ No current first-party Discord, Valve, Steam, or CS2 material reviewed identifie
 CS2 as implementing Discord Game Invites for ordinary Premier or Competitive
 parties. Detecting CS2 as a running game or showing activity is not proof of a
 Join action. QGuard cannot implement Discord Rich Presence inside Valve's game.
+
+## Exact Mechanism Separation
+
+| Mechanism | What creates party entry | Who it is documented for | Does a shared Discord room cause it? | QGuard relevance |
+|---|---|---|---|---|
+| Official Riot lobby link | A Valorant host creates an ordinary party and copies Riot's official link | The link may be shared in a Discord server, DM, or elsewhere; exact non-friend recipient prerequisites still need testing | No. Discord can carry the link, but the Riot link is the entry mechanism | Current primary friendship-free candidate, conditional on `DEF-001` |
+| Direct Riot “Invite by Discord” control | Valorant exposes formal Discord friends in its in-game social flow | Riot ID plus formal Discord friendship and linked accounts | No. Sharing a server or channel is not Discord friendship | Does not fit QGuard's matched-stranger requirement as documented |
+| Discord generic Game Invite/Join | The game implements Discord's invitation/join surface and exposes a joinable session | Game-specific and state-dependent | Not merely from room membership; an implemented game activity/invite is required | Optional test under `DEF-002`; not established for ordinary non-friend Valorant or CS2 parties |
+| Discord OAuth/server admission | QGuard identifies or admits a user to a Discord server | A consenting Discord user | It creates Discord access only | Coordination/account admission, never game-party entry |
+
+The copied lobby link is therefore not “Discord authentication making someone
+join Valorant.” Discord account linking may be a prerequisite for the host to
+unlock Riot's feature, but the resulting Riot link can be delivered by a
+private Discord text channel, a QGuard-native match room, or another permitted
+surface. Conversely, a Discord room supplies no evidenced automatic party-entry
+action on its own.
 
 ## Outcome Vocabulary
 
@@ -264,28 +282,58 @@ servers, and currently documents the official ARC Raiders server as the
 supported example. It does not establish Valorant or CS2 party joining and is
 not part of the recommended route.
 
+## Restricted-Region And VPN Boundary
+
+The owner reports that Discord is currently restricted in Turkey and can be
+tested from a VPN-capable Windows machine. This is operational context, not a
+legal conclusion or approval to make circumvention part of QGuard's product
+flow. Riot describes these Discord-powered features as available only in
+regions where both Riot and Discord are supported.
+
+A VPN does not necessarily make the client test fail, but it introduces an
+independent network variable. Discord says voice requires a VPN that supports
+UDP, while Riot says some high-volume VPN routes may be blocked and its
+Valorant support treats VPN/proxy use as a possible connection problem. Where
+the machine permits it, a split-tunnel comparison should route Discord and the
+authorization browser through the VPN while leaving Riot Client and Valorant
+on the ordinary home-region path. A full-tunnel test should use a nearby
+endpoint, retain the account's existing Riot shard, and stop after party
+membership rather than entering matchmaking.
+
+The test must separately exercise the copied Riot link through Discord and a
+neutral non-Discord relay. A pass through the latter would show that Discord is
+the host's feature/account-link dependency rather than the QGuard delivery-
+surface dependency. Any result proves only the observed configuration and does
+not establish official support or durable availability in Turkey.
+
 ## Recommendation
 
-For the owner's stated requirement, use this ranking:
+For the owner's stated requirement, use this product-dependency ranking:
 
-1. **Discord server plus temporary private text/voice channels — recommended
-   coordination candidate.** It is the clearest supported automation surface,
-   admits non-friends through link or OAuth, can isolate each match, and works
-   independently of the game.
-2. **Discord application-created Group DM — proof-of-concept only.** It matches
+1. **Minimal QGuard-native private match room — recommended required
+   baseline.** It can expose the matched roster, readiness, designated host,
+   host-supplied lobby link, and join action without making Discord server
+   access or a VPN a universal coordination requirement. Full free-form chat
+   and native voice do not follow automatically from this proposal.
+2. **Discord server plus temporary private text/voice channels — optional
+   enhancement.** It is the clearest supported Discord automation surface,
+   admits non-friends through link or OAuth, can isolate each match, and can
+   add voice where Discord is available.
+3. **Discord application-created Group DM — proof-of-concept only.** It matches
    the desired UI but its deprecated-SDK origin, ten-active-room cap, OAuth
    token burden, and inability to contain a bot make it unsuitable as the
    default scalable design.
-3. **Steam group chat — manual fallback only.** It has a shareable link and
+4. **Steam group chat — manual fallback only.** It has a shareable link and
    text/voice, but no supported QGuard creation or lifecycle API was found.
-4. **Steam Community Group — not the requested room.** It is persistent and may
+5. **Steam Community Group — not the requested room.** It is persistent and may
    have a historical CS2 party-discovery role, but does not satisfy the clarified
    temporary-chat and automation criterion.
 
-Across games, Valorant remains the only current candidate that combines the
-recommended Discord room with an evidenced friendship-free ordinary-party
-handoff. CS2 can use the same Discord room for communication but currently
-lacks the game-party link. Therefore:
+Across games, Valorant remains the only current candidate with an evidenced
+friendship-free ordinary-party handoff. Discord may carry that link, but a
+QGuard-native private match surface could carry the same host-supplied link.
+CS2 can use either coordination surface but currently lacks an evidenced game-
+party link. Therefore:
 
 - if QGuard requires both semi-automated communication and friendship-free
   ordinary-party entry, **Valorant is `supported-with-conditions` and CS2 is not
@@ -318,6 +366,8 @@ decision.
   conditional flow, approves future party-entry behavioral tests, and states
   that a Group DM is unnecessary if the server/private-channel model works. It
   preserves final backbone selection as a separate critical owner gate.
+- `DEC-022` records the broad international product direction without deciding
+  exact launch coverage or making Discord/VPN availability a product promise.
 
 ### Verified Facts
 
@@ -338,7 +388,8 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
 
 ### Agent Proposals
 
-- Present the Discord-server model as the next owner coordination choice.
+- Present a minimal QGuard-native private match room as the required baseline,
+  with the Discord-server model as an optional text/voice enhancement.
 - Keep Group DM OAuth creation as an optional technical spike only if the owner
   values DM-list placement enough to accept its platform risks.
 - The owner now approves challenging the bounded CS2 finding through the
@@ -348,10 +399,10 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
 
 ### Open Questions
 
-- Is Discord-server membership acceptable, or is Direct Messages placement a
-  hard requirement?
-- Should admission use a short-lived server invite, `guilds.join` OAuth, or a
-  combination for existing/new members?
+- Should QGuard adopt the recommended native baseline, use Discord as primary
+  with a native fallback, or require Discord with explicit regional handling?
+- If Discord remains in the selected design, should admission use a short-
+  lived server invite, `guilds.join` OAuth, or a combination?
 - Does QGuard remove users from the server after each match or retain membership
   while removing only room access?
 - What happens when a user lacks Discord, rejects OAuth, cannot join the server,
@@ -360,6 +411,8 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
   friction for the first product slice?
 - Will the approved future CS2 Discord Game Invite test expose a repeatable
   ordinary-party action despite the lack of game-specific first-party evidence?
+- Does the copied Riot link work through a neutral QGuard-like relay, and what
+  host/recipient account-linking and restricted-region prerequisites apply?
 
 ### Unperformed Work
 

@@ -2,12 +2,14 @@
 
 - **Last updated:** 2026-09-06
 - **Status:** designated-human-host Valorant handoff and future client-test
-  scope accepted; Discord server/private-channel backbone awaits the owner's
-  separate critical decision; `DEC-018` still selects Valorant
+  scope accepted; Riot lobby links, direct Discord-friend invites, and generic
+  Discord Join actions are separated; the coordination backbone awaits the
+  owner's critical decision; `DEC-018` still selects Valorant
 - **Objective:** obtain the deliberate `OQ-011` coordination-backbone decision
-  without conflating it with party-entry tests or voice recording
+  without conflating delivery surface, party-entry mechanism, Discord account
+  admission, restricted-region behavior, or voice recording
 - **Current route:**
-  [PLAN-2026-09-06 Party handoff validation and coordination gate](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
+  [RESEARCH-2026-09-06 Discord dependency and restricted-region boundary](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
 
 ## Verified Workspace State
 
@@ -94,6 +96,13 @@
   CS2. It also records that a Group DM is unnecessary if the server/private-
   channel model works, while preserving that model's final selection as the
   separate critical `OQ-011` owner gate.
+- `DEC-022` records QGuard's broad international direction without deciding an
+  exact launch geography or approving Discord/VPN dependence. The current
+  research separates Riot's host-copied lobby link from the formal-Discord-
+  friend invite and from Discord's generic game Join surface. The Riot link may
+  be carried by Discord or a QGuard-native private match surface; exact host/
+  recipient account-link, non-friend, region, and VPN behavior remains gated by
+  `DEF-001` and `DEF-002`.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
@@ -139,21 +148,31 @@
   then accepts the designated-human-host link handoff conditionally and the
   [party-entry behavioral validation packet](planning/party-entry-behavioral-validation-packet.md)
   defines the approved future Valorant and CS2 client checks.
-- **In progress:** owner review of whether to select the Discord-server/private-
-  channel model as QGuard's coordination backbone (`OQ-011`). `DEF-001` remains
-  the required Valorant-link test and `DEF-002` queues the optional generic
-  Discord Game Invite checks. Rank fallback, provider access, complete wedge,
-  exact Discord admission/lifecycle, and coordination fallback remain open. The
+- **Completed:** the subsequent
+  [Discord dependency and restricted-region research route](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
+  separates the copied Riot lobby link, direct formal-Discord-friend invite,
+  generic Discord Game Invite, and QGuard-to-Discord OAuth/admission. It records
+  that Riot's copied link can be delivered outside Discord, while a shared
+  Discord room alone provides no evidenced party-entry action. It also bounds
+  Turkey/VPN observations as test variables rather than product or legal
+  conclusions.
+- **In progress:** owner review of whether to require a minimal QGuard-native
+  private match room and keep Discord text/voice optional, use Discord as
+  primary with a native fallback, or require Discord with explicit regional
+  handling (`OQ-011`). `DEF-001` remains the required Valorant-link and delivery-
+  surface test; `DEF-002` queues the optional generic Discord Game Invite
+  checks. Rank fallback, provider access, complete wedge, exact Discord
+  admission/lifecycle, and coordination fallback remain open. The
   [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
   records temporary rooms and possible recording as an unapproved proposal.
-- **Next:** owner deliberately decides whether one human-owned QGuard Discord
-  server with bot-created private per-match text/voice channels is the preferred
-  coordination backbone, without recording. If accepted, settle invite versus
-  `guilds.join` admission and post-match membership/access cleanup. `DEF-001`
-  and `DEF-002` execute only when specific consenting test accounts/current
-  clients and a minimal redacted evidence/cleanup setup are supplied. Group DM
-  proof is unnecessary if the server model is accepted; all voice capture
-  remains a separate unapproved decision.
+- **Next:** owner deliberately resolves `OQ-011`. The agent recommends a minimal
+  QGuard-native private match room for roster/readiness, designated-host
+  instructions, link submission, and join action, with Discord text/voice
+  optional where available. This is a proposal, not a decision. If any Discord
+  path remains, admission and post-match membership/access cleanup follow.
+  `DEF-001` and `DEF-002` execute only when specific consenting test accounts/
+  current clients and a minimal redacted evidence/cleanup setup are supplied.
+  All voice capture remains a separate unapproved decision.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -255,6 +274,17 @@
   application remained unchanged. Application runtime tests and the portable-
   system validator were not run because this unit changes project records and
   validation plans only.
+- The 2026-09-06 Discord-dependency clarification separated Riot's copied lobby
+  link, direct formal-Discord-friend invitation, generic Discord Join, and
+  QGuard-to-Discord admission; recorded the broad international direction; and
+  treated Turkey/VPN behavior as a bounded future test variable. No account,
+  client, VPN, server, bot, channel, OAuth, party, message, voice, provider
+  contact, automation, or personal-data collection action occurred. All
+  relative links across 47 project Markdown files resolved, `git diff --check`
+  passed, and every changed path remained inside `project-docs/`; the portable
+  workflow package and legacy application remained unchanged. Application
+  runtime tests and the portable-system validator were not run because this
+  unit changes project records and validation plans only.
 
 ## Gates
 
@@ -274,21 +304,28 @@
   they do not meet the preferred coordination criterion. Persistent Steam
   Community Groups are not the requested communication object.
 - Discord server/private-channel coordination is technically supported but not
-  yet selected. A human-owned QGuard server, user consent/admission, exact
-  permissions and lifecycle, data minimization, and failure behavior remain
-  owner/specification gates.
+  yet selected and is not inherently required to deliver Riot's copied lobby
+  link. A human-owned QGuard server, user consent/admission, exact permissions
+  and lifecycle, data minimization, and failure behavior remain owner/
+  specification gates if Discord stays in the design.
 - Discord application-created Group DMs are not a dependable default: the
   documented endpoint originated with deprecated GameBridge, is capped at ten
   active groups, and cannot contain a bot.
 - The Valorant party link is the accepted candidate direction but remains
-  provisionally viable. `DEF-001` must verify non-friend acceptance before a
-  specification or implementation relies on it.
+  provisionally viable. It is separate from direct Discord-friend invitations
+  and generic Discord Join. `DEF-001` must verify non-friend acceptance,
+  account-link prerequisites, delivery-surface independence, and relevant
+  region/network conditions before a specification or implementation relies on
+  it.
 - No current first-party CS2 Discord Game Invite was established. Discord room
   success is not CS2 party-entry evidence. The owner has approved a bounded
   future current-client check in `DEF-002`, but no test occurred here.
 - The Discord findings and approved party-entry test scope do not supersede
   `DEC-018`, select a Discord application/server/bot as the product backbone,
   approve persistent membership, or authorize message or voice collection.
+- QGuard has a broad international direction under `DEC-022`, but exact launch
+  coverage remains open. A Turkey/VPN observation is test evidence only, not an
+  official-availability or legal conclusion.
 - Discord room creation and voice recording are not approved. In particular,
   later report review would require prior audio capture and retention and
   therefore cannot be introduced as an incidental bot feature.

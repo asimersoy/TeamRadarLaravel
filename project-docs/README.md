@@ -15,15 +15,19 @@ candidate. The owner has since rejected Looking to Play for QGuard and clarified
 that the desired coordination group is a semi-automatable multi-person chat,
 not primarily a persistent Steam Community Group. Discord can support bot-
 created private per-match text/voice channels in an existing server. Valorant
-has an official host-copied party link for that room; no comparable current CS2
-Discord party handoff was established. The owner accepts a designated matched
-human creating the Valorant party/link if the official flow passes and approves
-future client checks for the Valorant link and generic Discord Game Invites in
-both games. `DEC-018` still selects Valorant. Discord backbone selection is now
-the critical `OQ-011` owner decision; rank behavior and the complete product
-boundary remain open. Voice recording is a separate proposal only. No
-implementation plan or code change is approved. Everything under `legacy/`
-remains historical evidence.
+has an official host-copied party link; no comparable current CS2 Discord party
+handoff was established. The copied Riot link is separate from Riot's direct
+formal-Discord-friend invite and Discord's generic Join action, and it can be
+delivered through a QGuard-native private match surface rather than Discord.
+The owner accepts a designated matched human creating the Valorant party/link
+if the official flow passes and approves future client checks for the Valorant
+link and generic Discord Game Invites in both games. `DEC-018` still selects
+Valorant, while `DEC-022` records a broad international direction without
+settling exact availability. The coordination backbone is the critical
+`OQ-011` owner decision; rank behavior and the complete product boundary remain
+open. Voice recording is a separate proposal only. No implementation plan or
+code change is approved. Everything under `legacy/` remains historical
+evidence.
 
 Start with:
 
@@ -33,7 +37,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Current party-handoff validation and coordination-gate route](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
+7. [Current Discord-dependency and restricted-region route](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -48,6 +52,7 @@ Start with:
 - [Completed Steam non-friend communication/group route](routes/RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md)
 - [Completed Discord coordination/game-join comparison route](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
 - [Current party-handoff validation and coordination-gate route](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
+- [Current Discord-dependency and restricted-region route](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
 - [Party-entry behavioral validation packet](planning/party-entry-behavioral-validation-packet.md)
 - [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)

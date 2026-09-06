@@ -687,3 +687,44 @@ See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feas
   `DEC-016`, and remains separate from the coordination choice under `DEC-020`
 - **Supersedes:** none
 - **Superseded by:** none
+
+### Subsequent Mechanism Clarification - 2026-09-06
+
+The owner clarified that the unresolved issue is whether QGuard relies on the
+official copied Riot lobby link or on a distinct game-specific Discord Join/
+Invite action. QGuard-to-Discord OAuth, shared-server membership, and presence
+in the same text or voice channel do not answer that question. The copied link
+may be delivered through QGuard rather than a Discord room if behavioral
+verification confirms the path. This clarification does not supersede the
+human-host direction or select a coordination backbone; that choice remains
+`OQ-011`.
+
+## DEC-022 - Adopt A Broad International Availability Direction
+
+- **Date:** 2026-09-06
+- **Status:** approved as a product direction; exact launch coverage remains
+  open
+- **Decision owner:** project owner
+- **Decision:** QGuard is not a Turkey-only product. Its intended reach is
+  broadly international wherever the selected game is played, subject to later
+  decisions about launch countries, languages, ages, provider availability,
+  legal obligations, and operational support.
+- **Reason:** The owner intends the product to serve the wider game audience,
+  while current Discord access restrictions in Turkey expose the risk of
+  making one communication provider universally mandatory.
+- **Alternatives considered:** design QGuard only for Turkey, or treat
+  “worldwide” as an immediate promise to support every jurisdiction and
+  provider condition. Neither is selected.
+- **Consequences:** Geography-dependent provider availability and fallback
+  behavior must be visible in coordination and integration decisions. This
+  direction does not approve a launch-country list, require Discord or a VPN,
+  authorize circumvention guidance, or promise service in every country.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-009`,
+  `OQ-011`, coordination research, party-entry test packet, and owner decision
+  sequence
+- **Return condition:** settle concrete launch geography before public
+  availability claims, jurisdiction-specific data flows, or deployment.
+- **Related decisions:** refines the gradual geography decision under
+  `DEC-015`
+- **Supersedes:** none
+- **Superseded by:** none

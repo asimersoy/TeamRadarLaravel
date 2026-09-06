@@ -99,8 +99,10 @@ explicitly rejects them.
   Community Groups (`DEC-020`).
 - Accept a designated-human-host Valorant party/link flow if validation passes,
   queue generic Discord Game Invite checks for Valorant and CS2, and preserve
-  final Discord-server backbone selection as a separate critical decision
+  final coordination-backbone selection as a separate critical decision
   (`DEC-021`).
+- Set a broad international direction without yet promising every country or
+  approving Discord/VPN dependence (`DEC-022`).
 
 ### Unapproved Assumptions
 
@@ -172,25 +174,31 @@ now owns the cross-game coordination conclusion.
   human-owned QGuard server. Its Group DM API is not recommended as the primary
   route because it originated with deprecated GameBridge, is capped at ten
   active groups, and cannot contain bots.
-- Valorant has an official host-copied lobby link that can be placed in the
-  Discord room. No current first-party evidence establishes a comparable CS2
-  Discord party handoff; the same Discord room is communication only for CS2.
+- Valorant has an official host-copied lobby link that can be delivered through
+  Discord or a QGuard-native private surface. This is distinct from Riot's
+  direct formal-Discord-friend invite and Discord's generic Join action. No
+  current first-party evidence establishes a comparable CS2 Discord party
+  handoff; a Discord room is communication only unless the game independently
+  exposes a verified party-entry mechanism.
 - `DEC-021` confirms that QGuard may designate a matched human to create the
-  Valorant party/link and post it to the room if `DEF-001` passes. `DEF-002`
-  separately queues generic Discord Game Invite checks for both games.
+  Valorant party/link and submit it through the selected private surface if
+  `DEF-001` passes. `DEF-002` separately queues generic Discord Game Invite
+  checks for both games.
 - The owner selected Valorant after reviewing the original findings. PC remains the
   provisional context for the documented lobby-link candidate; no complete
   platform, region, mode, rank, integration, coordination, or provider-
   application boundary is approved. The later CS2 instruction reopened the
   comparison but did not unambiguously supersede `DEC-018`.
 
-The next bounded decision is the deliberately critical `OQ-011`: whether to
-select the Discord-server/private-channel model as the preferred coordination
-backbone. If selected, the next decisions are short-lived invite versus
-`guilds.join` admission and whether server membership persists after a match.
-`DEC-018` keeps Valorant selected; `DEF-001` remains required before Valorant-
-link reliance; and `DEF-002` queues the optional generic Game Invite checks.
-Voice recording remains a separate unapproved choice in the
+The next bounded decision is the deliberately critical `OQ-011`: whether a
+minimal QGuard-native private match room is the required baseline with Discord
+text/voice optional, Discord is primary with a native fallback, or Discord is
+required with explicit regional handling. If a Discord path remains, the next
+decisions include short-lived invite versus `guilds.join` admission and whether
+server membership persists after a match. `DEC-018` keeps Valorant selected;
+`DEF-001` remains required before Valorant-link reliance and now compares
+Discord with neutral QGuard-like delivery; `DEF-002` queues the separate generic
+Game Invite checks. Voice recording remains a separate unapproved choice in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

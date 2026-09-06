@@ -5,7 +5,7 @@
   voice-evidence research/review required
 - **Decision owner:** project owner
 - **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
-  `DEC-021`; no implementation authority
+  `DEC-022`; no implementation authority
 - **Created:** 2026-09-05
 - **Update trigger:** coordination-surface, Discord, voice-data, report-evidence,
   moderation, or permitted-use decision
@@ -48,11 +48,20 @@ Because the owner classifies the final selection as a critical backbone
 decision, that conditional preference is not itself final approval. The exact
 decision and consequences are isolated in `OQ-011`.
 
+The owner subsequently isolated the more fundamental distinction: an official
+Riot lobby link is one party-entry mechanism, while a game-specific Discord
+Join/Invite action is another. A Discord room does not create either mechanism.
+Because Riot says the copied link may be shared “anywhere,” QGuard can carry a
+host-supplied link on its own private match surface; Discord is not inherently
+required as the delivery channel. Direct Riot “Invite by Discord” is documented
+for formal Discord friends, while the generic Discord Join case remains an
+optional behavioral test under `DEF-002`.
+
 ## Separated Options, Not Decisions
 
 | Option | Coordination behavior | Voice evidence | Main tradeoff |
 |---|---|---|---|
-| QGuard-native room | QGuard holds the lobby link and group text | None by default | Keeps the first flow independent of Discord server membership |
+| Minimal QGuard-native match room | QGuard shows roster/readiness, host instructions, and the host-supplied lobby link; full chat is a separate choice | None by default | Keeps the required flow independent of Discord server membership and regional Discord access |
 | Temporary private channels in a QGuard Discord server without recording | A bot creates a matched-user text/voice area and can display the lobby link | No QGuard audio capture | Strongest documented automation model; users must join or be added to the persistent server |
 | Discord application-created Group DM | OAuth-authorized users appear in a DM-like group conversation | Human participants can start a call; no bot participant | Exact UI fit, but documented endpoint originated with deprecated GameBridge, is capped at ten active Group DMs, and cannot contain bots |
 | Human-created Discord Group DM with invite link | A human seeds a Group DM and a member shares its 48-hour link | Human participants can start a call | Manual creation normally starts from friends; ten-member maximum and non-friend acceptance still need a test |
@@ -102,8 +111,10 @@ Discord voice is used.
 
 ## Required Decisions Before Research Becomes A Specification
 
-1. Is Discord coordination required, optional, or only a fallback to a
-   QGuard-native room?
+1. Is a minimal QGuard-native private match room the required coordination and
+   link-delivery baseline, with Discord text/voice optional; is Discord primary
+   with a native fallback; or is Discord required with explicit regional
+   handling?
 2. If Discord is selected, is the supported server/private-channel model
    acceptable, or is placement in the Direct Messages list important enough to
    pursue the constrained Group DM endpoint?
@@ -148,13 +159,15 @@ Discord voice is used.
 - **Owner proposal:** temporary Discord coordination rooms and possible
   report-reviewable session audio.
 - **Research result:** a bot-managed private text/voice channel pair inside an
-  existing QGuard Discord server is the strongest supported coordination
-  candidate. A Group DM is only an experimental/weak alternative. Valorant has
-  a host-copied party link; no comparable CS2 Discord party handoff is
-  established.
-- **Open question:** `OQ-011`—whether Discord is selected as the critical
-  backbone—followed by which admission/lifecycle model applies and whether any
-  voice capture belongs in the product under a complete safeguard set.
+  existing QGuard Discord server is a supported optional coordination design.
+  It is not required to deliver Riot's host-copied link. A Group DM is only an
+  experimental/weak alternative. Valorant has a host-copied party link; direct
+  Discord-friend invite is a separate mechanism, and no comparable CS2 Discord
+  party handoff is established.
+- **Open question:** `OQ-011`—which native/Discord dependency model becomes the
+  critical coordination baseline—followed, if applicable, by Discord admission/
+  lifecycle and whether any voice capture belongs in the product under a
+  complete safeguard set.
 - **Deferred work:** no Discord or recording work. No recording implementation
   has been approved and postponed; this remains an unapproved proposal/queued
   decision packet. The separate Valorant link test is `DEF-001` and the generic

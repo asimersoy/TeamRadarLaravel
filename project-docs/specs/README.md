@@ -2,8 +2,8 @@
 
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
-  Valorant while coordination selection, party verification, and integration
-  boundaries remain open
+  Valorant while coordination selection, party verification, international
+  availability details, and integration boundaries remain open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -51,8 +51,12 @@ show that manual Steam chat and persistent Community Groups do not meet the
 preferred criterion clarified by `DEC-020`. The
 [Discord coordination/game-join findings](../research/discord-coordination-and-game-join-comparison.md)
 establish a supported bot-managed server-channel candidate, confirm the
-Valorant host-copied link, and find no current CS2 Discord party handoff. The
-owner accepts the designated-human-host flow if it passes (`DEC-021`). The
+Valorant host-copied link, and find no current CS2 Discord party handoff. Later
+clarification separates that copied Riot link from direct Discord-friend invites
+and generic Discord Join actions; the link may be delivered through QGuard
+rather than Discord. The owner accepts the designated-human-host flow if it
+passes (`DEC-021`), and `DEC-022` sets a broad international direction without
+settling exact launch coverage or Discord/VPN dependence. The
 non-friend Valorant lobby-link test remains `DEF-001`; generic Discord Game
 Invite checks for both games are queued separately in `DEF-002`. Their exact
 scope and evidence rules are in the

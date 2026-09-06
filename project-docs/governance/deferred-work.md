@@ -21,24 +21,31 @@ postpones it with a return condition.
   designated-human-host flow and the future validation scope.
 - **Objective:** prove that a current recipient who is neither the host's Riot
   friend nor formal Discord friend can join the host's intended ordinary
-  Valorant party by clicking the official host-copied link.
+  Valorant party by clicking the official host-copied link, and distinguish
+  link delivery through Discord from delivery through a neutral QGuard-like
+  surface.
 - **Reason postponed:** the Discord comparison reinforces Valorant as the only
   current candidate with an evidenced host-copied ordinary-party link, but that
   evidence does not prove the exact non-friend case. No specific consenting
   test accounts/current PC client session or agreed redacted evidence and
   cleanup setup was supplied for this task. No live account/client action
   occurred.
-- **Dependencies:** approved test packet; supported current PC clients and
-  region; two accounts with the required non-friend relationship; safe handling
-  of any credentials outside project records; and fresh feature/policy recheck.
+- **Dependencies:** approved test packet; current PC clients; two accounts with
+  the required non-friend relationship; recorded host/recipient Riot-Discord
+  link state; a Discord and neutral non-Discord relay; safe handling of any
+  credentials outside project records; and fresh feature/policy recheck. If
+  Discord access requires a VPN in the test location, record split/full-tunnel
+  mode and endpoint country as confounding variables rather than treating VPN
+  operation as product approval.
 - **Implementation state:** no experiment or client action performed.
 - **Return condition:** activate before approving an integration specification
   or implementation slice that treats the lobby link as dependable, or earlier
   through a separately scoped owner instruction.
 - **Verification required:** record client/build date, region, mode,
-  relationship state, link creation/transmission/acceptance behavior, party
-  result, repeat result, observed failure states, and any provider or privacy
-  limitation without recording credentials or unnecessary personal data.
+  relationship/account-link state, delivery surface, VPN state, link creation/
+  opening/acceptance behavior, party result, repeat result, observed failure
+  states, and any provider or privacy limitation without recording credentials,
+  full IP addresses, the reusable lobby secret, or unnecessary personal data.
 - **Owner recheck:** required if the test fails, the feature materially changes,
   or the proposed flow would substitute friend invites, another integration,
   or another game. The CS2/Steam/Discord research does not cancel this deferred

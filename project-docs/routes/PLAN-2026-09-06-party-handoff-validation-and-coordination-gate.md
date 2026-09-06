@@ -6,6 +6,10 @@
   backbone as a separate critical owner gate
 - **Status:** documentation and validation packet complete; critical owner
   coordination decision remains open; behavioral execution deferred
+- **Continued by:**
+  [RESEARCH-2026-09-06 Discord dependency and restricted-region boundary](RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md),
+  which separates the link-delivery surface from Discord game-invite behavior
+  and reframes `OQ-011`
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06
@@ -77,6 +81,11 @@
   conditional preference.
 - The owner approved eventual behavioral checks of the Valorant lobby-link flow
   and Discord's generic Game Invite surfaces for both Valorant and CS2.
+
+The later continuation does not erase this record of the owner's then-proposed
+Discord delivery flow. It clarifies that the official Riot link may instead be
+submitted through a QGuard-native private match surface and that direct Discord
+friend invites and generic Discord Join actions are distinct mechanisms.
 
 ## Boundaries And Stop Conditions
 

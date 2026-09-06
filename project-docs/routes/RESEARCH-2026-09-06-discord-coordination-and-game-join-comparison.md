@@ -7,6 +7,10 @@
 - **Status:** authoritative-source research complete; `DEC-021` accepts the
   human-host handoff and future test scope; critical coordination selection and
   behavioral execution remain open
+- **Continued by:**
+  [RESEARCH-2026-09-06 Discord dependency and restricted-region boundary](RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md),
+  which separates the copied Riot link from direct Discord-friend invitations
+  and generic Discord Join actions and reframes `OQ-011`
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06
@@ -108,9 +112,10 @@
 
 ## Remaining Gates
 
-- The critical `OQ-011` owner decision remains whether the Discord-server model
-  is the preferred coordination backbone; this research does not approve a bot
-  or server dependency.
+- The critical `OQ-011` owner decision was subsequently reframed to compare a
+  native required baseline plus optional Discord, Discord-primary plus native
+  fallback, and Discord-required with explicit regional handling. This
+  completed research did not approve a bot or server dependency.
 - `DEC-018` still selects Valorant. `DEF-001` must pass before a specification
   relies on non-friend ordinary-party entry through the Riot lobby link.
 - `DEC-021` approves a future current-client CS2/Discord Game Invite check in

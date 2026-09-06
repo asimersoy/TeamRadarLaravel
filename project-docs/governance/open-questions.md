@@ -157,9 +157,10 @@ Historical unknowns do not automatically become requirements.
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
-  integration evidence; whether Discord-server membership is acceptable;
-  invite versus OAuth admission; post-match membership/access cleanup; whether
-  any voice is captured;
+  integration evidence; whether the required coordination baseline is native,
+  Discord-primary, or Discord-required; invite versus OAuth admission if
+  applicable; post-match membership/access cleanup; whether any voice is
+  captured;
   and field-level purpose, consent, retention, deletion, access, security,
   evidentiary effect, and qualified review.
 - **Resolved by:** none
@@ -268,10 +269,14 @@ Historical unknowns do not automatically become requirements.
   membership nor a manual chat is the preferred coordination model. The
   [Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md)
   establishes supported bot-created private server text/voice channels and
-  constrained link/OAuth admission. It confirms the host-copied Valorant link
-  but finds no current first-party Discord Game Invite for an ordinary CS2
-  party. Application-created Group DMs are documented but weak because of
-  their deprecated-SDK origin, ten-active-room cap, and lack of a bot member.
+  constrained link/OAuth admission. It confirms the host-copied Valorant link,
+  distinguishes that link from direct Discord-friend invites and generic Game
+  Invite/Join, and finds no current first-party Discord Game Invite for an
+  ordinary CS2 party. The link may be delivered outside Discord, but exact
+  account-linking, non-friend, delivery-surface, region, and network behavior
+  remains unverified. Application-created Group DMs are documented but weak
+  because of their deprecated-SDK origin, ten-active-room cap, and lack of a
+  bot member.
 - **Owner decision:** Select Valorant for current product planning. Before
   relying on its official link, test two current accounts in a supported PC
   region/client state where the recipient is neither the host's Riot friend nor
@@ -308,11 +313,13 @@ Historical unknowns do not automatically become requirements.
   reliance. `DEC-019` rejects CS2 Looking to Play. `DEC-020` requires the
   evaluated communication-group route to be automatable or semi-automatable and
   link/code/OAuth accessible. Bot-created private Discord server channels meet
-  that coordination criterion as a researched candidate. Valorant can place its
-  host-copied party link in that room; no equivalent current CS2 Discord party
-  handoff is established. `DEC-021` accepts the designated-human-host Valorant
-  handoff if it passes and approves future generic Game Invite checks for both
-  games. Communication still does not prove game-party entry.
+  that coordination criterion as a researched candidate. Valorant's host-
+  copied party link may instead be carried by a QGuard-native room; the link,
+  direct formal-Discord-friend invite, and generic Discord Join are separate
+  mechanisms. No equivalent current CS2 Discord party handoff is established.
+  `DEC-021` accepts the designated-human-host Valorant handoff if it passes and
+  approves future generic Game Invite checks for both games. Communication
+  still does not prove game-party entry.
 - **Options/tradeoffs:** use the later-approved QGuard or Discord coordination
   surface with a passing Valorant link; accept a constrained Discord Group DM;
   relax the criterion to manual Steam chat or friend-based party formation; or
@@ -324,48 +331,68 @@ Historical unknowns do not automatically become requirements.
   proposals and tolerance for added user friction.
 - **Resolved by:** `DEC-018` for the preferred game/link direction only
 
-## OQ-011 - Should Discord Server Channels Be QGuard's Coordination Backbone?
+## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
 - **Status:** open; critical owner decision ready for deliberate review
 - **Decision owner:** project owner
 - **Needed by:** first coordination specification and complete party-handoff
   journey
-- **Blocks:** selecting Discord as a required product dependency; specifying a
-  bot, server topology, admission, channel/role lifecycle, coordination failure
-  behavior, or implementation slice.
+- **Blocks:** selecting QGuard-native or Discord coordination as the required
+  baseline; specifying a native room, Discord bot/server topology, admission,
+  lifecycle, regional fallback, or coordination implementation slice.
 - **Does not block:** executing the separately approved party-entry behavioral
   tests when their environment is available, or game-neutral product-charter
   discussions.
-- **Exact decision:** whether QGuard should use one persistent human-owned
-  Discord server with bot-created private text and voice channels for each
-  matched team as its preferred coordination backbone, without authorizing
-  message surveillance or voice recording.
+- **Exact decision:** choose among (A) a minimal QGuard-native private match room
+  as the required baseline with Discord text/voice optional, (B) Discord server
+  channels as primary with a QGuard-native restricted-region fallback, or (C)
+  Discord as a required dependency with explicit unsupported-region handling.
+  In every option, decide separately whether party entry relies on the official
+  copied Riot lobby link or a verified game-specific Discord Join action.
 - **Known facts:** Discord's documented APIs support creating private server
   text/voice channels, member/role permission overwrites, constrained server
   invitations, OAuth `guilds.join` admission, messages/interactions within
   granted permissions, and channel/access cleanup. Participants do not need to
   be formal Discord friends. Discord Group DMs are a weaker alternative because
   the application endpoint has a deprecated-SDK origin, a ten-active-room cap,
-  and no bot participant.
+  and no bot participant. QGuard-to-Discord OAuth or shared-channel presence
+  does not join a game party. Riot separately documents (1) inviting formal
+  Discord friends from Valorant and (2) copying a lobby link that can be shared
+  in a server or elsewhere. The copied link's exact non-friend, recipient-link,
+  and restricted-region behavior remains under `DEF-001`; generic Discord
+  Game Invite/Join behavior remains under `DEF-002`.
 - **Owner direction already recorded:** The server/private-channel flow matches
   the owner's intended shape. If it works, a Group DM is unnecessary. The owner
   classified final selection as a very important backbone decision and asked
   that it be presented only after the host-flow and test clarifications were
-  resolved (`DEC-021`).
-- **If approved:** Discord accounts and access to the persistent QGuard server
-  become first-flow dependencies. The next bounded decisions are constrained
-  invite versus QGuard Discord OAuth/`guilds.join`, whether membership persists
-  after a match, host decline/reassignment, room expiry/access cleanup, and
-  Discord-unavailable recovery. Voice-channel availability still does not
-  approve recording.
-- **If not approved:** Discord server channels remain an optional/fallback
-  candidate. The next product comparison is QGuard-native coordination versus
-  the constrained Group DM/manual alternatives; the Valorant host-copied link
-  still needs some approved delivery surface.
+  resolved (`DEC-021`). The owner now identifies current Turkish Discord
+  restriction and a VPN-dependent test path as a material availability
+  constraint, and proposes delivering the host link through QGuard itself.
+- **Option A consequence:** every matched user can coordinate and receive the
+  link inside QGuard without joining a Discord server. At minimum QGuard owns
+  roster/readiness, host assignment, link submission, access isolation, expiry,
+  and secret-safe handling. Discord can still offer optional voice or a verified
+  Join optimization. Full native free-form chat and native voice remain
+  separate scope choices.
+- **Option B consequence:** Discord is the normal room, but QGuard must also own
+  a functioning restricted-region/failure fallback. This creates two user
+  journeys and two surfaces to specify, test, secure, and support.
+- **Option C consequence:** Discord accounts/access become first-flow
+  dependencies and QGuard must explicitly exclude or degrade regions where the
+  provider or Riot/Discord integration is unavailable. A VPN cannot be treated
+  as an invisible universal prerequisite.
+- **Agent recommendation:** Option A. A minimal native room can relay the copied
+  Riot link because the documented delivery surface is not Discord-only. It
+  minimizes the required external dependency while preserving Discord as an
+  enhancement. This is a proposal, not owner approval.
 - **Evidence limit:** current documentation establishes capability, not QGuard
-  implementation behavior. A later approved prototype must verify permissions,
-  isolation, invite/OAuth admission, failure states, and cleanup before release.
-- **Closure evidence:** deliberate owner approval or rejection with required/
-  optional/fallback status and explicit acknowledgement that voice recording is
-  outside the decision.
+  or Turkey behavior. A later approved prototype/test must verify the selected
+  room's isolation, expiry, admission/failure states, lobby-secret handling,
+  and cleanup. `DEF-001` must also establish whether the host and/or recipient
+  needs Discord account linking and whether a non-Discord delivery surface
+  works.
+- **Closure evidence:** deliberate owner selection of A, B, or C; the minimum
+  QGuard-native room scope if applicable; required/optional/fallback status for
+  Discord; restricted-region behavior; and explicit acknowledgement that voice
+  recording remains outside the decision.
 - **Resolved by:** none

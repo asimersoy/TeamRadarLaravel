@@ -5,7 +5,7 @@
   test accounts/current client session was supplied for this task
 - **Test owner:** unassigned
 - **Decision owner:** project owner
-- **Authority:** `DEC-016`, `DEC-018`, `DEC-020`, and `DEC-021`
+- **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-022`
 - **Created:** 2026-09-06
 - **Date sensitivity:** high; recheck sources and clients immediately before
   execution
@@ -18,7 +18,8 @@
 Determine which current official, human-mediated paths actually let matched
 users who are not formal friends enter the same ordinary Valorant or CS2 party.
 Keep the official Valorant host-copied lobby link separate from Discord's
-generic Game Invite/Join surface.
+generic Game Invite/Join surface and from Riot's direct in-client invitation of
+formal Discord friends.
 
 This packet authorizes the bounded validation scope approved by the owner. It
 does not supply accounts, credentials, current clients, consent from another
@@ -34,6 +35,9 @@ Current source URLs, access dates, and claim limits are indexed in the
 
 - After Riot/Discord account linking, Riot says a PC user can copy a Valorant
   lobby link and share it with a Discord server or elsewhere.
+- Riot separately documents inviting formal Discord friends directly from the
+  Valorant social panel. That action is not the copied-link mechanism, and
+  shared-server/channel membership is not formal Discord friendship.
 - Riot's integrated friend list requires Riot IDs, formal Discord friendship,
   and linked Riot/Discord accounts. That list is not the intended QGuard path.
 - Riot's troubleshooting says a recipient who cannot see the join option may
@@ -45,14 +49,19 @@ Current source URLs, access dates, and claim limits are indexed in the
   implements the feature and the player is in a joinable state.
 - No current first-party game-specific source reviewed confirms Discord Game
   Invite support for an ordinary CS2 party.
+- Riot says its Discord-powered features are available only where both Riot and
+  Discord are supported. Discord and Riot both identify VPNs as possible
+  connection confounders; Discord voice requires a VPN with UDP support.
 
 ### Owner-Approved Conditional Flow
 
 QGuard designates one matched Valorant participant as host. The host manually
 creates the ordinary party in Valorant, obtains the official Riot lobby link,
-and posts it in QGuard's private per-match Discord text channel. The remaining
-matched participants deliberately click the link. QGuard does not automate or
-control the Valorant client, party, link creation, or acceptance.
+and posts it in the approved private coordination surface. The originally
+discussed surface was a QGuard Discord text channel; the owner now also proposes
+a QGuard-native match room. The remaining matched participants deliberately
+click the link. QGuard does not automate or control the Valorant client, party,
+link creation, or acceptance. The coordination surface remains `OQ-011`.
 
 The rule for choosing the host remains open. “Lucky user” records a human host
 role, not approval of random selection, eligibility weighting, or sanctions for
@@ -62,10 +71,13 @@ declining.
 
 | ID | Game/mechanism | Relationship condition | Question | Product consequence |
 |---|---|---|---|---|
-| VAL-LINK-1 | Valorant official host-copied lobby link | Host and recipient are neither Riot friends nor formal Discord friends; both can view the same private Discord test channel | Can the recipient click the posted official link and enter the host's ordinary party? | Required before reliance under `DEC-018` |
+| VAL-LINK-1 | Valorant official host-copied lobby link | Host and recipient are neither Riot friends nor formal Discord friends; both can access the same controlled private relay | Can the recipient click the posted official link and enter the host's ordinary party? | Required before reliance under `DEC-018` |
 | VAL-LINK-2 | Valorant official link, recipient-linking variation | Same relationship state; recipient's Riot/Discord link state differs from the passing baseline | Must every recipient link Riot and Discord, or only the host? | Determines onboarding prerequisite and fallback copy |
+| VAL-LINK-3 | Valorant official link, delivery-surface variation | Same accounts and party state; link is delivered once through Discord text and once through a neutral non-Discord relay | Is Discord merely the host's account-link prerequisite, or also required for recipient delivery/acceptance? | Determines whether a QGuard-native room can carry the link |
+| VAL-DIRECT-1 | Riot's direct Discord-friend invite from Valorant | Shared test server but no formal Discord friendship | Does any direct in-client invite action expose the non-friend recipient? | Control case; documented friend route is not assumed to work for matched strangers |
 | VAL-GI-1 | Discord generic Game Invite with Valorant | No formal Discord friendship and no Riot friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter the ordinary party? | Optional lower-friction route; does not replace `VAL-LINK-1` |
 | CS2-GI-1 | Discord generic Game Invite with CS2 | No formal Discord or Steam friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter an ordinary CS2 Premier/Competitive party? | Could reopen CS2 party-entry comparison if repeatable and supportable |
+| VAL-NET-1 | Valorant/Discord feature under the owner's Turkish test constraint | Discord/browser use a VPN while Riot remains on the home-region path when split tunneling is available | Is the feature visible and usable without routing Valorant through the VPN? | Validates the local test setup only; does not prove official Turkish support |
 
 Two accounts are enough to validate the entry mechanism. A later specification
 may require a full-team capacity/recovery test. For an ordinary five-player
@@ -76,6 +88,7 @@ Valorant team, the intended final shape is one host plus four joiners.
 Record without including credentials or unnecessary identifying data:
 
 - date, client versions/build identifiers, operating system, and region;
+- network condition: no VPN, split tunnel, or full tunnel; endpoint country;
 - game, ordinary party/mode type, host party privacy, free party slot, and
   whether matchmaking has started;
 - whether each account has linked Riot and Discord;
@@ -96,17 +109,19 @@ not proof that the capability is absent.
 ## Procedure A - Valorant Official Lobby Link
 
 1. Recheck the current Riot/Discord feature page and applicable policy.
-2. Use two consenting current PC test accounts in a supported region. Confirm
+2. Use two consenting current PC test accounts. Confirm
    that they are neither Riot friends nor formal Discord friends. They may both
    be members of the same consented private Discord test server because that
-   approximates the proposed production relationship without selecting the
-   production backbone.
+   approximates one candidate relationship without selecting the production
+   backbone.
 3. Link the host's Riot and Discord accounts through the official consent flow
    if not already linked. Record but do not expose the recipient's starting
    link state.
 4. The human host creates an ordinary Valorant party with an open slot and uses
    the official client/integration control to copy its lobby link.
-5. The host manually posts the link in the private test text channel. QGuard
+5. The host manually posts the link in the private Discord test channel. On a
+   separate fresh link/party attempt, transmit it through a neutral private
+   non-Discord relay that approximates QGuard's future host-link field. QGuard
    may later relay or pin this host-supplied text, but it does not generate the
    Riot link.
 6. The recipient clicks the link and follows only official Riot/Discord/client
@@ -114,8 +129,21 @@ not proof that the capability is absent.
    or another prerequisite is requested.
 7. Confirm party membership inside Valorant without adding either account as a
    friend. Leave the party and repeat with a newly created party/link.
-8. If the first case passes, repeat once with the recipient's Riot/Discord link
+8. Inspect the direct Riot/Discord friend-invite control without creating a
+   formal Discord friendship. Record absence or presence; do not add friendship
+   merely to make the control pass.
+9. If the first case passes, repeat once with the recipient's Riot/Discord link
    state changed only if that state can be changed safely and reversibly.
+
+### Network Condition For The Turkey-Based Test
+
+When a VPN is needed to reach Discord, prefer split tunneling: send Discord and
+the browser used for account authorization through the VPN, while keeping Riot
+Client and Valorant on the ordinary home-region route. If split tunneling is
+not available, a full-tunnel observation may use a nearby endpoint while
+keeping the account/shard unchanged. Stop after party membership is proven; do
+not enter matchmaking. A VPN failure is a network/setup result, not proof that
+the lobby-link mechanism is absent.
 
 ### Pass Rule
 
@@ -126,6 +154,11 @@ without Riot or Discord friend addition and without unauthorized automation.
 `VAL-LINK-2` records the minimum recipient account-linking requirement. A prompt
 requiring official account linking is not a failure of the link, but it becomes
 a material QGuard onboarding dependency that requires owner review.
+
+`VAL-LINK-3` passes only if the same official link type works when carried by a
+private non-Discord relay. It proves delivery-surface independence for the
+tested client state, not that the host can obtain the feature without a linked
+Discord account or that Riot officially supports it in Turkey.
 
 ## Procedure B - Generic Discord Game Invites
 
@@ -188,6 +221,8 @@ to obtain a pass.
   ordinary join/leave behavior only in a separately scoped coordination test.
 - Do not run scripts, bots, macros, packet inspection, memory reading, or
   unofficial client calls against Valorant, Riot, Steam, or CS2.
+- Treat the lobby URL as a short-lived bearer secret: do not store its full
+  value in screenshots, logs, analytics, error reporting, or project records.
 - Remove created test invitations/channels and reverse temporary account-link
   changes only through a pre-agreed cleanup sequence.
 

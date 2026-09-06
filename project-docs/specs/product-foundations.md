@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-021`
+- **Authority:** `DEC-009` through `DEC-022`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -74,19 +74,24 @@ and [Steam communication/group follow-up](../research/steam-nonfriend-communicat
 The owner then clarified that the requested coordination group is a multi-
 person chat comparable to a group DM, with supported API, automation, or semi-
 automation and link/code/OAuth entry (`DEC-020`). Discord can provide bot-
-created private text/voice channels in an existing server. Valorant can place
-its host-copied lobby link in that room; no current first-party evidence
-establishes a comparable CS2 Discord party handoff. See the
+created private text/voice channels in an existing server. Valorant's host-
+copied lobby link can be carried by that room or another private surface; no
+current first-party evidence establishes a comparable CS2 Discord party
+handoff. See the
 [Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md).
 
 For the Valorant candidate, QGuard may designate one matched human as host. The
 host creates the ordinary party, obtains the official Riot lobby link, and
-posts it in the private per-match Discord text channel; remaining matched users
-click it. QGuard does not need to create or control the Riot party/link. This
-flow is conditionally accepted under `DEC-021`, but `DEF-001` must still verify
-the non-friend case and recipient account-linking prerequisite before reliance.
-Generic Discord Game Invite checks for Valorant and CS2 are separately queued
-in `DEF-002`.
+submits it through the selected private coordination surface; remaining matched
+users click it. QGuard does not need to create or control the Riot party/link.
+The copied Riot link is distinct from Riot's direct formal-Discord-friend invite
+and Discord's generic game Join action. Because Riot documents sharing the link
+“elsewhere,” a QGuard-native private match room may carry it; a Discord room is
+not inherently required as the delivery surface. This flow is conditionally
+accepted under `DEC-021`, but `DEF-001` must still verify the non-friend case,
+host/recipient account-linking prerequisites, delivery-surface behavior, and
+region/network conditions before reliance. Generic Discord Game Invite checks
+for Valorant and CS2 are separately queued in `DEF-002`.
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
@@ -127,15 +132,25 @@ does not provide QGuard with a documented recording or monitoring interface.
 Under `DEC-020`, it is a manual fallback rather than the preferred coordination
 candidate. A persistent Steam Community Group is not the desired chat object.
 
-Current Discord research finds that the strongest supported candidate is one
-human-owned QGuard server with bot-created private per-match text and voice
-channels. Users can enter through constrained server invitations or OAuth
-`guilds.join`, and the bot can manage permissions and channel cleanup. Discord
-Group DMs more closely resemble the requested UI, but their documented
+Current Discord research finds that one human-owned QGuard server with bot-
+created private per-match text and voice channels is a supported optional
+coordination design. Users can enter through constrained server invitations or
+OAuth `guilds.join`, and the bot can manage permissions and channel cleanup.
+Discord Group DMs more closely resemble the requested UI, but their documented
 application-creation endpoint originated with deprecated GameBridge, is capped
 at ten active Group DMs, and cannot contain a bot. These findings do not select
 the Discord-server model or approve its data flow, implementation, membership
-lifecycle, or message/voice collection.
+lifecycle, or message/voice collection. A minimal QGuard-native room is now the
+agent's recommended required baseline under open `OQ-011`; it is not approved.
+
+### Availability Direction
+
+QGuard is intended as a broadly international product rather than a Turkey-
+only product (`DEC-022`). This is a direction, not a promise of worldwide
+availability. Exact launch countries, languages, ages, provider availability,
+and jurisdiction-specific obligations remain open. Discord restrictions or VPN
+behavior in a location may be recorded as test variables but do not establish
+legal permission, official provider support, or an approved product dependency.
 
 The Discord and Steam coordination options are proposals, not approved
 foundations or implementation requirements. Temporary voice rooms without
@@ -183,13 +198,16 @@ participants, locations, data fields, recipients, and retention are concrete.
   uses, audience, and public-claim boundary.
 - The acceptable response to the documented rank-coverage gap.
 - The test result for non-friend acceptance of the official Valorant lobby
-  link and the recovery path if it fails.
+  link, its host/recipient account-link and regional prerequisites, delivery
+  through Discord versus a QGuard-like relay, and the recovery path if it fails.
 - The platform, region, mode, and party/user segment beyond the selected game.
 - The fallback coordination and rank flows if preferred integrations are not
   viable.
-- Whether Discord coordination or voice belongs in the product and whether any
-  session recording is justified under a complete approved data, consent,
-  moderation, security, provider-policy, and qualified-review boundary.
+- Whether the required coordination baseline is a minimal QGuard-native match
+  room, Discord-primary with native fallback, or Discord-required with regional
+  handling; whether Discord voice belongs in the product; and whether any
+  recording is justified under a complete approved data, consent, moderation,
+  security, provider-policy, and qualified-review boundary.
 - The complete matching, honor, review, report, moderation, data, security,
   business, operational, and validation specifications.
 
