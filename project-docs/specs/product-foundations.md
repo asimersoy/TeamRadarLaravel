@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-022`
+- **Authority:** `DEC-009` through `DEC-023`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -91,7 +91,8 @@ not inherently required as the delivery surface. This flow is conditionally
 accepted under `DEC-021`, but `DEF-001` must still verify the non-friend case,
 host/recipient account-linking prerequisites, delivery-surface behavior, and
 region/network conditions before reliance. Generic Discord Game Invite checks
-for Valorant and CS2 are separately queued in `DEF-002`.
+for Valorant and CS2 are activated in direction under `DEF-002` but await their
+live environment.
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
@@ -109,6 +110,13 @@ specifically gates the selected Valorant link, while `DEF-002` separately checks
 generic Discord Game Invites for Valorant and CS2. See the focused
 [party-entry and policy findings](../research/party-entry-and-policy-fit.md) and
 [behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
+
+`DEC-023` strengthens this gate: do not select the coordination or dependable
+party-handoff path until the combined
+[coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md)
+has tested the decision-blocking Valorant, Discord, Steam, and current CS2
+mechanisms and returned a reconciled comparison to the owner. A documented
+capability or isolated passing test is not product selection.
 
 If the approved Valorant flow requires RSO, a provider-independent working or
 mostly testable prototype may use clearly identified mock data for RSO-

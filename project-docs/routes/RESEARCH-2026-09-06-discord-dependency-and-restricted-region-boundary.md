@@ -6,6 +6,10 @@
   backbone decision without selecting it
 - **Status:** source review and project-record reconciliation complete; owner
   coordination decision and behavioral execution remain open
+- **Continued by:**
+  [PLAN-2026-09-07 Coordination and party-entry validation](PLAN-2026-09-07-coordination-and-party-entry-validation.md),
+  which retrieves all discussed tests and requires their evidence before the
+  coordination decision
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06
@@ -127,6 +131,10 @@ and owner decisions.
   availability promise without qualified review of the concrete jurisdiction.
 - Voice recording, message surveillance, implementation, provider contact,
   publication, and deployment remain outside this route.
+
+`DEC-023` subsequently postpones the owner selection above until the combined
+validation program completes. This completed research remains the source
+boundary; it no longer routes an immediate product choice.
 
 ## Verification
 

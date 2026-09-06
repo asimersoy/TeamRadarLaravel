@@ -58,9 +58,12 @@ rather than Discord. The owner accepts the designated-human-host flow if it
 passes (`DEC-021`), and `DEC-022` sets a broad international direction without
 settling exact launch coverage or Discord/VPN dependence. The
 non-friend Valorant lobby-link test remains `DEF-001`; generic Discord Game
-Invite checks for both games are queued separately in `DEF-002`. Their exact
-scope and evidence rules are in the
+Invite checks for both games are activated in direction under `DEF-002` but
+await their live environment. Their exact scope and evidence rules are in the
 [party-entry behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
+`DEC-023` now requires the broader
+[coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md)
+before the owner selects the coordination or dependable handoff path.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

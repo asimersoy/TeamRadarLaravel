@@ -3,10 +3,10 @@
 - **Record type:** focused current research findings and comparison report
 - **Status:** authoritative-source research complete; designated-human-host
   direction accepted; exact party-entry mechanisms separated; coordination-
-  backbone decision and behavioral execution remain open
+  backbone decision waits for the `DEC-023` validation program
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-015` through `DEC-022`, and the owner's
+- **Authority:** `DEC-011`, `DEC-015` through `DEC-023`, and the owner's
   2026-09-06 request for a Discord comparison across Valorant and CS2
 - **Research date:** 2026-09-06
 - **Date sensitivity:** high; recheck before testing, provider review, or
@@ -350,6 +350,10 @@ accepts the designated-human-host handoff if validation passes and approves
 future generic Discord Game Invite checks for both games. The owner has not yet
 approved Discord as the coordination backbone or changed the current game
 decision.
+
+`DEC-023` subsequently changes the decision order: retain this recommendation
+as a proposal, execute the combined Valorant/Discord/Steam/CS2 validation
+program first, and return `OQ-011` only after valid results are reconciled.
 
 ## Separated Record
 

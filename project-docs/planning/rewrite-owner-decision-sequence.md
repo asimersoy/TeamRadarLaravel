@@ -103,6 +103,8 @@ explicitly rejects them.
   (`DEC-021`).
 - Set a broad international direction without yet promising every country or
   approving Discord/VPN dependence (`DEC-022`).
+- Require the combined current-client and coordination-lifecycle tests before
+  selecting the coordination or dependable party-handoff path (`DEC-023`).
 
 ### Unapproved Assumptions
 
@@ -190,15 +192,15 @@ now owns the cross-game coordination conclusion.
   application boundary is approved. The later CS2 instruction reopened the
   comparison but did not unambiguously supersede `DEC-018`.
 
-The next bounded decision is the deliberately critical `OQ-011`: whether a
-minimal QGuard-native private match room is the required baseline with Discord
-text/voice optional, Discord is primary with a native fallback, or Discord is
-required with explicit regional handling. If a Discord path remains, the next
-decisions include short-lived invite versus `guilds.join` admission and whether
-server membership persists after a match. `DEC-018` keeps Valorant selected;
-`DEF-001` remains required before Valorant-link reliance and now compares
-Discord with neutral QGuard-like delivery; `DEF-002` queues the separate generic
-Game Invite checks. Voice recording remains a separate unapproved choice in the
+The next bounded work is not a product decision. `DEC-023` requires the
+[coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
+to test the Valorant copied link, game-specific Discord Invite/Join, Discord
+private-room lifecycle, Steam non-friend group chat, and current CS2
+alternatives. After valid results are reconciled, the deliberately critical
+`OQ-011` returns to the owner: whether a minimal QGuard-native room is required
+with Discord optional, Discord is primary with a native fallback, or Discord is
+required with explicit regional handling. Voice recording remains a separate
+unapproved choice in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

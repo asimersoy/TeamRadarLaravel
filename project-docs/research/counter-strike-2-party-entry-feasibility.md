@@ -1,11 +1,12 @@
 # QGuard Counter-Strike 2 Party-Entry Feasibility
 
 - **Record type:** current focused research findings
-- **Status:** research complete; Looking to Play test proposal superseded by
-  `DEC-019`; Steam communication/group follow-up recorded separately
+- **Status:** research complete; Looking to Play remains rejected; current CS2
+  alternative observations and gated Community Group test activated by
+  `DEC-023`
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-015` through `DEC-020`, plus the
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-015` through `DEC-023`, plus the
   owner's 2026-09-05 instruction to investigate CS2 as another candidate
 - **Research date:** 2026-09-05
 - **Date sensitivity:** high; recheck before a live test, integration
@@ -24,6 +25,9 @@ conversation the desired coordination object. See the
 [Steam non-friend communication and group report](steam-nonfriend-communication-and-group-feasibility.md)
 for the superseded manual/persistent options and the current
 [Discord coordination and game-join comparison](discord-coordination-and-game-join-comparison.md).
+`DEC-023` now activates the current-client Discord, official link/code,
+Nearby/Public Lobby, and gated Community Group bridge checks without restoring
+Looking to Play or selecting CS2.
 
 ## Executive Finding
 
@@ -178,13 +182,13 @@ identity story is easier, while Valorant currently has the cleaner documented
 handoff. Both need current behavioral verification before QGuard relies on the
 party-entry mechanism.
 
-## Superseded Live-Verification Proposal
+## Live-Verification Disposition
 
 `DEC-019` cancels this Looking to Play test before activation. It may not be
 run or used as a current acceptance gate unless a later owner decision
 explicitly restores it.
 
-### Phase A - Looking To Play
+### Superseded Phase A - Looking To Play
 
 - Use two current PC accounts in the same intended region that are not Steam
   friends and are not connected through a special test-only relationship.
@@ -199,9 +203,9 @@ explicitly restores it.
 - Repeat at least three times and once with the roles reversed. Record time,
   failures, unintended invitations, and recovery behavior.
 
-### Phase B - Current Alternative UI
+### Activated Phase B - Current Alternative UI
 
-Only if the current client visibly offers the controls:
+Under `DEC-023`, inspect these through the current visible client controls:
 
 - test a Nearby/Public Lobby with the same non-friend accounts;
 - test a purpose-specific Steam Group Lobby with the accounts sharing group
@@ -218,7 +222,10 @@ requires an owner decision that its steps, latency, unintended-join exposure,
 account prerequisites, and persistent group/privacy consequences are
 acceptable.
 
-No live account/client test was authorized or performed during this research.
+No live account/client test was performed during this research. The bounded
+alternative scope is now activated through the
+[combined validation program](../planning/coordination-and-party-entry-validation-program.md),
+but execution awaits its readiness inputs and external-target gates.
 
 ## Separated Record
 
@@ -253,26 +260,29 @@ ledger](game-api-source-ledger.md).
 
 - **Superseded by `DEC-019`:** run the Looking to Play verification packet and
   compare it with Valorant.
-- **Superseded by `DEC-020`:** investigate manual Steam group chat and
-  persistent Community Group membership as the next routes.
-- **Current:** use the Discord comparison to separate automatable multi-person
-  communication from actual CS2 party entry.
+- **Activated by `DEC-023`:** inspect the current official link/code and
+  Nearby/Public Lobby controls, test generic Discord Game Invite/Join, test
+  Steam group-chat coordination, and run the Community Group bridge only after
+  its exact persistent external target is approved.
+- Keep automatable multi-person communication separate from actual CS2 party
+  entry in every result.
 
 ### Open Owner Decision
 
 The current `DEC-018` Valorant selection has not been superseded. Current first-
 party evidence supports Discord communication for CS2 but not an ordinary CS2
-party handoff. Whether the owner wants a current-client Discord test or another
-CS2 route remains open; it no longer depends on treating persistent Community
-Group membership as the desired communication object.
+party handoff. The owner now requires current-client tests before selecting a
+direction; a passing result still returns for deliberate product approval.
 
 ### Unperformed And Deferred Work
 
 - No live CS2 or Valorant test, Steam Group action, OpenID registration, Web API
   call, client inspection, credentials, provider contact, or implementation
   occurred.
-- Current Steam group-chat and CS2 Community Group lobby behavior, rank
-  retrieval, and any direct party link remain unverified.
+- Current Steam group-chat and CS2 Community Group lobby behavior, generic
+  Discord Join, official link/code or Nearby behavior, rank retrieval, and any
+  direct party link remain unverified. The relevant non-rank cases are now
+  activated or conditionally gated in the combined program.
 
 ## Recheck Triggers
 

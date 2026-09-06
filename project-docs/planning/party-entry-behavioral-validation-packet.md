@@ -1,11 +1,12 @@
 # QGuard Party-Entry Behavioral Validation Packet
 
 - **Record type:** approved future behavioral-test packet
-- **Status:** queued; owner approved the test scope, but no specific consenting
-  test accounts/current client session was supplied for this task
+- **Status:** activated as the party-entry component of the combined program;
+  live execution awaits the named consenting accounts/current clients and
+  evidence/cleanup setup
 - **Test owner:** unassigned
 - **Decision owner:** project owner
-- **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-022`
+- **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-023`
 - **Created:** 2026-09-06
 - **Date sensitivity:** high; recheck sources and clients immediately before
   execution
@@ -25,6 +26,13 @@ This packet authorizes the bounded validation scope approved by the owner. It
 does not supply accounts, credentials, current clients, consent from another
 participant, or permission to broaden the test into client automation,
 scraping, reverse engineering, voice capture, or live matchmaking.
+
+The cross-option parent program is the
+[coordination and party-entry validation program](coordination-and-party-entry-validation-program.md).
+This packet owns the detailed Riot/Valorant and generic Discord party-entry
+procedure. Discord room lifecycle, Steam group chat, current CS2 alternative
+observations, and the gated Community Group bridge are defined in the parent
+program so communication and game-party evidence remain separate.
 
 ## Evidence Baseline
 
@@ -74,6 +82,7 @@ declining.
 | VAL-LINK-1 | Valorant official host-copied lobby link | Host and recipient are neither Riot friends nor formal Discord friends; both can access the same controlled private relay | Can the recipient click the posted official link and enter the host's ordinary party? | Required before reliance under `DEC-018` |
 | VAL-LINK-2 | Valorant official link, recipient-linking variation | Same relationship state; recipient's Riot/Discord link state differs from the passing baseline | Must every recipient link Riot and Discord, or only the host? | Determines onboarding prerequisite and fallback copy |
 | VAL-LINK-3 | Valorant official link, delivery-surface variation | Same accounts and party state; link is delivered once through Discord text and once through a neutral non-Discord relay | Is Discord merely the host's account-link prerequisite, or also required for recipient delivery/acceptance? | Determines whether a QGuard-native room can carry the link |
+| VAL-LINK-4 | Valorant official link, Discord runtime variation | Account-link and relationship state remain fixed; Discord is connected versus fully closed separately for host generation and recipient acceptance | Must Discord be running/reachable when the host creates or the recipient opens the link? | Distinguishes account-link history from a live Discord runtime dependency |
 | VAL-DIRECT-1 | Riot's direct Discord-friend invite from Valorant | Shared test server but no formal Discord friendship | Does any direct in-client invite action expose the non-friend recipient? | Control case; documented friend route is not assumed to work for matched strangers |
 | VAL-GI-1 | Discord generic Game Invite with Valorant | No formal Discord friendship and no Riot friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter the ordinary party? | Optional lower-friction route; does not replace `VAL-LINK-1` |
 | CS2-GI-1 | Discord generic Game Invite with CS2 | No formal Discord or Steam friendship | Does Discord expose Play/Join/Ask to Join, and can the recipient enter an ordinary CS2 Premier/Competitive party? | Could reopen CS2 party-entry comparison if repeatable and supportable |
@@ -134,6 +143,11 @@ not proof that the capability is absent.
    merely to make the control pass.
 9. If the first case passes, repeat once with the recipient's Riot/Discord link
    state changed only if that state can be changed safely and reversibly.
+10. Restore the passing account-link baseline. Compare host link generation with
+    Discord connected and with Discord fully closed. Then compare recipient
+    acceptance from the neutral relay with Discord connected and fully closed,
+    using a fresh party/link where necessary. Change only one runtime condition
+    at a time.
 
 ### Network Condition For The Turkey-Based Test
 
@@ -159,6 +173,11 @@ a material QGuard onboarding dependency that requires owner review.
 private non-Discord relay. It proves delivery-surface independence for the
 tested client state, not that the host can obtain the feature without a linked
 Discord account or that Riot officially supports it in Turkey.
+
+`VAL-LINK-4` records host and recipient runtime requirements separately. A
+closed-Discord pass does not remove the documented account-linking prerequisite;
+it only shows that the tested action does not require a live Discord client or
+reachable Discord session at that step.
 
 ## Procedure B - Generic Discord Game Invites
 

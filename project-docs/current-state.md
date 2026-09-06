@@ -1,15 +1,14 @@
 # QGuard Current State
 
-- **Last updated:** 2026-09-06
-- **Status:** designated-human-host Valorant handoff and future client-test
-  scope accepted; Riot lobby links, direct Discord-friend invites, and generic
-  Discord Join actions are separated; the coordination backbone awaits the
-  owner's critical decision; `DEC-018` still selects Valorant
-- **Objective:** obtain the deliberate `OQ-011` coordination-backbone decision
-  without conflating delivery surface, party-entry mechanism, Discord account
-  admission, restricted-region behavior, or voice recording
+- **Last updated:** 2026-09-07
+- **Status:** combined coordination and party-entry validation scope activated;
+  live execution awaits accounts, Windows clients, consent, exact external test
+  targets, redacted evidence location, and cleanup ownership; `OQ-011` selection
+  deliberately waits for the resulting comparison
+- **Objective:** execute the decision-blocking test program before choosing a
+  coordination backbone or dependable party-handoff path
 - **Current route:**
-  [RESEARCH-2026-09-06 Discord dependency and restricted-region boundary](routes/RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md)
+  [PLAN-2026-09-07 Coordination and party-entry validation](routes/PLAN-2026-09-07-coordination-and-party-entry-validation.md)
 
 ## Verified Workspace State
 
@@ -103,6 +102,11 @@
   be carried by Discord or a QGuard-native private match surface; exact host/
   recipient account-link, non-friend, region, and VPN behavior remains gated by
   `DEF-001` and `DEF-002`.
+- `DEC-023` requires the current-client and coordination-lifecycle tests before
+  `OQ-011` is decided. It activates the combined validation program, retrieves
+  the parked Discord private-room lifecycle item and earlier Steam/CS2 tests,
+  preserves Looking to Play as rejected, and keeps Group DM and voice-recording
+  work conditional or unapproved as recorded.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
@@ -156,23 +160,21 @@
   Discord room alone provides no evidenced party-entry action. It also bounds
   Turkey/VPN observations as test variables rather than product or legal
   conclusions.
-- **In progress:** owner review of whether to require a minimal QGuard-native
-  private match room and keep Discord text/voice optional, use Discord as
-  primary with a native fallback, or require Discord with explicit regional
-  handling (`OQ-011`). `DEF-001` remains the required Valorant-link and delivery-
-  surface test; `DEF-002` queues the optional generic Discord Game Invite
-  checks. Rank fallback, provider access, complete wedge, exact Discord
-  admission/lifecycle, and coordination fallback remain open. The
-  [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
-  records temporary rooms and possible recording as an unapproved proposal.
-- **Next:** owner deliberately resolves `OQ-011`. The agent recommends a minimal
-  QGuard-native private match room for roster/readiness, designated-host
-  instructions, link submission, and join action, with Discord text/voice
-  optional where available. This is a proposal, not a decision. If any Discord
-  path remains, admission and post-match membership/access cleanup follow.
-  `DEF-001` and `DEF-002` execute only when specific consenting test accounts/
-  current clients and a minimal redacted evidence/cleanup setup are supplied.
-  All voice capture remains a separate unapproved decision.
+- **In progress:** readiness for the
+  [coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md).
+  `DEF-001` through `DEF-005` now cover the Valorant link, generic Discord game
+  invites, Discord private-room lifecycle, Steam non-friend group chat, and
+  current CS2 alternatives. Live execution has not started because the named
+  Windows/client/account environment and evidence/cleanup setup are not
+  available to this repository task; the current execution host reports
+  `Darwin arm64`. Rank fallback, provider access, complete
+  wedge, and voice evidence remain outside this test program.
+- **Next:** identify the Windows machine and consenting test accounts, record
+  the relationship/link-state baseline, select the human-owned Discord test
+  server and evidence/cleanup locations, then execute the phases in the program.
+  Obtain separate exact approval before creating any new persistent Steam
+  Community Group. After valid results, reconcile the mechanism matrix and
+  return `OQ-011` to the owner. Do not ask for the product choice before then.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -285,6 +287,17 @@
   workflow package and legacy application remained unchanged. Application
   runtime tests and the portable-system validator were not run because this
   unit changes project records and validation plans only.
+- The 2026-09-07 validation-program reconciliation retrieved every current
+  coordination/party-entry test discussed in the reviewed records, added the
+  missing Discord runtime-dependency check, and converted the parked `OQ-011`
+  backbone item into a pre-decision lifecycle test. No account, client, VPN,
+  bot, server, channel, invitation, OAuth grant, Steam chat/group, party,
+  message, voice, provider call, automation, or personal-data collection action
+  occurred. All relative links across 49 project Markdown files resolved,
+  `git diff --check` passed, and every changed path remained inside
+  `project-docs/`; the portable workflow package and legacy application remain
+  unchanged. Application/runtime tests and the portable-system validator were
+  not run because this unit creates the test program rather than executing it.
 
 ## Gates
 
@@ -326,9 +339,21 @@
 - QGuard has a broad international direction under `DEC-022`, but exact launch
   coverage remains open. A Turkey/VPN observation is test evidence only, not an
   official-availability or legal conclusion.
-- Discord room creation and voice recording are not approved. In particular,
-  later report review would require prior audio capture and retention and
-  therefore cannot be introduced as an incidental bot feature.
+- `DEC-023` postpones the coordination/path selection until the combined
+  decision-blocking tests produce valid evidence. Documentation support or one
+  isolated pass cannot close `OQ-011`; valid negative and `not-testable` results
+  must remain visible in the final comparison.
+- Live execution is currently readiness-blocked by the absence of the named
+  Windows client environment, consenting account/relationship matrix, exact
+  Discord and Steam targets, redacted evidence location, and cleanup owner.
+  Creating a new persistent Steam Community Group requires a separate exact
+  target approval.
+- Discord room creation is approved only inside the bounded `DCS-1` through
+  `DCS-5` test after its exact server, accounts, permissions, evidence, and
+  cleanup are named; a Discord product topology is not approved. Voice
+  recording is not approved. In particular, later report review would require
+  prior audio capture and retention and therefore cannot be introduced as an
+  incidental bot feature.
 - No implementation slice starts until every specification required for that
   slice and its testable completion criteria are approved, unless the owner
   records a narrow explicit override under `DEC-008`.

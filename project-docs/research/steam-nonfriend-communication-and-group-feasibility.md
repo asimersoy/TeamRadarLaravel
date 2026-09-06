@@ -1,11 +1,11 @@
 # QGuard Steam Non-Friend Communication And Group Feasibility
 
 - **Record type:** focused current research findings
-- **Status:** research complete; `DEC-020` clarifies that manual Steam chat and
-  persistent Community Groups do not meet the preferred coordination criterion
+- **Status:** research complete; `DEC-023` activates the retained Steam/CS2
+  validation cases before the cross-option coordination decision
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-020`, and the
+- **Authority:** `DEC-011`, `DEC-013`, `DEC-015` through `DEC-023`, and the
   owner's 2026-09-06 request to investigate Steam communication/group paths
 - **Research date:** 2026-09-06
 - **Date sensitivity:** high; recheck before testing or specification
@@ -25,6 +25,9 @@ object. The Steam group-chat link remains a documented manual capability, but
 the absence of a supported QGuard creation and lifecycle API means it does not
 meet the preferred automation criterion. The current comparison continues in
 the [Discord coordination and game-join report](discord-coordination-and-game-join-comparison.md).
+`DEC-023` does not reverse those product-fit findings; it requires the retained
+Steam group-chat and current CS2 alternative cases to be tested before the
+owner chooses among the wider coordination and handoff options.
 
 Steam's official Chat page documents persistent group chats with multiple text
 and voice channels and invitation links shareable inside or outside Steam.
@@ -188,11 +191,13 @@ the separate owner proposal to retain audio for report review without a new,
 supported capture design and the already-recorded consent, privacy, security,
 retention, moderation, provider-policy, and qualified-review gates.
 
-## Previously Proposed Live Verification
+## Activated Live Verification Scope
 
-`DEC-020` means neither test is the next active route. They are retained so the
-conditions are explicit if the owner later accepts manual Steam chat or
-persistent Community Group membership as a fallback.
+`DEC-023` retrieves these cases into the current
+[coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md).
+Test A is active when the account/client readiness inputs exist. Test B remains
+gated on an exact existing Community Group or separate approval to create the
+named persistent group; Steam groups cannot be treated as disposable test data.
 
 ### Test A - Non-Friend Group Chat
 
@@ -255,11 +260,12 @@ terms are indexed in the [game API source ledger](game-api-source-ledger.md).
 
 ### Proposals
 
-- **Superseded by `DEC-020`:** run Test A before treating manual Steam Chat as
-  the preferred communication layer.
-- **Not currently routed:** run Test B before keeping CS2 as a game candidate on
-  the strength of persistent Steam Community Group membership. The historical
-  bridge remains evidence, but it is not the clarified communication object.
+- **Activated by `DEC-023`:** run Test A before closing the Discord/no-Discord
+  coordination comparison; a pass does not itself select manual Steam Chat.
+- **Activated with an external-target gate by `DEC-023`:** run Test B before
+  relying on persistent Community Group membership as a CS2 alternative. The
+  historical bridge remains evidence, not proof of current behavior, and the
+  group is not the clarified communication object.
 - Keep group-chat communication and CS2 party entry as separately passing or
   failing capabilities.
 

@@ -1,10 +1,11 @@
 # QGuard Game API Source Ledger
 
 - **Record type:** current research evidence ledger
-- **Status:** current research pass complete; recheck before implementation
+- **Status:** current research pass complete; recheck immediately before the
+  activated live validation program and again before implementation
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-022`, plus
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-023`, plus
   the owner's 2026-09-05 and 2026-09-06 game/coordination research instructions
 - **Created:** 2026-09-05
 - **Implementation authority:** none

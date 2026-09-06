@@ -1,11 +1,12 @@
 # QGuard Discord Coordination And Voice-Evidence Options
 
 - **Record type:** current owner proposal and future decision packet
-- **Status:** coordination feasibility researched; owner selection and separate
-  voice-evidence research/review required
+- **Status:** coordination feasibility researched; private-room lifecycle test
+  activated before owner selection; separate voice-evidence research/review
+  still required
 - **Decision owner:** project owner
 - **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
-  `DEC-022`; no implementation authority
+  `DEC-023`; test-only authority, no product implementation authority
 - **Created:** 2026-09-05
 - **Update trigger:** coordination-surface, Discord, voice-data, report-evidence,
   moderation, or permitted-use decision
@@ -134,9 +135,12 @@ Discord voice is used.
 
 ## Required Evidence Before Approval
 
-- The current coordination capability research is complete at the product-
-  comparison level. Before implementation, recheck the exact selected bot,
-  channel, invite/OAuth, member, message-access, and deletion interfaces.
+- Execute `DCS-1` through `DCS-5` in the
+  [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md):
+  bot channel creation, constrained admission, matched-user text/voice access,
+  ordinary-outsider isolation, failure states, revocation, deletion, and
+  unrelated-state preservation. Recheck the exact bot, channel, invite/OAuth,
+  member, message-access, and deletion interfaces immediately before execution.
 - Current first-party Discord capability and policy research for any proposed
   voice-receive, recording, storage, transcription, and deletion model.
 - A field-level data-flow inventory covering raw audio, derived transcripts or
@@ -168,10 +172,12 @@ Discord voice is used.
   critical coordination baseline—followed, if applicable, by Discord admission/
   lifecycle and whether any voice capture belongs in the product under a
   complete safeguard set.
-- **Deferred work:** no Discord or recording work. No recording implementation
-  has been approved and postponed; this remains an unapproved proposal/queued
-  decision packet. The separate Valorant link test is `DEF-001` and the generic
-  Discord Game Invite checks are `DEF-002` in the
+- **Deferred work:** Discord private-room lifecycle testing is now approved and
+  activated as `DEF-003`; Discord product selection and recording are not.
+  No recording implementation has been approved and postponed; recording
+  remains an unapproved proposal/queued decision packet. The separate Valorant
+  link test is `DEF-001` and the generic Discord Game Invite checks are
+  `DEF-002` in the
   [deferred-work register](../governance/deferred-work.md); their shared scope is
   in the
   [party-entry behavioral validation packet](party-entry-behavioral-validation-packet.md).

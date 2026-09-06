@@ -9,7 +9,9 @@
 - **Continued by:**
   [RESEARCH-2026-09-06 Discord dependency and restricted-region boundary](RESEARCH-2026-09-06-discord-dependency-and-restricted-region-boundary.md),
   which separates the link-delivery surface from Discord game-invite behavior
-  and reframes `OQ-011`
+  and reframes `OQ-011`; the later
+  [combined validation route](PLAN-2026-09-07-coordination-and-party-entry-validation.md)
+  retrieves all discussed tests before that decision
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06

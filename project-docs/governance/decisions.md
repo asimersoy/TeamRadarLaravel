@@ -728,3 +728,51 @@ human-host direction or select a coordination backbone; that choice remains
   `DEC-015`
 - **Supersedes:** none
 - **Superseded by:** none
+
+## DEC-023 - Require Feasibility Tests Before Selecting The Coordination Path
+
+- **Date:** 2026-09-07
+- **Status:** approved process and evidence gate
+- **Decision owner:** project owner
+- **Decision:** Do not select Discord, QGuard-native coordination, the copied
+  Riot lobby link as the dependable handoff, or a game-specific Discord Join
+  path until the relevant current-client and coordination-lifecycle tests have
+  been run and compared. Gather every discussed test into one validation
+  program. Include the deliberately parked critical Discord/private-room
+  backbone item as a live lifecycle target, retrieve the earlier Steam/CS2
+  test proposals, and preserve conditional or unsafe cases behind their exact
+  prerequisites.
+- **Reason:** Documentation establishes candidate capabilities but does not
+  establish the actual current non-friend, account-linking, regional/network,
+  admission, isolation, cleanup, or ordinary-party behavior needed to choose a
+  product direction.
+- **Alternatives considered:** select the agent-recommended QGuard-native
+  baseline immediately; select Discord immediately; or test only the currently
+  preferred Valorant link. The owner rejected making the choice before the
+  cross-option evidence exists.
+- **Consequences:** `OQ-011` remains open but is no longer ready for immediate
+  selection. Existing `DEF-001` and `DEF-002` are activated within the combined
+  program; Discord private-room lifecycle, Steam non-friend group chat, and
+  current CS2 alternatives receive explicit deferred test entries. Looking to
+  Play remains rejected. Discord Group DM checks are conditional, and voice
+  recording remains a separate unapproved proposal. No product or game
+  selection is changed by planning or by one isolated passing test.
+- **Execution boundary:** The owner has approved and requested the bounded test
+  direction. Live execution still requires the named Windows environment,
+  consenting accounts, relationship/link-state baseline, exact external test
+  targets, evidence/retention location, and cleanup owner. Credentials, tokens,
+  lobby secrets, voice recording, unsupported client automation, matchmaking,
+  persistent Steam group creation without exact target approval, and product
+  implementation remain outside this decision.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-009`,
+  `OQ-010`, `OQ-011`, deferred work, the party-entry packet, coordination packet,
+  validation program, and owner decision sequence
+- **Return condition:** complete or validly classify the decision-blocking test
+  set, reconcile the evidence, and return the resulting mechanism comparison to
+  the owner for deliberate product selection.
+- **Related decisions:** applies the feasibility-first direction in `DEC-011`,
+  preserves the friendship-free preference in `DEC-016`, and delays selection
+  under `DEC-018` through `DEC-022` until the evidence gate is met
+- **Supersedes:** the readiness implication that `OQ-011` should be decided
+  immediately after the 2026-09-06 documentation research
+- **Superseded by:** none
