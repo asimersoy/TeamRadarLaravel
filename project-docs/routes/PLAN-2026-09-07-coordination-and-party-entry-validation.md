@@ -89,5 +89,5 @@
   unchanged.
 - No application, live-client, account, provider, or portable-system validator
   is required for this documentation-only planning unit.
-- **Commit boundary:** one coherent additive planning/reconciliation commit; no
-  push.
+- **Commit boundary:** coherent additive planning/reconciliation commits only;
+  no push or history rewrite.

@@ -61,8 +61,9 @@ The following are conditional diagnostics, not mandatory before `OQ-011`:
 
 Before live execution, identify without putting credentials in project records:
 
-- a Windows PC on which current Valorant, Riot Client, Discord, Steam, and CS2
-  can run;
+- two concurrent participant client sessions—such as the owner's Windows PC
+  plus a consenting remote participant—on systems where current Valorant, Riot
+  Client, Discord, Steam, and CS2 can run for their respective cases;
 - two consenting Riot/Valorant accounts, two consenting Steam/CS2 accounts,
   and two consenting Discord participant accounts with the required non-friend
   relationships;
