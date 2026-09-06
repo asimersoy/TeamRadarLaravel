@@ -52,8 +52,11 @@ preferred criterion clarified by `DEC-020`. The
 [Discord coordination/game-join findings](../research/discord-coordination-and-game-join-comparison.md)
 establish a supported bot-managed server-channel candidate, confirm the
 Valorant host-copied link, and find no current CS2 Discord party handoff. The
-non-friend Valorant lobby-link test remains `DEF-001`; no Discord or CS2 live
-test is an approved or deferred implementation dependency.
+owner accepts the designated-human-host flow if it passes (`DEC-021`). The
+non-friend Valorant lobby-link test remains `DEF-001`; generic Discord Game
+Invite checks for both games are queued separately in `DEF-002`. Their exact
+scope and evidence rules are in the
+[party-entry behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

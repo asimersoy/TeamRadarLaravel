@@ -627,3 +627,63 @@ See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feas
 - **Supersedes:** the unapproved assumption that a Steam Community Group could
   satisfy the owner's requested communication-group experience
 - **Superseded by:** none
+
+## DEC-021 - Accept The Designated-Human-Host Valorant Handoff And Test Scope
+
+- **Date:** 2026-09-06
+- **Status:** approved as a conditional product direction and future validation
+  scope
+- **Decision owner:** project owner
+- **Decision:** QGuard does not need to create an ordinary Valorant party or
+  manufacture its Riot lobby link. For the candidate Valorant flow, QGuard may
+  designate one matched participant as host; that human creates the ordinary
+  party, obtains the official host-copied lobby link, and posts it in the
+  private per-match Discord text channel. The remaining matched participants
+  deliberately click the link to join. The owner accepts this human step if the
+  official flow passes current-client verification. The owner also approves
+  eventual behavioral checks of Discord's generic Game Invite/Join surfaces
+  for Valorant and CS2 alongside the required Valorant lobby-link test.
+- **Reason:** QGuard's value is assembling and coordinating compatible
+  teammates; it does not need to control the game client when one participant
+  can perform a short official host action and the rest can enter without
+  adding friends.
+- **Clarification:** Riot's published feature description says a linked user
+  can copy a lobby link and share it with a Discord server or elsewhere. It
+  does not state that QGuard is prohibited from displaying a host-supplied
+  link. The absence of a reviewed public QGuard interface for creating the
+  Riot party or link is an interface/evidence boundary, not a provider-policy
+  conclusion against this human flow.
+- **Alternatives considered:** require QGuard to create/control the Valorant
+  party or link; require friend addition; rely only on generic Discord Game
+  Invites; or require a Discord Group DM. None is selected. If the server-
+  channel model works, the owner does not need a Group DM.
+- **Consequences:** The designated host and host-posted link may be specified
+  after the behavior test passes. Host-selection rules, decline/reassignment,
+  timing, link visibility/expiry, recipient Riot/Discord linking, errors, and
+  recovery remain open. For a normal five-player Valorant party, this produces
+  one host and four joiners; no six-player requirement is inferred from the
+  owner's conversational wording. The generic Discord tests are distinct from
+  the Riot lobby-link test and cannot silently replace it.
+- **Critical gate preserved:** This decision does not select the persistent
+  QGuard Discord server/private-channel model. The owner explicitly classified
+  that selection as a critical backbone decision and requested that it return
+  for deliberate review after the other clarifications were recorded. It is
+  now isolated as `OQ-011`.
+- **Test authorization boundary:** The validation scope is approved and queued
+  in the party-entry behavioral packet. No account, credential, client session,
+  relationship change, server, bot, channel, invitation, OAuth grant, party,
+  message, voice, automation, or evidence retention action occurred here.
+  Execution requires specific consenting test accounts/current clients and an
+  agreed minimal evidence/cleanup setup; none was supplied for this task, and
+  credentials and unnecessary personal data must not enter project records.
+- **Affected records:** current state, product foundations, `OQ-005`, `OQ-006`,
+  `OQ-009`, `OQ-010`, `OQ-011`, `DEF-001`, `DEF-002`, Discord findings,
+  coordination packet, behavioral validation packet, and owner decision
+  sequence
+- **Return condition:** reassess after the Valorant lobby-link test, either
+  generic Discord Game Invite test, a material provider change, or an owner
+  change to the host-mediated party flow.
+- **Related decisions:** refines the candidate flow in `DEC-018`, applies
+  `DEC-016`, and remains separate from the coordination choice under `DEC-020`
+- **Supersedes:** none
+- **Superseded by:** none

@@ -4,7 +4,7 @@
 - **Status:** current research pass complete; recheck before implementation
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-020`, plus
+- **Authority:** `DEC-011`, `DEC-013`, and `DEC-016` through `DEC-021`, plus
   the owner's 2026-09-05 and 2026-09-06 game/coordination research instructions
 - **Created:** 2026-09-05
 - **Implementation authority:** none
@@ -25,7 +25,7 @@
 | VAL-002 | Valorant / Riot | [Developer Portal FAQ](https://developer.riotgames.com/docs/faqs) | 2026-09-05 | No Valorant personal key; production application/site/prototype and RSO prerequisites | Review outcome, granted scope, and limits are unknown until application | Current first-party documentation |
 | VAL-003 | Valorant / Riot | [VAL-MATCH-V1 reference](https://developer.riotgames.com/api-details/val-match-v1) | 2026-09-05 | Match-by-ID and matchlist-by-PUUID operations; participant schema includes `partyId` and `competitiveTier` | Completed-match data; no promise that tier is current; page is dynamic and no credentialed call was made | Current first-party API reference |
 | VAL-004 | Valorant / Riot | [VAL-RANKED-V1 reference](https://developer.riotgames.com/api-details/val-ranked-v1) | 2026-09-05 | Competitive leaderboard; `leaderboardRank`, `rankedRating`, and wins; page size 1–200 | Leaderboard members only; identity fields may be omitted when anonymized; not a per-PUUID current-rank API | Current first-party API reference |
-| VAL-005 | Valorant / Riot | [Riot Games Discord account linking FAQ](https://www.riotgames.com/en/riot-games-discord-account-linking) | 2026-09-06 | PC users can invite linked Discord friends, copy a lobby link and share it anywhere, and join parties faster | User/account/client/region conditions; direct integrated-friend discovery requires formal Discord friendship; no third-party lobby-link API is documented | Current first-party product documentation |
+| VAL-005 | Valorant / Riot | [Riot Games Discord account linking FAQ](https://www.riotgames.com/en/riot-games-discord-account-linking) | 2026-09-06 | After Riot/Discord linking, a PC user can invite linked Discord friends, copy a lobby link and share it with a server or elsewhere, and join parties faster | Direct integrated-friend discovery requires formal Discord friendship; troubleshooting says a recipient may need updated clients and may need to link accounts; exact minimum recipient prerequisites and any third-party lobby-link API remain undocumented | Current first-party product documentation |
 | VAL-006 | Valorant / Riot | [Exclusive Discord Drop and integration announcement](https://playvalorant.com/en-us/news/game-updates/exclusive-discord-drop/) | 2026-09-06 | Confirms PC Valorant lobby-link and Discord-friend party flow released in June 2026 | Describes user-facing flow, not a QGuard integration contract | Current first-party announcement |
 | VAL-007 | Riot | [General Developer Policies](https://developer.riotgames.com/policies/general) | 2026-09-05 | Registration/audit; supported-service preference; game-integrity and official-rank boundaries | Policies change; QGuard feature details still require provider review | Current first-party policy; last updated 2025-05-29 |
 | VAL-008 | Riot | [Riot API Terms](https://developer.riotgames.com/terms) | 2026-09-05 | Access can change/revoke; restrictions on circumvention, extra collection, game interference, and reverse engineering | Legal text is not interpreted here; terms page states last update 2013 and incorporates current specifications/policies | Current first-party terms |
@@ -136,6 +136,15 @@ detection, an overlay, or generic developer capability does not establish CS2
 support. The same pass found no public QGuard interface for creating a Riot
 lobby link or controlling a Valorant party; the evidenced flow starts with a
 host-created, host-copied official link.
+
+That public-interface negative is not a finding that Riot prohibits QGuard from
+displaying a lobby link voluntarily supplied by its human host. Riot and
+Discord expressly document sharing the official link in a server or elsewhere.
+Riot's terms restrict unauthorized programs and automation that interact with
+Riot Services; the recorded QGuard candidate keeps party creation, link copy,
+and acceptance as official human-controlled actions. Exact non-friend
+acceptance and minimum recipient Riot/Discord linking remain behavioral test
+questions under `DEF-001`.
 
 Positive Discord findings remain separate: a bot can create and delete private
 text/voice channels in an existing server, assign member/role permissions, and

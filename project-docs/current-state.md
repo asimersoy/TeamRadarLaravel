@@ -1,13 +1,13 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-06
-- **Status:** Discord can support automated private per-match text/voice rooms;
-  Valorant has a host-copied party-link handoff, while no comparable current CS2
-  Discord party handoff is established; `DEC-018` still selects Valorant
-- **Objective:** obtain the owner's coordination-surface disposition while
-  preserving the separate Valorant behavioral gate and the bounded CS2 finding
+- **Status:** designated-human-host Valorant handoff and future client-test
+  scope accepted; Discord server/private-channel backbone awaits the owner's
+  separate critical decision; `DEC-018` still selects Valorant
+- **Objective:** obtain the deliberate `OQ-011` coordination-backbone decision
+  without conflating it with party-entry tests or voice recording
 - **Current route:**
-  [RESEARCH-2026-09-06 Discord coordination and game join comparison](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
+  [PLAN-2026-09-06 Party handoff validation and coordination gate](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
 
 ## Verified Workspace State
 
@@ -88,6 +88,12 @@
   automation and link/code/OAuth entry. Persistent Steam Community Groups are
   not the intended coordination object. This criterion does not itself select
   Discord or authorize implementation or data collection.
+- `DEC-021` accepts a designated matched human as the Valorant party/link host
+  if the official flow passes. It approves future behavioral checks of the
+  Valorant lobby link and generic Discord Game Invite surfaces for Valorant and
+  CS2. It also records that a Group DM is unnecessary if the server/private-
+  channel model works, while preserving that model's final selection as the
+  separate critical `OQ-011` owner gate.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
@@ -129,19 +135,25 @@
   establish supported bot-created private server text/voice channels and
   constrained link/OAuth admission, identify application-created Group DMs as
   a weak legacy-constrained alternative, confirm Valorant's host-copied lobby
-  link, and find no current first-party CS2 Discord party handoff.
+  link, and find no current first-party CS2 Discord party handoff. `DEC-021`
+  then accepts the designated-human-host link handoff conditionally and the
+  [party-entry behavioral validation packet](planning/party-entry-behavioral-validation-packet.md)
+  defines the approved future Valorant and CS2 client checks.
 - **In progress:** owner review of whether to select the Discord-server/private-
-  channel model as QGuard's coordination surface. `DEF-001` remains the required
-  Valorant-link test. Rank fallback, provider access, complete wedge, exact
-  Discord admission/lifecycle, and coordination fallback remain open. The
+  channel model as QGuard's coordination backbone (`OQ-011`). `DEF-001` remains
+  the required Valorant-link test and `DEF-002` queues the optional generic
+  Discord Game Invite checks. Rank fallback, provider access, complete wedge,
+  exact Discord admission/lifecycle, and coordination fallback remain open. The
   [Discord coordination and voice-evidence packet](planning/discord-coordination-and-voice-evidence-options.md)
   records temporary rooms and possible recording as an unapproved proposal.
-- **Next:** owner decides whether Discord-server membership and bot-created
-  private per-match text/voice channels are the preferred, optional, or fallback
-  coordination model. If accepted, settle invite versus `guilds.join` admission
-  and post-match membership/access cleanup. Valorant remains selected and
-  `DEF-001` remains the party-link reliance gate. A CS2 Discord Game Invite
-  test, Group DM proof, and all voice capture remain optional unapproved work.
+- **Next:** owner deliberately decides whether one human-owned QGuard Discord
+  server with bot-created private per-match text/voice channels is the preferred
+  coordination backbone, without recording. If accepted, settle invite versus
+  `guilds.join` admission and post-match membership/access cleanup. `DEF-001`
+  and `DEF-002` execute only when specific consenting test accounts/current
+  clients and a minimal redacted evidence/cleanup setup are supplied. Group DM
+  proof is unnecessary if the server model is accepted; all voice capture
+  remains a separate unapproved decision.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -231,6 +243,18 @@
   --check` passed, and the portable workflow package and legacy application
   remained unchanged. Application runtime tests and the portable-system
   validator were not run because this unit changes project records only.
+- The 2026-09-06 host-handoff clarification recorded the owner-approved
+  designated-human-host Valorant direction, separated absence of a public
+  QGuard party/link API from provider prohibition, and defined the approved
+  future Valorant-link and Valorant/CS2 generic Discord Game Invite checks. No
+  account, client, credential, relationship, server, bot, channel, invite,
+  OAuth grant, party, message, voice, provider contact, automation, or personal-
+  data collection action occurred. All relative links across 46 project
+  Markdown files resolved, `git diff --check` passed, and every changed path
+  remained inside `project-docs/`; the portable workflow package and legacy
+  application remained unchanged. Application runtime tests and the portable-
+  system validator were not run because this unit changes project records and
+  validation plans only.
 
 ## Gates
 
@@ -260,10 +284,11 @@
   provisionally viable. `DEF-001` must verify non-friend acceptance before a
   specification or implementation relies on it.
 - No current first-party CS2 Discord Game Invite was established. Discord room
-  success is not CS2 party-entry evidence, and no CS2 live test is authorized.
-- The Discord findings do not supersede `DEC-018`, authorize a Discord
-  application/server/bot, approve persistent membership, or authorize message
-  or voice collection.
+  success is not CS2 party-entry evidence. The owner has approved a bounded
+  future current-client check in `DEF-002`, but no test occurred here.
+- The Discord findings and approved party-entry test scope do not supersede
+  `DEC-018`, select a Discord application/server/bot as the product backbone,
+  approve persistent membership, or authorize message or voice collection.
 - Discord room creation and voice recording are not approved. In particular,
   later report review would require prior audio capture and retention and
   therefore cannot be introduced as an incidental bot feature.

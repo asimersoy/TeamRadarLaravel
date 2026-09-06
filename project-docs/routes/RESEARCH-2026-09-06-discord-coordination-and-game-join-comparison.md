@@ -4,8 +4,9 @@
   multi-person text/voice conversation for matched non-friends through a
   supported automated or semi-automated flow, and compare how that coordination
   layer can hand users into ordinary Valorant and Counter-Strike 2 parties
-- **Status:** authoritative-source research complete; owner product disposition
-  and behavioral verification remain open
+- **Status:** authoritative-source research complete; `DEC-021` accepts the
+  human-host handoff and future test scope; critical coordination selection and
+  behavioral execution remain open
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-06
@@ -107,19 +108,22 @@
 
 ## Remaining Gates
 
-- The owner must decide whether the Discord-server model is the preferred,
-  optional, or fallback coordination surface; this research does not approve a
-  bot or server dependency.
+- The critical `OQ-011` owner decision remains whether the Discord-server model
+  is the preferred coordination backbone; this research does not approve a bot
+  or server dependency.
 - `DEC-018` still selects Valorant. `DEF-001` must pass before a specification
   relies on non-friend ordinary-party entry through the Riot lobby link.
-- A current two-account CS2/Discord Game Invite check could test the bounded
-  negative, but no undocumented interface may be substituted and a pass would
+- `DEC-021` approves a future current-client CS2/Discord Game Invite check in
+  `DEF-002`, but no undocumented interface may be substituted and a pass would
   still require stability/provider review before reliance.
 - Application-managed Group DM use requires a focused proof-of-concept and
   likely provider clarification before being considered dependable; the report
   recommends against selecting it as the primary scalable route.
 - Voice recording, message surveillance, transcripts, and report evidence are
   outside this comparison and remain separately gated.
+- Subsequent clarification, test cases, and the critical decision boundary are
+  routed through the
+  [party handoff validation and coordination gate](PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md).
 
 ## Verification
 

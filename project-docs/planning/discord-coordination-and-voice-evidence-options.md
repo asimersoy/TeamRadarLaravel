@@ -4,8 +4,8 @@
 - **Status:** coordination feasibility researched; owner selection and separate
   voice-evidence research/review required
 - **Decision owner:** project owner
-- **Authority:** owner proposals recorded 2026-09-05 and the clarified
-  coordination criterion in `DEC-020`; no implementation authority
+- **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
+  `DEC-021`; no implementation authority
 - **Created:** 2026-09-05
 - **Update trigger:** coordination-surface, Discord, voice-data, report-evidence,
   moderation, or permitted-use decision
@@ -41,6 +41,12 @@ matched team. It should be supported through API, automation, or semi-
 automation and offer link, code, OAuth, or comparable participant entry. A
 persistent Steam Community Group is not the intended communication object
 (`DEC-020`).
+
+The owner now confirms that this server/private-channel shape matches the
+intended flow and that a Group DM is unnecessary if the server model works.
+Because the owner classifies the final selection as a critical backbone
+decision, that conditional preference is not itself final approval. The exact
+decision and consequences are isolated in `OQ-011`.
 
 ## Separated Options, Not Decisions
 
@@ -136,7 +142,9 @@ Discord voice is used.
 ## Current Classification
 
 - **Owner decision:** Valorant and its official lobby-link candidate are
-  selected under `DEC-018`; `DEC-020` defines the coordination-group criterion.
+  selected under `DEC-018`; `DEC-020` defines the coordination-group criterion;
+  `DEC-021` accepts a designated matched human as party/link host if the flow
+  passes validation.
 - **Owner proposal:** temporary Discord coordination rooms and possible
   report-reviewable session audio.
 - **Research result:** a bot-managed private text/voice channel pair inside an
@@ -144,10 +152,13 @@ Discord voice is used.
   candidate. A Group DM is only an experimental/weak alternative. Valorant has
   a host-copied party link; no comparable CS2 Discord party handoff is
   established.
-- **Open question:** whether Discord is selected, which admission/lifecycle
-  model applies, and whether any voice capture belongs in the product under a
-  complete safeguard set.
+- **Open question:** `OQ-011`—whether Discord is selected as the critical
+  backbone—followed by which admission/lifecycle model applies and whether any
+  voice capture belongs in the product under a complete safeguard set.
 - **Deferred work:** no Discord or recording work. No recording implementation
   has been approved and postponed; this remains an unapproved proposal/queued
-  decision packet. The separate Valorant link test is `DEF-001` in the
-  [deferred-work register](../governance/deferred-work.md).
+  decision packet. The separate Valorant link test is `DEF-001` and the generic
+  Discord Game Invite checks are `DEF-002` in the
+  [deferred-work register](../governance/deferred-work.md); their shared scope is
+  in the
+  [party-entry behavioral validation packet](party-entry-behavioral-validation-packet.md).

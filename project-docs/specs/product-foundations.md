@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-020`
+- **Authority:** `DEC-009` through `DEC-021`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -79,6 +79,15 @@ its host-copied lobby link in that room; no current first-party evidence
 establishes a comparable CS2 Discord party handoff. See the
 [Discord coordination/game-join comparison](../research/discord-coordination-and-game-join-comparison.md).
 
+For the Valorant candidate, QGuard may designate one matched human as host. The
+host creates the ordinary party, obtains the official Riot lobby link, and
+posts it in the private per-match Discord text channel; remaining matched users
+click it. QGuard does not need to create or control the Riot party/link. This
+flow is conditionally accepted under `DEC-021`, but `DEF-001` must still verify
+the non-friend case and recipient account-linking prerequisite before reliance.
+Generic Discord Game Invite checks for Valorant and CS2 are separately queued
+in `DEF-002`.
+
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another
 official friendship-free ordinary-lobby code/link, and use the documented
@@ -88,11 +97,13 @@ owner later changes the product boundary. Valorant has an official user-copied
 PC lobby-link candidate; `DEC-019` rejects CS2 Looking to Play; and Apex has no
 comparable documented feature in the reviewed first-party material. Steam
 group-chat links may solve non-friend text/voice coordination, but are not CS2
-party links. A Community Group-to-CS2 lobby path remains a separate unverified
-candidate. Before QGuard may depend on either game path, the applicable scoped
-two-account test must pass. `DEC-018` still specifically requires the Valorant
-test while its selection remains current. See the focused
-[party-entry and policy findings](../research/party-entry-and-policy-fit.md).
+party links. The old Community Group-to-CS2 lobby path remains historical/
+fallback evidence rather than the current communication route. Before QGuard
+may depend on a game path, its applicable scoped test must pass. `DEF-001`
+specifically gates the selected Valorant link, while `DEF-002` separately checks
+generic Discord Game Invites for Valorant and CS2. See the focused
+[party-entry and policy findings](../research/party-entry-and-policy-fit.md) and
+[behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
 
 If the approved Valorant flow requires RSO, a provider-independent working or
 mostly testable prototype may use clearly identified mock data for RSO-

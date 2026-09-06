@@ -203,10 +203,11 @@ decision register's subsequent review note under `DEC-018`.
 ### Deferred Work
 
 The required link test is recorded as `DEF-001` in the
-[deferred-work register](../governance/deferred-work.md) until its mode, region,
-accounts, environment, and exact authorization are ready. A Riot application,
-prototype, implementation, and broader game search remain unapproved future
-actions rather than deferred commitments.
+[deferred-work register](../governance/deferred-work.md). `DEC-021` approves its
+scope and designated-human-host flow; execution still awaits specific
+consenting test accounts/current clients and an agreed redacted evidence and
+cleanup setup. A Riot application, prototype, and implementation remain
+unapproved future actions rather than deferred commitments.
 
 ## Research Limits And Recheck Triggers
 

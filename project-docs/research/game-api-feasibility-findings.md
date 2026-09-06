@@ -291,8 +291,11 @@ selected Valorant subject to that verification gate (`DEC-018`).
 3. Decide whether the coordination surface is QGuard-native, bot-managed
    Discord, or another approved flow; treat any voice recording separately.
 
-The test is `DEF-001`; the rank and coordination questions remain open. No
-implementation or provider application is authorized.
+The required link test is `DEF-001`; optional generic Discord Game Invite checks
+for Valorant and CS2 are `DEF-002`. Both use the
+[party-entry behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
+The rank and coordination questions remain open. No implementation or provider
+application is authorized.
 
 ## Research Limits And Recheck Triggers
 

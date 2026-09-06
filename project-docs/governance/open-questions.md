@@ -112,7 +112,9 @@ Historical unknowns do not automatically become requirements.
   person chat rather than a persistent Steam Community Group. Current Discord
   research shows the same bot-managed communication room can support either
   game, but only Valorant has an evidenced host-copied ordinary-party link. No
-  comparable current CS2 Discord handoff is established. Mode, platform/cross-
+  comparable current CS2 Discord handoff is established. `DEC-021` accepts a
+  designated-human-host Valorant flow if the lobby link passes and approves
+  future generic Discord Game Invite checks for both games. Mode, platform/cross-
   play, launch region/language, primary user, party shape, and relationship
   duration remain open.
 - **Decision components:** **currently approved:** Valorant as initial game
@@ -148,7 +150,9 @@ Historical unknowns do not automatically become requirements.
   and automation criterion. Current first-party research finds that bot-created
   private text/voice channels in an existing QGuard Discord server can meet that
   criterion; application-created Group DMs are a constrained alternative. No
-  Discord surface is selected yet. See the
+  Discord surface is selected yet. `DEC-021` confirms that Group DMs are not
+  needed if the server/private-channel model works, but preserves final server
+  selection as the critical `OQ-011` gate. See the
   [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
@@ -276,8 +280,8 @@ Historical unknowns do not automatically become requirements.
 - **Evidence needed:** owner disposition of Discord coordination; `DEF-001`
   before Valorant-link reliance; the selected rank behavior and provider-access
   path; and fresh provider evidence before any integration specification or
-  application. A CS2 Discord test is optional unapproved work, not current
-  evidence of a supported route.
+  application. `DEF-002` is an approved optional current-client test, not
+  current evidence of a supported route.
 - **Resolved by:** `DEC-018` remains current for game selection; coordination,
   behavioral verification, rank, and provider access unresolved
 
@@ -306,7 +310,9 @@ Historical unknowns do not automatically become requirements.
   link/code/OAuth accessible. Bot-created private Discord server channels meet
   that coordination criterion as a researched candidate. Valorant can place its
   host-copied party link in that room; no equivalent current CS2 Discord party
-  handoff is established. Communication still does not prove game-party entry.
+  handoff is established. `DEC-021` accepts the designated-human-host Valorant
+  handoff if it passes and approves future generic Game Invite checks for both
+  games. Communication still does not prove game-party entry.
 - **Options/tradeoffs:** use the later-approved QGuard or Discord coordination
   surface with a passing Valorant link; accept a constrained Discord Group DM;
   relax the criterion to manual Steam chat or friend-based party formation; or
@@ -317,3 +323,49 @@ Historical unknowns do not automatically become requirements.
   the applicable party-entry live test, plus the owner's alternate flow
   proposals and tolerance for added user friction.
 - **Resolved by:** `DEC-018` for the preferred game/link direction only
+
+## OQ-011 - Should Discord Server Channels Be QGuard's Coordination Backbone?
+
+- **Status:** open; critical owner decision ready for deliberate review
+- **Decision owner:** project owner
+- **Needed by:** first coordination specification and complete party-handoff
+  journey
+- **Blocks:** selecting Discord as a required product dependency; specifying a
+  bot, server topology, admission, channel/role lifecycle, coordination failure
+  behavior, or implementation slice.
+- **Does not block:** executing the separately approved party-entry behavioral
+  tests when their environment is available, or game-neutral product-charter
+  discussions.
+- **Exact decision:** whether QGuard should use one persistent human-owned
+  Discord server with bot-created private text and voice channels for each
+  matched team as its preferred coordination backbone, without authorizing
+  message surveillance or voice recording.
+- **Known facts:** Discord's documented APIs support creating private server
+  text/voice channels, member/role permission overwrites, constrained server
+  invitations, OAuth `guilds.join` admission, messages/interactions within
+  granted permissions, and channel/access cleanup. Participants do not need to
+  be formal Discord friends. Discord Group DMs are a weaker alternative because
+  the application endpoint has a deprecated-SDK origin, a ten-active-room cap,
+  and no bot participant.
+- **Owner direction already recorded:** The server/private-channel flow matches
+  the owner's intended shape. If it works, a Group DM is unnecessary. The owner
+  classified final selection as a very important backbone decision and asked
+  that it be presented only after the host-flow and test clarifications were
+  resolved (`DEC-021`).
+- **If approved:** Discord accounts and access to the persistent QGuard server
+  become first-flow dependencies. The next bounded decisions are constrained
+  invite versus QGuard Discord OAuth/`guilds.join`, whether membership persists
+  after a match, host decline/reassignment, room expiry/access cleanup, and
+  Discord-unavailable recovery. Voice-channel availability still does not
+  approve recording.
+- **If not approved:** Discord server channels remain an optional/fallback
+  candidate. The next product comparison is QGuard-native coordination versus
+  the constrained Group DM/manual alternatives; the Valorant host-copied link
+  still needs some approved delivery surface.
+- **Evidence limit:** current documentation establishes capability, not QGuard
+  implementation behavior. A later approved prototype must verify permissions,
+  isolation, invite/OAuth admission, failure states, and cleanup before release.
+- **Closure evidence:** deliberate owner approval or rejection with required/
+  optional/fallback status and explicit acknowledgement that voice recording is
+  outside the decision.
+- **Resolved by:** none

@@ -16,11 +16,14 @@ that the desired coordination group is a semi-automatable multi-person chat,
 not primarily a persistent Steam Community Group. Discord can support bot-
 created private per-match text/voice channels in an existing server. Valorant
 has an official host-copied party link for that room; no comparable current CS2
-Discord party handoff was established. `DEC-018` still selects Valorant. Rank
-behavior, Discord selection/lifecycle, and the complete product boundary remain
-open. Voice recording is a separate proposal only. No implementation plan or
-code change is approved. Everything under `legacy/` remains historical
-evidence.
+Discord party handoff was established. The owner accepts a designated matched
+human creating the Valorant party/link if the official flow passes and approves
+future client checks for the Valorant link and generic Discord Game Invites in
+both games. `DEC-018` still selects Valorant. Discord backbone selection is now
+the critical `OQ-011` owner decision; rank behavior and the complete product
+boundary remain open. Voice recording is a separate proposal only. No
+implementation plan or code change is approved. Everything under `legacy/`
+remains historical evidence.
 
 Start with:
 
@@ -30,7 +33,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Latest Discord coordination/game-join research route](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
+7. [Current party-handoff validation and coordination-gate route](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
 8. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
@@ -44,6 +47,8 @@ Start with:
 - [Completed CS2 party-entry research route](routes/RESEARCH-2026-09-05-counter-strike-2-party-entry.md)
 - [Completed Steam non-friend communication/group route](routes/RESEARCH-2026-09-06-steam-nonfriend-communication-and-group.md)
 - [Completed Discord coordination/game-join comparison route](routes/RESEARCH-2026-09-06-discord-coordination-and-game-join-comparison.md)
+- [Current party-handoff validation and coordination-gate route](routes/PLAN-2026-09-06-party-handoff-validation-and-coordination-gate.md)
+- [Party-entry behavioral validation packet](planning/party-entry-behavioral-validation-packet.md)
 - [Discord coordination and voice-evidence options](planning/discord-coordination-and-voice-evidence-options.md)
 - [Specification index](specs/README.md)
 

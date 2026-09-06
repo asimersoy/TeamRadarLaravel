@@ -1,11 +1,12 @@
 # QGuard Discord Coordination And Game-Join Comparison
 
 - **Record type:** focused current research findings and comparison report
-- **Status:** authoritative-source research complete; owner product disposition
-  and behavioral verification required
+- **Status:** authoritative-source research complete; designated-human-host
+  direction accepted; coordination-backbone decision and behavioral execution
+  remain open
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-011`, `DEC-015` through `DEC-020`, and the owner's
+- **Authority:** `DEC-011`, `DEC-015` through `DEC-021`, and the owner's
   2026-09-06 request for a Discord comparison across Valorant and CS2
 - **Research date:** 2026-09-06
 - **Date sensitivity:** high; recheck before testing, provider review, or
@@ -39,9 +40,12 @@ ten active Group DMs, and cannot contain a bot user. It is technically
 For Valorant, Riot and Discord officially document a PC lobby link that the host
 can copy into a Discord server, DM, or elsewhere. The host still creates the
 ordinary party and copies the link; QGuard can automate the coordination room
-and present or pin the host-supplied link, but cannot create the Riot link or
-party. The exact no-Riot-friend/no-Discord-friend recipient case remains a live
-test gate.
+and present or pin the host-supplied link. No reviewed public Riot interface
+lets QGuard create the party or manufacture the Riot link. That is an interface
+and evidence boundary, not a claim that Riot prohibits QGuard from relaying a
+link deliberately supplied by the host. The exact no-Riot-friend/no-Discord-
+friend recipient case and minimum recipient account-linking requirement remain
+live test gates.
 
 For CS2, Discord coordination is equally feasible but game-party joining is not.
 Discord's general Game Invite surface works only when the game implements it.
@@ -113,9 +117,10 @@ This is a proposal, not an approved specification:
 4. The bot posts the match roster and game-specific party instructions. It need
    not read ordinary message content or receive voice merely to create and
    manage the room.
-5. For Valorant, the designated host creates the party, copies the official
-   Riot lobby link, and submits it to QGuard or the room. The bot can display or
-   pin that host-supplied link; matched users click it.
+5. For Valorant, QGuard designates a matched human host. That participant
+   creates the party, copies the official Riot lobby link, and submits it to
+   QGuard or the room. The bot can display or pin that host-supplied link;
+   remaining matched users click it.
 6. For CS2, the room can coordinate manual steps, but no supported direct
    Discord-to-ordinary-party handoff is currently established.
 7. After the approved session/retention boundary, QGuard revokes match-specific
@@ -211,16 +216,23 @@ with a Riot ID, formal Discord friendship, and linked Riot/Discord accounts.
 That friend-list discovery is not QGuard's intended path.
 
 The separate lobby-link feature is the promising path: first-party material
-says the host can copy a lobby link and put it in a Discord server, DM, or
+says a linked user can copy a lobby link and put it in a Discord server, DM, or
 elsewhere. This establishes distribution beyond the integrated formal-friend
 list, but the source does not explicitly enumerate the precise case where the
-recipient is neither a Riot nor Discord friend. `DEF-001` correctly requires a
-two-account current-client test before reliance.
+recipient is neither a Riot nor Discord friend. Riot's troubleshooting also
+says a recipient who cannot see the join option may need updated clients and
+may need to link Riot and Discord; it does not state the minimum recipient-
+linking condition precisely enough for QGuard to assume it. `DEF-001` correctly
+requires a two-account current-client test before reliance.
 
 Discord automation can surround but not replace the Riot-owned action. QGuard
 may create the room and display a link deliberately supplied by the host. No
 reviewed public interface lets QGuard manufacture the lobby link, create the
-ordinary Valorant party, or click acceptance for the user.
+ordinary Valorant party, or click acceptance for the user. Riot's general terms
+restrict unauthorized automation that interacts with Riot Services; they do
+not say that this documented human-copy/human-click flow or external Discord
+room is prohibited. The recorded design therefore keeps every Riot-side action
+with the user and uses only the official feature.
 
 ### Counter-Strike 2
 
@@ -285,9 +297,11 @@ lacks the game-party link. Therefore:
   Invites, rerun this comparison rather than assuming the current negative is
   permanent.
 
-This recommendation reinforces but does not supersede `DEC-018`. The owner has
-not yet approved Discord as the coordination surface or changed the current
-game decision.
+This recommendation reinforces but does not supersede `DEC-018`. `DEC-021`
+accepts the designated-human-host handoff if validation passes and approves
+future generic Discord Game Invite checks for both games. The owner has not yet
+approved Discord as the coordination backbone or changed the current game
+decision.
 
 ## Separated Record
 
@@ -300,6 +314,10 @@ game decision.
   person chat comparable to a Group DM, with supported automated or semi-
   automated assembly and a participant link/code/OAuth path. It does not select
   Discord or authorize implementation.
+- `DEC-021` accepts the designated-human-host Valorant party/link action as a
+  conditional flow, approves future party-entry behavioral tests, and states
+  that a Group DM is unnecessary if the server/private-channel model works. It
+  preserves final backbone selection as a separate critical owner gate.
 
 ### Verified Facts
 
@@ -323,9 +341,10 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
 - Present the Discord-server model as the next owner coordination choice.
 - Keep Group DM OAuth creation as an optional technical spike only if the owner
   values DM-list placement enough to accept its platform risks.
-- Do not run a CS2 Discord test unless the owner wants to challenge the bounded
-  first-party negative; do not treat a successful undocumented observation as
-  permanent provider support.
+- The owner now approves challenging the bounded CS2 finding through the
+  `DEF-002` current-client test. Run it only through the behavioral validation
+  packet, and do not treat a successful undocumented observation as permanent
+  provider support.
 
 ### Open Questions
 
@@ -339,8 +358,8 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
   or loses room permission?
 - If the Valorant link test passes, is its host-copy step sufficiently low
   friction for the first product slice?
-- Is a current-client CS2 Discord Game Invite test worth running despite the
-  lack of game-specific first-party evidence?
+- Will the approved future CS2 Discord Game Invite test expose a repeatable
+  ordinary-party action despite the lack of game-specific first-party evidence?
 
 ### Unperformed Work
 
@@ -349,6 +368,9 @@ Game Invite, Valorant integration, and LFG Channel facts are indexed in the
 - No Riot, Valorant, Steam, or CS2 account/client action occurred.
 - No message or voice capture, provider contact, application, code, or product-
   selection change occurred.
+
+The approved future test cases and their evidence limits are in the
+[party-entry behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
 
 ## Recheck Triggers
 
