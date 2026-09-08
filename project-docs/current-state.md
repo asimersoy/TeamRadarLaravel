@@ -30,13 +30,14 @@
   workspace path.
 - A 2026-09-08 access check verified that this task's shell and exposed GUI
   surfaces remain on the Mac. The Codex app recognizes the connected Windows
-  host `Asims-Desktop`, can read its existing tasks, and can dispatch follow-up
-  work to them, but it does not list a Windows TeamRadar project or expose a
-  Windows GUI surface to this task. Read-only identity-check prompts reached
-  existing Windows-host tasks, but returned no command output after an approval
-  transition; Windows shell execution from this task therefore remains
-  unverified. This is a test-environment readiness fact, not approval of a
-  remote-access design.
+  host `Asims-Desktop` and now lists the non-Git remote project
+  `TeamRadarWindowsRemote` at
+  `C:\Users\asime\Documents\RemoteCodexProjectsFolder\TeamRadar`. A fresh task
+  created from this Mac executed a read-only PowerShell query there and returned
+  the Windows host identity, OS build, working directory, and local time, so
+  remote Windows shell execution is verified. Direct control of the Windows GUI
+  and game clients from this task remains unverified. This is a test-environment
+  readiness fact, not approval of a remote-access design.
 - Relocation baseline: clean `new-development` at
   `66515eb25988c45f260a4a8f74ac9ad36bdc4e82` immediately before and after the
   move, before this workspace-record update.
