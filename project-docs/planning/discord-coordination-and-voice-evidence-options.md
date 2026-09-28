@@ -2,8 +2,8 @@
 
 - **Record type:** current owner proposal and future decision packet
 - **Status:** coordination feasibility researched; private-room lifecycle test
-  activated before owner selection; separate voice-evidence research/review
-  still required
+  on [owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
+  before owner selection; separate voice-evidence research/review still required
 - **Decision owner:** project owner
 - **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
   `DEC-023`; test-only authority, no product implementation authority
@@ -172,8 +172,9 @@ Discord voice is used.
   critical coordination baseline—followed, if applicable, by Discord admission/
   lifecycle and whether any voice capture belongs in the product under a
   complete safeguard set.
-- **Deferred work:** Discord private-room lifecycle testing is now approved and
-  activated as `DEF-003`; Discord product selection and recording are not.
+- **Deferred work:** Discord private-room lifecycle testing remains approved in
+  scope as `DEF-003` but is on owner hold; Discord product selection and recording
+  are not approved.
   No recording implementation has been approved and postponed; recording
   remains an unapproved proposal/queued decision packet. The separate Valorant
   link test is `DEF-001` and the generic Discord Game Invite checks are

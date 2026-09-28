@@ -1,6 +1,6 @@
 # TeamRadar Deferred Work
 
-Status: active 2026-09-07
+Status: updated 2026-09-28; Discord-dependent execution on owner hold
 
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
@@ -8,11 +8,39 @@ implementation are historical evidence, not commitments for the rewrite.
 Work may enter this register only after the owner approves it and intentionally
 postpones it with a return condition.
 
+## Owner Hold — Discord Access — 2026-09-28
+
+- **Decision owner and authority:** project owner, explicit instruction to put
+  the tests on hold until they can get the test working.
+- **Scope:** pause `DEF-001` through `DEF-003`, including the prepared Valorant
+  copied-link wave whose host setup involves Riot/Discord linking. Preserve
+  the approved cases, account preparation, test order, and acceptance criteria.
+- **Reason / evidence class:** the owner reports that Discord is currently
+  inaccessible for testing in Turkey because of the restriction and expects
+  access to reopen. That expectation is owner-reported context, not a verified
+  reopening announcement, date, or legal finding. No date is assumed.
+- **Implementation state:** research and test planning are complete; no live
+  test has run. This is a pause, not a failed or permanently untestable result.
+- **Return condition:** the owner confirms that Discord access is workable for
+  the test and asks to resume. Then recheck current provider/client behavior
+  and the existing account, relationship/link-state, environment, evidence,
+  and cleanup prerequisites before running the first unverified case.
+- **Owner recheck:** required if changed availability or feature behavior calls
+  for a different test flow, game, dependency, or product decision. A reopening
+  announcement alone does not self-activate the test plan.
+- **Unchanged boundaries:** `DEC-018` and the evidence gate in `DEC-023` remain
+  in force; `OQ-011` remains open. No Discord/native backbone, friend-based
+  fallback, VPN workaround, or implementation is selected by this pause.
+  `DEF-004` and `DEF-005` are not cancelled, but this instruction does not start
+  them or reroute work into them. No monitoring or scheduled retry is requested.
+- **Safe work:** owner-requested product discussions that do not presume a
+  tested integration may continue; no such work is started by this record.
+- **Resume packet:**
+  [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
+
 ## DEF-001 - Verify Valorant Non-Friend Lobby-Link Acceptance
 
-- **Status:** approved and activated within the combined validation program;
-  execution awaits specific consenting test accounts/current clients and an
-  agreed minimal evidence/cleanup setup
+- **Status:** approved scope; execution paused by the 2026-09-28 owner hold above
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-018` selects Valorant and requires a scoped
@@ -44,10 +72,10 @@ postpones it with a return condition.
   and recipient unlinked when safely available, and preserve all nonfriend
   relationships through the required cases.
 - **Implementation state:** no experiment or client action performed.
-- **Return condition:** begin live execution when the combined program's
-  readiness inputs are available. Complete it before approving an integration
-  specification or implementation slice that treats the lobby link as
-  dependable.
+- **Return condition:** owner resumes after workable Discord access, followed
+  by the combined program's readiness checks. Complete it before approving an
+  integration specification or implementation slice that treats the lobby link
+  as dependable.
 - **Verification required:** record client/build date, region, mode,
   relationship/account-link state, delivery surface, VPN state, link creation/
   opening/acceptance behavior, party result, repeat result, observed failure
@@ -68,9 +96,7 @@ postpones it with a return condition.
 
 ## DEF-002 - Verify Generic Discord Game Invites For Valorant And CS2
 
-- **Status:** approved and activated within the combined validation program;
-  execution awaits specific consenting test accounts/current clients and an
-  agreed minimal evidence/cleanup setup
+- **Status:** approved scope; execution paused by the 2026-09-28 owner hold above
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-021` approves checking Discord's generic Play,
@@ -92,9 +118,10 @@ postpones it with a return condition.
   and profile level 10 are needed only if a later test specifically requires
   Premier.
 - **Implementation state:** no experiment or client action performed.
-- **Return condition:** begin live execution alongside `DEF-001` when the test
-  environment is available. Valorant's generic case is a friction comparison;
-  CS2's case may determine whether its party-entry assessment should reopen.
+- **Return condition:** owner resumes after workable Discord access, followed
+  by readiness checks alongside `DEF-001`. Valorant's generic case is a friction
+  comparison; CS2's case may determine whether its party-entry assessment should
+  reopen.
 - **Verification required:** record the game/client/version, relationship and
   joinable-party state, exact Discord surface, two attempts, ordinary-party
   result, errors, and cleanup without credentials or unnecessary personal data.
@@ -108,9 +135,7 @@ postpones it with a return condition.
 
 ## DEF-003 - Verify Discord Private Match-Room Lifecycle
 
-- **Status:** approved and activated; execution awaits a human-owned test
-  server, test application/bot, consenting accounts, exact permissions,
-  evidence location, and cleanup owner
+- **Status:** approved scope; execution paused by the 2026-09-28 owner hold above
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-023` requires the deliberately parked Discord/
@@ -132,9 +157,9 @@ postpones it with a return condition.
   relevant; and the combined execution program.
 - **Implementation state:** no application, bot, channel, invitation, OAuth
   grant, role, message, voice connection, permission, or deletion performed.
-- **Return condition:** activate live execution when the readiness inputs are
-  named. A valid result is required before `OQ-011` selects Discord as primary
-  or required coordination.
+- **Return condition:** owner resumes after workable Discord access, followed
+  by the named readiness checks. A valid result is required before `OQ-011`
+  selects Discord as primary or required coordination.
 - **Verification required:** `DCS-1` through `DCS-5`, including targeted-user
   and role-bearing admission (`DCS-2A`), ordinary-invite fallback only when
   needed (`DCS-2B`), matched access, outsider isolation, expired/revoked states,

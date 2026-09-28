@@ -1,9 +1,9 @@
 # QGuard Party-Entry Behavioral Validation Packet
 
 - **Record type:** approved future behavioral-test packet
-- **Status:** activated as the party-entry component of the combined program;
-  live execution awaits the named consenting accounts/current clients and
-  evidence/cleanup setup
+- **Status:** approved test scope; execution paused under the
+  [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
+  existing account/client and evidence/cleanup prerequisites remain required
 - **Test owner:** unassigned
 - **Decision owner:** project owner
 - **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-023`

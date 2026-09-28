@@ -776,3 +776,11 @@ human-host direction or select a coordination backbone; that choice remains
 - **Supersedes:** the readiness implication that `OQ-011` should be decided
   immediately after the 2026-09-06 documentation research
 - **Superseded by:** none
+
+### Subsequent Execution Hold - 2026-09-28
+
+The owner paused Discord-dependent testing until they can get the test working.
+The [canonical hold and return condition](deferred-work.md#owner-hold--discord-access--2026-09-28)
+govern resumption. This changes execution timing only: the test requirement,
+acceptance criteria, current game direction, and unresolved `OQ-011` decision
+are not superseded or waived.

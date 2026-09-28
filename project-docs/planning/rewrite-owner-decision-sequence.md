@@ -192,7 +192,10 @@ now owns the cross-game coordination conclusion.
   application boundary is approved. The later CS2 instruction reopened the
   comparison but did not unambiguously supersede `DEC-018`.
 
-The next bounded work is not a product decision. `DEC-023` requires the
+Discord-dependent execution is on the
+[2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
+After resumption, the next bounded work is not a product decision. `DEC-023`
+requires the
 [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
 to test the Valorant copied link, game-specific Discord Invite/Join, Discord
 private-room lifecycle, Steam non-friend group chat, and current CS2

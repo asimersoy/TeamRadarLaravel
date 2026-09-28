@@ -335,15 +335,16 @@ Historical unknowns do not automatically become requirements.
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
 - **Status:** open; deliberate selection postponed by `DEC-023` until the
-  decision-blocking validation program completes
+  decision-blocking validation program completes; Discord-dependent execution
+  is on the [2026-09-28 owner hold](deferred-work.md#owner-hold--discord-access--2026-09-28)
 - **Decision owner:** project owner
 - **Needed by:** first coordination specification and complete party-handoff
   journey
 - **Blocks:** selecting QGuard-native or Discord coordination as the required
   baseline; specifying a native room, Discord bot/server topology, admission,
   lifecycle, regional fallback, or coordination implementation slice.
-- **Does not block:** executing the approved combined validation program when
-  its environment is available, or game-neutral product-charter discussions.
+- **Does not block:** game-neutral product-charter discussions; test execution
+  only after the applicable owner hold and readiness conditions are satisfied.
 - **Exact decision:** choose among (A) a minimal QGuard-native private match room
   as the required baseline with Discord text/voice optional, (B) Discord server
   channels as primary with a QGuard-native restricted-region fallback, or (C)

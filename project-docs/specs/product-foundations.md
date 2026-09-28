@@ -91,8 +91,8 @@ not inherently required as the delivery surface. This flow is conditionally
 accepted under `DEC-021`, but `DEF-001` must still verify the non-friend case,
 host/recipient account-linking prerequisites, delivery-surface behavior, and
 region/network conditions before reliance. Generic Discord Game Invite checks
-for Valorant and CS2 are activated in direction under `DEF-002` but await their
-live environment.
+for Valorant and CS2 remain approved in scope under `DEF-002`, but execution
+is on the [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
 
 For ordinary-party entry, prefer an official direct Discord join or shareable
 ordinary-lobby link that avoids an in-game friend addition, then another

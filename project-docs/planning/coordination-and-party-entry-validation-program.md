@@ -1,8 +1,9 @@
 # QGuard Coordination And Party-Entry Validation Program
 
 - **Record type:** owner-required pre-decision experiment program
-- **Status:** scope approved and activated; live execution awaits the readiness
-  inputs and external test environment listed below
+- **Status:** scope approved; Discord-dependent execution paused under the
+  [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
+  remaining cases retain their existing readiness gates
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
@@ -25,8 +26,12 @@ return the evidence-backed comparison to the owner. The previously parked
 critical item is `OQ-011`: the Discord/private-room coordination backbone. It
 is now a test target rather than the next immediate decision.
 
-This direction activates the bounded test program. It does not supply accounts,
-credentials, client access, participant consent, a test server/group, or
+The 2026-09-28 owner hold pauses Discord-dependent execution without changing
+this evidence gate. Temporary inability to test does not count as a completed
+negative or permanently untestable case that unlocks product selection.
+
+The earlier direction approved the bounded test program. It does not supply
+accounts, credentials, client access, participant consent, a test server/group, or
 permission to expose secrets. It also does not authorize a permanent Steam
 Community Group, recording, unofficial client automation, matchmaking, provider
 contact, product implementation, publication, or deployment.

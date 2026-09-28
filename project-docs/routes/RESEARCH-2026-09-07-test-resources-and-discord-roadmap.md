@@ -4,8 +4,8 @@
   resource and relationship requirements, maximize safe account/device reuse,
   select the first execution wave, and research shipped/upcoming Discord party-
   join capabilities for Valorant and CS2
-- **Status:** research and execution-readiness planning complete; Wave 1 awaits
-  owner confirmation of the named environment
+- **Status:** research and execution-readiness planning complete; Wave 1 is on
+  [owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
 - **Research owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Started:** 2026-09-07
@@ -146,3 +146,25 @@
   commit. Runtime tests and the portable-system validator were not run because
   no application or reusable workflow changed. No push or provider write was
   performed. Neither-friend party entry remains unverified.
+
+## 2026-09-28 Owner Hold Checkpoint
+
+- **Objective and authority:** record the owner's instruction to pause
+  Discord-dependent tests until they can run them; preserve approved scope.
+- **Route:** deferral/owner review, interruption/recovery, and reconciliation;
+  mandatory entry records and these procedures were read. No new research,
+  external review, experiment execution, delegation, or implementation occurs.
+- **Baseline:** clean `new-development` at `0da7c86`.
+- **Canonical record:**
+  [hold, scope, and return condition](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
+- **Completed:** public research and detailed test planning. **Paused:**
+  `DEF-001` through `DEF-003`. **Untouched:** live accounts/provider state,
+  `DEF-004`/`DEF-005` readiness gates, product choices, legacy code, and the
+  protected workflow package. No test or monitoring process was started.
+- **First step on return:** owner confirms workable Discord access and resumes;
+  recheck sources/clients, then verify the existing Wave 1 readiness matrix.
+- **Verification and commit boundary:** local path links and new hold anchors
+  validated across 52 project Markdown files; `git diff --check` passed;
+  the complete scoped diff was reviewed. One coherent local documentation
+  commit records the hold. No live/app tests, workflow-validator run, remote
+  operation, or automatic retry is part of this checkpoint.

@@ -31,9 +31,11 @@ alternatives. The 2026-09-07 resource/roadmap follow-up establishes that the
 Riot/Discord integration already shipped for Valorant, defines a clean two-PC
 participant topology, identifies four human Discord identities for rigorous
 server-room isolation, adds targeted-user/role-bearing invite admission, and
-selects the neutral-relay Valorant link as Wave 1. Live execution awaits the
-owner's confirmation of that Wave 1 environment. Looking to Play remains
-rejected, and voice recording remains a separate proposal only. No
+selects the neutral-relay Valorant link as Wave 1. Discord-dependent execution
+is now on the [2026-09-28 owner hold](governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
+until the owner can test and resumes; the existing readiness checks still apply.
+Looking to Play remains rejected, and voice recording remains a separate
+proposal only. No
 implementation plan or code change is approved. Everything under `legacy/`
 remains historical evidence.
 

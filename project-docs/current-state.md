@@ -1,14 +1,12 @@
 # QGuard Current State
 
 - **Last updated:** 2026-09-28
-- **Status:** test resources and order are now defined; Wave 1 live execution
-  awaits owner confirmation of two Riot/Discord participant pairs whose A/B
-  accounts are nonfriends on each provider, two concurrent PCs, link states,
-  VPN mode, neutral relay, and redacted evidence/cleanup setup; `OQ-011` still
-  waits for the full comparison
-- **Objective:** provision and execute the neutral-relay Valorant link wave,
-  then continue through the documented coordination/party-entry waves before
-  choosing a backbone or dependable handoff path
+- **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
+  are on owner hold as of 2026-09-28 until the owner can test; no live result
+  exists and `OQ-011` still waits for the full comparison
+- **Objective:** preserve the research and test packet under the
+  [owner hold](governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
+  resume only when the owner confirms workable test access and asks to continue
 - **Current route:**
   [RESEARCH-2026-09-07 Test resources and Discord roadmap](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
 
@@ -191,7 +189,7 @@
   someone who is friends on neither service remains a live-test question.
   The owner's exact announcement has not been supplied. No test passed,
   product choice was approved, or provider state changed in this follow-up.
-- **In progress:** readiness for the
+- **On owner hold:** Discord-dependent execution within the
   [coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md).
   On 2026-09-28 the owner stated the plan to use their existing account for A
   and create fresh Riot/Discord accounts for B using a new email. Preparation
@@ -205,7 +203,8 @@
   yet confirmed. Windows remote shell execution was verified on 2026-09-08;
   that does not establish game-client readiness. Rank fallback, provider
   access, complete wedge, and voice evidence remain outside this test program.
-- **Next:** owner confirms the seven Wave 1 readiness items in the
+- **Next after owner resumption:** recheck current provider/client behavior,
+  then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
   Then freeze the account/client/network matrix and run `ENV-1`, `ENV-2`,
   `VAL-NET-1`, and the neutral `VAL-LINK-*` cases. Do not prepare or mutate the
@@ -394,6 +393,10 @@
   Discord and Steam targets, redacted evidence location, and cleanup owner.
   Creating a new persistent Steam Community Group requires a separate exact
   target approval.
+- The 2026-09-28 owner hold additionally pauses `DEF-001` through `DEF-003`
+  until the owner can test and resumes. Do not treat the access problem as a
+  failed test, close `OQ-011`, automatically retry, or divert into Steam/CS2
+  testing. No reopening date is verified or required for this pause record.
 - Discord room creation is approved only inside the bounded `DCS-1` through
   `DCS-5` test after its exact server, accounts, permissions, evidence, and
   cleanup are named; a Discord product topology is not approved. Voice

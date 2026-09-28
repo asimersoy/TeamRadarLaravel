@@ -1,7 +1,9 @@
 # QGuard Coordination Test Resources And Sequence
 
 - **Record type:** execution-readiness and resource plan
-- **Status:** ready for owner provisioning; no live test has started
+- **Status:** Wave 1 and Discord-dependent tests on
+  [owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
+  preparation retained for resumption; no live test has started
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Authority:** `DEC-016`, `DEC-018` through `DEC-023`
@@ -14,9 +16,11 @@
 - **Execution parent:**
   [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
 
-## Immediate Owner Preparation Request
+## Owner Preparation After Resumption
 
-Prepare only **Wave 1** first:
+No provisioning or workaround is requested during the hold. After the owner
+confirms workable Discord test access and resumes, recheck the current
+requirements below and prepare only **Wave 1** first:
 
 - two PCs able to run the current Riot Client and Valorant concurrently;
 - two consenting Riot/Valorant accounts, `Riot-A` and `Riot-B`, that are not
