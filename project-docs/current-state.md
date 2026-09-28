@@ -1,6 +1,6 @@
 # QGuard Current State
 
-- **Last updated:** 2026-09-08
+- **Last updated:** 2026-09-28
 - **Status:** test resources and order are now defined; Wave 1 live execution
   awaits owner confirmation of two Riot/Discord participant pairs whose A/B
   accounts are nonfriends on each provider, two concurrent PCs, link states,
@@ -185,13 +185,18 @@
   invites, and selects neutral-relay Valorant link testing as Wave 1.
 - **In progress:** readiness for the
   [coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md).
+  On 2026-09-28 the owner stated the plan to use their existing account for A
+  and create fresh Riot/Discord accounts for B using a new email. Preparation
+  and the tutorial requirement are recorded in the
+  [resource plan](planning/coordination-test-resources-and-sequence.md#owner-account-preparation--2026-09-28);
+  account creation and client readiness are not yet verified.
   `DEF-001` through `DEF-005` now cover the Valorant link, generic Discord game
   invites, Discord private-room lifecycle, Steam non-friend group chat, and
   current CS2 alternatives. Live execution has not started because the named
-  Windows/client/account environment and evidence/cleanup setup are not
-  available to this repository task; the current execution host reports
-  `Darwin arm64`. Rank fallback, provider access, complete wedge, and voice
-  evidence remain outside this test program.
+  two-PC game-client/account environment and evidence/cleanup setup are not
+  yet confirmed. Windows remote shell execution was verified on 2026-09-08;
+  that does not establish game-client readiness. Rank fallback, provider
+  access, complete wedge, and voice evidence remain outside this test program.
 - **Next:** owner confirms the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
   Then freeze the account/client/network matrix and run `ENV-1`, `ENV-2`,

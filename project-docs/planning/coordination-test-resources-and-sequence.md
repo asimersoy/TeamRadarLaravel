@@ -7,6 +7,7 @@
 - **Authority:** `DEC-016`, `DEC-018` through `DEC-023`
 - **Serves:** `DEF-001` through `DEF-005` and `OQ-011`
 - **Created:** 2026-09-07
+- **Last updated:** 2026-09-28
 - **Implementation authority:** test-only; no product implementation
 - **Source companion:**
   [Discord party-entry current state and roadmap](../research/discord-party-entry-current-and-roadmap.md)
@@ -39,6 +40,46 @@ Do not add the accounts as friends to make setup easier. Do not link the second
 Riot/Discord pair before its unlinked state is recorded. No Discord server,
 bot, Steam account, third Discord control account, or CS2 installation is
 needed for the first wave.
+
+### Owner Account Preparation — 2026-09-28
+
+- **Owner's stated plan:** use the owner's existing account for A; create a
+  new email address and use it to register separate Riot and Discord accounts
+  for B. Account creation, tutorial completion, region, and link state have not
+  yet been confirmed. No email address or account identifier is recorded.
+- **Preparation:** complete B's mandatory Valorant Basic Training and reach
+  the normal Play/lobby screen. Riot documents the follow-on Bot Training
+  Match as optional. Record any additional requirement the current client
+  actually presents.
+- **Test scope:** use an ordinary party with a non-Competitive mode selected.
+  This test ends at party membership; account level 20, ranked placements,
+  and ranked matches are not preparation requirements. A pass does not prove
+  Competitive queue eligibility.
+- **Relationship controls:** keep A and B as nonfriends on Riot and Discord.
+  Leave B's Riot and Discord accounts unlinked until the unlinked-recipient
+  attempt. Reusing an email across the two services does not perform Riot's
+  explicit account-connection flow. The host uses its own Riot/Discord pair.
+- **Region preparation:** register and first launch Riot/Valorant through the
+  normal local connection where possible, and verify A and B have compatible
+  shards before testing. A foreign VPN route during first use can affect shard
+  assignment. Discord access can be prepared separately.
+
+Sources checked on 2026-09-28; primary agent owns this preparation guidance:
+
+| Publisher and source | Supports | Limit |
+|---|---|---|
+| Riot, [VALORANT Patch Notes 9.02](https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-902/) | PC tutorial is mandatory; Bot Training Match is optional | Published 2024-07-30; documentation, not an observation of B's current client |
+| Riot Support, [Competitive Mode FAQ](https://support.riotgames.com/en-us/valorant/gameplay/valorant-competitive-mode-faq) | New accounts need level 20 for Competitive access | Does not establish the copied-link recipient requirements |
+| Riot, [Discord account linking](https://www.riotgames.com/en/riot-games-discord-account-linking) | Account connection requires an explicit linking flow | Does not prove nonfriend acceptance or B's current link state |
+| Riot Support, [Welcome to VALORANT](https://support.riotgames.com/en-us/valorant/gameplay/welcome-to-valorant/) | Initial location/shard relationship and VPN caution | A/B shard compatibility still needs verification |
+
+**Follow-up route:** account-readiness clarification under `DEF-001`;
+research/sourcing, privacy/data, and interruption/recovery procedures apply.
+Baseline: clean `new-development` at `50d5af1`. Existing test scope and pass
+criteria remain in force. Verification covers cited sources, local links,
+`git diff --check`, and the scoped diff before one local documentation commit.
+No live account, client, remote task, or provider state was changed in this
+follow-up; execution and the remaining readiness checks are pending.
 
 ## Resource Topology
 
