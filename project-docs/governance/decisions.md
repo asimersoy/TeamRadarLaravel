@@ -732,7 +732,8 @@ human-host direction or select a coordination backbone; that choice remains
 ## DEC-023 - Require Feasibility Tests Before Selecting The Coordination Path
 
 - **Date:** 2026-09-07
-- **Status:** approved process and evidence gate
+- **Status:** partially superseded by `DEC-024` for planning-direction timing;
+  live evidence requirements remain in force
 - **Decision owner:** project owner
 - **Decision:** Do not select Discord, QGuard-native coordination, the copied
   Riot lobby link as the dependable handoff, or a game-specific Discord Join
@@ -775,7 +776,8 @@ human-host direction or select a coordination backbone; that choice remains
   under `DEC-018` through `DEC-022` until the evidence gate is met
 - **Supersedes:** the readiness implication that `OQ-011` should be decided
   immediately after the 2026-09-06 documentation research
-- **Superseded by:** none
+- **Superseded by:** `DEC-024` only for choosing Discord room/voice direction
+  and proceeding with surrounding specifications before live tests
 
 ### Subsequent Execution Hold - 2026-09-28
 
@@ -784,3 +786,56 @@ The [canonical hold and return condition](deferred-work.md#owner-hold--discord-a
 govern resumption. This changes execution timing only: the test requirement,
 acceptance criteria, current game direction, and unresolved `OQ-011` decision
 are not superseded or waived.
+
+## DEC-024 - Plan Discord Rooms With Replaceable Game-Party Joining
+
+- **Date:** 2026-09-28
+- **Status:** approved planning direction; actual game joining unimplemented
+- **Decision owner:** project owner
+- **Decision:** Choose Discord rooms and voice as the planning direction now.
+  Keep game-party joining a replaceable component rather than commit to one
+  integration. Prefer the game's Discord Join action if it works for the
+  intended nonfriend case. The accepted alternative is a designated matched
+  player creating the ordinary game lobby, obtaining its official link, and
+  sharing it in a QGuard Discord text channel visible only to the matched
+  players. Other matched players click that link. Either method is acceptable
+  if verified; Discord room/voice provision stays in the flow either way.
+- **Reason:** Allow surrounding product planning and eventual implementation
+  to progress without prematurely depending on an unverified joining method.
+  The owner explicitly confirmed the previously presented gate change and
+  clarified that the link alternative uses a private matched-team Discord
+  text channel, not a QGuard-native link-delivery fallback.
+- **Alternatives considered:** wait for all live tests before selecting any
+  coordination direction; require QGuard-native coordination; or lock the
+  product to one joining integration. None is selected by this decision.
+- **Consequences:** The basic Discord coordination direction is settled and
+  does not need another confirmation. Product specifications may now develop
+  around that boundary. The request to plan and implement the surrounding
+  system remains subject to `DEC-008`: each implementation slice requires its
+  applicable approved specifications. No stack, detailed contract, complete
+  implementation plan, or general specification-gate override is approved.
+- **Evidence and hold:** Actual game joining stays unimplemented. `DEF-001`
+  through `DEF-003` remain on owner hold; no live tests resume. A placeholder
+  or mock is not proof that either handoff or the Discord room lifecycle works.
+  Applicable behavioral evidence remains necessary before relying on a live
+  method. If neither works, return to the owner before substituting another
+  flow. No existing Steam/CS2 test is cancelled or started by this decision.
+- **Unresolved:** mandatory versus optional participant voice attendance,
+  admission/account linking, host selection/replacement, room lifecycle,
+  permission/privileged-access details, data handling, restricted-region
+  behavior, and the final validated game-join method. Voice recording and
+  monitoring remain unapproved. Discord voice membership is not game-party
+  membership; a lobby link does not repair unavailable Discord voice access.
+- **Affected records:** `OQ-011`, deferred-work hold, current state, specification
+  index and foundations, coordination options, validation program, owner
+  sequence, and [coordination and party-handoff specification](../specs/coordination-and-party-handoff.md)
+- **Return condition:** approve the required specification modules before each
+  implementation slice; resume live validation only on the existing owner
+  return condition. Revisit material provider failures or changed product
+  scope with the owner.
+- **Supersedes:** `DEC-023` only insofar as it required all relevant tests before
+  selecting the Discord room/voice planning direction; supersedes the pending
+  confirmation in the 2026-09-28 separation proposal. `DEC-018` game direction,
+  applicable live-evidence gates, the test hold, and controlled-operation gates
+  remain unchanged.
+- **Superseded by:** none

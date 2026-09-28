@@ -1,28 +1,32 @@
 # QGuard Discord Coordination And Voice-Evidence Options
 
-- **Record type:** current owner proposal and future decision packet
-- **Status:** coordination feasibility researched; private-room lifecycle test
-  on [owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
-  before owner selection; latest separation proposal awaits confirmation of
-  its limited change to `DEC-023`; recording remains unapproved
+- **Record type:** coordination decision history and remaining voice-evidence options
+- **Status:** Discord room/voice planning approved by `DEC-024`; current
+  specification is [coordination and party handoff](../specs/coordination-and-party-handoff.md).
+  Live tests remain on hold and recording remains unapproved
 - **Decision owner:** project owner
 - **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
-  `DEC-023`; test-only authority, no product implementation authority
+  `DEC-024`; detailed implementation remains specification-gated
 - **Created:** 2026-09-05
 - **Update trigger:** coordination-surface, Discord, voice-data, report-evidence,
   moderation, or permitted-use decision
 
 ## Purpose
 
-Preserve the owner's Discord-room and voice-evidence idea without treating it
-as an approved feature, technical fact, provider permission, or legal
-conclusion. Keep it separate from the approved Valorant lobby-link flow so a
-lower-risk coordination choice does not silently authorize voice collection.
+Preserve the history of Discord-room and voice-evidence options. `DEC-024`
+selects Discord room/voice planning and matched-only text for the lobby-link
+alternative; the linked specification owns the current boundary. That choice
+does not establish working provider behavior or approve recording. Keep voice
+evidence proposals separate from ordinary communication.
 
 The current technical comparison is recorded in the
 [Discord coordination and game-join report](../research/discord-coordination-and-game-join-comparison.md).
 
 ## Owner Proposal
+
+Historical development of the proposal follows. The subsequent approval in
+`DEC-024` and the linked specification control current work, not earlier
+statements below that coordination selection is pending.
 
 Instead of, or in addition to, a QGuard-native room, QGuard could use a bot in
 an official QGuard Discord server to create a temporary private coordination
@@ -61,8 +65,13 @@ optional behavioral test under `DEF-002`.
 
 ## Proposed Separation — 2026-09-28
 
-**Status:** owner-stated direction plus agent planning proposal; not an approved
-specification, architecture, implementation slice, or superseding decision.
+**Status:** historical proposal, subsequently accepted in the limited scope of
+`DEC-024`. Its pending-confirmation wording below records the earlier review,
+not a current approval request. The owner additionally specifies matched-only
+Discord text for the host-link alternative. Current approved requirements and
+remaining draft details are separated in the
+[coordination module](../specs/coordination-and-party-handoff.md); no full
+technical specification or implementation slice is approved by this history.
 
 **Owner-stated intent:** continue defining the system while leaving the actual
 game-party integration unimplemented. Provide a Discord voice room in either
@@ -142,8 +151,9 @@ transcription, surveillance, and report-audio retention remain unapproved.
 | Participant-submitted evidence | Discord voice may be used, but QGuard does not record every session | A reporter may submit evidence under a later approved policy | Lower routine collection, but incomplete and potentially manipulable evidence |
 | Live or automated monitoring | A person or system evaluates speech during play | May create alerts, scores, or evidence | Highest sensitivity and complexity; separate from after-report review |
 
-No option is selected by this packet. Recording is not required merely because
-Discord voice is used.
+This table preserves the compared options. `DEC-024` selects Discord rooms/
+voice for planning; other options are not simultaneous requirements. Recording
+is not required or approved merely because Discord voice is selected.
 
 ## Verified Facts
 
@@ -184,16 +194,15 @@ Discord voice is used.
 
 ## Required Decisions Before Research Becomes A Specification
 
-1. Is a minimal QGuard-native private match room the required coordination and
-   link-delivery baseline, with Discord text/voice optional; is Discord primary
-   with a native fallback; or is Discord required with explicit regional
-   handling?
-2. If Discord is selected, is the supported server/private-channel model
-   acceptable, or is placement in the Direct Messages list important enough to
-   pursue the constrained Group DM endpoint?
+1. **Direction settled by `DEC-024`:** Discord rooms/voice and matched-only
+   Discord text for the link alternative. Regional/access failure handling is
+   still open; a native voice fallback is not selected.
+2. **Shape settled for planning:** QGuard Discord server with matched-team
+   channels, not a required Group DM. Detailed access/permission rules remain.
 3. Should users join through a short-lived server invite, consent to OAuth
    `guilds.join`, or use a combination? Does membership persist after the match?
-4. Is a temporary voice channel part of the first product journey?
+4. Voice-room provision is selected; must participants attend, and when should
+   rooms be created and removed?
 5. Is QGuard voice capture needed at all? If yes, is it full-session recording,
    a bounded rolling buffer, participant-triggered capture, or another model?
 6. Who is recorded, who can review, what events unlock access, and what can the
@@ -206,6 +215,11 @@ Discord voice is used.
    moderation, and safeguarding reviews gate the concrete design?
 
 ## Required Evidence Before Approval
+
+Coordination evidence gates real integration reliance, not the already-approved
+planning direction. Recording-specific evidence below is conditional on a
+later separately scoped recording proposal; it is not a prerequisite for
+designing ordinary Discord voice.
 
 - Execute `DCS-1` through `DCS-5` in the
   [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md):
@@ -231,22 +245,22 @@ Discord voice is used.
 - **Owner decision:** Valorant and its official lobby-link candidate are
   selected under `DEC-018`; `DEC-020` defines the coordination-group criterion;
   `DEC-021` accepts a designated matched human as party/link host if the flow
-  passes validation.
-- **Owner proposal:** temporary Discord coordination rooms and possible
-  report-reviewable session audio.
+  passes validation. `DEC-024` selects Discord rooms/voice for planning,
+  replaceable game joining, and private matched-only Discord text for the
+  host-link alternative while keeping real joining and live tests on hold.
+- **Owner proposal, still unapproved:** report-reviewable session audio.
 - **Research result:** a bot-managed private text/voice channel pair inside an
   existing QGuard Discord server is a supported optional coordination design.
   It is not required to deliver Riot's host-copied link. A Group DM is only an
   experimental/weak alternative. Valorant has a host-copied party link; direct
   Discord-friend invite is a separate mechanism, and no comparable CS2 Discord
   party handoff is established.
-- **Open question:** `OQ-011`—which native/Discord dependency model becomes the
-  critical coordination baseline—followed, if applicable, by Discord admission/
-  lifecycle and whether any voice capture belongs in the product under a
-  complete safeguard set.
+- **Open question:** remaining `OQ-011` attendance, admission, lifecycle,
+  permissions, host/recovery and regional rules. The basic Discord choice is
+  settled. Any voice capture needs a separate decision and safeguard set.
 - **Deferred work:** Discord private-room lifecycle testing remains approved in
-  scope as `DEF-003` but is on owner hold; Discord product selection and recording
-  are not approved.
+  scope as `DEF-003` but is on owner hold; the Discord planning direction is
+  approved, while recording is not.
   No recording implementation has been approved and postponed; recording
   remains an unapproved proposal/queued decision packet. The separate Valorant
   link test is `DEF-001` and the generic Discord Game Invite checks are

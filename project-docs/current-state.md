@@ -3,13 +3,13 @@
 - **Last updated:** 2026-09-28
 - **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
   are on owner hold as of 2026-09-28 until the owner can test; no live result
-  exists; the latest Discord-voice/replaceable-handoff proposal awaits a narrow
-  owner confirmation about `DEC-023`, not implementation approval
-- **Objective:** review the
-  [proposed separation](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
-  while preserving the existing test hold and evidence gates
+  exists. `DEC-024` approves Discord rooms/voice as the planning direction and
+  replaceable game joining; detailed specifications remain incomplete
+- **Objective:** develop the
+  [coordination and party-handoff specification](specs/coordination-and-party-handoff.md)
+  around that approved direction while preserving the test hold and slice gates
 - **Current route:**
-  [Discord coordination proposal and review boundary](planning/discord-coordination-and-voice-evidence-options.md#route-and-completion-boundary)
+  [Coordination specification and documentation checkpoint](specs/coordination-and-party-handoff.md#route-and-documentation-checkpoint)
 
 ## Verified Workspace State
 
@@ -113,18 +113,19 @@
   be carried by Discord or a QGuard-native private match surface; exact host/
   recipient account-link, non-friend, region, and VPN behavior remains gated by
   `DEF-001` and `DEF-002`.
-- `DEC-023` requires the current-client and coordination-lifecycle tests before
-  `OQ-011` is decided. It activates the combined validation program, retrieves
-  the parked Discord private-room lifecycle item and earlier Steam/CS2 tests,
-  preserves Looking to Play as rejected, and keeps Group DM and voice-recording
-  work conditional or unapproved as recorded.
+- `DEC-024` partially supersedes `DEC-023`: Discord rooms/voice and a private
+  matched-only Discord text channel for the human-hosted link alternative are
+  selected for planning now. Game joining remains replaceable: prefer a
+  validated Discord game Join action, accept the official human-hosted link
+  otherwise. Actual joining stays unimplemented, live tests remain on hold,
+  and surrounding implementation still needs its approved slice specifications.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
-  API integration, coordination surface, matching criteria, honor
+  API integration, coordination operating rules, matching criteria, honor
   formula/effect, moderation policy, architecture, technology, deployment, or
-  implementation plan has been approved. Temporary Discord rooms and voice
-  recording remain an owner proposal, not a product decision.
+  implementation plan has been approved. Discord room/voice direction is
+  selected; voice recording remains an unapproved proposal.
 
 ## Work State
 
@@ -204,13 +205,15 @@
   yet confirmed. Windows remote shell execution was verified on 2026-09-08;
   that does not establish game-client readiness. Rank fallback, provider
   access, complete wedge, and voice evidence remain outside this test program.
-- **Pending owner confirmation:** the owner asks to keep Discord voice/rooms
-  in either flow and leave the game-party join integration unimplemented,
-  considering Discord Join first and a human-hosted official lobby link as
-  the alternative. The linked proposal separates these concerns and requests
-  an explicit limited change to `DEC-023` before fixing the coordination
-  direction ahead of tests. No new numbered decision, code, live integration,
-  recording approval, or test resumption is claimed.
+- **Completed:** explicit owner approval is recorded as `DEC-024`; the new
+  coordination module separates approved direction from detailed proposals and
+  outlines independent implementation slices. The link alternative uses a
+  Discord text channel visible only to the matched players. No code, live
+  integration, recording approval or test resumption is claimed.
+- **Next planning decision:** must each matched player attend Discord voice,
+  or should the room be provided with attendance optional? Resolve remaining
+  admission/lifecycle/host/data/technical details incrementally before their
+  respective implementation slices, not as a new bulk questionnaire.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
@@ -218,9 +221,9 @@
   `VAL-NET-1`, and the neutral `VAL-LINK-*` cases. Do not prepare or mutate the
   Discord server/bot or Steam group until its later wave is ready. Obtain
   separate exact approval before creating any new persistent Steam Community
-  Group. After all decision-blocking results, reconcile the mechanism matrix
-  and return `OQ-011` to the owner; do not ask for the product choice before
-  then.
+  Group. Reconcile the mechanism results and remaining operational questions;
+  do not re-ask the basic Discord planning choice or treat documentation/mocks
+  as behavioral evidence.
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
@@ -369,11 +372,9 @@
   but no supported QGuard creation/management API was found. Under `DEC-020`,
   they do not meet the preferred coordination criterion. Persistent Steam
   Community Groups are not the requested communication object.
-- Discord server/private-channel coordination is technically supported but not
-  yet selected and is not inherently required to deliver Riot's copied lobby
-  link. A human-owned QGuard server, user consent/admission, exact permissions
-  and lifecycle, data minimization, and failure behavior remain owner/
-  specification gates if Discord stays in the design.
+- Discord room/voice planning and private matched-only text for the link
+  alternative are selected by `DEC-024`. Admission, exact permissions,
+  lifecycle, data minimization and failure behavior remain specification gates.
 - Discord application-created Group DMs are not a dependable default: the
   documented endpoint originated with deprecated GameBridge, is capped at ten
   active groups, and cannot contain a bot.
@@ -386,16 +387,16 @@
 - No current first-party CS2 Discord Game Invite was established. Discord room
   success is not CS2 party-entry evidence. The owner has approved a bounded
   future current-client check in `DEF-002`, but no test occurred here.
-- The Discord findings and approved party-entry test scope do not supersede
-  `DEC-018`, select a Discord application/server/bot as the product backbone,
-  approve persistent membership, or authorize message or voice collection.
+- `DEC-024` selects the Discord planning direction but does not supersede
+  `DEC-018`, approve persistent membership, choose a detailed bot design, or
+  authorize message surveillance or voice recording.
 - QGuard has a broad international direction under `DEC-022`, but exact launch
   coverage remains open. A Turkey/VPN observation is test evidence only, not an
   official-availability or legal conclusion.
-- `DEC-023` postpones the coordination/path selection until the combined
-  decision-blocking tests produce valid evidence. Documentation support or one
-  isolated pass cannot close `OQ-011`; valid negative and `not-testable` results
-  must remain visible in the final comparison.
+- `DEC-023` retains its applicable live-evidence gates; `DEC-024` removes the
+  requirement to await all tests before selecting this planning direction.
+  `OQ-011` is partly resolved, not wholly closed. Mocks and one isolated pass
+  do not prove the remaining end-to-end behavior.
 - Live execution is currently readiness-blocked by the absence of the named
   Windows client environment, consenting account/relationship matrix, exact
   Discord and Steam targets, redacted evidence location, and cleanup owner.
@@ -403,11 +404,11 @@
   target approval.
 - The 2026-09-28 owner hold additionally pauses `DEF-001` through `DEF-003`
   until the owner can test and resumes. Do not treat the access problem as a
-  failed test, close `OQ-011`, automatically retry, or divert into Steam/CS2
+  failed test, automatically close remaining questions, retry, or divert into Steam/CS2
   testing. No reopening date is verified or required for this pause record.
 - Discord room creation is approved only inside the bounded `DCS-1` through
   `DCS-5` test after its exact server, accounts, permissions, evidence, and
-  cleanup are named; a Discord product topology is not approved. Voice
+  cleanup are named; detailed operational specifications remain open. Voice
   recording is not approved. In particular, later report review would require
   prior audio capture and retention and therefore cannot be introduced as an
   incidental bot feature.

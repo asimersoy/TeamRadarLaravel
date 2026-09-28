@@ -6,7 +6,7 @@
   preparation retained for resumption; no live test has started
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
-- **Authority:** `DEC-016`, `DEC-018` through `DEC-023`
+- **Authority:** `DEC-016`, `DEC-018` through `DEC-024`
 - **Serves:** `DEF-001` through `DEF-005` and `OQ-011`
 - **Created:** 2026-09-07
 - **Last updated:** 2026-09-28
@@ -326,7 +326,10 @@ use an administrator as evidence of ordinary access restriction.
 - Discord private-room lifecycle: `DEF-003`.
 - Steam non-friend saved group chat: `DEF-004`.
 - Current CS2 alternative paths and gated Community Group bridge: `DEF-005`.
-- Final QGuard-native/Discord backbone and handoff selection: `OQ-011`.
+- Discord room/voice planning is selected by `DEC-024`; remaining attendance,
+  admission, lifecycle, regional behavior and validated handoff details:
+  `OQ-011`. The preserved neutral-relay test is diagnostic, not a selected
+  QGuard-native product fallback.
 
 ## Readiness Gate For Wave 1
 

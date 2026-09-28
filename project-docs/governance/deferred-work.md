@@ -28,13 +28,16 @@ postpones it with a return condition.
 - **Owner recheck:** required if changed availability or feature behavior calls
   for a different test flow, game, dependency, or product decision. A reopening
   announcement alone does not self-activate the test plan.
-- **Unchanged boundaries:** `DEC-018` and the evidence gate in `DEC-023` remain
-  in force; `OQ-011` remains open. No Discord/native backbone, friend-based
-  fallback, VPN workaround, or implementation is selected by this pause.
+- **Current boundaries:** `DEC-018` and applicable live-evidence gates remain
+  in force. The subsequent `DEC-024` selects Discord room/voice planning and
+  replaceable joining without lifting this hold; `OQ-011` is partly resolved.
+  No friend-based fallback, VPN workaround or actual joining implementation
+  is authorized. Surrounding implementation remains specification-gated.
   `DEF-004` and `DEF-005` are not cancelled, but this instruction does not start
   them or reroute work into them. No monitoring or scheduled retry is requested.
-- **Safe work:** owner-requested product discussions that do not presume a
-  tested integration may continue; no such work is started by this record.
+- **Safe work:** under `DEC-024`, surrounding specifications may proceed, and
+  approved provider-independent slices may later be implemented, without
+  presuming a tested integration or lifting this live-test hold.
 - **Resume packet:**
   [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
 
@@ -139,7 +142,8 @@ postpones it with a return condition.
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-023` requires the deliberately parked Discord/
-  private-room backbone candidate to be tested before `OQ-011` is decided.
+  private-room behavior to be tested. `DEC-024` now selects its planning
+  direction ahead of those tests, but does not establish working behavior.
 - **Objective:** prove through supported Discord interfaces that QGuard can
   create private per-match text and voice channels, admit matched non-friends,
   isolate them from an ordinary nonparticipant, exercise permission/invite
@@ -158,8 +162,9 @@ postpones it with a return condition.
 - **Implementation state:** no application, bot, channel, invitation, OAuth
   grant, role, message, voice connection, permission, or deletion performed.
 - **Return condition:** owner resumes after workable Discord access, followed
-  by the named readiness checks. A valid result is required before `OQ-011`
-  selects Discord as primary or required coordination.
+  by the named readiness checks. A valid result is required before the product
+  relies on the real room's operational behavior; the planning direction is
+  already selected by `DEC-024`.
 - **Verification required:** `DCS-1` through `DCS-5`, including targeted-user
   and role-bearing admission (`DCS-2A`), ordinary-invite fallback only when
   needed (`DCS-2B`), matched access, outsider isolation, expired/revoked states,

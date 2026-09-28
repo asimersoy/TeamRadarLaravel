@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-023`
+- **Authority:** `DEC-009` through `DEC-024`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -111,12 +111,17 @@ generic Discord Game Invites for Valorant and CS2. See the focused
 [party-entry and policy findings](../research/party-entry-and-policy-fit.md) and
 [behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
 
-`DEC-023` strengthens this gate: do not select the coordination or dependable
-party-handoff path until the combined
+`DEC-023` established the combined
 [coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md)
-has tested the decision-blocking Valorant, Discord, Steam, and current CS2
-mechanisms and returned a reconciled comparison to the owner. A documented
-capability or isolated passing test is not product selection.
+as the evidence gate. `DEC-024` now selects Discord room/voice planning before
+those tests and keeps joining replaceable: a game-specific Discord Join action
+is preferred if validated; the accepted alternative is a matched human sharing
+the official lobby link in a private Discord text channel visible only to the
+matched players. Actual game joining stays unimplemented and live tests stay
+paused. The surrounding system may be specified and later implemented in
+approved slices without assuming a working external integration. A documented
+capability or mock result is not a behavioral pass. See the
+[coordination and party-handoff module](coordination-and-party-handoff.md).
 
 If the approved Valorant flow requires RSO, a provider-independent working or
 mostly testable prototype may use clearly identified mock data for RSO-
@@ -126,11 +131,13 @@ submitting an application, using credentials, or assuming approval.
 
 ### Coordination And Voice Evidence
 
-The official lobby link may be shared through a QGuard-native room or another
-later-approved coordination surface. The owner has proposed that a QGuard
-Discord bot might instead create temporary private text and voice rooms for
-matched groups, with possible session-audio retention so an operator could
-review evidence after a report.
+Discord rooms and voice are now the approved planning direction (`DEC-024`).
+The host-link alternative uses a matched-only text channel in the QGuard
+Discord server. A QGuard-native link surface remains technically distinct but
+is not the selected fallback in this decision. Room lifetime, attendance,
+admission, permissions and operating rules remain open. Earlier session-audio
+retention for report review remains an unapproved proposal, not part of the
+room/voice selection.
 
 Steam group chat is now another researched coordination proposal. It can
 provide text and voice to group members and may admit non-friends through a
@@ -146,10 +153,11 @@ coordination design. Users can enter through constrained server invitations or
 OAuth `guilds.join`, and the bot can manage permissions and channel cleanup.
 Discord Group DMs more closely resemble the requested UI, but their documented
 application-creation endpoint originated with deprecated GameBridge, is capped
-at ten active Group DMs, and cannot contain a bot. These findings do not select
-the Discord-server model or approve its data flow, implementation, membership
-lifecycle, or message/voice collection. A minimal QGuard-native room is now the
-agent's recommended required baseline under open `OQ-011`; it is not approved.
+at ten active Group DMs, and cannot contain a bot. The owner, not these findings,
+selects the Discord planning direction through `DEC-024`. Data flow, detailed
+implementation, membership lifecycle and recording remain unapproved. The
+earlier agent recommendation of a required native coordination room is not
+selected; `OQ-011` is partly resolved and now tracks the remaining detail.
 
 ### Availability Direction
 

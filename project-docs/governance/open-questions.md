@@ -150,10 +150,13 @@ Historical unknowns do not automatically become requirements.
   and automation criterion. Current first-party research finds that bot-created
   private text/voice channels in an existing QGuard Discord server can meet that
   criterion; application-created Group DMs are a constrained alternative. No
-  Discord surface is selected yet. `DEC-021` confirms that Group DMs are not
-  needed if the server/private-channel model works, but preserves final server
+  Discord surface had been selected at that stage. `DEC-021` confirms that
+  Group DMs are not needed if the server/private-channel model works, but preserves final server
   selection as the critical `OQ-011` gate. See the
   [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
+  `DEC-024` now selects Discord room/voice planning and the private matched-only
+  text-channel link alternative; attendance, admission, lifecycle, data and
+  recording questions are not resolved by that selection.
 - **Decision components:** directory versus queue versus recommendation;
   matching inputs and explanations; whether reputation affects information,
   ordering, or eligibility; review/report scope; moderation/appeals; account and
@@ -288,13 +291,15 @@ Historical unknowns do not automatically become requirements.
   behavior and provider-access path; and fresh provider evidence before any
   integration specification or application. A queued or activated test is not
   current evidence of a supported route.
-- **Resolved by:** `DEC-018` remains current for game selection; coordination,
-  behavioral verification, rank, and provider access unresolved
+- **Resolved by:** `DEC-018` for game selection and `DEC-024` for Discord
+  coordination planning; behavioral verification, rank and provider access
+  remain unresolved
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
-- **Status:** partially resolved by `DEC-018`; candidate ordering, party-entry
-  test failure, and rank fallback remain open
+- **Status:** partially resolved by `DEC-018` and `DEC-024`; Discord-native Join
+  is preferred with a private-Discord-text human-hosted link alternative;
+  failure of both methods, operational recovery and rank fallback remain open
 - **Decision owner:** project owner
 - **Needed by:** the smallest complete user journey and its recovery behavior
 - **Blocks:** approving the rank fallback, party-formation flow, and associated
@@ -328,29 +333,35 @@ Historical unknowns do not automatically become requirements.
   different Custom Match product. Rank still requires an approved official,
   partial, or truthfully labelled fallback behavior.
 - **Evidence needed:** `OQ-009` findings; the combined coordination/party-entry
-  test results; later owner coordination-surface selection; and the owner's
+  test results; remaining operational coordination decisions; and the owner's
   alternate flow proposals and tolerance for added user friction.
-- **Resolved by:** `DEC-018` for the preferred game/link direction only
+- **Resolved by:** `DEC-018` for game direction; `DEC-024` for the two accepted
+  replaceable joining candidates and the private Discord link-sharing surface
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
-- **Status:** open; deliberate selection postponed by `DEC-023` until the
-  decision-blocking validation program completes; Discord-dependent execution
+- **Status:** partially resolved by `DEC-024`: Discord room/voice planning and
+  replaceable joining are selected; operational specifications and evidence
+  remain open. Discord-dependent execution
   is on the [2026-09-28 owner hold](deferred-work.md#owner-hold--discord-access--2026-09-28)
 - **Decision owner:** project owner
 - **Needed by:** first coordination specification and complete party-handoff
   journey
-- **Blocks:** selecting QGuard-native or Discord coordination as the required
-  baseline; specifying a native room, Discord bot/server topology, admission,
-  lifecycle, regional fallback, or coordination implementation slice.
-- **Does not block:** game-neutral product-charter discussions; test execution
-  only after the applicable owner hold and readiness conditions are satisfied.
-- **Exact decision:** choose among (A) a minimal QGuard-native private match room
-  as the required baseline with Discord text/voice optional, (B) Discord server
-  channels as primary with a QGuard-native restricted-region fallback, or (C)
-  Discord as a required dependency with explicit unsupported-region handling.
-  In every option, decide separately whether party entry relies on the official
-  copied Riot lobby link or a verified game-specific Discord Join action.
+- **Blocks:** implementing a slice whose voice-attendance, admission, lifecycle,
+  permissions, data, host/recovery or regional-access rules remain unapproved;
+  claiming a live integration works without the applicable evidence.
+- **Does not block:** surrounding product specifications and, once their
+  applicable specifications are approved, provider-independent implementation.
+  Live execution remains subject to the owner hold and readiness conditions.
+- **Settled direction:** Discord rooms/voice in either joining flow; preferred
+  game-specific Discord Join or, as an acceptable alternative, one matched
+  player posts the official lobby link into a matched-only Discord text channel.
+  Actual game joining stays replaceable and unimplemented.
+- **Next decision:** must every matched player attend Discord voice, or is
+  room provision sufficient with attendance optional? Then address Discord
+  access/admission, room lifetime, host rules, permissions and recovery in
+  bounded discussions. No native voice fallback or compulsory attendance is
+  inferred from the choice of provider.
 - **Known facts:** Discord's documented APIs support creating private server
   text/voice channels, member/role permission overwrites, constrained server
   invitations, OAuth `guilds.join` admission, messages/interactions within
@@ -363,24 +374,25 @@ Historical unknowns do not automatically become requirements.
   in a server or elsewhere. The copied link's exact non-friend, recipient-link,
   and restricted-region behavior remains under `DEF-001`; generic Discord
   Game Invite/Join behavior remains under `DEF-002`.
-- **Owner direction already recorded:** The server/private-channel flow matches
+- **Historical owner direction:** The server/private-channel flow matched
   the owner's intended shape. If it works, a Group DM is unnecessary. The owner
   classified final selection as a very important backbone decision and asked
   that it be presented only after the host-flow and test clarifications were
   resolved (`DEC-021`). The owner now identifies current Turkish Discord
   restriction and a VPN-dependent test path as a material availability
   constraint, and proposes delivering the host link through QGuard itself.
-- **Approved test-first direction:** Do not choose among these options from
-  current documentation alone. Execute the copied-link, game-specific Discord Join,
+- **Historical test-first direction, partly superseded:** Do not choose among
+  these options from current documentation alone. Execute the copied-link,
+  game-specific Discord Join,
   Discord private-room lifecycle, Steam group-chat, and current CS2 alternative
   tests first, then return the reconciled comparison (`DEC-023`).
-- **Latest owner input, 2026-09-28:** the owner now asks to leave game joining
-  unimplemented while retaining Discord voice/rooms in either eventual flow,
-  trying a Discord game-join action before a human-hosted lobby-link alternative.
-  The [separation proposal](../planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
-  states that direction and its remaining risks. Confirm the limited change
-  to `DEC-023` before treating Discord as selected ahead of tests; do not infer
-  implementation approval or resumption of the test hold.
+- **Latest owner approval, 2026-09-28:** `DEC-024` explicitly approves that
+  planning direction ahead of live tests and clarifies matched-only Discord
+  text for the link alternative. The
+  [coordination specification](../specs/coordination-and-party-handoff.md)
+  separates approved requirements from draft detail. No further confirmation
+  of this basic choice is needed; `DEC-008` slice approvals and the live-test
+  hold remain in force.
 - **Readiness result:** the
   [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
   splits every case and preserves a clean order. Two participant bundles on two
@@ -389,41 +401,39 @@ Historical unknowns do not automatically become requirements.
   administrators bypass channel restrictions. Targeted-user/role-bearing
   invites are the preferred first Discord admission case. The neutral-relay
   Valorant copied-link cases run first.
-- **Option A consequence:** every matched user can coordinate and receive the
-  link inside QGuard without joining a Discord server. At minimum QGuard owns
+- **Historical option A consequence:** every matched user can coordinate and
+  receive the link inside QGuard without joining a Discord server. At minimum QGuard owns
   roster/readiness, host assignment, link submission, access isolation, expiry,
   and secret-safe handling. Discord can still offer optional voice or a verified
   Join optimization. Full native free-form chat and native voice remain
   separate scope choices.
-- **Option B consequence:** Discord is the normal room, but QGuard must also own
-  a functioning restricted-region/failure fallback. This creates two user
+- **Historical option B consequence:** Discord is the normal room, but QGuard
+  must also own a functioning restricted-region/failure fallback. This creates two user
   journeys and two surfaces to specify, test, secure, and support.
-- **Option C consequence:** Discord accounts/access become first-flow
+- **Historical option C consequence:** Discord accounts/access become first-flow
   dependencies and QGuard must explicitly exclude or degrade regions where the
   provider or Riot/Discord integration is unavailable. A VPN cannot be treated
   as an invisible universal prerequisite.
-- **Agent recommendation:** Option A. A minimal native room can relay the copied
-  Riot link because the documented delivery surface is not Discord-only. It
+- **Earlier agent recommendation, not selected:** Option A. A minimal native
+  room can relay the copied Riot link because the documented delivery surface is not Discord-only. It
   minimizes the required external dependency while preserving Discord as an
   enhancement. This is a proposal, not owner approval.
-- **Decision-order correction:** the recommendation above is retained as a
-  proposal but must not be presented for selection before the required tests.
-  A passing isolated mechanism does not close this question. The latest owner
-  request separately opens a limited review of that timing gate; this record
-  does not itself supersede it.
+- **Decision-order correction:** `DEC-024` supersedes only the wait-before-
+  planning-selection part of `DEC-023`. The earlier native-room recommendation
+  does not override the selected Discord direction. No test pass is claimed.
 - **Evidence limit:** current documentation establishes capability, not QGuard
   or Turkey behavior. A later approved prototype/test must verify the selected
   room's isolation, expiry, admission/failure states, lobby-secret handling,
   and cleanup. `DEF-001` must also establish whether the host and/or recipient
   needs Discord account linking and whether a non-Discord delivery surface
   works.
-- **Pre-decision evidence:** valid outcomes for the decision-blocking set in the
+- **Live integration evidence:** applicable outcomes from the preserved set in the
   [coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md),
   including recorded prerequisites, negative results, cleanup, and residual
   uncertainty.
-- **Closure evidence:** after that comparison, deliberate owner selection of A,
-  B, or C; the minimum
-  QGuard-native room scope if applicable; required/optional/fallback status for
-  Discord; restricted-region behavior; and explicit acknowledgement that voice
-  recording remains outside the decision.
-- **Resolved by:** none
+- **Closure evidence:** approved operational specifications for attendance,
+  admission, lifecycle, permissions, data, host/recovery and regional handling;
+  applicable live behavior evidence before real integration reliance. Voice
+  recording remains outside this decision. Do not re-ask the basic provider choice.
+- **Resolved by:** `DEC-024` for planning direction and replaceable alternatives;
+  the remaining specification and live-evidence items stay open

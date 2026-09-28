@@ -23,7 +23,7 @@ The owner accepts a designated matched human creating the Valorant party/link
 if the official flow passes and approves future client checks for the Valorant
 link and generic Discord Game Invites in both games. `DEC-018` still selects
 Valorant, while `DEC-022` records a broad international direction without
-settling exact availability. Under `DEC-023`, the owner has deliberately
+settling exact availability. Under `DEC-023`, the owner originally
 postponed the critical `OQ-011` coordination decision until one combined test
 program validates the Valorant link, game-specific Discord Invite/Join,
 Discord private-room lifecycle, Steam non-friend group chat, and current CS2
@@ -34,11 +34,17 @@ server-room isolation, adds targeted-user/role-bearing invite admission, and
 selects the neutral-relay Valorant link as Wave 1. Discord-dependent execution
 is now on the [2026-09-28 owner hold](governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
 until the owner can test and resumes; the existing readiness checks still apply.
-The owner's latest [separation proposal](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
-would retain Discord voice while deferring the game-party integration. Its
-limited change to the test-first selection gate awaits explicit confirmation.
+`DEC-024` now explicitly approves Discord rooms/voice for planning and keeps
+game joining replaceable: prefer a validated Discord game Join action, or let
+one matched player share the official lobby link in a Discord text channel
+visible only to the matched team. The
+[coordination specification](specs/coordination-and-party-handoff.md)
+separates that approved direction from draft details and stages later
+implementation around the unimplemented joining component. Live tests remain
+paused; the test-before-selection timing rule is partially superseded, not
+the requirement for evidence before relying on real integrations.
 Looking to Play remains rejected, and voice recording remains a separate
-proposal only. No implementation plan or code change is approved. Everything
+proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.
 
 Start with:
@@ -49,12 +55,13 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Current Discord-voice and replaceable-handoff proposal](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
+7. [Coordination and replaceable party-handoff specification](specs/coordination-and-party-handoff.md)
 8. [Coordination test resources and sequence](planning/coordination-test-resources-and-sequence.md)
 9. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 
 ## Current Planning
 
+- [Coordination and replaceable party-handoff staged outline](specs/coordination-and-party-handoff.md#staged-implementation-outline--queued-not-execution-approval)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
 - [Completed product-foundation/API-gate route](routes/PLAN-2026-09-05-product-foundations-and-api-gate.md)

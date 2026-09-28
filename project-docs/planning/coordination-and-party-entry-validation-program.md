@@ -1,13 +1,13 @@
 # QGuard Coordination And Party-Entry Validation Program
 
-- **Record type:** owner-required pre-decision experiment program
+- **Record type:** owner-required behavioral-validation program
 - **Status:** scope approved; Discord-dependent execution paused under the
   [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
   remaining cases retain their existing readiness gates
 - **Planning owner:** primary Codex agent
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
-- **Authority:** `DEC-016`, `DEC-018` through `DEC-023`
+- **Authority:** `DEC-016`, `DEC-018` through `DEC-024`
 - **Created:** 2026-09-07
 - **Decision served:** `OQ-011`, with evidence also affecting `OQ-005`,
   `OQ-009`, and `OQ-010`
@@ -19,16 +19,17 @@
 
 ## Owner Direction
 
-Do not select QGuard-native coordination, Discord coordination, a copied Riot
-lobby link, or a game-specific Discord Join path merely from documentation.
-Run the relevant current-client and coordination-lifecycle tests first, then
-return the evidence-backed comparison to the owner. The previously parked
-critical item is `OQ-011`: the Discord/private-room coordination backbone. It
-is now a test target rather than the next immediate decision.
+`DEC-024` selects Discord rooms/voice for planning now, including a matched-only
+Discord text channel for the host-link alternative. Game joining stays
+replaceable and unimplemented. This partially supersedes `DEC-023`'s rule that
+all comparisons precede coordination selection. It does not turn documentation
+or simulated behavior into live evidence. Test the applicable real room and
+game-join behavior before relying on an integration.
 
-The 2026-09-28 owner hold pauses Discord-dependent execution without changing
-this evidence gate. Temporary inability to test does not count as a completed
-negative or permanently untestable case that unlocks product selection.
+The 2026-09-28 owner hold still pauses Discord-dependent execution. Temporary
+inability to test is neither a failed case nor evidence for a working method.
+Surrounding specifications and approved provider-independent slices may proceed
+without those live tests; real integration remains gated.
 
 The earlier direction approved the bounded test program. It does not supply
 accounts, credentials, client access, participant consent, a test server/group, or
@@ -38,8 +39,12 @@ contact, product implementation, publication, or deployment.
 
 ## Decision-Blocking Minimum Set
 
-The coordination decision returns only after these cases have a valid result,
-or a recorded external impossibility makes a case untestable:
+This is the preserved comparison inventory. Under `DEC-024` it no longer blocks
+the approved Discord planning direction or provider-independent work. Apply the
+relevant cases before real integration reliance; do not cancel the remaining
+Steam/CS2 comparisons or activate them automatically. Any changed execution
+scope or order must be reconciled before resumption. Valid outcomes, including
+negative or untestable cases, still require evidence:
 
 | Area | Required cases | Decision question |
 |---|---|---|
@@ -296,11 +301,13 @@ The program is complete only when it contains:
   party entry;
 - prerequisites, friction, regional behavior, automation level, privacy/data
   exposure, provider-support strength, failure recovery, and residual risk;
-- effects on `DEC-018`, `OQ-005`, `OQ-009`, `OQ-010`, `OQ-011`, and the deferred
+- effects on `DEC-018`, `DEC-024`, `OQ-005`, `OQ-009`, `OQ-010`, `OQ-011`, and the deferred
   register; and
 - a recommendation returned to the owner without recording a product selection
   until the owner deliberately approves it.
 
-No single successful test selects Discord, QGuard-native coordination,
-Valorant, or CS2. The owner makes the product decision after the cross-case
-comparison.
+No single successful test changes the owner-selected Discord planning
+direction or game. `DEC-024` already settles that coordination direction;
+results inform remaining operational choices and any separately approved
+change. The complete comparison is not a prerequisite for provider-independent
+specification work under `DEC-024`.

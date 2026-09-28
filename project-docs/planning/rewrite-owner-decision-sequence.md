@@ -103,8 +103,9 @@ explicitly rejects them.
   (`DEC-021`).
 - Set a broad international direction without yet promising every country or
   approving Discord/VPN dependence (`DEC-022`).
-- Require the combined current-client and coordination-lifecycle tests before
-  selecting the coordination or dependable party-handoff path (`DEC-023`).
+- Preserve applicable current-client and coordination-lifecycle evidence gates
+  (`DEC-023`), while choosing Discord room/voice planning ahead of tests and
+  leaving game joining replaceable and unimplemented (`DEC-024`).
 
 ### Unapproved Assumptions
 
@@ -194,16 +195,17 @@ now owns the cross-game coordination conclusion.
 
 Discord-dependent execution is on the
 [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
-After resumption, the next bounded work is not a product decision. `DEC-023`
-requires the
+`DEC-024` now approves Discord room/voice planning, a private matched-only text
+channel for the host-link alternative, and replaceable joining. The next bounded
+discussion is whether voice attendance is required or optional; surrounding
+specifications can proceed while tests remain paused. The
+[coordination module](../specs/coordination-and-party-handoff.md) orders later
+specification-gated implementation slices. The preserved
 [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
-to test the Valorant copied link, game-specific Discord Invite/Join, Discord
-private-room lifecycle, Steam non-friend group chat, and current CS2
-alternatives. After valid results are reconciled, the deliberately critical
-`OQ-011` returns to the owner: whether a minimal QGuard-native room is required
-with Discord optional, Discord is primary with a native fallback, or Discord is
-required with explicit regional handling. Voice recording remains a separate
-unapproved choice in the
+still supplies real-behavior evidence after resumption; neither documentation
+nor mock tests establish a working handoff. `OQ-011` is partly resolved rather
+than waiting for the same provider choice again. Voice recording remains a
+separate unapproved choice in the
 [Discord coordination packet](discord-coordination-and-voice-evidence-options.md).
 
 ## Decision Group 1 - Current Product Charter And Use Boundary

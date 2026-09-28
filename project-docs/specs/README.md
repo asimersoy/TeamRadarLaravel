@@ -2,8 +2,8 @@
 
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
-  Valorant while coordination selection, party verification, international
-  availability details, and integration boundaries remain open
+  Valorant; `DEC-024` selects Discord room/voice planning with replaceable
+  joining. Operational details and live verification remain open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -38,6 +38,9 @@ records an explicit narrow override under the workflow-governance policy.
 
 - [Product foundations](product-foundations.md) — partially approved; not
   implementation-ready
+- [Coordination and replaceable party handoff](coordination-and-party-handoff.md)
+  — direction approved under `DEC-024`; detailed contracts and implementation
+  slices still proposed; actual game joining unimplemented and live tests paused
 
 The historical gate is closed as sufficient for redesign. The current
 [game API findings](../research/game-api-feasibility-findings.md) informed the
@@ -61,9 +64,13 @@ non-friend Valorant lobby-link test remains `DEF-001`; generic Discord Game
 Invite checks for both games are activated in direction under `DEF-002` but
 await their live environment. Their exact scope and evidence rules are in the
 [party-entry behavioral validation packet](../planning/party-entry-behavioral-validation-packet.md).
-`DEC-023` now requires the broader
+`DEC-023` originally required the broader
 [coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md)
-before the owner selects the coordination or dependable handoff path.
+before the owner selected coordination. `DEC-024` now selects Discord rooms/
+voice for planning ahead of tests, with a private matched-only Discord text
+channel for the host-link alternative. The actual game-join method remains
+replaceable; applicable real-behavior evidence is still required. No test is
+resumed by drafting or approving the planning direction.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

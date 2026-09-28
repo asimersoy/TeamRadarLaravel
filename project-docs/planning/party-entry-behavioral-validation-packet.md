@@ -6,7 +6,7 @@
   existing account/client and evidence/cleanup prerequisites remain required
 - **Test owner:** unassigned
 - **Decision owner:** project owner
-- **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-023`
+- **Authority:** `DEC-016`, `DEC-018`, and `DEC-020` through `DEC-024`
 - **Created:** 2026-09-06
 - **Date sensitivity:** high; recheck sources and clients immediately before
   execution
@@ -72,11 +72,14 @@ rollout and roadmap recheck is in
 
 QGuard designates one matched Valorant participant as host. The host manually
 creates the ordinary party in Valorant, obtains the official Riot lobby link,
-and posts it in the approved private coordination surface. The originally
-discussed surface was a QGuard Discord text channel; the owner now also proposes
-a QGuard-native match room. The remaining matched participants deliberately
-click the link. QGuard does not automate or control the Valorant client, party,
-link creation, or acceptance. The coordination surface remains `OQ-011`.
+and posts it in a Discord text channel visible only to the matched players,
+as approved for the link alternative under `DEC-024`. The remaining matched
+participants deliberately click the link. QGuard does not automate or control
+the Valorant client, party, link creation, or acceptance. Game-specific Discord
+Join is the preferred candidate if verified, and joining remains replaceable.
+The neutral relay below still measures delivery dependence; it is not the
+selected product fallback. Live tests remain paused; operational details remain
+under `OQ-011`.
 
 The rule for choosing the host remains open. “Lucky user” records a human host
 role, not approval of random selection, eligibility weighting, or sanctions for
