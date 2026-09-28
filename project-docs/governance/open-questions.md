@@ -370,10 +370,17 @@ Historical unknowns do not automatically become requirements.
   resolved (`DEC-021`). The owner now identifies current Turkish Discord
   restriction and a VPN-dependent test path as a material availability
   constraint, and proposes delivering the host link through QGuard itself.
-- **Latest owner direction:** Do not choose among these options from current
-  documentation alone. Execute the copied-link, game-specific Discord Join,
+- **Approved test-first direction:** Do not choose among these options from
+  current documentation alone. Execute the copied-link, game-specific Discord Join,
   Discord private-room lifecycle, Steam group-chat, and current CS2 alternative
   tests first, then return the reconciled comparison (`DEC-023`).
+- **Latest owner input, 2026-09-28:** the owner now asks to leave game joining
+  unimplemented while retaining Discord voice/rooms in either eventual flow,
+  trying a Discord game-join action before a human-hosted lobby-link alternative.
+  The [separation proposal](../planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
+  states that direction and its remaining risks. Confirm the limited change
+  to `DEC-023` before treating Discord as selected ahead of tests; do not infer
+  implementation approval or resumption of the test hold.
 - **Readiness result:** the
   [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
   splits every case and preserves a clean order. Two participant bundles on two
@@ -401,7 +408,9 @@ Historical unknowns do not automatically become requirements.
   enhancement. This is a proposal, not owner approval.
 - **Decision-order correction:** the recommendation above is retained as a
   proposal but must not be presented for selection before the required tests.
-  A passing isolated mechanism does not close this question.
+  A passing isolated mechanism does not close this question. The latest owner
+  request separately opens a limited review of that timing gate; this record
+  does not itself supersede it.
 - **Evidence limit:** current documentation establishes capability, not QGuard
   or Turkey behavior. A later approved prototype/test must verify the selected
   room's isolation, expiry, admission/failure states, lobby-secret handling,

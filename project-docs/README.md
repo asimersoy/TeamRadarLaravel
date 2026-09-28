@@ -34,10 +34,12 @@ server-room isolation, adds targeted-user/role-bearing invite admission, and
 selects the neutral-relay Valorant link as Wave 1. Discord-dependent execution
 is now on the [2026-09-28 owner hold](governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
 until the owner can test and resumes; the existing readiness checks still apply.
+The owner's latest [separation proposal](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
+would retain Discord voice while deferring the game-party integration. Its
+limited change to the test-first selection gate awaits explicit confirmation.
 Looking to Play remains rejected, and voice recording remains a separate
-proposal only. No
-implementation plan or code change is approved. Everything under `legacy/`
-remains historical evidence.
+proposal only. No implementation plan or code change is approved. Everything
+under `legacy/` remains historical evidence.
 
 Start with:
 
@@ -47,7 +49,7 @@ Start with:
 4. [Deferred work](governance/deferred-work.md)
 5. [TeamRadar workflow governance](operations/workflow-governance.md)
 6. [Product foundations](specs/product-foundations.md)
-7. [Current test-resource and Discord-roadmap route](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
+7. [Current Discord-voice and replaceable-handoff proposal](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
 8. [Coordination test resources and sequence](planning/coordination-test-resources-and-sequence.md)
 9. [Owner product decision sequence](planning/rewrite-owner-decision-sequence.md)
 

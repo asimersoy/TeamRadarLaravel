@@ -3,7 +3,8 @@
 - **Record type:** current owner proposal and future decision packet
 - **Status:** coordination feasibility researched; private-room lifecycle test
   on [owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28)
-  before owner selection; separate voice-evidence research/review still required
+  before owner selection; latest separation proposal awaits confirmation of
+  its limited change to `DEC-023`; recording remains unapproved
 - **Decision owner:** project owner
 - **Authority:** owner proposals recorded 2026-09-05 and `DEC-020` through
   `DEC-023`; test-only authority, no product implementation authority
@@ -57,6 +58,77 @@ host-supplied link on its own private match surface; Discord is not inherently
 required as the delivery channel. Direct Riot “Invite by Discord” is documented
 for formal Discord friends, while the generic Discord Join case remains an
 optional behavioral test under `DEF-002`.
+
+## Proposed Separation — 2026-09-28
+
+**Status:** owner-stated direction plus agent planning proposal; not an approved
+specification, architecture, implementation slice, or superseding decision.
+
+**Owner-stated intent:** continue defining the system while leaving the actual
+game-party integration unimplemented. Provide a Discord voice room in either
+case. Prefer joining the game through Discord if that works; otherwise try the
+official host-created lobby-link route. The latest request does not say that
+Discord access is restored or resume the paused live tests.
+
+### Proposed Product Boundary
+
+| Part | Intended responsibility | Deferred or unresolved |
+|---|---|---|
+| QGuard match coordination | Keep the matched roster, designated host, readiness, and match lifecycle separate from how the game party is entered | Exact product behavior, host rules, and specifications remain to be approved |
+| Discord room and voice | Provide the matched team with Discord voice regardless of which game-join method is eventually selected | Admission, privacy/isolation, channel lifecycle, permissions, regional availability, and live verification |
+| Replaceable game-party handoff | Present the validated game-join action without making the rest of QGuard depend on one method | Discord-native Join first as a candidate; human-hosted official lobby link as the alternative; both remain unverified for nonfriends |
+
+**Meaning of “leave it empty”:** reserve a clearly defined boundary, not a
+silently broken or falsely successful join feature. In a later approved
+implementation, an unconfigured handoff should explicitly report unavailable
+or not yet connected. A development demonstration may simulate it only with
+visible mock labeling and no real account/provider actions. Providing an
+invite, clicking it, joining voice, or receiving a participant's self-report
+must not be described as provider-verified game-party membership. No stack,
+API contract, plugin framework, automatic verification method, or prototype
+implementation is selected by this proposal.
+
+The lobby-link alternative means the designated human creates the ordinary
+game party, obtains its official link, and shares it; QGuard does not generate
+Riot's link or control the game client. This is an alternative to a failed or
+unavailable **game Join action**, not a remedy for being unable to access
+Discord voice. Whether each player must attend voice, and what happens when a
+player cannot access Discord, remain separate decisions. Voice recording,
+transcription, surveillance, and report-audio retention remain unapproved.
+
+### Approval And Evidence Boundaries
+
+- **Confirmation requested:** make Discord voice/room provision the planning
+  direction now and allow provider-independent specifications to proceed with
+  party entry reserved, instead of waiting for all tests before choosing this
+  direction. This would narrowly change the timing gate in `DEC-023`; record a
+  new partially superseding decision only after explicit owner confirmation.
+- **Not waived:** each implementation slice still needs its applicable
+  approved specifications (`DEC-008`). Actual game joining and Discord room
+  operation need their applicable live tests before being claimed usable.
+  The existing test hold, evidence standards, and remote-action gates remain.
+- **Residual risk:** if neither joining method works, the placeholder does not
+  solve party formation. Return to the owner with evidence before adopting
+  friendship-based joining, another game, or a different flow. No existing
+  Steam/CS2 test is cancelled and no test execution order is changed here.
+- **Next approval:** confirm the limited planning-direction change, not a
+  release, implementation start, compulsory voice attendance, or audio capture.
+
+### Route And Completion Boundary
+
+- **Baseline:** clean `new-development` at `d5ea068`.
+- **Route:** product planning; privacy/data boundaries; owner/external review;
+  deferral/owner review; interruption/recovery; cross-record reconciliation.
+  Mandatory entry and selected procedures were read; no fresh provider claim,
+  new experiment, code, delegation, deployment, or external state is in scope.
+- **Deliverable:** this proposal and linked pending owner question/current
+  state, with no change to approved specifications or the canonical workflow.
+- **Verification:** local path links across 52 project Markdown files and all
+  new section-link targets passed; `git diff --check` passed; the complete
+  four-file diff was reviewed. One coherent local documentation commit records
+  the proposal, not product approval. No live/application tests or portable-
+  workflow validator were run for this proposal-only unit. No remote action
+  was performed; joining feasibility remains unverified.
 
 ## Separated Options, Not Decisions
 

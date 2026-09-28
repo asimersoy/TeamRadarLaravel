@@ -3,12 +3,13 @@
 - **Last updated:** 2026-09-28
 - **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
   are on owner hold as of 2026-09-28 until the owner can test; no live result
-  exists and `OQ-011` still waits for the full comparison
-- **Objective:** preserve the research and test packet under the
-  [owner hold](governance/deferred-work.md#owner-hold--discord-access--2026-09-28);
-  resume only when the owner confirms workable test access and asks to continue
+  exists; the latest Discord-voice/replaceable-handoff proposal awaits a narrow
+  owner confirmation about `DEC-023`, not implementation approval
+- **Objective:** review the
+  [proposed separation](planning/discord-coordination-and-voice-evidence-options.md#proposed-separation--2026-09-28)
+  while preserving the existing test hold and evidence gates
 - **Current route:**
-  [RESEARCH-2026-09-07 Test resources and Discord roadmap](routes/RESEARCH-2026-09-07-test-resources-and-discord-roadmap.md)
+  [Discord coordination proposal and review boundary](planning/discord-coordination-and-voice-evidence-options.md#route-and-completion-boundary)
 
 ## Verified Workspace State
 
@@ -203,8 +204,15 @@
   yet confirmed. Windows remote shell execution was verified on 2026-09-08;
   that does not establish game-client readiness. Rank fallback, provider
   access, complete wedge, and voice evidence remain outside this test program.
-- **Next after owner resumption:** recheck current provider/client behavior,
-  then confirm the seven Wave 1 readiness items in the
+- **Pending owner confirmation:** the owner asks to keep Discord voice/rooms
+  in either flow and leave the game-party join integration unimplemented,
+  considering Discord Join first and a human-hosted official lobby link as
+  the alternative. The linked proposal separates these concerns and requests
+  an explicit limited change to `DEC-023` before fixing the coordination
+  direction ahead of tests. No new numbered decision, code, live integration,
+  recording approval, or test resumption is claimed.
+- **Next for live tests, after owner resumption:** recheck current provider/
+  client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
   Then freeze the account/client/network matrix and run `ENV-1`, `ENV-2`,
   `VAL-NET-1`, and the neutral `VAL-LINK-*` cases. Do not prepare or mutate the
