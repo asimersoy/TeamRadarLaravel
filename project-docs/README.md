@@ -61,6 +61,7 @@ Start with:
 
 ## Current Planning
 
+- [Implementation-readiness review — 2026-09-28](planning/implementation-readiness-review-2026-09-28.md) — stage-specific gaps and candidate record corrections; no new product approval
 - [Coordination and replaceable party-handoff staged outline](specs/coordination-and-party-handoff.md#staged-implementation-outline--queued-not-execution-approval)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)
