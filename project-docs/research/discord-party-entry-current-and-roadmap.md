@@ -6,6 +6,7 @@
 - **Decision owner:** project owner
 - **Authority:** `DEC-016`, `DEC-018` through `DEC-023`
 - **Researched:** 2026-09-07
+- **Focused recheck:** 2026-09-28, League/Valorant joining and nonfriend eligibility
 - **Date sensitivity:** high; recheck before each live wave and implementation
 - **Implementation authority:** none
 - **Resource/test companion:**
@@ -13,7 +14,7 @@
 
 ## Executive Finding
 
-The Riot/Discord move the owner noticed is not merely on the way for Valorant.
+The Riot/Discord integration investigated here is not merely on the way for Valorant.
 It shipped for both League of Legends and Valorant during 2026, subject to the
 current requirement that both Riot and Discord be supported in the user's
 region. Riot currently documents two distinct user flows:
@@ -42,6 +43,70 @@ game integration supplies it—a live join card. At present Discord names only
 the official ARC Raiders server, says other games are coming soon, and provides
 no request path, named Valorant/CS2 commitment, or launch date. It should be
 monitored, not treated as a dependency.
+
+## 2026-09-28 Recheck: League Joining And QGuard Nonfriends
+
+**Request and scope:** the owner asked whether the new League joining system,
+said to be coming to Valorant, could work between nonfriends. The likely match
+is Riot/Discord account linking and party invitations. The owner's original
+announcement was not supplied, so identification of that exact announcement
+remains an assumption. This follow-up reviews public documentation only; it
+does not rerun the CS2, rank, API-policy, or Discord-server-management research.
+
+### Verified Documentary Facts
+
+- Riot's April 14 Valorant patch 12.07 announced a regional beta and scheduled
+  global release for April 29. Its June 12 announcement describes the
+  integration and copyable lobby links as available features. The current FAQ
+  still limits availability to regions supporting both services; a release
+  announcement does not establish availability on the owner's accounts.
+  [Patch 12.07](https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-12-07/),
+  [June announcement](https://playvalorant.com/en-us/news/game-updates/exclusive-discord-drop/),
+  [current FAQ](https://www.riotgames.com/en/riot-games-discord-account-linking)
+- League's May 7 support article explicitly documents posting an invitation
+  to an entire Discord server channel. It describes Join for an open party
+  with room, Ask to Join for a closed party, and an expired invitation becoming
+  Launch Game after the party enters a game or disbands. These are League
+  instructions, not proof of identical Valorant controls or nonfriend eligibility.
+  [League account-linking support](https://support.riotgames.com/en-us/league-of-legends/gameplay/league-of-legends-discord-account-linking)
+- Riot's integrated Discord-friend list requires formal Discord friendship
+  and linked accounts. Sharing a server is explicitly insufficient for that
+  list. This is a restriction on discovery through the list, not an explicit
+  restriction on recipients of a shared invitation.
+  [Riot FAQ](https://www.riotgames.com/en/riot-games-discord-account-linking)
+
+### Assessment, Not Approval Or A Live Result
+
+| Mechanism | Relevance to QGuard users who are friends on neither service |
+|---|---|
+| Invite a Discord friend from the Riot social panel | Does not solve stranger discovery: formal Discord friendship is required. Avoiding Riot friendship alone is not enough. |
+| Host shares an official lobby link | Promising candidate; Valorant documents the link, but neither-friend acceptance and minimum recipient setup remain unverified. |
+| Host posts a Discord Game Invite, or recipient uses profile Join/Ask to Join | League's channel instructions strengthen the candidate. Check the corresponding Valorant surfaces separately; League behavior cannot establish Valorant behavior. |
+
+**Bounded finding:** the reviewed first-party material does not explicitly
+guarantee that a recipient who is neither a Riot nor Discord friend can enter
+an ordinary Valorant party through either shared surface. It also does not
+establish that such entry is forbidden. Generic Discord invite support is
+conditional on the game's implementation; it is not a game-specific guarantee.
+[Discord Game Invites](https://support.discord.com/hc/en-us/articles/115001557452-Game-Invites),
+[integration scope](https://support.discord.com/hc/en-us/articles/27893392334359-How-Games-Integrate-Discord-Powered-Features)
+
+**Existing test order retained:** use A and B without Riot/Discord friendship;
+test the official copied link through a neutral relay first, with B initially
+unlinked, then repeat the applicable comparison after linking if needed.
+Later test Discord-channel delivery, Game Invite, and profile Join separately.
+Record account linking, open/closed party state, client versions and regional/
+network conditions. Count entry into the same ordinary party, not merely game
+launch. Preserve the packet's repeated-success requirement before relying on
+a route. These cases already exist in the
+[resource plan](../planning/coordination-test-resources-and-sequence.md);
+no additional League installation is required by this research.
+
+**Unchanged decisions and deferred work:** no game/backbone selection,
+implementation approval, live experiment result, or change to `OQ-011` is
+recorded. Source evidence is indexed as `VAL-005`, `VAL-006`, `VAL-010`,
+`VAL-013`, `VAL-015`, `DIS-002`, and `DIS-015` in the
+[source ledger](game-api-source-ledger.md).
 
 ## What Is Shipped For Valorant
 

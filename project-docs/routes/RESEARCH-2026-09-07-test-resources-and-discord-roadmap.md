@@ -119,3 +119,30 @@
   portable workflow package or legacy application.
 - **Commit boundary:** one coherent local documentation/research commit; no
   push, history rewrite, provider action, or deployment.
+
+## 2026-09-28 Focused Follow-Up: League/Valorant Nonfriend Joining
+
+- **Request:** investigate the owner's newly mentioned League joining feature
+  and reported forthcoming Valorant rollout for QGuard's neither-friend case.
+- **Baseline:** clean `new-development` at `925727f`.
+- **Route:** public research/sourcing, decision safety, and reconciliation of
+  the existing report and tests. The existing experiment/privacy boundaries
+  continue to apply; no experiment or provider-account action is run here.
+- **Evidence:** current Riot FAQ, Valorant patch 12.07 and June announcement,
+  Discord's Riot announcement and Game Invites support, plus League's dedicated
+  account-linking support article. Source identity for the owner's exact
+  announcement remains unconfirmed until its link is supplied.
+- **Outcome:** current official sources describe Valorant availability with
+  regional limits. The integrated friends-list path requires Discord friendship;
+  League explicitly supports channel invitations, but the reviewed material
+  does not settle Valorant's neither-friend shared-invite acceptance.
+- **Records:** the dated report section, source ledger, and current state;
+  existing test cases and product decisions are unchanged.
+- **Verification:** 178 relative path links across 52 project Markdown files
+  resolved; the new report heading and unique ledger IDs were checked;
+  `git diff --check` passed; the complete four-file diff was reviewed and
+  every changed path remained inside `project-docs/`.
+- **Completion boundary:** documentation research only, in one coherent local
+  commit. Runtime tests and the portable-system validator were not run because
+  no application or reusable workflow changed. No push or provider write was
+  performed. Neither-friend party entry remains unverified.

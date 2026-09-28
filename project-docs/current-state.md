@@ -183,6 +183,14 @@
   splits every test, defines the two-PC/two-participant core and separate
   Discord owner/outsider controls, incorporates targeted-user/role-bearing
   invites, and selects neutral-relay Valorant link testing as Wave 1.
+- **Completed:** the 2026-09-28
+  [League/Valorant nonfriend-joining recheck](research/discord-party-entry-current-and-roadmap.md#2026-09-28-recheck-league-joining-and-qguard-nonfriends)
+  found League's explicit Discord-channel invitation instructions and
+  reconfirmed documented Valorant availability with regional limits. The
+  friends-list path requires Discord friendship; shared-invite acceptance by
+  someone who is friends on neither service remains a live-test question.
+  The owner's exact announcement has not been supplied. No test passed,
+  product choice was approved, or provider state changed in this follow-up.
 - **In progress:** readiness for the
   [coordination and party-entry validation program](planning/coordination-and-party-entry-validation-program.md).
   On 2026-09-28 the owner stated the plan to use their existing account for A
