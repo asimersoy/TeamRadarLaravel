@@ -5,11 +5,13 @@
 - **Record type:** modular product specification and staged implementation outline
 - **Status:** planning direction approved; detailed design proposed, not implementation-ready
 - **Decision owner:** project owner; primary agent owns drafting and verification
-- **Authority:** `DEC-008`, `DEC-016`, `DEC-018`, `DEC-020` through `DEC-024`
+- **Authority:** `DEC-008`, `DEC-016`, `DEC-018`, `DEC-020` through `DEC-024`,
+  `DEC-035` through `DEC-041`
 - **Created:** 2026-09-28
 - **Implementation boundary:** surrounding implementation is requested but
   remains gated on the applicable approved slice specifications; game-party
-  integration remains unimplemented and live tests remain paused
+  integration remains unimplemented, real Discord integration is excluded
+  from this implementation, and live tests remain paused
 - **Update trigger:** owner decision, approved slice, changed provider evidence,
   live test result, or changed coordination/data contract
 - **Supersession:** current product boundary replaces the earlier unapproved
@@ -20,9 +22,10 @@
 
 Keep matched-team communication independent of the eventual method used to
 enter the game party, so changing that method does not require redesigning the
-whole match flow. Under `DEC-024`:
+whole match flow. Under `DEC-024`, as partially refined by `DEC-035`:
 
-1. Plan Discord rooms and voice for the matched team in either joining flow.
+1. Offer queue choices with or without Discord voice. Plan future Discord
+   rooms/voice for the with-voice route, not as a universal requirement.
 2. Keep game joining replaceable and unimplemented for now.
 3. Prefer a game-specific Discord Join action if it passes the applicable
    nonfriend test; a shared voice room alone is not that action.
@@ -31,6 +34,14 @@ whole match flow. Under `DEC-024`:
    visible only to the matched players. The others deliberately click it.
 5. Do not claim either joining method works until the applicable live evidence
    exists. Preserve the [owner test hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
+6. Exclude actual Discord implementation from the current scope. Resume only
+   after applicable feature availability, owner-run tests and later slice
+   approval under [DEF-007](../governance/deferred-work.md#def-007---return-to-real-discord-integration-after-availability-and-tests).
+
+Text communication for both routes, possibly on the website, is an owner
+proposal awaiting a concrete selection. Whether voice choices separate pools,
+and how the with-voice option works while integration is absent, remain open.
+No new Riot feature-release fact is established by this availability condition.
 
 These requirements do not approve recording, transcription, message
 surveillance, automatic client control, compulsory voice attendance, a native
@@ -51,7 +62,7 @@ the legacy Laravel or relay design merely because it exists.
 
 ## Proposed User And Failure Flows
 
-- A matched team receives its Discord room access through a later-approved
+- A future with-voice matched team receives Discord room access through a later-approved
   admission flow. Voice and game-party status remain separate.
 - If the validated Discord-native method is available, present the relevant
   user action; do not imply that QGuard forces the game to join automatically.
@@ -76,7 +87,7 @@ is approved here. Decide whether the link stays entirely inside Discord or
 whether QGuard also handles it before building that flow. Real links, tokens,
 and account credentials must not enter Git or diagnostic logs.
 
-The approved privacy intent is matched-only text visibility. Its permission
+The approved future Discord privacy intent is matched-only text visibility. Its permission
 design and test must distinguish ordinary outsiders from necessary bot access
 and Discord owner/administrator capabilities; do not promise absolute secrecy
 from privileged operators. Define any privileged human access and its limits
@@ -92,9 +103,11 @@ data collection or scoring rules.
 
 The project owner settles these incrementally under `OQ-011`:
 
-1. **Next bounded decision:** must each matched player attend Discord voice,
-   or is providing the room sufficient with individual attendance optional?
-2. At what point is Discord access checked, and what happens when a player
+1. **Current decisions:** is matched-only native website text required for
+   both paths; do voice choices separate pools; is the with-voice option
+   hidden/disabled or supported by an approved manual path until integration?
+   Optional voice queueing is selected, not universal compulsory Discord.
+2. **Future integration:** at what point is Discord access checked, and what happens when a player
    cannot access it? No launch-region exclusion or VPN requirement is inferred.
 3. How do players enter the server/room; when is it created and removed; does
    server membership persist; what happens on cancellation or roster changes?
@@ -117,8 +130,11 @@ items must not be treated as inherited legacy requirements.
    the surrounding logic with an explicit unimplemented handoff boundary and
    isolated labeled test doubles. Tests must work without Discord/game accounts
    or external writes. This must not be described as a working integration.
+   Do not add a real Discord adapter to this implementation scope. Native text
+   or manual with-voice behavior needs its own approved journey, not inference.
 3. **Verify and connect Discord coordination.** Only after the owner lifts the
-   relevant hold, names the test environment and approves the remaining slice,
+   relevant hold, the `DEF-007` availability/test prerequisite is met, and the
+   owner names the test environment and approves a later implementation slice,
    run the admission/isolation/lifecycle tests and implement the real adapter.
 4. **Verify and connect a game-join method.** At a later authorized stage,
    evaluate the two candidates, implement a passing method behind the same
@@ -147,6 +163,12 @@ the owner before changing game or relying on friendship-based joining.
 
 ## Route And Documentation Checkpoint
 
+- **Current supersession checkpoint, 2026-10-03:** `DEC-035` makes voice a queue
+  choice and excludes actual Discord integration now. `DEC-037` includes partial
+  parties/basic friends; `DEC-039`/`DEC-041` define further session/feedback
+  directions without inventing verified game presence. Current operational
+  gaps remain in `OQ-006`/`OQ-011`. The following checkpoint is historical
+  evidence of the initial module, not authority to implement Discord now.
 - **Baseline:** clean `new-development` at `64551ee`.
 - **Route:** product planning, privacy/data, external/owner review,
   deferral/owner review, interruption/recovery, and record reconciliation.

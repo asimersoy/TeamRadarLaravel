@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-034`
+- **Authority:** `DEC-009` through `DEC-041`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -95,26 +95,113 @@ deviation allowance, not a player-spread-dependent one. Preserve both ideas in
 [future honor ideas](#future-honor-ideas---outside-current-implementation);
 they are not blockers or approved later implementation commitments.
 
-This foundation does not yet settle review eligibility, questions, the complete
-scoring contract, reviewer weighting, visibility, exact matching rules,
-eligibility restrictions, sanctions,
-moderation, correction, appeal, retention, monitoring, or rollback.
+`DEC-035` through `DEC-041` now select further first-version queue, party,
+matching, feedback and admin directions below. The complete scoring contract,
+settlement timing, participation evidence, private audiences, additional
+matching constraints, sanctions, correction, appeal, retention, monitoring and
+release criteria remain incomplete. Do not re-open settled dimensions,
+reference choice, startup delegation or adjustable development constants as
+owner prerequisites.
 It approves no public promise that QGuard prevents toxicity or guarantees safe
 or compatible teammates.
 
 ### First-Version Session Scope
 
-Under `DEC-025`, the first usable version groups players for a playing
-session. Persistent-team recruitment/management, a player-facing past-teammate
-history and QGuard friend requests are outside that first scope. History and
-friend features are possible future ideas, not approved implementation work.
+Under `DEC-025`, the first usable version groups players for a playing session.
+`DEC-037` partially supersedes its social-feature exclusion: solo and partial
+pre-made parties, basic QGuard friendships/add-friend requests and invitations
+into a QGuard lobby are now current scope. Persistent-team management and
+player-facing past-teammate history, including friend discovery from that
+history, remain outside this implementation and for later planning.
 
-The session's duration, completion, solo/partial-party entry, detailed matching
-and honor rules remain open. Excluding a social-history screen does not
-decide whether session evidence must be retained for honor/reporting or for
-how long. Honor's behavioral purpose and first-version matchmaking role are
-approved under `DEC-010` and `DEC-026`; their detailed rules need further
-discussion.
+Original pre-made co-members cannot give one another ordinary behavior ratings.
+They can rate other matched teammates and receive ratings from those teammates,
+subject to the participation/report rules. Snapshot pre-made membership at
+queue/match entry so leaving it cannot bypass the restriction. This does not
+exclude ratings between all people who happen to be QGuard friends.
+
+Normal session completion, party readiness/consent and requeue/recovery need
+rules. UI history exclusion does not settle session/report evidence retention.
+
+### Current Queue And Matching Direction
+
+`DEC-035` selects queue choices with or without Discord voice, not compulsory
+Discord use for everyone. Real Discord integration is excluded from this
+implementation and returns only after owner test resumption, relevant feature
+availability/behavior evidence and its slice approval. Text communication in
+both paths, possibly on QGuard, is proposed but not yet a required native chat
+specification. Whether voice choices separate pools and how the with-voice
+option behaves while integration is absent remain owner choices.
+
+`DEC-036` makes the game's actual party/rank queue compatibility the first hard
+constraint. Within it, favor similar honor and dynamically widen similarity as
+queue wait increases. Never widen past game compatibility. The implementation
+agent may choose/test adjustable widening rates and honor-distance settings;
+they need not be frozen before development. Applicable game/mode/party-size
+rules need evidence before reliance. Other hard filters and rank evidence are
+not chosen here; identity/rank/data is the next separate owner decision group.
+
+### Session No-Show And Participation Direction
+
+`DEC-039` selects an initial no-show path: after five minutes from matching,
+teammates may raise a challenge; if "everyone" does, give the target 30 seconds
+to respond/join. Failure removes the target and disbands the QGuard matched
+team. This does not control or prove the actual game lobby. Clarify whether
+everyone means all other players, what response stops removal, what joining
+means without game visibility, and recovery for solos/pre-made parties.
+
+Leaving the game before completion makes a player's outgoing ordinary ratings
+ineligible. Teammate reporting is the proposed evidence; the threshold and
+reporter eligibility need a contract. The owner explicitly postpones stronger
+false-no-show/collusion checks (`DEF-008`), acknowledging that a joined player
+could be falsely targeted. No automatic score deduction or ban is selected;
+development direction is not proof of safe release.
+
+### Feedback Format, Pending Settlement And Report Review
+
+`DEC-041` selects three user-facing 1–10 dimensions: communication,
+sportsmanship and effort. Their simple arithmetic mean becomes one input to
+the existing honor calculation. Communication includes in-game communication;
+effort is behavioral, not mechanical skill. Permanent separate dimension
+history is not required. Use equivalent internal 100-scale or finer units with
+fractional precision; the agent chooses and tests numeric representation.
+
+Matched teammates may rate one another except original pre-made co-members,
+self/unrelated players and otherwise ineligible participants. Reports are
+separate from numerical ratings. An expandable "Dishonorable actions" section
+starts flags at No: early leaving; no talking/communication in Discord (only
+for Discord-enabled matches); harmful/unsportsmanlike language or slurs. No
+speech monitoring is approved, and future Discord presence is not proof of
+speech or in-game participation.
+
+Two distinct teammates reporting a player in the same match, across any
+categories, automatically invalidate that player's outgoing ordinary ratings
+for that match before human review. Flag this automatic action in the admin
+view. The owner's follow-up explicitly distinguishes this eligibility
+consequence from automatic penalties. It does not invalidate ratings the player
+receives or impose a permanent rating ban, honor deduction or account sanction.
+Who may submit threshold-counting reports still needs clarification.
+
+Submitted ratings stay pending while session feedback/reports are considered;
+fast submission and leaving the UI cannot evade the check. A queue entered
+before settlement uses the current, not-yet-updated honor. Only eligible
+ratings enter honor and its unadjusted reference. Decide how feedback opens,
+when the batch closes, optional/skipped feedback, nonresponse and reports after
+finalization. Transient pending records are not permission for permanent exact
+feedback history; `DEC-033` and later data/access decisions still govern.
+
+`DEC-040` selects a basic report inbox/dashboard for human review, including
+the automatic-invalidation tag. Admin punishment tools, automatic penalties
+and correction/appeal policy are postponed for later planning (`DEF-009`), not
+implicitly approved later features. Basic UI details are implementation work;
+new penalties or access rights are not.
+
+### Private Reputation Direction
+
+`DEC-038` selects non-public honor, feedback and reviewer identities for now.
+Do not expose them to teammates by default. Whether a player sees their own
+honor, incoming ratings/aggregates or reviewer identities, and authorized
+operator access, remain distinct choices. Private does not mean anonymous.
 
 ### Initial Game And Integration Direction
 
@@ -199,12 +286,14 @@ generic Discord Game Invites for Valorant and CS2. See the focused
 
 `DEC-023` established the combined
 [coordination and party-entry validation program](../planning/coordination-and-party-entry-validation-program.md)
-as the evidence gate. `DEC-024` now selects Discord room/voice planning before
-those tests and keeps joining replaceable: a game-specific Discord Join action
+as the evidence gate. `DEC-024`, as refined by `DEC-035`, selects optional
+Discord room/voice planning and keeps joining replaceable: a game-specific Discord Join action
 is preferred if validated; the accepted alternative is a matched human sharing
 the official lobby link in a private Discord text channel visible only to the
 matched players. Actual game joining stays unimplemented and live tests stay
-paused. The surrounding system may be specified and later implemented in
+paused. `DEC-035` excludes real Discord implementation from this scope; the
+owner's availability prerequisite does not establish a new Riot release fact.
+The surrounding system may be specified and later implemented in
 approved slices without assuming a working external integration. A documented
 capability or mock result is not a behavioral pass. See the
 [coordination and party-handoff module](coordination-and-party-handoff.md).
@@ -217,11 +306,12 @@ submitting an application, using credentials, or assuming approval.
 
 ### Coordination And Voice Evidence
 
-Discord rooms and voice are now the approved planning direction (`DEC-024`).
-The host-link alternative uses a matched-only text channel in the QGuard
-Discord server. A QGuard-native link surface remains technically distinct but
-is not the selected fallback in this decision. Room lifetime, attendance,
-admission, permissions and operating rules remain open. Earlier session-audio
+Discord rooms and voice are the optional voice planning direction under
+`DEC-024`/`DEC-035`, with real integration excluded from this implementation.
+The future host-link alternative uses matched-only Discord text. Native website
+text for either queue choice is a current proposal, not a selected implementation
+contract. Future room lifetime, admission, permissions and operating rules
+remain open; universal compulsory attendance is not selected. Earlier session-audio
 retention for report review remains an unapproved proposal, not part of the
 room/voice selection.
 
@@ -242,8 +332,9 @@ application-creation endpoint originated with deprecated GameBridge, is capped
 at ten active Group DMs, and cannot contain a bot. The owner, not these findings,
 selects the Discord planning direction through `DEC-024`. Data flow, detailed
 implementation, membership lifecycle and recording remain unapproved. The
-earlier agent recommendation of a required native coordination room is not
-selected; `OQ-011` is partly resolved and now tracks the remaining detail.
+earlier agent recommendation of a required native coordination room is still
+not approved merely by the owner's latest possibility of website text;
+`OQ-011` tracks the current interim journey and later integration details.
 
 ### Availability Direction
 

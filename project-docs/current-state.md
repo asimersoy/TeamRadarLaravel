@@ -15,9 +15,16 @@
   and bounded development calibration. `DEC-033` plans no exact individual
   feedback history for first-version honor. `DEC-034` excludes volatility and
   reviewer-deviation accountability from current implementation, preserving
-  them as future ideas; detailed specifications remain incomplete
-- **Objective:** continue feedback-format and core honor decisions, preserving
-  future-only exclusions, test hold and slice gates
+  them as future ideas. `DEC-035` through `DEC-041` add optional voice queueing,
+  deferred real Discord integration, rank-compatible/widening honor matching,
+  partial parties/basic friends, non-public reputation, initial no-show rules,
+  a human report inbox and three-dimension pending feedback. Two distinct
+  reports automatically invalidate the target's outgoing ratings for that
+  match before human review and are tagged for admins; automatic penalties
+  remain deferred. Detailed specifications remain incomplete
+- **Objective:** finish unanswered behavioral boundaries in original questions
+  one through six, then discuss identity/rank/data separately; preserve test
+  hold, future-only exclusions and slice gates
 - **Current route:**
   [Trust, reviews, reports and moderation decision group](planning/rewrite-owner-decision-sequence.md#decision-group-5---trust-reviews-reports-and-moderation)
 
@@ -131,9 +138,10 @@
   and surrounding implementation still needs its approved slice specifications.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
-- `DEC-025` chooses session grouping for the first usable version. Lasting-team
-  management, past-teammate history UI and QGuard friend requests are outside
-  that scope; future social features are ideas, not implementation commitments.
+- `DEC-025` chooses session grouping. `DEC-037` partially supersedes its friend
+  exclusion: basic friendships/add-friend functionality, invitations and
+  partial pre-made parties are now current scope. Lasting-team management and
+  past-teammate history UI/friend discovery remain excluded (`DEF-010`).
 - `DEC-026` selects honor in matchmaking from the first version, with new
   players at a common baseline and similar-honor grouping as history develops.
   Detailed scoring/weighting remain open. `DEC-027` fixes the newcomer baseline
@@ -171,11 +179,37 @@
   Both possibilities are preserved in the adjacent future section and `DEF-006`;
   no feature adoption, data collection or consequence is approved. Their open
   design questions are not current blockers and require explicit owner reopening.
+- `DEC-035` refines `DEC-024`: users choose queueing with or without Discord
+  voice; real Discord implementation is excluded from this scope (`DEF-007`).
+  Required native website text and the interim with-voice experience remain
+  open. The availability/test prerequisite is not new provider release evidence.
+- `DEC-036` requires actual game rank/party compatibility first, then favors
+  honor closeness and widens acceptable similarity with wait time. Widening
+  may never break game compatibility; rates/limits are adjustable development
+  settings. Actual game rules and other hard filters still need evidence/rules.
+- `DEC-037` excludes original pre-made co-members' ratings of each other, not
+  ratings between all site friends. `DEC-038` chooses non-public reputation;
+  own-score/feedback/reviewer and authorized-admin audiences remain incomplete.
+- `DEC-039` selects the initial five-minute no-show challenge and 30-second
+  response direction, removal/team disband on failure, and early-leaver rating
+  ineligibility. Vote/response meanings, participation evidence, normal
+  completion and recovery remain open; stronger false-accusation checks are
+  later planning (`DEF-008`). No verified game presence or penalty is implied.
+- `DEC-040`/`DEC-041` select a human report inbox and automatic invalidation
+  of a reported player's outgoing ratings for that match after two distinct
+  reporters, across any categories, before human review; tag it in the admin
+  view. Owner follow-up resolves automatic consequences versus deferred
+  automatic penalties, punishment tools and later correction/appeal policy.
+  Three 1–10 dimensions (communication, sportsmanship, effort) feed a simple
+  mean into honor. Pending report-aware settlement is required; session-end,
+  cutoff/nonresponse, late-report and reporter-eligibility rules remain open.
+  No permanent exact-feedback-history approval or actual collection follows.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
-  API integration, coordination operating rules, matching criteria, honor
+  API integration, complete coordination operating rules, matching contract, honor
   formula or detailed effect, moderation policy, architecture, technology,
-  deployment, or implementation plan has been approved. Discord room/voice direction is
-  selected; voice recording remains an unapproved proposal.
+  deployment, or implementation plan has been approved. Optional Discord
+  room/voice direction is selected but actual integration is excluded now;
+  voice recording remains an unapproved proposal.
 
 ## Work State
 
@@ -324,15 +358,20 @@
   ratings they receive; detection direction and effects on their own honor
   responsiveness remain future questions. `DEF-006` gates any reconsideration;
   neither is an approved later implementation commitment.
-- **Next planning discussion:** one overall behavioral rating versus multiple
-  dimensions, followed by current response options and rules. Future volatility/
-  reviewer accountability does not block this discussion. Reference selection
-  is settled. Startup-method
-  details belong to the implementation agent. Then define response options,
-  eligibility, calculation, reliability, detailed matching effects and
-  visibility incrementally.
-  Voice attendance, solo/partial-party entry and other journey/coordination
-  details remain open for later bounded discussions.
+- **Completed owner-answer record, 2026-10-03:** all eight annotations mapped
+  into `DEC-035` through `DEC-041`, with clear current/future boundaries and
+  partial supersession of `DEC-024`/`DEC-025`. Owner follow-up explicitly resolves
+  automatic rating invalidation versus penalties; admin tagging is included.
+- **Next planning discussion:** close feedback/session settlement, especially
+  what happens if someone never submits; then no-show response/recovery,
+  remaining filters/private audiences and the current text/deferred-voice
+  journey. [OQ-006](governance/open-questions.md#oq-006---what-matching-trust-moderation-and-data-behavior-is-permitted)
+  lists the unanswered items. Original question seven (identity, rank access
+  and data boundaries) is explicitly separate and later; this is not the same
+  numbering as annotation indices or the older plan's decision groups.
+  Dimensions, optional voice direction, partial parties/friends, reference
+  selection and automatic invalidation are settled. Do not re-ask arbitrary
+  numeric tuning/startup methods or future volatility as owner prerequisites.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
@@ -348,6 +387,22 @@
 
 ## Verification State
 
+- The 2026-10-03 owner-answer reconciliation began with clean `new-development`
+  at `49b379d`. Evidence-only inspection preceded corrections; recovery found
+  no partial writes or unrelated modifications. Route: product planning,
+  decision/recommendation safety, privacy/data, owner/external review,
+  deferral/owner review, audit/reconciliation and interruption/recovery.
+  Mandatory entry and selected procedures read. Eight annotations and the
+  follow-up consequence/penalty clarification are recorded, with remaining
+  behavioral ambiguities open. All 54 project Markdown files, 226 local links,
+  32 heading anchors, 41 unique sequential decisions and ten sequential
+  deferrals checked; all four mathematical text blocks are unchanged. Complete
+  nine-file scoped diff reviewed and `git diff --check` passed. One coherent
+  local documentation commit boundary; no app/live/full scoring tests or fresh
+  provider research run. Protected-workflow validator not run because its
+  package is unchanged. No canonical
+  workflow, legacy app or external state changed; no push. No complete
+  implementation slice or production readiness is approved.
 - The 2026-10-03 future-honor scope record began with clean `new-development`
   at `783a56c`. Product planning, decision/recommendation safety, privacy/data,
   owner/external review and deferral/owner review routed the unit; mandatory

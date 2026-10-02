@@ -3,7 +3,9 @@
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
   Valorant; `DEC-024` selects Discord room/voice planning with replaceable
-  joining. Operational details and live verification remain open
+  joining, refined by `DEC-035` to optional voice queueing and real Discord
+  implementation deferred. `DEC-036` through `DEC-041` add matching, party,
+  feedback and admin directions; complete slice contracts remain open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -39,8 +41,9 @@ records an explicit narrow override under the workflow-governance policy.
 - [Product foundations](product-foundations.md) — partially approved; not
   implementation-ready
 - [Coordination and replaceable party handoff](coordination-and-party-handoff.md)
-  — direction approved under `DEC-024`; detailed contracts and implementation
-  slices still proposed; actual game joining unimplemented and live tests paused
+  — optional voice direction under `DEC-024`/`DEC-035`; real Discord integration
+  excluded now; current text/interim-voice contracts unresolved; actual game
+  joining unimplemented and live tests paused
 
 The historical gate is closed as sufficient for redesign. The current
 [game API findings](../research/game-api-feasibility-findings.md) informed the
@@ -71,6 +74,14 @@ voice for planning ahead of tests, with a private matched-only Discord text
 channel for the host-link alternative. The actual game-join method remains
 replaceable; applicable real-behavior evidence is still required. No test is
 resumed by drafting or approving the planning direction.
+
+`DEC-035` subsequently makes Discord voice optional at queue entry and defers
+actual integration beyond current implementation. `DEC-037` includes basic
+friends/invitations and partial parties now. `DEC-041` selects three feedback
+dimensions, pending settlement and automatic per-match outgoing-rating
+invalidation after two distinct reports, tagged for admins before human review;
+automatic penalties are still deferred. The foundation and live question
+register distinguish these directions from remaining behavioral decisions.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

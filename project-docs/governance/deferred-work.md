@@ -283,3 +283,81 @@ boundary, not approval to implement either future feature.
   tests. These are future adoption conditions, not current slice blockers.
 - **Invalidation:** later changes to feedback format, eligibility, reference,
   honor updates, data contracts or matching may change feasibility and value.
+
+## DEF-007 - Return To Real Discord Integration After Availability And Tests
+
+- **Status:** explicit current implementation exclusion; later slice unapproved
+- **Decision owner:** project owner
+- **Execution owner:** unassigned until the owner resumes the relevant tests
+- **Locked decision:** `DEC-035` selects queueing with/without Discord voice
+  and delays actual Discord integration beyond this implementation.
+- **Reason postponed:** owner cannot yet run the relevant tests and wants the
+  Discord Join and Riot lobby-link availability/behavior established first.
+  This is an owner prerequisite, not a fresh verified feature-release claim.
+- **Implementation state:** no Discord adapter, bot/server mutation or live
+  party handoff implemented. Existing tests and their owner hold are preserved.
+- **Return condition:** owner resumption, current provider/client recheck,
+  applicable behavioral results and approval of the later coordination slice.
+  Current development completion alone cannot activate this work.
+- **Owner recheck:** future admission, attendance/recovery, privileged access,
+  lifecycle/cleanup, data and real integration dependencies before execution.
+  Voice recording remains unapproved, not part of this deferral.
+- **Verification required:** applicable cases in the
+  [combined validation program](../planning/coordination-and-party-entry-validation-program.md).
+  Mocking coordination cannot establish a live pass.
+- **Invalidation:** provider features/policy, network availability, game or
+  user-flow changes; do not assume dated research remains current.
+
+## DEF-008 - Plan Stronger Protection Against False No-Show Removal Later
+
+- **Status:** owner-approved later planning; concrete safeguards unselected
+- **Decision owner:** project owner
+- **Execution owner:** unassigned
+- **Locked decision:** `DEC-039` preserves the first-version no-show challenge
+  direction while explicitly postponing stronger false-accusation/collusion
+  checks. Remaining basic vote/response meanings are current open questions.
+- **Reason postponed:** owner requests the simpler initial flow and recognizes
+  that players could falsely claim a joined teammate is absent.
+- **Implementation state:** documentation only, no protection or removal code.
+- **Return condition:** owner reopens later abuse/recovery planning; review
+  this known risk before real-user release. No production safety claim follows
+  from approving the development direction.
+- **Owner recheck:** actual evidence, safeguards and consequences before
+  adopting them; no automatic honor penalty or ban selected.
+- **Verification needed:** false accusations, colluding partial parties,
+  honest delayed users, disputed joining and recovery tests for chosen policies.
+
+## DEF-009 - Plan Moderation Penalties And Correction Policies In A Later Version
+
+- **Status:** owner-approved deferral; specific later policies unapproved
+- **Decision owner:** project owner
+- **Execution owner:** unassigned
+- **Locked decision:** `DEC-040` selects a basic human report inbox now,
+  without admin punishment tools. Automatic penalties and sanction/restriction,
+  correction and appeal policy are later planning/polish.
+- **Current exception / not deferred:** two distinct reports automatically
+  invalidate the target's outgoing ratings for that match before human review,
+  with an admin tag (`DEC-041`). Owner explicitly calls this an eligibility
+  consequence, not a penalty. Do not defer or silently broaden it.
+- **Implementation state:** neither inbox nor consequences implemented yet.
+- **Return condition:** owner initiates later moderation planning and approves
+  concrete policies/specifications before implementation. Current completion
+  is not authorization to choose penalties or operator powers.
+- **Verification needed:** notice, review, evidence, correction/appeal and
+  abuse tests appropriate to the eventual policy; reassess before release.
+
+## DEF-010 - Plan Past-Teammate History And Friend Discovery Later
+
+- **Status:** owner-approved later planning; implementation specification absent
+- **Decision owner:** project owner
+- **Execution owner:** unassigned
+- **Locked decision:** `DEC-037` includes basic friends/invitations and partial
+  parties now, but postpones past-teammate history UI and sending friend
+  requests from that history to a later plan.
+- **Reason postponed:** the core session loop can use basic friendships without
+  adding this discovery/history surface now.
+- **Implementation state:** no history screen or supporting retention selected.
+- **Return condition:** owner starts the later social-history plan; specify
+  privacy/access, storage purpose and acceptance before implementation.
+- **Owner recheck:** no hidden permanent feedback ledger or lifetime session
+  history may be inferred from the basic friendship feature.

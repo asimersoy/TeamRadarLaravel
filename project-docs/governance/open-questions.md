@@ -90,8 +90,9 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
-- **Status:** partially resolved: `DEC-018` selects Valorant and `DEC-025`
-  selects session grouping; remaining wedge components and any deliberate
+- **Status:** partially resolved: `DEC-018` selects Valorant, `DEC-025`
+  selects session grouping and `DEC-037` includes partial parties/basic friends;
+  remaining wedge components and any deliberate
   disposition of the CS2 comparison are open
 - **Decision owner:** project owner
 - **Needed by:** current user journeys and MVP scope
@@ -119,26 +120,29 @@ Historical unknowns do not automatically become requirements.
   designated-human-host Valorant flow if the lobby link passes and approves
   future generic Discord Game Invite checks for both games. Mode, platform/cross-
   play, launch region/language, primary user, party shape, and relationship
-  duration remained open at that stage. `DEC-025` now selects session grouping;
-  session duration/completion and solo/partial-party entry remain open.
+  duration remained open at that stage. `DEC-025` selects session grouping;
+  `DEC-037` now adds partial parties/basic friends. Session duration/completion
+  and detailed party readiness/recovery remain open.
 - **Decision components:** **currently approved:** Valorant as initial game
-  under `DEC-018`, session grouping under `DEC-025`, with lasting-team
-  management, past-teammate history UI and QGuard friend requests excluded
-  from the first version. **Open:** whether the Discord coordination finding
+  under `DEC-018`, session grouping under `DEC-025`, partial-party entry and
+  basic friends/invitations under `DEC-037`. Lasting-team management and
+  past-teammate history UI remain excluded, not basic friend requests.
+  **Open:** whether the Discord coordination finding
   is enough to close the CS2 comparison unless later evidence changes; mode, platform/
-  cross-play, launch region/language, primary user segment, party shape, and
+  cross-play, launch region/language, primary user segment, party readiness, and
   session duration/completion.
-- **Resolved by:** `DEC-018` and `DEC-025` for game and session scope;
+- **Resolved by:** `DEC-018`, `DEC-025` and `DEC-037` for game/session/party scope;
   later wedge components unresolved
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-034` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-041` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
   separate smoothed raw reference, isolated-extreme trade-off and bounded
   development startup/calibration responsibility and no exact first-version
-  feedback-history calculation and future-only extension exclusions;
+  feedback-history calculation, future-only extension exclusions
+  and current queue/party/feedback/report/private-reputation directions;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -159,8 +163,9 @@ Historical unknowns do not automatically become requirements.
   `DEC-032` replaces the exact last-N comparison with the single-value smoothed
   raw reference, starting with adjustable development divisor 20. Standard
   deviation remains a possibility, not a selected metric; full scoring
-  acceptance criteria and safeguards remain incomplete. Report consequences
-  are not selected. `DEC-030`/`DEC-032` keep the eligible reference input
+  acceptance criteria and safeguards remain incomplete. `DEC-041` subsequently
+  selects a narrow automatic report-based rating eligibility consequence;
+  automatic penalties remain deferred. `DEC-030`/`DEC-032` keep the eligible reference input
   unadjusted despite separate honor dampening;
   evolving raw history is the intended behavior-change mechanism. Its response
   speed and resistance to abuse remain unverified. The owner explicitly selects
@@ -181,9 +186,53 @@ Historical unknowns do not automatically become requirements.
   `DEC-034` excludes incoming-rating volatility/adaptive dampening and
   reviewer-deviation accountability from current implementation. Preserve them
   for future consideration without making their questions current blockers.
-  Return to one overall rating versus multiple behavioral dimensions;
-  same-session ordering and complete scoring acceptance remain open.
-  Response options, eligibility, visibility, matching and safeguards remain open.
+  `DEC-041` now selects communication/sportsmanship/effort on 1–10 scales,
+  averaged into one honor input, and pending report-aware settlement. Do not
+  re-ask one overall versus dimensions. `DEC-035` selects with/without-voice
+  queueing and excludes real Discord integration now. `DEC-036` selects hard
+  game-rank compatibility, then honor closeness with wait-dependent widening.
+  `DEC-037` adds friends/partial parties and excludes original pre-made
+  co-member ratings. `DEC-038` selects non-public reputation. `DEC-039` selects
+  the five-minute/30-second no-show direction and early-leaver ineligibility.
+  `DEC-040` selects a human report inbox without punishment tools. The owner's
+  follow-up explicitly approves automatic invalidation of the reported player's
+  outgoing ratings for that match after two distinct reporters, before human
+  review, with an admin tag; it is a consequence, not an automatic penalty.
+- **Remaining original questions one through six, 2026-10-03:**
+  1. **Feedback settlement:** how normal session completion opens feedback;
+     everyone submitting versus a closing deadline; optional/skipped feedback
+     and nonresponse; reports after finalization. Reporter eligibility also
+     needs rules: do early leavers and original pre-made co-members count?
+     Is one early-leave flag sufficient to bar ratings, or is the two-reporter
+     threshold also required? These are behavior choices, not tuning constants.
+  2. **Matching:** any additional hard filters (such as mode, region, language
+     or voice choice) beyond game compatibility; acceptance/no-match recovery.
+     Widening rates and honor-distance settings remain agent-selected adjustable
+     development details. Game-rule facts require research before reliance;
+     rank acquisition/fallback belongs to the later original question seven.
+  3. **Session and parties:** does "everyone" mean all other matched players
+     in the no-show vote; what response stops removal; what constitutes joining
+     without game visibility; normal completion; feedback for pre-play disband;
+     original partial-party persistence/requeue after the assembled team disbands.
+     Stronger anti-collusion safeguards are explicitly later work, not an
+     implicit requirement to implement them now.
+  4. **Private audiences:** own honor visibility; received ratings/aggregates;
+     reviewer identity and necessary authorized admin access. Non-public does
+     not answer these independently.
+  5. **Reports:** basic human inbox and automatic per-match outgoing-rating
+     invalidation/admin tagging are settled. No conflict remains between
+     automatic consequences and deferred automatic penalties. Remaining
+     threshold evidence/settlement questions are in feedback above; detailed
+     sanctions/correction/appeals remain later planning under `DEF-009`.
+  6. **Coordination:** is native matched-only website text required now;
+     whether with/without-voice choices separate pools; whether the with-voice
+     option is hidden/disabled or follows an approved manual path until the
+     later integration. Admission/operator access/cleanup for real Discord
+     return with `DEF-007`, not as a reason to implement Discord now.
+- **Owner discussion boundary:** original question seven is identity, rank
+  access and data boundaries; discuss it separately only after one through six.
+  This numbering differs from annotation indices and the older plan's group IDs.
+  No app implementation or completed specification-slice approval is inferred.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
   for a rating-point division parameter and an explicit new-input name is
   captured in the
@@ -236,14 +285,15 @@ Historical unknowns do not automatically become requirements.
   selection as the critical `OQ-011` gate. See the
   [Discord coordination and voice-evidence packet](../planning/discord-coordination-and-voice-evidence-options.md).
   `DEC-024` now selects Discord room/voice planning and the private matched-only
-  text-channel link alternative; attendance, admission, lifecycle, data and
-  recording questions are not resolved by that selection.
-- **Decision components:** directory versus queue versus recommendation;
-  matching inputs and explanations; how honor similarity affects grouping,
-  baseline and history weighting; reputation visibility and any additional
-  ordering/eligibility effects; review/report scope; moderation/appeals; account and
-  integration evidence; whether the required coordination baseline is native,
-  Discord-primary, or Discord-required; invite versus OAuth admission if
+  text-channel link alternative. `DEC-035` later makes voice a queue choice and
+  excludes real integration from this implementation; future admission,
+  lifecycle, data and recording remain distinct.
+- **Decision components still open:** additional matching inputs/explanations;
+  history-dependent weighting beyond the approved similarity direction;
+  private audience details and any additional ordering/eligibility effects;
+  report/feedback settlement and participation evidence; moderation/appeals; account and
+  integration evidence; native text/current deferred-voice journey;
+  invite versus OAuth admission if
   applicable; post-match membership/access cleanup; whether any voice is
   captured;
   and field-level purpose, consent, retention, deletion, access, security,
@@ -261,6 +311,8 @@ Historical unknowns do not automatically become requirements.
   `DEC-033` for no exact first-version feedback-history calculation;
   `DEC-034` for excluding volatility and reviewer-deviation accountability from
   current implementation while preserving both future ideas;
+  `DEC-035` through `DEC-041` for the current voice, matching, partial-party,
+  private-reputation, no-show, admin and feedback directions above;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
@@ -435,8 +487,9 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
-- **Status:** partially resolved by `DEC-024`: Discord room/voice planning and
-  replaceable joining are selected; operational specifications and evidence
+- **Status:** partially resolved by `DEC-024` and `DEC-035`: optional Discord
+  voice queueing and replaceable joining are selected, but real Discord
+  implementation is outside current scope; operational specifications and evidence
   remain open. Discord-dependent execution
   is on the [2026-09-28 owner hold](deferred-work.md#owner-hold--discord-access--2026-09-28)
 - **Decision owner:** project owner
@@ -448,15 +501,18 @@ Historical unknowns do not automatically become requirements.
 - **Does not block:** surrounding product specifications and, once their
   applicable specifications are approved, provider-independent implementation.
   Live execution remains subject to the owner hold and readiness conditions.
-- **Settled direction:** Discord rooms/voice in either joining flow; preferred
+- **Settled direction:** with/without-Discord-voice queue choice; real Discord
+  integration postponed under `DEF-007`. For that future integration, preferred
   game-specific Discord Join or, as an acceptable alternative, one matched
   player posts the official lobby link into a matched-only Discord text channel.
   Actual game joining stays replaceable and unimplemented.
-- **Next decision:** must every matched player attend Discord voice, or is
-  room provision sufficient with attendance optional? Then address Discord
-  access/admission, room lifetime, host rules, permissions and recovery in
-  bounded discussions. No native voice fallback or compulsory attendance is
-  inferred from the choice of provider.
+- **Next current decision:** whether required matched-only text lives on the
+  website; whether voice choices separate match pools; how the with-voice option
+  is represented while real Discord implementation is excluded. Do not re-ask
+  whether everyone must use Discord: optional queueing is selected. Voice-choice
+  attendance/recovery and future Discord access/admission, lifetime, host,
+  permissions and cleanup still need bounded slice rules. No native voice
+  fallback or universal compulsory attendance is inferred.
 - **Known facts:** Discord's documented APIs support creating private server
   text/voice channels, member/role permission overwrites, constrained server
   invitations, OAuth `guilds.join` admission, messages/interactions within
@@ -481,13 +537,18 @@ Historical unknowns do not automatically become requirements.
   game-specific Discord Join,
   Discord private-room lifecycle, Steam group-chat, and current CS2 alternative
   tests first, then return the reconciled comparison (`DEC-023`).
-- **Latest owner approval, 2026-09-28:** `DEC-024` explicitly approves that
+- **Earlier owner approval, 2026-09-28:** `DEC-024` explicitly approves that
   planning direction ahead of live tests and clarifies matched-only Discord
   text for the link alternative. The
   [coordination specification](../specs/coordination-and-party-handoff.md)
   separates approved requirements from draft detail. No further confirmation
   of this basic choice is needed; `DEC-008` slice approvals and the live-test
   hold remain in force.
+- **Latest owner direction, 2026-10-03:** `DEC-035` partially supersedes the
+  universal Discord planning/timing interpretation. Voice is a queue option;
+  actual integration waits for relevant availability and owner-run live tests.
+  The website text suggestion remains a proposal. No new Riot release status
+  or successful test is established by this answer.
 - **Readiness result:** the
   [resource and sequence plan](../planning/coordination-test-resources-and-sequence.md)
   splits every case and preserves a clean order. Two participant bundles on two
@@ -513,9 +574,11 @@ Historical unknowns do not automatically become requirements.
   room can relay the copied Riot link because the documented delivery surface is not Discord-only. It
   minimizes the required external dependency while preserving Discord as an
   enhancement. This is a proposal, not owner approval.
-- **Decision-order correction:** `DEC-024` supersedes only the wait-before-
+- **Decision-order correction:** `DEC-024` superseded only the wait-before-
   planning-selection part of `DEC-023`. The earlier native-room recommendation
-  does not override the selected Discord direction. No test pass is claimed.
+  does not override owner authority. `DEC-035` now makes Discord optional and
+  delays its implementation; it does not approve the earlier required native
+  room proposal or claim a test pass.
 - **Evidence limit:** current documentation establishes capability, not QGuard
   or Turkey behavior. A later approved prototype/test must verify the selected
   room's isolation, expiry, admission/failure states, lobby-secret handling,
@@ -530,5 +593,6 @@ Historical unknowns do not automatically become requirements.
   admission, lifecycle, permissions, data, host/recovery and regional handling;
   applicable live behavior evidence before real integration reliance. Voice
   recording remains outside this decision. Do not re-ask the basic provider choice.
-- **Resolved by:** `DEC-024` for planning direction and replaceable alternatives;
+- **Resolved by:** `DEC-024`/`DEC-035` for optional voice planning, real-integration
+  deferral and replaceable alternatives;
   the remaining specification and live-evidence items stay open

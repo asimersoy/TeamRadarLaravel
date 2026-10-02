@@ -106,9 +106,9 @@ explicitly rejects them.
 - Preserve applicable current-client and coordination-lifecycle evidence gates
   (`DEC-023`), while choosing Discord room/voice planning ahead of tests and
   leaving game joining replaceable and unimplemented (`DEC-024`).
-- Start with session grouping; exclude lasting-team management, past-teammate
-  history UI and QGuard friend requests from the first version (`DEC-025`).
-  The owner requests honor's first-version role as the next bounded discussion.
+- Start with session grouping (`DEC-025`). `DEC-037` later adds basic
+  friends/invitations and partial parties now, superseding the initial friend
+  exclusion; lasting-team management and past-teammate history UI remain later.
 - Use honor in matchmaking from the first version, with a common starting
   baseline and similar-honor grouping as history develops (`DEC-026`).
   Possible history-dependent weight remains open.
@@ -140,6 +140,20 @@ explicitly rejects them.
 - Exclude incoming-rating volatility/adaptive dampening and outgoing-reviewer-
   deviation accountability from current implementation. Preserve them as future
   possibilities only, requiring explicit reopening and adoption (`DEC-034`).
+- Queue with/without Discord voice, while excluding real Discord integration
+  from current implementation (`DEC-035`). Native website text is proposed.
+- Preserve hard in-game rank compatibility, then honor closeness with tunable
+  wait-dependent widening (`DEC-036`). Never widen past game compatibility.
+- Include basic friends and partial parties; prohibit ratings between original
+  pre-made co-members, not all site friends (`DEC-037`). Keep reputation
+  non-public pending precise private audiences (`DEC-038`).
+- Use the initial no-show challenge and early-leaver ineligibility direction
+  (`DEC-039`), with evidence/response/completion details still open.
+- Start with human report review, no punishment tools (`DEC-040`), and three
+  1–10 dimensions averaged into honor with pending report-aware settlement
+  (`DEC-041`). Two distinct reports automatically invalidate the reported
+  player's outgoing ratings for that match before human review; tag for admins.
+  Owner follow-up distinguishes this consequence from deferred penalties.
 
 ### Unapproved Assumptions
 
@@ -149,7 +163,8 @@ assumption until the owner decides it:
 - TeamRadar remains a video-game teammate finder.
 - That selecting Valorant also settles its mode, region, audience, complete
   platform boundary, rank behavior, provider access, or coordination surface.
-- Users enter a realtime queue rather than browse a directory or invite links.
+- That choosing a queue also approves every queue filter, acceptance, timeout,
+  recovery or interim with-voice behavior.
 - The exact form and effect of honor, reviews, reports, matching, or session
   verification are inherited from the old product.
 - A desktop relay, official game API, Redis, realtime sockets, Laravel, React,
@@ -229,10 +244,12 @@ now owns the cross-game coordination conclusion.
 
 Discord-dependent execution is on the
 [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
-`DEC-024` now approves Discord room/voice planning, a private matched-only text
-channel for the host-link alternative, and replaceable joining. The next bounded
-discussion is whether voice attendance is required or optional; surrounding
-specifications can proceed while tests remain paused. The
+`DEC-024` approves Discord room/voice planning, a private matched-only text
+channel for the future host-link alternative, and replaceable joining.
+`DEC-035` now makes voice a queue option and excludes real Discord integration
+from current implementation. Required website text, voice-pool separation and
+the interim with-voice journey still need decisions; do not re-ask universal
+Discord participation. Surrounding specifications can proceed while tests remain paused. The
 [coordination module](../specs/coordination-and-party-handoff.md) orders later
 specification-gated implementation slices. The preserved
 [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
@@ -266,10 +283,12 @@ claim limits. This closes or narrows `OQ-004`.
 1. Valorant is selected under `DEC-018`; which mode is the first supported wedge?
 2. Which platform, input, cross-play, region/data center, and language are in
    scope?
-3. Is the primary user solo, a partial party, or both?
+3. Both solo and partial-party entry are selected under `DEC-037`; specify
+   their readiness and recovery without re-opening that scope choice.
 4. Session grouping is selected by `DEC-025`; what defines the session's
-   duration and completion? Lasting-team management, past-teammate history UI
-   and QGuard friend requests are outside the first version.
+   duration and completion? Lasting-team management and past-teammate history
+   UI are outside this implementation; basic friends/invitations are now in
+   scope under `DEC-037`.
 5. Is the first priority casual, ranked/competitive, or another player need?
 6. What team size and availability assumptions apply?
 
@@ -278,6 +297,11 @@ out-of-scope segments. This closes or narrows `OQ-005` and determines which
 provider facts require a fresh recheck or deeper research.
 
 ## Decision Group 3 - Smallest Complete MVP Journey
+
+Current direction: session queueing, partial parties and basic friends/invites
+are selected (`DEC-025`/`DEC-035`/`DEC-037`). No-show direction is selected but
+normal completion and response/recovery still need rules (`DEC-039`). Use the
+items below as coverage checks, not a reason to re-open settled choices.
 
 Define the complete user loop before treating features as requirements:
 
@@ -298,6 +322,10 @@ explicitly excluded. A happy-path mockup alone is not a complete journey.
 failure, permission, abuse, and recovery states.
 
 ## Decision Group 4 - Matching And User-Decision Effects
+
+`DEC-036` selects game queue compatibility as the hard constraint, then honor
+similarity with wait-dependent widening. The agent may tune rates/limits in
+development; additional hard filters and actual game-rule evidence remain.
 
 1. Is the experience a neutral directory, deterministic filter, preference
    match, ranked recommendation, or eligibility/screening system?
@@ -337,9 +365,16 @@ eligibility, correction and other-purpose evidence contracts remain open.
 accountability from current implementation; both are preserved in
 [future honor ideas](../specs/product-foundations.md#future-honor-ideas---outside-current-implementation)
 and `DEF-006`. Do not treat future adoption or tuning as a current prerequisite.
-Next discuss one overall rating versus multiple dimensions, response options,
-eligibility, calculation, reliability, matching rules and visibility in bounded
-discussions. Initial correctness checks accompany implementation; full behavioral
+`DEC-041` now selects communication, sportsmanship and effort on 1–10 scales
+with a simple mean. `DEC-037` excludes original pre-made co-member ratings;
+`DEC-038` selects non-public reputation; `DEC-039` excludes early-leaver ratings.
+`DEC-040` selects a human inbox without punishment tools, but owner follow-up
+explicitly approves automatic per-match outgoing-rating invalidation after two
+distinct reporters before human review, with an admin tag. Automatic penalties
+remain later planning, not this eligibility consequence.
+Next settle feedback opening/closure, nonresponse and late reports, participation
+evidence, no-show response/recovery and private audiences in bounded discussions.
+Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.
 
 Choose the lowest-complexity trust model that satisfies the approved product
@@ -363,6 +398,12 @@ abuse tests, explanation/appeal requirements, and any required qualified
 review. This is part of closing `OQ-006`.
 
 ## Decision Group 6 - Identity, Integrations, And Data
+
+**Current owner sequencing:** finish original fundamental questions one through
+six first; their original question seven is this identity/rank/data domain and
+must be discussed separately afterward. Original question numbers and annotation
+indices are not this older plan's decision-group IDs. Do not pull this group
+forward as part of the current unanswered-items response.
 
 1. Which account and game identifiers are collected, and are they declared,
    confirmed, or verified?

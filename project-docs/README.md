@@ -43,8 +43,9 @@ separates that approved direction from draft details and stages later
 implementation around the unimplemented joining component. Live tests remain
 paused; the test-before-selection timing rule is partially superseded, not
 the requirement for evidence before relying on real integrations.
-`DEC-025` selects session grouping for the first usable version, excluding
-lasting-team management, past-teammate history UI and QGuard friend requests.
+`DEC-025` selects session grouping; `DEC-037` now adds basic QGuard friends,
+invitations and partial parties, partially superseding the friend exclusion.
+Lasting-team management and past-teammate history UI remain excluded.
 `DEC-026` selects honor in matchmaking from that version, with newcomers at a
 common baseline and similar-honor grouping as history develops. `DEC-027`
 selects a fixed neutral baseline and leaves equivalent numeric scaling to the
@@ -70,8 +71,23 @@ scope. Both are preserved together as
 [future honor ideas](specs/product-foundations.md#future-honor-ideas---outside-current-implementation),
 not approved later features or current blockers. Existing core honor decisions
 remain in force; their current implementation needs no volatility indicator.
-Full scoring acceptance, feedback format, report effects, visibility and possible
-history-dependent matching weight remain open.
+`DEC-035` makes Discord voice a queue option and excludes real Discord
+implementation from this scope, until availability and owner tests permit a
+later slice. Native website text is proposed, not yet selected. `DEC-036`
+prioritizes hard game rank compatibility, then honor closeness with tunable
+wait-dependent widening. Original partial-party members cannot rate one another
+(`DEC-037`); non-public reputation is selected but private audiences remain
+open (`DEC-038`). `DEC-039` selects initial no-show/early-leaver directions;
+vote, response, completion and recovery details need clarification. `DEC-040`
+selects a human report inbox without punishment tools. `DEC-041` selects three
+1–10 feedback dimensions averaged into honor and pending report-aware settlement.
+The owner explicitly clarifies that two distinct reporters automatically
+invalidate the target's outgoing ratings for that match before human review,
+with an admin tag. This is an eligibility consequence, not an automatic penalty.
+Full scoring acceptance, settlement clock/nonresponse/late reports, participation
+evidence, private audiences and the interim coordination journey remain open.
+Finish original questions one through six before the separate identity/rank/data
+discussion. Existing tuning/startup delegation and future-only exclusions stand.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.

@@ -838,12 +838,15 @@ are not superseded or waived.
   confirmation in the 2026-09-28 separation proposal. `DEC-018` game direction,
   applicable live-evidence gates, the test hold, and controlled-operation gates
   remain unchanged.
-- **Superseded by:** none
+- **Superseded by:** `DEC-035` for optional voice queueing and the exclusion
+  of real Discord integration from the current implementation scope; preferred
+  game-join candidates and evidence gates remain in force
 
 ## DEC-025 - Start With Session Grouping
 
 - **Date:** 2026-10-02
-- **Status:** approved first-version scope
+- **Status:** approved session-grouping scope; friend-request exclusion
+  partially superseded by `DEC-037`
 - **Decision owner:** project owner
 - **Decision:** QGuard's first usable version focuses on grouping players for
   a playing session. Persistent-team recruitment and management are outside
@@ -882,7 +885,8 @@ are not superseded or waived.
   update; detailed behavior remains unresolved. No provider action or push.
 - **Supersedes:** none; resolves the session-versus-lasting-team component of
   `OQ-005` without closing the remaining product boundary.
-- **Superseded by:** none
+- **Superseded by:** `DEC-037` for basic friendships, invitations and partial
+  parties; lasting-team management and past-teammate history UI remain excluded
 
 ## DEC-026 - Use Honor In Matchmaking From The First Version
 
@@ -1446,3 +1450,227 @@ mathematics and empirical performance still require specification and tests.
 - **Supersedes:** the prior current agenda to decide on volatility adaptation;
   no approved core honor behavior is superseded
 - **Superseded by:** none
+
+## DEC-035 - Offer Voice Queue Choice And Defer Real Discord Integration
+
+- **Date:** 2026-10-03
+- **Status:** approved product direction and current integration exclusion;
+  interim coordination journey remains incomplete
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotation 1 selects queueing with or without
+  Discord voice and explicitly delays Discord implementation beyond this
+  implementation, until the relevant Discord Join and Riot lobby-link
+  availability/behavior can be tested. Discord is not a universal participation
+  prerequisite. Preserve replaceable, presently unimplemented game joining.
+- **Proposal, not approval:** both paths probably need text communication,
+  possibly through QGuard's website. The owner has not yet selected a required
+  native chat feature or an interim manual-Discord flow.
+- **Open:** whether voice choices separate match pools; whether the voice
+  option is hidden/disabled or has an approved manual path during the deferral;
+  required native text room and its lifecycle. Future Discord admission,
+  operator-access and cleanup contracts remain for the later integration slice.
+- **Evidence boundary:** the owner's release/availability prerequisite is not
+  a newly verified Riot release fact. Existing research is dated evidence;
+  recheck provider state before resuming tests or relying on an integration.
+- **Return condition:** `DEF-007` and the existing owner live-test hold;
+  applicable specification approval under `DEC-008` before implementation.
+- **Supersedes:** `DEC-024` only for optional voice participation and current
+  Discord implementation timing; game-join preference and evidence gates remain
+- **Superseded by:** none
+
+## DEC-036 - Preserve Game Rank Compatibility While Widening Honor Matching
+
+- **Date:** 2026-10-03
+- **Status:** approved priority and widening direction; complete matching
+  contract and game rules unverified
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotation 2 puts in-game rank compatibility
+  first: matched users must be allowed to queue together under that game's
+  rules. Within that constraint, prioritize similar honor. As queue wait grows,
+  dynamically relax similarity criteria to accept less-similar teammates;
+  never widen beyond actual in-game queue compatibility.
+- **Implementation discretion:** widening rates, honor-distance limits and
+  equivalent tuning are adjustable in development, with tests and documented
+  selections. Unknown player population does not require freezing constants now.
+- **Open / evidence needed:** applicable per-game/mode/party-size queue rules;
+  any additional hard constraints such as language, region or voice choice;
+  missing/contested rank behavior and acceptance/requeue rules. No rank source
+  or fallback is selected here; those belong to the later identity/data group.
+- **Consequences:** score closeness is a preference, not a promise of equal
+  behavior. Waiting longer cannot authorize an impossible game party.
+- **Return condition:** approved relevant matching slice and evidence-backed
+  fixtures before reliance; no app or research execution approved by this entry
+- **Supersedes:** none; refines `DEC-026`
+- **Superseded by:** none
+
+## DEC-037 - Include Basic Friends And Partial Parties With Co-Party Rating Exclusion
+
+- **Date:** 2026-10-03
+- **Status:** approved current-scope addition and rating restriction;
+  detailed party/recovery contract open
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotations 3 and 8 add partial pre-made
+  parties, basic QGuard friendship/add-friend functionality and invitations
+  into a QGuard lobby to the current implementation scope. Players may add
+  one another as friends. Past-teammate history and friendship discovery from
+  that history remain for a later plan, not this implementation.
+- **Eligibility:** members of the same original partial party cannot rate
+  each other. They may rate other matched teammates, who may also rate them,
+  subject to the other participation/report rules. This is not a blanket
+  prohibition on rating anyone in one's QGuard friend list.
+- **Enforcement interpretation:** preserve the pre-made membership snapshot
+  at queue/match entry; leaving that party later must not erase this restriction.
+  Friendship is the owner's chosen supporting feature, not a claim that every
+  possible partial-party implementation technically requires a friend system.
+- **Open:** party invitation/consent and readiness behavior; what happens to
+  the original partial party when the assembled team disbands; report-counting
+  treatment of pre-made teammates. No history UI or permanent-team scope added.
+- **Return condition:** approve the applicable party/friend and matching
+  specifications under `DEC-008` before their implementation slice
+- **Supersedes:** `DEC-025` only for basic friends/requests and partial-party
+  entry; session grouping and remaining social-history exclusions stand
+- **Superseded by:** none
+
+## DEC-038 - Keep Reputation And Feedback Non-Public For Now
+
+- **Date:** 2026-10-03
+- **Status:** approved private direction; audience/access contract incomplete
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotation 4 answers the honor, feedback and
+  reviewer-identity visibility question with "private for now." Do not make
+  these public or expose them to teammates by default.
+- **Open:** whether players see their own honor, received individual feedback,
+  aggregates or reviewer identities; necessary authorized admin access. Private
+  does not itself mean anonymous, and does not approve a visible second score.
+- **Return condition:** approve the affected audience/access contract before
+  exposing those fields in a user or operator slice
+- **Supersedes:** none; settles non-public direction, not all of `OQ-006`
+- **Superseded by:** none
+
+## DEC-039 - Use A Bounded No-Show Challenge And Exclude Early-Leaver Ratings
+
+- **Date:** 2026-10-03
+- **Status:** approved initial direction; response, evidence and completion
+  rules need owner clarification
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotations 5 and 6 classify not joining
+  after matching as abandonment. After five minutes, teammates can raise a
+  no-show challenge; if "everyone" does so, the target has 30 seconds to
+  respond/join. On failure, remove that player and disband the QGuard matched
+  team so others can find another game. These are initial configurable timings.
+- **Feedback eligibility:** a player who left the game early cannot give
+  ordinary teammate ratings. Teammate feedback about early leaving is the
+  proposed evidence, not proof supplied by a game API.
+- **Open:** whether "everyone" means all other matched players; whether an
+  "I joined" response stops removal or needs confirmation; what counts as
+  joining with no in-game visibility; how normal completion is declared;
+  whether one early-leave flag suffices or the two-reporter rule applies;
+  pending feedback for a team disbanded before play and requeue/partial-party
+  recovery behavior.
+- **Residual risk / deferral:** owner acknowledges false no-show accusations
+  and collusion and explicitly puts stronger checks into later planning
+  (`DEF-008`). Do not invent automatic honor deductions, bans or sanctions.
+  QGuard disbanding is not verified control of the actual game party. Discord
+  presence, if later available, cannot prove in-game joining or communication.
+- **Return condition:** clarify affected rules and approve the relevant
+  development slice. This does not approve production release without review.
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-040 - Start With A Human Report Inbox Without Punishment Tools
+
+- **Date:** 2026-10-03
+- **Status:** approved initial admin scope; moderation penalties/policy deferred
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotation 7 selects a basic admin dashboard
+  with reports presented to a human reviewer. Admin punishment/repercussion
+  tools are not required now; automatic sanctions, restrictions, correction
+  and appeal policy are for later planning/polish (`DEF-009`). No particular
+  later penalty or policy is approved.
+- **Owner clarification in the same review:** the owner distinguishes automatic
+  consequences from automatic penalties. Two distinct teammates reporting a
+  player in a match automatically invalidate that player's outgoing ordinary
+  ratings for that match before human review (`DEC-041`). Tag this action in
+  the admin view. This narrow eligibility consequence is current scope; do not
+  expand it to bans, honor deductions or account sanctions. The prior wording
+  about deferring all automatic effects did not express the owner's intent.
+- **Implementation discretion:** ordinary admin-page layout/filter details
+  can be drafted by the agent; authorized access and review meaning remain
+  product/data requirements, not inferred from historical admin code.
+- **Return condition:** approve the relevant report/admin specification and
+  remaining settlement/eligibility rules before implementing the affected slice
+- **Supersedes:** none
+- **Superseded by:** none
+
+## DEC-041 - Select Three Feedback Dimensions And Pending Report-Aware Settlement
+
+- **Date:** 2026-10-03
+- **Status:** approved feedback and automatic eligibility direction; settlement
+  clock remains open, not an executable complete contract
+- **Decision owner:** project owner
+- **Decision / evidence:** owner annotation 8 selects communication,
+  sportsmanship and effort ratings on user-facing scales of 1 through 10.
+  Take their simple arithmetic mean as one behavioral honor input; separate
+  permanent storage of each dimension is not required for this version.
+  Communication can include in-game communication, not just Discord; effort
+  remains behavior, not a mechanical-skill score (`DEC-010`).
+- **Numeric responsibility:** owner prefers internal 100-scale or finer
+  equivalent units to preserve small changes. The implementation agent chooses
+  a suitable fractional representation and tests precision, rather than asking
+  the owner to resolve the spoken float/integer terminology. `DEC-027` remains
+  equivalent-scaling authority, not permission to change behavior.
+- **Who can rate:** matched teammates, excluding oneself, unrelated people
+  and original pre-made co-members under `DEC-037`; participation requirements
+  under `DEC-039` also apply.
+- **Report form direction:** expandable "Dishonorable actions" section with
+  flags initially No: early leaving before completion; no talking/communication
+  in Discord only for a Discord-enabled match; harmful, unsportsmanlike
+  language/slurs. These are separate report flags, not numeric zero ratings.
+  The Discord-specific question cannot operate as a real monitored feature
+  while integration is excluded. Presence alone is not speech evidence.
+- **Requested report effect, restated:** two or more distinct teammates
+  reporting a player across any categories should make that player's outgoing
+  ordinary ratings for this session ineligible. It is not two categories from
+  one reporter, the incoming ratings received by that player, or a permanent
+  ban. The owner's subsequent explicit clarification approves this automatically
+  before human review, with the invalidation tagged in the admin view. Automatic
+  penalties remain excluded under `DEC-040`.
+- **Timing direction:** keep submitted ratings pending while session feedback
+  and reports are considered. Fast submission and leaving the UI must not evade
+  later reports; any new queue before settlement uses the then-current honor,
+  not a claimed finalized update. Only eligible inputs enter both honor and
+  its unadjusted smoothed reference.
+- **Open:** how a session enters feedback; everyone responding versus a
+  deadline; optional/skipped feedback and nonresponse; late reports after
+  finalization; whether early leavers/pre-made teammates may submit reports
+  that count toward the threshold. Ineligibility and recomputation behavior
+  must be defined without silently adding a permanent raw-history ledger.
+- **Data boundary:** a pending session batch is not an approval for permanent
+  exact feedback history. `DEC-033` remains in force; actual collection,
+  retention and access are for the later identity/data discussion.
+- **Return condition:** settle these relevant product rules and approve the
+  feedback/calculation slice; startup methods and development tuning remain
+  delegated under `DEC-031`/`DEC-032`, not new owner questions
+- **Supersedes:** none; refines feedback format/eligibility direction
+- **Superseded by:** none
+
+### Shared Route And Evidence Boundary For DEC-035 Through DEC-041
+
+Bounded owner-answer reconciliation, 2026-10-03: audited the eight annotations
+against current records at clean `new-development`, `49b379d`, before edits.
+The latest request is to finish original questions one through six; original
+question seven (identity, rank access and data boundaries) remains for a
+separate discussion. This differs from annotation numbering and from the
+longer historical decision-sequence group numbering.
+
+Route: product planning; decision/recommendation safety; privacy/data;
+owner/external review; deferral/owner review; audit/reconciliation; recovery.
+Mandatory entry and selected procedures were read. Clear new owner directions
+authorize the documented additions/partial supersessions; the subsequent owner
+clarification resolves automatic rating invalidation versus penalties. Other
+uncertain operational meanings remain open. No approval of application
+implementation, a complete specification slice, live-test resumption, provider
+actions or release is inferred from this review. Canonical workflow, legacy
+implementation and existing honor mathematics are preserved. Verification is
+recorded in the current-state checkpoint after scoped document checks; one
+coherent local documentation commit, no push or other external action.
