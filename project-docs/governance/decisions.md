@@ -1390,3 +1390,59 @@ mathematics and empirical performance still require specification and tests.
 - **Supersedes:** narrows `DEC-032`'s unresolved individual-history planning
   direction; does not replace its reference or `DEC-031`'s startup delegation
 - **Superseded by:** none
+
+## DEC-034 - Keep Volatility And Reviewer-Accountability Ideas Future Only
+
+- **Date:** 2026-10-03
+- **Status:** approved current-scope exclusions and future-idea preservation;
+  feature adoption unapproved
+- **Decision owner:** project owner
+- **Decision:** exclude rating-volatility estimation and volatility-adaptive
+  dampening from the current implementation scope. Preserve that possibility
+  and the new reviewer-deviation accountability idea together for future
+  consideration. Neither is an approved feature scheduled for later execution.
+- **Approval evidence:** the owner explicitly says to keep volatility out of
+  "this implementation scope," that there is no need to calculate it yet, and
+  asks to write both ideas for the future. Existing discussed systems remain
+  the scope direction; this is not a request to start application implementation.
+- **Second idea preserved:** a player who consistently rates others differently
+  from the assessments those recipients receive from other teammates might
+  face a consequence to their own honor's responsiveness. The goal is fair
+  ratings and accountability for absurd/unusual ratings. Detecting positive
+  and negative departures versus only negative ones is undecided; increasing
+  their own honor's responsiveness both upward/downward versus downward only
+  is also undecided. No comparison method, indicator, formula or penalty is
+  approved. The working interpretation and remaining ambiguities are in the
+  product-foundation future section.
+- **Current implementation consequence:** do not introduce either metric,
+  adaptive effect, supporting data collection or diagnostic-only calculation
+  into the current slice. Their future questions do not block that slice.
+  Preserve the existing fixed-neutral baseline, smoothed unadjusted reference,
+  bidirectional feedback, deviation-based dampening direction, intended
+  isolated-extreme trade-off, initialization/confidence delegation and current
+  no-exact-history planning under `DEC-026` through `DEC-033`.
+- **Return condition:** only explicit owner reopening initiates future
+  consideration. Re-evaluate benefit, evidence, abuse/fairness risks and data
+  requirements; obtain feature adoption and applicable specification approval
+  before implementation. Completing the current slice does not self-activate it.
+- **Boundary:** no actual collection/retention, public label, majority-as-truth
+  rule, automatic sanction, raw-history override, app implementation, live-test
+  resumption or remote action is approved. Other current specification gaps
+  and `DEC-008` gates remain intact.
+- **Affected records:** product foundations and its adjacent future ideas;
+  `OQ-006`, `DEF-006`, current state, project index and owner decision sequence.
+- **Route / baseline:** product planning; decision/recommendation safety;
+  privacy/data; owner/external review; deferral/owner review. Mandatory entry,
+  always-applicable documents and selected procedures read; clean
+  `new-development` at `783a56c` verified. Project documentation only; canonical
+  workflow and legacy app preserved. No agent delegation or external action.
+- **Verification:** all 54 project Markdown files, 223 local links, 30 heading
+  anchors, 34 unique sequential decision IDs and six sequential deferral IDs
+  checked. All four mathematical text blocks and prior decision entries remain
+  unchanged. Full seven-file diff reviewed; `git diff --check` passed. No
+  mathematical method for the reviewer idea evaluated or implemented; no app,
+  live or new scoring tests run. Protected-workflow validator not run because
+  the package is unchanged. No push or external state change occurred.
+- **Supersedes:** the prior current agenda to decide on volatility adaptation;
+  no approved core honor behavior is superseded
+- **Superseded by:** none

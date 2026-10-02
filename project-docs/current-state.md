@@ -1,6 +1,6 @@
 # QGuard Current State
 
-- **Last updated:** 2026-10-02
+- **Last updated:** 2026-10-03
 - **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
   are on owner hold as of 2026-09-28 until the owner can test; no live result
   exists. `DEC-024` approves Discord rooms/voice as the planning direction and
@@ -13,13 +13,13 @@
   attenuated honor influence. `DEC-031` delegates required startup/confidence
   handling. `DEC-032` selects the smoothed reference, isolated-extreme trade-off
   and bounded development calibration. `DEC-033` plans no exact individual
-  feedback history for first-version honor; detailed specifications remain
-  incomplete
-- **Objective:** evaluate optional rating-dispersion adaptive dampening, then
-  continue feedback-format and honor decisions, preserving test hold and slice
-  gates
+  feedback history for first-version honor. `DEC-034` excludes volatility and
+  reviewer-deviation accountability from current implementation, preserving
+  them as future ideas; detailed specifications remain incomplete
+- **Objective:** continue feedback-format and core honor decisions, preserving
+  future-only exclusions, test hold and slice gates
 - **Current route:**
-  [Rating-dispersion adaptive-dampening proposal](specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
+  [Trust, reviews, reports and moderation decision group](planning/rewrite-owner-decision-sequence.md#decision-group-5---trust-reviews-reports-and-moderation)
 
 ## Verified Workspace State
 
@@ -164,8 +164,13 @@
   correction/retention contracts still need explicit decisions; no data deletion
   is authorized. Reference choice, gradual adaptation, startup responsibility
   and independently named settings are reaffirmed, not new owner blockers.
-  Adaptive dampening based on an aggregate spread estimate is an evaluated
-  proposal only; current draft mathematics does not already track that spread.
+  Current draft mathematics does not already track typical rating spread.
+- `DEC-034` excludes incoming-rating volatility/adaptive dampening and
+  outgoing-reviewer-deviation accountability from current implementation.
+  Existing core honor decisions remain in force without these calculations.
+  Both possibilities are preserved in the adjacent future section and `DEF-006`;
+  no feature adoption, data collection or consequence is approved. Their open
+  design questions are not current blockers and require explicit owner reopening.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -313,10 +318,16 @@
   extra smoothed scalar and bounded deviation allowance. Synthetic examples
   demonstrate greater score swings without necessarily changing the balanced
   sequence's center; no anti-retaliation or behavioral effectiveness is proven.
-- **Next planning discussion:** whether optional dispersion-adaptive dampening
-  is desirable given faster response and larger score swings. It is not yet a
-  required feature. Then return to one overall behavioral rating versus multiple
-  dimensions. Reference selection is settled. Startup-method
+- **Completed, 2026-10-03:** `DEC-034` records the current-scope exclusion of
+  volatility and preserves it beside the less-developed reviewer-deviation
+  accountability idea. The latter distinguishes ratings a player gives from
+  ratings they receive; detection direction and effects on their own honor
+  responsiveness remain future questions. `DEF-006` gates any reconsideration;
+  neither is an approved later implementation commitment.
+- **Next planning discussion:** one overall behavioral rating versus multiple
+  dimensions, followed by current response options and rules. Future volatility/
+  reviewer accountability does not block this discussion. Reference selection
+  is settled. Startup-method
   details belong to the implementation agent. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
@@ -337,6 +348,19 @@
 
 ## Verification State
 
+- The 2026-10-03 future-honor scope record began with clean `new-development`
+  at `783a56c`. Product planning, decision/recommendation safety, privacy/data,
+  owner/external review and deferral/owner review routed the unit; mandatory
+  entry, always-applicable documents and selected procedures were read. Seven
+  project records only: both ideas are future-only, current adoption questions
+  removed, existing honor authority and four mathematical text blocks preserved.
+  All 54 project Markdown files, 223 local links, 30 heading anchors, 34 unique
+  sequential decisions and six sequential deferrals were checked. Full scoped
+  diff and `git diff --check` passed. No new mathematics, app implementation,
+  live test, collection or external state change; no push. Application/scoring
+  tests and the protected-workflow validator were not run for documentation-only
+  changes. Future usefulness, fairness, data needs and consequences remain
+  undecided and cannot become current implementation requirements implicitly.
 - The 2026-10-02 history/dispersion assessment began with clean
   `new-development` at `f2aa723`. Product planning, research/sourcing,
   decision/recommendation safety, privacy/data, owner/external review,

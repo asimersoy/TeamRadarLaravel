@@ -137,6 +137,9 @@ explicitly rejects them.
   history ledger or last-N buffer (`DEC-033`). Surface any other-purpose raw
   retention explicitly; do not silently add it or restore exact-window/startup
   owner questions. A future history decision need not change the reference.
+- Exclude incoming-rating volatility/adaptive dampening and outgoing-reviewer-
+  deviation accountability from current implementation. Preserve them as future
+  possibilities only, requiring explicit reopening and adoption (`DEC-034`).
 
 ### Unapproved Assumptions
 
@@ -314,7 +317,7 @@ monitoring, and rollback boundary. This is part of closing `OQ-006`.
 
 ## Decision Group 5 - Trust, Reviews, Reports, And Moderation
 
-**Current discussion, 2026-10-02:** honor's behavioral purpose and first-version
+**Current discussion, updated 2026-10-03:** honor's behavioral purpose and first-version
 matching role and fixed neutral newcomer baseline are approved. Equivalent
 numeric representation is an implementation choice under `DEC-027`, not a
 required owner prompt. `DEC-028` approves routine teammate feedback that can
@@ -330,13 +333,11 @@ startup detail or finalize tuning first. `DEC-032` selects the isolated-extreme
 negative trade-off and bounded constant/small-function calibration. `DEC-033`
 plans no exact individual feedback history for the first-version calculation;
 eligibility, correction and other-purpose evidence contracts remain open.
-Next assess the optional
-[rating-dispersion adaptive-dampening proposal](../specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal):
-it can track spread with one extra scalar and increase response to normal wide
-ratings, but also increases score swings and can weaken abuse protection.
-Adoption is an owner choice, not a settled feature or a need to reopen startup
-or reference decisions. Then return to one overall rating versus multiple
-dimensions, response options,
+`DEC-034` excludes volatility calculation/adaptive dampening and reviewer-deviation
+accountability from current implementation; both are preserved in
+[future honor ideas](../specs/product-foundations.md#future-honor-ideas---outside-current-implementation)
+and `DEF-006`. Do not treat future adoption or tuning as a current prerequisite.
+Next discuss one overall rating versus multiple dimensions, response options,
 eligibility, calculation, reliability, matching rules and visibility in bounded
 discussions. Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.

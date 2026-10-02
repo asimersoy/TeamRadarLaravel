@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-033`
+- **Authority:** `DEC-009` through `DEC-034`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -87,10 +87,13 @@ constants, with occasional small function refinements preserving this behavior,
 and document/test development changes. Material changes to approved behavior
 or other product boundaries still require owner approval.
 
-The owner's rating-volatility idea is under assessment, not yet selected as an
-additional scoring rule. The current draft uses a fixed deviation allowance;
-it does not retain or adapt to typical rating spread. See the
-[rating-dispersion proposal](#rating-dispersion-adaptive-dampening-proposal).
+Under `DEC-034`, incoming-rating volatility estimation/adaptive dampening and
+outgoing-reviewer-deviation accountability are outside the current implementation
+scope. Do not calculate or retain either indicator in this slice, including as
+diagnostic-only future scaffolding. The existing draft uses a configured
+deviation allowance, not a player-spread-dependent one. Preserve both ideas in
+[future honor ideas](#future-honor-ideas---outside-current-implementation);
+they are not blockers or approved later implementation commitments.
 
 This foundation does not yet settle review eligibility, questions, the complete
 scoring contract, reviewer weighting, visibility, exact matching rules,
@@ -436,12 +439,26 @@ The prior reference must be used when assessing a new input; feeding that
 input into the reference first would reduce its measured departure. No live
 data, production implementation or anti-retaliation guarantee is established.
 
+## Future Honor Ideas - Outside Current Implementation
+
+- **Scope authority:** `DEC-034`, owner instruction on 2026-10-03
+- **Status:** preserved future possibilities; excluded from the current
+  implementation scope, not approved scoring features
+- **Return condition:** owner explicitly reopens future consideration; adoption
+  and an applicable approved specification are required before implementation
+- **Current boundary:** retain the existing honor direction under `DEC-026`
+  through `DEC-033`. No extra indicator, collection, retention, schema field,
+  consequence, telemetry or implementation gate is implied by these notes.
+- **Future-work routing:** [DEF-006](../governance/deferred-work.md#def-006---reconsider-future-honor-ideas-on-owner-request)
+
 ### Rating-Dispersion Adaptive Dampening Proposal
 
-- **Status:** evaluated proposal, not approved scoring behavior or implementation
+- **Status:** previously evaluated proposal; future-only under `DEC-034`,
+  explicitly excluded from current implementation
 - **Source:** owner questions and annotations, 2026-10-02
-- **Reviewer / next choice:** project owner; whether normal rating dispersion
-  should increase ordinary feedback's influence, accepting larger score swings
+- **Future reviewer / choice:** project owner, only after explicit reopening;
+  whether normal rating dispersion should increase ordinary feedback's influence,
+  accepting larger score swings. This is not the next current-scope question.
 - **Scope:** a bounded aggregate spread estimate, not individual rating history,
   a public volatility label, a misconduct finding or a new matching dimension
 
@@ -558,16 +575,68 @@ sensitivity. Applying smoothing to prior-reference absolute residuals and
 feeding it into QGuard's allowance is an agent proposal, not a NIST-endorsed
 scoring formula, a statistical confidence guarantee or anti-abuse validation.
 
-**Recommendation / approval boundary:** optional bounded adaptation is worth
-comparing with fixed allowance if faster response within a player's usual range
-is desired; it is not needed merely to obtain an average or eventual behavior
-change. Selecting it changes scoring behavior and requires owner approval,
+**Future evaluation / approval boundary:** the prior assessment identified
+bounded adaptation as an option for faster response within a player's usual
+range, not a requirement for an average or eventual behavior change. The owner
+now excludes it from this implementation scope under `DEC-034`; do not compare
+or build it as a prerequisite to current implementation. If reopened,
+selecting it changes scoring behavior and requires owner approval,
 not just implementation tuning under `DEC-032`. Before relying on it, compare
 constant/alternating ratings, isolated outliers, sustained improvement/decline,
 sparse startup, one-session bursts, reviewer attacks, input ordering and
 matching stability. Full adversarial, calibrated and live-user validation has
 not been performed. No new history collection, public label, sanction, daily
 reset or implementation gate override is approved.
+
+### Reviewer-Deviation Accountability Idea
+
+- **Status:** less-developed owner idea, future-only under `DEC-034`; no formula,
+  consequence or implementation selected
+- **Source:** owner instruction, 2026-10-03, asking that this be preserved beside
+  the incoming-rating volatility possibility
+- **Intent:** encourage fair teammate feedback by making consistently unusual
+  ratings a potential source of consequences for the person submitting them
+
+**Proposed observation:** consider how a reviewer's outgoing behavior ratings
+compare with the recipient's ratings/reputation established by other teammates.
+Retain some future indicator of persistent positive/negative departure, or
+possibly negative departure only. The detection direction is expressly
+undecided. This concerns behavior feedback, not a selected comparison with game
+skill rank. The reference, time of comparison, aggregation and retained data
+are all unchosen; preserving the idea does not approve exact feedback history
+or override `DEC-033`.
+
+**Proposed consequence / working interpretation:** a reviewer who consistently
+departs from others' assessments might have their own honor become more
+responsive to feedback they subsequently receive. This could increase movement
+in both positive and negative directions, or only downward movement; that is a
+second, separate undecided direction choice. This is not a selected automatic
+point deduction, a change to the recipient's game rank, or an approved rule for
+downweighting the reviewer's outgoing ratings. The precise meaning of "more
+changeable" still needs future design/owner review.
+
+**Distinction from incoming volatility:** the first idea measures the spread
+of ratings a player receives. This second idea measures the pattern of ratings
+a player gives about other people, and proposes an effect on that reviewer's
+own honor responsiveness. Neither one implies the other or becomes part of
+current scoring.
+
+**Open only if reopened:** positive-and-negative versus negative-only detection;
+the recipient comparison reference; thresholds, persistence and sample/confidence
+handling; independent-reviewer/session evidence; aggregate versus individual
+data requirements; both-direction versus downward-only honor response; strength,
+duration/recovery, explanations and correction/appeal; and whether the benefits
+justify feedback loops or added abuse risk. No constants or method are delegated
+for this future feature now.
+
+**Future review cautions, not findings about users:** agreement with other
+reviewers is not proof of accuracy or fairness. Genuine minority reports,
+different session behavior, coordinated positive ratings and retaliation could
+all create departures from a reference. A future design must not silently define
+fairness as conformity to the majority or treat disagreement as misconduct.
+Changing the reviewer's own score sensitivity can also feed back into matching
+and later ratings. These risks require evidence and explicit adoption review if
+the idea returns; they are not extra current-scope implementation requirements.
 
 ## Open Product Decisions
 

@@ -133,12 +133,12 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-033` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-034` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
   separate smoothed raw reference, isolated-extreme trade-off and bounded
   development startup/calibration responsibility and no exact first-version
-  feedback-history calculation;
+  feedback-history calculation and future-only extension exclusions;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -147,7 +147,7 @@ Historical unknowns do not automatically become requirements.
 - **Blocks:** collecting player or session data, ordering or excluding users,
   displaying reputation, accepting reviews/reports, or designing moderation.
 - **Does not block:** selecting lower-risk alternatives and explicit non-goals.
-- **Current owner direction, 2026-10-02:** `DEC-026` selects honor in
+- **Current owner direction, updated 2026-10-03:** `DEC-026` selects honor in
   matchmaking from the first session-grouping version, a common starting
   baseline and similar-honor grouping as history develops. Increasing the
   weight with history is a possible mechanism, not an approved rule. `DEC-027`
@@ -178,8 +178,10 @@ Historical unknowns do not automatically become requirements.
   `DEC-033` selects no exact individual feedback-history ledger or last-N buffer
   for the first-version honor calculation. Other-purpose evidence, retention,
   eligibility and correction need explicit compatible contracts.
-  Review the new dispersion-dependent dampening proposal before returning to
-  one overall rating versus multiple behavioral dimensions;
+  `DEC-034` excludes incoming-rating volatility/adaptive dampening and
+  reviewer-deviation accountability from current implementation. Preserve them
+  for future consideration without making their questions current blockers.
+  Return to one overall rating versus multiple behavioral dimensions;
   same-session ordering and complete scoring acceptance remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
@@ -202,10 +204,17 @@ Historical unknowns do not automatically become requirements.
   dampened without storing individual history, and whether that improves
   responsiveness enough to justify larger score swings. The
   [evaluated proposal](../specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
-  demonstrates a one-scalar option and bounded influence connection. Adoption,
-  not the settled reference or startup responsibility, is the next optional
-  scoring-behavior choice. No volatility label or misconduct inference is
-  approved. This proposal is not yet a required first-version feature.
+  demonstrates a one-scalar option and bounded influence connection. The owner
+  subsequently excluded this feature from current implementation under
+  `DEC-034`, rather than selecting its adoption. No current volatility decision
+  is needed; preserve the assessment for explicit future reopening.
+- **Future reviewer-deviation idea, 2026-10-03:** `DEC-034` also preserves an
+  undeveloped accountability idea beside volatility in
+  [future honor ideas](../specs/product-foundations.md#future-honor-ideas---outside-current-implementation).
+  Its detection direction and consequence to the reviewer's own honor remain
+  unchosen. These future-only questions do not block current specifications or
+  implementation; [DEF-006](deferred-work.md#def-006---reconsider-future-honor-ideas-on-owner-request)
+  requires explicit reopening, adoption and applicable approval before execution.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -250,6 +259,8 @@ Historical unknowns do not automatically become requirements.
   `DEC-032` for smoothed-reference replacement, isolated-extreme trade-off and
   bounded development calibration;
   `DEC-033` for no exact first-version feedback-history calculation;
+  `DEC-034` for excluding volatility and reviewer-deviation accountability from
+  current implementation while preserving both future ideas;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

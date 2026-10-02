@@ -1,12 +1,15 @@
 # TeamRadar Deferred Work
 
-Status: updated 2026-09-28; Discord-dependent execution on owner hold
+Status: updated 2026-10-03; Discord-dependent execution on owner hold;
+future honor consideration preserved without feature-adoption approval
 
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
 
 Work may enter this register only after the owner approves it and intentionally
 postpones it with a return condition.
+`DEF-006` records the approved exclusion/preservation and future reconsideration
+boundary, not approval to implement either future feature.
 
 ## Owner Hold — Discord Access — 2026-09-28
 
@@ -248,3 +251,35 @@ postpones it with a return condition.
   Prime/mode, region, or provider-policy changes.
 - **Execution packet:**
   [combined validation program](../planning/coordination-and-party-entry-validation-program.md)
+
+## DEF-006 - Reconsider Future Honor Ideas On Owner Request
+
+- **Status:** current exclusion and preservation approved; future feature
+  adoption/implementation unapproved, no scheduled or active work
+- **Decision owner:** project owner
+- **Execution owner:** unassigned; no future implementation assignment
+- **Locked decision:** `DEC-034` excludes both ideas from the current
+  implementation scope. The approved action is preserving them for possible
+  future discussion, not promising either will be built.
+- **Objective:** retain incoming-rating volatility/adaptive dampening and the
+  less-developed outgoing-reviewer-deviation accountability idea together in
+  [future honor ideas](../specs/product-foundations.md#future-honor-ideas---outside-current-implementation).
+- **Reason postponed:** the owner considers the existing honor systems
+  sufficient for current scope and does not want volatility calculation now.
+  The reviewer idea's detection and consequence directions remain undecided.
+- **Implementation state:** documentation only; neither indicator, metric,
+  data collection nor scoring consequence implemented or selected.
+- **Return condition:** owner explicitly reopens one or both for future
+  consideration. First resolve whether adoption is warranted; implementation
+  then requires its approved specification and evidence-backed acceptance.
+  Completion of the current scope is not an automatic trigger.
+- **Owner recheck:** required for adoption, detection/consequence direction,
+  ranking/matching effects, risk or data/retention changes. Existing startup
+  delegation and current no-exact-history direction do not preapprove a future
+  feature's method or raw history.
+- **Future verification needed:** evaluate usefulness, independent evidence,
+  retaliation/brigading, legitimate minority feedback, feedback loops, correction/
+  appeal and any data needs; volatility would also need response/matching-stability
+  tests. These are future adoption conditions, not current slice blockers.
+- **Invalidation:** later changes to feedback format, eligibility, reference,
+  honor updates, data contracts or matching may change feasibility and value.

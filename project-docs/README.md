@@ -64,10 +64,12 @@ is not a predevelopment owner question; methods still require recorded tests.
 `DEC-033` selects no exact individual feedback-history ledger or last-N buffer
 for the first-version honor calculation. The reference choice and startup
 delegation are closed; other-purpose evidence and retention contracts remain
-open. The new
-[rating-dispersion adaptive-dampening proposal](specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
-evaluates one extra aggregate statistic and faster response versus larger score
-swings; it is not selected scoring behavior or implementation approval.
+open. `DEC-034` excludes incoming-rating volatility/adaptive dampening and
+outgoing-reviewer-deviation accountability from the current implementation
+scope. Both are preserved together as
+[future honor ideas](specs/product-foundations.md#future-honor-ideas---outside-current-implementation),
+not approved later features or current blockers. Existing core honor decisions
+remain in force; their current implementation needs no volatility indicator.
 Full scoring acceptance, feedback format, report effects, visibility and possible
 history-dependent matching weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
