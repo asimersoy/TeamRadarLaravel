@@ -253,6 +253,11 @@
   eligible raw inputs to the reference. Window count and physical storage remain
   unselected. Automatic up/down movement without admin intervention is explicitly
   approved; adaptation speed and abuse resistance are not tested.
+- **Completed, 2026-10-02:** the owner's
+  [descriptive-variable naming instruction](operations/workflow-governance.md#technical-explanations-and-provisional-notation)
+  is recorded as an operating clarification. Technical explanations must make
+  variable meanings and parameter transformations explicit; this does not
+  approve a scoring formula or fix implementation identifiers.
 - **Next planning discussion:** one overall behavioral rating versus multiple
   dimensions, then no/sparse history. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
@@ -274,6 +279,15 @@
 
 ## Verification State
 
+- The 2026-10-02 explanation-style clarification resumed from clean
+  `new-development` at `8887737`. Routing selected decision/recommendation
+  safety, external/owner review, deferral/owner review, and interruption/recovery,
+  alongside the always-applicable system documents. Existing product approvals
+  and slice gates remain unchanged. Project Markdown links/anchors and the full
+  two-file diff were checked; `git diff --check` passed. The protected workflow
+  package and application remain unchanged. Application tests and the portable
+  validator were not run for this operating-document-only unit; no remote or
+  provider action occurred.
 - Workflow validator passed before project-record work: 68 Markdown files, 15
   procedures, and 38 inert templates.
 - `docker compose config --quiet` passed; no Compose containers were running.

@@ -3,11 +3,12 @@
 - **Record type:** current project-specific operating policy
 - **Status:** approved
 - **Decision owner:** project owner
-- **Authority:** `DEC-007` and `DEC-008`
+- **Authority:** `DEC-007` and `DEC-008`; owner explanation-style clarification
+  on 2026-10-02
 - **Created:** 2026-09-04
 - **Update trigger:** proposed change to workflow authority, approval semantics,
   decision handling, specification gates, commit design, controlled operations,
-  review batching, or reviewer authority
+  review batching, reviewer authority, or owner-facing technical explanations
 
 ## Purpose And Boundary
 
@@ -59,6 +60,24 @@ authority.
   Git history preserves the change.
 - An apparent conflict is not resolved through implementation convenience.
   Clarify it with the owner and update affected records before proceeding.
+
+## Technical Explanations And Provisional Notation
+
+Owner clarification, 2026-10-02: while a technical design is being discussed,
+use explicit descriptive names for every variable, even when those names are
+longer. Prefer names that identify what a value measures or what effect it
+controls, rather than ambiguous shorthand.
+
+Explain each variable's meaning and, where relevant, its bounds, units,
+source, and the effect of increasing or decreasing it. Distinguish configurable
+parameters from values derived from inputs or history. When replacing a
+parameter with its reciprocal or another transformation, show the relationship
+and algebraic equivalence; do not present it as merely renaming the same value.
+
+This applies existing owner-review and approval semantics. Explanatory names
+are not a final code-interface contract, and explaining or renaming a proposed
+formula does not approve its mathematics, parameters, behavior, or implementation.
+Product-specific proposals remain in product records, not this operating policy.
 
 ## Specification Lifecycle
 
