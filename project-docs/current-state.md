@@ -258,6 +258,11 @@
   is recorded as an operating clarification. Technical explanations must make
   variable meanings and parameter transformations explicit; this does not
   approve a scoring formula or fix implementation identifiers.
+- **Completed, 2026-10-02:** the
+  [honor notation discussion](specs/product-foundations.md#provisional-honor-notation-discussion)
+  records the owner's preference for `allowed_rating_deviation` in the division
+  form and `new_input_teammate_behavior_rating`. The draft's half-influence
+  reference point is explained; no formula or numeric setting is approved.
 - **Next planning discussion:** one overall behavioral rating versus multiple
   dimensions, then no/sparse history. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
@@ -279,6 +284,16 @@
 
 ## Verification State
 
+- The 2026-10-02 honor-notation refinement began with clean `new-development`
+  at `44ce53c`. Routing selected product planning, decision/recommendation
+  safety, external/owner review and deferral/owner review; the mandatory entry,
+  always-applicable documents and selected procedures were read. Existing
+  approvals and implementation gates remain unchanged. Arithmetic examples,
+  project Markdown links/anchors, full three-file scoped diff and
+  `git diff --check` were checked. Application/client tests and the portable
+  validator were not run for this explanatory-document-only unit. No algorithm
+  implementation, anti-abuse validation, protected-workflow change or remote
+  action occurred.
 - The 2026-10-02 explanation-style clarification resumed from clean
   `new-development` at `8887737`. Routing selected decision/recommendation
   safety, external/owner review, deferral/owner review, and interruption/recovery,

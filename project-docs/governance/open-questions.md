@@ -165,6 +165,12 @@ Historical unknowns do not automatically become requirements.
   Next discuss one overall rating versus multiple behavioral dimensions;
   no/sparse history, same-session ordering and full mathematics remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
+- **Provisional mathematical discussion, 2026-10-02:** the owner's preference
+  for a rating-point division parameter and an explicit new-input name is
+  captured in the
+  [honor notation discussion](../specs/product-foundations.md#provisional-honor-notation-discussion).
+  This is explanation-level notation, not approval of the influence curve,
+  parameters or full honor calculation.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.

@@ -259,6 +259,52 @@ Compliance with applicable law is required. The actual jurisdiction, data
 obligations, and qualified-review needs remain open until the product flow,
 participants, locations, data fields, recipients, and retention are concrete.
 
+## Provisional Honor Notation Discussion
+
+- **Status:** explanatory draft, not an approved scoring algorithm
+- **Source:** owner annotations on 2026-10-02, applying the
+  [descriptive explanation policy](../operations/workflow-governance.md#technical-explanations-and-provisional-notation)
+- **Owner preference for discussion:** retain the division form with
+  `allowed_rating_deviation` expressed in rating points, rather than asking
+  the owner to configure its reciprocal. The two parameterizations are
+  algebraically equivalent when their values are reciprocals; the division
+  form is easier to interpret. No numeric value is selected.
+- **Input name:** use `new_input_teammate_behavior_rating` for the new raw
+  post-play rating submitted by one teammate about the player whose honor is
+  being calculated. It is not that player's resulting honor, the reviewer's
+  honor, or an already-adjusted rating.
+
+The proposed influence calculation, still awaiting approval, is:
+
+```text
+distance_from_recent_unadjusted_rating_average =
+    absolute_value(
+        new_input_teammate_behavior_rating
+        - recent_unadjusted_rating_average
+    )
+
+rating_influence_multiplier =
+    1 / (1 + (
+        distance_from_recent_unadjusted_rating_average
+        / allowed_rating_deviation
+    )²)
+```
+
+For this draft, `allowed_rating_deviation` must be positive and uses the same
+rating-point units as the distance. It is a smooth reference scale, not a hard
+allow/reject threshold or a no-dampening zone: at equal distance, influence is
+exactly one half; below it, influence exceeds one half; above it, influence is
+less than one half. Dampening starts for any nonzero distance. If equivalent
+numeric units change under `DEC-027`, this scale must change with them to
+preserve the same influence.
+
+The reference uses eligible prior recent raw ratings; under `DEC-030`, reduced
+honor influence does not reduce the new raw rating's subsequent contribution
+to recent history. Formula shape, parameter values, update speed, sparse-history
+behavior and abuse resistance remain unapproved and require specification and
+verification. Explaining the arithmetic does not establish anti-retaliation
+effectiveness or authorize implementation.
+
 ## Open Product Decisions
 
 - The precise present-day user problem, outcome, permitted uses, prohibited
