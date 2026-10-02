@@ -133,11 +133,12 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-032` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-033` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
   separate smoothed raw reference, isolated-extreme trade-off and bounded
-  development startup/calibration responsibility;
+  development startup/calibration responsibility and no exact first-version
+  feedback-history calculation;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -174,7 +175,11 @@ Historical unknowns do not automatically become requirements.
   still moving the reference and honor. Development calibration may adjust
   constants and occasional small functions while preserving approved behavior;
   do not ask the owner to freeze every setting before development.
-  Next discuss one overall rating versus multiple behavioral dimensions;
+  `DEC-033` selects no exact individual feedback-history ledger or last-N buffer
+  for the first-version honor calculation. Other-purpose evidence, retention,
+  eligibility and correction need explicit compatible contracts.
+  Review the new dispersion-dependent dampening proposal before returning to
+  one overall rating versus multiple behavioral dimensions;
   same-session ordering and complete scoring acceptance remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
@@ -188,7 +193,19 @@ Historical unknowns do not automatically become requirements.
   development response divisor of 20. See the
   [selected smoothed raw reference](../specs/product-foundations.md#smoothed-raw-rating-reference).
   The side handoff's exact-window and owner startup-question framing is stale.
-  Startup delegation remains in force; raw-data retention is not decided.
+  Startup delegation remains in force. `DEC-033` now narrows first-version
+  planning to no exact feedback-history calculation; other-purpose data and
+  retention policy remain separate questions. Future exact history would not
+  automatically require or authorize a reference-model change.
+- **Dispersion-dependent dampening proposal, 2026-10-02:** the owner asks
+  whether a smoothed spread estimate can make normally wide ratings less
+  dampened without storing individual history, and whether that improves
+  responsiveness enough to justify larger score swings. The
+  [evaluated proposal](../specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
+  demonstrates a one-scalar option and bounded influence connection. Adoption,
+  not the settled reference or startup responsibility, is the next optional
+  scoring-behavior choice. No volatility label or misconduct inference is
+  approved. This proposal is not yet a required first-version feature.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -232,6 +249,7 @@ Historical unknowns do not automatically become requirements.
   method and flexible raw-reference tuning;
   `DEC-032` for smoothed-reference replacement, isolated-extreme trade-off and
   bounded development calibration;
+  `DEC-033` for no exact first-version feedback-history calculation;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

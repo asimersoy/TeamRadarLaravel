@@ -61,6 +61,13 @@ last-N reference with single-value exponential smoothing, starting at adjustable
 development divisor 20. It selects the isolated-extreme-versus-moderate effect
 trade-off and permits behavior-preserving development calibration. Final tuning
 is not a predevelopment owner question; methods still require recorded tests.
+`DEC-033` selects no exact individual feedback-history ledger or last-N buffer
+for the first-version honor calculation. The reference choice and startup
+delegation are closed; other-purpose evidence and retention contracts remain
+open. The new
+[rating-dispersion adaptive-dampening proposal](specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
+evaluates one extra aggregate statistic and faster response versus larger score
+swings; it is not selected scoring behavior or implementation approval.
 Full scoring acceptance, feedback format, report effects, visibility and possible
 history-dependent matching weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate

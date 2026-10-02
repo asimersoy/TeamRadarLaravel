@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-032`
+- **Authority:** `DEC-009` through `DEC-033`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -51,7 +51,10 @@ complete honor curve or production calibration is frozen. The reference
 recurrence is selected by `DEC-032`; its startup details remain delegated.
 No/sparse history, zero spread, same-session/repeated reviewers, organized
 abuse and genuine behavior changes require explicit design and verification.
-The reference response setting does not select score-history retention.
+Under `DEC-033`, the first-version calculation plans no exact individual
+feedback-history ledger or last-N buffer. Other-purpose records and their
+retention/access rules still need explicit decisions; the reference response
+setting does not settle them.
 
 `DEC-030` separates the raw reference from attenuated honor influence.
 `DEC-032` replaces its exact-window requirement with smoothing: each eligible
@@ -83,6 +86,11 @@ adaptation rather than finite replacement of a last-N window. Calibrate mostly
 constants, with occasional small function refinements preserving this behavior,
 and document/test development changes. Material changes to approved behavior
 or other product boundaries still require owner approval.
+
+The owner's rating-volatility idea is under assessment, not yet selected as an
+additional scoring rule. The current draft uses a fixed deviation allowance;
+it does not retain or adapt to typical rating spread. See the
+[rating-dispersion proposal](#rating-dispersion-adaptive-dampening-proposal).
 
 This foundation does not yet settle review eligibility, questions, the complete
 scoring contract, reviewer weighting, visibility, exact matching rules,
@@ -343,8 +351,9 @@ deviation 20. Use descriptive unambiguous variable names even when longer.
 - **Source:** owner annotation, 2026-10-02, proposing one retained reference
   value instead of individual values for an exact configurable last-N average
 - **Approval boundary:** `DEC-032` supersedes only exact last-N reference
-  semantics in `DEC-029` and `DEC-030`. Individual-rating retention remains a
-  separate unresolved decision, not implicitly eliminated by this selection.
+  semantics in `DEC-029` and `DEC-030`. `DEC-033` explicitly selects no exact
+  individual feedback history for the first-version honor calculation.
+  Records for other purposes and their retention remain separate questions.
 
 With descriptive names, the selected recurrence is:
 
@@ -406,8 +415,9 @@ approved, not an outstanding exact-window comparison. During development,
 calibrate its response jointly with the separate honor update rate and influence
 curve; do not equate the divisor to a literal window length. Mean-only state
 cannot reconstruct individual feedback for correction, appeals, abuse
-investigation or historical recalculation;
-whether those needs justify separate raw records remains open.
+investigation or historical recalculation. Under `DEC-033`, do not add an exact
+rating ledger silently to meet these needs; specify compatible mechanisms or
+surface any requested other-purpose retention for owner review.
 
 **Development handling approved by `DEC-031`/`DEC-032`:** include initialization and
 confidence/sample-count handling; the implementation agent chooses its method
@@ -425,6 +435,139 @@ final value before an otherwise-approved slice begins.
 The prior reference must be used when assessing a new input; feeding that
 input into the reference first would reduce its measured departure. No live
 data, production implementation or anti-retaliation guarantee is established.
+
+### Rating-Dispersion Adaptive Dampening Proposal
+
+- **Status:** evaluated proposal, not approved scoring behavior or implementation
+- **Source:** owner questions and annotations, 2026-10-02
+- **Reviewer / next choice:** project owner; whether normal rating dispersion
+  should increase ordinary feedback's influence, accepting larger score swings
+- **Scope:** a bounded aggregate spread estimate, not individual rating history,
+  a public volatility label, a misconduct finding or a new matching dimension
+
+**Current-model assessment:** a smoothed raw reference tracks rating level,
+not spread. The current influence curve compares one input with that reference
+using a fixed `allowed_rating_deviation`. It has no state describing how far
+ratings typically depart. Sustained feedback already moves the reference and
+eventually reduces departure from the new level; a dispersion estimate is not
+required for that behavior. A consistently middle-rated player and a player
+alternating high/low ratings can have similar reference levels but different
+spread.
+
+**Candidate aggregate statistic:** reuse the current absolute input departure
+and exponentially smooth that distance in one additional scalar:
+
+```text
+updated_smoothed_typical_rating_deviation =
+    previous_smoothed_typical_rating_deviation
+    + (distance_from_previous_smoothed_raw_rating_reference
+       - previous_smoothed_typical_rating_deviation)
+      / rating_deviation_response_divisor
+```
+
+`smoothed_typical_rating_deviation` estimates recent typical departure, in
+rating points, from the reference that preceded each input. It is not exact
+last-N deviation, variance, standard deviation or an exact mean absolute
+deviation recalculated about today's mean. A sustained trend can increase this
+statistic as well as alternating ratings. `rating_deviation_response_divisor`
+is an independent response-speed setting, at least one: larger means slower
+movement. Raw departures enter unadjusted by honor dampening. No numeric
+initialization, confidence method or response value is selected by this proposal.
+If adopted, startup handling must fit the existing implementation delegation.
+
+**Candidate bounded connection to influence:** replace the fixed allowance
+in the draft influence curve with:
+
+```text
+effective_allowed_rating_deviation =
+    maximum(
+        minimum_allowed_rating_deviation,
+        minimum(
+            maximum_allowed_rating_deviation,
+            typical_rating_deviation_allowance_multiplier
+            * previous_smoothed_typical_rating_deviation
+        )
+    )
+
+rating_influence_multiplier =
+    1 / (1 + (
+        distance_from_previous_smoothed_raw_rating_reference
+        / effective_allowed_rating_deviation
+    )²)
+```
+
+The minimum is positive and the maximum is at least that minimum, both in
+rating points. The multiplier is nonnegative and converts typical departure
+into an allowance; it is not a reciprocal rename of that allowance. More
+previous typical departure can increase the allowance up to the cap, making
+the same new departure less dampened. The floor keeps a near-zero estimate
+from producing division by zero or excessive suppression. All settings need
+distinct descriptive names and independent configuration, even if numbers match.
+Rescaling rating units must rescale both reference/deviation state and allowance
+bounds, not the dimensionless response divisors or multiplier.
+
+**Update order:** calculate departure and honor influence from the previous
+reference and previous deviation estimate; then update the two aggregate
+statistics. An extreme input must not enlarge its own allowance before its
+honor effect is assessed. It can still enlarge future allowances, so the cap
+and update order limit one failure mode but do not establish abuse resistance.
+The storage calculation needs one additional scalar, not an array; eligibility,
+deduplication, transaction and correction data remain separate unresolved needs.
+
+**Verified synthetic evidence:** ephemeral Node calculations used illustrative
+initial reference/honor 50, initial deviation 0, both response divisors 20,
+honor update fraction 0.1, allowance floor 20/cap 60 and multiplier 2. None of
+these additional values is an approved baseline, scale or calibration. The
+honor update example uses fraction times influence times (input minus honor).
+
+| Feedback pattern / example | Fixed allowance | Adaptive allowance |
+| --- | --- | --- |
+| Repeated 50 input | Reference/honor 50; spread estimate 0 | Same |
+| Alternating 20/80 after 1,000 inputs | Honor alternates about 49.55/50.45 | Honor alternates about 48.76/51.24 |
+| Reference/honor 50, new input 20; prior spread 30 for adaptive case | Allowance 20; influence 0.3077; honor change -0.9231 | Allowance 60; influence 0.8; honor change -2.4 |
+
+The alternating sequence's reference remains centered around 50 and its
+deviation estimate approaches 30.7692. Adaptive influence changes responsiveness
+and swings, not necessarily the balanced sequence's center. One extreme input
+from the initial state used the prior floor of 20, then changed the deviation
+estimate to 2.5. This checks ordering, not retaliation detection. A total of
+12,078 arithmetic/bounds assertions passed for these synthetic sequences;
+these are not 12,078 independent behavioral scenarios or production tests.
+
+**Usefulness and limits:** adaptation can make a historically wide-rated player
+respond faster to both poor feedback and recovery. A previously steady player's
+first poor rating remains unusual; this is not a universal bad-day detector.
+Ratings per day/game are not the update unit yet; multiple teammates in one
+session are correlated, so eligibility and batching affect apparent speed.
+Balanced inputs need not produce exactly the same honor under every order,
+weight and starting state because the coupled system is nonlinear. Wider score
+swings could also destabilize matching. Rating dispersion does not prove a
+volatile play style, toxic behavior or that any individual rating is truthful;
+reviewer disagreement, context and manipulation can produce it. Repeated
+attacks can inflate spread and weaken later protection. For stable users the
+bounded proposal preserves the fixed-allowance case, but the approved isolated-
+extreme trade-off must be checked jointly across allowance values.
+
+**Primary-source ledger:** NIST/SEMATECH,
+[Measures of Scale](https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm),
+accessed 2026-10-02, supports absolute deviation as a spread measure and why
+squared deviations emphasize extremes more. NIST/SEMATECH,
+[Single Exponential Smoothing](https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc431.htm),
+accessed 2026-10-02, supports scalar exponential updates and initialization
+sensitivity. Applying smoothing to prior-reference absolute residuals and
+feeding it into QGuard's allowance is an agent proposal, not a NIST-endorsed
+scoring formula, a statistical confidence guarantee or anti-abuse validation.
+
+**Recommendation / approval boundary:** optional bounded adaptation is worth
+comparing with fixed allowance if faster response within a player's usual range
+is desired; it is not needed merely to obtain an average or eventual behavior
+change. Selecting it changes scoring behavior and requires owner approval,
+not just implementation tuning under `DEC-032`. Before relying on it, compare
+constant/alternating ratings, isolated outliers, sustained improvement/decline,
+sparse startup, one-session bursts, reviewer attacks, input ordering and
+matching stability. Full adversarial, calibrated and live-user validation has
+not been performed. No new history collection, public label, sanction, daily
+reset or implementation gate override is approved.
 
 ## Open Product Decisions
 

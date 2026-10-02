@@ -12,11 +12,14 @@
   recent-history attenuation. `DEC-030` separates raw recent ratings from their
   attenuated honor influence. `DEC-031` delegates required startup/confidence
   handling. `DEC-032` selects the smoothed reference, isolated-extreme trade-off
-  and bounded development calibration; detailed specifications remain incomplete
-- **Objective:** define feedback format and remaining detailed honor rules in
-  bounded discussions while preserving the test hold and slice gates
+  and bounded development calibration. `DEC-033` plans no exact individual
+  feedback history for first-version honor; detailed specifications remain
+  incomplete
+- **Objective:** evaluate optional rating-dispersion adaptive dampening, then
+  continue feedback-format and honor decisions, preserving test hold and slice
+  gates
 - **Current route:**
-  [Selected smoothed raw-rating reference](specs/product-foundations.md#smoothed-raw-rating-reference)
+  [Rating-dispersion adaptive-dampening proposal](specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal)
 
 ## Verified Workspace State
 
@@ -156,6 +159,13 @@
   functions. Equal numeric parameter values are allowed but remain independently
   named/configured. No new confidence-based eligibility rule, full scoring-slice
   approval or production safety claim is granted.
+- `DEC-033` selects no exact individual feedback-history ledger or last-N
+  buffer for the first-version honor calculation. Other-purpose evidence and
+  correction/retention contracts still need explicit decisions; no data deletion
+  is authorized. Reference choice, gradual adaptation, startup responsibility
+  and independently named settings are reaffirmed, not new owner blockers.
+  Adaptive dampening based on an aggregate spread estimate is an evaluated
+  proposal only; current draft mathematics does not already track that spread.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -280,12 +290,17 @@
   smoothing evidence and synthetic comparison against an exact last-N window.
   It reduces basic reference storage but changes recency semantics; existing
   last-N decisions and data-retention questions remain unchanged.
+  This describes that assessment's historical boundary: `DEC-032` later
+  selected smoothing and `DEC-033` narrowed exact-history planning. It is not
+  a current instruction to retain last-N or reopen the reference choice.
 - **Completed, 2026-10-02:** `DEC-031` records required startup/confidence
   handling and bounded agent discretion over its development method and
   reference tuning. Final calibration need not precede development; chosen
   methods still need correctness evidence. Exact reference-model replacement
   remains open; divisor 20 is a provisional starting candidate, not a verified
   safe rate or twenty games.
+  That reference question was subsequently closed by `DEC-032`; startup-method
+  delegation remains valid and is not a new owner question.
 - **Completed, 2026-10-02:** `DEC-032` records explicit owner replacement of
   last-N with exponential smoothing, accepts gradual reference evolution and
   the isolated-extreme negative trade-off, and confirms startup delegation.
@@ -293,7 +308,14 @@
   handoff is explanatory evidence, not authority to restore those requirements.
   Response divisor 20 is the adjustable dev starting value; deviation 20 remains
   illustrative. Complete scoring acceptance and safeguards remain unimplemented.
-- **Next planning discussion:** one overall behavioral rating versus multiple
+- **Completed assessment, 2026-10-02:** `DEC-033` records the no-exact-history
+  planning clarification. The aggregate rating-dispersion proposal uses one
+  extra smoothed scalar and bounded deviation allowance. Synthetic examples
+  demonstrate greater score swings without necessarily changing the balanced
+  sequence's center; no anti-retaliation or behavioral effectiveness is proven.
+- **Next planning discussion:** whether optional dispersion-adaptive dampening
+  is desirable given faster response and larger score swings. It is not yet a
+  required feature. Then return to one overall behavioral rating versus multiple
   dimensions. Reference selection is settled. Startup-method
   details belong to the implementation agent. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
@@ -315,6 +337,22 @@
 
 ## Verification State
 
+- The 2026-10-02 history/dispersion assessment began with clean
+  `new-development` at `f2aa723`. Product planning, research/sourcing,
+  decision/recommendation safety, privacy/data, owner/external review,
+  deferral/owner review and interruption/recovery routed the unit. Mandatory
+  entry and selected procedures were read; recovery found no partial writes
+  or unrelated changes. Six project records, all 54 project Markdown files,
+  219 local links, 26 heading anchors and 33 unique sequential decision IDs
+  were checked; complete scoped diff and `git diff --check` passed. NIST
+  smoothing and spread sources were reviewed. Ephemeral synthetic sequences
+  passed 12,078 arithmetic/bounds assertions; these show illustrative
+  feasibility/response differences, not anti-abuse or live-user effectiveness.
+  No app/startup implementation, full adversarial validation, live test,
+  production collection or portable validator was run. No protected workflow,
+  legacy code or external state changed; no push, deployment or provider write.
+  Dispersion adoption remains an owner choice and implementation slice gates
+  remain intact.
 - The 2026-10-02 smoothed-reference/trade-off decision began with clean
   `new-development` at `7a821d8`. Product planning, decision/recommendation
   safety, privacy/data boundaries, owner/external review and deferral/owner

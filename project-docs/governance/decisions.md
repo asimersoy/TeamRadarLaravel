@@ -1244,7 +1244,8 @@ mathematics and empirical performance still require specification and tests.
   delegation rather than implementing it. No push or remote action.
 - **Supersedes:** none; resolves startup-method responsibility and development
   tuning within `OQ-006`, without selecting a different reference model.
-- **Superseded by:** none
+- **Superseded by:** `DEC-032` only for the reference-choice question and refined
+  calibration scope; startup-method delegation remains in force
 
 ## DEC-032 - Select Smoothed Reference And Extreme-Feedback Trade-Off
 
@@ -1305,6 +1306,9 @@ mathematics and empirical performance still require specification and tests.
   sustained feedback gradually; no fixed-window expiry or finite exact arrival
   is promised. Selecting one scalar for the basic reference calculation does
   not decide whether individual ratings must be retained for other purposes.
+  `DEC-033` subsequently narrows the first-version planning direction to no
+  exact individual feedback-history ledger or reference buffer; other-purpose
+  evidence and correction requirements still need explicit specification.
 - **Still open:** rating format and eligibility, same-session ordering/batching,
   repeated/organized manipulation, report effects, correction/appeal, data
   retention, visibility and full matching/scoring acceptance criteria. The
@@ -1328,4 +1332,61 @@ mathematics and empirical performance still require specification and tests.
   run for this decision-record unit. No push or remote action occurred.
 - **Supersedes:** `DEC-029`/`DEC-030` only for exact last-N reference semantics;
   resolves `DEC-031`'s reference question and refines its dev calibration scope.
+- **Superseded by:** `DEC-033` only for exact individual-history planning;
+  reference method, startup delegation and other selected behavior remain in force
+
+## DEC-033 - First-Version Honor Without Exact Individual Feedback History
+
+- **Date:** 2026-10-02
+- **Status:** approved planning direction; data contracts not implementation-ready
+- **Decision owner:** project owner
+- **Decision:** plan the first-version honor calculation around aggregate state,
+  not an exact individual feedback-history ledger or last-N rating buffer.
+  The smoothed raw reference selected by `DEC-032` is the current method;
+  gradual adaptation is accepted and the reference-choice question is closed.
+- **Approval evidence:** the owner explicitly says the first version is not
+  planning to keep exact feedback history, reaffirms smoothing as the latest
+  decision and requests removal of stale reference-choice questions. They also
+  reaffirm implementation-time initialization/confidence delegation and that
+  distinct settings may have the same numeric value.
+- **Responsibility reaffirmed:** `DEC-031`/`DEC-032` continue to require startup/
+  confidence handling, with the implementation agent selecting, documenting
+  and testing its concrete development method. No owner-designed startup
+  method or final calibration is newly required. Independent descriptively
+  named parameters remain independent even when their numbers match.
+- **Consequences and limits:** aggregate-only state cannot reconstruct an
+  individual rating, its reviewer or exact prior sequence. Eligibility,
+  duplicate prevention, reports, correction/appeal and operational evidence
+  therefore need contracts compatible with this direction. This is not a
+  deletion instruction, a decision about every session/report record, a
+  storage schema, or a settled retention/access/legal policy. Any proposed
+  individual-rating retention for another purpose must be surfaced explicitly,
+  not silently introduced as a calculation implementation detail.
+- **Future option:** if exact feedback history is later approved, reconsidering
+  last-N would be a separate deliberate decision. Neither collecting history
+  nor switching the reference is automatically approved or required now.
+- **Volatility discussion:** the owner's accompanying questions propose
+  rating-dispersion-dependent dampening. Its feasibility assessment and draft
+  mathematics are recorded separately in product foundations; this decision
+  does not select that scoring behavior, its parameters or its implementation.
+- **Implementation gate:** applicable slice specifications and acceptance
+  criteria still require approval under `DEC-008`; no app implementation,
+  live collection, test resumption or external action is authorized.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence. Historical evidence remains dated rather
+  than being rewritten as though this decision existed earlier.
+- **Route / baseline:** product planning; research/sourcing;
+  decision/recommendation safety; privacy/data; owner/external review;
+  deferral/owner review; interruption/recovery. Mandatory entry and selected
+  procedures read; clean `new-development` at `f2aa723` verified. Six project
+  records only; protected workflow and legacy application untouched. No agents
+  delegated and no provider write performed.
+- **Verification:** all 54 project Markdown files, 219 local links, 26 heading
+  anchors and 33 unique sequential decision IDs checked; complete six-file diff
+  reviewed and `git diff --check` passed. NIST sources reviewed; 12,078 synthetic
+  arithmetic/bounds assertions passed, not full scoring or abuse acceptance.
+  No application/live tests or portable validator run; no app, protected-
+  workflow, production-data, push or other external state change occurred.
+- **Supersedes:** narrows `DEC-032`'s unresolved individual-history planning
+  direction; does not replace its reference or `DEC-031`'s startup delegation
 - **Superseded by:** none

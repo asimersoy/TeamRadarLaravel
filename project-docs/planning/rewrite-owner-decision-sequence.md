@@ -133,6 +133,10 @@ explicitly rejects them.
   at adjustable development divisor 20. Accept the isolated-extreme-versus-
   moderate immediate effect trade-off and tune constants/small functions while
   preserving approved behavior (`DEC-032`). No further reference-choice prompt.
+- Plan the first-version honor calculation without an exact individual feedback-
+  history ledger or last-N buffer (`DEC-033`). Surface any other-purpose raw
+  retention explicitly; do not silently add it or restore exact-window/startup
+  owner questions. A future history decision need not change the reference.
 
 ### Unapproved Assumptions
 
@@ -323,8 +327,16 @@ automatic up/down movement is approved without admin intervention. `DEC-031`
 requires startup/confidence handling but delegates its concrete development
 method and reference response tuning; do not ask the owner to choose every
 startup detail or finalize tuning first. `DEC-032` selects the isolated-extreme
-negative trade-off and bounded constant/small-function calibration. Next discuss
-one overall rating versus multiple dimensions, response options,
+negative trade-off and bounded constant/small-function calibration. `DEC-033`
+plans no exact individual feedback history for the first-version calculation;
+eligibility, correction and other-purpose evidence contracts remain open.
+Next assess the optional
+[rating-dispersion adaptive-dampening proposal](../specs/product-foundations.md#rating-dispersion-adaptive-dampening-proposal):
+it can track spread with one extra scalar and increase response to normal wide
+ratings, but also increases score swings and can weaken abuse protection.
+Adoption is an owner choice, not a settled feature or a need to reopen startup
+or reference decisions. Then return to one overall rating versus multiple
+dimensions, response options,
 eligibility, calculation, reliability, matching rules and visibility in bounded
 discussions. Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.
