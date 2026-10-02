@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-024`
+- **Authority:** `DEC-009` through `DEC-025`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -29,6 +29,19 @@ formula, reviewer weighting, visibility, matching or eligibility effects,
 sanctions, moderation, correction, appeal, retention, monitoring, or rollback.
 It approves no public promise that QGuard prevents toxicity or guarantees safe
 or compatible teammates.
+
+### First-Version Session Scope
+
+Under `DEC-025`, the first usable version groups players for a playing
+session. Persistent-team recruitment/management, a player-facing past-teammate
+history and QGuard friend requests are outside that first scope. History and
+friend features are possible future ideas, not approved implementation work.
+
+The session's duration, completion, solo/partial-party entry, matching rules
+and honor effects remain open. Excluding a social-history screen does not
+decide whether session evidence must be retained for honor/reporting or for
+how long. The owner requested the first-version role of honor as the next
+discussion; its central behavioral purpose remains approved under `DEC-010`.
 
 ### Initial Game And Integration Direction
 

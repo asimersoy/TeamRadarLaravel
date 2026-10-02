@@ -839,3 +839,47 @@ are not superseded or waived.
   applicable live-evidence gates, the test hold, and controlled-operation gates
   remain unchanged.
 - **Superseded by:** none
+
+## DEC-025 - Start With Session Grouping
+
+- **Date:** 2026-10-02
+- **Status:** approved first-version scope
+- **Decision owner:** project owner
+- **Decision:** QGuard's first usable version focuses on grouping players for
+  a playing session. Persistent-team recruitment and management are outside
+  that first scope. A player-facing history of past teammates and QGuard
+  friend requests are also outside the first version.
+- **Reason / approval evidence:** the owner explicitly chose session grouping
+  and confirmed that past-teammate tracking and friend requests are possible
+  future features outside the first idea.
+- **Alternatives considered:** lasting-team recruitment, or both session and
+  lasting-team experiences from the start. Neither is selected for the first
+  version.
+- **Consequences:** narrow the current journey and matching discussions to
+  session grouping. Future history/friend features remain ideas, without an
+  approved implementation commitment or deferred-work activation. The UI
+  exclusion does not settle storage needed for honor/reports, session evidence,
+  retention, or use of existing friendships on other services.
+- **Still open:** solo versus partial-party entry; game mode; session length
+  and completion; matching/acceptance rules; and honor's detailed first-version
+  effect. The owner requested that honor's role be discussed next. `DEC-010`
+  keeps honor central; this choice does not approve the agent's suggested
+  persistence/scoring behavior or any formula, visibility or matching effect.
+- **Affected records:** product foundations, `OQ-004` through `OQ-006`, current
+  state, project index and owner decision sequence.
+- **Return condition:** approve the detailed journey and applicable modules
+  before their implementation slices under `DEC-008`. Revisit excluded social
+  features only through a later owner decision. `DEC-024` and the live-test
+  hold remain in force.
+- **Route / baseline:** product planning; owner/external review;
+  deferral/owner review; decision/recommendation safety for the forthcoming
+  honor discussion. Clean `new-development` at `2ae20a9`. Existing entry
+  records, selected procedures and decision template were consulted.
+- **Verification:** all 54 project Markdown files passed checks for 210 local
+  links, 17 section anchors and 25 unique sequential decision IDs. The complete
+  six-file diff was reviewed and `git diff --check` passed before the local
+  documentation commit. Application/live tests were not run for this record
+  update; detailed behavior remains unresolved. No provider action or push.
+- **Supersedes:** none; resolves the session-versus-lasting-team component of
+  `OQ-005` without closing the remaining product boundary.
+- **Superseded by:** none

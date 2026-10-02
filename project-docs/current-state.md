@@ -1,15 +1,15 @@
 # QGuard Current State
 
-- **Last updated:** 2026-09-28
+- **Last updated:** 2026-10-02
 - **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
   are on owner hold as of 2026-09-28 until the owner can test; no live result
   exists. `DEC-024` approves Discord rooms/voice as the planning direction and
-  replaceable game joining; detailed specifications remain incomplete
-- **Objective:** develop the
-  [coordination and party-handoff specification](specs/coordination-and-party-handoff.md)
-  around that approved direction while preserving the test hold and slice gates
+  replaceable game joining. `DEC-025` selects session grouping for the first
+  version; detailed specifications remain incomplete
+- **Objective:** continue bounded first-version decisions, beginning with
+  honor's role in session grouping, while preserving the test hold and slice gates
 - **Current route:**
-  [Coordination specification and documentation checkpoint](specs/coordination-and-party-handoff.md#route-and-documentation-checkpoint)
+  [Session-scope decision and next honor discussion](governance/decisions.md#dec-025---start-with-session-grouping)
 
 ## Verified Workspace State
 
@@ -121,6 +121,9 @@
   and surrounding implementation still needs its approved slice specifications.
 - The legacy Laravel app, old project docs, reachable/unreachable Git history,
   and supplied memory dump are evidence only.
+- `DEC-025` chooses session grouping for the first usable version. Lasting-team
+  management, past-teammate history UI and QGuard friend requests are outside
+  that scope; future social features are ideas, not implementation commitments.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula/effect, moderation policy, architecture, technology, deployment, or
@@ -210,10 +213,13 @@
   outlines independent implementation slices. The link alternative uses a
   Discord text channel visible only to the matched players. No code, live
   integration, recording approval or test resumption is claimed.
-- **Next planning decision:** must each matched player attend Discord voice,
-  or should the room be provided with attendance optional? Resolve remaining
-  admission/lifecycle/host/data/technical details incrementally before their
-  respective implementation slices, not as a new bulk questionnaire.
+- **Completed, 2026-10-02:** the owner selected session grouping and excluded
+  first-version teammate history/friend requests; recorded in `DEC-025` and
+  the product foundations. No implementation slice is approved by this choice.
+- **Next planning discussion, at the owner's request:** honor's first-version
+  role, beginning with whether/how it affects matching and visible information.
+  Voice attendance, solo/partial-party entry and other journey/coordination
+  details remain open for later bounded discussions.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).

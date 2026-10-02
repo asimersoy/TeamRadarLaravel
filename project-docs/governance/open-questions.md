@@ -78,6 +78,9 @@ Historical unknowns do not automatically become requirements.
   `DEC-011` prioritizes a working product over a predetermined first game.
   Present problem wording, target outcome, permitted/prohibited uses, audience,
   and public claims remain open; no legacy anti-toxicity promise is inherited.
+  `DEC-025` now selects session grouping for the first version and excludes
+  persistent-team management, past-teammate history UI and QGuard friend
+  requests. The remainder of the charter is still open.
 - **Decision components:** present problem, target outcome, allowed uses,
   prohibited uses, explicit non-goals, audience/age/geography, and claims the
   product may or may not make.
@@ -87,9 +90,9 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
-- **Status:** first-game comparison reopened 2026-09-05; `DEC-018` still
-  selects Valorant until deliberately superseded; remaining wedge components
-  open
+- **Status:** partially resolved: `DEC-018` selects Valorant and `DEC-025`
+  selects session grouping; remaining wedge components and any deliberate
+  disposition of the CS2 comparison are open
 - **Decision owner:** project owner
 - **Needed by:** current user journeys and MVP scope
 - **Blocks:** finally settling the first-game wedge after the new CS2 evidence,
@@ -116,13 +119,17 @@ Historical unknowns do not automatically become requirements.
   designated-human-host Valorant flow if the lobby link passes and approves
   future generic Discord Game Invite checks for both games. Mode, platform/cross-
   play, launch region/language, primary user, party shape, and relationship
-  duration remain open.
+  duration remained open at that stage. `DEC-025` now selects session grouping;
+  session duration/completion and solo/partial-party entry remain open.
 - **Decision components:** **currently approved:** Valorant as initial game
-  under `DEC-018`. **Open:** whether the Discord coordination finding is enough
-  to close the CS2 comparison unless later evidence changes; mode, platform/
+  under `DEC-018`, session grouping under `DEC-025`, with lasting-team
+  management, past-teammate history UI and QGuard friend requests excluded
+  from the first version. **Open:** whether the Discord coordination finding
+  is enough to close the CS2 comparison unless later evidence changes; mode, platform/
   cross-play, launch region/language, primary user segment, party shape, and
-  relationship duration.
-- **Resolved by:** `DEC-018` remains current; later wedge components unresolved
+  session duration/completion.
+- **Resolved by:** `DEC-018` and `DEC-025` for game and session scope;
+  later wedge components unresolved
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
@@ -134,6 +141,9 @@ Historical unknowns do not automatically become requirements.
 - **Blocks:** collecting player or session data, ordering or excluding users,
   displaying reputation, accepting reviews/reports, or designing moderation.
 - **Does not block:** selecting lower-risk alternatives and explicit non-goals.
+- **Current owner discussion, 2026-10-02:** define honor's role in the first
+  session-grouping version after `DEC-025`. Its central purpose is settled;
+  first-version matching/visibility effects and scoring rules are not.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.

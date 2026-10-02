@@ -106,6 +106,9 @@ explicitly rejects them.
 - Preserve applicable current-client and coordination-lifecycle evidence gates
   (`DEC-023`), while choosing Discord room/voice planning ahead of tests and
   leaving game joining replaceable and unimplemented (`DEC-024`).
+- Start with session grouping; exclude lasting-team management, past-teammate
+  history UI and QGuard friend requests from the first version (`DEC-025`).
+  The owner requests honor's first-version role as the next bounded discussion.
 
 ### Unapproved Assumptions
 
@@ -229,12 +232,13 @@ claim limits. This closes or narrows `OQ-004`.
 
 ## Decision Group 2 - First User And Market Wedge
 
-1. Which game and mode, if any, is the first supported wedge?
+1. Valorant is selected under `DEC-018`; which mode is the first supported wedge?
 2. Which platform, input, cross-play, region/data center, and language are in
    scope?
 3. Is the primary user solo, a partial party, or both?
-4. Is the product for a single session, repeat teammates, persistent teams, or
-   a deliberate subset?
+4. Session grouping is selected by `DEC-025`; what defines the session's
+   duration and completion? Lasting-team management, past-teammate history UI
+   and QGuard friend requests are outside the first version.
 5. Is the first priority casual, ranked/competitive, or another player need?
 6. What team size and availability assumptions apply?
 
@@ -280,6 +284,10 @@ version, deterministic/adversarial fixture outline, explanation behavior,
 monitoring, and rollback boundary. This is part of closing `OQ-006`.
 
 ## Decision Group 5 - Trust, Reviews, Reports, And Moderation
+
+**Current discussion, requested 2026-10-02:** define honor's first-version
+role in session grouping. Its behavioral purpose is already approved; begin
+with its matching and visibility effects before specifying detailed scoring.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:
