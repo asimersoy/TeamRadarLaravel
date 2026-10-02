@@ -109,6 +109,9 @@ explicitly rejects them.
 - Start with session grouping; exclude lasting-team management, past-teammate
   history UI and QGuard friend requests from the first version (`DEC-025`).
   The owner requests honor's first-version role as the next bounded discussion.
+- Use honor in matchmaking from the first version, with a common starting
+  baseline and similar-honor grouping as history develops (`DEC-026`).
+  Baseline calculation and possible history-dependent weight remain open.
 
 ### Unapproved Assumptions
 
@@ -273,8 +276,9 @@ failure, permission, abuse, and recovery states.
 2. What input is necessary, and why is each input needed?
 3. Which rules are hard exclusions versus weighted preferences?
 4. Does rank affect display, ordering, eligibility, or nothing?
-5. Does any behavior/reputation signal affect display, ordering, eligibility,
-   or nothing?
+5. Honor affects grouping under `DEC-026`; how do similarity, baseline,
+   history reliability and other criteria interact? Display, additional
+   ordering and eligibility effects remain open.
 6. How do ties, missing/contradictory inputs, no-match, widening, blocks,
    repeated teammates, and partial parties behave?
 7. What explanation and user control accompany a match or no-match result?
@@ -285,15 +289,17 @@ monitoring, and rollback boundary. This is part of closing `OQ-006`.
 
 ## Decision Group 5 - Trust, Reviews, Reports, And Moderation
 
-**Current discussion, requested 2026-10-02:** define honor's first-version
-role in session grouping. Its behavioral purpose is already approved; begin
-with its matching and visibility effects before specifying detailed scoring.
+**Current discussion, 2026-10-02:** honor's behavioral purpose and first-version
+matching role are approved. Next distinguish a fixed newcomer baseline from a
+measured community average, then specify feedback, calculation, reliability,
+matching rules and visibility in bounded discussions.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:
 
-1. No reputation; private structured feedback; endorsements; public score;
-   reports; or a bounded combination.
+1. What feedback and reputation presentation supports the approved honor
+   matching role: private structured feedback, endorsements, visible score,
+   reports, or a bounded combination?
 2. Who may review whom, based on what evidence, and how often?
 3. Are free text, voice, or game-session events collected? Each materially
    expands privacy and moderation obligations.

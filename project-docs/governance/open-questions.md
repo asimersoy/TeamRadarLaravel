@@ -133,7 +133,8 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** open
+- **Status:** partially resolved by `DEC-026` for honor's first-version
+  matchmaking role; detailed matching, trust, moderation and data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
@@ -141,9 +142,12 @@ Historical unknowns do not automatically become requirements.
 - **Blocks:** collecting player or session data, ordering or excluding users,
   displaying reputation, accepting reviews/reports, or designing moderation.
 - **Does not block:** selecting lower-risk alternatives and explicit non-goals.
-- **Current owner discussion, 2026-10-02:** define honor's role in the first
-  session-grouping version after `DEC-025`. Its central purpose is settled;
-  first-version matching/visibility effects and scoring rules are not.
+- **Current owner direction, 2026-10-02:** `DEC-026` selects honor in
+  matchmaking from the first session-grouping version, a common starting
+  baseline and similar-honor grouping as history develops. Increasing the
+  weight with history is a possible mechanism, not an approved rule. Next
+  clarify fixed neutral baseline versus measured community average; scoring,
+  feedback, visibility, detailed matching and safeguards remain open.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -168,15 +172,17 @@ Historical unknowns do not automatically become requirements.
   text-channel link alternative; attendance, admission, lifecycle, data and
   recording questions are not resolved by that selection.
 - **Decision components:** directory versus queue versus recommendation;
-  matching inputs and explanations; whether reputation affects information,
-  ordering, or eligibility; review/report scope; moderation/appeals; account and
+  matching inputs and explanations; how honor similarity affects grouping,
+  baseline and history weighting; reputation visibility and any additional
+  ordering/eligibility effects; review/report scope; moderation/appeals; account and
   integration evidence; whether the required coordination baseline is native,
   Discord-primary, or Discord-required; invite versus OAuth admission if
   applicable; post-match membership/access cleanup; whether any voice is
   captured;
   and field-level purpose, consent, retention, deletion, access, security,
   evidentiary effect, and qualified review.
-- **Resolved by:** none
+- **Resolved by:** `DEC-026` for honor's first-version matching direction;
+  other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 

@@ -5,11 +5,12 @@
   are on owner hold as of 2026-09-28 until the owner can test; no live result
   exists. `DEC-024` approves Discord rooms/voice as the planning direction and
   replaceable game joining. `DEC-025` selects session grouping for the first
-  version; detailed specifications remain incomplete
-- **Objective:** continue bounded first-version decisions, beginning with
-  honor's role in session grouping, while preserving the test hold and slice gates
+  version. `DEC-026` selects honor in matchmaking from that version, with new
+  players at a common baseline; detailed specifications remain incomplete
+- **Objective:** define baseline and detailed honor/matching rules in bounded
+  discussions while preserving the test hold and slice gates
 - **Current route:**
-  [Session-scope decision and next honor discussion](governance/decisions.md#dec-025---start-with-session-grouping)
+  [First-version honor matchmaking direction](governance/decisions.md#dec-026---use-honor-in-matchmaking-from-the-first-version)
 
 ## Verified Workspace State
 
@@ -124,10 +125,13 @@
 - `DEC-025` chooses session grouping for the first usable version. Lasting-team
   management, past-teammate history UI and QGuard friend requests are outside
   that scope; future social features are ideas, not implementation commitments.
+- `DEC-026` selects honor in matchmaking from the first version, with new
+  players at a common baseline and similar-honor grouping as history develops.
+  Baseline meaning and detailed scoring/weighting remain open.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
-  formula/effect, moderation policy, architecture, technology, deployment, or
-  implementation plan has been approved. Discord room/voice direction is
+  formula or detailed effect, moderation policy, architecture, technology,
+  deployment, or implementation plan has been approved. Discord room/voice direction is
   selected; voice recording remains an unapproved proposal.
 
 ## Work State
@@ -216,8 +220,12 @@
 - **Completed, 2026-10-02:** the owner selected session grouping and excluded
   first-version teammate history/friend requests; recorded in `DEC-025` and
   the product foundations. No implementation slice is approved by this choice.
-- **Next planning discussion, at the owner's request:** honor's first-version
-  role, beginning with whether/how it affects matching and visible information.
+- **Completed, 2026-10-02:** `DEC-026` records honor's first-version matching
+  role, common newcomer baseline and similar-honor direction. Dynamic history
+  weighting remains a proposal; no scoring or matching implementation is claimed.
+- **Next planning discussion:** should the newcomer baseline be a fixed neutral
+  starting point or the measured average of the community? Then define feedback,
+  calculation, reliability, detailed matching effects and visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination
   details remain open for later bounded discussions.
 - **Next for live tests, after owner resumption:** recheck current provider/

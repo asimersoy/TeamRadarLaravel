@@ -883,3 +883,51 @@ are not superseded or waived.
 - **Supersedes:** none; resolves the session-versus-lasting-team component of
   `OQ-005` without closing the remaining product boundary.
 - **Superseded by:** none
+
+## DEC-026 - Use Honor In Matchmaking From The First Version
+
+- **Date:** 2026-10-02
+- **Status:** approved matchmaking direction; detailed rules remain open
+- **Decision owner:** project owner
+- **Decision:** Honor participates in QGuard matchmaking from the first
+  usable session-grouping version. New players start at a common baseline
+  without accumulated history. As player histories develop and honor signals
+  differentiate, grouping should favor players with similar honor.
+- **Reason / approval evidence:** the owner explicitly said to implement
+  honor's matchmaking role from the start and described new players near a
+  baseline, followed by matching people with others like themselves as
+  history develops.
+- **Consequences:** an information-only or feedback-only honor phase is not
+  the selected first-version product direction. Design the applicable
+  matching and honor modules together. A shared baseline initially supplies
+  little honor-based differentiation; other matching criteria remain open.
+- **Proposal, not a settled rule:** the owner's suggestion that honor could
+  receive greater matching weight as history grows. No confidence function,
+  sample threshold or dynamic weight is selected. The agreed similarity aim
+  is separate from this possible weighting mechanism.
+- **Still open:** fixed neutral baseline versus measured community average;
+  score range, feedback source, eligibility and calculation; reliability of
+  sparse history; exact similarity, weighting and queue-widening rules;
+  missing/contested evidence; visibility, abuse prevention, correction and
+  appeals. No matching bans or sanctions are selected. A baseline is an
+  initial estimate, not verified evidence of an individual's behavior or a
+  guarantee of the current population average.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence. The dated readiness audit remains
+  evidence of its earlier baseline, not current approval authority.
+- **Return condition:** approve the applicable scoring, matching, data and
+  completion specifications before implementing the affected slice under
+  `DEC-008`. `DEC-024` and the existing live-test hold remain in force.
+- **Route / baseline:** product planning; decision/recommendation safety;
+  privacy/data boundaries; owner/external review; deferral/owner review.
+  Clean `new-development` at `c0405f3`; required entry records and applicable
+  procedures were consulted. No new provider fact is asserted.
+- **Verification:** all 54 project Markdown documents checked: 210 local
+  links and 17 heading anchors resolve; all 26 decision IDs are unique and
+  sequential. Full six-file scoped diff reviewed; `git diff --check` passed.
+  Application/live tests were not run: this is a decision-record update.
+  No code, provider action, push or workflow-package modification is
+  authorized here. Detailed honor/matching rules remain open.
+- **Supersedes:** none; resolves honor's first-version matching role under
+  `OQ-006` while retaining the unanswered detailed rules.
+- **Superseded by:** none

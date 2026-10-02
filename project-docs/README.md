@@ -45,7 +45,10 @@ paused; the test-before-selection timing rule is partially superseded, not
 the requirement for evidence before relying on real integrations.
 `DEC-025` selects session grouping for the first usable version, excluding
 lasting-team management, past-teammate history UI and QGuard friend requests.
-The next owner discussion is honor's role in that version.
+`DEC-026` selects honor in matchmaking from that version, with newcomers at a
+common baseline and similar-honor grouping as history develops. The next
+discussion defines the baseline; scoring and possible history-dependent
+weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.
