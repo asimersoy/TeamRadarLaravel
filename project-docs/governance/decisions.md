@@ -931,3 +931,58 @@ are not superseded or waived.
 - **Supersedes:** none; resolves honor's first-version matching role under
   `OQ-006` while retaining the unanswered detailed rules.
 - **Superseded by:** none
+
+### Subsequent Baseline Clarification - 2026-10-02
+
+`DEC-027` resolves the fixed-versus-community-average baseline question and
+delegates equivalent numeric representation. The remaining behavioral,
+scoring, weighting and safeguard questions remain open.
+
+## DEC-027 - Fix The Newcomer Honor Baseline And Delegate Numeric Representation
+
+- **Date:** 2026-10-02
+- **Status:** approved baseline direction and bounded implementation discretion
+- **Decision owner:** project owner
+- **Decision:** New players start at a fixed neutral honor value, independent
+  of the current community average. The implementation agent may choose the
+  internal numeric range and corresponding baseline number, and rescale that
+  representation for display without asking the owner to select arbitrary
+  point units. No concrete range or value is selected now.
+- **Reason / approval evidence:** the owner answered “Fixed value” to the
+  fixed-neutral-versus-community-average question, then explicitly described
+  numeric point ranges and equivalent frontend scaling as implementation
+  details that the implementation agent should choose.
+- **Alternatives considered:** initialize from a changing community average,
+  or require an owner decision on arbitrary numeric units. Neither is selected.
+  The owner's one-to-one-thousand example illustrates discretion; it is not
+  an approved range.
+- **Consequences / discretion boundary:** choose and document equivalent
+  numeric units inside the applicable approved specification and implementation
+  slice. Rescaling must preserve the approved meaning, ordering, relative
+  distances and matching outcomes; precision/rounding must not silently change
+  those outcomes. This does not choose a formula, behavioral meaning,
+  feedback effect, matching threshold/weight, reputation visibility, displayed
+  label/tier or public claim. Material changes to those remain owner decisions.
+- **Still open:** feedback dimensions, eligibility and effects; calculation,
+  history reliability and possible dynamic weighting; detailed matching,
+  visibility, abuse prevention, correction, appeals and data handling. A
+  fixed baseline is not earned evidence of good or bad behavior.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence. Historical reports remain unchanged.
+- **Return condition:** define the applicable behavioral and matching
+  specifications before implementing the slice under `DEC-008`; record the
+  agent's later numeric selection and equivalence verification in that slice.
+  `DEC-024` and the live-test hold remain in force.
+- **Route / baseline:** product planning; decision/recommendation safety;
+  privacy/data boundaries; owner/external review; deferral/owner review.
+  Clean `new-development` at `1bd62cd`; mandatory entry records, selected
+  procedures and the decision template read. Scope: project records only;
+  no delegation, code, provider action, workflow-package change or remote action.
+- **Verification:** all 54 project Markdown documents checked: 210 local links
+  and 17 heading anchors resolve; all 27 decision IDs are unique and sequential.
+  Full six-file scoped diff reviewed; `git diff --check` passed. No application
+  or live tests run for this documentation-only unit; unresolved product rules
+  still gate implementation. No push or external action.
+- **Supersedes:** none; clarifies `DEC-026` and resolves the baseline component
+  of `OQ-006`, without changing general workflow authority or approval gates.
+- **Superseded by:** none

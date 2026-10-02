@@ -133,8 +133,9 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` for honor's first-version
-  matchmaking role; detailed matching, trust, moderation and data rules remain open
+- **Status:** partially resolved by `DEC-026` and `DEC-027` for honor's
+  first-version matching role and fixed newcomer baseline; detailed matching,
+  trust, moderation and data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
@@ -145,9 +146,12 @@ Historical unknowns do not automatically become requirements.
 - **Current owner direction, 2026-10-02:** `DEC-026` selects honor in
   matchmaking from the first session-grouping version, a common starting
   baseline and similar-honor grouping as history develops. Increasing the
-  weight with history is a possible mechanism, not an approved rule. Next
-  clarify fixed neutral baseline versus measured community average; scoring,
-  feedback, visibility, detailed matching and safeguards remain open.
+  weight with history is a possible mechanism, not an approved rule. `DEC-027`
+  selects a fixed neutral baseline and delegates equivalent numeric units and
+  display scaling to the implementation agent, not behavioral or matching
+  changes. Next define whether routine teammate feedback can both raise and
+  lower honor, or only raise it with negative behavior handled separately
+  through reports. Feedback design, visibility, matching and safeguards remain open.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -182,6 +186,7 @@ Historical unknowns do not automatically become requirements.
   and field-level purpose, consent, retention, deletion, access, security,
   evidentiary effect, and qualified review.
 - **Resolved by:** `DEC-026` for honor's first-version matching direction;
+  `DEC-027` for the fixed newcomer baseline and numeric-representation discretion;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

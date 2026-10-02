@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-026`
+- **Authority:** `DEC-009` through `DEC-027`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -29,9 +29,14 @@ start at a common baseline; developing history should differentiate honor and
 support grouping players with similar honor. Increasing honor's weight with
 history is a possible mechanism raised by the owner, not a selected formula.
 
-This foundation does not yet decide whether the baseline is fixed or follows
-the population average, review eligibility, questions, score formula, reviewer
-weighting, visibility, exact matching rules, eligibility restrictions, sanctions,
+Under `DEC-027`, the newcomer baseline is fixed and neutral, not the measured
+community average. The implementation agent chooses numeric units and equivalent
+display scaling; no numeric range or baseline number is selected now. Scaling
+must preserve approved meaning and matching outcomes, not silently change
+behavior or introduce a visibility, label/tier or public-claim decision.
+
+This foundation does not yet decide review eligibility, questions, score formula,
+reviewer weighting, visibility, exact matching rules, eligibility restrictions, sanctions,
 moderation, correction, appeal, retention, monitoring, or rollback.
 It approves no public promise that QGuard prevents toxicity or guarantees safe
 or compatible teammates.

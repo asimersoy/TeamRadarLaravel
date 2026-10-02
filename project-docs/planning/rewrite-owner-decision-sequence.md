@@ -111,7 +111,11 @@ explicitly rejects them.
   The owner requests honor's first-version role as the next bounded discussion.
 - Use honor in matchmaking from the first version, with a common starting
   baseline and similar-honor grouping as history develops (`DEC-026`).
-  Baseline calculation and possible history-dependent weight remain open.
+  Possible history-dependent weight remains open.
+- Use a fixed neutral newcomer baseline rather than the community average;
+  delegate internal numeric units and equivalent frontend scaling to the
+  implementation agent (`DEC-027`). Behavioral meaning, formula, matching and
+  visibility decisions are not delegated by this representation choice.
 
 ### Unapproved Assumptions
 
@@ -290,9 +294,12 @@ monitoring, and rollback boundary. This is part of closing `OQ-006`.
 ## Decision Group 5 - Trust, Reviews, Reports, And Moderation
 
 **Current discussion, 2026-10-02:** honor's behavioral purpose and first-version
-matching role are approved. Next distinguish a fixed newcomer baseline from a
-measured community average, then specify feedback, calculation, reliability,
-matching rules and visibility in bounded discussions.
+matching role and fixed neutral newcomer baseline are approved. Equivalent
+numeric representation is an implementation choice under `DEC-027`, not a
+required owner prompt. Next decide whether routine teammate feedback can both
+raise and lower honor or only raise it, with reports handled separately. Then
+specify feedback dimensions, eligibility, calculation, reliability, matching
+rules and visibility in bounded discussions.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:

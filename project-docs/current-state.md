@@ -6,11 +6,12 @@
   exists. `DEC-024` approves Discord rooms/voice as the planning direction and
   replaceable game joining. `DEC-025` selects session grouping for the first
   version. `DEC-026` selects honor in matchmaking from that version, with new
-  players at a common baseline; detailed specifications remain incomplete
-- **Objective:** define baseline and detailed honor/matching rules in bounded
-  discussions while preserving the test hold and slice gates
+  players at a common baseline. `DEC-027` fixes that baseline and delegates
+  equivalent numeric representation; detailed specifications remain incomplete
+- **Objective:** define teammate-feedback and detailed honor/matching rules in
+  bounded discussions while preserving the test hold and slice gates
 - **Current route:**
-  [First-version honor matchmaking direction](governance/decisions.md#dec-026---use-honor-in-matchmaking-from-the-first-version)
+  [Fixed honor baseline and numeric representation](governance/decisions.md#dec-027---fix-the-newcomer-honor-baseline-and-delegate-numeric-representation)
 
 ## Verified Workspace State
 
@@ -127,7 +128,9 @@
   that scope; future social features are ideas, not implementation commitments.
 - `DEC-026` selects honor in matchmaking from the first version, with new
   players at a common baseline and similar-honor grouping as history develops.
-  Baseline meaning and detailed scoring/weighting remain open.
+  Detailed scoring/weighting remain open. `DEC-027` fixes the newcomer baseline
+  independently of the community average and delegates equivalent numeric units
+  and display scaling; substantive behavior and visibility remain owner decisions.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -223,9 +226,13 @@
 - **Completed, 2026-10-02:** `DEC-026` records honor's first-version matching
   role, common newcomer baseline and similar-honor direction. Dynamic history
   weighting remains a proposal; no scoring or matching implementation is claimed.
-- **Next planning discussion:** should the newcomer baseline be a fixed neutral
-  starting point or the measured average of the community? Then define feedback,
-  calculation, reliability, detailed matching effects and visibility incrementally.
+- **Completed, 2026-10-02:** `DEC-027` records the fixed neutral newcomer
+  baseline and bounded agent discretion over equivalent numeric representation.
+  No range, formula, visible score/tier or implementation is selected now.
+- **Next planning discussion:** may routine teammate feedback both raise and
+  lower honor, or only raise it with negative behavior handled separately
+  through reports? Then define feedback dimensions, eligibility, calculation,
+  reliability, detailed matching effects and visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination
   details remain open for later bounded discussions.
 - **Next for live tests, after owner resumption:** recheck current provider/
