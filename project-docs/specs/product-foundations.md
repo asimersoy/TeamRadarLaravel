@@ -305,6 +305,85 @@ behavior and abuse resistance remain unapproved and require specification and
 verification. Explaining the arithmetic does not establish anti-retaliation
 effectiveness or authorize implementation.
 
+### Smoothed Raw-Rating Reference Proposal
+
+- **Status:** owner proposal under evaluation; not selected or implemented
+- **Source:** owner annotation, 2026-10-02, proposing one retained reference
+  value instead of individual values for an exact configurable last-N average
+- **Approval boundary:** selecting this would refine the exact last-N reference
+  behavior in `DEC-029` and `DEC-030`; those decisions remain unchanged pending
+  explicit owner selection. Individual-rating retention remains a separate
+  unresolved decision, not implicitly eliminated by this proposal.
+
+With descriptive draft names, the owner's recurrence is:
+
+```text
+updated_smoothed_raw_rating_reference =
+    previous_smoothed_raw_rating_reference
+    + (new_input_teammate_behavior_rating
+       - previous_smoothed_raw_rating_reference)
+      / raw_rating_reference_response_divisor
+```
+
+This is algebraically equivalent to weighting the prior reference by divisor
+minus one, adding the new raw input with weight one, then dividing by the
+divisor. It is exponential smoothing, with a new-input weight equal to one
+divided by the response divisor. A divisor of at least one gives a bounded
+weighted average; larger divisors mean slower reference movement. This is a
+response parameter, not a count of ratings actually retained. No value is
+selected. The input enters without the separate outlier-influence multiplier;
+recency smoothing is not retaliation-based attenuation.
+
+**Primary-source ledger:** NIST/SEMATECH, *Single Exponential Smoothing*,
+[handbook section 6.4.3.1](https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc431.htm),
+accessed 2026-10-02. Supports the exponential recurrence, geometrically declining
+historical weights, and initialization sensitivity. It does not validate
+QGuard's influence curve, tuning, retention policy or anti-abuse effectiveness.
+
+**Verified synthetic comparison:** initialize both references at 80, with the
+exact-window candidate holding thirty prior raw ratings all equal to 80. Every
+new raw rating is 20; the smoothing candidate uses divisor 30. These values are
+illustrations, not an approved scale, baseline or response setting.
+
+| New ratings received | Exact last-30 average | Smoothed raw reference |
+| --- | --- | --- |
+| 1 | 78.00 | 78.00 |
+| 10 | 60.00 | 62.75 |
+| 30 | 20.00 | 41.70 |
+| 60 | 20.00 | 27.85 |
+
+At thirty new ratings, the initial reference still has approximately 36.17%
+weight in the smoothed candidate; the exact window has fully replaced its
+old inputs. Therefore this is a different recency model, not an exact rolling
+average or a guaranteed small approximation error. A sustained new level moves
+the smoothed reference toward that level, while an isolated unusual rating's
+effect decays gradually instead of dropping out at a fixed boundary.
+
+**Storage and configuration assessment:** this recurrence needs one retained
+reference scalar for its basic calculation and constant work per new input.
+Changing its divisor affects future updates without fetching older inputs,
+but does not recreate the reference that the new divisor would have produced
+had it applied throughout history. Exact last-N averaging is also constant
+arithmetic per update with a running sum and the oldest retained value; its
+distinct cost is retaining a bounded N-value buffer, not complicated mathematics.
+No database performance or size benchmark has been performed.
+
+**Primary-agent recommendation:** this is a credible simpler reference model
+if smooth behavioral adaptation matters more than literal last-N semantics.
+Do not select its response value by equating it to an exact window length.
+Before selection, compare adaptation speed jointly with the separate honor
+update rate and influence curve. Mean-only state cannot reconstruct individual
+feedback for correction, appeals, abuse investigation or historical recalculation;
+whether those needs justify separate raw records remains open.
+
+**Still required:** initialization and confidence/sample-count handling without
+treating the fixed newcomer honor baseline as real historical ratings; same-
+session ordering/batching; eligibility, correction and retention rules; and
+deterministic/adversarial verification of the full coupled honor calculation.
+The prior reference must be used when assessing a new input; feeding that
+input into the reference first would reduce its measured departure. No live
+data, production implementation or anti-retaliation guarantee is established.
+
 ## Open Product Decisions
 
 - The precise present-day user problem, outcome, permitted uses, prohibited

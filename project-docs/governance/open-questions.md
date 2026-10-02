@@ -171,6 +171,12 @@ Historical unknowns do not automatically become requirements.
   [honor notation discussion](../specs/product-foundations.md#provisional-honor-notation-discussion).
   This is explanation-level notation, not approval of the influence curve,
   parameters or full honor calculation.
+- **New owner proposal, 2026-10-02:** replace the exact last-N raw reference
+  with a single-state exponential recurrence, using a configurable divisor
+  for response speed. See the
+  [smoothed raw-reference assessment](../specs/product-foundations.md#smoothed-raw-rating-reference-proposal).
+  Selection, calibration and any corresponding refinement of `DEC-029`/
+  `DEC-030` await owner approval; the proposal does not decide raw-data retention.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.

@@ -11,11 +11,11 @@
   can raise and lower honor. `DEC-029` selects average-based movement and dynamic
   recent-history attenuation. `DEC-030` separates raw recent ratings from their
   attenuated honor influence; detailed specifications remain incomplete
-- **Objective:** define feedback format, sparse-history handling and
-  detailed honor rules in bounded discussions while preserving the test hold
-  and slice gates
+- **Objective:** evaluate the proposed smoothed raw-rating reference, then
+  define feedback format, sparse-history handling and detailed honor rules in
+  bounded discussions while preserving the test hold and slice gates
 - **Current route:**
-  [Raw recent reference versus attenuated honor influence](governance/decisions.md#dec-030---separate-raw-recent-ratings-from-attenuated-honor-influence)
+  [Smoothed raw-rating reference proposal](specs/product-foundations.md#smoothed-raw-rating-reference-proposal)
 
 ## Verified Workspace State
 
@@ -263,8 +263,14 @@
   records the owner's preference for `allowed_rating_deviation` in the division
   form and `new_input_teammate_behavior_rating`. The draft's half-influence
   reference point is explained; no formula or numeric setting is approved.
-- **Next planning discussion:** one overall behavioral rating versus multiple
-  dimensions, then no/sparse history. Then define response options,
+- **Completed assessment, 2026-10-02:** the owner's single-state reference
+  recurrence is documented as a proposal, with first-party exponential-
+  smoothing evidence and synthetic comparison against an exact last-N window.
+  It reduces basic reference storage but changes recency semantics; existing
+  last-N decisions and data-retention questions remain unchanged.
+- **Next planning discussion:** exact last-N versus smoothed reference, then
+  one overall behavioral rating versus multiple dimensions and no/sparse
+  history. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination
@@ -284,6 +290,18 @@
 
 ## Verification State
 
+- The 2026-10-02 smoothed-reference assessment began with clean
+  `new-development` at `cdcef29`. Routing selected product planning, research/
+  sourcing, decision/recommendation safety, privacy/data boundaries, external/
+  owner review and deferral/owner review. Mandatory entry and routed procedures
+  were read. The NIST source was reviewed; 106 ephemeral synthetic arithmetic
+  assertions passed, covering recurrence equivalence, response direction,
+  isolated-input decay, sustained adaptation, divisor changes and numeric
+  scaling. Project links/anchors, all thirty decision IDs, full three-file
+  diff and `git diff --check` were checked. These tests do not cover cold start,
+  corrections, session batching, manipulation or the complete honor algorithm.
+  Application/live tests and the portable validator were not run. Only project
+  records changed; no protected-workflow, application, provider or remote write.
 - The 2026-10-02 honor-notation refinement began with clean `new-development`
   at `44ce53c`. Routing selected product planning, decision/recommendation
   safety, external/owner review and deferral/owner review; the mandatory entry,
