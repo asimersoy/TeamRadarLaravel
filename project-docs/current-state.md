@@ -10,9 +10,11 @@
   equivalent numeric representation. `DEC-028` selects teammate feedback that
   can raise and lower honor. `DEC-029` selects average-based movement and dynamic
   recent-history attenuation. `DEC-030` separates raw recent ratings from their
-  attenuated honor influence; detailed specifications remain incomplete
+  attenuated honor influence. `DEC-031` delegates required startup/confidence
+  handling and reference tuning during development; detailed specifications
+  remain incomplete
 - **Objective:** evaluate the proposed smoothed raw-rating reference, then
-  define feedback format, sparse-history handling and detailed honor rules in
+  define feedback format and detailed honor rules in
   bounded discussions while preserving the test hold and slice gates
 - **Current route:**
   [Smoothed raw-rating reference proposal](specs/product-foundations.md#smoothed-raw-rating-reference-proposal)
@@ -144,6 +146,12 @@
   Exact mathematics, sparse-history handling, response speed, report effects
   and other safeguards remain open;
   negative or unusual feedback alone is not verified misconduct or a sanction.
+- `DEC-031` requires initialization/confidence handling and lets the
+  implementation agent choose and revise its method and reference tuning in
+  development, with recorded tests. Divisor 20 is a provisional candidate if
+  smoothing is selected. This delegates responsibility, not a new confidence-
+  based eligibility rule or a full implementation slice; reference-model
+  replacement still requires owner confirmation.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -268,9 +276,15 @@
   smoothing evidence and synthetic comparison against an exact last-N window.
   It reduces basic reference storage but changes recency semantics; existing
   last-N decisions and data-retention questions remain unchanged.
-- **Next planning discussion:** exact last-N versus smoothed reference, then
-  one overall behavioral rating versus multiple dimensions and no/sparse
-  history. Then define response options,
+- **Completed, 2026-10-02:** `DEC-031` records required startup/confidence
+  handling and bounded agent discretion over its development method and
+  reference tuning. Final calibration need not precede development; chosen
+  methods still need correctness evidence. Exact reference-model replacement
+  remains open; divisor 20 is a provisional starting candidate, not a verified
+  safe rate or twenty games.
+- **Next planning discussion:** confirm exact last-N versus smoothed reference,
+  then one overall behavioral rating versus multiple dimensions. Startup-method
+  details belong to the implementation agent. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination
@@ -290,6 +304,14 @@
 
 ## Verification State
 
+- The 2026-10-02 development-delegation record began with clean
+  `new-development` at `de0ea6d`. Product planning, decision/recommendation
+  safety, privacy/data, owner/external review and deferral/owner review routed
+  this bounded unit. Six project records, all local links/anchors and 31 unique
+  sequential decision IDs were checked; full scoped diff and `git diff --check`
+  passed. Application/live tests and the portable validator were not run:
+  no startup method, scoring algorithm or live integration was implemented.
+  No protected workflow, legacy code, provider state or remote action changed.
 - The 2026-10-02 smoothed-reference assessment began with clean
   `new-development` at `cdcef29`. Routing selected product planning, research/
   sourcing, decision/recommendation safety, privacy/data boundaries, external/

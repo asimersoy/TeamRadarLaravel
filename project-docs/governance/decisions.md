@@ -1176,3 +1176,67 @@ mathematics and empirical performance still require specification and tests.
 - **Supersedes:** none; clarifies `DEC-029` and resolves its raw-versus-
   attenuated comparison and behavior-change direction under `OQ-006`.
 - **Superseded by:** none
+
+## DEC-031 - Delegate Development Initialization And Reference Tuning
+
+- **Date:** 2026-10-02
+- **Status:** approved bounded development-stage delegation; reference-model
+  replacement remains an owner question
+- **Decision owner:** project owner
+- **Decision:** include initialization and confidence/sample-count handling
+  alongside the honor systems being specified. The implementation agent may
+  choose the concrete development-stage method during the approved slice and
+  revise it while the site remains in development. The owner need not select
+  the method or finalize raw-reference response-speed tuning in advance.
+  The applicable specification must express this delegation and testable
+  constraints rather than turn every method detail or tunable value into a
+  separate owner gate.
+- **Reason / approval evidence:** the owner explicitly said this handling
+  should exist, asked the implementation agent to choose its method, and
+  described it and the response values as changeable during later development
+  fine-tuning. The owner proposed starting the smoothing response divisor at
+  20 instead of the illustrated 30. This is a provisional starting candidate,
+  not evidence that it gives an acceptable honor-change rate.
+- **Bounded discretion:** record the selected startup/count method, settings,
+  rationale and deterministic test evidence; keep them changeable through
+  coherent verified development changes. Preserve the fixed neutral newcomer
+  honor baseline and the separation between raw input/reference and attenuated
+  honor influence. A baseline is not real historical feedback, and a simple
+  count alone is not proof of reliability or independent reviewers.
+- **Not delegated by this decision:** deciding who may rate whom, sanctions,
+  public confidence labels, confidence-based eligibility restrictions, new
+  matching effects, raw-data retention, live data collection or release. The
+  influence curve and full honor-update formula remain unselected. Any tuning
+  that changes these product boundaries returns to owner review.
+- **Reference selection boundary:** the latest annotations clearly approve
+  startup responsibility and flexible development tuning, but do not explicitly
+  replace the previously selected exact last-N reference. Keep the smoothed
+  recurrence under consideration until the owner confirms that replacement.
+  If selected, divisor 20 is the proposed development starting value; it moves
+  the reference 5% toward each new eligible rating, not toward each game, and
+  is separate from the overall honor update speed.
+- **Verification timing:** final calibration is not a prerequisite to drafting
+  or an otherwise-approved development slice. Initial correctness tests belong
+  with implementation; broader behavioral tuning may follow in development.
+  Before any release or real-user operation, obtain the applicable approvals
+  and test isolated/extreme inputs, sustained changes and manipulation under
+  the complete scoring rules. No anti-retaliation outcome is guaranteed now.
+- **Implementation authority:** this is bounded discretion inside a future
+  approved slice, not approval to start the complete app or scoring slice.
+  `DEC-008`, other unresolved slice specifications and the Discord test hold
+  remain in force. No general workflow gate is removed.
+- **Affected records:** product foundations, `OQ-006`, project index, current
+  state and owner decision sequence. Existing historical approval records
+  retain their original scope; portable workflow and legacy code are untouched.
+- **Route / baseline:** bounded product planning; decision/recommendation
+  safety; privacy/data boundaries; external/owner review; deferral/owner review.
+  Mandatory entry and selected procedures read; clean `new-development` at
+  `de0ea6d` verified before edits. Six project records only; no delegation or
+  application/provider action.
+- **Verification:** full scoped diff, project Markdown links/anchors and all
+  31 unique sequential decision IDs checked; `git diff --check` passed. No
+  application, startup-method or live tests run because this unit records
+  delegation rather than implementing it. No push or remote action.
+- **Supersedes:** none; resolves startup-method responsibility and development
+  tuning within `OQ-006`, without selecting a different reference model.
+- **Superseded by:** none

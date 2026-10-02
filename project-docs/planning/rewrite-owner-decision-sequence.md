@@ -125,6 +125,10 @@ explicitly rejects them.
   downweighted ratings still enter the unadjusted recent reference (`DEC-030`).
   Ordinary honor movement is automatic in both directions without admin
   intervention. No example window count or storage schema is selected.
+- Include initialization/confidence handling and delegate its concrete
+  development method and raw-reference response tuning to the implementation
+  agent (`DEC-031`). Exact reference-model replacement remains a separate
+  confirmation; final tuning does not require advance owner selection.
 
 ### Unapproved Assumptions
 
@@ -311,10 +315,14 @@ recent-history attenuation over a configurable comparison window; no metric,
 curve, window count or complete formula is selected. `DEC-030` clarifies that
 eligible downweighted ratings enter the raw recent reference at full value;
 its evolution supplies the intended behavior-change mechanism. Ordinary
-automatic up/down movement is approved without admin intervention. Next discuss
-one overall rating versus multiple dimensions, then no/sparse history, response
-options, eligibility, calculation, reliability, matching rules and visibility
-in bounded discussions.
+automatic up/down movement is approved without admin intervention. `DEC-031`
+requires startup/confidence handling but delegates its concrete development
+method and reference response tuning; do not ask the owner to choose every
+startup detail or finalize tuning first. Confirm exact-last-N versus smoothing,
+then discuss one overall rating versus multiple dimensions, response options,
+eligibility, calculation, reliability, matching rules and visibility in bounded
+discussions. Initial correctness checks accompany implementation; full behavioral
+calibration can follow in development before release or real-user operation.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:

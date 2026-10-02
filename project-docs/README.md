@@ -54,8 +54,11 @@ movement and dynamically lower influence as deviation from a configurable
 recent-rating average increases. `DEC-030` keeps eligible raw recent ratings
 separate from attenuated honor influence, so the reference can evolve even
 when individual honor effects are reduced. Routine honor movement is automatic
-in both directions without admin intervention. The exact mathematics, sparse-history
-handling, response speed, feedback format, report effects, visibility and possible
+in both directions without admin intervention. `DEC-031` requires startup/
+confidence handling and delegates its concrete development method and reference
+response tuning to the implementation agent. Final tuning is not a predevelopment
+owner question; the method still requires recorded tests. The exact reference
+model, full mathematics, feedback format, report effects, visibility and possible
 history-dependent matching weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything

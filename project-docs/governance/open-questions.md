@@ -133,10 +133,11 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-030` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-031` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
-  separate raw recent-rating reference;
+  separate raw recent-rating reference and bounded development startup/tuning
+  responsibility;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -162,8 +163,13 @@ Historical unknowns do not automatically become requirements.
   speed and resistance to abuse remain unverified. The owner explicitly selects
   automatic feedback-driven honor movement in both directions without admin
   intervention; that choice is resolved, not a remaining review gate.
-  Next discuss one overall rating versus multiple behavioral dimensions;
-  no/sparse history, same-session ordering and full mathematics remain open.
+  `DEC-031` requires initialization and confidence/sample-count handling and
+  delegates its concrete development method to the implementation agent.
+  Final raw-reference response tuning need not be selected before development;
+  startup correctness and chosen settings still require documentation/tests.
+  Exact-last-N versus smoothing remains a separate owner confirmation.
+  Next discuss that replacement and one overall rating versus multiple
+  behavioral dimensions; same-session ordering and full mathematics remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
   for a rating-point division parameter and an explicit new-input name is
@@ -175,8 +181,10 @@ Historical unknowns do not automatically become requirements.
   with a single-state exponential recurrence, using a configurable divisor
   for response speed. See the
   [smoothed raw-reference assessment](../specs/product-foundations.md#smoothed-raw-rating-reference-proposal).
-  Selection, calibration and any corresponding refinement of `DEC-029`/
-  `DEC-030` await owner approval; the proposal does not decide raw-data retention.
+  The owner subsequently proposed divisor 20 as a development starting
+  candidate and delegated startup and development tuning under `DEC-031`.
+  Exact-model selection and any corresponding refinement of `DEC-029`/
+  `DEC-030` await confirmation; the proposal does not decide raw-data retention.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -216,6 +224,8 @@ Historical unknowns do not automatically become requirements.
   `DEC-029` for average-based calculation and dynamic recent-history attenuation
   direction, not the complete formula or abuse-handling specification;
   `DEC-030` for the separate raw recent comparison and behavior-change direction;
+  `DEC-031` for required startup/confidence handling, agent-selected development
+  method and flexible raw-reference tuning, not model replacement;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

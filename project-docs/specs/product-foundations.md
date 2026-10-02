@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-030`
+- **Authority:** `DEC-009` through `DEC-031`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -60,6 +60,16 @@ No concrete window size, physical storage design, lifetime honor horizon or
 visible second score/history screen is selected. Ordinary feedback must move
 honor up and down automatically without administrative intervention; separate
 report, correction and appeal processes remain to be specified.
+
+Under `DEC-031`, initialization and confidence/sample-count handling are
+required; the implementation agent chooses their concrete development method
+inside the approved slice and may revise it during development. Raw-reference
+response tuning need not be finalized beforehand. The agent documents and
+tests its selections without asking the owner to choose every method detail.
+This does not authorize new confidence-based matching/eligibility effects or
+public labels. The fixed neutral baseline remains honor policy, not fabricated
+historical feedback. Exact-last-N versus smoothing remains a distinct owner
+selection; final tuning does not block an otherwise-approved development slice.
 
 This foundation does not yet decide review eligibility, questions, score formula,
 reviewer weighting, visibility, exact matching rules, eligibility restrictions, sanctions,
@@ -376,10 +386,19 @@ update rate and influence curve. Mean-only state cannot reconstruct individual
 feedback for correction, appeals, abuse investigation or historical recalculation;
 whether those needs justify separate raw records remains open.
 
-**Still required:** initialization and confidence/sample-count handling without
-treating the fixed newcomer honor baseline as real historical ratings; same-
-session ordering/batching; eligibility, correction and retention rules; and
-deterministic/adversarial verification of the full coupled honor calculation.
+**Development handling approved by `DEC-031`:** include initialization and
+confidence/sample-count handling; the implementation agent chooses its method
+and documents/tests it during the approved slice. Do not treat the fixed
+newcomer honor baseline as real historical ratings. The owner proposes divisor
+20 as a provisional development starting candidate if smoothing is selected;
+its 5% reference adjustment is per eligible rating, not per game or directly
+the honor score. The exact reference-model replacement still needs confirmation.
+
+**Still required:** same-session ordering/batching; eligibility, correction and
+retention rules; and deterministic/adversarial verification of the full coupled
+honor calculation. Initial correctness tests accompany implementation; broader
+response-speed calibration may follow in development rather than requiring a
+final value before an otherwise-approved slice begins.
 The prior reference must be used when assessing a new input; feeding that
 input into the reference first would reduce its measured departure. No live
 data, production implementation or anti-retaliation guarantee is established.
