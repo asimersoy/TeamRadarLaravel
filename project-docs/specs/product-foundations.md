@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-029`
+- **Authority:** `DEC-009` through `DEC-030`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -50,6 +50,16 @@ metric, curve, window count or complete averaging/update formula is selected.
 No/sparse history, zero spread, same-session/repeated reviewers, organized
 abuse and genuine behavior changes require explicit design and verification.
 The comparison window does not select total score-history retention.
+
+`DEC-030` separates the raw recent comparison average from attenuated honor
+influence. Each eligible rating enters the recent window at its unadjusted
+value even if its honor effect is reduced. Attenuation must not feed back into
+that raw reference. Repeated feedback can therefore move the reference as
+behavior changes; actual response speed and safeguards require later tests.
+No concrete window size, physical storage design, lifetime honor horizon or
+visible second score/history screen is selected. Ordinary feedback must move
+honor up and down automatically without administrative intervention; separate
+report, correction and appeal processes remain to be specified.
 
 This foundation does not yet decide review eligibility, questions, score formula,
 reviewer weighting, visibility, exact matching rules, eligibility restrictions, sanctions,

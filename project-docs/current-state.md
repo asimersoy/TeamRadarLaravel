@@ -9,12 +9,13 @@
   players at a common baseline. `DEC-027` fixes that baseline and delegates
   equivalent numeric representation. `DEC-028` selects teammate feedback that
   can raise and lower honor. `DEC-029` selects average-based movement and dynamic
-  recent-history attenuation; detailed specifications remain incomplete
-- **Objective:** define sparse-history/change handling, feedback format and
+  recent-history attenuation. `DEC-030` separates raw recent ratings from their
+  attenuated honor influence; detailed specifications remain incomplete
+- **Objective:** define feedback format, sparse-history handling and
   detailed honor rules in bounded discussions while preserving the test hold
   and slice gates
 - **Current route:**
-  [Average-based honor and dynamic recent-history safeguard](governance/decisions.md#dec-029---average-teammate-ratings-with-dynamic-recent-history-attenuation)
+  [Raw recent reference versus attenuated honor influence](governance/decisions.md#dec-030---separate-raw-recent-ratings-from-attenuated-honor-influence)
 
 ## Verified Workspace State
 
@@ -137,8 +138,11 @@
 - `DEC-028` selects routine post-play teammate feedback that can both raise and
   lower honor. `DEC-029` selects average-based movement from scaled ratings and
   dynamically reduced influence as deviation from recent ratings increases,
-  using a configurable last-N comparison window. Exact mathematics, sparse-
-  history/change handling, report effects and other safeguards remain open;
+  using a configurable last-N comparison window. `DEC-030` keeps that recent
+  reference unadjusted: eligible downweighted ratings still enter at full value.
+  Ordinary feedback moves honor up/down automatically without admin intervention.
+  Exact mathematics, sparse-history handling, response speed, report effects
+  and other safeguards remain open;
   negative or unusual feedback alone is not verified misconduct or a sanction.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
@@ -244,9 +248,13 @@
   ratings, average-based movement, configurable recent-history comparison and
   dynamic attenuation. Standard deviation and all numeric parameters remain
   unselected; no algorithm or anti-retaliation guarantee is implemented or proved.
-- **Next planning discussion:** define genuine behavior-change handling under
-  the history safeguard, then no/sparse history and one overall behavioral
-  rating versus multiple dimensions. Then define response options,
+- **Completed, 2026-10-02:** `DEC-030` distinguishes the raw recent average
+  from attenuated honor influence: reduced effect does not exclude or alter
+  eligible raw inputs to the reference. Window count and physical storage remain
+  unselected. Automatic up/down movement without admin intervention is explicitly
+  approved; adaptation speed and abuse resistance are not tested.
+- **Next planning discussion:** one overall behavioral rating versus multiple
+  dimensions, then no/sparse history. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination

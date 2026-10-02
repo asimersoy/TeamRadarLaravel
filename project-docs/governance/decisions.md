@@ -1101,3 +1101,78 @@ open; this does not retroactively assert implementation or earlier approval.
 - **Supersedes:** none; refines `DEC-028` and resolves further calculation/
   safeguard direction within `OQ-006`, without selecting complete scoring rules.
 - **Superseded by:** none
+
+### Subsequent Raw-Reference Clarification - 2026-10-02
+
+`DEC-030` clarifies that attenuation affects the honor calculation, not a
+rating's inclusion or unadjusted value in the recent comparison average.
+This supplies the owner's intended behavior-change mechanism; its detailed
+mathematics and empirical performance still require specification and tests.
+
+## DEC-030 - Separate Raw Recent Ratings From Attenuated Honor Influence
+
+- **Date:** 2026-10-02
+- **Status:** approved calculation separation; detailed formula remains open
+- **Decision owner:** project owner
+- **Decision:** Keep the recent comparison average logically separate from
+  the overall honor calculation. The comparison uses the unadjusted values of
+  the player's recent eligible teammate ratings over the configurable last-N
+  window. An unusual rating may have reduced influence on honor under
+  `DEC-029`, but still enters that recent history at its full unadjusted value.
+  Attenuation must not remove it from, or attenuate its contribution to, the
+  raw recent comparison average merely because it differs from past ratings.
+  Ordinary feedback must be able to move honor up and down automatically,
+  without requiring administrative intervention to accept a behavior change.
+- **Reason / approval evidence:** the owner explained that reducing a rating's
+  honor effect does not mean omitting it from the average used to recognize
+  changed behavior. They expressly distinguished an unadjusted recent average
+  from the overall average/influence calculation and excluded their spoken
+  example window sizes from selection. No concrete window count is recorded.
+  The owner subsequently explicitly confirmed upward and downward movement
+  without admin intervention, resolving the earlier automatic-versus-review
+  question rather than leaving it as an agent recommendation.
+- **Consequences:** successive eligible ratings can move the raw recent
+  reference even when their individual honor effects are reduced. Later
+  ratings are compared with the evolving raw reference, allowing the intended
+  mechanism to respond to improving or worsening behavior. The reference is
+  not a community average; the fixed newcomer baseline under `DEC-027` is
+  unchanged. Raw feedback and its attenuated honor influence must remain
+  distinguishable in the specification and verification evidence.
+- **Implementation boundary:** this selects logical calculation separation,
+  not a database schema, duplicate persisted averages, indefinite raw-history
+  retention, a player-visible history screen or a visible second score. The
+  overall honor horizon and exact aggregation are not selected. Ordinary
+  feedback-driven honor changes do not require administrative review.
+  This does not remove the separate, still-unspecified administrative report,
+  correction or appeal processes.
+- **Still open:** rating dimensions/options and eligibility; corrections,
+  invalid/abusive-feedback handling; no/sparse history and zero spread;
+  ordering/batching of same-session ratings; deviation metric, curve, update
+  timing and whether past honor weights are recomputed; window configuration
+  controls and data retention. Inclusion of eligible outliers does not approve
+  inclusion of fraudulent/ineligible ratings or establish a rule for them.
+- **Verification needed later:** trace raw values, recent-reference updates,
+  calculated influence and resulting honor separately. Include an isolated
+  extreme rating and sustained improving/worsening sequences; verify that
+  attenuation is not fed back into the raw comparison average. Response speed,
+  manipulation resistance and lack of lock-in are not proved by this record.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence. Historical decisions/audits retain their
+  prior scope; no canonical workflow or legacy implementation change.
+- **Return condition:** approve applicable scoring, matching, data and
+  completion specifications before the implementation slice under `DEC-008`.
+  `DEC-024` and the live-test hold remain in force.
+- **Route / baseline:** continuing bounded product planning; decision/
+  recommendation safety; privacy/data boundaries; owner/external review;
+  deferral/owner review. Mandatory entry and selected procedures already read
+  for this ongoing decision session; actual repository rechecked clean on
+  `new-development` at `19c33f0`. Six existing project records only; no code,
+  delegation, provider claim or external action.
+- **Verification:** all 54 project Markdown documents checked: 210 local links
+  and 17 heading anchors resolve; all 30 decision IDs are unique and sequential.
+  Full six-file scoped diff reviewed; `git diff --check` passed. No algorithm,
+  application or live tests run; detailed scoring remains open. No push or
+  remote action; portable workflow and legacy code unchanged.
+- **Supersedes:** none; clarifies `DEC-029` and resolves its raw-versus-
+  attenuated comparison and behavior-change direction under `OQ-006`.
+- **Superseded by:** none

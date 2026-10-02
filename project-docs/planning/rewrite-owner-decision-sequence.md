@@ -121,6 +121,10 @@ explicitly rejects them.
 - Use scaled teammate ratings and average-based movement, with dynamically
   lower influence as deviation from a configurable recent-rating average grows
   (`DEC-029`). Exact mathematics and sparse-history/change handling remain open.
+- Keep raw recent ratings separate from attenuated honor influence: eligible
+  downweighted ratings still enter the unadjusted recent reference (`DEC-030`).
+  Ordinary honor movement is automatic in both directions without admin
+  intervention. No example window count or storage schema is selected.
 
 ### Unapproved Assumptions
 
@@ -304,10 +308,13 @@ numeric representation is an implementation choice under `DEC-027`, not a
 required owner prompt. `DEC-028` approves routine teammate feedback that can
 raise and lower honor. `DEC-029` selects average-based movement and dynamic
 recent-history attenuation over a configurable comparison window; no metric,
-curve, window count or complete formula is selected. Next define genuine
-behavior-change and no/sparse-history handling, then one overall rating versus
-multiple behavioral dimensions, response options, eligibility, calculation,
-reliability, matching rules and visibility in bounded discussions.
+curve, window count or complete formula is selected. `DEC-030` clarifies that
+eligible downweighted ratings enter the raw recent reference at full value;
+its evolution supplies the intended behavior-change mechanism. Ordinary
+automatic up/down movement is approved without admin intervention. Next discuss
+one overall rating versus multiple dimensions, then no/sparse history, response
+options, eligibility, calculation, reliability, matching rules and visibility
+in bounded discussions.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:

@@ -51,8 +51,11 @@ selects a fixed neutral baseline and leaves equivalent numeric scaling to the
 implementation agent. `DEC-028` selects routine teammate feedback that can both
 raise and lower honor. `DEC-029` selects scaled ratings, average-based honor
 movement and dynamically lower influence as deviation from a configurable
-recent-rating average increases. The exact mathematics, sparse-history/change
-handling, feedback format, report effects, visibility and possible
+recent-rating average increases. `DEC-030` keeps eligible raw recent ratings
+separate from attenuated honor influence, so the reference can evolve even
+when individual honor effects are reduced. Routine honor movement is automatic
+in both directions without admin intervention. The exact mathematics, sparse-history
+handling, response speed, feedback format, report effects, visibility and possible
 history-dependent matching weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything

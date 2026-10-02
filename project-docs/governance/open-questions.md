@@ -133,9 +133,10 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-029` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-030` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
-  teammate-feedback effects with average/deviation-based direction;
+  teammate-feedback effects with average/deviation-based direction and a
+  separate raw recent-rating reference;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -155,9 +156,14 @@ Historical unknowns do not automatically become requirements.
   and dynamically less influence for ratings farther from a recent average
   over a configurable last-N history. Standard deviation is only a possibility;
   the metric, curve, window count and full formula remain open. Report
-  consequences are not selected. Next clarify how repeated independent feedback
-  should establish genuine behavior changes without permanent history lock-in;
-  then discuss one overall rating versus multiple behavioral dimensions.
+  consequences are not selected. `DEC-030` clarifies that eligible attenuated
+  ratings still enter the recent reference at their full unadjusted values;
+  evolving raw history is the intended behavior-change mechanism. Its response
+  speed and resistance to abuse remain unverified. The owner explicitly selects
+  automatic feedback-driven honor movement in both directions without admin
+  intervention; that choice is resolved, not a remaining review gate.
+  Next discuss one overall rating versus multiple behavioral dimensions;
+  no/sparse history, same-session ordering and full mathematics remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
@@ -197,6 +203,7 @@ Historical unknowns do not automatically become requirements.
   `DEC-028` for routine feedback that can raise and lower honor;
   `DEC-029` for average-based calculation and dynamic recent-history attenuation
   direction, not the complete formula or abuse-handling specification;
+  `DEC-030` for the separate raw recent comparison and behavior-change direction;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
