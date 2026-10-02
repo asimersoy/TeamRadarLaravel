@@ -48,8 +48,9 @@ lasting-team management, past-teammate history UI and QGuard friend requests.
 `DEC-026` selects honor in matchmaking from that version, with newcomers at a
 common baseline and similar-honor grouping as history develops. `DEC-027`
 selects a fixed neutral baseline and leaves equivalent numeric scaling to the
-implementation agent. The next discussion defines feedback's effects;
-scoring, visibility and possible history-dependent weight remain open.
+implementation agent. `DEC-028` selects routine teammate feedback that can both
+raise and lower honor. The next discussion defines feedback format; scoring,
+report effects, visibility and possible history-dependent weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.

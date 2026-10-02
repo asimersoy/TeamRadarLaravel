@@ -986,3 +986,45 @@ scoring, weighting and safeguard questions remain open.
 - **Supersedes:** none; clarifies `DEC-026` and resolves the baseline component
   of `OQ-006`, without changing general workflow authority or approval gates.
 - **Superseded by:** none
+
+## DEC-028 - Allow Teammate Feedback To Raise And Lower Honor
+
+- **Date:** 2026-10-02
+- **Status:** approved feedback-effect direction; detailed rules remain open
+- **Decision owner:** project owner
+- **Decision:** Ordinary post-play teammate feedback can both increase and
+  decrease a player's behavioral honor. Honor is not an endorsement-only score
+  that can rise through feedback but fall only through a separate report path.
+- **Reason / approval evidence:** the owner explicitly answered that honor
+  should both increase and decrease, then requested that this be recorded.
+- **Alternatives considered:** positive-only routine feedback with negative
+  behavior handled solely through reports. Not selected.
+- **Consequences:** the later feedback/calculation design must support both
+  upward and downward honor effects. This does not mean every feedback item
+  immediately changes a score, or that negative feedback automatically proves
+  misconduct, causes a sanction or substitutes for report review.
+- **Still open:** one overall rating versus multiple behavioral dimensions;
+  response options, optionality and review eligibility; calculation, magnitude,
+  aggregation, reviewer/history weighting and timing; visibility and safeguards
+  against retaliation/manipulation; corrections, appeals and data handling.
+  Report eligibility, evidentiary review and score/sanction effects remain open.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence. Earlier decision entries and dated audits
+  retain their historical scope; this resolves one previously open component.
+- **Return condition:** approve the applicable feedback, scoring, matching,
+  data and completion specifications before implementing the affected slice
+  under `DEC-008`. `DEC-024` and the live-test hold remain in force.
+- **Route / baseline:** same bounded owner-review route as `DEC-027`: product
+  planning; decision/recommendation safety; privacy/data boundaries;
+  owner/external review; deferral/owner review. Mandatory entry and procedures
+  were read for this ongoing decision session; actual repository rechecked:
+  clean `new-development` at `1dff072`. One documentation-only decision unit;
+  no code, delegated work, provider action or workflow-package modification.
+- **Verification:** all 54 project Markdown documents checked: 210 local links
+  and 17 heading anchors resolve; all 28 decision IDs are unique and sequential.
+  Full six-file scoped diff reviewed; `git diff --check` passed. Application/live
+  tests were not run for this documentation-only unit; detailed product rules
+  remain unresolved. No push or external action.
+- **Supersedes:** none; resolves the routine-feedback direction component of
+  `OQ-006`, refining `DEC-010` and `DEC-026` without selecting a formula.
+- **Superseded by:** none

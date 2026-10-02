@@ -133,9 +133,9 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` and `DEC-027` for honor's
-  first-version matching role and fixed newcomer baseline; detailed matching,
-  trust, moderation and data rules remain open
+- **Status:** partially resolved by `DEC-026` through `DEC-028` for honor's
+  first-version matching role, fixed newcomer baseline and bidirectional
+  teammate-feedback effects; detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
@@ -149,9 +149,10 @@ Historical unknowns do not automatically become requirements.
   weight with history is a possible mechanism, not an approved rule. `DEC-027`
   selects a fixed neutral baseline and delegates equivalent numeric units and
   display scaling to the implementation agent, not behavioral or matching
-  changes. Next define whether routine teammate feedback can both raise and
-  lower honor, or only raise it with negative behavior handled separately
-  through reports. Feedback design, visibility, matching and safeguards remain open.
+  changes. `DEC-028` selects ordinary teammate feedback that can both raise and
+  lower honor; calculation and report consequences are not selected. Next
+  discuss one overall behavioral rating versus multiple behavioral dimensions.
+  Response options, eligibility, visibility, matching and safeguards remain open.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -187,6 +188,7 @@ Historical unknowns do not automatically become requirements.
   evidentiary effect, and qualified review.
 - **Resolved by:** `DEC-026` for honor's first-version matching direction;
   `DEC-027` for the fixed newcomer baseline and numeric-representation discretion;
+  `DEC-028` for routine feedback that can raise and lower honor;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

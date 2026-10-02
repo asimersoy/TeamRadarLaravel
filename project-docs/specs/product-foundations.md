@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-027`
+- **Authority:** `DEC-009` through `DEC-028`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -34,6 +34,11 @@ community average. The implementation agent chooses numeric units and equivalent
 display scaling; no numeric range or baseline number is selected now. Scaling
 must preserve approved meaning and matching outcomes, not silently change
 behavior or introduce a visibility, label/tier or public-claim decision.
+
+Under `DEC-028`, ordinary post-play teammate feedback can both raise and lower
+honor. The mechanism, aggregation, magnitude and timing are not selected;
+negative feedback does not by itself establish misconduct or select a sanction.
+The separate report-review and report-effect rules remain open.
 
 This foundation does not yet decide review eligibility, questions, score formula,
 reviewer weighting, visibility, exact matching rules, eligibility restrictions, sanctions,

@@ -7,11 +7,12 @@
   replaceable game joining. `DEC-025` selects session grouping for the first
   version. `DEC-026` selects honor in matchmaking from that version, with new
   players at a common baseline. `DEC-027` fixes that baseline and delegates
-  equivalent numeric representation; detailed specifications remain incomplete
-- **Objective:** define teammate-feedback and detailed honor/matching rules in
+  equivalent numeric representation. `DEC-028` selects teammate feedback that
+  can raise and lower honor; detailed specifications remain incomplete
+- **Objective:** define feedback format and detailed honor/matching rules in
   bounded discussions while preserving the test hold and slice gates
 - **Current route:**
-  [Fixed honor baseline and numeric representation](governance/decisions.md#dec-027---fix-the-newcomer-honor-baseline-and-delegate-numeric-representation)
+  [Bidirectional teammate-feedback effects](governance/decisions.md#dec-028---allow-teammate-feedback-to-raise-and-lower-honor)
 
 ## Verified Workspace State
 
@@ -131,6 +132,9 @@
   Detailed scoring/weighting remain open. `DEC-027` fixes the newcomer baseline
   independently of the community average and delegates equivalent numeric units
   and display scaling; substantive behavior and visibility remain owner decisions.
+- `DEC-028` selects routine post-play teammate feedback that can both raise and
+  lower honor. Calculation, magnitude/timing, safeguards and report effects
+  remain open; negative feedback alone is not verified misconduct or a sanction.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -229,10 +233,12 @@
 - **Completed, 2026-10-02:** `DEC-027` records the fixed neutral newcomer
   baseline and bounded agent discretion over equivalent numeric representation.
   No range, formula, visible score/tier or implementation is selected now.
-- **Next planning discussion:** may routine teammate feedback both raise and
-  lower honor, or only raise it with negative behavior handled separately
-  through reports? Then define feedback dimensions, eligibility, calculation,
-  reliability, detailed matching effects and visibility incrementally.
+- **Completed, 2026-10-02:** `DEC-028` records bidirectional routine-feedback
+  effects without choosing a score formula or report/sanction consequences.
+- **Next planning discussion:** should feedback use one overall behavioral
+  rating or multiple behavioral dimensions? Then define response options,
+  eligibility, calculation, reliability, detailed matching effects and
+  visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination
   details remain open for later bounded discussions.
 - **Next for live tests, after owner resumption:** recheck current provider/

@@ -116,6 +116,8 @@ explicitly rejects them.
   delegate internal numeric units and equivalent frontend scaling to the
   implementation agent (`DEC-027`). Behavioral meaning, formula, matching and
   visibility decisions are not delegated by this representation choice.
+- Allow ordinary post-play teammate feedback to both raise and lower honor
+  (`DEC-028`); calculation, magnitude/timing and report consequences remain open.
 
 ### Unapproved Assumptions
 
@@ -296,10 +298,10 @@ monitoring, and rollback boundary. This is part of closing `OQ-006`.
 **Current discussion, 2026-10-02:** honor's behavioral purpose and first-version
 matching role and fixed neutral newcomer baseline are approved. Equivalent
 numeric representation is an implementation choice under `DEC-027`, not a
-required owner prompt. Next decide whether routine teammate feedback can both
-raise and lower honor or only raise it, with reports handled separately. Then
-specify feedback dimensions, eligibility, calculation, reliability, matching
-rules and visibility in bounded discussions.
+required owner prompt. `DEC-028` approves routine teammate feedback that can
+raise and lower honor. Next choose one overall behavioral rating versus multiple
+behavioral dimensions, then specify response options, eligibility, calculation,
+reliability, matching rules and visibility in bounded discussions.
 
 Choose the lowest-complexity trust model that satisfies the approved product
 purpose:
