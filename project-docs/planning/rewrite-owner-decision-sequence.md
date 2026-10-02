@@ -118,6 +118,9 @@ explicitly rejects them.
   visibility decisions are not delegated by this representation choice.
 - Allow ordinary post-play teammate feedback to both raise and lower honor
   (`DEC-028`); calculation, magnitude/timing and report consequences remain open.
+- Use scaled teammate ratings and average-based movement, with dynamically
+  lower influence as deviation from a configurable recent-rating average grows
+  (`DEC-029`). Exact mathematics and sparse-history/change handling remain open.
 
 ### Unapproved Assumptions
 
@@ -299,8 +302,11 @@ monitoring, and rollback boundary. This is part of closing `OQ-006`.
 matching role and fixed neutral newcomer baseline are approved. Equivalent
 numeric representation is an implementation choice under `DEC-027`, not a
 required owner prompt. `DEC-028` approves routine teammate feedback that can
-raise and lower honor. Next choose one overall behavioral rating versus multiple
-behavioral dimensions, then specify response options, eligibility, calculation,
+raise and lower honor. `DEC-029` selects average-based movement and dynamic
+recent-history attenuation over a configurable comparison window; no metric,
+curve, window count or complete formula is selected. Next define genuine
+behavior-change and no/sparse-history handling, then one overall rating versus
+multiple behavioral dimensions, response options, eligibility, calculation,
 reliability, matching rules and visibility in bounded discussions.
 
 Choose the lowest-complexity trust model that satisfies the approved product

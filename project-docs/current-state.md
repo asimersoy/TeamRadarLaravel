@@ -8,11 +8,13 @@
   version. `DEC-026` selects honor in matchmaking from that version, with new
   players at a common baseline. `DEC-027` fixes that baseline and delegates
   equivalent numeric representation. `DEC-028` selects teammate feedback that
-  can raise and lower honor; detailed specifications remain incomplete
-- **Objective:** define feedback format and detailed honor/matching rules in
-  bounded discussions while preserving the test hold and slice gates
+  can raise and lower honor. `DEC-029` selects average-based movement and dynamic
+  recent-history attenuation; detailed specifications remain incomplete
+- **Objective:** define sparse-history/change handling, feedback format and
+  detailed honor rules in bounded discussions while preserving the test hold
+  and slice gates
 - **Current route:**
-  [Bidirectional teammate-feedback effects](governance/decisions.md#dec-028---allow-teammate-feedback-to-raise-and-lower-honor)
+  [Average-based honor and dynamic recent-history safeguard](governance/decisions.md#dec-029---average-teammate-ratings-with-dynamic-recent-history-attenuation)
 
 ## Verified Workspace State
 
@@ -133,8 +135,11 @@
   independently of the community average and delegates equivalent numeric units
   and display scaling; substantive behavior and visibility remain owner decisions.
 - `DEC-028` selects routine post-play teammate feedback that can both raise and
-  lower honor. Calculation, magnitude/timing, safeguards and report effects
-  remain open; negative feedback alone is not verified misconduct or a sanction.
+  lower honor. `DEC-029` selects average-based movement from scaled ratings and
+  dynamically reduced influence as deviation from recent ratings increases,
+  using a configurable last-N comparison window. Exact mathematics, sparse-
+  history/change handling, report effects and other safeguards remain open;
+  negative or unusual feedback alone is not verified misconduct or a sanction.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -235,8 +240,13 @@
   No range, formula, visible score/tier or implementation is selected now.
 - **Completed, 2026-10-02:** `DEC-028` records bidirectional routine-feedback
   effects without choosing a score formula or report/sanction consequences.
-- **Next planning discussion:** should feedback use one overall behavioral
-  rating or multiple behavioral dimensions? Then define response options,
+- **Completed, 2026-10-02:** `DEC-029` records the owner's rationale, scaled
+  ratings, average-based movement, configurable recent-history comparison and
+  dynamic attenuation. Standard deviation and all numeric parameters remain
+  unselected; no algorithm or anti-retaliation guarantee is implemented or proved.
+- **Next planning discussion:** define genuine behavior-change handling under
+  the history safeguard, then no/sparse history and one overall behavioral
+  rating versus multiple dimensions. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
   Voice attendance, solo/partial-party entry and other journey/coordination

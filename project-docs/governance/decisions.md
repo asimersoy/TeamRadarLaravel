@@ -1028,3 +1028,76 @@ scoring, weighting and safeguard questions remain open.
 - **Supersedes:** none; resolves the routine-feedback direction component of
   `OQ-006`, refining `DEC-010` and `DEC-026` without selecting a formula.
 - **Superseded by:** none
+
+### Subsequent Calculation And Safeguard Direction - 2026-10-02
+
+`DEC-029` records the owner's rationale and average-based calculation direction,
+plus dynamic attenuation against a configurable recent-rating window. Exact
+mathematics, eligibility, sparse-history handling and other safeguards remain
+open; this does not retroactively assert implementation or earlier approval.
+
+## DEC-029 - Average Teammate Ratings With Dynamic Recent-History Attenuation
+
+- **Date:** 2026-10-02
+- **Status:** approved calculation and safeguard direction; formula unselected
+- **Decision owner:** project owner
+- **Decision:** Provide ordinary post-play teammate feedback on a rating scale,
+  separate from administrative intervention and reports. Use an average-based
+  calculation of those ratings to move behavioral honor up or down, rather
+  than merely accumulate points for more play. Compare a new rating with the
+  rated player's prior recent teammate ratings, using the last configurable
+  number of eligible ratings as the comparison window. Mathematically measure
+  its deviation from that recent average and dynamically reduce its influence
+  as deviation increases: farther from the average means less effect.
+- **Reason / approval evidence:** the owner explained that an increase-only
+  score could reward accumulated play rather than behavior, proposed averaging
+  ordinary ratings independently of reports, and explicitly required a
+  changeable recent-history window and deviation-dependent influence. The
+  intended safeguard addresses a teammate retaliating for poor gameplay by
+  trying to tank another person's honor. The owner requested recording the
+  complete direction and repeating it back afterward.
+- **Alternatives considered:** positive-only point accumulation; equal
+  influence regardless of departure from recent history; or only a constant
+  penalty beyond a cutoff. None satisfies the selected direction. No automatic
+  rejection or zero weight for an outlier is selected.
+- **Mathematics not selected:** standard deviation was raised as a possibility,
+  not chosen. No distance metric, attenuation curve, threshold, window count,
+  averaging/aggregation formula, minimum sample count or update timing is fixed.
+  The comparison window is not necessarily the full honor-calculation window.
+  `DEC-027` still leaves equivalent numeric units to the implementation agent;
+  the owner's numerical examples are not an approved score range.
+- **Meaning and evidence boundary:** honor measures behavior, not gameplay
+  skill. A rating's disagreement with past ratings is not proof of dishonesty;
+  recent history is a reference, not verified truth. Downweighting is the
+  approved protection direction, not a guarantee against retaliation or abuse.
+  Report review, misconduct findings and score/sanction consequences remain
+  separate unresolved rules.
+- **Open design and verification work:** specify no/sparse history, identical
+  prior ratings or zero spread, multiple ratings from one session, reviewer
+  independence, repeated/organized abuse, and genuine improving or worsening
+  behavior so history does not silently become permanent score lock-in.
+  Define rating dimensions/options, eligibility, optionality, correction/appeal,
+  storage/retention, configuration authority and change/version control.
+  No default treats the neutral baseline as real historical feedback.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence; earlier decisions and dated audits retain
+  their historical scope. No social-history UI is added under `DEC-025`.
+- **Return condition:** propose and verify the detailed mathematics and
+  behavioral tradeoffs in the applicable scoring/matching specification;
+  obtain its required approval before the implementation slice under `DEC-008`.
+  Use deterministic and adversarial examples, including sparse history and
+  genuine behavior changes. `DEC-024` and the live-test hold remain in force.
+- **Route / baseline:** continuing bounded product planning; decision/
+  recommendation safety; privacy/data boundaries; owner/external review;
+  deferral/owner review. Mandatory entry and selected procedures read for this
+  ongoing decision session; repository rechecked clean on `new-development`
+  at `6e8d46f`. Scope: six existing project records only; no new provider claim,
+  code, delegation, external action or canonical-workflow modification.
+- **Verification:** all 54 project Markdown documents checked: 210 local links
+  and 17 heading anchors resolve; all 29 decision IDs are unique and sequential.
+  Full six-file scoped diff reviewed; `git diff --check` passed. No algorithm,
+  application or live tests run; mathematics remains to be specified and tested.
+  No push or external action; portable workflow and legacy code unchanged.
+- **Supersedes:** none; refines `DEC-028` and resolves further calculation/
+  safeguard direction within `OQ-006`, without selecting complete scoring rules.
+- **Superseded by:** none
