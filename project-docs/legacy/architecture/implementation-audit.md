@@ -62,6 +62,51 @@ Findings:
 No form/action, queue service/job, candidate logic, WebSocket client, private
 room, or matchmaking tests were found.
 
+#### Targeted Job Search — 2026-10-02
+
+- **Objective and authorization:** the owner requested the old matchmaking
+  algorithm's Big O complexity, then clarified that it should be a job. This
+  is historical inspection only, with no application change or new matching
+  rule authorized.
+- **Route and authority:** evidence-only audit and implementation-source
+  research; decision/recommendation safety was also read because the subject
+  is matching. The repository entry path and selected procedures were read.
+  `DEC-004`, `DEC-006` through `DEC-008`, and `DEC-012` govern evidence,
+  repository boundaries, protected workflow, and treatment of legacy code.
+- **Baseline:** clean `new-development` at
+  `b0ec2198934d5cc5bf5be66cf9edc1c07d1b77be`; old `master` at
+  `3822e6159377304432834ddbafd7ffca90d3a0fa`. The checkout was switched to
+  `master` for inspection and restored to `new-development` afterward.
+- **Coverage:** inspected all 16 commits reachable from local `master` and
+  all 18 locally available unreachable commits, including the recovered relay
+  chain. Inventoried job/worker/matchmaking paths in those 34 commit trees and
+  searched 125 distinct PHP/JavaScript/TypeScript/Python source blobs across
+  100 source paths. Generated dependencies and sensitive recovery archives
+  were excluded.
+- **Observed result:** no `app/Jobs/` path or matchmaking job was found in
+  those trees. `QueueController.php` has one historical source version and is
+  empty. `docs/TO_DO.md:65` lists “matchmaking system job” as pending work.
+  The only application worker, `LiveApiVerifyWorker.php`, subscribes to
+  game-client verification messages and synthesizes a user ID; it contains
+  no player-candidate selection or team formation.
+- **Remote verification:** SSH reads failed; read-only GitHub connector
+  queries established that the remote repository is now
+  `asimersoy/TeamRadarLaravel`, with only `master`, at the same commit as the
+  local old branch. No fetch, remote mutation, or remote configuration change
+  was performed.
+- **Complexity finding and limitation:** Big O cannot be derived for a
+  matchmaking algorithm that was not located. This does not establish that
+  it never existed in another repository, an unsaved file, or unavailable
+  history. A concrete job file or additional source is needed to continue.
+- **Verification and version boundary:** source and history checks were
+  reviewed directly by the primary agent. No runtime tests or benchmarks were
+  run because no algorithm or application change was available. Only this
+  dated evidence addition is in scope for the local documentation commit.
+  Relative-link and existing README-routing checks, complete scoped-diff
+  review, and `git diff --check` passed. The protected portable workflow and
+  application files remain unchanged. No push, deployment, publication, or
+  history rewrite occurred.
+
 ### Apex Tap - Revision Required If Reused
 
 - local WebSocket server on loopback port 7777;
