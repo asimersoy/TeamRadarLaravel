@@ -133,11 +133,11 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-031` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-032` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
-  separate raw recent-rating reference and bounded development startup/tuning
-  responsibility;
+  separate smoothed raw reference, isolated-extreme trade-off and bounded
+  development startup/calibration responsibility;
   detailed trust/matching/moderation/data rules remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
@@ -154,11 +154,13 @@ Historical unknowns do not automatically become requirements.
   display scaling to the implementation agent, not behavioral or matching
   changes. `DEC-028` selects ordinary teammate feedback that can both raise and
   lower honor. `DEC-029` selects scaled ratings, average-based honor movement
-  and dynamically less influence for ratings farther from a recent average
-  over a configurable last-N history. Standard deviation is only a possibility;
-  the metric, curve, window count and full formula remain open. Report
-  consequences are not selected. `DEC-030` clarifies that eligible attenuated
-  ratings still enter the recent reference at their full unadjusted values;
+  and dynamically less influence for ratings farther from recent feedback.
+  `DEC-032` replaces the exact last-N comparison with the single-value smoothed
+  raw reference, starting with adjustable development divisor 20. Standard
+  deviation remains a possibility, not a selected metric; full scoring
+  acceptance criteria and safeguards remain incomplete. Report consequences
+  are not selected. `DEC-030`/`DEC-032` keep the eligible reference input
+  unadjusted despite separate honor dampening;
   evolving raw history is the intended behavior-change mechanism. Its response
   speed and resistance to abuse remain unverified. The owner explicitly selects
   automatic feedback-driven honor movement in both directions without admin
@@ -167,24 +169,26 @@ Historical unknowns do not automatically become requirements.
   delegates its concrete development method to the implementation agent.
   Final raw-reference response tuning need not be selected before development;
   startup correctness and chosen settings still require documentation/tests.
-  Exact-last-N versus smoothing remains a separate owner confirmation.
-  Next discuss that replacement and one overall rating versus multiple
-  behavioral dimensions; same-session ordering and full mathematics remain open.
+  `DEC-032` explicitly accepts less immediate effect for an isolated extreme
+  negative departure than a moderate negative input, with sustained feedback
+  still moving the reference and honor. Development calibration may adjust
+  constants and occasional small functions while preserving approved behavior;
+  do not ask the owner to freeze every setting before development.
+  Next discuss one overall rating versus multiple behavioral dimensions;
+  same-session ordering and complete scoring acceptance remain open.
   Response options, eligibility, visibility, matching and safeguards remain open.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
   for a rating-point division parameter and an explicit new-input name is
   captured in the
   [honor notation discussion](../specs/product-foundations.md#provisional-honor-notation-discussion).
-  This is explanation-level notation, not approval of the influence curve,
-  parameters or full honor calculation.
-- **New owner proposal, 2026-10-02:** replace the exact last-N raw reference
-  with a single-state exponential recurrence, using a configurable divisor
-  for response speed. See the
-  [smoothed raw-reference assessment](../specs/product-foundations.md#smoothed-raw-rating-reference-proposal).
-  The owner subsequently proposed divisor 20 as a development starting
-  candidate and delegated startup and development tuning under `DEC-031`.
-  Exact-model selection and any corresponding refinement of `DEC-029`/
-  `DEC-030` await confirmation; the proposal does not decide raw-data retention.
+  Notation alone does not settle the full scoring contract or final curve
+  tuning; `DEC-032` selects the reference and bounds development calibration.
+- **Reference choice resolved, 2026-10-02:** `DEC-032` selects the single-state
+  exponential recurrence instead of exact last-N history and an adjustable
+  development response divisor of 20. See the
+  [selected smoothed raw reference](../specs/product-foundations.md#smoothed-raw-rating-reference).
+  The side handoff's exact-window and owner startup-question framing is stale.
+  Startup delegation remains in force; raw-data retention is not decided.
 - **Known context:** The legacy project proposed preference matching, honor,
   weighted reviews, session evidence, and reports but implemented no complete
   criteria, fairness controls, appeal path, retention rule, or rollback method.
@@ -225,7 +229,9 @@ Historical unknowns do not automatically become requirements.
   direction, not the complete formula or abuse-handling specification;
   `DEC-030` for the separate raw recent comparison and behavior-change direction;
   `DEC-031` for required startup/confidence handling, agent-selected development
-  method and flexible raw-reference tuning, not model replacement;
+  method and flexible raw-reference tuning;
+  `DEC-032` for smoothed-reference replacement, isolated-extreme trade-off and
+  bounded development calibration;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?

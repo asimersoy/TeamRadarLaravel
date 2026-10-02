@@ -56,9 +56,12 @@ separate from attenuated honor influence, so the reference can evolve even
 when individual honor effects are reduced. Routine honor movement is automatic
 in both directions without admin intervention. `DEC-031` requires startup/
 confidence handling and delegates its concrete development method and reference
-response tuning to the implementation agent. Final tuning is not a predevelopment
-owner question; the method still requires recorded tests. The exact reference
-model, full mathematics, feedback format, report effects, visibility and possible
+response tuning to the implementation agent. `DEC-032` replaces the exact
+last-N reference with single-value exponential smoothing, starting at adjustable
+development divisor 20. It selects the isolated-extreme-versus-moderate effect
+trade-off and permits behavior-preserving development calibration. Final tuning
+is not a predevelopment owner question; methods still require recorded tests.
+Full scoring acceptance, feedback format, report effects, visibility and possible
 history-dependent matching weight remain open.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything

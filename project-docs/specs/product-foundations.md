@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-031`
+- **Authority:** `DEC-009` through `DEC-032`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -41,24 +41,27 @@ negative feedback does not by itself establish misconduct or select a sanction.
 The separate report-review and report-effect rules remain open.
 
 `DEC-029` selects scaled teammate ratings and average-based honor movement,
-not play-count point accumulation. Compare each new rating against the player's
-prior recent teammate-rating average over a configurable last-N window.
-Dynamically reduce influence as mathematical deviation increases. This is a
-retaliation-resistance direction, not proof that outliers are false or a
-guarantee against abuse. Standard deviation is only a possible metric; no
-metric, curve, window count or complete averaging/update formula is selected.
+not play-count point accumulation. Under `DEC-032`, compare each new rating
+against the player's prior smoothed raw-rating reference instead of the
+previously selected exact last-N average. Dynamically reduce influence as
+mathematical deviation increases. This is a retaliation-resistance direction,
+not proof that outliers are false or a guarantee against abuse. Standard
+deviation is only a possible metric; no
+complete honor curve or production calibration is frozen. The reference
+recurrence is selected by `DEC-032`; its startup details remain delegated.
 No/sparse history, zero spread, same-session/repeated reviewers, organized
 abuse and genuine behavior changes require explicit design and verification.
-The comparison window does not select total score-history retention.
+The reference response setting does not select score-history retention.
 
-`DEC-030` separates the raw recent comparison average from attenuated honor
-influence. Each eligible rating enters the recent window at its unadjusted
-value even if its honor effect is reduced. Attenuation must not feed back into
-that raw reference. Repeated feedback can therefore move the reference as
-behavior changes; actual response speed and safeguards require later tests.
-No concrete window size, physical storage design, lifetime honor horizon or
-visible second score/history screen is selected. Ordinary feedback must move
-honor up and down automatically without administrative intervention; separate
+`DEC-030` separates the raw reference from attenuated honor influence.
+`DEC-032` replaces its exact-window requirement with smoothing: each eligible
+input enters the reference recurrence at its unadjusted value even if its
+honor effect is reduced. Separate honor attenuation must not feed back into
+the raw reference. Repeated feedback can therefore move it as behavior changes;
+actual response speed and safeguards require later tests. No physical storage
+design, lifetime honor horizon or visible second score/history screen is selected.
+Ordinary feedback must move honor up and down automatically without
+administrative intervention; separate
 report, correction and appeal processes remain to be specified.
 
 Under `DEC-031`, initialization and confidence/sample-count handling are
@@ -68,11 +71,22 @@ response tuning need not be finalized beforehand. The agent documents and
 tests its selections without asking the owner to choose every method detail.
 This does not authorize new confidence-based matching/eligibility effects or
 public labels. The fixed neutral baseline remains honor policy, not fabricated
-historical feedback. Exact-last-N versus smoothing remains a distinct owner
-selection; final tuning does not block an otherwise-approved development slice.
+historical feedback. `DEC-032` selects smoothing and starts the adjustable
+development response divisor at 20. Final tuning does not block an otherwise-
+approved development slice.
 
-This foundation does not yet decide review eligibility, questions, score formula,
-reviewer weighting, visibility, exact matching rules, eligibility restrictions, sanctions,
+`DEC-032` also selects the qualitative trade-off that an isolated extremely
+negative departure may have less immediate honor effect than a moderately
+negative rating. Sustained consistent feedback must still move the reference
+and support meaningful automatic honor change. The owner accepts gradual
+adaptation rather than finite replacement of a last-N window. Calibrate mostly
+constants, with occasional small function refinements preserving this behavior,
+and document/test development changes. Material changes to approved behavior
+or other product boundaries still require owner approval.
+
+This foundation does not yet settle review eligibility, questions, the complete
+scoring contract, reviewer weighting, visibility, exact matching rules,
+eligibility restrictions, sanctions,
 moderation, correction, appeal, retention, monitoring, or rollback.
 It approves no public promise that QGuard prevents toxicity or guarantees safe
 or compatible teammates.
@@ -271,7 +285,8 @@ participants, locations, data fields, recipients, and retention are concrete.
 
 ## Provisional Honor Notation Discussion
 
-- **Status:** explanatory draft, not an approved scoring algorithm
+- **Status:** reference method selected by `DEC-032`; influence/honor notation
+  remains a development draft, not a complete implementation-ready algorithm
 - **Source:** owner annotations on 2026-10-02, applying the
   [descriptive explanation policy](../operations/workflow-governance.md#technical-explanations-and-provisional-notation)
 - **Owner preference for discussion:** retain the division form with
@@ -284,18 +299,19 @@ participants, locations, data fields, recipients, and retention are concrete.
   being calculated. It is not that player's resulting honor, the reviewer's
   honor, or an already-adjusted rating.
 
-The proposed influence calculation, still awaiting approval, is:
+A proposed development influence curve, to be calibrated within the selected
+behavior and approved slice, is:
 
 ```text
-distance_from_recent_unadjusted_rating_average =
+distance_from_previous_smoothed_raw_rating_reference =
     absolute_value(
         new_input_teammate_behavior_rating
-        - recent_unadjusted_rating_average
+        - previous_smoothed_raw_rating_reference
     )
 
 rating_influence_multiplier =
     1 / (1 + (
-        distance_from_recent_unadjusted_rating_average
+        distance_from_previous_smoothed_raw_rating_reference
         / allowed_rating_deviation
     )²)
 ```
@@ -308,24 +324,29 @@ less than one half. Dampening starts for any nonzero distance. If equivalent
 numeric units change under `DEC-027`, this scale must change with them to
 preserve the same influence.
 
-The reference uses eligible prior recent raw ratings; under `DEC-030`, reduced
-honor influence does not reduce the new raw rating's subsequent contribution
-to recent history. Formula shape, parameter values, update speed, sparse-history
-behavior and abuse resistance remain unapproved and require specification and
-verification. Explaining the arithmetic does not establish anti-retaliation
-effectiveness or authorize implementation.
+The reference is the previous smoothed state; the incoming rating is not fed
+into it before assessing the input's departure. Under `DEC-030`/`DEC-032`, separate
+honor dampening does not alter the raw input supplied to its later reference
+update. The influence/honor curve is a development draft; its constants and
+small behavior-preserving refinements can be calibrated under `DEC-032`.
+Eligibility, batching, retention and complete acceptance criteria still need
+specification. No anti-retaliation effectiveness or implementation is claimed.
 
-### Smoothed Raw-Rating Reference Proposal
+`allowed_rating_deviation` and `raw_rating_reference_response_divisor` are
+independent settings with distinct names and meanings. They may share a numeric
+value without being coupled; selecting response divisor 20 does not select
+deviation 20. Use descriptive unambiguous variable names even when longer.
 
-- **Status:** owner proposal under evaluation; not selected or implemented
+### Smoothed Raw-Rating Reference
+
+- **Status:** approved reference method under `DEC-032`; not implemented
 - **Source:** owner annotation, 2026-10-02, proposing one retained reference
   value instead of individual values for an exact configurable last-N average
-- **Approval boundary:** selecting this would refine the exact last-N reference
-  behavior in `DEC-029` and `DEC-030`; those decisions remain unchanged pending
-  explicit owner selection. Individual-rating retention remains a separate
-  unresolved decision, not implicitly eliminated by this proposal.
+- **Approval boundary:** `DEC-032` supersedes only exact last-N reference
+  semantics in `DEC-029` and `DEC-030`. Individual-rating retention remains a
+  separate unresolved decision, not implicitly eliminated by this selection.
 
-With descriptive draft names, the owner's recurrence is:
+With descriptive names, the selected recurrence is:
 
 ```text
 updated_smoothed_raw_rating_reference =
@@ -340,9 +361,11 @@ minus one, adding the new raw input with weight one, then dividing by the
 divisor. It is exponential smoothing, with a new-input weight equal to one
 divided by the response divisor. A divisor of at least one gives a bounded
 weighted average; larger divisors mean slower reference movement. This is a
-response parameter, not a count of ratings actually retained. No value is
-selected. The input enters without the separate outlier-influence multiplier;
-recency smoothing is not retaliation-based attenuation.
+response parameter, not a count of ratings retained or games played. The
+adjustable development starting value is 20, giving 5% movement toward each
+eligible input; production calibration is not fixed. The input enters without
+the separate outlier-influence multiplier; recency smoothing is not retaliation-
+based attenuation.
 
 **Primary-source ledger:** NIST/SEMATECH, *Single Exponential Smoothing*,
 [handbook section 6.4.3.1](https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc431.htm),
@@ -378,21 +401,21 @@ arithmetic per update with a running sum and the oldest retained value; its
 distinct cost is retaining a bounded N-value buffer, not complicated mathematics.
 No database performance or size benchmark has been performed.
 
-**Primary-agent recommendation:** this is a credible simpler reference model
-if smooth behavioral adaptation matters more than literal last-N semantics.
-Do not select its response value by equating it to an exact window length.
-Before selection, compare adaptation speed jointly with the separate honor
-update rate and influence curve. Mean-only state cannot reconstruct individual
-feedback for correction, appeals, abuse investigation or historical recalculation;
+**Owner selection:** the smoother reference and its gradual adaptation are
+approved, not an outstanding exact-window comparison. During development,
+calibrate its response jointly with the separate honor update rate and influence
+curve; do not equate the divisor to a literal window length. Mean-only state
+cannot reconstruct individual feedback for correction, appeals, abuse
+investigation or historical recalculation;
 whether those needs justify separate raw records remains open.
 
-**Development handling approved by `DEC-031`:** include initialization and
+**Development handling approved by `DEC-031`/`DEC-032`:** include initialization and
 confidence/sample-count handling; the implementation agent chooses its method
 and documents/tests it during the approved slice. Do not treat the fixed
-newcomer honor baseline as real historical ratings. The owner proposes divisor
-20 as a provisional development starting candidate if smoothing is selected;
-its 5% reference adjustment is per eligible rating, not per game or directly
-the honor score. The exact reference-model replacement still needs confirmation.
+newcomer honor baseline as real historical ratings. Divisor 20 is the selected
+adjustable development start; its 5% reference adjustment is per eligible
+rating, not per game or directly the honor score. No deployment-role transfer
+or new owner startup-method question is created.
 
 **Still required:** same-session ordering/batching; eligibility, correction and
 retention rules; and deterministic/adversarial verification of the full coupled

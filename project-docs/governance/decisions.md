@@ -1039,7 +1039,8 @@ open; this does not retroactively assert implementation or earlier approval.
 ## DEC-029 - Average Teammate Ratings With Dynamic Recent-History Attenuation
 
 - **Date:** 2026-10-02
-- **Status:** approved calculation and safeguard direction; formula unselected
+- **Status:** approved direction; exact last-N comparison requirement partially
+  superseded by `DEC-032`; complete scoring specification remains incomplete
 - **Decision owner:** project owner
 - **Decision:** Provide ordinary post-play teammate feedback on a rating scale,
   separate from administrative intervention and reports. Use an average-based
@@ -1100,7 +1101,8 @@ open; this does not retroactively assert implementation or earlier approval.
   No push or external action; portable workflow and legacy code unchanged.
 - **Supersedes:** none; refines `DEC-028` and resolves further calculation/
   safeguard direction within `OQ-006`, without selecting complete scoring rules.
-- **Superseded by:** none
+- **Superseded by:** `DEC-032` for exact last-N reference semantics only;
+  average-based honor movement and dynamic deviation attenuation remain in force
 
 ### Subsequent Raw-Reference Clarification - 2026-10-02
 
@@ -1112,7 +1114,8 @@ mathematics and empirical performance still require specification and tests.
 ## DEC-030 - Separate Raw Recent Ratings From Attenuated Honor Influence
 
 - **Date:** 2026-10-02
-- **Status:** approved calculation separation; detailed formula remains open
+- **Status:** approved separation; exact last-N reference semantics partially
+  superseded by `DEC-032`; raw inputs remain separate from honor attenuation
 - **Decision owner:** project owner
 - **Decision:** Keep the recent comparison average logically separate from
   the overall honor calculation. The comparison uses the unadjusted values of
@@ -1175,13 +1178,14 @@ mathematics and empirical performance still require specification and tests.
   remote action; portable workflow and legacy code unchanged.
 - **Supersedes:** none; clarifies `DEC-029` and resolves its raw-versus-
   attenuated comparison and behavior-change direction under `OQ-006`.
-- **Superseded by:** none
+- **Superseded by:** `DEC-032` for exact last-N reference semantics only;
+  unadjusted input and automatic behavior-change directions remain in force
 
 ## DEC-031 - Delegate Development Initialization And Reference Tuning
 
 - **Date:** 2026-10-02
 - **Status:** approved bounded development-stage delegation; reference-model
-  replacement remains an owner question
+  question subsequently resolved and calibration scope refined by `DEC-032`
 - **Decision owner:** project owner
 - **Decision:** include initialization and confidence/sample-count handling
   alongside the honor systems being specified. The implementation agent may
@@ -1208,7 +1212,8 @@ mathematics and empirical performance still require specification and tests.
   matching effects, raw-data retention, live data collection or release. The
   influence curve and full honor-update formula remain unselected. Any tuning
   that changes these product boundaries returns to owner review.
-- **Reference selection boundary:** the latest annotations clearly approve
+- **Reference selection boundary at approval, subsequently resolved by
+  `DEC-032`:** the then-latest annotations clearly approve
   startup responsibility and flexible development tuning, but do not explicitly
   replace the previously selected exact last-N reference. Keep the smoothed
   recurrence under consideration until the owner confirms that replacement.
@@ -1239,4 +1244,88 @@ mathematics and empirical performance still require specification and tests.
   delegation rather than implementing it. No push or remote action.
 - **Supersedes:** none; resolves startup-method responsibility and development
   tuning within `OQ-006`, without selecting a different reference model.
+- **Superseded by:** none
+
+## DEC-032 - Select Smoothed Reference And Extreme-Feedback Trade-Off
+
+- **Date:** 2026-10-02
+- **Status:** approved reference method and qualitative behavior; complete
+  scoring slice not implementation-ready
+- **Decision owner:** project owner
+- **Decision:** replace the exact last-N raw-rating comparison average with
+  the single-value exponentially smoothed raw reference. Update the reference
+  toward each new eligible unadjusted teammate rating, without applying that
+  rating's separate honor-influence dampening to the reference input.
+  `raw_rating_reference_response_divisor` starts at 20 in development, giving
+  a 5% adjustment toward each input; this is adjustable, not a production
+  calibration guarantee or a count of games/retained ratings.
+- **Selected reference recurrence:**
+
+  ```text
+  updated_smoothed_raw_rating_reference =
+      previous_smoothed_raw_rating_reference
+      + (new_input_teammate_behavior_rating
+         - previous_smoothed_raw_rating_reference)
+        / raw_rating_reference_response_divisor
+  ```
+
+- **Desired behavioral trade-off:** an isolated extremely negative departure
+  from recent feedback may have less immediate honor effect than a moderately
+  negative rating. This is now intended behavior, not merely an incidental
+  mathematical outcome. Repeated consistent feedback must still move the raw
+  reference and support meaningful automatic honor change. This is not a
+  requirement that every more-negative input cause a smaller change in every
+  context, nor proof that extreme feedback is retaliatory.
+- **Reason / approval evidence:** the owner explicitly confirmed replacement
+  of last-N rolling with the smoother reference, accepted gradual rather than
+  exact-window adaptation, and confirmed the extreme-versus-moderate immediate
+  effect after examining the side-chat examples. They identified the handoff's
+  window and startup framing as stale, reaffirmed implementation-agent startup
+  responsibility, and requested distinct descriptive variable names.
+- **Development calibration authority:** tune primarily numerical constants
+  after initial/bulk implementation; occasional small function refinements
+  are permitted within an approved slice when they preserve the selected raw-
+  reference separation, qualitative trade-off and automatic adaptation.
+  Record changes, rationale and regression evidence. Material behavioral
+  reversals or changes to authority, gates, scope, eligibility, moderation,
+  visibility, retention or public claims still require owner approval.
+  Final tuning is not a prerequisite to an otherwise-approved development slice.
+- **Startup responsibility:** `DEC-031` remains valid. Initialization and
+  confidence/sample-count handling are required; their concrete development
+  method is chosen by the implementation agent, not the deployment operator
+  or another newly assigned reviewer. This is a reaffirmation, not a role
+  transfer, and a count alone does not prove independent reliable feedback.
+- **Naming and numeric independence:** use distinct descriptive names for
+  every variable and independent parameter. Two different settings may share
+  the same number without being coupled. Divisor 20 controls reference speed;
+  `allowed_rating_deviation = 20` remains an illustration, not a selected
+  deviation setting. Matching numeric values must not imply shared meanings.
+- **History and retention:** exact-window statements in the side handoff are
+  stale explanatory context, not current requirements. Smoothing approaches
+  sustained feedback gradually; no fixed-window expiry or finite exact arrival
+  is promised. Selecting one scalar for the basic reference calculation does
+  not decide whether individual ratings must be retained for other purposes.
+- **Still open:** rating format and eligibility, same-session ordering/batching,
+  repeated/organized manipulation, report effects, correction/appeal, data
+  retention, visibility and full matching/scoring acceptance criteria. The
+  illustrated honor-update fraction, score scale and influence curve are not
+  frozen production settings. No anti-retaliation effectiveness is established.
+- **Implementation gate:** remaining applicable slice specifications and
+  testable acceptance criteria must still be approved under `DEC-008`. No app
+  implementation, live-data operation, test resumption, release or remote
+  action is authorized by this product-direction decision.
+- **Affected records:** product foundations, `OQ-006`, current state, project
+  index and owner decision sequence; earlier decisions are marked partially
+  superseded without erasing their original approval evidence.
+- **Route / baseline:** bounded product planning; decision/recommendation
+  safety; privacy/data boundaries; owner/external review; deferral/owner review.
+  Mandatory entry and selected procedures read; clean `new-development` at
+  `7a821d8` verified. Six project records only; protected workflow and legacy
+  application remain untouched. No agent delegation or provider action.
+- **Verification:** project local links/anchors, all 32 unique sequential
+  decision IDs, supersession boundaries and full six-file scoped diff checked;
+  `git diff --check` passed. No application/live or completed-algorithm tests
+  run for this decision-record unit. No push or remote action occurred.
+- **Supersedes:** `DEC-029`/`DEC-030` only for exact last-N reference semantics;
+  resolves `DEC-031`'s reference question and refines its dev calibration scope.
 - **Superseded by:** none

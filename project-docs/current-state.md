@@ -11,13 +11,12 @@
   can raise and lower honor. `DEC-029` selects average-based movement and dynamic
   recent-history attenuation. `DEC-030` separates raw recent ratings from their
   attenuated honor influence. `DEC-031` delegates required startup/confidence
-  handling and reference tuning during development; detailed specifications
-  remain incomplete
-- **Objective:** evaluate the proposed smoothed raw-rating reference, then
-  define feedback format and detailed honor rules in
+  handling. `DEC-032` selects the smoothed reference, isolated-extreme trade-off
+  and bounded development calibration; detailed specifications remain incomplete
+- **Objective:** define feedback format and remaining detailed honor rules in
   bounded discussions while preserving the test hold and slice gates
 - **Current route:**
-  [Smoothed raw-rating reference proposal](specs/product-foundations.md#smoothed-raw-rating-reference-proposal)
+  [Selected smoothed raw-rating reference](specs/product-foundations.md#smoothed-raw-rating-reference)
 
 ## Verified Workspace State
 
@@ -140,18 +139,23 @@
 - `DEC-028` selects routine post-play teammate feedback that can both raise and
   lower honor. `DEC-029` selects average-based movement from scaled ratings and
   dynamically reduced influence as deviation from recent ratings increases,
-  using a configurable last-N comparison window. `DEC-030` keeps that recent
-  reference unadjusted: eligible downweighted ratings still enter at full value.
+  now using the smoothed raw reference selected by `DEC-032` instead of exact
+  last-N. `DEC-030`/`DEC-032` keep the reference input unadjusted by separate
+  honor dampening.
   Ordinary feedback moves honor up/down automatically without admin intervention.
-  Exact mathematics, sparse-history handling, response speed, report effects
-  and other safeguards remain open;
+  Complete scoring acceptance, report effects and other safeguards remain open;
+  startup methods and behavioral calibration are delegated as stated below,
+  not final-value questions that must precede development;
   negative or unusual feedback alone is not verified misconduct or a sanction.
 - `DEC-031` requires initialization/confidence handling and lets the
   implementation agent choose and revise its method and reference tuning in
-  development, with recorded tests. Divisor 20 is a provisional candidate if
-  smoothing is selected. This delegates responsibility, not a new confidence-
-  based eligibility rule or a full implementation slice; reference-model
-  replacement still requires owner confirmation.
+  development, with recorded tests. `DEC-032` confirms that responsibility,
+  selects smoothing and starts its adjustable dev divisor at 20. It accepts
+  the isolated-extreme-versus-moderate immediate effect trade-off and permits
+  behavior-preserving calibration, mostly constants and occasional small
+  functions. Equal numeric parameter values are allowed but remain independently
+  named/configured. No new confidence-based eligibility rule, full scoring-slice
+  approval or production safety claim is granted.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, coordination operating rules, matching criteria, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -282,8 +286,15 @@
   methods still need correctness evidence. Exact reference-model replacement
   remains open; divisor 20 is a provisional starting candidate, not a verified
   safe rate or twenty games.
-- **Next planning discussion:** confirm exact last-N versus smoothed reference,
-  then one overall behavioral rating versus multiple dimensions. Startup-method
+- **Completed, 2026-10-02:** `DEC-032` records explicit owner replacement of
+  last-N with exponential smoothing, accepts gradual reference evolution and
+  the isolated-extreme negative trade-off, and confirms startup delegation.
+  Earlier exact-window requirements are marked partially superseded; the side
+  handoff is explanatory evidence, not authority to restore those requirements.
+  Response divisor 20 is the adjustable dev starting value; deviation 20 remains
+  illustrative. Complete scoring acceptance and safeguards remain unimplemented.
+- **Next planning discussion:** one overall behavioral rating versus multiple
+  dimensions. Reference selection is settled. Startup-method
   details belong to the implementation agent. Then define response options,
   eligibility, calculation, reliability, detailed matching effects and
   visibility incrementally.
@@ -304,6 +315,16 @@
 
 ## Verification State
 
+- The 2026-10-02 smoothed-reference/trade-off decision began with clean
+  `new-development` at `7a821d8`. Product planning, decision/recommendation
+  safety, privacy/data boundaries, owner/external review and deferral/owner
+  review routed this unit. Six project records, local links/anchors and 32 unique
+  sequential decision IDs were checked. Partial supersession and remaining
+  gates were reviewed against all five owner annotations; full scoped diff and
+  `git diff --check` passed. Application/live tests and the portable validator
+  were not run for this decision-record-only unit. No complete scoring behavior,
+  anti-abuse outcome, application or protected-workflow change is claimed.
+  No push, deployment, provider write or other remote action occurred.
 - The 2026-10-02 development-delegation record began with clean
   `new-development` at `de0ea6d`. Product planning, decision/recommendation
   safety, privacy/data, owner/external review and deferral/owner review routed

@@ -120,15 +120,19 @@ explicitly rejects them.
   (`DEC-028`); calculation, magnitude/timing and report consequences remain open.
 - Use scaled teammate ratings and average-based movement, with dynamically
   lower influence as deviation from a configurable recent-rating average grows
-  (`DEC-029`). Exact mathematics and sparse-history/change handling remain open.
+  (`DEC-029`), now measured against the smoothed raw reference under `DEC-032`.
+  Full acceptance criteria and safeguards remain incomplete.
 - Keep raw recent ratings separate from attenuated honor influence: eligible
   downweighted ratings still enter the unadjusted recent reference (`DEC-030`).
   Ordinary honor movement is automatic in both directions without admin
   intervention. No example window count or storage schema is selected.
 - Include initialization/confidence handling and delegate its concrete
   development method and raw-reference response tuning to the implementation
-  agent (`DEC-031`). Exact reference-model replacement remains a separate
-  confirmation; final tuning does not require advance owner selection.
+  agent (`DEC-031`). Final tuning does not require advance owner selection.
+- Replace exact last-N with the single-state smoothed raw reference, starting
+  at adjustable development divisor 20. Accept the isolated-extreme-versus-
+  moderate immediate effect trade-off and tune constants/small functions while
+  preserving approved behavior (`DEC-032`). No further reference-choice prompt.
 
 ### Unapproved Assumptions
 
@@ -311,15 +315,16 @@ matching role and fixed neutral newcomer baseline are approved. Equivalent
 numeric representation is an implementation choice under `DEC-027`, not a
 required owner prompt. `DEC-028` approves routine teammate feedback that can
 raise and lower honor. `DEC-029` selects average-based movement and dynamic
-recent-history attenuation over a configurable comparison window; no metric,
-curve, window count or complete formula is selected. `DEC-030` clarifies that
-eligible downweighted ratings enter the raw recent reference at full value;
+recent-reference attenuation. `DEC-032` replaces the former exact last-N window
+with exponential smoothing; input remains unadjusted by honor dampening under
+`DEC-030`/`DEC-032`. The adjustable development response divisor starts at 20;
 its evolution supplies the intended behavior-change mechanism. Ordinary
 automatic up/down movement is approved without admin intervention. `DEC-031`
 requires startup/confidence handling but delegates its concrete development
 method and reference response tuning; do not ask the owner to choose every
-startup detail or finalize tuning first. Confirm exact-last-N versus smoothing,
-then discuss one overall rating versus multiple dimensions, response options,
+startup detail or finalize tuning first. `DEC-032` selects the isolated-extreme
+negative trade-off and bounded constant/small-function calibration. Next discuss
+one overall rating versus multiple dimensions, response options,
 eligibility, calculation, reliability, matching rules and visibility in bounded
 discussions. Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.
