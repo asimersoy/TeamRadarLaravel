@@ -2,7 +2,7 @@
 
 use App\Domain\Matching\Matcher;
 use App\Domain\Matching\QueueService;
-use App\Livewire\Dashboard;
+use App\Livewire\Profile;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +63,7 @@ it('cancels on profile edit and never creates duplicate waiting entries', functi
     $user = $party['users'][0];
     app(QueueService::class)->enter($user);
     expect(DB::table('queue_entries')->where('state', 'waiting')->count())->toBe(1);
-    Livewire::actingAs($user)->test(Dashboard::class)->set('rank', '11')->call('saveProfile')->assertHasNoErrors();
+    Livewire::actingAs($user)->test(Profile::class)->set('rank', '11')->call('saveProfile')->assertHasNoErrors();
     expect(DB::table('queue_entries')->where('party_id', $party['party'])->value('state'))->toBe('cancelled')->and(DB::table('party_memberships')->where('party_id', $party['party'])->value('ready'))->toBeFalse();
 });
 

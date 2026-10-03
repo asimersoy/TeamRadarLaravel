@@ -7,6 +7,110 @@ reviews are next. Updated 2026-10-03. No public release is implied.
 explicit instruction to start implementation and continue through completion.
 This activates the approved stages, not deployment, public use or held tests.
 
+## Matchmaking and profile separation 2026-10-03
+
+Status: **revision-required** for full regression closure; the requested UI is
+implemented and rendered, with the WebKit finding below still unresolved.
+Owner requests separate matchmaking/profile/settings and a
+Riot-style friends side list; security may share the profile/settings page.
+The owner's subsequent browser comment selects "Your connections" instead of
+"Your people" for the sidebar label.
+Baseline: clean `new-development` at `fe7251f`. Primary agent only. Read mandatory
+entry, current records, governance, product/identity specs and nearby code/tests.
+Route: product planning, code, UI content, privacy/data, rendered design and
+regression audit; migration/import for disposable synthetic test fixtures only.
+
+Agent selects combined Profile & settings rather than two small account pages,
+keeps `/dashboard` as the matchmaking URL to preserve links/auth redirects, and
+uses a compact right sidebar with initials, requests and existing party invite
+actions. No fabricated online status or new friend data disclosure. This applies
+DEC-042 within the owner's request and is reversible. No protected workflow,
+schema, integration, authentication-policy or matchmaking-algorithm change.
+
+Acceptance: distinct navigation/forms, account page reachable while matched,
+guest/unverified protection, profile validation and queued-edit cancellation,
+password rotation/session revocation, friend requests and authorized one-click
+invite, preserved queue/matched-room/chat flows, desktop/mobile layout and keyboard
+access. Verify Docker backend/browser tests, rendered output and scoped diff;
+update records and make one coherent local commit. Test resets must target only
+guarded `qguard_test`, never persistent dev data. Stop for policy/access expansion
+or verification failure; no push, deploy, real provider action or held tests.
+
+Implemented account actions in a separate authenticated, verified Livewire Profile
+page, retaining validation, the shared action throttle, queued-edit cancellation,
+readiness clearing and password/session rotation. Password changes return to
+`/profile` with refreshed layout CSRF tokens. Matchmaking retains its existing
+URL, shows read-only game setup and keeps the friends sidebar available while
+matched. Sidebar invitations resolve accepted friendship ownership server-side
+and reuse the existing party-service restrictions. No friend email, Riot ID,
+rank or honor is added to the sidebar payload.
+
+The first browser run caught a real disclosure-state regression: a pending
+Livewire refresh could close Add a friend while its field was being edited.
+The disclosure now preserves its own open attribute while allowing child updates;
+the options disclosure follows the same rule. Added a keyboard-open, draft and
+polling regression. Reran from a fresh guarded test database, not partial fixture
+state. Context recovery inspected the scoped diff and running services; no lost
+source edits or unrelated changes were found.
+
+A subsequent full run passed 12 checks but failed WebKit's final zero-page-error
+assertion despite completing its functional steps. Trace inspection placed two
+same-origin fetch errors immediately after a Session ended click as the room was
+navigating to feedback (Livewire refresh and message refresh). This occurred in
+the existing room lifecycle, not the new profile navigation. No error assertion,
+access-control rule or application behavior was weakened. A second clean full
+run again passed 12 checks and completed WebKit's functional flow, but its final
+zero-error assertion caught `AbortError: Fetch is aborted`. The trace again puts
+this immediately after Session ended, inside Livewire's request code. Inspection
+of the installed framework found response-body reading outside the initial fetch
+catch; this is a likely contributor, not a verified repair. This is not evidence
+of a CORS policy defect. Do not label either full browser run as passed.
+
+**Unresolved finding NAV-WK-01:** investigate and resolve or conclusively classify
+the navigation-time background request error without broadly suppressing browser
+errors or changing access policy. Required before closing this UI regression
+packet or a later release claim: fresh guarded full suite including WebKit with
+the original zero-error criterion satisfied. No missing owner product decision
+is implied; this is outstanding technical verification, not an approved deferral.
+
+Verification from `qguard/`, all runtimes in Docker:
+
+- `docker compose run --rm --no-deps node run build`: passed.
+- Test Compose `php vendor/bin/pest --compact`: **60 tests / 90,299 assertions
+  passed**, including new page access/separation, matched profile snapshot and
+  friendship authorization regressions. Only the guarded disposable test database
+  was reset; development data was preserved.
+- Direct test Compose `php vendor/bin/phpunit --testsuite Unit`: **9 tests /
+  90,024 assertions passed**, already included in Pest.
+- Full test Compose `browser`: **12 passed / 1 failed** on the last two clean
+  runs. All Chromium scenarios and the Firefox smoke passed; WebKit functional
+  steps completed but its zero-page-error assertion failed as described above.
+- Test Compose `browser --config=playwright.outage.config.ts
+  party-boundaries.spec.ts settings-review.spec.ts`: **2 passed** in 17.2 seconds
+  after the last full run. Includes declined/revoked/busy/full-party cases and
+  password rotation, re-login, original synthetic password restoration and admin
+  review concurrency. These do not convert the full suite into a passing result.
+- Test Compose `php vendor/bin/pint --test`: **92 files passed**.
+- Inspected the in-app development browser at its native width and 1280px/390px:
+  separate active navigation, account forms, empty connections sidebar, wide-screen
+  side placement and narrow-screen stacking. No horizontal overflow at either
+  explicit width. Also inspected populated-party/friends browser-test screenshots.
+  Evidence images live outside Git in `outputs/qguard-navigation-refinement/`.
+  Restored the normal browser viewport and left Matchmaking open as demo_b without
+  changing that development user's profile, relationships or party/session state.
+
+Reviewed the full scoped source/test/document diff. `git diff --check` passed;
+four changed Markdown files / 43 local links and their section targets resolved.
+Structural, scoped behavioral and rendered evidence are present, but full browser
+regression closure is not. Local checkpoint only; no push, PR or deployment.
+Rollback of this UI needs only code reversal and frontend asset rebuild, with no
+database migration or data deletion. Load, backup/restore, production-image and
+actual service-stop tests were not rerun for this UI change; simulated socket
+fallback was rerun. Protected workflow, legacy code, schema, provider integrations
+and user data were untouched. Project documentation guidance kept the request,
+agent-selected layout and unresolved evidence in project records, not the reusable
+workflow package.
+
 ## Chat usability follow-up 2026-10-03
 
 Owner requests collapsible team text and Enter-to-send after trying the local

@@ -3,6 +3,7 @@
 use App\Domain\Feedback\FeedbackService;
 use App\Domain\Sessions\SessionService;
 use App\Livewire\Dashboard;
+use App\Livewire\Profile;
 use App\Livewire\Room;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,7 +19,7 @@ uses(RefreshDatabase::class);
 it('rotates the password session and reloads outer CSRF tokens while revoking other logins', function () {
     $a = User::factory()->readyPlayer()->create(['password' => 'initial-synthetic-password']);
     DB::table('sessions')->insert(['id' => 'other-synthetic-session', 'user_id' => $a->id, 'payload' => '', 'last_activity' => time()]);
-    Livewire::actingAs($a)->test(Dashboard::class)->set('currentPassword', 'initial-synthetic-password')->set('newPassword', 'replacement-synthetic-password')->set('newPasswordConfirmation', 'replacement-synthetic-password')->call('changePassword')->assertHasNoErrors()->assertRedirect('/dashboard');
+    Livewire::actingAs($a)->test(Profile::class)->set('currentPassword', 'initial-synthetic-password')->set('newPassword', 'replacement-synthetic-password')->set('newPasswordConfirmation', 'replacement-synthetic-password')->call('changePassword')->assertHasNoErrors()->assertRedirect('/profile');
     expect(DB::table('sessions')->where('id', 'other-synthetic-session')->exists())->toBeFalse();
     expect(Hash::check('replacement-synthetic-password', $a->fresh()->password))->toBeTrue();
 });
@@ -34,10 +35,10 @@ it('keeps handle edits separate from immutable matched snapshots and protects un
     $s = Fixtures::session();
     $a = $s['users'][0];
     $old = $a->handle;
-    Livewire::actingAs($a)->test(Dashboard::class)->set('handle', 'new_public_handle')->call('saveHandle')->assertHasNoErrors();
+    Livewire::actingAs($a)->test(Profile::class)->set('handle', 'new_public_handle')->call('saveHandle')->assertHasNoErrors();
     expect($a->fresh()->handle)->toBe('new_public_handle');
     expect(DB::table('session_participants')->where('user_id', $a->id)->value('handle'))->toBe($old);
-    Livewire::actingAs($a)->test(Dashboard::class)->set('handle', $s['users'][1]->handle)->call('saveHandle')->assertHasErrors('handle');
+    Livewire::actingAs($a)->test(Profile::class)->set('handle', $s['users'][1]->handle)->call('saveHandle')->assertHasErrors('handle');
 });
 
 it('rejects locked component id spoofing and unknown fixture endpoints', function () {

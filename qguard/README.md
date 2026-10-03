@@ -81,6 +81,13 @@ release gates and known limitations.
 
 ## Try the local build
 
+Use **Matchmaking** (`/dashboard`) for parties, queueing and the **Your connections**
+friends sidebar. Add friends by QGuard handle, accept their requests and use their
+Invite button when you lead an idle party. **Profile & settings** (`/profile`)
+contains the game profile, public handle and account security, and remains
+accessible while matched. Saving a game profile clears party readiness and cancels
+a waiting queue; existing matched-roster snapshots do not change.
+
 Use separate browser profiles/private contexts for five fictional users `a`–`e`
 from the private generated credential file. Each starts a party, selects I'm ready
 and Find teammates. Open the matched room, check rank/honor snapshots, send text,

@@ -35,7 +35,7 @@ appeals/score corrections, payments, real-user launch and legacy data import.
 | Flow | Screens and successful result | Required non-happy paths |
 | --- | --- | --- |
 | F01 Account access | Register, local email verification, login, logout, password reset through development mail sink | Duplicate/invalid identity, expired token, throttling, unauthenticated route, session expiry |
-| F02 Player setup | Dashboard, editable public handle/game identifier, shard/language/stated rank, own honor with baseline explanation | Missing/unknown rank, unverified source label, update while queued/session snapshot unchanged |
+| F02 Player setup | Profile & settings, editable public handle/game identifier, shard/language/stated rank, own honor with baseline explanation | Missing/unknown rank, unverified source label, update while queued/session snapshot unchanged |
 | F03 Friends | Exact-handle lookup, request, accept/decline/cancel/remove, friends list | Self/duplicate/crossed requests, stranger data minimization, permission failure |
 | F04 Premade | Create party, invite friends, accept/decline/revoke, leave/disband, readiness and queue selections | Full/stale invitation, recipient busy, concurrent joins, owner leaves, settings reset readiness |
 | F05 Queue | Ready/confirm, queue/wait/cancel, matched transition | Insufficient players, settings mismatch, double queue, cancel-versus-match race, unavailable worker |
@@ -51,6 +51,18 @@ The admin panel is for data-cleared staff only; it is not an invitation to show
 credentials. A report review state does not change honor or ratings retroactively.
 
 ## UI and accessibility contract
+
+Owner refinement, 2026-10-03: separate matchmaking from profile/settings and put
+a compact game-client-style friends sidebar, labeled "Your connections", beside
+matchmaking. Account security belongs with profile/settings rather than queue
+controls. Agent-selected reversible
+layout: two main navigation destinations, Matchmaking at the existing `/dashboard`
+URL for compatibility and combined Profile & settings at `/profile`. The sidebar
+retains friend requests/actions and offers a direct party invite using existing
+authorization. No inferred online/in-game presence, Riot-friend synchronization,
+friend honor/rank disclosure or new permissions. On narrow screens the sidebar
+stacks beneath matchmaking. Profile/settings remains accessible while matched;
+profile edits retain queue cancellation/readiness and immutable-snapshot behavior.
 
 Use Blade/Livewire server validation and authorization for every action. Provide
 clear waiting, empty, loading, error and retry states, not optimistic success

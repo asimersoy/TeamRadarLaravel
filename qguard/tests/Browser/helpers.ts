@@ -6,6 +6,17 @@ export function advanceClock(seconds:number){
     writeFileSync(path,JSON.stringify({offset_seconds:current+seconds}));
 }
 export const credentials = () => JSON.parse(readFileSync('/fixtures/app/private/demo-credentials.json', 'utf8'));
+export async function addFriend(page: Page, handle: string) {
+    if (!await page.getByLabel('Exact friend handle').isVisible()) await page.getByText('Add a friend', {exact:true}).click();
+    await page.getByLabel('Exact friend handle').fill(handle);
+    await page.getByRole('button', {name:'Send friend request'}).click();
+    await expect(page.getByLabel('Exact friend handle')).toHaveValue('');
+}
+export async function removeFirstFriend(page: Page) {
+    const options = page.locator('.friend-options').first();
+    if (await options.getAttribute('open') === null) await options.locator('summary').click();
+    await options.getByRole('button', {name:'Remove friend'}).click();
+}
 export async function login(page: Page, label: string) {
     const user = credentials()[label];
     await page.goto('/login');

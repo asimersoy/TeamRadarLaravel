@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { randomBytes } from 'node:crypto';
-import { login } from './helpers';
+import { login, addFriend, removeFirstFriend } from './helpers';
 
 async function emailLink(request: any, email: string, fragment: string) {
     let url = '';
@@ -27,7 +27,7 @@ test('register, verify using local mail, reset and sign in through the real UI',
     await page.getByRole('button',{name:'Create account',exact:true}).click();
     await expect(page.getByRole('heading',{name:'Check your email'})).toBeVisible();
     await page.goto(await emailLink(request,email,'verify-email/'));
-    await expect(page.getByRole('heading',{name:'Welcome, '+handle})).toBeVisible();
+    await expect(page.getByRole('heading',{name:'Matchmaking',exact:true})).toBeVisible();
     await page.getByRole('button',{name:'Sign out'}).click();
     await page.goto('/forgot-password'); await page.getByLabel('Email').fill(email); await page.getByRole('button',{name:'Send reset link'}).click();
     await page.goto(await emailLink(request,email,'reset-password/'));
@@ -42,11 +42,17 @@ test('two independent players become friends and form a partial party', async ({
     const aContext = await browser.newContext(); const bContext = await browser.newContext();
     const a = await aContext.newPage(); const b = await bContext.newPage(); await login(a,'a'); await login(b,'b');
     if (await a.getByRole('button',{name:'Disband party'}).count()) { await a.getByRole('button',{name:'Disband party'}).click(); await expect(a.getByRole('button',{name:'Start a party'})).toBeVisible(); }
-    if (await a.getByRole('button',{name:'Remove friend'}).count()) { await a.getByRole('button',{name:'Remove friend'}).click(); await expect(a.getByRole('button',{name:'Remove friend'})).toHaveCount(0); }
-    await a.getByLabel('Exact friend handle').fill('demo_b'); await a.getByRole('button',{name:'Send friend request'}).click();
+    if (await a.locator('.friend-options').count()) { await removeFirstFriend(a); await expect(a.locator('.friend-options')).toHaveCount(0); }
+    await a.getByText('Add a friend',{exact:true}).press('Enter');
+    await a.getByLabel('Exact friend handle').fill('demo_b');
+    // The dashboard polls; it must not collapse an open form or discard its draft.
+    await a.waitForResponse(response => response.url().includes('/livewire') && response.request().method()==='POST' && response.status()===200);
+    await expect(a.getByRole('button',{name:'Send friend request'})).toBeVisible();
+    await expect(a.getByLabel('Exact friend handle')).toHaveValue('demo_b');
+    await addFriend(a, 'demo_b');
     await b.reload(); await b.getByRole('button',{name:'Accept friend',exact:true}).click();
     await a.getByRole('button',{name:'Start a party'}).click();
-    await a.getByLabel('Invite a friend by handle').fill('demo_b'); await a.getByRole('button',{name:'Send party invitation'}).click();
+    await a.getByRole('button',{name:'Invite demo_b to party',exact:true}).click();
     await b.reload(); await b.getByRole('button',{name:'Accept invitation'}).click();
     await expect(b.getByText('2 / 5 players',{exact:false})).toBeVisible();
     await a.reload(); await expect(a.getByText('2 / 5 players',{exact:false})).toBeVisible();
@@ -54,6 +60,6 @@ test('two independent players become friends and form a partial party', async ({
     for (const width of [1280,390]) { await a.setViewportSize({width,height:900}); expect(await a.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBeTruthy(); await a.screenshot({path:`test-results/dashboard-${width}.png`,fullPage:true}); }
     await a.getByRole('button',{name:'Disband party'}).click(); await expect(a.getByRole('button',{name:'Start a party'})).toBeVisible();
     await b.reload(); await expect(b.getByRole('button',{name:'Start a party'})).toBeVisible();
-    await a.getByRole('button',{name:'Remove friend'}).click();
+    await removeFirstFriend(a);
     await aContext.close(); await bContext.close();
 });

@@ -32,6 +32,17 @@ with Shift+Enter for new lines and preserved drafts. Follow the
 for current completion status. No change to chat audiences, stored data or held
 provider integrations.
 
+Owner navigation refinement on 2026-10-03: Matchmaking now has its own page and
+the "Your connections" friends sidebar. Profile & settings combines game profile,
+public handle and account security. The existing `/dashboard` URL remains valid;
+the account page is `/profile`. See the
+[scoped separation record](planning/first-pass/implementation-evidence.md#matchmaking-and-profile-separation-2026-10-03)
+for verification and limits. No change to friend-data access, matching policy or
+held integrations; the reusable workflow package remains unchanged. This UI
+packet is **revision-required**, not fully verified: backend, Chromium, Firefox
+and two recovery tests pass, while WebKit's zero-page-error check catches an
+aborted background request during room-to-feedback navigation (NAV-WK-01).
+
 ## Prior Context And Continuing Authority
 
 - **Last updated:** 2026-10-03

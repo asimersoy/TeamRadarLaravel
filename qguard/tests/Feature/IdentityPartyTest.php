@@ -3,7 +3,7 @@
 use App\Domain\Game\UnavailableOfficialProfile;
 use App\Domain\Parties\PartyService;
 use App\Domain\Parties\SocialService;
-use App\Livewire\Dashboard;
+use App\Livewire\Profile;
 use App\Models\User;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -26,21 +26,21 @@ it('registers a normalized account with fixed neutral honor and verification gat
     $this->get('/dashboard')->assertRedirect('/verify-email');
     $url = URL::temporarySignedRoute('verification.verify', now()->addMinutes(30), ['id' => $user->id, 'hash' => sha1($user->email)]);
     $this->get($url)->assertRedirect('/dashboard');
-    $this->get('/dashboard')->assertOk()->assertSee('Game profile');
+    $this->get('/dashboard')->assertOk()->assertSee('Matchmaking');
 });
 
 it('rejects unsigned verification and unauthorized profile access', function () {
     $user = User::factory()->unverified()->create();
     $this->actingAs($user)->get('/verify-email/'.$user->id.'/'.sha1($user->email))->assertForbidden();
-    Livewire::actingAs($user)->test(Dashboard::class)->assertForbidden();
+    Livewire::actingAs($user)->test(Profile::class)->assertForbidden();
 });
 
 it('uses truthful unavailable provider and protects profile-only fields', function () {
     expect((new UnavailableOfficialProfile)->retrieve('Test#TEST')['ownership'])->toBe('unverified');
     $user = User::factory()->readyPlayer()->create();
-    Livewire::actingAs($user)->test(Dashboard::class)->set('riotId', 'Player#TEST')->set('rank', '12')->call('saveProfile')->assertHasNoErrors();
+    Livewire::actingAs($user)->test(Profile::class)->set('riotId', 'Player#TEST')->set('rank', '12')->call('saveProfile')->assertHasNoErrors();
     expect($user->fresh()->stated_rank)->toBe(12);
-    Livewire::actingAs($user)->test(Dashboard::class)->set('rank', '999')->call('saveProfile')->assertHasErrors('rank');
+    Livewire::actingAs($user)->test(Profile::class)->set('rank', '999')->call('saveProfile')->assertHasErrors('rank');
 });
 
 it('requires explicit recipient consent and prevents cross-account friendship mutation', function () {
@@ -76,7 +76,7 @@ it('preserves one active slot and clears readiness after membership or profile c
     expect(fn () => $parties->create($b))->toThrow(ValidationException::class);
     $parties->ready($a);
     $parties->ready($b);
-    Livewire::actingAs($a)->test(Dashboard::class)->set('rank', '11')->call('saveProfile')->assertHasNoErrors();
+    Livewire::actingAs($a)->test(Profile::class)->set('rank', '11')->call('saveProfile')->assertHasNoErrors();
     expect(DB::table('party_memberships')->where('ready', true)->count())->toBe(0);
     $parties->leave($a);
     expect(DB::table('active_participations')->count())->toBe(0)->and(DB::table('party_memberships')->count())->toBe(2)->and(DB::table('parties')->find($id)->state)->toBe('disbanded');
