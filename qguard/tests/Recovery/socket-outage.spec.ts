@@ -6,6 +6,7 @@ test('actual Reverb stop and restart recovers on the same pages',async({browser}
  try{
   for(const [i,label] of ['a','b','h','i','j'].entries()){await login(pages[i],label);await pages[i].getByRole('button',{name:'Start a party'}).click();await pages[i].getByRole('button',{name:"I'm ready"}).click();await pages[i].getByRole('button',{name:'Find teammates'}).click();}
   for(const p of pages)await p.getByRole('link',{name:'Open team room'}).click({timeout:75000});
+  for(const p of pages.slice(0,2))await p.getByText('Team chat',{exact:true}).click();
   await expect(pages[0].locator('[data-connection]')).toContainText('Live updates connected');writeFileSync('/fixtures/app/private/outage-phase.json',JSON.stringify({phase:'connected'}));
   await expect(pages[0].locator('[data-connection]')).toContainText(/disconnected|unavailable/,{timeout:60000});
   await pages[1].getByLabel('Message to your team').fill('Delivered during server outage');await pages[1].getByRole('button',{name:'Send message'}).click();await expect(pages[0].getByText('Delivered during server outage',{exact:true})).toBeVisible({timeout:15000});

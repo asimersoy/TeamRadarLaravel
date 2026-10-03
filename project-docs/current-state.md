@@ -26,6 +26,12 @@ Next: owner review of the working flows and the
 [actual stored-data inventory](operations/first-build-data-inventory.md) under DEF-012.
 This is not deployed or approved for real-player/public collection.
 
+Owner chat refinement on 2026-10-03: collapsible Team chat and Enter-to-send,
+with Shift+Enter for new lines and preserved drafts. Follow the
+[scoped change and verification record](planning/first-pass/implementation-evidence.md#chat-usability-follow-up-2026-10-03)
+for current completion status. No change to chat audiences, stored data or held
+provider integrations.
+
 ## Prior Context And Continuing Authority
 
 - **Last updated:** 2026-10-03

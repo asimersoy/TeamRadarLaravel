@@ -7,6 +7,73 @@ reviews are next. Updated 2026-10-03. No public release is implied.
 explicit instruction to start implementation and continue through completion.
 This activates the approved stages, not deployment, public use or held tests.
 
+## Chat usability follow-up 2026-10-03
+
+Owner requests collapsible team text and Enter-to-send after trying the local
+build. Baseline: clean `new-development` at `d845f75`. Scope: room Blade/CSS/JS,
+chat browser regressions and this project's records only. Route: code, UI content,
+design/rendered review, privacy/data and regression audit; migration/import only
+for existing fictional fixtures in the guarded disposable test database. Read
+the entry path, current records, governance, chat specification and app runbook.
+No delegation, protected-workflow edit, schema change or new data audience.
+
+Agent-selected details: a native inline disclosure rather than an overlay avoids
+obscuring session controls, starts collapsed, retains drafts and supports keyboard
+toggle. Shift+Enter preserves multiline entry; a visible Send button supports
+touch. These are reversible UI defaults, not new product/privacy policy.
+Acceptance: toggle/draft persistence, Enter sends exactly once, Shift+Enter adds
+a newline, IME/held Enter do not send, empty input does not post, busy/retry and
+read-only behavior remain sound, desktop/mobile fit and cross-player delivery.
+Verify Docker build, guarded PostgreSQL backend regression and browser checks;
+inspect real rendered pages and the full scoped diff before one local commit.
+Stop for access/verification failure or policy expansion. Do not reset development
+data, resume held integrations, push or deploy. Status: completed and verified
+locally; no public release approval implied.
+
+Implemented a compact default-closed disclosure, bounded scrollable message
+history, responsive composer and visible keyboard help. Native disclosure keeps
+the draft while toggling and survives Livewire polling through the existing
+ignored subtree. Enter uses the same validated, idempotent submit path as the
+button; Shift+Enter inserts a newline. Composition/held-key events are excluded,
+whitespace-only messages are not submitted, and the composer is temporarily
+read-only with Send disabled while a request is pending. No API/schema change.
+
+Verification from `qguard/`, all runtimes in Docker:
+
+- `docker compose run --rm --no-deps node run build`: passed.
+- Stopped only test scheduler/worker, reset the private test clock and ran
+  `docker compose -f compose.test.yaml run --rm php vendor/bin/pest --compact`:
+  **57 tests / 90,263 assertions passed**. Guarded disposable `qguard_test` only.
+- Direct `php vendor/bin/phpunit --testsuite Unit` on that test Compose:
+  **9 tests / 90,024 assertions passed** (included in Pest, not additional tests).
+- Reseeded the existing fictional test accounts and restarted test services.
+  `docker compose -f compose.test.yaml run --rm browser`: **13 passed** in
+  3.4 minutes, including Chromium full flows and Firefox/WebKit core flows.
+  Added closed/open, keyboard toggle, retained draft, newline and Enter-send
+  assertions. Chromium additionally covers empty/whitespace input, synthetic
+  IME/key-repeat events, a deliberately paused POST, duplicate suppression,
+  button/offline retry, escaped text, read-only retained chat and socket fallback.
+- Test Compose `php vendor/bin/pint --test`: **90 files passed**.
+- Inspected 1280px rendered test output and the in-app browser at its default
+  width and 390px. No horizontal overflow at 390px; both disclosure states and
+  live Enter/Shift+Enter verified. Local development demo_a had already ended;
+  its retained room correctly has no composer. Signed in as active synthetic
+  demo_b for the send check and left that room open with chat collapsed. Preserved
+  the existing message and stored one clearly labeled two-line chat-check message.
+  Screenshots: outer `outputs/qguard-chat-refinement/`, separate from Git.
+- Reviewed the complete scoped diff; `git diff --check` passed. Three changed
+  Markdown files / 38 local links and their section targets resolved. No protected
+  workflow, legacy, dependency, credential or generated-asset change is tracked.
+
+Limits: IME checks simulate browser composition events, not a physical input-method
+session. The separate real-service-stop recovery test's opening step was adjusted
+for collapsed chat, but that extended outage/restore/load/production-image suite
+was not rerun for this UI-only change; browser-blocked socket fallback was rerun.
+No new retention, access or moderation policy. Development data was not reset;
+no push, PR, deployment, provider action or history rewrite. Project documentation
+guidance kept the owner request and reversible UI defaults in the existing spec
+and evidence record rather than modifying the protected reusable workflow.
+
 ## Route and baseline
 
 Started from clean `new-development` at `6502bcb`. Read repository/workspace

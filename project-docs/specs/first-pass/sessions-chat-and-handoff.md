@@ -80,6 +80,14 @@ access to retained records. No player-facing past-teammate browser is added.
 
 ## Private text contract
 
+Owner UI refinement, 2026-10-03: place team text behind an expandable Team chat
+control; clicking again closes it. Enter sends a message. Reversible agent
+choices under DEC-042: start collapsed, use native keyboard-accessible disclosure,
+keep the draft when toggling, and use Shift+Enter for a new line. Retain a Send
+button for touch users. IME confirmation, held keys and pending sends must not
+produce accidental or duplicate submissions. Existing access, retry, validation,
+retention and read-only rules below remain unchanged.
+
 Only authorized current room participants may post, original non-removed
 participants may read, and cleared admins may inspect stored messages through
 the audited admin surface. Reauthorize HTTP reads/writes and every socket

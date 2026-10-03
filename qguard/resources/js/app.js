@@ -11,6 +11,7 @@ function startChat(root) {
     const session = root.dataset.chatRoom;
     const endpoint = `/rooms/${session}/messages`;
     const list = root.querySelector('.messages'), form = root.querySelector('form'), input = root.querySelector('textarea');
+    const sendButton = form.querySelector('button[type="submit"]');
     const status = root.querySelector('[data-send-status]'), connection = root.querySelector('[data-connection]'), older = root.querySelector('[data-older]');
     let pending = null, olderCursor = null, busy = false, initialized = false;
     const messages = new Map();
@@ -39,16 +40,23 @@ function startChat(root) {
             older.hidden = !olderCursor; form.hidden = !data.can_post; display();
         } catch { connection.textContent='Connection interrupted · retrying with polling'; }
     }
+    input.addEventListener('keydown', event=>{
+        // Enter confirms IME composition; Shift+Enter keeps normal multiline editing.
+        if(event.key!=='Enter' || event.shiftKey || event.ctrlKey || event.altKey || event.metaKey || event.isComposing || event.keyCode===229)return;
+        event.preventDefault();
+        if(!event.repeat && !busy && !form.hidden)form.requestSubmit();
+    });
     form.addEventListener('submit', async event=>{
-        event.preventDefault(); if(busy)return;
+        event.preventDefault(); if(busy || form.hidden)return;
+        if(!pending && !input.value.trim()){status.textContent='Type a message first.';return;}
         pending ??= {client_message_id:messageId(),body:input.value};
-        busy=true; status.textContent='Sending…';
+        busy=true; sendButton.disabled=true; input.readOnly=true; status.textContent='Sending…';
         try {
             const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json','X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content},body:JSON.stringify(pending)});
             if(!response.ok) { const data=await response.json(); if(response.status===422)pending=null; throw new Error(response.status===422?Object.values(data.errors??{}).flat().join(' '):'Message could not be sent. Check your connection and room access.'); }
             pending=null;input.value='';status.textContent='Sent';await refresh();
         }catch(error){status.textContent=`Failed — ${error.message} Submit again to retry the same message.`;}
-        finally{busy=false;}
+        finally{busy=false;sendButton.disabled=false;input.readOnly=false;}
     });
     older.addEventListener('click',()=>refresh(olderCursor));
     // Never hold message bodies in socket payloads. Reauthorize every HTTP fetch.
