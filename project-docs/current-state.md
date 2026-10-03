@@ -14,9 +14,11 @@ held Discord/game tests remain outside this approval.
 The older readiness paragraphs below retain their dated baseline context;
 the missing-draft work they describe is now supplied by this packet.
 
-Next action: execute S1 entry checks and the approved stages; no repeat packet
-approval is needed. Approval/amendment reconciliation is complete; no rewrite
-application directory, runtime or application test result exists yet.
+The owner subsequently explicitly authorized implementation through completion.
+S1 is verified in a fresh `qguard/` directory; S2 account/party work is next. See the
+[implementation record](planning/first-pass/implementation-evidence.md) for
+actual stage status, commands and checks. No repeat packet approval is needed;
+foundation PostgreSQL/backend/browser checks have passed, not the domain suite.
 
 ## Prior Context And Continuing Authority
 

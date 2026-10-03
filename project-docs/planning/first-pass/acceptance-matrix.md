@@ -1,6 +1,7 @@
 # First-pass acceptance and regression matrix
 
-**Status:** owner-approved criteria, application tests not run. Applies to
+**Status:** owner-approved criteria; foundation checks have run, domain criteria
+remain unverified. See [actual stage evidence](implementation-evidence.md). Applies to
 QG-FIRST-PASS-1 revision 1 + DEC-052; owner direction DEC-050/052.
 Execution owner: implementation agent.
 Each row needs actual test paths, command, result and evidence at its stage.

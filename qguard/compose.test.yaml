@@ -1,0 +1,66 @@
+name: qguard-test-${QGUARD_TEST_RUN_ID:-local}
+x-test: &test
+  image: qguard-app:development
+  working_dir: /app
+  volumes:
+    - .:/app
+    - test-storage:/app/storage
+  environment: &test-environment
+    APP_NAME: QGuard
+    APP_ENV: testing
+    APP_DEBUG: "false"
+    APP_KEY: ${TEST_APP_KEY:?Run node scripts/init-env.mjs}
+    APP_URL: http://nginx
+    DB_CONNECTION: pgsql
+    DB_HOST: postgres
+    DB_PORT: 5432
+    DB_DATABASE: qguard_test
+    DB_USERNAME: qguard_test
+    DB_PASSWORD: ${TEST_DB_PASSWORD:?Run init-env}
+    SESSION_DRIVER: database
+    CACHE_STORE: database
+    QUEUE_CONNECTION: database
+    BROADCAST_CONNECTION: "null"
+    MAIL_MAILER: array
+    QGUARD_TEST_DATABASE: "true"
+    QGUARD_PUBLIC_ENABLED: "false"
+  depends_on:
+    postgres:
+      condition: service_healthy
+services:
+  postgres:
+    image: postgres:18-bookworm@sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650
+    environment:
+      POSTGRES_DB: qguard_test
+      POSTGRES_USER: qguard_test
+      POSTGRES_PASSWORD: ${TEST_DB_PASSWORD:?Run init-env}
+    tmpfs: ["/var/lib/postgresql"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qguard_test -d qguard_test"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+  app:
+    <<: *test
+  nginx:
+    image: nginx:1.29-alpine@sha256:5616878291a2eed594aee8db4dade5878cf7edcb475e59193904b198d9b830de
+    ports: ["127.0.0.1:8121:80"]
+    volumes:
+      - ./public:/app/public:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [app]
+  php:
+    <<: *test
+    profiles: [tools]
+    entrypoint: ["qguard-entrypoint", "php"]
+  browser:
+    image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+    profiles: [tools]
+    working_dir: /app
+    volumes: [".:/app"]
+    environment:
+      BASE_URL: http://nginx
+    entrypoint: ["npx", "playwright", "test"]
+    depends_on: [nginx]
+volumes:
+  test-storage:

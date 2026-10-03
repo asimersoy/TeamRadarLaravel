@@ -1,0 +1,121 @@
+# First pass implementation record
+
+**Status:** S1 complete, verified local foundation. S2 is next; S2–S6 not yet
+implemented. Updated 2026-10-03.
+**Owner:** primary implementation agent. Update after each stage or blocker.
+**Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
+explicit instruction to start implementation and continue through completion.
+This activates the approved stages, not deployment, public use or held tests.
+
+## Route and baseline
+
+Started from clean `new-development` at `6502bcb`. Read repository/workspace
+instructions, canonical entry path and task checklist; current project index,
+state, registers, workflow governance, specification modules, execution plan and
+acceptance matrix control this work. Selected procedures: code/implementation,
+product planning, content lifecycle for UI labels, bounded technical research,
+decision/recommendation safety, privacy/data/legal, external review,
+design/rendered review, audit/reconciliation, migration/import,
+deployment/backup/rollback, interruption/recovery and deferral/owner review.
+Always-applicable system documents were read. No agent delegation is planned.
+
+Honor display is informational; matching is preference matching and report-based
+rating invalidation is eligibility logic. No professional or safety guarantee.
+The approved specs define inputs, limits, ordering, fallbacks and data audiences.
+Public collection stays disabled; first-build owner/data review remains required.
+Stop for a real policy conflict, uncontrolled data exposure, missing required
+access/test capability or separately controlled action. Do not reopen settled
+choices or silently omit acceptance tests.
+
+## S1 entry inspection
+
+Docker Desktop 4.80.0, Engine 29.6.1 and Compose 5.3.0 are accessible after the
+normal sandbox permission review. Unrelated containers are running; none are
+QGuard's rewrite. Existing legacy volumes and services must not be reused.
+The fresh `qguard/` skeleton was generated with Docker Composer using
+`laravel/laravel` v13.10.1, with no scripts or dependencies installed initially.
+No host PHP was used. Dependency compatibility/build/tests are not yet proven.
+
+Use isolated project services and loopback development ports 8120/8121; verify
+availability before startup. Test resources have a separate project/database.
+Only fictional fixtures may be written. Additive development migrations and
+test-only resets are allowed; no legacy import or persistent-data destruction.
+
+## Verification and commit boundaries
+
+Follow [the six-stage plan](execution-plan.md) and
+[acceptance matrix](acceptance-matrix.md). Each stage receives actual command,
+result, relevant rendered evidence and residual-limit records before its coherent
+local commit. Unrun criteria are not passed. Stage records below will distinguish
+structural, behavioral and rendered evidence; no independent specialist review
+or public release is implied by internal QA.
+
+Initial technical references rechecked on 2026-10-03:
+[Laravel installation](https://laravel.com/framework/docs/13.x/installation),
+[Livewire installation](https://livewire.laravel.com/docs/4.x/installation),
+[Pest installation](https://pestphp.com/docs/installation),
+[Playwright Docker](https://playwright.dev/docs/docker).
+These support setup, not proof that this application works.
+
+## S1 foundation evidence
+
+Implemented fresh Laravel, Blade/Livewire dependencies, pinned Docker services,
+separate PostgreSQL dev/test targets, database-backed sessions/jobs/cache,
+single Reverb, a local mail sink, generated ignored secrets, a responsive landing
+page and an explicit production collection gate. No domain actions are advertised
+as working. Generic scaffold host/Boost instructions were replaced with scoped
+Docker-only routing; no protected workflow was changed. System fonts avoid
+unnecessary external font fetches. No project open-source license was selected
+by inheriting the framework skeleton's package metadata.
+
+Resolved: PHP 8.5.11, PostgreSQL 18.6, Laravel 13.34.0, Livewire 4.4.7,
+Reverb 1.12.0, Pest 4.7.8, PHPUnit 12.5.33, Vite 8.3.2 and Playwright 1.63.0.
+Composer/npm lockfiles and image digests are tracked. Reverb's transitive Redis
+client libraries do not add a Redis service; horizontal scaling stays disabled.
+
+Commands run from qguard (all PHP/browser execution in Docker):
+
+- `docker compose build app`: initial and pinned repeat build passed.
+- Composer update/install and `composer check-platform-reqs`: passed; npm
+  install and `npm run build`: passed. Composer audit and npm audit reported
+  no known vulnerability advisories at this check, not a security certification.
+- `docker compose exec -T app php artisan migrate --force`: three additive
+  foundation migrations passed against the new development database. Equivalent
+  explicit test migration passed against qguard_test.
+- Test Compose `php vendor/bin/pest --compact`: **7 tests, 12 assertions passed**.
+  Includes real PostgreSQL/cache, rendered response and public-collection denial.
+- Test Compose `php vendor/bin/phpunit --testsuite Unit`: **3 tests,
+  3 assertions passed**; unsafe reset environment/host/flag checks.
+- Test Compose `php vendor/bin/pint --test`: **33 PHP files passed**.
+- Test Compose `browser`: **2 Chromium browser checks passed**, 1280px and
+  390px, real UI assertions, no page errors, no overflow and keyboard skip link.
+  Both screenshots were inspected; evidence copies are in outer workspace
+  outputs/qguard-first-pass/s1. No domain or cross-engine claims yet.
+- A database cache probe `qguard-foundation-probe = s1-persistent` survived
+  recreation of the development postgres/app/nginx containers and a later image
+  reference recreation; qguard-dev-postgres was retained. No volume destroyed.
+- Both Compose configs validated. App, nginx, PostgreSQL, worker, scheduler,
+  Reverb and mail are running, bound only to declared loopback ports where exposed.
+
+Repair evidence: Docker credential helpers stalled public-image pulls. Verified
+host registry connectivity, used a task-only anonymous configuration outside
+Git, prefetched public images and stopped only this task's stalled commands.
+Saved Docker credentials/settings were not changed. PostgreSQL recreation
+exposed a worker that exited on DB loss; development processes now restart.
+Pinning the test DB image recreated its deliberately ephemeral database; the
+first post-pin test run failed on missing tables, then explicit test migrations
+and the full rerun above passed. Persistent development data remained intact.
+
+S1 proves initial T01/T02/T04 and rendered foundation scope only. Full restore,
+production-image construction, domain/concurrency flows, browser engine coverage,
+load checks and first-build data inventory remain S2–S6. No real accounts,
+integration test, push, PR, deployment or qualified external review occurred.
+
+Final S1 review: Composer strict validation passes; a second migration is a
+no-op. All seven services, including the worker, recovered after the scoped
+database restart and the persistent probe remained. Local link checks covered
+72 Markdown files/312 links without missing files; scoped diff/ignore checks
+exclude secrets, dependencies, protected workflows and legacy edits.
+`git diff --check` passed after removing unused generated welcome boilerplate.
+Package metadata is proprietary pending an explicit public-license decision,
+not a new open-source grant. Commit this verified foundation as one unit.

@@ -1,7 +1,10 @@
 # QGuard execution plan — QG-FIRST-PASS-1
 
 **Status:** approved under DEC-052 for revision 1 plus its matched-honor amendment;
-no application stage started. The DEC-008/051 packet gate is satisfied.
+S1 is verified under the owner's explicit start-through-completion instruction;
+S2 account/party implementation is next.
+The DEC-008/051 packet gate is satisfied. Actual evidence and remaining stages
+are tracked in the [implementation record](implementation-evidence.md).
 All modules in the [manifest](../../specs/first-pass/README.md)
 and the [acceptance matrix](acceptance-matrix.md) govern the complete slice.
 Responsible executor: implementation agent; owner reviews policy changes and

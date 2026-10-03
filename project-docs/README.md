@@ -10,7 +10,8 @@ reusable workflow system remains separate in
 is owner-approved for first-pass implementation. The sole amendment shows
 matched teammates' aggregate honor beside game rank while keeping feedback
 authors/individual received ratings hidden. Specs, plan and tests reflect that
-change. S1 is next; no app code or running integration exists yet. The history
+change. Implementation is active; the [stage record](planning/first-pass/implementation-evidence.md)
+tracks foundation evidence and remaining work. No live game integration exists. The history
 below explains how this scope was selected.
 
 The workspace migration and workflow-governance review are complete. The owner
@@ -131,7 +132,7 @@ Start with:
 
 - [Brief first-pass owner review](planning/first-pass/README.md) — approved with DEC-052's visibility amendment
 - [First-pass specification manifest](specs/first-pass/README.md) — approved modular implementation contracts
-- [Execution stages](planning/first-pass/execution-plan.md) and [acceptance matrix](planning/first-pass/acceptance-matrix.md) — no application stage/test run yet
+- [Execution stages](planning/first-pass/execution-plan.md), [acceptance matrix](planning/first-pass/acceptance-matrix.md) and [implementation evidence](planning/first-pass/implementation-evidence.md) — current code and test status
 - [Decision and deferral coverage](planning/first-pass/decision-traceability.md) and [planning review evidence](planning/first-pass/review-evidence.md)
 
 - [Selected core stack and supporting recommendations](planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03) — `DEC-049`/`DEC-050` settle the core choices and persistence/test requirements; now elaborated in the first-pass packet
