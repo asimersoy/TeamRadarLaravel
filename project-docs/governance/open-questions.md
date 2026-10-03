@@ -342,8 +342,8 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
-- **Status:** concrete technical/acceptance packet and approval still needed;
-  first-pass product-question set answered, delegated or deferred
+- **Status:** owner stack review active before detailed planning under
+  `DEC-049`; first-pass product-question set answered, delegated or deferred
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
 - **Blocks:** selecting a stack, architecture, deployment model, milestone plan,
@@ -354,14 +354,19 @@ Historical unknowns do not automatically become requirements.
   implementation detail under `DEC-042`/`DEC-048`.
 - **Known context:** Laravel/Livewire/MySQL is only a legacy implementation;
   React, Node/NestJS, PostgreSQL, Redis, a desktop relay, Docker, and various
-  deployment paths are historical evidence or proposals, not current choices.
+  deployment paths were historical evidence or proposals. `DEC-049` now
+  selects Docker development/deployment, records the owner's Laravel/Nginx
+  direction and SQLite-or-PostgreSQL/justified-Redis preferences. The
+  [current stack recommendation](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
+  is still an agent proposal awaiting owner disposition; no legacy reuse implied.
 - **Decision components:** validation goal and success measures, business model,
   product surfaces, delivery horizon/resources, integration constraints,
   availability/security expectations, environments, release strategy, and
   testable completion evidence.
-- **Current readiness:** no approved new-code layout/stack, complete slice
-  specification or app execution plan is present. The next task is agent
-  preparation of that concrete packet, with owner approval under `DEC-008`.
+- **Current readiness:** no approved complete stack/new-code layout, slice
+  specification or app execution plan is present. First settle the stack per
+  owner sequencing, then the agent prepares that concrete packet and tests,
+  with owner approval under `DEC-008`.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).

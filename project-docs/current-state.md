@@ -31,11 +31,11 @@
   plus teammate mismatch checks when official access is unavailable/gated.
   Detailed specifications remain incomplete; no unanswered owner choice from
   the latest question-seven set prevents preparing them
-- **Objective:** prepare the concrete first-pass specification/acceptance
-  packet using settled decisions and bounded agent discretion, then its
-  execution plan and approval gate; preserve live-test hold and future exclusions
+- **Objective:** settle the owner-requested stack recommendation under
+  `DEC-049` before drafting the concrete specifications, test package and
+  execution plan; preserve live-test hold and future exclusions
 - **Current route:**
-  [Technical specification and implementation plan](planning/rewrite-owner-decision-sequence.md#decision-group-8---technical-specification-and-implementation-plan)
+  [Stack recommendation and owner review](planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
 
 ## Verified Workspace State
 
@@ -410,7 +410,7 @@
   record all three latest annotations. No missing answer in that set.
   Retention refinement is `DEF-012`; identity/rank details are delegated, with
   the conditional first-pass fallback already approved.
-- **Next specification work:** consolidate the first-pass journey, concrete
+- **Next specification work, after stack selection (`DEC-049`):** consolidate the first-pass journey, concrete
   technical/data contracts, bounded agent choices and acceptance tests. Then
   prepare its execution/commit plan and obtain applicable `DEC-008` approval.
   No repeat one-through-seven questionnaire, forced final tuning or hypothetical
@@ -430,6 +430,12 @@
 
 ## First-Pass Readiness Review — 2026-10-03
 
+- **Subsequent stack sequencing:** `DEC-049` requests stack recommendation and
+  owner selection before detailed planning. Docker development and later Docker
+  deployment are selected; PostgreSQL/Livewire/Reverb/no initial Redis is an
+  agent proposal, not an approved complete stack. No new application code is
+  expected at this stage; its absence is a status fact, not an extra prerequisite.
+  Technical design, execution plan and acceptance tests are agent drafting work.
 - **Assessment:** ready to prepare the implementation-ready specifications and
   plan; not yet approved to start application coding. The latest request asks
   for readiness, not a specification-gate override. No further answer is
@@ -467,6 +473,18 @@
   assessment is not a current API, safety or legal-compliance finding.
 
 ## Verification State
+
+- Stack recommendation unit at clean `0a7f506`: current primary Laravel/PHP,
+  SQLite/PostgreSQL, Docker and Pest documentation reviewed; `DEC-049` records
+  the owner direction separately from the agent's linked stack proposal.
+  Docker client/engine 29.6.1 and Compose 5.3.0 verified read-only; host PHP
+  testing issue remains owner-reported. No images built/pulled, services
+  changed, dependencies installed, application tests or benchmarks run.
+  Project-document QA passed: 54 Markdown files, 233 local links and 39
+  fragment targets checked; 49 decision IDs and 12 deferred-work IDs are
+  unique. The complete five-file scoped diff was reviewed and
+  `git diff --check` passed. No canonical workflow package or app files changed;
+  no deployment. Save as one coherent local documentation commit.
 
 - Current question-seven reconciliation/readiness unit: clean `new-development`
   at `be449c0`; inspect-only baseline established before project-record edits.

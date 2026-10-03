@@ -99,8 +99,9 @@ explicit deletion; identity/ownership/rank selection belongs to implementation,
 with self-declaration and teammate mismatch checks if official retrieval is
 unavailable, approval-gated or needs more owner decisions. Do not reopen these
 as unanswered questions. Stored evidence does not change aggregate honor
-calculation. Prepare the concrete specification/acceptance packet and plan
-for the existing approval gate. Existing future-only exclusions stand.
+calculation. First settle the stack under `DEC-049`, then prepare the concrete
+specification/acceptance packet and plan for the existing approval gate.
+Existing future-only exclusions stand.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.
@@ -119,6 +120,7 @@ Start with:
 
 ## Current Planning
 
+- [Stack recommendation and owner review](planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03) — `DEC-049` selects Docker development/deployment; full stack proposal awaits selection before detailed planning
 - [Current first-pass readiness review](current-state.md#first-pass-readiness-review--2026-10-03) — questions answered/delegated; concrete specifications and plan still need drafting and approval
 - [Historical implementation-readiness review — 2026-09-28](planning/implementation-readiness-review-2026-09-28.md) — dated evidence; its unanswered questions are superseded where later decisions settle them
 - [Coordination and replaceable party-handoff staged outline](specs/coordination-and-party-handoff.md#staged-implementation-outline--queued-not-execution-approval)

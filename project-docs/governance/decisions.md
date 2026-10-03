@@ -1956,3 +1956,40 @@ canonical-workflow change, provider research or external action in this unit.
 - **Supersedes:** first-pass owner-only identity-verification/source choice and
   unapproved-fallback status under `DEC-013`, `OQ-006`, `OQ-009`, `OQ-010`
 - **Superseded by:** none
+
+## DEC-049 - Use Docker For Development And Deployment And Select The Stack Before Planning
+
+- **Date:** 2026-10-03
+- **Status:** approved Docker/environment and sequencing direction; full stack
+  selection awaits owner disposition of the recommendation
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotation and addition request Docker for
+  local development and later deployment. Treat containerized PHP tooling/tests
+  as the normal project path, not a dependence on the owner's host PHP install.
+  The owner reports a local PHP testing-related problem; its cause is unverified
+  and host repair is not requested.
+- **Stack preferences:** Laravel is the requested application-framework
+  direction. SQLite is preferred for simplicity if adequate; PostgreSQL is the
+  preferred server database if warranted. Redis should be added only for a
+  justified need, not by default. Nginx is preferred; Blade is acceptable, and
+  the owner welcomes frontend alternatives. These preferences do not approve
+  the agent's proposed complete stack or inherit legacy versions/configuration.
+- **Responsibility and sequence:** the agent recommends the stack and explains
+  meaningful tradeoffs; settle it with the owner before drafting the detailed
+  technical design, execution plan and acceptance-test package. Those documents
+  are the agent's work. Existing product choices/delegation remain in force;
+  no new broad product questionnaire is required. A repository plan is an
+  acceptable later deliverable; no planning-mode change is required by this
+  decision.
+- **Boundary:** Docker deployment direction is not authorization to deploy,
+  change containers, pull/build images, provision services or reuse legacy code
+  in this recommendation task. `DEC-008`'s specification and controlled-
+  operation gates remain. Tests executed later in Docker must report actual
+  results; engine availability alone is not a passing application test.
+- **Recommendation:** see the separate
+  [stack review](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03).
+  Proposed PostgreSQL, Livewire, Reverb and Redis omission are not recorded as
+  owner-selected merely because the agent recommends them.
+- **Supersedes:** treating Docker as wholly undecided in first-pass planning;
+  pauses detailed execution planning until the stack discussion is settled
+- **Superseded by:** none

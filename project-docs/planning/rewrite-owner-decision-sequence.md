@@ -1,8 +1,8 @@
 # QGuard Rewrite Owner Decision Sequence
 
 - **Record type:** current owner-review packet
-- **Status:** first-pass product answers recorded; concrete specifications/plan
-  to prepare for approval; no repeat question-one-through-seven questionnaire
+- **Status:** first-pass product answers recorded; owner stack selection next,
+  before detailed specifications/plan; no repeat product questionnaire
 - **Decision owner:** project owner
 - **Created:** 2026-09-03
 - **Update trigger:** after each owner decision or when new evidence changes a
@@ -488,7 +488,9 @@ resource constraints, business non-goals, and operational service boundary.
 
 ## Decision Group 8 - Technical Specification And Implementation Plan
 
-**Current next step:** the first-pass owner question set is complete enough to
+**Current next step:** settle the stack recommendation below under `DEC-049`,
+then draft the technical/acceptance packet and plan. The owner does not need
+to design those artifacts. The first-pass owner question set is complete enough to
 prepare this packet under `DEC-042`/`DEC-047`/`DEC-048`. The agent supplies
 concrete engineering choices and acceptance coverage rather than asking the
 owner to design them. The latest readiness request is not approval to start
@@ -513,6 +515,118 @@ the intended implementation slice:
 **Closure evidence:** approved technical specification, risk/review matrix,
 phased execution plan, acceptance tests, release gates, rollback plan, and
 explicit authorization to begin implementation. This closes `OQ-007`.
+
+## Stack Recommendation — 2026-10-03
+
+**Status:** agent recommendation for owner review, not an approved stack or
+execution plan. `DEC-049` selects Docker for development and later deployment
+and requests stack selection before detailed planning. Laravel/Nginx and the
+SQLite-versus-PostgreSQL preference come from the owner, not the old app.
+
+### Proposed Stack
+
+| Component | Recommendation | QGuard-specific reason |
+| --- | --- | --- |
+| Application | One Laravel 13 application on PHP 8.5, with internal modules | Keep accounts, parties, matching, honor and moderation together; no new service boundaries needed for this first pass |
+| Database | PostgreSQL 18 in Docker for development, integration tests and initial deployment | Transactions and row locking fit simultaneous party allocation, chat, session settlement and background work |
+| Frontend | Blade + Livewire 4, with Alpine for small browser interactions and Tailwind/Vite for assets | Retains the owner's PHP/Blade direction while supporting interactive queues, parties, forms and admin views |
+| Live updates | Laravel Reverb + Echo, initially one Reverb process | Private website chat and lobby changes need prompt updates; this is unrelated to Discord/game joining |
+| Jobs/cache | Laravel database-backed jobs and modest database cache/locks initially; no Redis service | Avoid another stateful service until measured load or an explicit feature needs it |
+| Web server | Nginx + PHP-FPM | Matches owner familiarity and Laravel's documented deployment path |
+| Environment | Docker Compose, with development and production variants | Containerized PHP, Composer, asset builds and tests; no host PHP/database installation dependency |
+| Tests | Pest for PHP tests, PostgreSQL integration/concurrency tests, browser-flow checks in Docker | Test the real persistence semantics, private-channel access and complete user journeys |
+
+Versions are proposed supported major lines, not frozen patch/image pins.
+Resolve and test the exact package/extension combination during approved
+implementation. Do not install the latest development/beta database or infer
+compatibility from a documentation table alone.
+
+### SQLite Versus PostgreSQL
+
+SQLite is a credible low-complexity option and may serve a small first version
+well. Its own documentation explains that writes to one file are serialized;
+WAL improves reader/writer overlap but does not create independent concurrent
+writers. QGuard will combine user writes, retained chat, queue allocation,
+deadline jobs and honor settlement. PostgreSQL provides row-level concurrency
+controls suited to those operations. This is a workload-fit recommendation,
+not a measured throughput limit or a claim that SQLite cannot perform complex
+queries or PostgreSQL is always faster.
+
+PostgreSQL adds a running service, storage and backup administration. In the
+requested Docker setup it is one additional Compose service, not a host
+installation. Use persistent storage and tested backups later; containers do
+not make database durability/operations automatic. Keep development and
+database-dependent tests on the selected production engine to expose locking
+and query differences early.
+
+### Redis And Live Updates
+
+Laravel supports database job and cache drivers. A single Reverb process can
+be planned without its Redis-based multi-server fan-out. Use Reverb events for
+timely updates and durable database state for recovery; neither Redis nor
+WebSockets is the authority for membership, messages or honor.
+
+There is no QGuard benchmark proving a negligible Redis benefit. The proposal
+is to omit it until measured job delay, cache/lock pressure or multi-Reverb
+deployment justifies it. Adding Redis later needs queue delivery, locking,
+cache invalidation and rollback checks; it is not merely a cost-free switch.
+Workers, scheduler and Reverb are still running processes, even when they
+reuse the same PHP application image. Database jobs are background work, not
+the product's player-matching queue.
+
+### Frontend And Deployment Tradeoffs
+
+Plain Blade with custom JavaScript is viable, but QGuard's reactive party/chat/
+feedback screens would require more hand-written interaction plumbing.
+Livewire keeps the main interface in Laravel/PHP. React or Vue with Inertia
+remains viable if later UI needs justify a stronger client-side application;
+the current features do not establish that need. Use browser-local interactions
+where appropriate rather than unnecessary requests on every keystroke.
+Do not require paid UI components or a hosted authentication product by adopting
+this recommendation.
+
+Nginx is recommended for fit and familiarity, not a benchmarked win over Apache.
+Use a small Compose setup, not Kubernetes or a separate Node application backend.
+Production would use built application/assets, production configuration,
+secrets and persistent volumes; development bind mounts and the Vite dev server
+are not a production deployment recipe. Exact service layout, provisioning,
+code location, schema and milestones wait for stack selection.
+
+### Source Ledger And Limits
+
+Accessed 2026-10-03. These are primary documentation facts; choices above are
+the agent's inference for QGuard, not vendor guarantees or owner approvals.
+
+| Source | Supports | Does not establish |
+| --- | --- | --- |
+| [Laravel release policy](https://laravel.com/framework/docs/releases) | Laravel 13 supports PHP 8.3–8.5; release/support table | Tested compatibility of every selected dependency |
+| [PHP supported versions](https://www.php.net/supported-versions.php) | PHP 8.5 active/security support | A working QGuard image or host PHP repair |
+| [SQLite appropriate uses](https://www.sqlite.org/whentouse.html) and [WAL](https://www.sqlite.org/wal.html) | Single writer per database file; SQLite remains viable for many websites | A QGuard capacity threshold or inevitable contention |
+| [PostgreSQL 18 locking](https://www.postgresql.org/docs/18/explicit-locking.html) | Row locks and concurrency behavior | A correct matching or settlement algorithm without tests |
+| [Laravel starter kits](https://laravel.com/framework/docs/13.x/starter-kits) | Livewire 4/Blade-oriented UI path alongside React/Vue alternatives | Required use of paid components or external auth |
+| [Laravel Reverb](https://laravel.com/framework/docs/13.x/reverb) | WebSocket server and Redis-based horizontal scaling | A measured single-process QGuard connection limit |
+| [Laravel queues](https://laravel.com/framework/docs/13.x/queues) and [cache](https://laravel.com/framework/docs/13.x/cache) | Database-backed jobs and cache alternatives to Redis | Queue latency or negligible Redis benefit for this workload |
+| [Laravel deployment](https://laravel.com/framework/docs/13.x/deployment) | Nginx/PHP serving configuration and environment requirements | Superiority over Apache or deployment approval |
+| [Docker Compose production](https://docs.docker.com/compose/how-tos/production/) | Compose across environments with production-specific changes | Automatic backups, security or high availability |
+| [Pest installation](https://pestphp.com/docs/installation) | Current PHP requirement and test tooling | A passed application/browser test suite |
+
+### Route And Verification
+
+- Baseline: clean `new-development` at `0a7f506`. Inspected actual manifests,
+  legacy Compose/Docker/Nginx files and current product/decision/specification
+  records. Legacy Laravel 12/Livewire/MySQL/Redis remains evidence only.
+- Route: product planning; research/sourcing; deployment/environment;
+  decision/recommendation and privacy/data implications; owner/external review.
+  Applicable entry/system rules and selected procedures were read.
+- Read-only Docker check: client and engine 29.6.1; Compose 5.3.0. Initial
+  sandbox socket access was denied; an approved read-only version check reached
+  the engine. No containers/images/volumes were created, started or changed.
+- No application tests, dependency resolution, image build or benchmark ran.
+  Host PHP test failure remains owner-reported and undiagnosed.
+- Owner disposition needed: accept or revise the proposed complete stack,
+  especially PostgreSQL over SQLite and Livewire/Reverb with no initial Redis.
+  After selection, draft the detailed technical/specification/test packet and
+  execution plan; no premature implementation or deployment.
 
 ## Superseded Agent Baseline - Do Not Use For Current Routing
 
