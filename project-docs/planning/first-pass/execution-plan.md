@@ -1,7 +1,8 @@
 # QGuard execution plan — QG-FIRST-PASS-1
 
-**Status:** proposed, no application stage started. Owner approval of revision 1
-required under DEC-008/051. All modules in the [manifest](../../specs/first-pass/README.md)
+**Status:** approved under DEC-052 for revision 1 plus its matched-honor amendment;
+no application stage started. The DEC-008/051 packet gate is satisfied.
+All modules in the [manifest](../../specs/first-pass/README.md)
 and the [acceptance matrix](acceptance-matrix.md) govern the complete slice.
 Responsible executor: implementation agent; owner reviews policy changes and
 first-build outcome. General procedures remain in the protected workflow system.
@@ -13,7 +14,7 @@ working tree and any concurrent work. Record packet approval exactly. Inspect
 new-code path, Docker availability/ports, relevant dependency versions and access
 before changing anything. No use of root legacy Compose or host PHP.
 
-Create `qguard/` only after approval. Resolve install/build network permissions
+The packet authorizes creating `qguard/` at S1. Resolve install/build network permissions
 through the normal approval flow. All app/test services remain local. Do not
 reuse credentials, submit a provider application or resume a held test.
 
@@ -30,7 +31,7 @@ safe independent work may continue without concealing the failure.
 | --- | --- | --- | --- |
 | S1 Foundation | Architecture/data-security: fresh Laravel app; Docker PHP/Postgres/Nginx; DB jobs/cache/sessions; isolated test services; basic layout/health and command runbook | T01–T04 initial checks, PHPUnit/Pest smoke, browser app render; persistent row survives recreate; no root legacy diff | Runnable isolated foundation with locks/config/tests/docs, no promised domain routes |
 | S2 Identity and premades | Identity/rank, product flows, party commands: local auth, profile, own baseline honor, declared fallback, exact-handle friends/invites/ready parties | F01–F04/F11; I01–I03 contracts; M02 membership races; X01/X02; fictional fixtures | Working account and social/party preparation loop; queue action still disabled |
-| S3 Match assembly | Matching service/worker, database slot invariants, current five-stack policy, widening, roster snapshots and a read-only matched roster | F05, M01–M05 including multiple PostgreSQL processes, baseline honor and compatibility outcomes | Complete cancel/queue/match vertical slice; room clearly says chat/feedback not yet available |
+| S3 Match assembly | Matching service/worker, database slot invariants, current five-stack policy, widening, roster snapshots and a read-only matched roster showing teammate honor/rank under DEC-052 | F05, M01–M05 including multiple PostgreSQL processes, baseline honor and compatibility outcomes; X01 matched-only score access | Complete cancel/queue/match vertical slice; room clearly says chat/feedback not yet available |
 | S4 Sessions and chat | Sessions/chat module; native private text/Reverb/polling, no-show lifecycle, Session ended and safe participant release; no fake handoff | F06/F07; S01/S02; C01–C03; outsider/stale-socket tests and rendered checks | Runnable coordination slice; feedback action remains disabled until S5, no silent lost submission |
 | S5 Feedback and review | Entire feedback/honor/report module; optional submissions, deadline/early settlement, eligibility, raw/honor recurrence, admin inbox/audit | F08–F10; S03/S04; H01–H08; R01–R06; X01/X03; duplicate/crash settlement tests | Complete first-pass product loop with all feedback routes enabled and consistent data |
 | S6 Full verification and handoff | Cross-module regression; responsive UI; operational docs; production-image config without deployment; backup/isolated restore; actual field inventory | All acceptance rows mapped to real tests/results; failure recovery, fresh checkout setup, browser evidence, no unexplained required skips | Verified first-build checkpoint, exact residual risks and owner review/DEF-012 packet |

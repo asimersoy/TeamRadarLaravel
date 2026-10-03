@@ -6,12 +6,12 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-**Latest checkpoint:** [QG-FIRST-PASS-1 revision 1](planning/first-pass/README.md)
-is ready for a brief owner review. Its modular specifications, technical/data
-contracts, six implementation stages and acceptance matrix now supply the
-previously missing draft packet. `DEC-051` authorizes preparing it, with approval
-before coding; no new app code or running integration exists. Start there for
-the next action. The history below explains how this scope was selected.
+**Latest checkpoint:** [QG-FIRST-PASS-1 revision 1 + DEC-052](planning/first-pass/README.md)
+is owner-approved for first-pass implementation. The sole amendment shows
+matched teammates' aggregate honor beside game rank while keeping feedback
+authors/individual received ratings hidden. Specs, plan and tests reflect that
+change. S1 is next; no app code or running integration exists yet. The history
+below explains how this scope was selected.
 
 The workspace migration and workflow-governance review are complete. The owner
 has approved the QGuard name and several product foundations, and has accepted
@@ -109,10 +109,10 @@ as unanswered questions. Stored evidence does not change aggregate honor
 calculation. `DEC-049`/`DEC-050` now settle Docker, PostgreSQL, no initial
 Redis and Blade/Livewire, and require persistent storage and backend/browser
 testing in Docker with synthetic accounts. The concrete
-specification/acceptance packet is now drafted for the existing approval gate.
+specification/acceptance packet is now approved under `DEC-052`.
 Existing future-only exclusions stand.
 Looking to Play remains rejected, and voice recording remains a separate
-proposal only. No complete implementation slice is yet specification-approved. Everything
+proposal only. The first-pass slice is specification-approved, not implemented. Everything
 under `legacy/` remains historical evidence.
 
 Start with:
@@ -129,13 +129,13 @@ Start with:
 
 ## Current Planning
 
-- [Brief first-pass owner review](planning/first-pass/README.md) — named packet approval checkpoint
-- [First-pass specification manifest](specs/first-pass/README.md) — modular current implementation contracts, proposed
+- [Brief first-pass owner review](planning/first-pass/README.md) — approved with DEC-052's visibility amendment
+- [First-pass specification manifest](specs/first-pass/README.md) — approved modular implementation contracts
 - [Execution stages](planning/first-pass/execution-plan.md) and [acceptance matrix](planning/first-pass/acceptance-matrix.md) — no application stage/test run yet
 - [Decision and deferral coverage](planning/first-pass/decision-traceability.md) and [planning review evidence](planning/first-pass/review-evidence.md)
 
 - [Selected core stack and supporting recommendations](planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03) — `DEC-049`/`DEC-050` settle the core choices and persistence/test requirements; now elaborated in the first-pass packet
-- [Earlier first-pass readiness review](current-state.md#first-pass-readiness-review--2026-10-03) — drafting now supplied by the new packet; approval still required
+- [Earlier first-pass readiness review](current-state.md#first-pass-readiness-review--2026-10-03) — historical baseline; DEC-052 now satisfies packet approval
 - [Historical implementation-readiness review — 2026-09-28](planning/implementation-readiness-review-2026-09-28.md) — dated evidence; its unanswered questions are superseded where later decisions settle them
 - [Coordination and replaceable party-handoff staged outline](specs/coordination-and-party-handoff.md#staged-implementation-outline--queued-not-execution-approval)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)

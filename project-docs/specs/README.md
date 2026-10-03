@@ -9,10 +9,11 @@
   clock, native chat/current queue and audiences, with reversible details
   delegated. `DEC-047`/`DEC-048` settle first-pass retention and identity/rank
   responsibility/fallback; concrete technical/data/acceptance contracts are
-  now drafted in QG-FIRST-PASS-1 and await approval, not another questionnaire.
+  now approved in QG-FIRST-PASS-1 revision 1 + DEC-052, not another questionnaire.
   `DEC-049`/`DEC-050` select the core stack and persistent-storage/backend/
   browser-testing requirements. `DEC-051` selects modular file-based planning
-  and one brief packet-review checkpoint before coding
+  and one brief packet-review checkpoint before coding; DEC-052 satisfies it
+  and makes matched-team honor visible alongside rank without revealing reviewers
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -46,8 +47,7 @@ records an explicit narrow override under the workflow-governance policy.
 ## Current Modules
 
 - [QG-FIRST-PASS-1 specification manifest](first-pass/README.md) — concrete
-  proposed implementation suite, revision 1; draft complete, packet approval
-  pending under `DEC-051`. Use this suite for first-pass engineering, not older
+  approved implementation suite, revision 1 + DEC-052. Use this suite for first-pass engineering, not older
   historical open-detail lists. See the [brief review](../planning/first-pass/README.md).
 
 - [Product foundations](product-foundations.md) — partially approved; not
@@ -108,8 +108,8 @@ an immediate second-pass inventory/retention review (`DEF-012`). `DEC-048`
 delegates identity/ownership/rank choices and permits declared rank with
 teammate discrepancy checks if official access is unavailable/gated or needs
 more owner decisions. None of those questions remains an upfront owner blocker.
-The [current readiness review](../current-state.md#first-pass-readiness-review--2026-10-03)
-identifies the remaining specification, plan and approval work before coding.
+The [earlier readiness review](../current-state.md#first-pass-readiness-review--2026-10-03)
+identified drafting/review work subsequently completed by the packet and DEC-052.
 
 `DEC-049`/`DEC-050` select Docker, PostgreSQL, no initial Redis and Blade/Livewire.
 The next specifications must include container-independent persistent database
@@ -120,7 +120,7 @@ browser coverage of every implemented first-pass user/admin flow. See the
 for approved direction versus supporting agent proposals. No application test
 or persistence check has run for the rewrite yet.
 
-The new first-pass suite proposes a bounded local development scope and complete
-contracts for review; it is not yet implementation-approved. Public audience/
+The new first-pass suite has an approved bounded local development scope and
+contracts under DEC-052; application implementation has not begun. Public audience/
 region/use boundaries and release remain separately open. Core stack choices
 are already settled; do not ask the owner to choose them again.

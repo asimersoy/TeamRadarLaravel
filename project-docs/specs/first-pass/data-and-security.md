@@ -1,7 +1,7 @@
 # Data, authorization and transaction contracts
 
 **Status/owner/update:** [manifest](README.md). Authority: DEC-037, DEC-041,
-DEC-045, DEC-047, DEC-048, DEC-050. Shared dependency of all domain modules.
+DEC-045, DEC-047, DEC-048, DEC-050, DEC-052. Shared dependency of all domain modules.
 Acceptance: X01–X04, R01–R06, M01–M05, T01–T04. Schema names are proposed;
 equivalent structures may change without weakening these invariants.
 
@@ -10,12 +10,12 @@ equivalent structures may change without weakening these invariants.
 | Entity | Essential data and purpose | Integrity/access boundary |
 | --- | --- | --- |
 | users / profiles | Immutable ID, email, password hash, handle, clearance, stated game identifier/rank/source/shard/language | Unique normalized email/handle; separate self-edit allowlist from admin authority; credentials never serialized |
-| honor_states | Score, nullable raw reference, eligible count, version/time | One per user; finite bounded score/reference; count >= 0; player sees own score only |
+| honor_states | Score, nullable raw reference, eligible count, version/time | One per user; finite bounded score/reference; count >= 0; player sees own current score; only aggregate match-time snapshot shared with matched team |
 | friendships / requests | Canonical pair, requester, state, times | Unique normalized pair; no self; crossed requests atomic |
 | parties / memberships / invitations | Owner, roster, readiness/settings version, invite state/time | Capacity <= 5 enforced with party lock; one active membership; recipient acceptance and friend check |
 | active_participations | User ID and party or session ID | Unique user, exactly one destination; transactionally agrees with domain membership |
 | queue_entries | Party, immutable queued roster/version/settings/time, state | At most one waiting entry per party; members occupy the expected active slots |
-| sessions / participants | Size/mode/shard/language, status/time, roster origin and profile snapshots, attendance | Five distinct users; unique session/user; origin snapshot immutable; access never derived from mutable friendship |
+| sessions / participants | Size/mode/shard/language, status/time, roster origin/profile and match-time honor snapshots, attendance | Five distinct users; unique session/user; snapshots immutable; authorized teammates see rank and aggregate honor, not feedback identities; access never derived from mutable friendship |
 | no_show_requests / votes | Session, target, deadline, resolution, voters | One active target/session; unique voter/request; actor not target; timestamps server-controlled |
 | chat_messages | Session, sender, plain text, client key, server time | Unique session/sender/client key; access via membership and session state |
 | feedback_submissions / ratings | Author/session, finalized time, skip/admission, target, three dimensions, mapped input | One finalized submission/session/author; unique author/target/session; eligible targets validated server-side |
@@ -38,7 +38,8 @@ and exact indexes are refined with PostgreSQL query plans during implementation.
 
 | Data/action | Self | Matched teammate | Outsider | Cleared admin |
 | --- | --- | --- | --- | --- |
-| Own honor | Read | No | No | Read relevant state |
+| Current honor state | Own score | No live state feed; see snapshot below | No | Read relevant state |
+| Session honor snapshot | Participant | Read alongside rank in authorized matched roster | No, including unrelated friends | Read relevant case |
 | Public handle | Read | Read | Minimal exact lookup | Read |
 | Email/account internals | Own relevant fields | No | No | Relevant case fields; never secrets |
 | Session rank/identifier snapshot | Participant | Participant | No | Read |
@@ -53,6 +54,11 @@ owner IDs/clearance/score/eligibility/deadlines from request fields. Escaped out
 CSRF protection, secure session cookies and auth throttling are mandatory.
 Origin IDs and reviewer details are not included in shared payloads merely
 because the frontend does not display them.
+DEC-052 permits only the aggregate honor snapshot in the matched roster; it
+does not permit raw reference/count, individual received feedback or mappings
+from authors to ratings. Former/removed participants follow the same roster
+authorization lifetime as rank; no-show removal revokes access. Self-score
+updates remain separate from teammate snapshots.
 
 ## Settlement transaction and recovery
 

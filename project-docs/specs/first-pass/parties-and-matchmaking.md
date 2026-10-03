@@ -84,7 +84,9 @@ On commit notify members; clients recover committed matches by polling.
 Party commands: Create, Invite, AcceptInvite, Leave, ChangeSettings, Ready,
 Queue, Cancel. Server derives actor/party ownership; a client-supplied user ID
 cannot queue someone else. Queue entry stores roster/version/time/settings;
-session stores independent immutable participant/origin snapshots.
+session stores independent immutable participant/origin snapshots. Include each
+participant's committed honor at matching for the matched-team roster (DEC-052),
+alongside the rank snapshot; do not expose underlying feedback or raters.
 
 `active_participations` has a unique user key and exactly one current party or
 session destination. All memberships, cancellations and matching update it

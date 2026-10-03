@@ -2,7 +2,8 @@
 
 **Status/owner/update:** [manifest](README.md). Authority: DEC-002, DEC-006,
 DEC-049, DEC-050. Depends on [data/security](data-and-security.md). Acceptance:
-S1/S6, F12, T01–T04, X03–X04. Supporting choices are agent proposals, sourced in
+S1/S6, F12, T01–T04, X03–X04. Supporting choices were agent-authored and accepted
+with the packet under DEC-052, sourced in
 [technical foundations](../../research/first-pass-technical-foundations.md).
 
 ## New application boundary

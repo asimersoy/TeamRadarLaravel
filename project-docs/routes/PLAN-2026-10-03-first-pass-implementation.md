@@ -1,7 +1,9 @@
 # PLAN-2026-10-03 — First-pass implementation packet
 
 - **Owner / author:** project owner approves; primary agent drafts and checks.
-- **Status:** planning complete; awaiting brief owner packet review, not application implementation.
+- **Status:** planning complete; subsequent owner approval with one visibility
+  amendment is DEC-052. This route records the historical planning unit, not
+  application implementation. Continue via the approved execution plan.
 - **Baseline:** clean `new-development`, `c0008f7`; inspected 2026-10-03.
 - **Objective:** turn current owner decisions into modular, executable specifications,
   stages and acceptance tests, then request one brief review of the named packet.
@@ -70,3 +72,10 @@ matrix, all-decision/deferral coverage and current source ledger. Arithmetic
 checks and documentation QA are recorded in the
 [review evidence](../planning/first-pass/review-evidence.md). Application tests
 remain unrun. Save as one local documentation commit; no external action.
+
+**Subsequent checkpoint:** the planning unit was committed as `aa3ded2`.
+The owner then approved revision 1 with matched teammates' aggregate honor
+visible beside rank while feedback identities stay hidden. See the
+[approval/amendment review](../planning/first-pass/review-evidence.md#owner-approval-and-visibility-amendment--2026-10-03).
+Its reconciliation satisfies the packet gate; the review request in this
+historical route is no longer outstanding.

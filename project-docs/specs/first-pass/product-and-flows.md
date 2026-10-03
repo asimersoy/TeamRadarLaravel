@@ -1,8 +1,8 @@
 # First-pass product and user flows
 
 **Status/owner/update:** [manifest contract](README.md). Authority: DEC-009,
-DEC-010, DEC-018, DEC-025–DEC-048. All additional UI choices below are proposed
-reversible first-pass details. Acceptance: F01–F12 and X01–X04 in the
+DEC-010, DEC-018, DEC-025–DEC-048 and DEC-052. Additional UI choices are
+agent-authored first-pass details accepted in the packet. Acceptance: F01–F12 and X01–X04 in the
 [test matrix](../../planning/first-pass/acceptance-matrix.md).
 
 ## Product boundary
@@ -12,7 +12,7 @@ or more games. Behavioral honor influences teammate selection from the first
 version; it is not skill, MMR, an official Riot rank or a guarantee of conduct.
 The build must demonstrate the complete QGuard loop without external accounts.
 
-Proposed development slice: PC, Competitive, one selected shard and common
+Approved development slice: PC, Competitive, one selected shard and common
 communication language per party. English interface first, with localization-ready
 labels; game-shard choices are not launch-country approvals. Do not claim real
 game eligibility from declarations or a working lobby handoff. Actual joining
@@ -39,7 +39,7 @@ appeals/score corrections, payments, real-user launch and legacy data import.
 | F03 Friends | Exact-handle lookup, request, accept/decline/cancel/remove, friends list | Self/duplicate/crossed requests, stranger data minimization, permission failure |
 | F04 Premade | Create party, invite friends, accept/decline/revoke, leave/disband, readiness and queue selections | Full/stale invitation, recipient busy, concurrent joins, owner leaves, settings reset readiness |
 | F05 Queue | Ready/confirm, queue/wait/cancel, matched transition | Insufficient players, settings mismatch, double queue, cancel-versus-match race, unavailable worker |
-| F06 Matched room | Five-member roster, rank source labels, designated coordinator, text, I joined | Unauthorized URL/channel, disconnected socket, replayed message, expired/closed room, game handoff unavailable |
+| F06 Matched room | Five-member roster showing each teammate's match-time honor and game rank/source, designated coordinator, text, I joined | Outsider/pre-match honor access denied, received-feedback authors/details hidden, disconnected socket, replayed message, closed room, game handoff unavailable |
 | F07 No-show | Five-minute wait, target vote, all other votes, 30-second response, acknowledge or disband | Early/duplicate vote, self-vote, acknowledgment race, stale clock, false-accusation limitation |
 | F08 End/feedback | Session ended, rate eligible teammates in three dimensions, reports, rank discrepancy, finalize/skip | Premade/self rating rejected, missing dimension, unknown observation, no response, deadline, double submit |
 | F09 Settlement/requeue | Pending-feedback dashboard, deadline/final state, own refreshed honor, queue again | Already settled, late submission, retry after crash, next session before old honor settles |

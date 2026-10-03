@@ -1,7 +1,7 @@
 # QGuard first-pass plan — brief owner review
 
-**Status:** ready for review, not yet approved for implementation.
-**Packet:** QG-FIRST-PASS-1, revision 1, 2026-10-03.
+**Status:** owner-approved for implementation with DEC-052's visibility amendment.
+**Packet:** QG-FIRST-PASS-1, revision 1 + DEC-052, 2026-10-03.
 You do not need to review every engineering detail. This summary and its linked
 manifest identify the complete packet for the existing specification gate.
 
@@ -10,8 +10,10 @@ manifest identify the complete packet for the existing specification gate.
 A fresh Laravel/Blade/Livewire app in `qguard/`, with Docker, persistent PostgreSQL
 and no Redis. Accounts, basic friends and partial parties lead into five-player
 matching, private website chat, session-end feedback, automatic honor updates
-and a human admin report inbox. Own honor is visible; other players' honor and
-reviewer identities are private. All implemented flows receive Docker-based
+and a human admin report inbox. Own honor is visible; matched teammates also
+see each other's aggregate honor alongside game rank. Honor is not public
+outside that authorized team; received-feedback authors and individual received
+ratings remain hidden from players. All implemented flows receive Docker-based
 backend/integration/regression and real-browser tests with synthetic accounts.
 
 Discord, working game joins, recording, sanctions, volatility and past-teammate
@@ -39,11 +41,11 @@ launch or a claim that joining Valorant is already solved.
    smaller initial response for the first five ratings. These are tunable
    development details, not values you need to design. No volatility calculation.
 
-These are explicit agent proposals under your delegation, highlighted because
-they affect observable first-pass behavior. They do not claim you previously
-selected each detail. The known first-pass risks remain recorded, not “solved.”
+These were explicit agent proposals under your delegation and are now accepted
+in the packet approval, with the visibility amendment above. They do not claim
+you originally designed each detail. Known first-pass risks remain, not “solved.”
 
-## Work sequence and approval requested
+## Approved work sequence
 
 Six coherent implementation stages: environment → accounts/parties → matching →
 room/chat → feedback/honor/admin → full regression/recovery and handoff. Commit
@@ -51,7 +53,8 @@ tested, self-contained stages locally; leave incomplete capabilities inaccessibl
 No push, PR, deployment, provider application, persistent-data deletion or live
 integration test is authorized by this packet.
 
-Approve **QG-FIRST-PASS-1 revision 1** to implement these stages within the
+DEC-052 approves **QG-FIRST-PASS-1 revision 1 + the visibility amendment** to
+implement these stages within the
 [specification manifest](../../specs/first-pass/README.md),
 [execution plan](execution-plan.md), [engineering choices](engineering-choices.md)
 and [acceptance matrix](acceptance-matrix.md). Meaningful policy/scope changes

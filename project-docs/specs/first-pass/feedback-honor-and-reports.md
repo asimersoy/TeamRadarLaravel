@@ -3,8 +3,10 @@
 **Status/owner/update:** [manifest](README.md). Authority: DEC-026–034,
 DEC-037–043, DEC-045, DEC-047–048. Dependencies: immutable session roster,
 session state, data/security. Acceptance: F08–F10, H01–H08, R01–R06.
-This is a proposed full contract implementing owner direction; edge treatments
-and numerical defaults are agent selections, not claims of prior owner approval.
+This contract, including agent-authored edge treatments and numerical defaults,
+is accepted in the DEC-052 packet approval. It does not claim the owner originally
+designed each detail. Teammates see aggregate honor under DEC-052, never the
+received-feedback authors or individual received ratings described here.
 
 ## Submission contract and timer
 
@@ -57,17 +59,17 @@ At settlement, assess reports before applying any numeric rating:
 5. Tag the admin case with the reason, reporter count, invalidated inputs and
    settlement version. Do not subtract honor, ban, mute or alter a game rank.
 
-Proposed evidence treatment: one unconfirmed early-leave accusation is a report,
+Packet-approved evidence treatment: one unconfirmed early-leave accusation is a report,
 not a proven departure; without self-admission, the existing two-reporter rule
 determines automatic invalidation. There is no game attendance sensor. This is
-an explicit first-pass interpretation for owner review, not an anti-griefing proof.
+an accepted first-pass interpretation, not an anti-griefing proof.
 
 All actual session participants, including original premades and participants
 whose numeric ratings are invalidated, may submit reports. Invalidating numeric
 ratings does not erase their reports or create recursive report-count cascades.
 Distinct colluding accounts can still reach two; stronger safeguards are deferred.
 
-Proposed rank-discrepancy treatment: record it as report evidence for human review
+Packet-approved rank-discrepancy treatment: record it as report evidence for human review
 but not a qualifying dishonorable-action flag for automatic invalidation. Do
 not silently turn an unobserved/incorrectly remembered rank into that consequence.
 The owner review explicitly calls out this separation. No-show-disbanded sessions

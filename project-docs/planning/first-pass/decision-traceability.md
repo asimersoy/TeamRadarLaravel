@@ -1,6 +1,6 @@
 # Decision and deferral coverage
 
-**Status:** planning reconciliation, 2026-10-03. Source of owner authority:
+**Status:** approved-packet reconciliation including DEC-052, 2026-10-03. Source of owner authority:
 [decision register](../../governance/decisions.md), not this table. Each ID is
 mapped to implementation, boundary or retained historical context. Latest
 superseding decision controls; historical choices are not implemented twice.
@@ -25,7 +25,7 @@ Acceptance IDs refer to the [matrix](acceptance-matrix.md).
 | DEC-012 | Extract historical intent, not old method | Architecture; X04 |
 | DEC-013 | Official rank preferred; first-pass fallback later approved DEC-048 | Identity; I01–I03 |
 | DEC-014 | Reconstruction sufficient | No new reconstruction stage |
-| DEC-015 | Incremental decisions; PC provisional pending packet context | Product/owner brief |
+| DEC-015 | Incremental decisions; packet now accepts PC for bounded development, not public platform expansion | Product/owner brief; DEC-052 |
 | DEC-016 | Friendship-free game joining preferred, not implemented | Sessions; future handoff seam |
 | DEC-017 | Conditional prototype/RSO route, no application submission | Identity/release gate |
 | DEC-018 | Valorant selected; live link evidence before reliance | Product/Sessions; X04 |
@@ -48,7 +48,7 @@ Acceptance IDs refer to the [matrix](acceptance-matrix.md).
 | DEC-035 | Optional voice direction, real Discord later | Product; only no-Discord queue |
 | DEC-036 | Game compatibility then honor closeness; widening tunable | Matching/current source nuance; M01/M04 |
 | DEC-037 | Friends/premades now; original premade cannot rate itself | Matching/Feedback; M02/R01 |
-| DEC-038 | Private reputation | Data; X01 |
+| DEC-038 | Non-public reputation; matched honor exception now DEC-052 | Data; X01 |
 | DEC-039 | Initial no-show/early-leaver direction | Sessions/Feedback; S01/S02/R06 |
 | DEC-040 | Human inbox, no penalty tools | Feedback; F10/X04 |
 | DEC-041 | Three dimensions; two distinct reporters invalidate outgoing before review | Feedback; R01–R06/H02 |
@@ -62,6 +62,7 @@ Acceptance IDs refer to the [matrix](acceptance-matrix.md).
 | DEC-049 | Docker dev/deploy direction; stack before plan | Architecture; T01; no deployment |
 | DEC-050 | PG persistence, no Redis, Blade/Livewire; Docker backend/browser tests | Architecture/matrix; T01–T04 |
 | DEC-051 | Modular normal-mode planning and brief approval before coding | Manifest/owner brief/route |
+| DEC-052 | Packet approved with matched-team honor/rank display; reviewer identities still hidden | All module statuses; Data/Sessions; F06/C03/X01 |
 
 ## Deferred-work coverage
 

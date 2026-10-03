@@ -1556,7 +1556,8 @@ mathematics and empirical performance still require specification and tests.
   exposing those fields in a user or operator slice
 - **Supersedes:** none; settles non-public direction, not all of `OQ-006`
 - **Superseded by:** `DEC-045` resolves own-score, reviewer and cleared-admin
-  audience components; peer reputation remains non-public
+  audience components; `DEC-052` permits matched-team honor visibility while
+  keeping honor non-public outside the authorized team and reviewers hidden
 
 ## DEC-039 - Use A Bounded No-Show Challenge And Exclude Early-Leaver Ratings
 
@@ -1821,7 +1822,8 @@ coherent local documentation commit, no push or other external action.
   and schedules the retention-policy review immediately after it.
 - **Supersedes:** own-score/reviewer/admin audience open components of
   `DEC-038`; non-public peer reputation remains in force
-- **Superseded by:** none
+- **Superseded by:** `DEC-052` for the exclusion of matched teammates from honor
+  visibility only; reviewer anonymity and cleared-admin case access remain
 
 ## DEC-046 - Include Native Private Match Chat And Only The No-Discord Queue Now
 
@@ -2053,7 +2055,8 @@ canonical-workflow change, provider research or external action in this unit.
 ## DEC-051 - Prepare A Modular File-Based Plan With One Brief Review Before Implementation
 
 - **Date:** 2026-10-03
-- **Status:** approved planning workflow; concrete packet implementation approval pending
+- **Status:** approved planning workflow; concrete packet subsequently approved
+  with the matched-honor amendment in `DEC-052`
 - **Decision owner:** project owner
 - **Evidence:** after considering normal versus Plan mode and a single-shot
   plan-to-implementation run, the owner accepted the recommended normal-mode
@@ -2080,4 +2083,42 @@ canonical-workflow change, provider research or external action in this unit.
   decision. The brief summary highlights observable delegated edge choices.
 - **Supersedes:** any ambiguity that normal mode removes the review gate or
   that only a single Plan-mode document can carry an implementation plan
+- **Superseded by:** `DEC-052` satisfies the packet-review checkpoint; ongoing
+  scope, delegation, verification and controlled-operation rules remain
+
+## DEC-052 - Approve First-Pass Revision 1 With Matched-Team Honor Visibility
+
+- **Date:** 2026-10-03
+- **Status:** approved packet and explicit visibility amendment
+- **Decision owner:** project owner
+- **Evidence:** owner approves all of QG-FIRST-PASS-1 revision 1 except hiding
+  teammates' honor: when matched, teammates should see each other's honor
+  alongside game rank. The identities of people giving honor feedback stay hidden.
+- **Approved artifact:** the complete QG-FIRST-PASS-1 revision 1 packet at
+  `aa3ded2`, with this exact amendment carried into its specifications, plan
+  and acceptance matrix. Refer to the effective packet as "revision 1 + DEC-052";
+  no unrelated revision or second approval request is required.
+- **Visibility:** show each matched participant's aggregate honor score and
+  game rank to the other authorized members of that matched QGuard session.
+  Own honor remains visible. This does not create public honor profiles,
+  leaderboards, pre-match candidate disclosure or honor visibility for an
+  unrelated friend/outsider. Membership/access controls still apply.
+- **Feedback privacy:** do not disclose who gave a received rating, individual
+  received ratings, report authors or reviewer-to-feedback mappings to players.
+  Visible roster identities are not anonymous; their association with private
+  feedback remains hidden. Existing cleared-admin case access is unchanged.
+- **Implementation interpretation:** display a match-time honor snapshot beside
+  the existing rank snapshot in the authorized roster, using the committed honor
+  that informed matching. This bounded agent detail avoids a live score-change
+  feed that could expose feedback timing; it does not change honor calculation,
+  settlement, eligibility, matching priorities or the owner's live own-score view.
+- **Gate result:** first-pass specification approval is satisfied for the
+  approved execution stages. Reconcile this amendment before application work;
+  do not reopen the completed packet review or claim the app is already built.
+  Normal stage-entry checks, tests and coherent local commits remain required.
+- **Limits:** no push, PR, deployment, persistent-data deletion, history rewrite,
+  provider application, public release, voice recording or held live-test
+  resumption is granted. Deferred work and first-build owner/data review remain.
+- **Supersedes:** `DEC-038`/`DEC-045` and packet wording excluding matched peers
+  from aggregate honor visibility; `DEC-051`'s pending packet-review state
 - **Superseded by:** none

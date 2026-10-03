@@ -1,20 +1,22 @@
 # QGuard Current State
 
-## Latest Checkpoint — First-Pass Packet Ready For Review
+## Latest Checkpoint — First-Pass Packet Approved With Honor Visibility Amendment
 
-As of 2026-10-03, the modular **QG-FIRST-PASS-1 revision 1** specification and
-execution packet is drafted. Start with the
+As of 2026-10-03, the owner approves **QG-FIRST-PASS-1 revision 1 + DEC-052**.
+The one amendment makes matched teammates' aggregate honor visible beside game
+rank; received-feedback authors and individual received ratings stay hidden.
+Start with the
 [brief owner review](planning/first-pass/README.md), then the
-[specification manifest](specs/first-pass/README.md). `DEC-051` authorizes this
-file-based planning and a brief approval checkpoint, not application coding.
-All concrete additional choices are labeled as agent proposals; public launch,
-provider access and held Discord/game tests remain outside this local build.
+[specification manifest](specs/first-pass/README.md). `DEC-052` satisfies the
+`DEC-051` packet checkpoint and accepts the agent-authored engineering choices
+with this amendment. Public launch, controlled operations, provider access and
+held Discord/game tests remain outside this approval.
 The older readiness paragraphs below retain their dated baseline context;
 the missing-draft work they describe is now supplied by this packet.
 
-Next action: owner reviews/approves the named packet, then implementation may
-begin at S1 under the existing gates. No rewrite application directory, runtime
-or application test result has been created by this planning task.
+Next action: execute S1 entry checks and the approved stages; no repeat packet
+approval is needed. Approval/amendment reconciliation is complete; no rewrite
+application directory, runtime or application test result exists yet.
 
 ## Prior Context And Continuing Authority
 
@@ -50,12 +52,13 @@ or application test result has been created by this planning task.
   `DEC-049`/`DEC-050` select Docker, PostgreSQL, no initial Redis and
   Blade/Livewire, with persistent database storage and Docker-based backend/
   browser tests using synthetic accounts.
-  Concrete specifications are now drafted in QG-FIRST-PASS-1, awaiting packet
-  approval; no broad product questionnaire is required
-- **Objective:** obtain brief review of the concrete packet, then execute only
-  after approval; preserve live-test hold and future exclusions
+  Concrete specifications are approved by `DEC-052`, including matched-team
+  honor visibility; feedback privacy remains, with no broad questionnaire required
+- **Objective:** implement the approved first-pass packet from S1; preserve
+  live-test hold, future exclusions and controlled-operation gates
 - **Current route:**
-  [First-pass planning route](routes/PLAN-2026-10-03-first-pass-implementation.md)
+  [Approved execution plan](planning/first-pass/execution-plan.md), with the
+  [owner approval/amendment record](planning/first-pass/review-evidence.md#owner-approval-and-visibility-amendment--2026-10-03)
 
 ## Verified Workspace State
 
@@ -244,22 +247,21 @@ or application test result has been created by this planning task.
   mean into honor. `DEC-043` now opens feedback via each participant's Session
   ended action; first finalized submission starts a ten-minute window, with
   early settlement if everyone finishes. Sessions can include multiple games.
-  Submission/late-report/counting edge details still need explicit slice design
-  and tests, but reversible agent choices are not an upfront questionnaire.
+  Submission/late-report/counting edges now have approved first-pass contracts
+  under `DEC-052`; implementation and actual tests are still required.
   First-pass evidence retention is now `DEC-047`; no actual collection follows.
 - `DEC-042` delegates reversible development choices within approved scope,
   with documented defaults/tests and owner review after the first build.
   Multiple viable options alone do not justify an owner question. Fundamental
   or consequential choices outside the delegation, sensitive data/permissions,
   scope changes and controlled operations retain applicable owner/review gates.
-- No complete product/use boundary, platform/region/mode/audience wedge, rank or
-  API integration, complete coordination operating rules, matching contract, honor
-  formula or detailed effect, moderation policy, detailed architecture,
-  deployment runbook or implementation plan has been approved. Core stack
-  choices are now selected by `DEC-049`/`DEC-050`; supporting tools/versions
-  remain proposals for the concrete packet. Optional Discord
-  room/voice direction is selected but actual integration is excluded now;
-  voice recording remains an unapproved proposal.
+- `DEC-052` approves the bounded local first-pass contracts: PC Competitive
+  five-player grouping, declared-rank fallback, matching, honor formula,
+  coordination, report handling, architecture and implementation stages. This
+  does not approve a complete public-use/audience boundary, real API integration,
+  production operation or later moderation policy. Optional Discord room/voice
+  direction is selected but actual integration is excluded now; voice recording
+  remains an unapproved proposal.
 - `DEC-047` settles temporary development retention: all records stored by
   approved features remain without expiry until explicit deletion; cleared
   admins can inspect them. Immediately after the first implementation, review
@@ -443,11 +445,10 @@ or application test result has been created by this planning task.
 - **Completed stack confirmation, 2026-10-03:** `DEC-050` records explicit
   core-stack approvals and persistent-storage/backend/browser-testing additions.
   The selected stack no longer blocks detailed planning; no app setup occurred.
-- **Next specification work (`DEC-049`/`DEC-050`):** consolidate the first-pass
-  journey, concrete technical/data contracts, bounded agent choices and acceptance tests. Then
-  prepare its execution/commit plan and obtain applicable `DEC-008` approval.
-  No repeat one-through-seven questionnaire, forced final tuning or hypothetical
-  provider-verification policy is needed to prepare that packet.
+- **Completed packet review (`DEC-052`):** owner accepts revision 1 with matched
+  honor shown beside rank and feedback identities hidden. Specs, access matrix,
+  flow/tests and current approval state are reconciled. Next is S1 under the
+  approved plan, not another specification approval question.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
@@ -465,8 +466,9 @@ or application test result has been created by this planning task.
 
 **Update:** the subsequent [modular packet](planning/first-pass/README.md) now
 supplies the specification/plan/test drafting identified below. This earlier
-readiness baseline is not an instruction to draft it again. Concrete packet
-approval remains pending under `DEC-051`.
+readiness baseline is not an instruction to draft it again. The subsequent
+owner approval is `DEC-052`; historical pending statements below describe that
+earlier assessment, not the current gate state.
 
 - **Subsequent stack sequencing:** `DEC-049` requested stack selection before
   detailed planning; `DEC-050` now settles PostgreSQL, Blade/Livewire and no
@@ -515,6 +517,13 @@ approval remains pending under `DEC-051`.
 
 ## Verification State
 
+- Packet approval/amendment unit at clean `aa3ded2`: `DEC-052` records the
+  owner's approval and exact visibility change. Matched aggregate honor is
+  separated from hidden received-feedback authors/details across specifications,
+  data audiences and acceptance criteria. Documentation QA and unrun application
+  checks are recorded in the [owner review record](planning/first-pass/review-evidence.md#owner-approval-and-visibility-amendment--2026-10-03).
+  This unit changes project records only, not the protected workflow or app.
+
 - First-pass planning unit at baseline `c0008f7`: modular scope/state/data/
   architecture/security specifications, six-stage plan and acceptance matrix
   drafted with owner-decision/deferral traceability. Current primary technical
@@ -522,7 +531,8 @@ approval remains pending under `DEC-051`.
   with canonical-order sensitivity explicitly measured. Full documentation
   QA/results are in the [packet review record](planning/first-pass/review-evidence.md).
   No rewrite application, dependency install, container/volume change, live
-  integration test, push or deployment. Owner implementation approval pending.
+  integration test, push or deployment. Approval was pending at that planning
+  checkpoint and is now satisfied by `DEC-052`.
 
 - Core-stack approval/persistence/testing record at clean `13d0657`: owner
   selections reconciled into `DEC-050` and planning entry points. Docker volume

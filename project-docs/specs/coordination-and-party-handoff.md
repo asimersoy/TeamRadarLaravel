@@ -1,8 +1,8 @@
 # QGuard Coordination And Replaceable Party Handoff
 
 **Current first-pass routing:** native room/chat and unavailable game handoff
-are specified concretely in [the first-pass suite](first-pass/README.md), pending
-packet approval. This older module retains approved integration direction and
+are specified concretely in [the first-pass suite](first-pass/README.md), approved
+as revision 1 + DEC-052. This older module retains approved integration direction and
 future boundaries; its staged outline is not a competing execution plan.
 
 ## Status And Authority

@@ -1,13 +1,14 @@
 # QGuard Rewrite Owner Decision Sequence
 
 **Current action, 2026-10-03:** the [first-pass review packet](first-pass/README.md)
-now supplies the modular engineering plan requested here. `DEC-051` authorizes
-drafting in normal mode and one brief review before coding. Use that packet for
-the next approval; this agenda retains how earlier decision groups were settled.
+supplies the modular engineering plan, now approved as revision 1 + `DEC-052`.
+Matched teammates see aggregate honor beside rank; feedback authors remain
+hidden. `DEC-051`'s brief review is satisfied. Use the approved execution plan;
+this agenda retains how earlier decision groups were settled.
 
 - **Record type:** current owner-review packet
 - **Status:** first-pass product answers/core stack selected; detailed packet
-  drafted and awaiting brief review, application implementation not started
+  approved with DEC-052's visibility amendment, application implementation not started
 - **Decision owner:** project owner
 - **Created:** 2026-09-03
 - **Update trigger:** after each owner decision or when new evidence changes a
@@ -60,8 +61,8 @@ explicitly rejects them.
 - Valorant is the current approved game under `DEC-018`; CS2 was researched as
   an additional candidate without superseding that decision. The core stack is
   now approved by `DEC-049`/`DEC-050`; dependable party-entry integration and
-  deployment are not. Proposed first-pass data/implementation contracts are
-  in the new packet and await its approval.
+  deployment are not. First-pass data/implementation contracts are approved
+  in the new packet with DEC-052's visibility amendment.
 
 ### Approved Owner Decisions Already In Force
 
@@ -494,14 +495,11 @@ resource constraints, business non-goals, and operational service boundary.
 
 ## Decision Group 8 - Technical Specification And Implementation Plan
 
-**Current next step:** draft the technical/acceptance packet and plan using
-the core stack and persistence/testing requirements selected in `DEC-050`.
-The owner does not need to design those artifacts. The first-pass owner question set is complete enough to
-prepare this packet under `DEC-042`/`DEC-047`/`DEC-048`. The agent supplies
-concrete engineering choices and acceptance coverage rather than asking the
-owner to design them. The latest readiness request is not approval to start
-coding or a `DEC-008` override. See the
-[current readiness assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
+**Current next step:** execute S1 of the [approved plan](first-pass/execution-plan.md).
+DEC-052 approves the completed packet and its matched-team honor amendment;
+the review gate is satisfied without an override. No new questionnaire is needed.
+The checklist below explains the preparation already performed for this slice;
+it must not route the implementation agent into repeating settled choices.
 
 Only after the relevant components of Groups 1-7 are sufficiently settled for
 the intended implementation slice:

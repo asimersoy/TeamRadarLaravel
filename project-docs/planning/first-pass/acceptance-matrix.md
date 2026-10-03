@@ -1,7 +1,8 @@
 # First-pass acceptance and regression matrix
 
-**Status:** specified, application tests not run. Applies to QG-FIRST-PASS-1
-revision 1; owner direction DEC-050. Execution owner: implementation agent.
+**Status:** owner-approved criteria, application tests not run. Applies to
+QG-FIRST-PASS-1 revision 1 + DEC-052; owner direction DEC-050/052.
+Execution owner: implementation agent.
 Each row needs actual test paths, command, result and evidence at its stage.
 The [flow inventory](../../specs/first-pass/product-and-flows.md) defines F01–F12.
 This table is not a completed test report.
@@ -53,7 +54,7 @@ auth→room→feedback loop. A missing engine check must be reported, not passed
 | S04 | Button alone no timer; first finalized/skip starts 10 minutes; all finalized early close; no submit no timer; missed/return/late paths clear | Fake-clock PG, browser F08/F09 |
 | C01 | A–E private room; F–J/O and removed target cannot read/write/subscribe, including guessed IDs and stale subscription hints | HTTP/Livewire/PG, multi-context browser F06 |
 | C02 | Escaping, malicious URL rejection, length/rate limits; retry key prevents duplicate message; closed room read/write rules | PG, browser F06 |
-| C03 | Reverb down/reconnect/poll recovers ordered DB messages and status; no payload leaks honor/reviewer identity | Integration, browser F06 |
+| C03 | Reverb down/reconnect/poll recovers ordered DB messages/status; matched roster fetch includes permitted honor snapshot; broadcasts/outsider responses never leak scores or reviewer identity | Integration, browser F06 |
 | R01 | No self/premade numeric rating; outsiders rejected; ordinary site friends may rate when not co-premade; full original five cannot rate each other | PG, browser F08 |
 | R02 | Two reporters across categories invalidate outgoing only; one reporter with many flags insufficient; incoming remains; rank observation not counted | PG, browser F08/F10 |
 | R03 | Fast rater finalized first still invalidated by timely later reports; no score applies before close; blocked/invalid inputs also excluded from raw/count | PG, browser F08/F09 |
@@ -68,7 +69,7 @@ auth→room→feedback loop. A missing engine check must be reported, not passed
 | H06 | Same stored inputs in different arrival orders produce same canonical settlement; changing canonical order can differ and is documented | PHPUnit, PG |
 | H07 | Overlapping-session settlements serialized and auditable; config version fixed for one settlement; retry/replay exact within storage tolerance | PG concurrency, regression |
 | H08 | >=10,000 deterministic bounded synthetic inputs; invalid config/NaN rejected; constants adjustable without refetching old history | PHPUnit property-style/regression |
-| X01 | Own honor only; player hidden ratings/reporters; cleared-admin relevant full case; no secret fields in HTML/JSON/socket/errors | Authorization/serialization, browser F01–F11 |
+| X01 | Own current honor and matched-team honor snapshots visible beside rank; outsiders/unrelated friends/pre-match lookup cannot read scores; snapshot does not change with later feedback; received ratings/reviewer-report mappings hidden; cleared-admin full case; no secrets in HTML/JSON/socket/errors | Authorization/serialization, browser F01–F11 |
 | X02 | CSRF, mass assignment/ID spoofing, auth/session expiry and throttling; no unprotected test clock, seed endpoint or admin grant | Backend security regression, browser |
 | X03 | Ordinary and reported business records survive settlement; no automatic purge; inventory covers actual fields/audiences/backups | PG, inventory/schema review |
 | X04 | Fresh app isolated from legacy; protected workflow untouched; disabled real integrations, Redis absence, no production debug/demo config | Diff/config/dependency review |

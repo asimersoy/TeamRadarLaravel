@@ -1,7 +1,7 @@
 # Identity and rank source contract
 
 **Status/owner/update:** [manifest](README.md). Authority: DEC-013, DEC-017,
-DEC-018, DEC-044, DEC-045, DEC-048. Dependencies: [data/security](data-and-security.md),
+DEC-018, DEC-044, DEC-045, DEC-048, DEC-052. Dependencies: [data/security](data-and-security.md),
 [matching](parties-and-matchmaking.md). Acceptance: F01–F02, F08, I01–I03.
 
 ## QGuard identity
@@ -57,7 +57,9 @@ no silent mutation of a queued roster. Matched session stores immutable rank,
 source, identifier and premade snapshots. Later profile edits affect only future
 queue entries and do not falsify old report context.
 
-Show stated rank and its provenance to matched teammates, never their honor.
+Show stated rank/provenance and the participant's match-time aggregate honor
+snapshot to authorized matched teammates (DEC-052). Do not attach private
+received-rating details or reviewer identities to that roster.
 At Session ended ask whether a teammate's observed rank differed. Allow
 Matches / Different / Not observed; Different can include observed rank and
 brief optional explanation. A response is testimony, not proof or official

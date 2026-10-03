@@ -2,7 +2,10 @@
 
 **Record:** QG-FIRST-PASS-1 revision 1, planning only, 2026-10-03.
 **Author/reviewer:** primary agent self-review; not independent specialist review.
-Owner packet approval remains pending. Baseline `c0008f7`, new-development.
+Historical planning baseline: `c0008f7`, new-development. Owner approval was
+pending when the following planning checks ran; the subsequent approval and
+amendment are recorded in the final section below. Do not treat the historical
+pending state as the current implementation gate.
 
 ## Review scope
 
@@ -91,3 +94,54 @@ external API credential check, provider registration or deployment. No independe
 security/legal review or public release approval. Future acceptance rows are not
 passing results. Known collusion, self-reported attendance, premature completion,
 raw-reference startup sensitivity and canonical-order bias remain explicit.
+
+## Owner approval and visibility amendment — 2026-10-03
+
+**Verdict:** owner approves QG-FIRST-PASS-1 revision 1 at `aa3ded2` with the
+single matched-team honor amendment in [DEC-052](../../governance/decisions.md#dec-052---approve-first-pass-revision-1-with-matched-team-honor-visibility).
+Effective packet: **revision 1 + DEC-052**. The specification gate is satisfied;
+S1 entry checks and the approved implementation stages are next. This is owner
+approval plus agent reconciliation, not an independent specialist review.
+
+**Route and baseline:** inspected clean `new-development` at `aa3ded2` before
+editing. Followed the mandatory repository/package entry path, task-routing
+checklist, project registers and workflow governance. Applied the always-required
+documentation, workflow/review, QA/completion, Git/release and coverage procedures,
+plus product planning, decision/recommendation safety, privacy/data/legal,
+audit/reconciliation, external review and deferral/owner review. This bounded
+unit records an approval and changes the audience for aggregate reputation;
+it does not change the honor calculation, matching policy or feedback eligibility.
+
+**Owner boundary:** authorized matched teammates see each other's aggregate
+honor beside game rank. Received individual ratings and their authors remain
+hidden from players; authorized admin case access remains. No public profile,
+leaderboard or unrelated-friend/outsider disclosure is approved. Visible roster
+identities are not themselves anonymous. Hiding author mappings is not a promise
+that players can never infer who submitted feedback.
+
+**Agent detail:** use the committed match-time honor snapshot alongside the
+rank snapshot, not a live teammate score-change feed. Own honor remains current.
+This accepted-scope implementation interpretation is labeled separately from
+the owner's explicit audience decision in EC15 and DEC-052. It limits feedback
+timing exposure without claiming to eliminate retaliation or social pressure.
+
+**Reconciliation:** updated the manifest, product flows, identity/rank, matching,
+session and data-access contracts, feedback privacy wording, execution plan,
+engineering choices, traceability and C03/X01 acceptance criteria. Updated live
+indexes/questions and supersession pointers so implementation encounters neither
+the old matched-peer exclusion nor a stale packet-approval question. Historical
+planning results above remain historical. No held test, release permission,
+deferred policy or protected reusable workflow is changed.
+
+**Verification:** checked all 70 project Markdown files: 303 local links and
+42 fragment targets resolve. DEC-001–052 and DEF-001–012 are unique/sequential
+and mapped in traceability; all 12 flow IDs and 37 domain/infrastructure
+acceptance IDs remain unique. Reviewed the complete scoped diff and searched
+current routes for the superseded honor exclusion and pending-approval wording;
+remaining historical states are labeled as historical. `git diff --check`
+passed. All 23 changed files are project records; the protected package, legacy
+application and runtime are unchanged. Save as one coherent local documentation
+commit and verify the post-commit tree. Application PHPUnit/Pest, PostgreSQL,
+browser and rendered checks have not run: no app code or containers changed.
+Acceptance criteria are requirements, not passing test results. No push, PR,
+deployment, provider action or live game/Discord test was performed.

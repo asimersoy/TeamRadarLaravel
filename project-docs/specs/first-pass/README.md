@@ -1,10 +1,11 @@
 # QGuard first-pass specification manifest
 
-- **Packet:** QG-FIRST-PASS-1, revision 1, 2026-10-03.
-- **Status:** proposed implementation specification, awaiting owner packet review.
+- **Packet:** QG-FIRST-PASS-1, revision 1 + DEC-052, 2026-10-03.
+- **Status:** owner-approved for first-pass implementation with the matched-team
+  honor visibility amendment; implementation not yet started.
 - **Owner:** project owner; author and implementation-detail steward: coding agent.
 - **Authority:** latest owner decisions in [the register](../../governance/decisions.md),
-  especially DEC-008 and DEC-025–DEC-051. A plan is not its own approval.
+  especially DEC-008 and DEC-025–DEC-052. Owner approval is recorded in DEC-052.
 
 ## Purpose and scope
 
@@ -26,14 +27,16 @@ not a public launch or a claim of working game/Discord integration.
 These files plus the [execution plan](../../planning/first-pass/execution-plan.md),
 [acceptance matrix](../../planning/first-pass/acceptance-matrix.md) and
 [engineering choices](../../planning/first-pass/engineering-choices.md) constitute
-the proposed implementation packet. The [brief owner review](../../planning/first-pass/README.md)
-is the entry point; approval must identify this packet/revision.
+the approved implementation packet. The [brief owner review](../../planning/first-pass/README.md)
+records its scope and the visibility amendment: matched teammates see aggregate
+honor beside rank, without seeing feedback authors or received-rating details.
 
 ## Interpretation and updates
 
 Owner-selected behavior is marked by DEC references. Additional concrete choices
-are **agent proposals under existing delegation**, not new owner decisions.
-Their acceptance as part of this packet does not transfer policy authority.
+were authored as **agent selections under existing delegation**, then accepted
+as part of the packet by DEC-052. This does not transfer policy authority or
+claim the owner originally designed every technical detail.
 Verified external facts live in the [source record](../../research/first-pass-technical-foundations.md).
 Assumptions: local synthetic use, one application deployment and no available
 approved Riot credentials. Recheck those at implementation entry.
@@ -52,7 +55,8 @@ verified merely because a requirement is written here.
 
 ## Gates
 
-1. Owner approves this named packet before S1 application implementation.
+1. Packet approval is satisfied by DEC-052; proceed through S1 entry checks
+   against revision 1 plus the recorded amendment, without another packet vote.
 2. Each stage passes its tests/review before its coherent local commit and next stage.
 3. First complete build receives owner flow review and immediate DEF-012 data review.
 4. Real-user/public release, provider access, deployment and held live tests have

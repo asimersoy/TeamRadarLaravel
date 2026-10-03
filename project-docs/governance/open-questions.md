@@ -6,9 +6,9 @@ their dependencies become relevant; they are not one initial questionnaire.
 Historical unknowns do not automatically become requirements.
 
 **2026-10-03 planning update:** QG-FIRST-PASS-1 revision 1 now supplies concrete
-proposed contracts for the bounded local first build. Start at the
-[brief review](../planning/first-pass/README.md). `DEC-051` keeps packet approval
-before coding. Remaining public-launch/provider questions are not a new broad
+contracts for the bounded local first build, approved with the matched-honor
+amendment under `DEC-052`. Start at the [approved packet](../planning/first-pass/README.md).
+The `DEC-051` review checkpoint is satisfied. Remaining public-launch/provider questions are not a new broad
 questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-001 - Is More Legacy Evidence Available?
@@ -158,13 +158,14 @@ questionnaire or permission to leave first-pass contracts unspecified.
   audiences now selected; reversible first-pass details delegated;
   first-pass retention and identity/rank responsibility now selected;
   actual contracts and acceptance specifications now drafted in QG-FIRST-PASS-1,
-  awaiting packet approval; later public policy questions remain open
+  approved by `DEC-052` with matched-team honor visible and reviewer identities
+  hidden; later public policy questions remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
   trust/safety acceptance criteria
-- **Blocks:** implementing these flows before packet approval, and actual
-  real-user collection/release without the remaining applicable reviews.
+- **Blocks:** actual real-user collection/release without remaining applicable
+  reviews; not implementation of the approved local first-pass packet.
 - **Does not block:** drafting the bounded local-development contracts and
   explicit non-goals under existing decisions/delegation.
 - **Current owner direction, updated 2026-10-03:** `DEC-026` selects honor in
@@ -232,7 +233,8 @@ questionnaire or permission to leave first-pass contracts unspecified.
      persistence is optional agent choice, not required now. Recovery details
      remain to specify under `DEC-042`; stronger involvement/anti-griefing
      verification is later `DEF-008`/`DEF-011`, not current Discord work.
-  4. **Visibility:** own honor shown; no required received-feedback/history
+  4. **Visibility:** own honor shown; `DEC-052` additionally shows matched
+     teammates' aggregate honor beside game rank; no required received-feedback/history
      screen; reviewer identities hidden from players; data-cleared admins see
      available project case/account context, including reporter/rater identities
      and submitted contents (`DEC-045`). Enforcement and retention contracts
@@ -351,11 +353,11 @@ questionnaire or permission to leave first-pass contracts unspecified.
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
 - **Status:** core stack and testing direction settled by `DEC-049`/`DEC-050`;
-  concrete technical/acceptance packet now drafted; approval pending under `DEC-051`
+  concrete first-pass technical/acceptance packet approved under `DEC-052`
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
-- **Blocks:** complete technical/operating and execution approval; not drafting
-  from the selected stack or reopening the settled first-pass product answers.
+- **Blocks:** later production/operating decisions not covered by the packet;
+  no remaining first-pass specification approval blocker.
 - **Does not block:** architecture-neutral product decisions and targeted
   feasibility research, or agent drafting of the first-pass technical options,
   contracts and acceptance packet. Do not make the owner choose every reversible
@@ -376,8 +378,9 @@ questionnaire or permission to leave first-pass contracts unspecified.
   testable completion evidence.
 - **Current readiness:** [QG-FIRST-PASS-1](../planning/first-pass/README.md) supplies
   the new-code layout, slice specifications, acceptance package and execution
-  plan. Owner packet approval under `DEC-008`/`DEC-051` remains before coding;
-  no broad owner questionnaire or repeated stack selection is needed.
+  plan. `DEC-052` satisfies packet approval under `DEC-008`/`DEC-051`, including
+  the matched-honor amendment; S1 entry checks are next. No broad owner
+  questionnaire or repeated stack selection is needed.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).

@@ -1,12 +1,16 @@
 # Sessions, private chat and unimplemented game handoff
 
 **Status/owner/update:** [manifest](README.md). Authority: DEC-024, DEC-035,
-DEC-039, DEC-043, DEC-046. Dependencies: matching, feedback, data/security.
+DEC-039, DEC-043, DEC-046, DEC-052. Dependencies: matching, feedback, data/security.
 Acceptance: F06–F09, S01–S04, C01–C03.
 
 ## Session state and attendance
 
 Creating a match commits exactly five participants and origin/rank snapshots.
+The roster also displays each participant's match-time aggregate honor snapshot
+beside their game rank, to authorized matched members only. This is a score
+display, not received-feedback disclosure: no reviewer identities, individual
+received ratings, report authors or score-update stream for teammates.
 The QGuard session becomes `active`; it is not proof a game lobby exists.
 Each participant has `matched`, `acknowledged`, `ended`, or `removed_no_show`
 attendance, independent from feedback status. I joined is an acknowledgment,
@@ -46,11 +50,11 @@ If the target has ended or the session has already closed, resolve the request
 as stale instead of removing them from a new session. Ending is not game-join
 proof; preserve the attempted no-show report for later human review.
 
-Proposed first-pass handling: a no-show-disbanded session produces no numeric
+Packet-approved first-pass handling: a no-show-disbanded session produces no numeric
 honor feedback for anyone because shared play has not been established. Preserve
 votes/reports for admins, close room writes and keep the disband reason. This
-edge policy is surfaced in the owner review, not mislabeled as an explicit
-past owner selection. Never modify a different/new active session while releasing
+agent-authored edge policy was accepted in the packet review (DEC-052), not an
+earlier owner selection. Never modify a different/new active session while releasing
 old slots. Self-acknowledgment and deadline execution race on the same locked row.
 
 ## Session ended and room lifetime

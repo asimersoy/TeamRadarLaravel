@@ -2,18 +2,21 @@
 
 **Implementation routing update, 2026-10-03:** the
 [first-pass specification suite](first-pass/README.md) now turns these decisions
-into concrete proposed contracts and tests. Its [brief review](../planning/first-pass/README.md)
-is the pending approval checkpoint. Historical/provisional notation below is
+into concrete contracts and tests, approved as revision 1 + DEC-052. The
+[brief review](../planning/first-pass/README.md) records that approval and the
+matched-team honor visibility amendment. Historical/provisional notation below is
 not a second unresolved selection or permission to omit later owner decisions.
 
 - **Record type:** current modular product specification
-- **Status:** partially approved; not implementation-ready
+- **Status:** approved foundations plus historical/future proposals; concrete
+  first-pass implementation authority is the linked suite, not this document alone
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-048`
+- **Authority:** `DEC-009` through `DEC-048`, with visibility amended by `DEC-052`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
-- **Implementation authority:** none
+- **Implementation authority:** approved first-pass suite under `DEC-052`; no
+  independent authority to implement this document's future proposals
 
 ## Approved Foundations
 
@@ -235,10 +238,12 @@ new penalties or access rights are not.
 
 ### Private Reputation Direction
 
-`DEC-038`/`DEC-045` keep peer honor/feedback non-public, but players see their
-own honor score. A received-feedback/history/per-match points screen is not
-required for this version. Reviewer identities are hidden from players, not
-irreversibly removed from moderation evidence.
+`DEC-052` amends `DEC-038`/`DEC-045`: players see their own honor and, once
+matched, their teammates' aggregate honor alongside game rank in the authorized
+session roster. This is not public honor or unrelated-friend profile access.
+A received-feedback/history/per-match points screen is not required for this
+version. Reviewer identities and individual received feedback remain hidden
+from players, not irreversibly removed from moderation evidence.
 
 Only admins granted data clearance enter the admin panel. They can inspect all
 available QGuard case/account context, including feedback/report authors,
