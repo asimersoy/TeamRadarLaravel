@@ -20,7 +20,16 @@ x-test: &test
     SESSION_DRIVER: database
     CACHE_STORE: database
     QUEUE_CONNECTION: database
-    BROADCAST_CONNECTION: "null"
+    BROADCAST_CONNECTION: reverb
+    REVERB_APP_ID: qguard-test
+    REVERB_APP_KEY: ${REVERB_APP_KEY:?Run init-env}
+    REVERB_APP_SECRET: ${REVERB_APP_SECRET:?Run init-env}
+    REVERB_HOST: reverb
+    REVERB_PORT: 8080
+    REVERB_SCHEME: http
+    REVERB_BROWSER_HOST: reverb
+    REVERB_BROWSER_PORT: 8080
+    QGUARD_BROWSER_CLOCK: "true"
     MAIL_MAILER: smtp
     MAIL_HOST: mail
     MAIL_PORT: 1025
@@ -51,6 +60,14 @@ services:
     <<: *test
     profiles: [tools]
     command: ["php", "artisan", "schedule:work"]
+  worker:
+    <<: *test
+    profiles: [tools]
+    command: ["php", "artisan", "queue:work", "--sleep=1", "--tries=3"]
+  reverb:
+    <<: *test
+    profiles: [tools]
+    command: ["php", "artisan", "reverb:start", "--host=0.0.0.0", "--port=8080"]
   nginx:
     image: nginx:1.29-alpine@sha256:5616878291a2eed594aee8db4dade5878cf7edcb475e59193904b198d9b830de
     ports: ["127.0.0.1:8121:80"]
@@ -66,7 +83,7 @@ services:
     image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
     profiles: [tools]
     working_dir: /app
-    volumes: [".:/app", "test-storage:/fixtures:ro"]
+    volumes: [".:/app", "test-storage:/fixtures"]
     environment:
       BASE_URL: http://nginx
     entrypoint: ["npx", "playwright", "test"]

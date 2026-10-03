@@ -7,7 +7,8 @@ Compose project. All PHP runs in Docker. This is not approved for public users.
 
 ## First setup
 
-Accounts, parties and matching are available; later stages remain disabled until verified.
+Accounts, parties, matching and private session chat are available; feedback and
+admin are not implemented yet.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,

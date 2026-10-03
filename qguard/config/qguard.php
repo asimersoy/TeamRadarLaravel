@@ -3,5 +3,7 @@
 return [
     'public_enabled' => (bool) env('QGUARD_PUBLIC_ENABLED', false),
     'disposable_test_database' => (bool) env('QGUARD_TEST_DATABASE', false),
-    'stage' => 1,
+    'reverb_browser_host' => env('REVERB_BROWSER_HOST', 'localhost'),
+    'reverb_browser_port' => (int) env('REVERB_BROWSER_PORT', 8122),
+    'browser_clock' => (bool) env('QGUARD_BROWSER_CLOCK', false),
 ];

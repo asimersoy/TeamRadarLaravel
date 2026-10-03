@@ -1,7 +1,7 @@
 # First pass implementation record
 
-**Status:** S1–S3 complete and verified locally. S4 sessions/chat is next;
-S4–S6 are not yet implemented. Updated 2026-10-03.
+**Status:** S1–S4 complete and verified locally. S5 feedback/honor/admin is next;
+S5–S6 are not yet implemented. Updated 2026-10-03.
 **Owner:** primary implementation agent. Update after each stage or blocker.
 **Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
 explicit instruction to start implementation and continue through completion.
@@ -195,3 +195,40 @@ chat and participant lifecycle rather than pretending they already work.
   resets and started only for browser checks; persistent development is separate.
 
 Remaining: S4–S6 domain behavior, full acceptance mapping and recovery/load checks.
+
+S3 committed as `bc42a4d`.
+
+## S4 private text and session lifecycle
+
+Implemented participant acknowledgment/end, five-minute unanimous no-show voting,
+30-second response deadlines, stale-target protection and scoped slot release.
+Disbanding affects QGuard only, never a game client. Ended participants keep read
+access; removed targets lose room/message/socket authorization. Chat stores plain
+text, rejects script URLs, limits length/rate, deduplicates retries and paginates
+by ID. Reverb sends only room/version hints; each fetch reauthorizes and polling
+recovers missed hints. Notifications cannot undo an already committed message.
+Client status distinguishes sending, sent, failed/retry and live/polling connection.
+[Laravel broadcasting guidance](https://laravel.com/framework/docs/13.x/broadcasting)
+was checked before integrating its private-channel client.
+
+- Additive migrations and Vite build passed. Pusher browser dependency locked;
+  npm audit reported no known advisories at installation.
+- Pest **33 tests / 143 assertions passed**, including no-show timing/quorum,
+  stale target, new-party safety, deadline idempotence, retained/closed chat,
+  escaping/script rejection, cursor paging and subscription authorization.
+- A separate-process response/deadline race yields either acknowledgment or
+  removal consistently, with corresponding active-slot state. PHPUnit Unit
+  **3 / 3 passed**; Pint formatted 67 PHP files.
+- Earlier five Chromium flows passed; the sixth initially exposed an HTTP-origin
+  `crypto.randomUUID` limitation. Replaced it with Web Crypto random bytes and
+  an RFC-compatible UUID layout; real chat/no-show flow then passed. It exercises
+  five contexts, literal script text, offline failure/retry without duplicates,
+  unanimous voting, acknowledgment cancellation, end/requeue and read-only chat.
+- Desktop and 390px chat screenshots inspected and saved to outer outputs/s4.
+  Private test-only clock uses a non-web storage file, requires testing plus the
+  disposable DB guard and is disabled in backend tests and normal development.
+  No public clock/fixture endpoint exists. Test workers stop before backend resets.
+
+Full fresh-suite rerun, explicit Reverb-outage test and all other S6 cross-flow/
+operational/security checks remain required. No feedback or admin capability is
+advertised as complete yet. No protected workflow or legacy application changed.

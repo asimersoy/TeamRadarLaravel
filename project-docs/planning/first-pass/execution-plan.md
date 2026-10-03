@@ -1,8 +1,8 @@
 # QGuard execution plan — QG-FIRST-PASS-1
 
 **Status:** approved under DEC-052 for revision 1 plus its matched-honor amendment;
-S1–S3 are verified under the owner's explicit start-through-completion instruction;
-S4 session/chat implementation is next.
+S1–S4 are verified under the owner's explicit start-through-completion instruction;
+S5 feedback/honor/admin implementation is next.
 The DEC-008/051 packet gate is satisfied. Actual evidence and remaining stages
 are tracked in the [implementation record](implementation-evidence.md).
 All modules in the [manifest](../../specs/first-pass/README.md)

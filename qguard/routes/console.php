@@ -1,6 +1,7 @@
 <?php
 
 Schedule::command('qguard:match')->everyFiveSeconds()->withoutOverlapping();
+Schedule::command('qguard:session-deadlines')->everySecond()->withoutOverlapping();
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;

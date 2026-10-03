@@ -15,7 +15,7 @@ The older readiness paragraphs below retain their dated baseline context;
 the missing-draft work they describe is now supplied by this packet.
 
 The owner subsequently explicitly authorized implementation through completion.
-S1–S3 are verified in a fresh `qguard/` directory; S4 session/chat work is next. See the
+S1–S4 are verified in a fresh `qguard/` directory; S5 feedback/honor/admin work is next. See the
 [implementation record](planning/first-pass/implementation-evidence.md) for
 actual stage status, commands and checks. No repeat packet approval is needed;
 foundation PostgreSQL/backend/browser checks have passed, not the domain suite.
