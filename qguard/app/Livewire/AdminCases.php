@@ -15,6 +15,13 @@ class AdminCases extends Component
 
     public string $filter = 'all';
 
+    public function updated($property): void
+    {
+        if (in_array($property, ['status', 'filter'])) {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         abort_unless(auth()->check(), 403);

@@ -6,9 +6,12 @@ use App\Domain\Feedback\AdminReview;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class AdminCase extends Component
 {
+    use WithPagination;
+
     #[Locked]
     public int $caseId;
 
@@ -55,7 +58,7 @@ class AdminCase extends Component
         $ratings = DB::table('behavior_ratings')->whereIn('submission_id', $submissions->pluck('id'))->get();
         $reports = DB::table('conduct_reports')->where('game_session_id', $sessionId)->get();
         $observations = DB::table('rank_observations')->whereIn('submission_id', $submissions->pluck('id'))->get();
-        $messages = DB::table('chat_messages')->where('game_session_id', $sessionId)->orderBy('id')->get();
+        $messages = DB::table('chat_messages')->where('game_session_id', $sessionId)->orderBy('id')->paginate(50);
         $settlement = DB::table('honor_settlements')->where('game_session_id', $sessionId)->first();
         $applications = $settlement ? DB::table('honor_applications')->where('settlement_id', $settlement->id)->orderBy('id')->get() : collect();
         $noShows = DB::table('no_show_requests')->where('game_session_id', $sessionId)->get();

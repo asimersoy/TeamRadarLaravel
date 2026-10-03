@@ -5,3 +5,4 @@ vendor
 storage
 test-results
 playwright-report
+bootstrap/cache/*.php

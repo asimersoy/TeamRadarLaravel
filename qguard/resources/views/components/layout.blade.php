@@ -21,6 +21,7 @@
         @if(auth()->check() && auth()->user()->admin_cleared)<a href="{{ route('admin.cases') }}">Human review</a>@endif
     </header>
     <main id="main" class="page-shell">
+        <noscript><p class="notice">Enable JavaScript to use the interactive dashboard, rooms and feedback forms.</p></noscript>
         {{ $slot }}
     </main>
     <footer class="site-footer">QGuard · Better company, one session at a time.<span>Game joining and Discord are not integrated.</span></footer>

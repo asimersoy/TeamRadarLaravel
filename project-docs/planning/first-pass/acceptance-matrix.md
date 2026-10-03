@@ -1,12 +1,13 @@
 # First-pass acceptance and regression matrix
 
-**Status:** owner-approved criteria; foundation checks have run, domain criteria
-remain unverified. See [actual stage evidence](implementation-evidence.md). Applies to
+**Status:** owner-approved criteria, implemented and verified for local synthetic
+use. See [row-by-row results](verification-results.md) and
+[actual stage evidence](implementation-evidence.md). Applies to
 QG-FIRST-PASS-1 revision 1 + DEC-052; owner direction DEC-050/052.
 Execution owner: implementation agent.
-Each row needs actual test paths, command, result and evidence at its stage.
+Each row is mapped to actual test paths, commands, results and stage evidence.
 The [flow inventory](../../specs/first-pass/product-and-flows.md) defines F01–F12.
-This table is not a completed test report.
+This table defines the criteria; the linked results are the completed test report.
 
 ## Fixtures and environments
 

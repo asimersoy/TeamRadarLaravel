@@ -1,0 +1,16 @@
+import {test,expect} from '@playwright/test';
+import {credentials,login} from '../Browser/helpers';
+import {randomBytes} from 'node:crypto';
+test('expired recovery, duplicate registration, password change and admin concurrent review',async({page,context,browser})=>{
+ test.setTimeout(60000);const a=credentials().a;const password=randomBytes(20).toString('hex');
+ await page.goto('/reset-password/expired-token?email='+encodeURIComponent(a.email));await page.getByLabel('Password',{exact:true}).fill(password);await page.getByLabel('Confirm password').fill(password);await page.getByRole('button',{name:'Save new password'}).click();await expect(page.getByRole('alert')).toContainText(/token|invalid/i);
+ await page.goto('/register');await page.getByLabel('Public handle').fill(a.handle);await page.getByLabel('Email',{exact:true}).fill(a.email);await page.getByLabel('Password',{exact:true}).fill(password);await page.getByLabel('Confirm password').fill(password);await page.getByRole('button',{name:'Create account',exact:true}).click();await expect(page.getByRole('alert')).toContainText('already been taken');
+ await login(page,'a');
+ async function change(oldPassword:string,newPassword:string){await page.getByLabel('Current password',{exact:true}).fill(oldPassword);await page.getByLabel('New password',{exact:true}).fill(newPassword);await page.getByLabel('Confirm new password').fill(newPassword);await page.getByRole('button',{name:'Change password',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Password changed'})).toBeVisible();}
+ await change(a.password,password);await page.getByRole('button',{name:'Sign out'}).click();await page.goto('/login');await page.getByLabel('Email',{exact:true}).fill(a.email);await page.getByLabel('Password',{exact:true}).fill(password);await page.getByRole('button',{name:'Sign in',exact:true}).click();await expect(page).toHaveURL(/dashboard/);await change(password,a.password);
+ await page.goto('/verify-email/999/invalid?expires=1&signature=invalid');await expect(page.getByText('403',{exact:true})).toBeVisible();
+ const adminContext=await browser.newContext();const admin=await adminContext.newPage();await login(admin,'admin');await admin.goto('/admin/cases');await admin.getByLabel('Case status').selectOption('reviewed');await expect(admin.getByText('No cases match these filters.',{exact:true})).toBeVisible();await admin.getByLabel('Case status').selectOption('open');await admin.getByRole('link',{name:/Session #/}).first().click();
+ const other=await adminContext.newPage();await other.goto(admin.url());await admin.getByLabel('Internal review note').fill('Concurrent review fixture');await admin.getByRole('button',{name:'Save review'}).click();await expect(admin.getByRole('status').filter({hasText:'Review saved'})).toBeVisible();await other.getByLabel('Internal review note').fill('Stale review should fail');await other.getByRole('button',{name:'Save review'}).click();await expect(other.getByRole('alert')).toContainText('Reload');
+ for(const width of [1280,390]){await other.setViewportSize({width,height:900});expect(await other.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await other.screenshot({path:`test-results/admin-review-${width}.png`,fullPage:true});}
+ await adminContext.close();
+});

@@ -1,9 +1,9 @@
 # QGuard execution plan — QG-FIRST-PASS-1
 
 **Status:** approved under DEC-052 for revision 1 plus its matched-honor amendment;
-S1–S5 are verified under the owner's explicit start-through-completion instruction;
-S6 full verification and operational handoff is next.
-The DEC-008/051 packet gate is satisfied. Actual evidence and remaining stages
+S1–S6 are implemented and verified under the owner's explicit start-through-completion
+instruction. The working-flow and DEF-012 stored-data owner reviews are next.
+The DEC-008/051 packet gate is satisfied. Actual stage and acceptance evidence
 are tracked in the [implementation record](implementation-evidence.md).
 All modules in the [manifest](../../specs/first-pass/README.md)
 and the [acceptance matrix](acceptance-matrix.md) govern the complete slice.

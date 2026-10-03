@@ -1,0 +1,66 @@
+# Preparation only. Never start without separate deployment authorization.
+name: qguard-production
+x-runtime: &runtime
+  image: qguard-app:production
+  restart: unless-stopped
+  env_file: ${QGUARD_PRODUCTION_ENV_FILE:-.env.production}
+  environment:
+    APP_ENV: production
+    APP_DEBUG: "false"
+    QGUARD_PUBLIC_ENABLED: "false"
+    QGUARD_TEST_DATABASE: "false"
+    QGUARD_BROWSER_CLOCK: "false"
+    DB_CONNECTION: pgsql
+    DB_HOST: postgres
+    SESSION_DRIVER: database
+    SESSION_SECURE_COOKIE: "true"
+    CACHE_STORE: database
+    QUEUE_CONNECTION: database
+    BROADCAST_CONNECTION: reverb
+    REVERB_HOST: reverb
+    REVERB_PORT: 8080
+    REVERB_SCHEME: http
+    REVERB_SCALING_ENABLED: "false"
+  volumes: ["runtime-storage:/app/storage"]
+  depends_on:
+    postgres:
+      condition: service_healthy
+services:
+  app:
+    <<: *runtime
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: production
+  worker:
+    <<: *runtime
+    command: ["php", "artisan", "queue:work", "--sleep=1", "--tries=3", "--timeout=60"]
+  scheduler:
+    <<: *runtime
+    command: ["php", "artisan", "schedule:work"]
+  reverb:
+    <<: *runtime
+    command: ["php", "artisan", "reverb:start", "--host=0.0.0.0", "--port=8080"]
+    ports: ["127.0.0.1:8081:8080"]
+  nginx:
+    image: qguard-web:production
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: production-web
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [app]
+    restart: unless-stopped
+  postgres:
+    image: postgres:18-bookworm@sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650
+    env_file: ${QGUARD_PRODUCTION_ENV_FILE:-.env.production}
+    volumes: ["production-postgres:/var/lib/postgresql"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+volumes:
+  runtime-storage:
+  production-postgres:

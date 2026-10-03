@@ -1,6 +1,6 @@
 # QGuard Current State
 
-## Latest Checkpoint — First-Pass Packet Approved With Honor Visibility Amendment
+## Latest Checkpoint — Approved First Pass Implemented And Verified Locally
 
 As of 2026-10-03, the owner approves **QG-FIRST-PASS-1 revision 1 + DEC-052**.
 The one amendment makes matched teammates' aggregate honor visible beside game
@@ -15,10 +15,16 @@ The older readiness paragraphs below retain their dated baseline context;
 the missing-draft work they describe is now supplied by this packet.
 
 The owner subsequently explicitly authorized implementation through completion.
-S1–S5 are verified in a fresh `qguard/` directory; S6 full verification is next. See the
+S1–S6 are implemented and verified in the fresh `qguard/` directory. See the
 [implementation record](planning/first-pass/implementation-evidence.md) for
 actual stage status, commands and checks. No repeat packet approval is needed;
-foundation and domain checks have passed; full cross-flow/operational acceptance remains.
+the [acceptance results](planning/first-pass/verification-results.md) cover backend,
+three browser engines, concurrency, live-update recovery, load and isolated restore.
+The local demo is available at `http://localhost:8120`; setup and synthetic account
+instructions are in [the app runbook](../qguard/README.md).
+Next: owner review of the working flows and the
+[actual stored-data inventory](operations/first-build-data-inventory.md) under DEF-012.
+This is not deployed or approved for real-player/public collection.
 
 ## Prior Context And Continuing Authority
 
@@ -56,8 +62,8 @@ foundation and domain checks have passed; full cross-flow/operational acceptance
   browser tests using synthetic accounts.
   Concrete specifications are approved by `DEC-052`, including matched-team
   honor visibility; feedback privacy remains, with no broad questionnaire required
-- **Objective:** implement the approved first-pass packet from S1; preserve
-  live-test hold, future exclusions and controlled-operation gates
+- **Objective:** review the completed first-pass build and actual data inventory;
+  preserve live-test hold, future exclusions and controlled-operation gates
 - **Current route:**
   [Approved execution plan](planning/first-pass/execution-plan.md), with the
   [owner approval/amendment record](planning/first-pass/review-evidence.md#owner-approval-and-visibility-amendment--2026-10-03)
@@ -105,7 +111,8 @@ foundation and domain checks have passed; full cross-flow/operational acceptance
   `d12fd824b9e0b8314cc005e9d5a989cfa316118d73672658a0832ae4339db1b5`.
 - The four recovered relay commits (`402a3f3`, `b1852b7`, `f0006bd`, and
   `5997de0`) remain readable Git commit objects.
-- Running Compose services at inspection: none
+- Running Compose services at implementation completion: isolated QGuard development
+  and test stacks; earlier relocation inspection had no project services running.
 - Active worker: primary Codex agent; no delegated assignments
 
 ## Current Authority

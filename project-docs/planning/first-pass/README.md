@@ -62,5 +62,8 @@ still come back to you; reversible implementation details need not.
 
 At completion you review the working flows, and we immediately inventory actual
 stored data for the deferred retention/privacy second pass. Detailed traceability
-and planning-only checks are in [decision coverage](decision-traceability.md) and
-[review evidence](review-evidence.md). No application tests have run yet.
+and the original planning checks are in [decision coverage](decision-traceability.md)
+and [review evidence](review-evidence.md). Implementation is now complete for this
+local slice: [application acceptance results](verification-results.md),
+[runnable demo guide](../../../qguard/README.md), and
+[actual stored-data review](../../operations/first-build-data-inventory.md).

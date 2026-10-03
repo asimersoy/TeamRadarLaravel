@@ -2,7 +2,7 @@
 
 - **Packet:** QG-FIRST-PASS-1, revision 1 + DEC-052, 2026-10-03.
 - **Status:** owner-approved for first-pass implementation with the matched-team
-  honor visibility amendment; implementation active. See the
+  honor visibility amendment; implementation verified locally. See the
   [stage evidence](../../planning/first-pass/implementation-evidence.md).
 - **Owner:** project owner; author and implementation-detail steward: coding agent.
 - **Authority:** latest owner decisions in [the register](../../governance/decisions.md),

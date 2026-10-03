@@ -6,6 +6,7 @@ use App\Events\RoomChanged;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Tests\Support\Fixtures;
@@ -72,6 +73,13 @@ it('reauthorizes chat, deduplicates retries, rejects scripts and retains literal
     expect(DB::table('chat_messages')->where('game_session_id', $s['id'])->count())->toBe(1);
     $this->postJson($uri, ['body' => 'javascript:alert(1)', 'client_message_id' => (string) Str::uuid()])->assertUnprocessable();
     $this->postJson($uri, ['body' => str_repeat('a', 2001), 'client_message_id' => (string) Str::uuid()])->assertUnprocessable();
+    for ($attempt = 0; $attempt < 30; $attempt++) {
+        RateLimiter::hit('chat:'.$a->id, 60);
+    }
+    $this->postJson($uri, ['body' => 'rate limited', 'client_message_id' => (string) Str::uuid()])->assertStatus(429);
+    // An exact retry remains safe even when the sender has reached the limit.
+    $this->postJson($uri, ['body' => '<script>alert(1)</script> hello https://example.test', 'client_message_id' => $id])->assertOk();
+    RateLimiter::clear('chat:'.$a->id);
     $this->getJson($uri)->assertOk()->assertJsonPath('messages.0.handle', $a->handle)->assertJsonMissingPath('messages.0.sender_id');
     $this->actingAs(User::factory()->create())->getJson($uri)->assertForbidden();
     $this->postJson($uri, ['body' => 'outsider', 'client_message_id' => (string) Str::uuid()])->assertForbidden();

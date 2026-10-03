@@ -8,7 +8,8 @@ Compose project. All PHP runs in Docker. This is not approved for public users.
 ## First setup
 
 Accounts, parties, matching, private session chat, feedback, honor and cleared-admin
-review are available. Final cross-flow and operational verification is underway.
+review are available. The [local acceptance checks](../project-docs/planning/first-pass/verification-results.md)
+have passed; owner flow/data review remains before any later release work.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
@@ -54,6 +55,7 @@ before any framework reset. Never point tests at persistent development data.
 docker compose -f compose.test.yaml up -d postgres app nginx
 docker compose -f compose.test.yaml run --rm php artisan migrate --force
 docker compose -f compose.test.yaml stop scheduler worker
+docker compose -f compose.test.yaml run --rm php tests/Support/reset-browser-clock.php
 docker compose -f compose.test.yaml run --rm php vendor/bin/pest
 docker compose -f compose.test.yaml run --rm php vendor/bin/phpunit --testsuite Unit
 docker compose -f compose.test.yaml run --rm php vendor/bin/pint --test
@@ -66,9 +68,31 @@ The browser image and runner version must match. Tests exercise the real app,
 not standalone mock pages. Browser artifacts are ignored; durable results and
 remaining criteria belong in the [implementation evidence](../project-docs/planning/first-pass/implementation-evidence.md).
 Backend tests reset only the guarded disposable database. Stop its scheduler and
-worker first; reseed and restart before browser checks. The default seeder refuses
+worker first; reset the test clock, reseed and restart before browser checks. The default seeder refuses
 implicit accounts. Browser time controls exist only in the isolated testing stack,
 with no public HTTP endpoint and no effect on development or production.
+
+Chromium runs the full suite; Firefox/WebKit run the core account→room→feedback
+smoke. The full suite is ordered because its multi-player scenarios share fictional
+fixtures. Stop on the first failure and start from a fresh guarded backend reset
+before claiming a complete rerun. Within one run, simulated time only advances.
+The [operational runbook](OPERATIONS.md) covers status, image builds, backup/restore,
+release gates and known limitations.
+
+## Try the local build
+
+Use separate browser profiles/private contexts for five fictional users `a`–`e`
+from the private generated credential file. Each starts a party, selects I'm ready
+and Find teammates. Open the matched room, check rank/honor snapshots, send text,
+then select Session ended and give optional feedback or Skip. The first finalized
+submission starts ten minutes; all five finalizations close early. No game is
+actually launched. Use `admin` in a separate context for Human review. Two distinct
+reports against a rater invalidate only that rater's outgoing numeric inputs;
+reviewing a report does not apply a penalty.
+
+The seeder does not reset ongoing demo sessions; end them normally before reusing
+those users. `unverified`, `unranked` and `observer` demonstrate access/setup gates.
+Do not expose the local mail inbox, credentials or raw test traces externally.
 
 ## Current boundaries
 

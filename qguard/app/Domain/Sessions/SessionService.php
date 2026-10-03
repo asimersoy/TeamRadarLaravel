@@ -62,7 +62,9 @@ final class SessionService
             }
             DB::table('session_participants')->where('id', $p->id)->update(['state' => 'ended', 'ended_at' => now(), 'updated_at' => now()]);
             DB::table('active_participations')->where(['user_id' => $actor->id, 'game_session_id' => $id])->delete();
-            DB::table('no_show_requests')->where(['game_session_id' => $id, 'target_id' => $actor->id])->whereIn('state', ['voting', 'responding'])->update(['state' => 'stale_target_ended', 'updated_at' => now()]);
+            if (DB::table('no_show_requests')->where(['game_session_id' => $id, 'target_id' => $actor->id])->whereIn('state', ['voting', 'responding'])->update(['state' => 'stale_target_ended', 'updated_at' => now()])) {
+                CaseEvidence::flag($id);
+            }
             $this->changed($id);
         });
     }

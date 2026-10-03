@@ -10,10 +10,13 @@ use App\Domain\Parties\SocialService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\Rule;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
+    public string $handle = '';
+
     public string $riotId = '';
 
     public string $shard = 'eu';
@@ -55,6 +58,7 @@ class Dashboard extends Component
     public function mount(): void
     {
         $actor = $this->actor();
+        $this->handle = $actor->handle;
         $this->riotId = $actor->riot_id ?? '';
         $this->shard = $actor->shard;
         $this->language = $actor->language;
@@ -82,6 +86,15 @@ class Dashboard extends Component
         session()->flash('status', 'Declared profile saved. Party readiness was cleared. Game-account ownership and rank are not verified.');
     }
 
+    public function saveHandle(): void
+    {
+        $this->throttle();
+        $this->handle = strtolower(trim($this->handle));
+        $this->validate(['handle' => ['required', 'regex:/^[a-z0-9_]{3,24}$/', Rule::unique('users', 'handle')->ignore($this->actor()->id)]]);
+        $this->actor()->forceFill(['handle' => $this->handle])->save();
+        session()->flash('status', 'Public handle updated. Existing matched rosters keep their original snapshot.');
+    }
+
     public function changePassword(): void
     {
         $this->throttle();
@@ -89,8 +102,10 @@ class Dashboard extends Component
         $this->actor()->forceFill(['password' => $this->newPassword])->save();
         DB::table('sessions')->where('user_id', $this->actor()->id)->where('id', '!=', session()->getId())->delete();
         $this->reset('currentPassword', 'newPassword', 'newPasswordConfirmation');
-        session()->regenerate();
+        session()->regenerate(true);
         session()->flash('status', 'Password changed. Other sessions were signed out.');
+        // The outer layout contains CSRF tokens; refresh it after token rotation.
+        $this->redirectRoute('dashboard');
     }
 
     public function requestFriend(): void

@@ -4,6 +4,7 @@ use App\Domain\Feedback\AdminReview;
 use App\Domain\Feedback\FeedbackService;
 use App\Domain\Feedback\SettlementService;
 use App\Domain\Honor\HonorCalculator;
+use App\Domain\Parties\SocialService;
 use App\Domain\Sessions\SessionService;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -94,9 +95,23 @@ it('rejects partial dimensions self rating and outsiders', function () {
     $a = $s['users'][0];
     $b = $s['users'][1];
     expect(fn () => $f->finalize($a, $s['id'], [$b->id => ['communication' => 8]]))->toThrow(ValidationException::class);
+    expect(fn () => $f->finalize($a, $s['id'], [$b->id => ['rank' => 'unrecognized']]))->toThrow(ValidationException::class);
     expect(fn () => $f->finalize($a, $s['id'], [$a->id => ratingRow()]))->toThrow(ValidationException::class);
     $this->actingAs(User::factory()->create())->get('/feedback/'.$s['id'])->assertForbidden();
     expect(DB::table('feedback_submissions')->count())->toBe(0);
+});
+
+it('lets ordinary site friends rate each other when they did not queue as a premade', function () {
+    $s = Fixtures::session();
+    endAll($s);
+    [$a,$b] = $s['users']->take(2)->all();
+    $social = app(SocialService::class);
+    $social->request($a, $b->handle);
+    $social->respond($b, DB::table('friendships')->where('requester_id', $a->id)->value('id'), 'accept');
+    app(FeedbackService::class)->finalize($a, $s['id'], [$b->id => ratingRow()]);
+    $this->travel(10)->minutes();
+    app(SettlementService::class)->settle($s['id']);
+    expect(DB::table('honor_states')->where('user_id', $b->id)->value('eligible_rating_count'))->toBe(1);
 });
 
 it('uses canonical reviewer order independent of submission arrival', function () {

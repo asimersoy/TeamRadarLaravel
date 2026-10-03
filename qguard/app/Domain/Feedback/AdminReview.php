@@ -28,7 +28,7 @@ final class AdminReview
             abort_unless($case, 404);
             SocialService::require($case->version === $expectedVersion, 'New evidence or another review changed this case. Reload it before reviewing.');
             DB::table('moderation_cases')->where('id', $caseId)->update(['status' => $status, 'review_note' => $note, 'version' => $case->version + 1, 'updated_at' => now()]);
-            $this->audit($actor, $caseId, 'review', ['status' => $status, 'note' => $note, 'previous_version' => $expectedVersion]);
+            $this->audit($actor, $caseId, 'review', ['status' => $status, 'previous_version' => $expectedVersion]);
         });
     }
 }

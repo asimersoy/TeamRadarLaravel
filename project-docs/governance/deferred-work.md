@@ -343,7 +343,9 @@ boundary, not approval to implement either future feature.
   invalidate the target's outgoing ratings for that match before human review,
   with an admin tag (`DEC-041`). Owner explicitly calls this an eligibility
   consequence, not a penalty. Do not defer or silently broaden it.
-- **Implementation state:** neither inbox nor consequences implemented yet.
+- **Implementation state:** first-pass human inbox and automatic outgoing-rating
+  eligibility consequences are implemented and verified locally. Penalties,
+  corrections and appeals remain unimplemented and unapproved.
 - **Return condition:** owner initiates later moderation planning and approves
   concrete policies/specifications before implementation. Current completion
   is not authorization to choose penalties or operator powers.
@@ -377,7 +379,9 @@ boundary, not approval to implement either future feature.
   if everyone finishes. A session may span multiple games.
 - **Reason postponed:** owner wants a simple first version and does not yet
   choose a more automated or refined completion/feedback system.
-- **Implementation state:** documented only; no session/settlement code.
+- **Implementation state:** the approved first-pass session/settlement code and
+  deadline, missing-input, retry/concurrency tests are complete. Later polish is
+  still deferred; no real game-end observation was added.
 - **Return condition:** owner first-build review or a later polish plan;
   reassess the known risks before real-user release. No automatic activation
   or approval of a particular future detector/provider integration.
@@ -400,8 +404,12 @@ boundary, not approval to implement either future feature.
   Data-cleared admins retain full project-context access under `DEC-045`.
 - **Reason postponed:** the owner wants to see what the implemented system
   actually stores before deciding which details should survive and for how long.
-- **Implementation state:** policy recorded; no rewrite database or retention
-  mechanism implemented, and no data was collected or deleted in this task.
+- **Implementation state:** the local first pass now has 30 PostgreSQL tables and
+  synthetic fixtures. Business evidence survives settlement; runtime slots and
+  caches have their documented lifecycle. No business purge is implemented.
+  [Actual fields, readers, copies and backup inventory](../operations/first-build-data-inventory.md)
+  is ready for the required immediate owner review. The isolated restore passed;
+  this does not approve real-user collection or a final retention policy.
 - **Return condition:** immediately after the first implementation is fleshed
   out, at the second-pass review. Prepare a concrete inventory of fields,
   records, purposes, sources, readers, storage, logs and backups where present.

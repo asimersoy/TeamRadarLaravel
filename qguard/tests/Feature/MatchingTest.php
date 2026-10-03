@@ -11,6 +11,23 @@ use Tests\Support\Fixtures;
 
 uses(RefreshDatabase::class);
 
+it('prioritizes individual honor then rank ties and does not block on an unfillable oldest party', function () {
+    Fixtures::party(4, ['language' => 'tr']);
+    $a = Fixtures::party(4);
+    $b = Fixtures::party(1);
+    $c = Fixtures::party(1, ['stated_rank' => 25]);
+    DB::table('honor_states')->where('user_id', $b['users'][0]->id)->update(['honor_score' => 60]);
+    app(Matcher::class)->tick();
+    expect(DB::table('queue_entries')->find($c['entry']->id)->state)->toBe('matched');
+    expect(DB::table('queue_entries')->find($b['entry']->id)->state)->toBe('waiting');
+    Fixtures::party(4, ['language' => 'de']);
+    $far = Fixtures::party(1, ['language' => 'de', 'stated_rank' => 25]);
+    $near = Fixtures::party(1, ['language' => 'de', 'stated_rank' => 11]);
+    app(Matcher::class)->tick();
+    expect(DB::table('queue_entries')->find($near['entry']->id)->state)->toBe('matched');
+    expect(DB::table('queue_entries')->find($far['entry']->id)->state)->toBe('waiting');
+});
+
 it('matches whole parties into exactly five unique participants', function (array $sizes) {
     $s = Fixtures::session($sizes);
     expect($s['id'])->not->toBeNull();

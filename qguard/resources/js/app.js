@@ -12,7 +12,7 @@ function startChat(root) {
     const endpoint = `/rooms/${session}/messages`;
     const list = root.querySelector('.messages'), form = root.querySelector('form'), input = root.querySelector('textarea');
     const status = root.querySelector('[data-send-status]'), connection = root.querySelector('[data-connection]'), older = root.querySelector('[data-older]');
-    let pending = null, olderCursor = null, busy = false;
+    let pending = null, olderCursor = null, busy = false, initialized = false;
     const messages = new Map();
     function display() {
         list.replaceChildren();
@@ -34,7 +34,8 @@ function startChat(root) {
             if (!response.ok) throw new Error();
             const data = await response.json();
             data.messages.forEach(m=>messages.set(m.id,m));
-            if (before || !olderCursor) olderCursor = data.older_cursor;
+            if (before || !initialized) olderCursor = data.older_cursor;
+            initialized = true;
             older.hidden = !olderCursor; form.hidden = !data.can_post; display();
         } catch { connection.textContent='Connection interrupted · retrying with polling'; }
     }
@@ -54,8 +55,29 @@ function startChat(root) {
     const pusher=new Pusher(root.dataset.reverbKey,{wsHost:root.dataset.reverbHost,wsPort:Number(root.dataset.reverbPort),wssPort:Number(root.dataset.reverbPort),forceTLS:location.protocol==='https:',enabledTransports:['ws','wss'],disableStats:true,cluster:'local',channelAuthorization:{endpoint:'/broadcasting/auth',transport:'ajax',headers:{'X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content}}});
     pusher.connection.bind('connected',()=>{connection.textContent='Live updates connected · polling backup active';refresh();});
     pusher.connection.bind('disconnected',()=>{connection.textContent='Live updates disconnected · polling backup active';});
+    for (const state of ['unavailable','connecting','failed']) pusher.connection.bind(state,()=>{connection.textContent='Live updates unavailable · polling backup active';});
     pusher.subscribe(`private-room.${session}`).bind('room.changed',()=>refresh());
     refresh();const timer=setInterval(()=>refresh(),5000);
     window.addEventListener('pagehide',()=>{clearInterval(timer);pusher.disconnect();},{once:true});
 }
 document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-chat-room]').forEach(startChat));
+
+// Associate server validation with controls; focus a changed summary, not every poll.
+document.addEventListener('DOMContentLoaded',()=>{
+    let previous = '';
+    const associate = ()=>{
+        const summary=document.querySelector('[data-error-fields]');
+        const signature=summary?.textContent ?? '';
+        document.querySelectorAll('[aria-describedby="validation-errors"]').forEach(el=>{el.removeAttribute('aria-describedby');el.removeAttribute('aria-invalid');});
+        if(summary){
+            const fields=JSON.parse(summary.dataset.errorFields);
+            document.querySelectorAll('input,select,textarea').forEach(el=>{
+                const name=el.name || el.getAttribute('wire:model');
+                if(fields.includes(name)){el.setAttribute('aria-describedby','validation-errors');el.setAttribute('aria-invalid','true');}
+            });
+            if(signature!==previous)summary.focus();
+        }
+        previous=signature;
+    };
+    associate();new MutationObserver(associate).observe(document.querySelector('main')??document.body,{childList:true,characterData:true,attributes:true,attributeFilter:['data-error-fields'],subtree:true});
+});

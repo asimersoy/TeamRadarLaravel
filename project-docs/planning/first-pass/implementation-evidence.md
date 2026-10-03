@@ -1,7 +1,7 @@
 # First pass implementation record
 
-**Status:** S1–S5 complete and verified locally. S6 full verification and
-operational handoff remains. Updated 2026-10-03.
+**Status:** S1–S6 complete and verified locally; working-build and DEF-012 owner
+reviews are next. Updated 2026-10-03. No public release is implied.
 **Owner:** primary implementation agent. Update after each stage or blocker.
 **Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
 explicit instruction to start implementation and continue through completion.
@@ -267,3 +267,88 @@ players cannot see reviewer mappings. No penalty tools or Discord claims added.
 S6 still owns full browser/engine/recovery/load/restore/production-build evidence,
 field inventory and final acceptance mapping. Current tests are not a public-use
 approval or independent security review.
+
+S5 committed as `f9ed864`.
+
+## S6 full verification and operational handoff
+
+Routed the synthetic load probe through the experiments procedure before running;
+see [design, measured results and limitations](load-probe.md). Domain integrity
+passed. Final backend regression passes **57 tests / 90,263 assertions**;
+direct PHPUnit Unit remains **9 / 90,024**. Production app/web images build from
+locks without dev packages, test files or secrets. Isolated non-root route/view
+caching and platform checks pass; debug/test flags are rejected at startup.
+Composer/npm audits report no known advisories at this check.
+
+Added descriptive validation association/focus, editable handle with immutable
+old snapshots, bounded admin chat pagination, restricted denial metadata logs,
+and operator heartbeat/count diagnostics. Broader browser tests exposed framework
+scheduler startup/minute-boundary timing and invalid backwards test-clock jumps;
+clock advances are now monotonic within a suite, reset only with workers stopped.
+One premade browser scenario still used the ordinary ten-second action timeout
+after a simulated clock jump. Read-only DB inspection confirmed all five matched
+at the next minute boundary; its wait now uses the same 75-second test-only bound
+as the other clock-jump scenarios. Cross-player steps await committed UI state.
+Final Pint checks cover 90 PHP files. All 37 acceptance criteria and F01–F12 are
+mapped to concrete evidence in [verification results](verification-results.md).
+
+Browser evidence: the fresh default suite passes **13 tests** (11 Chromium,
+Firefox and WebKit core-flow smoke). Two additional Recovery checks passed for
+invitation boundaries, password change/re-login and concurrent admin review.
+An actual test Reverb stop/restart check passed on the same connected pages:
+messages arrived by polling during the outage and live updates resumed afterward.
+The stopped service was restored. These are 16 distinct browser checks across
+the default and recovery runs, not a claim they ran in one command.
+
+Repair evidence: browser checks found a password-change CSRF token left stale
+in the outer header; password rotation now destroys the old login session and
+reloads the dashboard layout. Targeted browser and backend regressions passed.
+A subsequent WebKit rerun recorded only four submissions: the last click sent no
+Livewire skip request before initialization. Interactive component roots now use
+Livewire's verified local `wire:cloak` readiness mechanism, with a no-JavaScript
+explanation. The engine test asserts each saved skip confirmation before moving
+on. No timeout was lengthened to hide that missing submission. Reruns use clean
+fixtures, not a partial pass presented as a complete suite.
+
+Screens at 1280px and 390px were rendered and inspected for foundation,
+dashboard, chat, feedback, validation and admin review. Error association/focus,
+overflow and page-error assertions pass; no formal accessibility certification.
+Evidence copies remain in outer `outputs/qguard-first-pass/s1` through `s6`.
+Raw traces can include fictional passwords/cookies and are not public outputs.
+
+Recovery: with test workers and browser traffic stopped, PostgreSQL 18 pg_dump
+and pg_restore created the new `qguard_restore_20261003_s6` database. All **30
+tables** matched source counts and sorted-row content digests exactly; source
+digests after restoration/smoke remained unchanged. Authenticated HTTP-kernel
+requests to dashboard, restored room and feedback returned **200**. The 113,253-byte
+dump is private mode0600 in outer `snapshots/qguard-first-pass-20261003.dump`;
+no persistent source was overwritten, no database or volume was destroyed.
+
+Final development image/services were refreshed without resetting PostgreSQL.
+The local database is reachable, match/deadline/settlement heartbeats are current,
+and development pending/failed jobs and overdue session counters are zero.
+Production images were rebuilt with final code, verified as non-root with no
+`.env`, tests or PHPUnit packages, and passed offline route/view caching and
+platform requirements. They were **not started as a deployment**.
+
+The [operational runbook](../../../qguard/OPERATIONS.md) covers safe setup,
+status, image creation, backup/restore and migration recovery. The separate
+[actual stored-data inventory](../../operations/first-build-data-inventory.md)
+implements the required DEF-012 preparation. Its Markdown/runbook organization
+followed the repository documentation and write-page guidance; it neither
+changes protected workflows nor chooses the owner's retention policy.
+
+Final limits: fictional local use only; no verified rank/account integration,
+game handoff, Discord, recording, sanctions, retention purge or public collection.
+The known collusion/no-show/end-declaration risks and bounded greedy matcher
+tradeoffs remain explicit. No independent specialist review, push, PR, deployment,
+provider application, live integration test or history rewrite occurred.
+First-pass completion is ready for owner flow/data review, not production release.
+
+Final document QA: 76 Markdown files, 361 local file links and 42 section anchors
+checked without missing targets; all 37 acceptance IDs mapped once. Full scoped
+diff and `git diff --check` passed. Baseline `6502bcb` to completion changes only
+`qguard/` and `project-docs/`; protected workflow and legacy paths have no diff.
+Generated credentials, `.env`, dependencies, runtime data and raw traces remain
+ignored. The protected-workflow validator was intentionally not run because that
+package was not modified. Save this verified S6 unit as one local commit.

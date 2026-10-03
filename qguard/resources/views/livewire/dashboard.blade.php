@@ -1,4 +1,4 @@
-<div wire:poll.5s>
+<div wire:cloak wire:poll.5s>
 <div class="page-heading"><div><p class="eyebrow">Your team hub · Valorant</p><h1>Welcome, {{ auth()->user()->handle }}</h1><p class="muted">Set up your profile. Bring friends, or start a solo party.</p></div><div class="score"><span>Your honor</span><strong>{{ number_format($honor, 1) }}</strong><small>Fixed neutral start · 0–100</small></div></div>
 <x-errors />
 <x-pending-feedback :sessions="$pendingFeedback" />
@@ -32,6 +32,6 @@
 <section class="panel"><h2>Friends</h2><form wire:submit="requestFriend"><label>Exact friend handle<input wire:model="friendHandle" maxlength="24" required></label><button>Send friend request</button></form>
 @forelse($friends as $friend)<div class="list-row"><span>{{ $friend->handle }} <small>{{ $friend->state }}</small></span><div class="actions">@if($friend->state === 'accepted')<button class="secondary" wire:click="friendship({{ $friend->id }}, 'remove')">Remove friend</button>@elseif($friend->requester_id === auth()->id())<button class="secondary" wire:click="friendship({{ $friend->id }}, 'cancel')">Cancel request</button>@else<button wire:click="friendship({{ $friend->id }}, 'accept')">Accept friend</button><button class="secondary" wire:click="friendship({{ $friend->id }}, 'decline')">Decline friend</button>@endif</div></div>@empty<p class="muted">No friends yet. Send an exact handle request to get started.</p>@endforelse
 </section>
-<section class="panel"><h2>Account security</h2><form wire:submit="changePassword"><label>Current password<input type="password" wire:model="currentPassword" autocomplete="current-password" required></label><label>New password<input type="password" wire:model="newPassword" minlength="12" maxlength="128" autocomplete="new-password" required></label><label>Confirm new password<input type="password" wire:model="newPasswordConfirmation" autocomplete="new-password" required></label><button class="secondary">Change password</button></form></section>
+<section class="panel"><h2>Account security</h2><form wire:submit="saveHandle"><label>Public handle<input wire:model="handle" required minlength="3" maxlength="24"></label><button class="secondary">Save public handle</button></form><form wire:submit="changePassword"><label>Current password<input type="password" wire:model="currentPassword" autocomplete="current-password" required></label><label>New password<input type="password" wire:model="newPassword" minlength="12" maxlength="128" autocomplete="new-password" required></label><label>Confirm new password<input type="password" wire:model="newPasswordConfirmation" autocomplete="new-password" required></label><button class="secondary">Change password</button></form></section>
 </div>
 </div>

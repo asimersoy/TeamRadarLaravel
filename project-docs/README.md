@@ -10,8 +10,11 @@ reusable workflow system remains separate in
 is owner-approved for first-pass implementation. The sole amendment shows
 matched teammates' aggregate honor beside game rank while keeping feedback
 authors/individual received ratings hidden. Specs, plan and tests reflect that
-change. Implementation is active; the [stage record](planning/first-pass/implementation-evidence.md)
-tracks foundation evidence and remaining work. No live game integration exists. The history
+change. The first pass is implemented and locally verified; the
+[stage record](planning/first-pass/implementation-evidence.md) and
+[acceptance results](planning/first-pass/verification-results.md) contain evidence.
+Next is the working-build review and [actual data inventory](operations/first-build-data-inventory.md).
+No live game integration exists. The history
 below explains how this scope was selected.
 
 The workspace migration and workflow-governance review are complete. The owner
