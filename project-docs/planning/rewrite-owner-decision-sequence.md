@@ -1,8 +1,8 @@
 # QGuard Rewrite Owner Decision Sequence
 
 - **Record type:** current owner-review packet
-- **Status:** first-pass product answers recorded; owner stack selection next,
-  before detailed specifications/plan; no repeat product questionnaire
+- **Status:** first-pass product answers and core stack selected; persistence
+  and backend/browser testing requirements approved; detailed packet next
 - **Decision owner:** project owner
 - **Created:** 2026-09-03
 - **Update trigger:** after each owner decision or when new evidence changes a
@@ -488,9 +488,9 @@ resource constraints, business non-goals, and operational service boundary.
 
 ## Decision Group 8 - Technical Specification And Implementation Plan
 
-**Current next step:** settle the stack recommendation below under `DEC-049`,
-then draft the technical/acceptance packet and plan. The owner does not need
-to design those artifacts. The first-pass owner question set is complete enough to
+**Current next step:** draft the technical/acceptance packet and plan using
+the core stack and persistence/testing requirements selected in `DEC-050`.
+The owner does not need to design those artifacts. The first-pass owner question set is complete enough to
 prepare this packet under `DEC-042`/`DEC-047`/`DEC-048`. The agent supplies
 concrete engineering choices and acceptance coverage rather than asking the
 owner to design them. The latest readiness request is not approval to start
@@ -518,23 +518,26 @@ explicit authorization to begin implementation. This closes `OQ-007`.
 
 ## Stack Recommendation — 2026-10-03
 
-**Status:** agent recommendation for owner review, not an approved stack or
-execution plan. `DEC-049` selects Docker for development and later deployment
-and requests stack selection before detailed planning. Laravel/Nginx and the
-SQLite-versus-PostgreSQL preference come from the owner, not the old app.
+**Status:** core choices now selected in `DEC-050`: PostgreSQL, no initial
+Redis, Blade/Livewire and Docker-based Pest/PHPUnit, PostgreSQL integration and
+browser testing. Persistent database storage and synthetic test accounts are
+required. `DEC-049` supplies the Laravel/Docker direction and Nginx preference.
+This is not a complete approved technical design or execution plan. Supporting
+tools and version numbers below remain agent recommendations for that packet;
+do not label Reverb/Echo as separately owner-approved or reopen settled choices.
 
-### Proposed Stack
+### Selected Direction And Supporting Recommendations
 
 | Component | Recommendation | QGuard-specific reason |
 | --- | --- | --- |
 | Application | One Laravel 13 application on PHP 8.5, with internal modules | Keep accounts, parties, matching, honor and moderation together; no new service boundaries needed for this first pass |
-| Database | PostgreSQL 18 in Docker for development, integration tests and initial deployment | Transactions and row locking fit simultaneous party allocation, chat, session settlement and background work |
+| Database | PostgreSQL in Docker with persistent storage; version 18 proposed | Owner-selected engine; transactions and row locking fit simultaneous party allocation, chat, session settlement and background work |
 | Frontend | Blade + Livewire 4, with Alpine for small browser interactions and Tailwind/Vite for assets | Retains the owner's PHP/Blade direction while supporting interactive queues, parties, forms and admin views |
 | Live updates | Laravel Reverb + Echo, initially one Reverb process | Private website chat and lobby changes need prompt updates; this is unrelated to Discord/game joining |
 | Jobs/cache | Laravel database-backed jobs and modest database cache/locks initially; no Redis service | Avoid another stateful service until measured load or an explicit feature needs it |
 | Web server | Nginx + PHP-FPM | Matches owner familiarity and Laravel's documented deployment path |
 | Environment | Docker Compose, with development and production variants | Containerized PHP, Composer, asset builds and tests; no host PHP/database installation dependency |
-| Tests | Pest for PHP tests, PostgreSQL integration/concurrency tests, browser-flow checks in Docker | Test the real persistence semantics, private-channel access and complete user journeys |
+| Tests | Pest plus PHPUnit-style backend unit/integration/regression tests, PostgreSQL integration/concurrency and browser-flow tests in Docker | Owner-approved assertion-based coverage of backend behavior and every implemented first-pass user/admin flow, using synthetic seeded accounts |
 
 Versions are proposed supported major lines, not frozen patch/image pins.
 Resolve and test the exact package/extension combination during approved
@@ -559,6 +562,55 @@ not make database durability/operations automatic. Keep development and
 database-dependent tests on the selected production engine to expose locking
 and query differences early.
 
+### Persistent Storage And Test Isolation
+
+`DEC-050` requires data to survive normal image rebuilds and container
+recreation. The agent's planning default is a stable named Docker volume for
+PostgreSQL data, mounted at the selected image's documented data location.
+This keeps data outside the container's disposable writable layer. A bind
+mount is an alternative if a concrete host-directory requirement justifies it;
+the owner selected persistence, not a particular mount syntax.
+
+A named volume is still managed by Docker; it is not storage independent of
+the Docker host/VM, not a backup and not protection from deleting the volume
+or resetting Docker's storage. Normal scripts must not remove application data
+volumes or run destructive database resets as a rebuild step. Keep volume
+identity stable across the normal documented workflow. Plan a rebuild/recreate
+survival check with a known record in an isolated validation environment; the
+test must verify the same data after recreation, not merely that a mount exists.
+Major-version database upgrades require their own compatibility/migration plan.
+
+Use separate test targets/credentials and resettable test storage so automated
+test cleanup cannot affect the owner's persistent development database or a
+future production database. Seeders/factories provide repeatable fictional
+users, admin roles and multi-player scenarios without real linked game/Discord
+accounts. Keep demo setup opt-in to its designated environment; do not silently
+seed production or overwrite existing development records. Simulated provider
+responses are app-test fixtures, not proof that held live integrations work.
+
+### Required Test Coverage
+
+`DEC-050` adds these requirements to the forthcoming acceptance packet:
+
+- Assertion-based backend unit tests, integration tests and regression cases,
+  including PHPUnit-style classes alongside Pest. Pest is built on PHPUnit;
+  sharing that foundation does not require two copies of each assertion. Verify
+  discovery/execution of both test styles with the chosen container commands.
+- PostgreSQL-backed tests for real query, constraint, transaction and concurrency
+  behavior. Use targeted real worker/driver tests where queue/cache correctness
+  matters; blanket fakes or in-memory drivers cannot establish those behaviors.
+- A coverage inventory for every implemented first-pass user/admin browser flow,
+  including multi-account permissions and relevant empty, loading, validation,
+  failure and recovery states. Verify actual UI interactions and outcomes,
+  not just route status codes; include rendered review alongside automation.
+- Regression tests preserve approved behavior and reproduce fixed bugs. Cover
+  honor/feedback settlement, two-reporter eligibility, partial-party exclusions,
+  matching compatibility, chat isolation and admin access within their approved
+  specifications. These are coverage targets, not newly chosen algorithms.
+- Docker execution commands and results for backend and browser suites; keep
+  skipped/blocked/unimplemented checks visible. No arbitrary coverage percentage
+  is substituted for demonstrating the specified behavior.
+
 ### Redis And Live Updates
 
 Laravel supports database job and cache drivers. A single Reverb process can
@@ -566,13 +618,15 @@ be planned without its Redis-based multi-server fan-out. Use Reverb events for
 timely updates and durable database state for recovery; neither Redis nor
 WebSockets is the authority for membership, messages or honor.
 
-There is no QGuard benchmark proving a negligible Redis benefit. The proposal
-is to omit it until measured job delay, cache/lock pressure or multi-Reverb
-deployment justifies it. Adding Redis later needs queue delivery, locking,
-cache invalidation and rollback checks; it is not merely a cost-free switch.
+There is no QGuard benchmark proving a negligible Redis benefit. `DEC-050`
+approves omitting it initially. Reconsider if measured job delay, cache/lock
+pressure or multi-Reverb deployment justifies it. Adding Redis later needs queue
+delivery, locking, cache invalidation and rollback checks; it is not merely a cost-free switch.
 Workers, scheduler and Reverb are still running processes, even when they
 reuse the same PHP application image. Database jobs are background work, not
-the product's player-matching queue.
+the product's player-matching queue. Laravel implements the job queue and cache
+using PostgreSQL tables; PostgreSQL's own internal caching is not the Laravel
+application cache, and PostgreSQL alone does not execute Laravel jobs.
 
 ### Frontend And Deployment Tradeoffs
 
@@ -590,12 +644,13 @@ Use a small Compose setup, not Kubernetes or a separate Node application backend
 Production would use built application/assets, production configuration,
 secrets and persistent volumes; development bind mounts and the Vite dev server
 are not a production deployment recipe. Exact service layout, provisioning,
-code location, schema and milestones wait for stack selection.
+code location, schema and milestones belong in the next technical packet.
 
 ### Source Ledger And Limits
 
 Accessed 2026-10-03. These are primary documentation facts; choices above are
-the agent's inference for QGuard, not vendor guarantees or owner approvals.
+the agent's inference for QGuard, not vendor guarantees. Owner selections are
+identified separately by `DEC-049`/`DEC-050`.
 
 | Source | Supports | Does not establish |
 | --- | --- | --- |
@@ -609,6 +664,8 @@ the agent's inference for QGuard, not vendor guarantees or owner approvals.
 | [Laravel deployment](https://laravel.com/framework/docs/13.x/deployment) | Nginx/PHP serving configuration and environment requirements | Superiority over Apache or deployment approval |
 | [Docker Compose production](https://docs.docker.com/compose/how-tos/production/) | Compose across environments with production-specific changes | Automatic backups, security or high availability |
 | [Pest installation](https://pestphp.com/docs/installation) | Current PHP requirement and test tooling | A passed application/browser test suite |
+| [Docker volumes](https://docs.docker.com/engine/storage/volumes/) | Docker-managed storage lifecycle separate from a container; volume reuse | A backup, immunity from volume deletion or a passed QGuard persistence check |
+| [Pest/PHPUnit relationship](https://pestphp.com/docs/migrating-from-phpunit-guide) and [Laravel testing](https://laravel.com/framework/docs/13.x/testing) | Pest builds on PHPUnit; Laravel supports both and separate testing configuration | Discovery of every future test, fixture isolation or completed coverage |
 
 ### Route And Verification
 
@@ -623,10 +680,20 @@ the agent's inference for QGuard, not vendor guarantees or owner approvals.
   the engine. No containers/images/volumes were created, started or changed.
 - No application tests, dependency resolution, image build or benchmark ran.
   Host PHP test failure remains owner-reported and undiagnosed.
-- Owner disposition needed: accept or revise the proposed complete stack,
-  especially PostgreSQL over SQLite and Livewire/Reverb with no initial Redis.
-  After selection, draft the detailed technical/specification/test packet and
-  execution plan; no premature implementation or deployment.
+- Subsequent owner disposition: `DEC-050` explicitly selects PostgreSQL,
+  no initial Redis, Blade/Livewire and testing direction, adds persistent
+  storage, PHPUnit backend/regression coverage and synthetic browser accounts.
+  Draft the detailed packet next; the application-specification approval gate
+  remains. Supporting recommendations are not separate owner approvals.
+- Confirmation unit baseline: clean `new-development` at `13d0657`. Route:
+  product planning, research/sourcing, deployment/backup, privacy/data,
+  decision/recommendation safety, owner/external review, audit/reconciliation,
+  migration/seed planning and deferral/owner review. Selected rules were read;
+  owner selections reconciled before edits. Current Docker/Pest/Laravel source
+  checks clarify volume lifetime and test/queue responsibilities. No app tests,
+  seeders, Docker commands, volume writes or live integrations executed. One
+  project-document commit after scoped diff/link checks; canonical workflow
+  unchanged, no push or deployment. Current-state verification holds results.
 
 ## Superseded Agent Baseline - Do Not Use For Current Routing
 

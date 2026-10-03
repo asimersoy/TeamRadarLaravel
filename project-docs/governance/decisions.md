@@ -1960,8 +1960,8 @@ canonical-workflow change, provider research or external action in this unit.
 ## DEC-049 - Use Docker For Development And Deployment And Select The Stack Before Planning
 
 - **Date:** 2026-10-03
-- **Status:** approved Docker/environment and sequencing direction; full stack
-  selection awaits owner disposition of the recommendation
+- **Status:** approved Docker/environment and sequencing direction; `DEC-050`
+  subsequently settles the core stack choices and adds persistence/testing requirements
 - **Decision owner:** project owner
 - **Decision / evidence:** latest annotation and addition request Docker for
   local development and later deployment. Treat containerized PHP tooling/tests
@@ -1989,7 +1989,63 @@ canonical-workflow change, provider research or external action in this unit.
 - **Recommendation:** see the separate
   [stack review](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03).
   Proposed PostgreSQL, Livewire, Reverb and Redis omission are not recorded as
-  owner-selected merely because the agent recommends them.
+  owner-selected merely because the agent recommends them. Apply the subsequent
+  explicit selections in `DEC-050`; do not use this earlier pending status to
+  reopen PostgreSQL, Livewire or initial Redis omission.
 - **Supersedes:** treating Docker as wholly undecided in first-pass planning;
   pauses detailed execution planning until the stack discussion is settled
+- **Superseded by:** `DEC-050` for the pending core-stack selection only;
+  Docker, sequencing, drafting responsibility and approval boundaries remain
+
+## DEC-050 - Approve The Core Stack, Persistent Database Storage And Docker-Based Testing
+
+- **Date:** 2026-10-03
+- **Status:** approved stack choices and acceptance direction; not a complete
+  implementation-specification approval or test-pass claim
+- **Decision owner:** project owner
+- **Decision / evidence:** the owner explicitly approves PostgreSQL instead of
+  SQLite, no Redis initially with Laravel database-backed jobs/cache, and
+  Blade with Livewire. Docker for development and later deployment is reaffirmed.
+  Laravel remains the framework direction under `DEC-049`; no legacy code or
+  configuration reuse is implied. The core-stack discussion no longer blocks
+  the agent from drafting the concrete technical plan.
+- **Persistent storage:** run PostgreSQL in Docker with its data on a persistent
+  volume/mount separate from the replaceable container filesystem. Data must
+  survive normal image rebuilds and container recreation, reusing that storage.
+  The owner's final explicit persistence wording controls the earlier spoken
+  "data is reset" fragment; automatic resets are not requested. Exact mount
+  type, names and paths are implementation details. This does not authorize
+  volume deletion, destructive resets or untested major-version upgrades;
+  persistent storage is not a substitute for backups.
+- **Backend verification:** require assertion-based unit, integration and
+  regression tests, including PHPUnit-style backend tests as well as Pest.
+  Database-dependent integration/concurrency tests use PostgreSQL, not an
+  SQLite substitute. Run the suites in Docker. Pest's PHPUnit foundation does
+  not require duplicating identical tests, and does not waive the requested
+  backend assertions or PHPUnit-style coverage.
+- **Browser verification:** cover every implemented first-pass user/admin flow
+  in the real browser UI, with end-to-end assertions and rendered checks as
+  appropriate, not only isolated backend tests or successful page loads.
+  Include relevant validation, permission, failure and recovery paths. Keep a
+  flow-to-test coverage record with actual results and explicit gaps; no claim
+  of complete coverage while required checks remain unrun.
+- **Synthetic accounts:** include repeatable seeders/factories for fictional
+  development/test accounts, roles and scenarios. Real Riot, Steam or Discord
+  account connections are not needed for these app-flow tests. Clearly identify
+  simulated provider behavior; it cannot prove live integrations or resume the
+  held game/Discord tests. Scope seeders to designated development/test targets;
+  isolate resettable automated-test data from persistent development and future
+  production data, without writing seed credentials into tracked records.
+- **Supporting choices:** exact versions, test-runner/browser commands and
+  supporting tools such as Reverb/Echo remain agent proposals for the concrete
+  packet, not separately explicit owner selections in this response. Do not
+  turn these reversible engineering details into another broad questionnaire.
+- **Affected records:** current state, owner decision sequence/stack review,
+  specification index and `OQ-007`. The next work is the agent-drafted detailed
+  specification, data/technical contracts, acceptance package and execution
+  stages under `DEC-008`; this confirmation does not start app/container setup,
+  grant deployment or override the applicable specification gate.
+- **Supersedes:** pending owner selection of PostgreSQL versus SQLite, initial
+  Redis omission, Blade/Livewire and test direction in the earlier recommendation;
+  extends `DEC-049` with persistence and explicit backend/browser coverage
 - **Superseded by:** none

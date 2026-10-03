@@ -342,12 +342,12 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
-- **Status:** owner stack review active before detailed planning under
-  `DEC-049`; first-pass product-question set answered, delegated or deferred
+- **Status:** core stack and testing direction settled by `DEC-049`/`DEC-050`;
+  concrete technical/acceptance packet and approval still needed
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
-- **Blocks:** selecting a stack, architecture, deployment model, milestone plan,
-  budget, release target, or definition of done.
+- **Blocks:** complete technical/operating and execution approval; not drafting
+  from the selected stack or reopening the settled first-pass product answers.
 - **Does not block:** architecture-neutral product decisions and targeted
   feasibility research, or agent drafting of the first-pass technical options,
   contracts and acceptance packet. Do not make the owner choose every reversible
@@ -355,22 +355,26 @@ Historical unknowns do not automatically become requirements.
 - **Known context:** Laravel/Livewire/MySQL is only a legacy implementation;
   React, Node/NestJS, PostgreSQL, Redis, a desktop relay, Docker, and various
   deployment paths were historical evidence or proposals. `DEC-049` now
-  selects Docker development/deployment, records the owner's Laravel/Nginx
-  direction and SQLite-or-PostgreSQL/justified-Redis preferences. The
+  selects Docker development/deployment and records the owner's Laravel/Nginx
+  direction. `DEC-050` selects PostgreSQL, no initial Redis and Blade/Livewire,
+  and requires persistent database storage and assertion-based backend plus
+  browser testing in Docker with synthetic seeded accounts. The
   [current stack recommendation](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
-  is still an agent proposal awaiting owner disposition; no legacy reuse implied.
+  distinguishes these decisions from supporting agent proposals such as
+  Reverb/Echo and exact versions; no legacy reuse implied.
 - **Decision components:** validation goal and success measures, business model,
   product surfaces, delivery horizon/resources, integration constraints,
   availability/security expectations, environments, release strategy, and
   testable completion evidence.
-- **Current readiness:** no approved complete stack/new-code layout, slice
-  specification or app execution plan is present. First settle the stack per
-  owner sequencing, then the agent prepares that concrete packet and tests,
-  with owner approval under `DEC-008`.
+- **Current readiness:** selected core stack is sufficient to draft the concrete
+  new-code layout, slice specifications, acceptance package and execution plan.
+  Their completion and applicable owner approval under `DEC-008` remain before
+  coding; drafting them is agent work, not another broad owner questionnaire.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
-- **Resolved by:** none
+- **Resolved by:** `DEC-049`/`DEC-050` for stack/environment/test direction;
+  concrete packet and later operational components remain as above
 
 ## OQ-008 - What Workflow Governance Conventions Should Control Future Work?
 

@@ -29,13 +29,16 @@
   automatic expiry, with immediate second-pass review under `DEF-012`.
   `DEC-048` delegates identity/rank integration and approves declared rank
   plus teammate mismatch checks when official access is unavailable/gated.
+  `DEC-049`/`DEC-050` select Docker, PostgreSQL, no initial Redis and
+  Blade/Livewire, with persistent database storage and Docker-based backend/
+  browser tests using synthetic accounts.
   Detailed specifications remain incomplete; no unanswered owner choice from
   the latest question-seven set prevents preparing them
-- **Objective:** settle the owner-requested stack recommendation under
-  `DEC-049` before drafting the concrete specifications, test package and
-  execution plan; preserve live-test hold and future exclusions
+- **Objective:** draft the concrete specifications, test package and execution
+  plan from the selected core stack and `DEC-050` persistence/testing requirements;
+  preserve live-test hold and future exclusions
 - **Current route:**
-  [Stack recommendation and owner review](planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
+  [Technical specification and implementation plan](planning/rewrite-owner-decision-sequence.md#decision-group-8---technical-specification-and-implementation-plan)
 
 ## Verified Workspace State
 
@@ -234,8 +237,10 @@
   scope changes and controlled operations retain applicable owner/review gates.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, complete coordination operating rules, matching contract, honor
-  formula or detailed effect, moderation policy, architecture, technology,
-  deployment, or implementation plan has been approved. Optional Discord
+  formula or detailed effect, moderation policy, detailed architecture,
+  deployment runbook or implementation plan has been approved. Core stack
+  choices are now selected by `DEC-049`/`DEC-050`; supporting tools/versions
+  remain proposals for the concrete packet. Optional Discord
   room/voice direction is selected but actual integration is excluded now;
   voice recording remains an unapproved proposal.
 - `DEC-047` settles temporary development retention: all records stored by
@@ -249,6 +254,14 @@
   approval or another owner choice would hold it up. Show stated ranks and ask
   for observed discrepancies at Session ended; peer feedback is not official
   verification. No fresh provider capability or permission is established.
+
+- `DEC-049`/`DEC-050` select the Laravel/Docker direction, PostgreSQL with
+  persistent storage, Blade/Livewire and no initial Redis. Require Docker-based
+  Pest and PHPUnit backend unit/integration/regression tests, PostgreSQL-backed
+  integration/concurrency checks and every implemented first-pass browser flow
+  with synthetic seeded accounts. Test data must be isolated from persistent
+  development data; live provider capability is not proved by synthetic tests.
+  The detailed technical/specification/test packet is agent drafting work.
 
 ## Work State
 
@@ -410,8 +423,11 @@
   record all three latest annotations. No missing answer in that set.
   Retention refinement is `DEF-012`; identity/rank details are delegated, with
   the conditional first-pass fallback already approved.
-- **Next specification work, after stack selection (`DEC-049`):** consolidate the first-pass journey, concrete
-  technical/data contracts, bounded agent choices and acceptance tests. Then
+- **Completed stack confirmation, 2026-10-03:** `DEC-050` records explicit
+  core-stack approvals and persistent-storage/backend/browser-testing additions.
+  The selected stack no longer blocks detailed planning; no app setup occurred.
+- **Next specification work (`DEC-049`/`DEC-050`):** consolidate the first-pass
+  journey, concrete technical/data contracts, bounded agent choices and acceptance tests. Then
   prepare its execution/commit plan and obtain applicable `DEC-008` approval.
   No repeat one-through-seven questionnaire, forced final tuning or hypothetical
   provider-verification policy is needed to prepare that packet.
@@ -430,10 +446,11 @@
 
 ## First-Pass Readiness Review — 2026-10-03
 
-- **Subsequent stack sequencing:** `DEC-049` requests stack recommendation and
-  owner selection before detailed planning. Docker development and later Docker
-  deployment are selected; PostgreSQL/Livewire/Reverb/no initial Redis is an
-  agent proposal, not an approved complete stack. No new application code is
+- **Subsequent stack sequencing:** `DEC-049` requested stack selection before
+  detailed planning; `DEC-050` now settles PostgreSQL, Blade/Livewire and no
+  initial Redis, reaffirms Docker and adds persistent storage and backend/browser
+  testing requirements. Supporting tools such as Reverb/Echo and exact versions
+  remain recommendations for the concrete packet. No new application code is
   expected at this stage; its absence is a status fact, not an extra prerequisite.
   Technical design, execution plan and acceptance tests are agent drafting work.
 - **Assessment:** ready to prepare the implementation-ready specifications and
@@ -448,8 +465,9 @@
 - **Verified specification state:** the specification index lists two product
   modules, both incomplete for implementation. The coordination outline is
   queued, not execution-approved. Existing client test plans are not an app
-  execution plan. No approved new-code location, technical stack, complete
-  state/data contract or per-slice acceptance packet is present.
+  execution plan. No approved new-code location, complete state/data contract
+  or per-slice acceptance packet is present; the subsequent core stack direction
+  is now selected in `DEC-049`/`DEC-050`.
 - **Current product coverage:** Valorant session grouping, solo/partial parties
   and basic friends/invitations, rank-compatible/honor-aware queueing, private
   website chat, participant session end, report-aware feedback/honor settlement,
@@ -461,8 +479,9 @@
   retained records, honor/feedback/report processing, concurrency/idempotence,
   error/recovery behavior and tests. Document delegated choices, fresh official
   game-rule/API evidence when relevant, and the independent commit sequence.
-  Propose the technical stack/new-code layout with legacy preserved. These are
-  drafting and engineering responsibilities, not another broad owner quiz.
+  Elaborate the selected stack and propose the new-code layout with legacy
+  preserved. These are drafting and engineering responsibilities, not another
+  broad owner quiz.
 - **Remaining owner gate:** approve the applicable concrete specification
   packet/plan under `DEC-008`; it may expressly leave bounded details to the
   implementation agent. No need for final constants, final retention durations,
@@ -473,6 +492,16 @@
   assessment is not a current API, safety or legal-compliance finding.
 
 ## Verification State
+
+- Core-stack approval/persistence/testing record at clean `13d0657`: owner
+  selections reconciled into `DEC-050` and planning entry points. Docker volume
+  lifecycle, Pest/PHPUnit relationship and Laravel test/queue documentation
+  checked against primary sources; these do not establish a working app.
+  All 54 project Markdown files, 234 local links and 40 anchors checked;
+  50 decision IDs and 12 deferred-work IDs are unique and sequential. Complete
+  six-file diff reviewed and `git diff --check` passed. No application/backend/
+  browser tests, seeders or persistence experiment ran; no containers/volumes changed,
+  no protected workflow or legacy implementation changed, and no push/deployment.
 
 - Stack recommendation unit at clean `0a7f506`: current primary Laravel/PHP,
   SQLite/PostgreSQL, Docker and Pest documentation reviewed; `DEC-049` records

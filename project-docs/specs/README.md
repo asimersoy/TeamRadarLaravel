@@ -9,7 +9,9 @@
   clock, native chat/current queue and audiences, with reversible details
   delegated. `DEC-047`/`DEC-048` settle first-pass retention and identity/rank
   responsibility/fallback; concrete technical/data/acceptance contracts remain
-  to draft and approve, not another unanswered product questionnaire
+  to draft and approve, not another unanswered product questionnaire.
+  `DEC-049`/`DEC-050` select the core stack and persistent-storage/backend/
+  browser-testing requirements for that drafting work
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -103,6 +105,15 @@ more owner decisions. None of those questions remains an upfront owner blocker.
 The [current readiness review](../current-state.md#first-pass-readiness-review--2026-10-03)
 identifies the remaining specification, plan and approval work before coding.
 
+`DEC-049`/`DEC-050` select Docker, PostgreSQL, no initial Redis and Blade/Livewire.
+The next specifications must include container-independent persistent database
+storage, isolated synthetic seed data, assertion-based Pest/PHPUnit backend
+unit/integration/regression tests, PostgreSQL integration/concurrency tests and
+browser coverage of every implemented first-pass user/admin flow. See the
+[stack and testing record](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
+for approved direction versus supporting agent proposals. No application test
+or persistence check has run for the rewrite yet.
+
 No current module approves a complete product/use boundary, platform/region/
-mode/audience wedge, rank or coordination data flow, architecture, technology,
-implementation plan, or release.
+mode/audience wedge, rank or coordination data flow, detailed architecture,
+implementation plan, or release; the core technology choices above are settled.
