@@ -1476,7 +1476,8 @@ mathematics and empirical performance still require specification and tests.
   applicable specification approval under `DEC-008` before implementation.
 - **Supersedes:** `DEC-024` only for optional voice participation and current
   Discord implementation timing; game-join preference and evidence gates remain
-- **Superseded by:** none
+- **Superseded by:** `DEC-046` resolves the native-text proposal and current
+  no-Discord-only queue; real Discord deferral and join evidence gates remain
 
 ## DEC-036 - Preserve Game Rank Compatibility While Widening Honor Matching
 
@@ -1501,7 +1502,8 @@ mathematics and empirical performance still require specification and tests.
 - **Return condition:** approved relevant matching slice and evidence-backed
   fixtures before reliance; no app or research execution approved by this entry
 - **Supersedes:** none; refines `DEC-026`
-- **Superseded by:** none
+- **Superseded by:** `DEC-044` for ownership of initial region/language
+  queue-control details; game compatibility and honor priorities remain
 
 ## DEC-037 - Include Basic Friends And Partial Parties With Co-Party Rating Exclusion
 
@@ -1545,7 +1547,8 @@ mathematics and empirical performance still require specification and tests.
 - **Return condition:** approve the affected audience/access contract before
   exposing those fields in a user or operator slice
 - **Supersedes:** none; settles non-public direction, not all of `OQ-006`
-- **Superseded by:** none
+- **Superseded by:** `DEC-045` resolves own-score, reviewer and cleared-admin
+  audience components; peer reputation remains non-public
 
 ## DEC-039 - Use A Bounded No-Show Challenge And Exclude Early-Leaver Ratings
 
@@ -1575,7 +1578,8 @@ mathematics and empirical performance still require specification and tests.
 - **Return condition:** clarify affected rules and approve the relevant
   development slice. This does not approve production release without review.
 - **Supersedes:** none
-- **Superseded by:** none
+- **Superseded by:** `DEC-043` resolves no-show vote/acknowledgment and session
+  completion; stronger checks remain deferred and reversible recovery delegated
 
 ## DEC-040 - Start With A Human Report Inbox Without Punishment Tools
 
@@ -1652,7 +1656,8 @@ mathematics and empirical performance still require specification and tests.
   feedback/calculation slice; startup methods and development tuning remain
   delegated under `DEC-031`/`DEC-032`, not new owner questions
 - **Supersedes:** none; refines feedback format/eligibility direction
-- **Superseded by:** none
+- **Superseded by:** `DEC-043` for session-end/feedback-clock open components;
+  dimensions, premade exclusion and automatic report consequence remain
 
 ### Shared Route And Evidence Boundary For DEC-035 Through DEC-041
 
@@ -1674,3 +1679,178 @@ actions or release is inferred from this review. Canonical workflow, legacy
 implementation and existing honor mathematics are preserved. Verification is
 recorded in the current-state checkpoint after scoped document checks; one
 coherent local documentation commit, no push or other external action.
+
+## DEC-042 - Delegate Reversible Development Details And Review The First Build
+
+- **Date:** 2026-10-03
+- **Status:** approved bounded implementation discretion; not permission to
+  start an unapproved application slice
+- **Decision owner:** project owner
+- **Decision / evidence:** in the latest annotations 2 and 3, the owner asks
+  that only genuinely foundational decisions be brought for upfront discussion.
+  Easily changeable details belong to the implementation agent, even when
+  multiple viable options exist. The owner reviews the first implementation;
+  refinements can enter a second, third or polish pass.
+- **Scope:** inside approved development scope, choose and document reversible
+  defaults instead of repeatedly asking the owner to design every detail.
+  Explicit examples include region/language queue choices, tuning and whether
+  original partial parties persist after the assembled team disbands. The
+  latter feature is optional, not required first-pass work.
+- **Record discipline:** distinguish agent-selected defaults from owner-selected
+  behavior; explain the choice/alternatives, reversibility and verification.
+  A detailed specification may explicitly delegate these choices, rather than
+  listing each as an unresolved owner blocker. Test before the first-build
+  review; polishing later does not excuse incorrect initial behavior.
+- **Boundary:** this is not a universal waiver because code is editable.
+  Existing approved honor/eligibility behavior, scope exclusions, sensitive
+  data/permission boundaries, automatic-penalty exclusions, live-test holds
+  and controlled-operation gates remain. New consequential policy outside the
+  stated delegation requires owner review; factual game rules need evidence.
+  `DEC-008` still gates a slice with its applicable approved specification,
+  which can contain explicit implementation discretion.
+- **Affected records:** project workflow-governance policy, current state,
+  owner decision sequence and relevant specs/registers; canonical workflow
+  remains untouched
+- **Supersedes:** treating every reversible detail or multiple-option choice
+  as a predevelopment owner decision; does not supersede `DEC-008` gates
+- **Superseded by:** none
+
+## DEC-043 - End Sessions By Participant Action And Settle Feedback Within Ten Minutes
+
+- **Date:** 2026-10-03
+- **Status:** approved first-pass session/feedback direction; polish deferred
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotations 1 and 3 select a participant
+  "Session ended" action, distinct from reporting that a particular person
+  did not join. A QGuard session may include several games, not necessarily
+  one game; do not require automated game-end detection. Its feedback batch
+  and per-match report eligibility consequence refer to that matched QGuard
+  session, not separately verified individual in-game match completions.
+- **Feedback timing:** clicking Session ended opens that participant's feedback
+  screen. The first participant to declare session end and finalize their
+  feedback starts a ten-minute completion window for the remaining players.
+  Settle earlier if everyone has declared completion and finalized feedback;
+  otherwise settle at the deadline, so absent/nonresponding users cannot leave
+  the batch pending forever. Apply eligibility/report checks before honor and
+  raw-reference updates, preserving `DEC-041`'s automatic invalidation.
+- **Trigger interpretation:** the clock begins at the first completed feedback
+  submission following Session ended, not merely at the first button click.
+  A returning participant may be prompted for still-pending feedback; behavior
+  after closure and optional/skipped fields are development details to specify,
+  not a permission to silently apply late ratings or fabricate missing ones.
+- **No-show clarification:** the five-minute challenge requires all other
+  matched teammates, excluding its target. During the 30-second response
+  period, the target's "I joined" acknowledgment stops removal for now.
+  This is self-report, not independently verified game presence. Stronger
+  participation/anti-griefing verification remains later planning (`DEF-008`).
+- **Delegation:** original partial-party persistence is optional under
+  `DEC-042`; remaining UI/recovery and submission edge details are agent-selected
+  within this direction. Unanswered report-counting/early-leaver evidence
+  sub-rules must be explicitly identified in the slice, not disguised as already
+  selected owner policy or changed automatic penalties.
+- **Residual risk / deferral:** early or malicious session-end declarations,
+  different participant end times across multiple games, nonresponse and a
+  dishonest I joined response may undermine this first-pass scheme. Owner
+  explicitly accepts the simple development direction and defers polish
+  (`DEF-011`); no real-user effectiveness or production safety is established.
+- **Supersedes:** no-show vote/response and feedback-clock open components of
+  `DEC-039`/`DEC-041`; existing eligibility and mathematical directions remain
+- **Superseded by:** none
+
+## DEC-044 - Delegate Region And Language Queue Design For The Valorant First Pass
+
+- **Date:** 2026-10-03
+- **Status:** approved implementation responsibility; provider facts unverified
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotation 2 reaffirms Valorant and asks the
+  implementation agent to investigate relevant region/language choices, design
+  and implement the initial queue controls, and let the owner review the first
+  build before follow-up passes. The owner need not select every filter now.
+- **Boundary:** preserve `DEC-036`'s actual game queue compatibility guard,
+  then honor similarity with adjustable widening. Verify relevant official
+  game rules when implementing; do not treat a language preference as a verified
+  game eligibility rule or invent geography/mode restrictions from memory.
+  No fresh release, provider access, region list or launch-country fact is
+  asserted by this decision.
+- **Delegation:** reversible initial controls/defaults and their hard-versus-
+  preference behavior may be drafted by the implementation agent within these
+  constraints, documented and tested. User reviews the first implementation;
+  exact filter choices are no longer a mandatory upfront questionnaire.
+- **Supersedes:** treating region/language queue-control specifics under
+  `DEC-036` as owner-only predevelopment blockers; rank-source/data choices
+  remain the separate original question seven
+- **Superseded by:** none
+
+## DEC-045 - Show Own Honor, Hide Reviewer Identities And Give Cleared Admins Full Case Context
+
+- **Date:** 2026-10-03
+- **Status:** approved audience direction; actual data inventory/retention and
+  security contract still to be specified
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotation 4 explicitly permits players to
+  see their own honor score. Received-rating/history/per-match point-change
+  views are not required for the first version; reviewer identities must not
+  be visible to players. This is player-facing anonymity, not irreversible
+  anonymization of the moderation evidence.
+- **Admin authority:** the admin panel is only for people granted data clearance.
+  Those authorized admins can see all available QGuard moderation/account
+  context without participant anonymity/redaction restrictions: who submitted
+  feedback/reports, their targets, the feedback/report contents and associated
+  project account data. Do not conceal relevant identities from the reviewer.
+- **Boundary:** permission concerns QGuard project data that is legitimately
+  collected/retained, not plaintext passwords, secret/token disclosure, arbitrary
+  external data, recording or destructive/admin punishment powers. Protect the
+  panel and keep raw identities out of participant APIs, logs and responses.
+  This grants neither every account admin access nor an operational clearance
+  to any named person in this documentation task.
+- **History reconciliation:** admin access to individual feedback/report
+  evidence is a moderation purpose, separate from `DEC-033`'s no exact-history
+  honor calculation. Pending/report-case evidence must support the required
+  review; lifetime individual feedback history, new retention durations and
+  collection remain unselected until the later identity/data contract. Do not
+  falsely promise evidence is inspectable after it has been discarded.
+- **Supersedes:** own-score/reviewer/admin audience open components of
+  `DEC-038`; non-public peer reputation remains in force
+- **Superseded by:** none
+
+## DEC-046 - Include Native Private Match Chat And Only The No-Discord Queue Now
+
+- **Date:** 2026-10-03
+- **Status:** approved current feature and queue boundary; future voice-pool
+  fallback direction conditional, not current implementation work
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotation 6 requires private website text
+  chat for matched parties in the first pass. It supports communication and
+  can later carry a human-shared game-party link when an applicable link path
+  is available and validated. Native chat is not automatic game-party joining.
+- **Current queue:** only no-Discord queueing is available until actual Discord
+  integration is implemented. No fake working with-voice queue, live bot/server
+  work or test resumption is authorized. The joining component stays replaceable
+  and unimplemented under the existing evidence gates.
+- **Future voice pools:** owner prefers deciding this when the integration
+  returns. If current architecture genuinely needs the boundary, use strictly
+  separated with/without-voice pools as the approved conditional planning
+  default; otherwise defer the choice. Do not build a second active queue now
+  or a speculative generalized voice platform solely to force an early decision.
+- **Access / data boundary:** matched-participant text access, no unrelated
+  ordinary users, with cleared-admin access under `DEC-045`; private is not
+  secrecy from authorized moderators. Chat retention, account mapping and link
+  secret handling need the applicable data/security specification. No recording
+  or provider integration is implied.
+- **Supersedes:** `DEC-035`'s native-text proposal and interim voice-queue open
+  component; Discord deferral and live-evidence gates remain intact
+- **Superseded by:** none
+
+### Shared Route And Evidence Boundary For DEC-042 Through DEC-046
+
+Bounded decision/refinement unit, 2026-10-03, at clean `new-development`,
+`bb153c8`. Six latest annotations mapped against current records before edits.
+Route: product planning; decision/recommendation safety; privacy/data;
+owner/external review; deferral/owner review; audit/reconciliation. Mandatory
+entry, always-applicable documents and selected procedures read. New explicit
+directions close earlier questions or delegate reversible development choices;
+they do not grant a complete slice, live-provider action or release approval.
+Original question seven remains the next separate identity/rank/data group.
+Current-state verification records scoped diff, link/anchor/ID and unchanged-
+mathematics checks. One coherent additive local documentation commit; no code,
+canonical-workflow change, provider research or external action in this unit.

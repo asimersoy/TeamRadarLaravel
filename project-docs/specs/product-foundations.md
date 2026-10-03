@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-041`
+- **Authority:** `DEC-009` through `DEC-046`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -95,13 +95,12 @@ deviation allowance, not a player-spread-dependent one. Preserve both ideas in
 [future honor ideas](#future-honor-ideas---outside-current-implementation);
 they are not blockers or approved later implementation commitments.
 
-`DEC-035` through `DEC-041` now select further first-version queue, party,
-matching, feedback and admin directions below. The complete scoring contract,
-settlement timing, participation evidence, private audiences, additional
-matching constraints, sanctions, correction, appeal, retention, monitoring and
-release criteria remain incomplete. Do not re-open settled dimensions,
-reference choice, startup delegation or adjustable development constants as
-owner prerequisites.
+`DEC-035` through `DEC-046` select further queue, party, matching, feedback and
+admin directions below. The complete scoring/data/acceptance contract and real
+game integration remain incomplete. Reversible development details are
+delegated under `DEC-042`, not an upfront owner questionnaire. Do not re-open
+settled dimensions, reference choice, startup delegation, private audiences,
+session-end/feedback clock or adjustable constants as owner prerequisites.
 It approves no public promise that QGuard prevents toxicity or guarantees safe
 or compatible teammates.
 
@@ -120,39 +119,53 @@ subject to the participation/report rules. Snapshot pre-made membership at
 queue/match entry so leaving it cannot bypass the restriction. This does not
 exclude ratings between all people who happen to be QGuard friends.
 
-Normal session completion, party readiness/consent and requeue/recovery need
-rules. UI history exclusion does not settle session/report evidence retention.
+`DEC-043` defines participant-declared completion below; one session may include
+several games. Original partial-party persistence after assembled-team disband
+is optional implementation-agent discretion, not required extra complexity.
+Readiness/recovery details must be specified and tested, but reversible choices
+within the approved direction need not come back as owner questions. UI history
+exclusion does not settle session/report evidence retention.
 
 ### Current Queue And Matching Direction
 
 `DEC-035` selects queue choices with or without Discord voice, not compulsory
 Discord use for everyone. Real Discord integration is excluded from this
 implementation and returns only after owner test resumption, relevant feature
-availability/behavior evidence and its slice approval. Text communication in
-both paths, possibly on QGuard, is proposed but not yet a required native chat
-specification. Whether voice choices separate pools and how the with-voice
-option behaves while integration is absent remain owner choices.
+availability/behavior evidence and its slice approval. `DEC-046` now requires
+private native website text for matched parties and only the no-Discord queue
+in the current first pass. Chat can later carry a validated human-shared game
+link but does not implement joining. No working voice queue is offered while
+integration is absent. Future voice-pool separation is decided later unless
+current architecture truly needs it; then strict separation is the owner's
+conditional planning default, not a reason to implement a second queue now.
 
 `DEC-036` makes the game's actual party/rank queue compatibility the first hard
 constraint. Within it, favor similar honor and dynamically widen similarity as
 queue wait increases. Never widen past game compatibility. The implementation
 agent may choose/test adjustable widening rates and honor-distance settings;
-they need not be frozen before development. Applicable game/mode/party-size
-rules need evidence before reliance. Other hard filters and rank evidence are
-not chosen here; identity/rank/data is the next separate owner decision group.
+they need not be frozen before development. `DEC-044` delegates investigation
+and initial region/language controls to the implementation agent, with owner
+review after the first build. Relevant actual game/mode/party-size rules require
+current first-party evidence before reliance; this record invents none.
+Reversible filter defaults and preference/constraint behavior within game
+compatibility are agent-selected, not upfront owner blockers. Rank evidence,
+identity and data remain the next separate owner decision group.
 
 ### Session No-Show And Participation Direction
 
 `DEC-039` selects an initial no-show path: after five minutes from matching,
-teammates may raise a challenge; if "everyone" does, give the target 30 seconds
-to respond/join. Failure removes the target and disbands the QGuard matched
-team. This does not control or prove the actual game lobby. Clarify whether
-everyone means all other players, what response stops removal, what joining
-means without game visibility, and recovery for solos/pre-made parties.
+teammates may raise a challenge. `DEC-043` requires all other matched teammates,
+excluding the target, to support it; give the target 30 seconds to respond.
+An "I joined" acknowledgment stops removal for this first pass. No response
+removes the target and disbands the QGuard matched team. This is self-report,
+not control or proof of game membership. Recovery/partial-party persistence is
+agent-selected under `DEC-042`; stronger checks remain later planning.
 
 Leaving the game before completion makes a player's outgoing ordinary ratings
-ineligible. Teammate reporting is the proposed evidence; the threshold and
-reporter eligibility need a contract. The owner explicitly postpones stronger
+ineligible. Teammate reporting is the proposed evidence; evidence/counting edge
+rules must be explicitly specified by the implementation agent, preserving
+the selected two-reporter consequence and not inventing penalties. These are
+not all predevelopment owner questions under `DEC-042`. The owner postpones stronger
 false-no-show/collusion checks (`DEF-008`), acknowledging that a joined player
 could be falsely targeted. No automatic score deduction or ban is selected;
 development direction is not proof of safe release.
@@ -180,15 +193,29 @@ for that match before human review. Flag this automatic action in the admin
 view. The owner's follow-up explicitly distinguishes this eligibility
 consequence from automatic penalties. It does not invalidate ratings the player
 receives or impose a permanent rating ban, honor deduction or account sanction.
-Who may submit threshold-counting reports still needs clarification.
+Report-counting edge cases need a documented slice contract; agent-made
+reversible selections must not be described as already selected owner policy.
 
 Submitted ratings stay pending while session feedback/reports are considered;
 fast submission and leaving the UI cannot evade the check. A queue entered
 before settlement uses the current, not-yet-updated honor. Only eligible
-ratings enter honor and its unadjusted reference. Decide how feedback opens,
-when the batch closes, optional/skipped feedback, nonresponse and reports after
-finalization. Transient pending records are not permission for permanent exact
-feedback history; `DEC-033` and later data/access decisions still govern.
+ratings enter honor and its unadjusted reference. Under `DEC-043`, a participant
+clicks Session ended to open their feedback screen. This is separate from the
+no-show action and covers one or several games without game-end detection.
+The feedback batch and its report-based ineligibility apply to this matched
+QGuard session, not a separate API-observed batch for each underlying game.
+The first completed feedback submission after Session ended starts a ten-minute
+window. Settle as soon as everyone declares completion and finalizes feedback,
+or at the deadline if some never submit. A returning participant may be shown
+still-pending feedback. Merely clicking Session ended does not start the clock.
+
+Optional/skipped fields, post-closure handling and same-session processing edge
+details are to be specified/tested within `DEC-042`'s discretion; missing
+feedback is not permission to fabricate ratings or silently apply late updates.
+Owner requests later polish under `DEF-011`, including differing end times,
+multiple games and premature session-end declarations. Transient pending
+records are not permission for permanent exact feedback history; `DEC-033`
+and later data/access decisions still govern.
 
 `DEC-040` selects a basic report inbox/dashboard for human review, including
 the automatic-invalidation tag. Admin punishment tools, automatic penalties
@@ -198,16 +225,28 @@ new penalties or access rights are not.
 
 ### Private Reputation Direction
 
-`DEC-038` selects non-public honor, feedback and reviewer identities for now.
-Do not expose them to teammates by default. Whether a player sees their own
-honor, incoming ratings/aggregates or reviewer identities, and authorized
-operator access, remain distinct choices. Private does not mean anonymous.
+`DEC-038`/`DEC-045` keep peer honor/feedback non-public, but players see their
+own honor score. A received-feedback/history/per-match points screen is not
+required for this version. Reviewer identities are hidden from players, not
+irreversibly removed from moderation evidence.
+
+Only admins granted data clearance enter the admin panel. They can inspect all
+available QGuard case/account context, including feedback/report authors,
+targets and contents; no participant-anonymity redaction prevents review.
+Private matched-party chat is not secrecy from these authorized admins.
+This access requires enforcement and does not authorize credential/secret
+disclosure, voice capture, arbitrary external data or new admin penalty powers.
+Moderation-purpose evidence needed for this view is distinct from an exact
+historical ledger used by honor. The data contract must reconcile retention
+with what admins can actually inspect; a lifetime raw-feedback history or
+retention duration is not selected by the audience decision.
 
 ### Initial Game And Integration Direction
 
 Valorant remains the selected initial game for current QGuard product planning
-under `DEC-018`; later CS2 evidence has reopened that selection for deliberate
-owner comparison but has not silently replaced it.
+under `DEC-018` and is reaffirmed for the first pass by `DEC-044`. Earlier CS2
+evidence reopened comparison without replacing Valorant; do not treat that
+historical comparison as a current requirement to select the game again.
 Apex Legends was not selected because the bounded public first-party research
 found no evidenced Apex path satisfying the preferred friendship-free
 ordinary-party flow. This is a current feasibility-led decision, not an
@@ -308,9 +347,9 @@ submitting an application, using credentials, or assuming approval.
 
 Discord rooms and voice are the optional voice planning direction under
 `DEC-024`/`DEC-035`, with real integration excluded from this implementation.
-The future host-link alternative uses matched-only Discord text. Native website
-text for either queue choice is a current proposal, not a selected implementation
-contract. Future room lifetime, admission, permissions and operating rules
+The future host-link alternative uses matched-only Discord text. `DEC-046`
+requires native private match text now and only no-Discord queueing while real
+integration is absent. Future room lifetime, admission, permissions and operating rules
 remain open; universal compulsory attendance is not selected. Earlier session-audio
 retention for report review remains an unapproved proposal, not part of the
 room/voice selection.
@@ -332,9 +371,9 @@ application-creation endpoint originated with deprecated GameBridge, is capped
 at ten active Group DMs, and cannot contain a bot. The owner, not these findings,
 selects the Discord planning direction through `DEC-024`. Data flow, detailed
 implementation, membership lifecycle and recording remain unapproved. The
-earlier agent recommendation of a required native coordination room is still
-not approved merely by the owner's latest possibility of website text;
-`OQ-011` tracks the current interim journey and later integration details.
+earlier agent recommendation did not itself approve a native room; the latest
+explicit owner instruction does approve native private match chat (`DEC-046`).
+`OQ-011` now tracks its data/security specification and later integration detail.
 
 ### Availability Direction
 
@@ -737,15 +776,18 @@ the idea returns; they are not extra current-scope implementation requirements.
 - The test result for non-friend acceptance of the official Valorant lobby
   link, its host/recipient account-link and regional prerequisites, delivery
   through Discord versus a QGuard-like relay, and the recovery path if it fails.
-- The platform, region, mode, and party/user segment beyond the selected game.
+- The full launch/platform/audience boundary beyond selected Valorant, solo/
+  partial-party session scope and agent-delegated initial region/language controls.
 - The fallback coordination and rank flows if preferred integrations are not
   viable.
-- Whether the required coordination baseline is a minimal QGuard-native match
-  room, Discord-primary with native fallback, or Discord-required with regional
-  handling; whether Discord voice belongs in the product; and whether any
-  recording is justified under a complete approved data, consent, moderation,
-  security, provider-policy, and qualified-review boundary.
+- Native text and moderation-purpose data/access/retention, including what
+  evidence remains available to cleared admins after pending feedback settles.
+  Native chat and no-Discord-only queueing are already selected. Future Discord
+  operating rules return with the integration slice; voice recording remains
+  an unapproved future proposal, not a current-scope question or feature.
 - The complete matching, honor, review, report, moderation, data, security,
   business, operational, and validation specifications.
 
-No implementation slice is authorized by this partial foundation.
+No implementation slice is authorized by this partial foundation. Reversible
+agent-owned details are not additional upfront owner questions; actual data/
+security and acceptance contracts still need to be completed for the slice.

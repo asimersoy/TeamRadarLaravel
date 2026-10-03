@@ -73,21 +73,29 @@ not approved later features or current blockers. Existing core honor decisions
 remain in force; their current implementation needs no volatility indicator.
 `DEC-035` makes Discord voice a queue option and excludes real Discord
 implementation from this scope, until availability and owner tests permit a
-later slice. Native website text is proposed, not yet selected. `DEC-036`
+later slice. `DEC-046` now requires native private match text and only
+no-Discord queueing in this first pass. `DEC-036`
 prioritizes hard game rank compatibility, then honor closeness with tunable
 wait-dependent widening. Original partial-party members cannot rate one another
-(`DEC-037`); non-public reputation is selected but private audiences remain
-open (`DEC-038`). `DEC-039` selects initial no-show/early-leaver directions;
-vote, response, completion and recovery details need clarification. `DEC-040`
+(`DEC-037`); `DEC-045` selects own honor visibility, no required received-feedback
+history screen, player-hidden reviewer identities and full available project
+case/account context for data-cleared admins. `DEC-043` requires all other
+teammates' no-show votes and lets I joined stop removal. `DEC-040`
 selects a human report inbox without punishment tools. `DEC-041` selects three
 1–10 feedback dimensions averaged into honor and pending report-aware settlement.
 The owner explicitly clarifies that two distinct reporters automatically
 invalidate the target's outgoing ratings for that match before human review,
 with an admin tag. This is an eligibility consequence, not an automatic penalty.
-Full scoring acceptance, settlement clock/nonresponse/late reports, participation
-evidence, private audiences and the interim coordination journey remain open.
-Finish original questions one through six before the separate identity/rank/data
-discussion. Existing tuning/startup delegation and future-only exclusions stand.
+`DEC-043` also selects participant Session ended, sessions of one or more games,
+and settlement within ten minutes of the first finalized feedback, earlier if
+everyone completes. Later polish is `DEF-011`. `DEC-042` delegates reversible
+development details; `DEC-044` delegates initial Valorant region/language queue
+controls. Owner reviews the first build and can refine later passes. Multiple
+viable options alone are not an upfront owner blocker; full scoring/data/
+acceptance specs still need work. Move to original question seven (identity,
+rank and data), without another one-through-six questionnaire. Moderation
+evidence retention and native-chat data need a contract distinct from the
+no-exact-history honor calculation. Existing future-only exclusions stand.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.

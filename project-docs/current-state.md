@@ -21,12 +21,16 @@
   a human report inbox and three-dimension pending feedback. Two distinct
   reports automatically invalidate the target's outgoing ratings for that
   match before human review and are tagged for admins; automatic penalties
-  remain deferred. Detailed specifications remain incomplete
-- **Objective:** finish unanswered behavioral boundaries in original questions
-  one through six, then discuss identity/rank/data separately; preserve test
-  hold, future-only exclusions and slice gates
+  remain deferred. `DEC-042` through `DEC-046` delegate reversible development
+  details and select participant-declared session end, ten-minute feedback
+  settlement, own honor display, player-hidden reviewer identities, cleared-
+  admin case/account access, native private match text and no-Discord queueing
+  only for now. Detailed specifications remain incomplete
+- **Objective:** advance to original question seven (identity/rank/data),
+  without reopening settled or delegated one-through-six details; preserve
+  live-test hold, future-only exclusions and slice gates
 - **Current route:**
-  [Trust, reviews, reports and moderation decision group](planning/rewrite-owner-decision-sequence.md#decision-group-5---trust-reviews-reports-and-moderation)
+  [Identity, integrations and data — original question seven](planning/rewrite-owner-decision-sequence.md#decision-group-6---identity-integrations-and-data)
 
 ## Verified Workspace State
 
@@ -87,11 +91,11 @@
   explicit advance owner approval. TeamRadar-specific workflow adaptations
   belong in separate project records; outer workspace notes are routing aids
   only.
-- `DEC-008` and the
+- `DEC-008`/`DEC-042` and the
   [workflow-governance policy](operations/workflow-governance.md) control
   TeamRadar-specific rule changes, approvals, decision supersession,
   specification gates, commit boundaries, controlled operations, review
-  batching, and reviewer authority.
+  batching, reviewer authority and explicit reversible-development delegation.
 - Current product decisions select the **QGuard** name, behavioral honor as the
   central concept, feasibility-led game selection, authoritative API-derived
   rank as preferred over declaration, bounded reporting for inaccurate fallback
@@ -181,29 +185,46 @@
   design questions are not current blockers and require explicit owner reopening.
 - `DEC-035` refines `DEC-024`: users choose queueing with or without Discord
   voice; real Discord implementation is excluded from this scope (`DEF-007`).
-  Required native website text and the interim with-voice experience remain
-  open. The availability/test prerequisite is not new provider release evidence.
+  `DEC-046` now requires native private match chat and only no-Discord queueing
+  until integration. Future voice pools wait unless current architecture truly
+  needs the boundary, then strict separation is a conditional planning default.
+  The availability/test prerequisite is not new provider release evidence.
 - `DEC-036` requires actual game rank/party compatibility first, then favors
   honor closeness and widens acceptable similarity with wait time. Widening
   may never break game compatibility; rates/limits are adjustable development
-  settings. Actual game rules and other hard filters still need evidence/rules.
+  settings. `DEC-044` delegates research and initial region/language queue
+  controls to the implementation agent, with owner first-build review and
+  later passes. Actual game rules need current evidence before reliance.
 - `DEC-037` excludes original pre-made co-members' ratings of each other, not
   ratings between all site friends. `DEC-038` chooses non-public reputation;
-  own-score/feedback/reviewer and authorized-admin audiences remain incomplete.
+  `DEC-045` now shows own honor, requires no received-feedback/history screen,
+  hides reviewer identities from players, and permits data-cleared admins to
+  inspect available case/account context without participant-anonymity redaction.
+  This is access policy, not lifetime feedback history or credential disclosure.
 - `DEC-039` selects the initial five-minute no-show challenge and 30-second
   response direction, removal/team disband on failure, and early-leaver rating
-  ineligibility. Vote/response meanings, participation evidence, normal
-  completion and recovery remain open; stronger false-accusation checks are
-  later planning (`DEF-008`). No verified game presence or penalty is implied.
+  ineligibility. `DEC-043` requires all other teammates' votes and permits an
+  I joined acknowledgment to stop removal. It is unverified self-report;
+  stronger involvement/griefing checks remain later (`DEF-008`). Original
+  partial-party persistence/recovery is optional agent discretion (`DEC-042`),
+  not an upfront question. No game-presence proof or automatic penalty implied.
 - `DEC-040`/`DEC-041` select a human report inbox and automatic invalidation
   of a reported player's outgoing ratings for that match after two distinct
   reporters, across any categories, before human review; tag it in the admin
   view. Owner follow-up resolves automatic consequences versus deferred
   automatic penalties, punishment tools and later correction/appeal policy.
   Three 1–10 dimensions (communication, sportsmanship, effort) feed a simple
-  mean into honor. Pending report-aware settlement is required; session-end,
-  cutoff/nonresponse, late-report and reporter-eligibility rules remain open.
+  mean into honor. `DEC-043` now opens feedback via each participant's Session
+  ended action; first finalized submission starts a ten-minute window, with
+  early settlement if everyone finishes. Sessions can include multiple games.
+  Submission/late-report/counting edge details still need explicit slice design
+  and tests, but reversible agent choices are not an upfront questionnaire.
   No permanent exact-feedback-history approval or actual collection follows.
+- `DEC-042` delegates reversible development choices within approved scope,
+  with documented defaults/tests and owner review after the first build.
+  Multiple viable options alone do not justify an owner question. Fundamental
+  or consequential choices outside the delegation, sensitive data/permissions,
+  scope changes and controlled operations retain applicable owner/review gates.
 - No complete product/use boundary, platform/region/mode/audience wedge, rank or
   API integration, complete coordination operating rules, matching contract, honor
   formula or detailed effect, moderation policy, architecture, technology,
@@ -362,16 +383,19 @@
   into `DEC-035` through `DEC-041`, with clear current/future boundaries and
   partial supersession of `DEC-024`/`DEC-025`. Owner follow-up explicitly resolves
   automatic rating invalidation versus penalties; admin tagging is included.
-- **Next planning discussion:** close feedback/session settlement, especially
-  what happens if someone never submits; then no-show response/recovery,
-  remaining filters/private audiences and the current text/deferred-voice
-  journey. [OQ-006](governance/open-questions.md#oq-006---what-matching-trust-moderation-and-data-behavior-is-permitted)
-  lists the unanswered items. Original question seven (identity, rank access
-  and data boundaries) is explicitly separate and later; this is not the same
-  numbering as annotation indices or the older plan's decision groups.
-  Dimensions, optional voice direction, partial parties/friends, reference
-  selection and automatic invalidation are settled. Do not re-ask arbitrary
-  numeric tuning/startup methods or future volatility as owner prerequisites.
+- **Completed first-pass refinement record, 2026-10-03:** six latest owner
+  annotations recorded in `DEC-042` through `DEC-046`: bounded agent discretion,
+  Session ended/ten-minute settlement, no-show vote/response, initial filter
+  responsibility, player/admin audiences and native chat/no-Discord queueing.
+  `DEF-011` records session/feedback polish; other future exclusions preserved.
+- **Next planning discussion:** original question seven: identity, rank access
+  and data boundaries. Reconcile moderation-purpose feedback/report evidence
+  and native text with current no-exact-history honor calculation; define
+  actual retention/access before collection. This is not the older plan's
+  group seven. [OQ-006](governance/open-questions.md#oq-006---what-matching-trust-moderation-and-data-behavior-is-permitted)
+  distinguishes settled/delegated details from remaining data/release gates.
+  No further broad one-through-six questionnaire; startup/tuning, region/
+  language defaults and optional partial-party persistence are agent work.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
@@ -387,6 +411,21 @@
 
 ## Verification State
 
+- The 2026-10-03 first-pass refinement began with clean `new-development` at
+  `bb153c8`. Evidence-only six-annotation reconciliation preceded edits.
+  Route: product planning, decision/recommendation safety, privacy/data,
+  owner/external review, deferral/owner review and audit/reconciliation.
+  Mandatory entry, always-applicable documents and selected procedures read.
+  Current one-through-six choices closed or explicitly delegated; data and
+  applicable specification/acceptance gates remain. All 54 project Markdown
+  files, 226 local links, 32 heading anchors, 46 unique sequential decisions
+  and eleven sequential deferrals checked; all four mathematical text blocks
+  unchanged. Complete ten-file scoped diff reviewed; `git diff --check` passed.
+  One coherent local documentation commit boundary. No app/full scoring/live
+  tests or fresh
+  provider research; no canonical workflow or legacy app change, real
+  collection, push or external operation. New session/report effectiveness
+  and permission enforcement are not established by document checks.
 - The 2026-10-03 owner-answer reconciliation began with clean `new-development`
   at `49b379d`. Evidence-only inspection preceded corrections; recovery found
   no partial writes or unrelated modifications. Route: product planning,
@@ -624,9 +663,11 @@
   but no supported QGuard creation/management API was found. Under `DEC-020`,
   they do not meet the preferred coordination criterion. Persistent Steam
   Community Groups are not the requested communication object.
-- Discord room/voice planning and private matched-only text for the link
-  alternative are selected by `DEC-024`. Admission, exact permissions,
-  lifecycle, data minimization and failure behavior remain specification gates.
+- Optional future Discord room/voice planning and private Discord text for
+  the link alternative remain selected by `DEC-024`/`DEC-035`. `DEC-046` now
+  requires native private match text and only no-Discord queueing. Future
+  Discord-specific admission/lifecycle choices do not block that native slice;
+  current data/security and acceptance contracts still gate it.
 - Discord application-created Group DMs are not a dependable default: the
   documented endpoint originated with deprecated GameBridge, is capped at ten
   active groups, and cannot contain a bot.

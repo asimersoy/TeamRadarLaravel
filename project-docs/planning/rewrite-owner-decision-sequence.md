@@ -141,19 +141,35 @@ explicitly rejects them.
   deviation accountability from current implementation. Preserve them as future
   possibilities only, requiring explicit reopening and adoption (`DEC-034`).
 - Queue with/without Discord voice, while excluding real Discord integration
-  from current implementation (`DEC-035`). Native website text is proposed.
+  from current implementation (`DEC-035`); `DEC-046` later selects native
+  website text and only no-Discord queueing for this first pass.
 - Preserve hard in-game rank compatibility, then honor closeness with tunable
   wait-dependent widening (`DEC-036`). Never widen past game compatibility.
 - Include basic friends and partial parties; prohibit ratings between original
   pre-made co-members, not all site friends (`DEC-037`). Keep reputation
-  non-public pending precise private audiences (`DEC-038`).
+  non-public (`DEC-038`), with precise private audiences later in `DEC-045`.
 - Use the initial no-show challenge and early-leaver ineligibility direction
-  (`DEC-039`), with evidence/response/completion details still open.
+  (`DEC-039`), with response/completion later resolved by `DEC-043` and stronger
+  evidence checks postponed.
 - Start with human report review, no punishment tools (`DEC-040`), and three
   1–10 dimensions averaged into honor with pending report-aware settlement
   (`DEC-041`). Two distinct reports automatically invalidate the reported
   player's outgoing ratings for that match before human review; tag for admins.
   Owner follow-up distinguishes this consequence from deferred penalties.
+- Delegate reversible development details, with documented agent defaults/tests
+  and owner first-build review (`DEC-042`). Multiple viable options alone do
+  not require upfront owner choice. Original partial-party persistence optional.
+- Use participant Session ended for one or several games; first finalized
+  feedback starts a ten-minute window, with early settlement if everyone
+  finishes. All other players must support a no-show challenge; I joined
+  stops removal for now (`DEC-043`); stronger checks/polish remain future.
+- Delegate research/initial Valorant region/language queue controls (`DEC-044`).
+- Show own honor; no required received-feedback/history view; hide reviewers
+  from players but permit data-cleared admins full available project case/
+  account context without participant-anonymity redaction (`DEC-045`).
+- Include native private matched-party text and only no-Discord queueing now
+  (`DEC-046`). Future voice pools wait, with strict separation as the conditional
+  default only if current architecture genuinely needs the boundary.
 
 ### Unapproved Assumptions
 
@@ -246,10 +262,11 @@ Discord-dependent execution is on the
 [2026-09-28 owner hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
 `DEC-024` approves Discord room/voice planning, a private matched-only text
 channel for the future host-link alternative, and replaceable joining.
-`DEC-035` now makes voice a queue option and excludes real Discord integration
-from current implementation. Required website text, voice-pool separation and
-the interim with-voice journey still need decisions; do not re-ask universal
-Discord participation. Surrounding specifications can proceed while tests remain paused. The
+`DEC-035` makes voice a future queue option and excludes real Discord integration
+now. `DEC-046` requires native private match text and only no-Discord queueing
+in this first pass. Do not re-ask those choices; future voice-pool separation
+can wait unless a current dependency needs the approved strict-separation
+default. Surrounding specifications proceed while tests remain paused. The
 [coordination module](../specs/coordination-and-party-handoff.md) orders later
 specification-gated implementation slices. The preserved
 [coordination and party-entry validation program](coordination-and-party-entry-validation-program.md)
@@ -280,13 +297,15 @@ claim limits. This closes or narrows `OQ-004`.
 
 ## Decision Group 2 - First User And Market Wedge
 
-1. Valorant is selected under `DEC-018`; which mode is the first supported wedge?
-2. Which platform, input, cross-play, region/data center, and language are in
-   scope?
+1. Valorant is reaffirmed under `DEC-044`; investigate relevant game/mode/party
+   compatibility before relying on it. Reversible queue-control specifics are
+   delegated, not a new mandatory owner questionnaire.
+2. Initial region/language controls are delegated under `DEC-044`. Full launch
+   geography, public audience and actual data boundaries remain separate.
 3. Both solo and partial-party entry are selected under `DEC-037`; specify
    their readiness and recovery without re-opening that scope choice.
-4. Session grouping is selected by `DEC-025`; what defines the session's
-   duration and completion? Lasting-team management and past-teammate history
+4. Session grouping and participant-declared completion across one or several
+   games are selected (`DEC-025`/`DEC-043`). Lasting-team and past-teammate history
    UI are outside this implementation; basic friends/invitations are now in
    scope under `DEC-037`.
 5. Is the first priority casual, ranked/competitive, or another player need?
@@ -299,9 +318,10 @@ provider facts require a fresh recheck or deeper research.
 ## Decision Group 3 - Smallest Complete MVP Journey
 
 Current direction: session queueing, partial parties and basic friends/invites
-are selected (`DEC-025`/`DEC-035`/`DEC-037`). No-show direction is selected but
-normal completion and response/recovery still need rules (`DEC-039`). Use the
-items below as coverage checks, not a reason to re-open settled choices.
+are selected (`DEC-025`/`DEC-037`/`DEC-046`). `DEC-043` settles normal completion,
+feedback clock and no-show vote/response. Reversible recovery/persistence is
+agent-owned under `DEC-042`, not an upfront blocker. Use the following as
+specification/QA coverage, not a reason to re-open settled or delegated choices.
 
 Define the complete user loop before treating features as requirements:
 
@@ -324,8 +344,9 @@ failure, permission, abuse, and recovery states.
 ## Decision Group 4 - Matching And User-Decision Effects
 
 `DEC-036` selects game queue compatibility as the hard constraint, then honor
-similarity with wait-dependent widening. The agent may tune rates/limits in
-development; additional hard filters and actual game-rule evidence remain.
+similarity with wait-dependent widening. The agent may tune rates/limits and
+investigate/design initial region/language controls under `DEC-044`, with tests
+and later owner review. Actual game-rule evidence is not an owner memory question.
 
 1. Is the experience a neutral directory, deterministic filter, preference
    match, ranked recommendation, or eligibility/screening system?
@@ -372,8 +393,13 @@ with a simple mean. `DEC-037` excludes original pre-made co-member ratings;
 explicitly approves automatic per-match outgoing-rating invalidation after two
 distinct reporters before human review, with an admin tag. Automatic penalties
 remain later planning, not this eligibility consequence.
-Next settle feedback opening/closure, nonresponse and late reports, participation
-evidence, no-show response/recovery and private audiences in bounded discussions.
+`DEC-043` now settles feedback opening/ten-minute deadline and no-show vote/
+response; `DEC-045` settles own score/reviewer/admin audiences. Reversible
+submission/recovery/queue details are delegated, not an upfront questionnaire.
+Specify remaining reporter-evidence and closure edges explicitly inside the
+slice; preserve chosen report consequences and penalty exclusions. Original
+question seven (identity/rank/data) is next, particularly moderation-purpose
+evidence versus no exact honor history and native-chat retention/access.
 Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.
 
@@ -399,11 +425,13 @@ review. This is part of closing `OQ-006`.
 
 ## Decision Group 6 - Identity, Integrations, And Data
 
-**Current owner sequencing:** finish original fundamental questions one through
-six first; their original question seven is this identity/rank/data domain and
-must be discussed separately afterward. Original question numbers and annotation
-indices are not this older plan's decision-group IDs. Do not pull this group
-forward as part of the current unanswered-items response.
+**Current owner sequencing:** original questions one through six are now
+answered or delegated under `DEC-042` through `DEC-046`; do not re-open ordinary
+reversible details. Original question seven is this identity/rank/data domain
+and is the next separate discussion. Original question numbers and annotation
+indices are not this older plan's decision-group IDs. Retaining moderation
+case evidence and native chat must be reconciled with no exact honor-history
+calculation, without silently approving a permanent individual-rating ledger.
 
 1. Which account and game identifiers are collected, and are they declared,
    confirmed, or verified?

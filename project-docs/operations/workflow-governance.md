@@ -3,7 +3,7 @@
 - **Record type:** current project-specific operating policy
 - **Status:** approved
 - **Decision owner:** project owner
-- **Authority:** `DEC-007` and `DEC-008`; owner explanation-style clarification
+- **Authority:** `DEC-007`, `DEC-008` and `DEC-042`; owner explanation-style clarification
   on 2026-10-02
 - **Created:** 2026-09-04
 - **Update trigger:** proposed change to workflow authority, approval semantics,
@@ -78,6 +78,30 @@ This applies existing owner-review and approval semantics. Explanatory names
 are not a final code-interface contract, and explaining or renaming a proposed
 formula does not approve its mathematics, parameters, behavior, or implementation.
 Product-specific proposals remain in product records, not this operating policy.
+
+## Reversible Development Choices And First-Build Review
+
+Under `DEC-042`, upfront owner questions focus on genuinely foundational,
+costly-to-reverse or consequential boundaries, not every choice with multiple
+viable answers. For an otherwise approved development slice, the implementation
+agent may choose reversible details covered by its explicit delegation and
+present the result at the owner's first-build review. Follow-up development
+or polish passes can refine those choices.
+
+Record each such selection as agent-made, with purpose, material alternatives,
+reversibility and tests. Do not label an unchosen delegated detail as a missing
+owner approval. Applicable specs may state the bounded delegation rather than
+require the owner to select every configuration/default in advance.
+
+Technical editability alone does not waive scope, sensitive policy/data/access
+boundaries, acceptance evidence or controlled-operation gates. A selection
+outside explicit delegation that changes approved behavior, authority or risk
+still requires the relevant owner review. An irreversible or materially
+consequential choice is not made routine just because its code can be changed.
+The first-build review is not approval to begin an unapproved slice, operate
+with real users, defer basic correctness checks or publish. Product-specific
+delegations and selected behaviors stay in the decision register and specs;
+this policy contains only their operating rule.
 
 ## Specification Lifecycle
 

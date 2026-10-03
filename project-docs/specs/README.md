@@ -5,7 +5,9 @@
   Valorant; `DEC-024` selects Discord room/voice planning with replaceable
   joining, refined by `DEC-035` to optional voice queueing and real Discord
   implementation deferred. `DEC-036` through `DEC-041` add matching, party,
-  feedback and admin directions; complete slice contracts remain open
+  feedback and admin directions. `DEC-042` through `DEC-046` settle session/
+  clock, native chat/current queue and audiences, with reversible details
+  delegated; complete data/acceptance slice contracts remain open
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -42,7 +44,8 @@ records an explicit narrow override under the workflow-governance policy.
   implementation-ready
 - [Coordination and replaceable party handoff](coordination-and-party-handoff.md)
   — optional voice direction under `DEC-024`/`DEC-035`; real Discord integration
-  excluded now; current text/interim-voice contracts unresolved; actual game
+  excluded now; native private match text/no-Discord-only queue selected under
+  `DEC-046`, data/security contract incomplete; actual game
   joining unimplemented and live tests paused
 
 The historical gate is closed as sufficient for redesign. The current
@@ -82,6 +85,13 @@ dimensions, pending settlement and automatic per-match outgoing-rating
 invalidation after two distinct reports, tagged for admins before human review;
 automatic penalties are still deferred. The foundation and live question
 register distinguish these directions from remaining behavioral decisions.
+
+`DEC-042` delegates reversible development details and first-build review;
+`DEC-043` selects participant-declared session end and ten-minute feedback
+settlement. `DEC-044` delegates initial Valorant region/language queue controls;
+`DEC-045` settles own honor, player-hidden reviewers and cleared-admin context;
+`DEC-046` approves native private chat and only no-Discord queueing now. These
+are not complete data/acceptance specifications or a slice-start override.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

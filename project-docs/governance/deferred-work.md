@@ -315,7 +315,8 @@ boundary, not approval to implement either future feature.
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-039` preserves the first-version no-show challenge
   direction while explicitly postponing stronger false-accusation/collusion
-  checks. Remaining basic vote/response meanings are current open questions.
+  checks. `DEC-043` settles basic voting (all other teammates) and stopping
+  removal with an I joined acknowledgment; dishonest responses remain a risk.
 - **Reason postponed:** owner requests the simpler initial flow and recognizes
   that players could falsely claim a joined teammate is absent.
 - **Implementation state:** documentation only, no protection or removal code.
@@ -325,7 +326,9 @@ boundary, not approval to implement either future feature.
 - **Owner recheck:** actual evidence, safeguards and consequences before
   adopting them; no automatic honor penalty or ban selected.
 - **Verification needed:** false accusations, colluding partial parties,
-  honest delayed users, disputed joining and recovery tests for chosen policies.
+  honest delayed users, dishonest acknowledgment, disputed joining and recovery
+  tests for chosen policies. Future Discord presence is not automatically
+  equivalent to verified in-game participation.
 
 ## DEF-009 - Plan Moderation Penalties And Correction Policies In A Later Version
 
@@ -361,3 +364,27 @@ boundary, not approval to implement either future feature.
   privacy/access, storage purpose and acceptance before implementation.
 - **Owner recheck:** no hidden permanent feedback ledger or lifetime session
   history may be inferred from the basic friendship feature.
+
+## DEF-011 - Polish Participant-Declared Session End And Feedback Settlement Later
+
+- **Status:** explicit owner-approved later polish; concrete improvements
+  unselected, current ten-minute first-pass direction fixed
+- **Decision owner:** project owner
+- **Execution owner:** unassigned until the owner starts a later pass
+- **Locked decision:** `DEC-043` uses participant Session ended and a ten-minute
+  window from the first finalized feedback submission, with earlier closure
+  if everyone finishes. A session may span multiple games.
+- **Reason postponed:** owner wants a simple first version and does not yet
+  choose a more automated or refined completion/feedback system.
+- **Implementation state:** documented only; no session/settlement code.
+- **Return condition:** owner first-build review or a later polish plan;
+  reassess the known risks before real-user release. No automatic activation
+  or approval of a particular future detector/provider integration.
+- **Risks retained:** premature/malicious end declarations, mismatched end
+  times while teammates continue playing, long/multiple-game sessions,
+  nonresponse and late feedback/reports. Stronger no-show involvement evidence
+  remains alongside this under `DEF-008`, not a current Discord implementation.
+- **Verification needed:** initial implementation must still test deadline,
+  all-complete early closure, return/nonresponse, pending report invalidation,
+  duplicate submissions and no double honor/reference application. Future
+  improvements need their own approved contract and abuse/failure evidence.
