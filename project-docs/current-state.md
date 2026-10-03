@@ -20,8 +20,17 @@ S1–S6 are implemented and verified in the fresh `qguard/` directory. See the
 actual stage status, commands and checks. No repeat packet approval is needed;
 the [acceptance results](planning/first-pass/verification-results.md) cover backend,
 three browser engines, concurrency, live-update recovery, load and isolated restore.
-The local demo is available at `http://localhost:8120`; setup and synthetic account
-instructions are in [the app runbook](../qguard/README.md).
+The local demo uses `http://localhost:8120` when running; setup and synthetic
+account instructions are in [the app runbook](../qguard/README.md). At the owner's
+request on 2026-10-03, both local stacks were brought down after the work:
+`docker compose -p qguard-dev --profile '*' down` and
+`docker compose -p qguard-test-local -f compose.test.yaml --profile '*' down`,
+from `qguard/`, without volume/image deletion. Docker checks found no remaining
+containers for either project and confirmed `qguard-dev-postgres` and
+`qguard-test-local_test-storage` still exist. The development database remains;
+the disposable test PostgreSQL tmpfs and ephemeral mail inboxes do not survive
+container removal. Synthetic test fixtures can be recreated through the runbook.
+This shutdown does not resolve NAV-WK-01 or authorize unrelated cleanup.
 Next: owner review of the working flows and the
 [actual stored-data inventory](operations/first-build-data-inventory.md) under DEF-012.
 This is not deployed or approved for real-player/public collection.
