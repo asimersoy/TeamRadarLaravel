@@ -3,7 +3,7 @@
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner
-- **Authority:** `DEC-009` through `DEC-046`
+- **Authority:** `DEC-009` through `DEC-048`
 - **Created:** 2026-09-05
 - **Update trigger:** product-charter, game/integration, honor, rank-source,
   permitted-use, or legacy-evidence decision
@@ -52,9 +52,10 @@ recurrence is selected by `DEC-032`; its startup details remain delegated.
 No/sparse history, zero spread, same-session/repeated reviewers, organized
 abuse and genuine behavior changes require explicit design and verification.
 Under `DEC-033`, the first-version calculation plans no exact individual
-feedback-history ledger or last-N buffer. Other-purpose records and their
-retention/access rules still need explicit decisions; the reference response
-setting does not settle them.
+feedback-history ledger or last-N buffer for calculation. `DEC-047` now
+retains records stored by first-pass features for admin review without expiry;
+this does not replace the smoothed calculation. Retention refinement returns
+immediately after the first implementation under `DEF-012`.
 
 `DEC-030` separates the raw reference from attenuated honor influence.
 `DEC-032` replaces its exact-window requirement with smoothing: each eligible
@@ -149,7 +150,9 @@ review after the first build. Relevant actual game/mode/party-size rules require
 current first-party evidence before reliance; this record invents none.
 Reversible filter defaults and preference/constraint behavior within game
 compatibility are agent-selected, not upfront owner blockers. Rank evidence,
-identity and data remain the next separate owner decision group.
+identity and data are now governed by `DEC-047`/`DEC-048` below. With declared
+rank, compatibility checks use the stated input and cannot guarantee the
+teammates' actual game eligibility.
 
 ### Session No-Show And Participation Direction
 
@@ -213,9 +216,10 @@ Optional/skipped fields, post-closure handling and same-session processing edge
 details are to be specified/tested within `DEC-042`'s discretion; missing
 feedback is not permission to fabricate ratings or silently apply late updates.
 Owner requests later polish under `DEF-011`, including differing end times,
-multiple games and premature session-end declarations. Transient pending
-records are not permission for permanent exact feedback history; `DEC-033`
-and later data/access decisions still govern.
+multiple games and premature session-end declarations. Under `DEC-047`,
+submitted records remain after settlement without automatic expiry for this
+first pass, including sessions without a report. Retention-policy refinement
+is `DEF-012`; honor continues to use its smoothed aggregate state.
 
 `DEC-040` selects a basic report inbox/dashboard for human review, including
 the automatic-invalidation tag. Admin punishment tools, automatic penalties
@@ -237,9 +241,26 @@ Private matched-party chat is not secrecy from these authorized admins.
 This access requires enforcement and does not authorize credential/secret
 disclosure, voice capture, arbitrary external data or new admin penalty powers.
 Moderation-purpose evidence needed for this view is distinct from an exact
-historical ledger used by honor. The data contract must reconcile retention
-with what admins can actually inspect; a lifetime raw-feedback history or
-retention duration is not selected by the audience decision.
+historical ledger used by honor. `DEC-047` retains stored feature records until
+explicit deletion, with no automatic expiry in this first pass. Admin views
+must accurately reflect what exists; the agent documents the actual data
+inventory for the immediate second-pass retention review (`DEF-012`).
+
+### First-Pass Data Retention And Review
+
+Retain stored account/session records, individual feedback and reports, and
+native chat messages from ordinary and reported sessions under `DEC-047`.
+Do not purge them when feedback settles or silently apply a retention timer.
+Cleared admins have the approved project-context view; player-facing privacy
+is unchanged. This is not new voice recording, external collection, secret
+logging, a player-visible history feature or a different honor algorithm.
+
+Immediately after the first implementation, present the owner with the actual
+stored fields/records and their purposes. Under `DEF-012`, decide retention,
+restrictions and deletion from that concrete inventory in pass two. Existing
+real-user collection and release review still apply; the temporary development
+default is not a permanent public/legal retention promise. No deletion is
+authorized by merely naming this future review.
 
 ### Initial Game And Integration Direction
 
@@ -392,11 +413,27 @@ evidence, and live or automated monitoring are separate choices. See the
 
 ### Rank Source
 
-API-derived rank is preferred over self-declaration when the source is
-permitted, sufficiently reliable, and operationally viable. Self-declaration
-is a fallback, not the desired source. If approved later, declared rank must be
-truthfully labelled and paired with reporting, correction, and operator
-resolution for inaccurate declarations.
+`DEC-048` delegates the first-pass identity/rank flow to the implementation
+agent. Determine identifiers and available ownership checks from current
+official evidence; do not assume Riot ID entry or mandatory verified ownership
+before knowing the actual flow. Ownership and rank may share an authorization
+path, but neither capability proves the other without evidence.
+
+Use official rank retrieval if permitted, reliable and accessible. If it is
+unavailable, requires ungranted Riot approval or needs further owner decisions,
+the approved first-pass fallback is self-declaration. Record/test the selected
+method and its limits for owner review after the build; source choice is not a
+new upfront owner question. Provider contact/application gates remain separate.
+
+Show stated ranks in the matched QGuard lobby. At Session ended, ask whether
+any teammate's observed in-game rank differed from the website's stated rank,
+and record identified discrepancies for review. Verify what the game actually
+shows; support not-observed/unknown rather than manufacturing a confirmation.
+Keep this in the existing multi-game-session feedback flow. A peer check is
+not official verification; retain accurate source/status labeling. Specify
+report-category handling with the existing human inbox and two-reporter
+eligibility rule; do not silently introduce new penalties or automatic rank
+corrections.
 
 ### Legacy Evidence Use
 
@@ -486,7 +523,8 @@ deviation 20. Use descriptive unambiguous variable names even when longer.
 - **Approval boundary:** `DEC-032` supersedes only exact last-N reference
   semantics in `DEC-029` and `DEC-030`. `DEC-033` explicitly selects no exact
   individual feedback history for the first-version honor calculation.
-  Records for other purposes and their retention remain separate questions.
+  Records for other purposes follow `DEC-047` pending the `DEF-012` review;
+  retaining them does not change this calculation.
 
 With descriptive names, the selected recurrence is:
 
@@ -548,9 +586,10 @@ approved, not an outstanding exact-window comparison. During development,
 calibrate its response jointly with the separate honor update rate and influence
 curve; do not equate the divisor to a literal window length. Mean-only state
 cannot reconstruct individual feedback for correction, appeals, abuse
-investigation or historical recalculation. Under `DEC-033`, do not add an exact
-rating ledger silently to meet these needs; specify compatible mechanisms or
-surface any requested other-purpose retention for owner review.
+investigation or historical recalculation. `DEC-047` now explicitly retains
+first-pass feature submissions for review. Keep that evidence storage separate
+from the aggregate calculation and inventory it for `DEF-012`; do not restore
+last-N scoring merely because raw submissions are retained.
 
 **Development handling approved by `DEC-031`/`DEC-032`:** include initialization and
 confidence/sample-count handling; the implementation agent chooses its method
@@ -772,16 +811,19 @@ the idea returns; they are not extra current-scope implementation requirements.
 
 - The precise present-day user problem, outcome, permitted uses, prohibited
   uses, audience, and public-claim boundary.
-- The acceptable response to the documented rank-coverage gap.
+- Actual identity/rank integration capability and the agent-selected method,
+  with the `DEC-048` fallback already approved; factual implementation work,
+  not an unanswered owner preference.
 - The test result for non-friend acceptance of the official Valorant lobby
   link, its host/recipient account-link and regional prerequisites, delivery
   through Discord versus a QGuard-like relay, and the recovery path if it fails.
 - The full launch/platform/audience boundary beyond selected Valorant, solo/
   partial-party session scope and agent-delegated initial region/language controls.
-- The fallback coordination and rank flows if preferred integrations are not
-  viable.
-- Native text and moderation-purpose data/access/retention, including what
-  evidence remains available to cleared admins after pending feedback settles.
+- Later coordination recovery if both preferred joining methods fail.
+- Concrete data/security contracts and the `DEF-012` second-pass retention
+  review. `DEC-047` retains stored first-pass feature records without expiry;
+  `DEC-045` defines cleared-admin and participant access. These are drafting/
+  verification tasks, not unanswered first-pass retention questions.
   Native chat and no-Discord-only queueing are already selected. Future Discord
   operating rules return with the integration slice; voice recording remains
   an unapproved future proposal, not a current-scope question or feature.

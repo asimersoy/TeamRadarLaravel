@@ -64,8 +64,9 @@ trade-off and permits behavior-preserving development calibration. Final tuning
 is not a predevelopment owner question; methods still require recorded tests.
 `DEC-033` selects no exact individual feedback-history ledger or last-N buffer
 for the first-version honor calculation. The reference choice and startup
-delegation are closed; other-purpose evidence and retention contracts remain
-open. `DEC-034` excludes incoming-rating volatility/adaptive dampening and
+delegation are closed; `DEC-047` now retains actual first-pass feature records
+without automatic expiry, with retention review immediately afterward in
+`DEF-012`. `DEC-034` excludes incoming-rating volatility/adaptive dampening and
 outgoing-reviewer-deviation accountability from the current implementation
 scope. Both are preserved together as
 [future honor ideas](specs/product-foundations.md#future-honor-ideas---outside-current-implementation),
@@ -92,10 +93,14 @@ everyone completes. Later polish is `DEF-011`. `DEC-042` delegates reversible
 development details; `DEC-044` delegates initial Valorant region/language queue
 controls. Owner reviews the first build and can refine later passes. Multiple
 viable options alone are not an upfront owner blocker; full scoring/data/
-acceptance specs still need work. Move to original question seven (identity,
-rank and data), without another one-through-six questionnaire. Moderation
-evidence retention and native-chat data need a contract distinct from the
-no-exact-history honor calculation. Existing future-only exclusions stand.
+acceptance specs still need work. Original question seven is now answered,
+delegated or deferred by `DEC-047`/`DEC-048`: first-pass records persist until
+explicit deletion; identity/ownership/rank selection belongs to implementation,
+with self-declaration and teammate mismatch checks if official retrieval is
+unavailable, approval-gated or needs more owner decisions. Do not reopen these
+as unanswered questions. Stored evidence does not change aggregate honor
+calculation. Prepare the concrete specification/acceptance packet and plan
+for the existing approval gate. Existing future-only exclusions stand.
 Looking to Play remains rejected, and voice recording remains a separate
 proposal only. No complete implementation slice is yet specification-approved. Everything
 under `legacy/` remains historical evidence.
@@ -114,7 +119,8 @@ Start with:
 
 ## Current Planning
 
-- [Implementation-readiness review — 2026-09-28](planning/implementation-readiness-review-2026-09-28.md) — stage-specific gaps and candidate record corrections; no new product approval
+- [Current first-pass readiness review](current-state.md#first-pass-readiness-review--2026-10-03) — questions answered/delegated; concrete specifications and plan still need drafting and approval
+- [Historical implementation-readiness review — 2026-09-28](planning/implementation-readiness-review-2026-09-28.md) — dated evidence; its unanswered questions are superseded where later decisions settle them
 - [Coordination and replaceable party-handoff staged outline](specs/coordination-and-party-handoff.md#staged-implementation-outline--queued-not-execution-approval)
 - [Rewrite owner decision sequence](planning/rewrite-owner-decision-sequence.md)
 - [Rewrite-readiness route and recovery audit](routes/PLAN-2026-09-03-rewrite-readiness.md)

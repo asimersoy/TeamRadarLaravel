@@ -1,7 +1,8 @@
 # QGuard Rewrite Owner Decision Sequence
 
 - **Record type:** current owner-review packet
-- **Status:** owner-input-required
+- **Status:** first-pass product answers recorded; concrete specifications/plan
+  to prepare for approval; no repeat question-one-through-seven questionnaire
 - **Decision owner:** project owner
 - **Created:** 2026-09-03
 - **Update trigger:** after each owner decision or when new evidence changes a
@@ -170,13 +171,23 @@ explicitly rejects them.
 - Include native private matched-party text and only no-Discord queueing now
   (`DEC-046`). Future voice pools wait, with strict separation as the conditional
   default only if current architecture genuinely needs the boundary.
+- Retain actual first-pass feature records without automatic expiry until
+  explicit deletion (`DEC-047`), preserving cleared-admin access. Immediately
+  after the first implementation, use its actual inventory to decide retention/
+  restriction/deletion in pass two (`DEF-012`); no scoring-method change.
+- Delegate identity, ownership checks and rank retrieval to the implementation
+  agent using current official evidence. If official retrieval is unavailable,
+  approval-gated or needs further owner decisions, use declared rank, display
+  it in the matched lobby and ask about observed mismatches at Session ended
+  (`DEC-048`). Keep declarations/peer reports distinct from API verification.
 
 ### Unapproved Assumptions
 
 The following may sound natural because of the old project, but each remains an
 assumption until the owner decides it:
 
-- TeamRadar remains a video-game teammate finder.
+- The old TeamRadar feature set or implementation defines the rewrite beyond
+  the current QGuard session-grouping decisions.
 - That selecting Valorant also settles its mode, region, audience, complete
   platform boundary, rank behavior, provider access, or coordination surface.
 - That choosing a queue also approves every queue filter, acceptance, timeout,
@@ -398,8 +409,9 @@ response; `DEC-045` settles own score/reviewer/admin audiences. Reversible
 submission/recovery/queue details are delegated, not an upfront questionnaire.
 Specify remaining reporter-evidence and closure edges explicitly inside the
 slice; preserve chosen report consequences and penalty exclusions. Original
-question seven (identity/rank/data) is next, particularly moderation-purpose
-evidence versus no exact honor history and native-chat retention/access.
+question seven is now answered/delegated by `DEC-047`/`DEC-048`: retain actual
+first-pass evidence without expiry pending `DEF-012`, and delegate identity/
+rank with an approved declared-rank fallback. No exact-history scoring returns.
 Initial correctness checks accompany implementation; full behavioral
 calibration can follow in development before release or real-user operation.
 
@@ -425,13 +437,18 @@ review. This is part of closing `OQ-006`.
 
 ## Decision Group 6 - Identity, Integrations, And Data
 
-**Current owner sequencing:** original questions one through six are now
-answered or delegated under `DEC-042` through `DEC-046`; do not re-open ordinary
-reversible details. Original question seven is this identity/rank/data domain
-and is the next separate discussion. Original question numbers and annotation
-indices are not this older plan's decision-group IDs. Retaining moderation
-case evidence and native chat must be reconciled with no exact honor-history
-calculation, without silently approving a permanent individual-rating ledger.
+**Current owner sequencing:** original questions one through seven are now
+answered, delegated or deferred for this first pass. `DEC-047` retains actual
+stored feature records without expiry and schedules the final retention
+decision for the immediate second pass (`DEF-012`). `DEC-048` delegates
+identity/ownership/rank selection and approves self-declaration plus teammate
+discrepancy checks when official access is unavailable/gated or needs more
+owner decisions. Do not ask those questions again before drafting the concrete
+implementation packet. Stored moderation evidence does not change smoothed
+honor calculation. Original question numbers are not these decision-group IDs.
+
+The following is data-specification and later-review coverage, not seven
+additional owner questions or a requirement to finalize every item now:
 
 1. Which account and game identifiers are collected, and are they declared,
    confirmed, or verified?
@@ -448,8 +465,9 @@ calculation, without silently approving a permanent individual-rating ledger.
 
 **Closure evidence:** field-level data-flow inventory, accuracy labels,
 recipient/access map, retention/deletion plan, provider facts, threat-model
-boundary, and assigned reviews. This completes `OQ-006` only after the actual
-flow is concrete.
+boundary, and assigned reviews. First-pass retention is already selected;
+final retention/deletion policy returns in `DEF-012`. Actual flow, enforcement
+and acceptance evidence still need to be written and tested.
 
 ## Decision Group 7 - Validation, Business, And Operating Constraints
 
@@ -469,6 +487,13 @@ flow is concrete.
 resource constraints, business non-goals, and operational service boundary.
 
 ## Decision Group 8 - Technical Specification And Implementation Plan
+
+**Current next step:** the first-pass owner question set is complete enough to
+prepare this packet under `DEC-042`/`DEC-047`/`DEC-048`. The agent supplies
+concrete engineering choices and acceptance coverage rather than asking the
+owner to design them. The latest readiness request is not approval to start
+coding or a `DEC-008` override. See the
+[current readiness assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
 
 Only after the relevant components of Groups 1-7 are sufficiently settled for
 the intended implementation slice:

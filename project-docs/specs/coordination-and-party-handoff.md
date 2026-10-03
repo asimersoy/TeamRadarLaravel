@@ -6,7 +6,7 @@
 - **Status:** planning direction approved; detailed design proposed, not implementation-ready
 - **Decision owner:** project owner; primary agent owns drafting and verification
 - **Authority:** `DEC-008`, `DEC-016`, `DEC-018`, `DEC-020` through `DEC-024`,
-  `DEC-035` through `DEC-046`
+  `DEC-035` through `DEC-048`
 - **Created:** 2026-09-28
 - **Implementation boundary:** surrounding implementation is requested but
   remains gated on the applicable approved slice specifications; game-party
@@ -59,7 +59,7 @@ first-game direction under `DEC-018`.
 | Responsibility | Owns | Must not assume |
 |---|---|---|
 | QGuard match context | Matched roster, designated host, match identity and lifecycle as defined by later matching/identity specifications | That entering Discord or clicking an invitation proves in-game membership |
-| Native matched-party text | Participant communication and later human-shared handoff information, with isolation and authorized admin access | A validated game link, automated joining, anonymous access from authorized admins or unlimited message retention |
+| Native matched-party text | Participant communication and later human-shared handoff information, with isolation, cleared-admin access and first-pass retention under `DEC-047` | A validated game link, automated joining, secrecy from cleared admins or a settled permanent public retention policy |
 | Discord coordination | Matched-team access to voice and the private text handoff surface; access revocation and cleanup after their rules are approved | That a server invitation is a game invitation, or that the game-join method fixes unavailable voice access |
 | Game-party handoff | Describes the currently available join method or clearly reports it unavailable; can later use either approved method | An existing public QGuard party-control API, automatic lobby-link generation, or a verified membership signal |
 
@@ -91,12 +91,13 @@ the legacy Laravel or relay design merely because it exists.
 
 Define only the minimum match identifier, authorized roster, host identity,
 Discord user/channel mapping, and short-lived handoff information needed by an
-approved slice. No database schema, provider scopes, collection, or retention
-is approved here. Native chat is approved scope, but actual message/link
-retention, identity mapping and secret handling need the applicable data
-contract. `DEC-045` permits data-cleared admins to inspect available project
+approved slice. No database schema or provider scopes are selected here.
+`DEC-047` retains actual native chat and other first-pass feature records
+without automatic expiry until the `DEF-012` second-pass review. Identity
+details are delegated under `DEC-048`; specify the concrete mapping and secret
+handling. `DEC-045` permits data-cleared admins to inspect stored project
 case/account evidence without participant-anonymity redaction; it is not
-permission to expose credentials or collect unlimited history. Real links, tokens,
+permission to expose credentials or collect unrelated data. Real links, tokens,
 and account credentials must not enter Git or diagnostic logs.
 
 The approved future Discord privacy intent is matched-only text visibility. Its permission
@@ -116,10 +117,11 @@ data collection or scoring rules.
 
 The project owner settles these incrementally under `OQ-011`:
 
-1. **Current specification work:** native chat access/retention, ordinary-user
+1. **Current specification work:** native chat access, `DEC-047` persistence, ordinary-user
    isolation, cleared-admin enforcement and failure/recovery tests. Chat and
    no-Discord-only queueing are settled, not questions to ask again. Reversible
    details may be selected/documented under `DEC-042` within approved boundaries.
+   Retention-policy selection returns in `DEF-012`, not as an upfront question.
 2. **Future integration:** at what point is Discord access checked, and what happens when a player
    cannot access it? No launch-region exclusion or VPN requirement is inferred.
 3. How do players enter the server/room; when is it created and removed; does

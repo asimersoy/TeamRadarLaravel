@@ -346,7 +346,8 @@
 ## DEC-013 - Prefer Authoritative Rank Retrieval And Bound The Fallback
 
 - **Date:** 2026-09-05
-- **Status:** approved
+- **Status:** approved preference; first-pass source selection and fallback
+  approval subsequently delegated/settled by `DEC-048`
 - **Decision owner:** project owner
 - **Decision:** Prefer obtaining current player rank from a permitted and
   sufficiently reliable official game API, whether server-side or through a
@@ -370,8 +371,11 @@
   planning
 - **Return condition:** owner approves the rank source and, if necessary, the
   complete self-declaration/report-resolution fallback for the selected game.
+  For the first pass, `DEC-048` now delegates this selection and approves the
+  conditional fallback; do not reuse this earlier condition as a new owner gate.
 - **Supersedes:** none
-- **Superseded by:** none
+- **Superseded by:** `DEC-048` for first-pass owner-only source/fallback
+  selection; the authoritative-source preference and evidence standards remain
 
 ## DEC-014 - Close The Historical Reconstruction Gate As Sufficient
 
@@ -1393,7 +1397,10 @@ mathematics and empirical performance still require specification and tests.
   workflow, production-data, push or other external state change occurred.
 - **Supersedes:** narrows `DEC-032`'s unresolved individual-history planning
   direction; does not replace its reference or `DEC-031`'s startup delegation
-- **Superseded by:** none
+- **Superseded by:** `DEC-047` for first-pass retention of records generated
+  by approved features, including individual submissions for admin review.
+  Aggregate/smoothed honor calculation and the absence of a last-N requirement
+  remain unchanged.
 
 ## DEC-034 - Keep Volatility And Reviewer-Accountability Ideas Future Only
 
@@ -1497,6 +1504,7 @@ mathematics and empirical performance still require specification and tests.
   any additional hard constraints such as language, region or voice choice;
   missing/contested rank behavior and acceptance/requeue rules. No rank source
   or fallback is selected here; those belong to the later identity/data group.
+  Subsequent `DEC-048` now delegates the source and selects the first-pass fallback.
 - **Consequences:** score closeness is a preference, not a promise of equal
   behavior. Waiting longer cannot authorize an impossible game party.
 - **Return condition:** approved relevant matching slice and evidence-backed
@@ -1784,8 +1792,8 @@ coherent local documentation commit, no push or other external action.
 ## DEC-045 - Show Own Honor, Hide Reviewer Identities And Give Cleared Admins Full Case Context
 
 - **Date:** 2026-10-03
-- **Status:** approved audience direction; actual data inventory/retention and
-  security contract still to be specified
+- **Status:** approved audience direction; `DEC-047` subsequently selects
+  first-pass retention; actual inventory/security contract still to be specified
 - **Decision owner:** project owner
 - **Decision / evidence:** latest annotation 4 explicitly permits players to
   see their own honor score. Received-rating/history/per-match point-change
@@ -1809,6 +1817,8 @@ coherent local documentation commit, no push or other external action.
   review; lifetime individual feedback history, new retention durations and
   collection remain unselected until the later identity/data contract. Do not
   falsely promise evidence is inspectable after it has been discarded.
+  `DEC-047` now selects retention without automatic expiry for the first pass
+  and schedules the retention-policy review immediately after it.
 - **Supersedes:** own-score/reviewer/admin audience open components of
   `DEC-038`; non-public peer reputation remains in force
 - **Superseded by:** none
@@ -1854,3 +1864,95 @@ Original question seven remains the next separate identity/rank/data group.
 Current-state verification records scoped diff, link/anchor/ID and unchanged-
 mathematics checks. One coherent additive local documentation commit; no code,
 canonical-workflow change, provider research or external action in this unit.
+
+## DEC-047 - Retain First-Pass Records Until Explicit Deletion And Review In Pass Two
+
+- **Date:** 2026-10-03
+- **Status:** approved first-pass development policy; later policy review deferred
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotations 1 and 2 explicitly select
+  "everything stays forever" until explicitly deleted in the database, while
+  deferring the informed retention decision to the second pass immediately
+  after the first implementation is available for review.
+- **First-pass effect:** retain the records actually stored by approved
+  features without automatic expiry or post-settlement purging. This includes
+  account/session records, submitted ratings and reports, and native match-chat
+  messages, including ordinary sessions without a report. Data-cleared admins
+  can inspect this stored project evidence under `DEC-045`; other players'
+  private information and reviewer identities remain protected.
+- **Meaning of everything:** preserve actual approved-feature records; do not
+  infer permission to collect arbitrary external data, record voice, retain
+  secrets in logs, invent a new history product, or add future-only metrics.
+  The implementation agent documents what is stored and why as the first
+  version takes shape. This decision does not require recording every transient
+  UI event or using feedback history to calculate honor.
+- **Honor reconciliation:** smoothed aggregate scoring remains selected.
+  Retaining individual submissions for first-pass review supersedes the earlier
+  undecided other-purpose retention boundary, not the calculation method.
+- **Deferred review:** `DEF-012` requires a concrete field/record inventory
+  immediately after the first implementation, then owner review of what to
+  keep, restrict, expire or delete, including moderation evidence, ordinary
+  sessions, chat, logs and backups where present. No retention duration or
+  future deletion is selected now.
+- **Boundary:** this is the current development default, not a permanent
+  public retention promise or a finding of legal/provider compliance. Existing
+  real-user collection/release review remains in force. No database deletion
+  occurs or is authorized by this documentation decision; later destructive
+  operations still need their exact authorization.
+- **Supersedes:** first-pass retention-selection gaps under `DEC-033`,
+  `DEC-045` and `DEC-046`; does not supersede scoring, access or release gates
+- **Superseded by:** none
+
+## DEC-048 - Delegate First-Pass Identity And Rank Integration With A Declared-Rank Fallback
+
+- **Date:** 2026-10-03
+- **Status:** approved first-pass implementation direction and bounded delegation
+- **Decision owner:** project owner
+- **Decision / evidence:** latest annotation 3 delegates account identifier,
+  ownership-check and rank-source choices to the implementation agent according
+  to current feasibility. The owner will review the first version and iterate
+  in later passes rather than answer hypothetical mandatory-verification
+  questions before the actual integration flow is known.
+- **Identity responsibility:** determine which identifiers the chosen flow
+  actually needs and whether a supported ownership check is available. Do not
+  assume manually entering a Riot ID is required, or impose a new upfront
+  mandatory-verified-account gate. Record and test the selected first-pass
+  method and its limits. Ownership and rank retrieval are different evidence
+  claims but may depend on the same authorization/integration flow; evaluate
+  them together. No Riot capability or access grant is established here.
+- **Rank source order:** investigate current official capabilities during the
+  applicable implementation work. Implement official rank retrieval if it is
+  available, permitted and accessible within the approved scope. If it is
+  unavailable, approval-gated, or needs further owner decisions, use
+  self-declaration for the first pass rather than block on those decisions.
+  This conditionally approves the fallback previously left open in `DEC-013`.
+  Keep source/verification status accurate; an entered identifier or peer
+  confirmation is not official API verification.
+- **Fallback user flow:** show each participant's stated game rank in the
+  QGuard matched lobby. In the Session ended feedback flow, ask whether any
+  teammate's in-game rank differed from what the website displayed, and allow
+  identification of the discrepancy. This implements the owner's proposed
+  teammate check after play; it does not add automated in-game observation.
+  Preserve the multi-game session and feedback-window rules of `DEC-043`.
+- **Evidence limits:** the owner's expectation that teammates can compare
+  in-game ranks is not a verified current-client fact. Check the relevant game
+  surfaces; allow an honest unknown/not-observed answer rather than inventing
+  confirmation. Self-declared rank must remain distinguishable from an official
+  source, including before feedback. Teammate checking complements this accuracy
+  labeling; it cannot make an unverified declaration officially verified.
+- **Consequences and limits:** record discrepancy evidence for the existing
+  human-review context. Design submission and report-category handling
+  explicitly alongside `DEC-041`; do not silently change its two-distinct-
+  reporters rule or invent automatic rank corrections, score deductions or
+  punishment. Rank compatibility remains mandatory using the available rank
+  input, but declaration-based checks cannot guarantee real in-game eligibility.
+- **Review / external boundaries:** source choice, identifier needs and
+  ownership-check details are agent work, not unanswered owner questions.
+  Review the chosen implementation in later passes. `DEC-017`'s Riot-application
+  direction remains conditional; provider applications/contact, credentials,
+  deployments and other controlled actions keep their separate gates.
+  Discord/game-joining exclusions and live-test hold remain unchanged.
+  Neither this delegation nor the readiness request overrides `DEC-008`.
+- **Supersedes:** first-pass owner-only identity-verification/source choice and
+  unapproved-fallback status under `DEC-013`, `OQ-006`, `OQ-009`, `OQ-010`
+- **Superseded by:** none

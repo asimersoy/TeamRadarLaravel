@@ -69,10 +69,11 @@ Historical unknowns do not automatically become requirements.
 - **Decision owner:** project owner
 - **Needed by:** approval of a current product brief
 - **Blocks:** approving QGuard's complete purpose/use boundary or audience,
-  making public promises, or authorizing an implementation plan. The first-game
+  making public promises, or authorizing out-of-boundary implementation. The first-game
   choice was made separately under `DEC-018`.
 - **Does not block:** reviewing the legacy reconstruction or discussing current
-  alternatives as proposals.
+  alternatives as proposals; drafting the bounded first-pass specifications
+  from settled decisions and explicit agent delegation.
 - **Known context:** `DEC-009` selects QGuard as the product name. `DEC-010`
   makes behavioral honor/reliability, distinct from rank, the central concept.
   `DEC-011` prioritizes a working product over a predetermined first game.
@@ -140,7 +141,7 @@ Historical unknowns do not automatically become requirements.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
-- **Status:** partially resolved by `DEC-026` through `DEC-046` for honor's
+- **Status:** partially resolved by `DEC-026` through `DEC-048` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
   separate smoothed raw reference, isolated-extreme trade-off and bounded
@@ -149,7 +150,8 @@ Historical unknowns do not automatically become requirements.
   and current queue/party/feedback/report/private-reputation directions;
   current session completion, feedback timing, native chat and private
   audiences now selected; reversible first-pass details delegated;
-  actual data contracts and complete acceptance specifications remain open
+  first-pass retention and identity/rank responsibility now selected;
+  actual contracts and complete acceptance specifications remain to draft
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
@@ -187,8 +189,10 @@ Historical unknowns do not automatically become requirements.
   constants and occasional small functions while preserving approved behavior;
   do not ask the owner to freeze every setting before development.
   `DEC-033` selects no exact individual feedback-history ledger or last-N buffer
-  for the first-version honor calculation. Other-purpose evidence, retention,
-  eligibility and correction need explicit compatible contracts.
+  for the first-version honor calculation. `DEC-047` now retains actual
+  first-pass feature records for review without expiry; scoring stays aggregate.
+  Eligibility/correction and security still need compatible implementation
+  contracts; retention-policy refinement is the second-pass `DEF-012`.
   `DEC-034` excludes incoming-rating volatility/adaptive dampening and
   reviewer-deviation accountability from current implementation. Preserve them
   for future consideration without making their questions current blockers.
@@ -235,13 +239,20 @@ Historical unknowns do not automatically become requirements.
      strict separation is the conditional planning fallback only if a current
      foundational dependency genuinely needs that answer. Real Discord remains
      deferred under `DEF-007`.
-- **Owner discussion boundary:** the answered/delegated items above do not
-  justify another one-through-six questionnaire. Original question seven
-  (identity, rank access and data boundaries) is next, in a separate discussion.
-  In particular, reconcile report/admin evidence with no exact honor history;
-  native chat adds a data purpose that needs a retention/access contract.
-  Numbering differs from annotation indices and the older plan's group IDs.
-  No application slice approval or real data collection is inferred.
+- **Original question seven disposition, 2026-10-03:** `DEC-047` selects
+  retention of actual first-pass feature records without automatic expiry and
+  full cleared-admin project access; review what exists and how long it should
+  survive immediately afterward in pass two (`DEF-012`). `DEC-048` delegates
+  identity/ownership/rank integration to the implementation agent using current
+  evidence and approves self-declaration if official retrieval is unavailable,
+  approval-gated or needs additional owner decisions. Display stated ranks in
+  the matched lobby and ask about observed mismatches during Session ended.
+  Peer observations remain distinguishable from official verification.
+- **Owner discussion boundary:** no answer is missing from the questions just
+  asked. Do not reopen original questions one through seven as a questionnaire.
+  Draft/test the concrete first-pass contracts within the recorded decisions
+  and delegation. Numbering differs from the older plan's decision-group IDs.
+  Per-slice specification approval and real-user release gates remain.
 - **Provisional mathematical discussion, 2026-10-02:** the owner's preference
   for a rating-point division parameter and an explicit new-input name is
   captured in the
@@ -254,8 +265,8 @@ Historical unknowns do not automatically become requirements.
   [selected smoothed raw reference](../specs/product-foundations.md#smoothed-raw-rating-reference).
   The side handoff's exact-window and owner startup-question framing is stale.
   Startup delegation remains in force. `DEC-033` now narrows first-version
-  planning to no exact feedback-history calculation; other-purpose data and
-  retention policy remain separate questions. Future exact history would not
+  planning to no exact feedback-history calculation; other-purpose data now
+  follows `DEC-047` pending `DEF-012`. Future exact history would not
   automatically require or authorize a reference-model change.
 - **Dispersion-dependent dampening proposal, 2026-10-02:** the owner asks
   whether a smoothed spread estimate can make normally wide ratings less
@@ -278,8 +289,9 @@ Historical unknowns do not automatically become requirements.
   criteria, fairness controls, appeal path, retention rule, or rollback method.
   `DEC-010` approves behavioral honor as the central concept and keeps it
   separate from rank. `DEC-013` prefers authoritative API-derived rank and
-  requires a report/correction/operator-resolution path if self-declared rank
-  is later approved as a fallback. Exact effects and safeguards remain open.
+  requires a report/correction/operator-resolution path for self-declared rank.
+  `DEC-048` now approves that first-pass fallback and teammate mismatch checks;
+  exact implementation effects and safeguards need a documented contract.
   Compliance with applicable law is a current constraint, while the actual
   jurisdiction and qualified-review need wait for a concrete product and data
   flow (`DEC-015`). The owner has now proposed temporary bot-managed QGuard
@@ -299,8 +311,10 @@ Historical unknowns do not automatically become requirements.
   lifecycle, data and recording remain distinct.
 - **Remaining work classification:** agent-owned reversible details, including
   queue controls and submission/recovery edges, are work to specify and test,
-  not automatically owner blockers. Foundational identity/rank/data contracts,
-  retention/deletion, security and release review still need decisions/evidence.
+  not automatically owner blockers. First-pass identity/rank methods are now
+  delegated by `DEC-048`; data contracts/security and release review still need
+  drafting/evidence. Retention/deletion refinement returns in `DEF-012`, not
+  as a question blocking first-pass development under `DEC-047`.
   No new history-dependent honor weighting or eligibility penalties are selected.
   Future Discord admission/lifecycle, recording, stronger checks and moderation
   penalty/correction/appeal policies remain deferred or unapproved, not current
@@ -322,17 +336,22 @@ Historical unknowns do not automatically become requirements.
   private-reputation, no-show, admin and feedback directions above;
   `DEC-042` through `DEC-046` for bounded development delegation, session/clock,
   initial filter responsibility, private audiences and native chat/current queue;
+  `DEC-047` for interim retention and second-pass review, `DEC-048` for
+  first-pass identity/rank delegation and declared-rank discrepancy checks;
   other components unresolved
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
-- **Status:** open
+- **Status:** concrete technical/acceptance packet and approval still needed;
+  first-pass product-question set answered, delegated or deferred
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
 - **Blocks:** selecting a stack, architecture, deployment model, milestone plan,
   budget, release target, or definition of done.
 - **Does not block:** architecture-neutral product decisions and targeted
-  feasibility research.
+  feasibility research, or agent drafting of the first-pass technical options,
+  contracts and acceptance packet. Do not make the owner choose every reversible
+  implementation detail under `DEC-042`/`DEC-048`.
 - **Known context:** Laravel/Livewire/MySQL is only a legacy implementation;
   React, Node/NestJS, PostgreSQL, Redis, a desktop relay, Docker, and various
   deployment paths are historical evidence or proposals, not current choices.
@@ -340,6 +359,12 @@ Historical unknowns do not automatically become requirements.
   product surfaces, delivery horizon/resources, integration constraints,
   availability/security expectations, environments, release strategy, and
   testable completion evidence.
+- **Current readiness:** no approved new-code layout/stack, complete slice
+  specification or app execution plan is present. The next task is agent
+  preparation of that concrete packet, with owner approval under `DEC-008`.
+  Long-term business, public launch and production operations are later-stage
+  questions where they do not affect the bounded development slice.
+  See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
 - **Resolved by:** none
 
 ## OQ-008 - What Workflow Governance Conventions Should Control Future Work?
@@ -389,12 +414,19 @@ Historical unknowns do not automatically become requirements.
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
 - **Status:** Discord comparison complete; `DEC-018` remains current; Valorant
-  party-entry verification and rank/access boundaries remain open
+  party-entry verification remains open; first-pass rank/identity selection
+  delegated under `DEC-048`, actual provider access/capability still unverified
 - **Decision owner:** project owner after research; primary agent owns research
 - **Needed by:** first-game and integration-boundary decision
 - **Blocks:** replacing the current first-game decision without owner approval;
   treating the Valorant link or any CS2 Discord party handoff as dependable;
-  approving the rank/access integration; or approving client automation.
+  claiming unsupported rank/access capability; or approving client automation.
+- **First-pass disposition:** research the actual official identity/rank flow
+  during implementation and use it if feasible and accessible. Otherwise use
+  the `DEC-048` declared-rank fallback with teammate discrepancy checks.
+  Missing Riot approval or a further owner choice does not block that fallback.
+  No requirement to ask the owner for a hypothetical ownership-verification
+  policy first; record/test the agent's chosen method and review the build.
 - **Does not block:** product-charter decisions that do not depend on a game or
   integration, or current authoritative-source research.
 - **Known context:** The owner values reliable rank retrieval and local-client
@@ -448,18 +480,23 @@ Historical unknowns do not automatically become requirements.
   integration specification or application. A queued or activated test is not
   current evidence of a supported route.
 - **Resolved by:** `DEC-018` for game selection and `DEC-024` for Discord
-  coordination planning; behavioral verification, rank and provider access
-  remain unresolved
+  coordination planning; `DEC-048` for first-pass identity/rank delegation and
+  fallback. Behavioral verification and actual provider access remain unproven.
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
 - **Status:** partially resolved by `DEC-018` and `DEC-024`; Discord-native Join
   is preferred with a private-Discord-text human-hosted link alternative;
-  failure of both methods, operational recovery and rank fallback remain open
+  failure of both joining methods and later recovery remain open;
+  first-pass rank fallback selected by `DEC-048`
 - **Decision owner:** project owner
 - **Needed by:** the smallest complete user journey and its recovery behavior
-- **Blocks:** approving the rank fallback, party-formation flow, and associated
-  friction/acceptance criteria when preferred APIs are unavailable.
+- **Blocks:** approving a different party-formation flow or associated
+  friction/acceptance criteria when both preferred joining methods fail.
+- **Selected rank fallback:** under `DEC-048`, self-declaration may be used
+  if official rank access is unavailable, approval-gated or needs more owner
+  decisions. Display stated ranks to the matched team and collect observed
+  mismatch feedback at Session ended; document evidence limits and handling.
 - **Does not block:** API research or documenting owner-proposed alternatives as
   proposals.
 - **Known context:** API-derived rank and automated or assisted party formation
@@ -492,7 +529,8 @@ Historical unknowns do not automatically become requirements.
   test results; remaining operational coordination decisions; and the owner's
   alternate flow proposals and tolerance for added user friction.
 - **Resolved by:** `DEC-018` for game direction; `DEC-024` for the two accepted
-  replaceable joining candidates and the private Discord link-sharing surface
+  replaceable joining candidates and the private Discord link-sharing surface;
+  `DEC-048` for the first-pass rank fallback
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
@@ -517,8 +555,9 @@ Historical unknowns do not automatically become requirements.
   game-specific Discord Join or, as an acceptable alternative, one matched
   player posts the official lobby link into a matched-only Discord text channel.
   Actual game joining stays replaceable and unimplemented.
-- **Next current work:** specify native chat data/access/retention and its
-  permission tests. Do not re-ask native text, current voice availability or
+- **Next current work:** specify native chat data/access and permission tests,
+  applying `DEC-047` retention without automatic expiry until `DEF-012` review.
+  Do not re-ask native text, current voice availability or
   universal Discord participation. Future voice-pool separation waits unless
   current architecture actually needs it, in which case strict separation is
   the approved conditional default. Future attendance/recovery, Discord

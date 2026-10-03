@@ -7,7 +7,9 @@
   implementation deferred. `DEC-036` through `DEC-041` add matching, party,
   feedback and admin directions. `DEC-042` through `DEC-046` settle session/
   clock, native chat/current queue and audiences, with reversible details
-  delegated; complete data/acceptance slice contracts remain open
+  delegated. `DEC-047`/`DEC-048` settle first-pass retention and identity/rank
+  responsibility/fallback; concrete technical/data/acceptance contracts remain
+  to draft and approve, not another unanswered product questionnaire
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -45,7 +47,7 @@ records an explicit narrow override under the workflow-governance policy.
 - [Coordination and replaceable party handoff](coordination-and-party-handoff.md)
   — optional voice direction under `DEC-024`/`DEC-035`; real Discord integration
   excluded now; native private match text/no-Discord-only queue selected under
-  `DEC-046`, data/security contract incomplete; actual game
+  `DEC-046`, first-pass persistence under `DEC-047`, security contract incomplete; actual game
   joining unimplemented and live tests paused
 
 The historical gate is closed as sufficient for redesign. The current
@@ -92,6 +94,14 @@ settlement. `DEC-044` delegates initial Valorant region/language queue controls;
 `DEC-045` settles own honor, player-hidden reviewers and cleared-admin context;
 `DEC-046` approves native private chat and only no-Discord queueing now. These
 are not complete data/acceptance specifications or a slice-start override.
+
+`DEC-047` retains stored first-pass feature records without expiry, followed by
+an immediate second-pass inventory/retention review (`DEF-012`). `DEC-048`
+delegates identity/ownership/rank choices and permits declared rank with
+teammate discrepancy checks if official access is unavailable/gated or needs
+more owner decisions. None of those questions remains an upfront owner blocker.
+The [current readiness review](../current-state.md#first-pass-readiness-review--2026-10-03)
+identifies the remaining specification, plan and approval work before coding.
 
 No current module approves a complete product/use boundary, platform/region/
 mode/audience wedge, rank or coordination data flow, architecture, technology,

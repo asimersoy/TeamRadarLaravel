@@ -25,12 +25,17 @@
   details and select participant-declared session end, ten-minute feedback
   settlement, own honor display, player-hidden reviewer identities, cleared-
   admin case/account access, native private match text and no-Discord queueing
-  only for now. Detailed specifications remain incomplete
-- **Objective:** advance to original question seven (identity/rank/data),
-  without reopening settled or delegated one-through-six details; preserve
-  live-test hold, future-only exclusions and slice gates
+  only for now. `DEC-047` now retains actual first-pass feature records without
+  automatic expiry, with immediate second-pass review under `DEF-012`.
+  `DEC-048` delegates identity/rank integration and approves declared rank
+  plus teammate mismatch checks when official access is unavailable/gated.
+  Detailed specifications remain incomplete; no unanswered owner choice from
+  the latest question-seven set prevents preparing them
+- **Objective:** prepare the concrete first-pass specification/acceptance
+  packet using settled decisions and bounded agent discretion, then its
+  execution plan and approval gate; preserve live-test hold and future exclusions
 - **Current route:**
-  [Identity, integrations and data — original question seven](planning/rewrite-owner-decision-sequence.md#decision-group-6---identity-integrations-and-data)
+  [Technical specification and implementation plan](planning/rewrite-owner-decision-sequence.md#decision-group-8---technical-specification-and-implementation-plan)
 
 ## Verified Workspace State
 
@@ -173,8 +178,9 @@
   approval or production safety claim is granted.
 - `DEC-033` selects no exact individual feedback-history ledger or last-N
   buffer for the first-version honor calculation. Other-purpose evidence and
-  correction/retention contracts still need explicit decisions; no data deletion
-  is authorized. Reference choice, gradual adaptation, startup responsibility
+  correction contracts still need specification. `DEC-047` selects first-pass
+  evidence retention without automatic expiry, then `DEF-012` review; no data
+  deletion is authorized. Reference choice, gradual adaptation, startup responsibility
   and independently named settings are reaffirmed, not new owner blockers.
   Current draft mathematics does not already track typical rating spread.
 - `DEC-034` excludes incoming-rating volatility/adaptive dampening and
@@ -200,7 +206,8 @@
   `DEC-045` now shows own honor, requires no received-feedback/history screen,
   hides reviewer identities from players, and permits data-cleared admins to
   inspect available case/account context without participant-anonymity redaction.
-  This is access policy, not lifetime feedback history or credential disclosure.
+  `DEC-047` now retains stored first-pass evidence until explicit deletion;
+  admin access still does not permit credential disclosure.
 - `DEC-039` selects the initial five-minute no-show challenge and 30-second
   response direction, removal/team disband on failure, and early-leaver rating
   ineligibility. `DEC-043` requires all other teammates' votes and permits an
@@ -219,7 +226,7 @@
   early settlement if everyone finishes. Sessions can include multiple games.
   Submission/late-report/counting edge details still need explicit slice design
   and tests, but reversible agent choices are not an upfront questionnaire.
-  No permanent exact-feedback-history approval or actual collection follows.
+  First-pass evidence retention is now `DEC-047`; no actual collection follows.
 - `DEC-042` delegates reversible development choices within approved scope,
   with documented defaults/tests and owner review after the first build.
   Multiple viable options alone do not justify an owner question. Fundamental
@@ -231,6 +238,17 @@
   deployment, or implementation plan has been approved. Optional Discord
   room/voice direction is selected but actual integration is excluded now;
   voice recording remains an unapproved proposal.
+- `DEC-047` settles temporary development retention: all records stored by
+  approved features remain without expiry until explicit deletion; cleared
+  admins can inspect them. Immediately after the first implementation, review
+  the actual inventory and retention/restriction/deletion policy in `DEF-012`.
+  This does not change aggregate honor scoring or authorize public collection.
+- `DEC-048` delegates the coupled identity/ownership/rank flow to the
+  implementation agent using current official evidence. Use official retrieval
+  if accessible; otherwise self-declaration is approved, including when Riot
+  approval or another owner choice would hold it up. Show stated ranks and ask
+  for observed discrepancies at Session ended; peer feedback is not official
+  verification. No fresh provider capability or permission is established.
 
 ## Work State
 
@@ -388,14 +406,15 @@
   Session ended/ten-minute settlement, no-show vote/response, initial filter
   responsibility, player/admin audiences and native chat/no-Discord queueing.
   `DEF-011` records session/feedback polish; other future exclusions preserved.
-- **Next planning discussion:** original question seven: identity, rank access
-  and data boundaries. Reconcile moderation-purpose feedback/report evidence
-  and native text with current no-exact-history honor calculation; define
-  actual retention/access before collection. This is not the older plan's
-  group seven. [OQ-006](governance/open-questions.md#oq-006---what-matching-trust-moderation-and-data-behavior-is-permitted)
-  distinguishes settled/delegated details from remaining data/release gates.
-  No further broad one-through-six questionnaire; startup/tuning, region/
-  language defaults and optional partial-party persistence are agent work.
+- **Completed question-seven record, 2026-10-03:** `DEC-047`/`DEC-048`
+  record all three latest annotations. No missing answer in that set.
+  Retention refinement is `DEF-012`; identity/rank details are delegated, with
+  the conditional first-pass fallback already approved.
+- **Next specification work:** consolidate the first-pass journey, concrete
+  technical/data contracts, bounded agent choices and acceptance tests. Then
+  prepare its execution/commit plan and obtain applicable `DEC-008` approval.
+  No repeat one-through-seven questionnaire, forced final tuning or hypothetical
+  provider-verification policy is needed to prepare that packet.
 - **Next for live tests, after owner resumption:** recheck current provider/
   client behavior, then confirm the seven Wave 1 readiness items in the
   [resource and sequence plan](planning/coordination-test-resources-and-sequence.md).
@@ -409,7 +428,59 @@
 - **Untouched:** legacy code, legacy `docs/`, configuration, tests, dependencies,
   generated data, and Git history.
 
+## First-Pass Readiness Review — 2026-10-03
+
+- **Assessment:** ready to prepare the implementation-ready specifications and
+  plan; not yet approved to start application coding. The latest request asks
+  for readiness, not a specification-gate override. No further answer is
+  missing from the identity/rank/retention questions just asked.
+- **Verified implementation state:** at `be449c0`, comparison with `master`
+  found only workflow/project-document changes. Application, routes, UI, tests,
+  migrations, relay/gateway and dependency manifests were unchanged. The root
+  Laravel/Livewire manifests and tests belong to the legacy app, not a new
+  rewrite or a selected rewrite stack. No current rewrite code was found.
+- **Verified specification state:** the specification index lists two product
+  modules, both incomplete for implementation. The coordination outline is
+  queued, not execution-approved. Existing client test plans are not an app
+  execution plan. No approved new-code location, technical stack, complete
+  state/data contract or per-slice acceptance packet is present.
+- **Current product coverage:** Valorant session grouping, solo/partial parties
+  and basic friends/invitations, rank-compatible/honor-aware queueing, private
+  website chat, participant session end, report-aware feedback/honor settlement,
+  own-score display and cleared-admin review are settled directions. Apply
+  `DEC-047`/`DEC-048` for data/identity/rank. Do not reduce this to a
+  coordination-only mock or silently omit honor.
+- **Agent work before coding:** turn those decisions into coherent modules
+  covering identity/source status, queue/party/session states, permissions,
+  retained records, honor/feedback/report processing, concurrency/idempotence,
+  error/recovery behavior and tests. Document delegated choices, fresh official
+  game-rule/API evidence when relevant, and the independent commit sequence.
+  Propose the technical stack/new-code layout with legacy preserved. These are
+  drafting and engineering responsibilities, not another broad owner quiz.
+- **Remaining owner gate:** approve the applicable concrete specification
+  packet/plan under `DEC-008`; it may expressly leave bounded details to the
+  implementation agent. No need for final constants, final retention durations,
+  Discord tests or Riot approval to design a first-pass fallback version.
+- **Later gates:** `DEF-012` review immediately after the first build; actual
+  provider applications/access, held joining tests, real Discord integration,
+  and real-user collection/release remain separately controlled. This
+  assessment is not a current API, safety or legal-compliance finding.
+
 ## Verification State
+
+- Current question-seven reconciliation/readiness unit: clean `new-development`
+  at `be449c0`; inspect-only baseline established before project-record edits.
+  Route: product planning, audit/reconciliation, decision/recommendation safety,
+  privacy/data, owner/external review and deferral/owner review. Mandatory entry,
+  always-applicable rules and selected procedures read. Owner annotations 1–2
+  map to `DEC-047`/`DEF-012`, annotation 3 to `DEC-048`. All 54 project
+  Markdown files, 229 local links, 36 anchors, 48 sequential decisions and
+  twelve sequential deferrals checked; four mathematical text blocks unchanged.
+  Complete ten-file scoped diff reviewed and `git diff --check` passed.
+  Application/live tests and the protected-workflow validator were not run:
+  no app or workflow package changed. No fresh provider research, actual
+  collection, deletion, push or other external operation occurred. One coherent
+  local documentation commit boundary; no runtime/effectiveness claim follows.
 
 - The 2026-10-03 first-pass refinement began with clean `new-development` at
   `bb153c8`. Evidence-only six-annotation reconciliation preceded edits.

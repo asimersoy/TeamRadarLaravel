@@ -1,5 +1,11 @@
 # QGuard Implementation-Readiness Review — 2026-09-28
 
+**Historical assessment:** later owner decisions supersede many unanswered
+questions below. Use the
+[2026-10-03 readiness review](../current-state.md#first-pass-readiness-review--2026-10-03)
+and current governance for next actions. This report preserves its original
+baseline evidence and is not the current definition of done.
+
 - **Record type:** evidence-only readiness audit and proposed discussion order
 - **Status:** review complete; owner input required before an implementation slice
 - **Decision authority:** project owner; primary agent authored this assessment

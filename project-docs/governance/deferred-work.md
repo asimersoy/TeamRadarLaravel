@@ -1,7 +1,8 @@
 # TeamRadar Deferred Work
 
 Status: updated 2026-10-03; Discord-dependent execution on owner hold;
-future honor consideration preserved without feature-adoption approval
+future honor consideration preserved without feature-adoption approval;
+first-pass retention review scheduled for pass two under `DEF-012`
 
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
@@ -388,3 +389,30 @@ boundary, not approval to implement either future feature.
   all-complete early closure, return/nonresponse, pending report invalidation,
   duplicate submissions and no double honor/reference application. Future
   improvements need their own approved contract and abuse/failure evidence.
+
+## DEF-012 - Review Actual Data Retention Immediately After The First Implementation
+
+- **Status:** owner-approved second-pass review; final retention policy unselected
+- **Decision owner:** project owner
+- **Preparation owner:** implementation agent
+- **Locked decision:** `DEC-047` keeps records stored by approved first-pass
+  features without automatic expiry, including ordinary and reported sessions.
+  Data-cleared admins retain full project-context access under `DEC-045`.
+- **Reason postponed:** the owner wants to see what the implemented system
+  actually stores before deciding which details should survive and for how long.
+- **Implementation state:** policy recorded; no rewrite database or retention
+  mechanism implemented, and no data was collected or deleted in this task.
+- **Return condition:** immediately after the first implementation is fleshed
+  out, at the second-pass review. Prepare a concrete inventory of fields,
+  records, purposes, sources, readers, storage, logs and backups where present.
+  Existing review gates still apply before real-user collection or release.
+- **Owner review:** select what to retain, restrict, expire or delete; ordinary
+  versus reported-session evidence; account closure/deletion and correction;
+  retention periods, holds and backup/restore behavior as relevant. Do not
+  automatically adopt the earlier report-only or short-retention proposals.
+- **Verification required:** demonstrate authorized admin access and ordinary-
+  user isolation; verify that settlement does not silently discard evidence.
+  Later expiry/deletion changes need explicit scope, tests, recovery assessment
+  and any controlled-operation authorization before execution.
+- **Invalidation:** new collected data, provider terms or a planned real-user
+  environment may require earlier review of the affected boundary.
