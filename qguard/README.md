@@ -7,8 +7,8 @@ Compose project. All PHP runs in Docker. This is not approved for public users.
 
 ## First setup
 
-Accounts, parties, matching and private session chat are available; feedback and
-admin are not implemented yet.
+Accounts, parties, matching, private session chat, feedback, honor and cleared-admin
+review are available. Final cross-flow and operational verification is underway.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
@@ -53,17 +53,22 @@ before any framework reset. Never point tests at persistent development data.
 ```sh
 docker compose -f compose.test.yaml up -d postgres app nginx
 docker compose -f compose.test.yaml run --rm php artisan migrate --force
+docker compose -f compose.test.yaml stop scheduler worker
 docker compose -f compose.test.yaml run --rm php vendor/bin/pest
 docker compose -f compose.test.yaml run --rm php vendor/bin/phpunit --testsuite Unit
 docker compose -f compose.test.yaml run --rm php vendor/bin/pint --test
+docker compose -f compose.test.yaml run --rm php artisan qguard:seed-demo --confirm-synthetic
+docker compose -f compose.test.yaml up -d app nginx mail reverb scheduler worker
 docker compose -f compose.test.yaml run --rm browser
 ```
 
 The browser image and runner version must match. Tests exercise the real app,
 not standalone mock pages. Browser artifacts are ignored; durable results and
 remaining criteria belong in the [implementation evidence](../project-docs/planning/first-pass/implementation-evidence.md).
-Opt-in scenario seeding and later stage runbooks will be added with those stages;
-the default seeder intentionally refuses to create implicit accounts.
+Backend tests reset only the guarded disposable database. Stop its scheduler and
+worker first; reseed and restart before browser checks. The default seeder refuses
+implicit accounts. Browser time controls exist only in the isolated testing stack,
+with no public HTTP endpoint and no effect on development or production.
 
 ## Current boundaries
 

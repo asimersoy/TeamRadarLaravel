@@ -1,6 +1,7 @@
 <div wire:poll.5s>
 <div class="page-heading"><div><p class="eyebrow">Your team hub · Valorant</p><h1>Welcome, {{ auth()->user()->handle }}</h1><p class="muted">Set up your profile. Bring friends, or start a solo party.</p></div><div class="score"><span>Your honor</span><strong>{{ number_format($honor, 1) }}</strong><small>Fixed neutral start · 0–100</small></div></div>
 <x-errors />
+<x-pending-feedback :sessions="$pendingFeedback" />
 <div class="dashboard-grid">
 <section class="panel"><h2>Game profile</h2><p class="muted">Self-declared rank · game-account ownership unverified. No Riot account connection is active.</p>
 <form wire:submit="saveProfile">

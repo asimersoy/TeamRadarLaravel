@@ -16,7 +16,7 @@ test('private chat, retry, end and no-show response use separate player sessions
   for(let i=0;i<4;i++){await pages[i].reload();await pages[i].getByText('Someone has not joined',{exact:true}).click();await pages[i].getByRole('button',{name:'demo_g has not joined',exact:true}).click();}
   await expect(pages[4].getByText('Response required before',{exact:false})).toBeVisible({timeout:10000});
   await pages[4].getByRole('button',{name:'I joined',exact:true}).click();await expect(pages[4].locator('.roster')).toContainText('acknowledged');
-  await pages[0].getByRole('button',{name:'Session ended',exact:true}).click();await expect(pages[0].getByText('Your participation has ended.',{exact:false})).toBeVisible();
+  const roomUrl=pages[0].url();await pages[0].getByRole('button',{name:'Session ended',exact:true}).click();await expect(pages[0].getByRole('heading',{name:'How was your team?'})).toBeVisible();await pages[0].goto(roomUrl);await expect(pages[0].getByText('Your participation has ended.',{exact:false})).toBeVisible();
   await expect(pages[0].getByRole('button',{name:'Send message'})).not.toBeVisible({timeout:10000});
   await pages[0].getByRole('link',{name:'Return to dashboard'}).click();await expect(pages[0].getByRole('button',{name:'Start a party'})).toBeVisible();
   for(const width of [1280,390]){await pages[1].setViewportSize({width,height:900});expect(await pages[1].evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await pages[1].screenshot({path:`test-results/chat-${width}.png`,fullPage:true});}

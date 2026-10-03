@@ -147,8 +147,10 @@ class Dashboard extends Component
     {
         $actor = $this->actor();
         $activeSession = DB::table('active_participations')->where('user_id', $actor->id)->value('game_session_id');
+        $pendingFeedback = DB::table('session_participants as p')->join('game_sessions as g', 'g.id', '=', 'p.game_session_id')->leftJoin('feedback_submissions as f', 'f.participant_id', '=', 'p.id')->where('p.user_id', $actor->id)->where('p.state', 'ended')->where('g.state', 'active')->whereNull('g.settled_at')->whereNull('f.id')->where(fn ($q) => $q->whereNull('g.feedback_deadline')->orWhere('g.feedback_deadline', '>', now()))->orderBy('g.id')->limit(20)->pluck('g.id');
+        $ownHonor = DB::table('honor_states')->where('user_id', $actor->id)->value('honor_score');
         if ($activeSession) {
-            return view('livewire.matched', ['sessionId' => $activeSession])->layout('components.layout', ['title' => 'Team found']);
+            return view('livewire.matched', ['sessionId' => $activeSession, 'pendingFeedback' => $pendingFeedback, 'ownHonor' => $ownHonor])->layout('components.layout', ['title' => 'Team found']);
         }
         $party = app(PartyService::class)->current($actor);
         $friends = DB::table('friendships')->where(fn ($q) => $q->where('user_low', $actor->id)->orWhere('user_high', $actor->id))->whereIn('state', ['pending', 'accepted'])->get()->map(function ($f) use ($actor) {
@@ -159,7 +161,7 @@ class Dashboard extends Component
         $members = $party ? DB::table('party_memberships as m')->join('users as u', 'u.id', '=', 'm.user_id')->where('m.party_id', $party->id)->whereNull('m.left_at')->get(['u.id', 'u.handle', 'm.ready']) : collect();
         $invites = DB::table('party_invitations as i')->join('parties as p', 'p.id', '=', 'i.party_id')->join('users as u', 'u.id', '=', 'p.owner_id')->where('i.state', 'pending')->where(fn ($q) => $q->where('i.recipient_id', $actor->id)->orWhere('p.owner_id', $actor->id))->get(['i.id', 'i.recipient_id', 'u.handle']);
 
-        return view('livewire.dashboard', compact('party', 'friends', 'members', 'invites') + ['honor' => DB::table('honor_states')->where('user_id', $actor->id)->value('honor_score'), 'ranks' => Valorant::ranks(), 'shards' => Valorant::SHARDS, 'languages' => Valorant::LANGUAGES])->layout('components.layout', ['title' => 'Your dashboard']);
+        return view('livewire.dashboard', compact('party', 'friends', 'members', 'invites', 'pendingFeedback') + ['honor' => $ownHonor, 'ranks' => Valorant::ranks(), 'shards' => Valorant::SHARDS, 'languages' => Valorant::LANGUAGES])->layout('components.layout', ['title' => 'Your dashboard']);
     }
 
     public function enterQueue(): void

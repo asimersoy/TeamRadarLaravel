@@ -6,6 +6,7 @@ use App\Support\EnvironmentSafety;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 require __DIR__.'/../../vendor/autoload.php';
 $app = require __DIR__.'/../../bootstrap/app.php';
@@ -19,6 +20,6 @@ try {
     } else {
         echo app(SessionService::class)->deadlines();
     }
-} catch (ValidationException|\Symfony\Component\HttpKernel\Exception\HttpException) {
+} catch (ValidationException|HttpException) {
     echo 'closed';
 }

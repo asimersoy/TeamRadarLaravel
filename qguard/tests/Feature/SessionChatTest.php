@@ -97,9 +97,11 @@ it('closes chat at the feedback deadline even before the worker runs and paginat
 it('authorizes private socket subscriptions by current room membership', function () {
     $s = Fixtures::session();
     config(['broadcasting.default' => 'reverb']);
+    // Register callbacks on the driver selected for this test, not the null driver used at boot.
+    require base_path('routes/channels.php');
     $data = ['socket_id' => '123.456', 'channel_name' => 'private-room.'.$s['id']];
     $this->actingAs($s['users'][0])->postJson('/broadcasting/auth', $data)->assertOk();
     $this->actingAs(User::factory()->create())->postJson('/broadcasting/auth', $data)->assertForbidden();
     DB::table('session_participants')->where(['game_session_id' => $s['id'], 'user_id' => $s['users'][0]->id])->update(['state' => 'removed_no_show']);
-    $this->actingAs($s['users'][0])->postJson('/broadcasting/auth',$data)->assertForbidden();
+    $this->actingAs($s['users'][0])->postJson('/broadcasting/auth', $data)->assertForbidden();
 });

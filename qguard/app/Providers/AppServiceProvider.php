@@ -27,10 +27,11 @@ class AppServiceProvider extends ServiceProvider
         if (app()->environment('testing') && config('qguard.browser_clock')) {
             EnvironmentSafety::assertDisposableTestDatabase();
             $path = storage_path('app/private/browser-clock.json');
-            if (is_file($path)) {
-                $offset = (int) json_decode(file_get_contents($path), true)['offset_seconds'];
-                Carbon::setTestNow(Carbon::createFromTimestamp(time() + $offset));
-            }
+            Carbon::setTestNow(function ($realNow) use ($path) {
+                $offset = is_file($path) ? (int) json_decode(file_get_contents($path), true)['offset_seconds'] : 0;
+
+                return $realNow->setTimestamp(time() + $offset);
+            });
         }
         RateLimiter::for('login', fn (Request $request) => [
             Limit::perMinute(10)->by('account:'.hash('sha256', strtolower((string) $request->input('email')))),

@@ -51,6 +51,7 @@ class Room extends Component
         $this->throttle();
         $this->participant();
         app(SessionService::class)->end(auth()->user(), $this->sessionId);
+        $this->redirectRoute('feedback', ['session' => $this->sessionId]);
     }
 
     public function vote(int $target): void

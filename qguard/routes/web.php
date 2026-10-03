@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
+use App\Livewire\AdminCase;
+use App\Livewire\AdminCases;
 use App\Livewire\Dashboard;
+use App\Livewire\Feedback;
 use App\Livewire\Room;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/email/verification-notification', [AuthController::class, 'resend'])->middleware('throttle:6,1')->name('verification.send');
     Route::get('/dashboard', Dashboard::class)->middleware('verified')->name('dashboard');
     Route::get('/rooms/{session}', Room::class)->middleware('verified')->name('room');
+    Route::get('/feedback/{session}', Feedback::class)->middleware('verified')->name('feedback');
+    Route::get('/admin/cases', AdminCases::class)->middleware('verified')->name('admin.cases');
+    Route::get('/admin/cases/{case}', AdminCase::class)->middleware('verified')->name('admin.case');
     Route::get('/rooms/{session}/messages', [ChatController::class, 'index'])->middleware('verified');
     Route::post('/rooms/{session}/messages', [ChatController::class, 'store'])->middleware('verified');
 });

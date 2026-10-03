@@ -6,6 +6,6 @@ export default defineConfig({
     workers: 1,
     retries: 0,
     reporter: 'list',
-    use: { baseURL: process.env.BASE_URL ?? 'http://localhost:8121', trace: 'retain-on-failure' },
+    use: { baseURL: process.env.BASE_URL ?? 'http://localhost:8121', trace: 'retain-on-failure', actionTimeout: 10000 },
     projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
 });

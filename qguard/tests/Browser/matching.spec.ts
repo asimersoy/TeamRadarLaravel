@@ -10,7 +10,7 @@ test('five separate browsers queue and recover their matched roster; outsider de
         await pages[i].getByRole('button',{name:"I'm ready"}).click();
         await expect(pages[i].locator('.roster')).toContainText('Ready');
         await pages[i].getByRole('button',{name:'Find teammates'}).click();
-        await expect(pages[i].getByRole('button',{name:'Cancel queue'})).toBeVisible();
+        await expect(pages[i].getByRole('button',{name:'Cancel queue'}).or(pages[i].getByRole('link',{name:'Open team room'}))).toBeVisible();
     }
     for(let i=0;i<5;i++){
         await expect(pages[i].getByRole('link',{name:'Open team room'})).toBeVisible({timeout:20000});

@@ -77,6 +77,10 @@ services:
     depends_on: [app]
   php:
     <<: *test
+    environment:
+      <<: *test-environment
+      QGUARD_BROWSER_CLOCK: "false"
+      BROADCAST_CONNECTION: "null"
     profiles: [tools]
     entrypoint: ["qguard-entrypoint", "php"]
   browser:

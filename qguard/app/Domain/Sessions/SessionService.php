@@ -2,6 +2,7 @@
 
 namespace App\Domain\Sessions;
 
+use App\Domain\Feedback\CaseEvidence;
 use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\SocialService;
 use App\Events\RoomChanged;
@@ -45,6 +46,7 @@ final class SessionService
             DB::table('session_participants')->where('id', $p->id)->update(['state' => 'acknowledged', 'acknowledged_at' => now(), 'updated_at' => now()]);
             if ($request) {
                 DB::table('no_show_requests')->where('id', $request->id)->update(['state' => 'cancelled_acknowledged', 'updated_at' => now()]);
+                CaseEvidence::flag($id);
             }
             $this->changed($id);
         });
@@ -70,13 +72,16 @@ final class SessionService
         MembershipTransaction::run(function () use ($actor, $id, $target) {
             $room = DB::table('game_sessions')->where('id', $id)->lockForUpdate()->first();
             $p = $this->participant($actor, $id);
-            SocialService::require($room->state === 'active' && in_array($p->state, ['matched', 'acknowledged']) && now()->gte(Carbon::parse($room->created_at)->addMinutes(5)), 'No-show voting starts five minutes after matching, for active participants only.');
+            SocialService::require($room->state === 'active' && ! $room->settled_at && (! $room->feedback_deadline || now()->lt(Carbon::parse($room->feedback_deadline))) && in_array($p->state, ['matched', 'acknowledged']) && now()->gte(Carbon::parse($room->created_at)->addMinutes(5)), 'No-show voting starts five minutes after matching, for active participants in an open session only.');
             $other = DB::table('session_participants')->where(['game_session_id' => $id, 'user_id' => $target])->first();
             SocialService::require($other && $other->user_id !== $actor->id && $other->state === 'matched', 'Choose an unacknowledged teammate, not yourself.');
             $request = DB::table('no_show_requests')->where('game_session_id', $id)->whereIn('state', ['voting', 'responding'])->lockForUpdate()->first();
             SocialService::require(! $request || $request->target_id === $target, 'Another no-show request is already open.');
             $requestId = $request?->id ?? DB::table('no_show_requests')->insertGetId(['game_session_id' => $id, 'target_id' => $target, 'created_at' => now(), 'updated_at' => now()]);
-            DB::table('no_show_votes')->insertOrIgnore(['no_show_request_id' => $requestId, 'voter_id' => $actor->id, 'created_at' => now()]);
+            $newVote = DB::table('no_show_votes')->insertOrIgnore(['no_show_request_id' => $requestId, 'voter_id' => $actor->id, 'created_at' => now()]);
+            if ($newVote) {
+                CaseEvidence::flag($id);
+            }
             if (! $request?->response_deadline && DB::table('no_show_votes')->where('no_show_request_id', $requestId)->count() === 4) {
                 DB::table('no_show_requests')->where('id', $requestId)->update(['state' => 'responding', 'response_deadline' => now()->addSeconds(30), 'updated_at' => now()]);
             }
@@ -97,6 +102,7 @@ final class SessionService
                 $target = DB::table('session_participants')->where(['game_session_id' => $room->id, 'user_id' => $request->target_id])->first();
                 $valid = $room->state === 'active' && ! $room->settled_at && $target->state === 'matched';
                 DB::table('no_show_requests')->where('id', $requestId)->update(['state' => $valid ? 'removed' : 'stale', 'updated_at' => now()]);
+                CaseEvidence::flag($room->id);
                 if (! $valid) {
                     return 0;
                 }

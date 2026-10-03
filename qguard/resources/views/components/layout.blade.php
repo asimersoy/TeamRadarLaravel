@@ -18,9 +18,9 @@
         @else
             <nav aria-label="Main" class="actions"><a href="{{ route('login') }}">Sign in</a><a class="button" href="{{ route('register') }}">Get started</a></nav>
         @endif
+        @if(auth()->check() && auth()->user()->admin_cleared)<a href="{{ route('admin.cases') }}">Human review</a>@endif
     </header>
     <main id="main" class="page-shell">
-        @if(session('status'))<div class="notice" role="status">{{ session('status') }}</div>@endif
         {{ $slot }}
     </main>
     <footer class="site-footer">QGuard · Better company, one session at a time.<span>Game joining and Discord are not integrated.</span></footer>

@@ -1,7 +1,7 @@
 # First pass implementation record
 
-**Status:** S1–S4 complete and verified locally. S5 feedback/honor/admin is next;
-S5–S6 are not yet implemented. Updated 2026-10-03.
+**Status:** S1–S5 complete and verified locally. S6 full verification and
+operational handoff remains. Updated 2026-10-03.
 **Owner:** primary implementation agent. Update after each stage or blocker.
 **Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
 explicit instruction to start implementation and continue through completion.
@@ -232,3 +232,38 @@ was checked before integrating its private-channel client.
 Full fresh-suite rerun, explicit Reverb-outage test and all other S6 cross-flow/
 operational/security checks remain required. No feedback or admin capability is
 advertised as complete yet. No protected workflow or legacy application changed.
+
+S4 committed as `5d36f10`.
+
+## S5 feedback, honor and human review
+
+Implemented optional three-dimension feedback, immutable finalization/skip,
+ten-minute/early settlement, distinct-reporter outgoing-rating invalidation,
+late evidence without recalculation, smoothed raw reference and damped honor,
+startup handling, canonical order and exact application audit. Cleared admins
+have a filtered inbox, retained evidence and optimistic human-review notes;
+players cannot see reviewer mappings. No penalty tools or Discord claims added.
+
+- Additive migrations passed on dev/test; persistent development was not reset.
+- Pest **49 tests / 90,220 assertions passed**; direct PHPUnit Unit **9 tests /
+  90,024 assertions passed**; Pint formatted **82 files**. Includes 10,000
+  deterministic recurrence inputs, bounds, cold start, extreme/moderate tradeoff,
+  sustained changes, canonical ordering, atomic rollback/retry and independent
+  PostgreSQL settlement/duplicate/deadline races with exact audit replay.
+- Earlier six Chromium flows passed in a fresh browser run; the seventh exposed
+  an exact-label locator issue. The repaired feedback/admin test passed separately:
+  five players finalize, two reporters invalidate only outgoing ratings, incoming
+  honor changes, matched snapshots remain, admin reviews and late evidence does
+  not recalculate. The entire fresh suite will run again in S6.
+- Admin and closed-feedback screenshots were inspected, copied to outer
+  outputs/qguard-first-pass/s5. The prototype deliberately exposes detailed case
+  JSON only to cleared admins; this is not player-visible feedback history.
+- Fixed a Livewire method-name collision, isolated backend tests from the private
+  browser clock, and corrected long-lived scheduler clock behavior. Test clock
+  callbacks now read the scoped offset without recursive date construction.
+  Closed settlement also closes pending no-show votes; exact late-report retries
+  are idempotent and cannot silently overwrite finalized evidence.
+
+S6 still owns full browser/engine/recovery/load/restore/production-build evidence,
+field inventory and final acceptance mapping. Current tests are not a public-use
+approval or independent security review.
