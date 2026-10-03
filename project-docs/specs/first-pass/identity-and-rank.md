@@ -1,0 +1,77 @@
+# Identity and rank source contract
+
+**Status/owner/update:** [manifest](README.md). Authority: DEC-013, DEC-017,
+DEC-018, DEC-044, DEC-045, DEC-048. Dependencies: [data/security](data-and-security.md),
+[matching](parties-and-matchmaking.md). Acceptance: F01–F02, F08, I01–I03.
+
+## QGuard identity
+
+Use framework-supported email/password authentication, hashed passwords,
+verification and reset. Development email goes to a local mail sink, not actual
+recipients. Synthetic users can be marked verified by the dev-only seeder.
+Immutable user ID is internal authority; public unique handle is for deliberate
+friend lookup. No public email/account directory. Admin clearance is assigned
+through a restricted seed/operational command, never user-controlled fields.
+
+Profile holds a Riot ID as a user-entered coordination identifier, stated rank,
+game shard and preferred language. Riot ID entry is not ownership verification.
+Do not collect Riot/Discord passwords, session cookies, local-client tokens or
+computer access. QGuard login does not authenticate a game account.
+
+## Provider decision and fallback
+
+Current official evidence: RSO needs production approval; it identifies an
+opted-in account but does not by itself guarantee complete current-rank data.
+The documented rank endpoint is a leaderboard, not demonstrated all-player
+rank coverage. See [research](../../research/first-pass-technical-foundations.md).
+
+No approved credentials/access are established in this repository review. At
+S2 recheck available **authorized** official access. If there is none, implement
+the selected declared-rank fallback now. Do not block the build waiting for
+Riot, submit applications, scrape private APIs or represent mocks as integration.
+Real provider retrieval is included only if its permissions, coverage and
+data handling are proven within scope; otherwise leave that adapter unavailable.
+
+Define a small `GameProfileProvider` contract returning identifier, ownership
+status, rank value/source/observed-at, or explicit unavailable/unknown. First-pass
+production code has declared input and unavailable official adapter; test doubles
+remain test-only. No fake successful OAuth in the normal UI.
+
+Ownership values: `unverified`, or `provider_verified` only with actual evidence.
+Rank provenance: `self_declared`, `official` only if evidenced, or `unknown`.
+Keep these independent. Store provider time and retrieval method/version if a
+real adapter is later enabled. Matchmaking never silently upgrades provenance.
+
+## Queue validation and snapshots
+
+Offer the current game rank vocabulary and Unknown/unplaced. For the initial
+Competitive development queue, require a declared placed rank and declaration
+of Competitive access; unknown users can finish setup but cannot enter that
+specific queue. This is an agent-selected first-pass restriction, not a promise
+of game-side verification or a final treatment of placement players.
+
+Queue selections use the same shard and a common selected language for all
+premade members. Each member confirms readiness against current settings.
+Editing a relevant field while queued cancels/requires re-readying that entry;
+no silent mutation of a queued roster. Matched session stores immutable rank,
+source, identifier and premade snapshots. Later profile edits affect only future
+queue entries and do not falsify old report context.
+
+Show stated rank and its provenance to matched teammates, never their honor.
+At Session ended ask whether a teammate's observed rank differed. Allow
+Matches / Different / Not observed; Different can include observed rank and
+brief optional explanation. A response is testimony, not proof or official
+account verification. Unknown does not count as confirmation.
+
+Discrepancy evidence appears in the admin case context; no automatic rank
+replacement, honor deduction or sanction. Proposed category treatment is defined
+once in [feedback/reports](feedback-honor-and-reports.md); do not implement a
+second conflicting invalidation rule in the profile module.
+
+## Access and later real-user use
+
+Riot's current LFG/registration/opt-in policies require attention even when an
+app uses declarations. A locally testable synthetic build does not prove a
+compliant public workaround. Provider registration/RSO and release review must
+be resolved before serving real Valorant players. This gates release, not local
+feature implementation. Revisit data inventory when any real adapter is added.

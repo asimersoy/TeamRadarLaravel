@@ -1,5 +1,23 @@
 # QGuard Current State
 
+## Latest Checkpoint — First-Pass Packet Ready For Review
+
+As of 2026-10-03, the modular **QG-FIRST-PASS-1 revision 1** specification and
+execution packet is drafted. Start with the
+[brief owner review](planning/first-pass/README.md), then the
+[specification manifest](specs/first-pass/README.md). `DEC-051` authorizes this
+file-based planning and a brief approval checkpoint, not application coding.
+All concrete additional choices are labeled as agent proposals; public launch,
+provider access and held Discord/game tests remain outside this local build.
+The older readiness paragraphs below retain their dated baseline context;
+the missing-draft work they describe is now supplied by this packet.
+
+Next action: owner reviews/approves the named packet, then implementation may
+begin at S1 under the existing gates. No rewrite application directory, runtime
+or application test result has been created by this planning task.
+
+## Prior Context And Continuing Authority
+
 - **Last updated:** 2026-10-03
 - **Status:** Discord-dependent tests, including Wave 1 Valorant link setup,
   are on owner hold as of 2026-09-28 until the owner can test; no live result
@@ -32,13 +50,12 @@
   `DEC-049`/`DEC-050` select Docker, PostgreSQL, no initial Redis and
   Blade/Livewire, with persistent database storage and Docker-based backend/
   browser tests using synthetic accounts.
-  Detailed specifications remain incomplete; no unanswered owner choice from
-  the latest question-seven set prevents preparing them
-- **Objective:** draft the concrete specifications, test package and execution
-  plan from the selected core stack and `DEC-050` persistence/testing requirements;
-  preserve live-test hold and future exclusions
+  Concrete specifications are now drafted in QG-FIRST-PASS-1, awaiting packet
+  approval; no broad product questionnaire is required
+- **Objective:** obtain brief review of the concrete packet, then execute only
+  after approval; preserve live-test hold and future exclusions
 - **Current route:**
-  [Technical specification and implementation plan](planning/rewrite-owner-decision-sequence.md#decision-group-8---technical-specification-and-implementation-plan)
+  [First-pass planning route](routes/PLAN-2026-10-03-first-pass-implementation.md)
 
 ## Verified Workspace State
 
@@ -446,6 +463,11 @@
 
 ## First-Pass Readiness Review — 2026-10-03
 
+**Update:** the subsequent [modular packet](planning/first-pass/README.md) now
+supplies the specification/plan/test drafting identified below. This earlier
+readiness baseline is not an instruction to draft it again. Concrete packet
+approval remains pending under `DEC-051`.
+
 - **Subsequent stack sequencing:** `DEC-049` requested stack selection before
   detailed planning; `DEC-050` now settles PostgreSQL, Blade/Livewire and no
   initial Redis, reaffirms Docker and adds persistent storage and backend/browser
@@ -492,6 +514,15 @@
   assessment is not a current API, safety or legal-compliance finding.
 
 ## Verification State
+
+- First-pass planning unit at baseline `c0008f7`: modular scope/state/data/
+  architecture/security specifications, six-stage plan and acceptance matrix
+  drafted with owner-decision/deferral traceability. Current primary technical
+  and Riot rule sources reviewed; synthetic in-memory honor checks passed,
+  with canonical-order sensitivity explicitly measured. Full documentation
+  QA/results are in the [packet review record](planning/first-pass/review-evidence.md).
+  No rewrite application, dependency install, container/volume change, live
+  integration test, push or deployment. Owner implementation approval pending.
 
 - Core-stack approval/persistence/testing record at clean `13d0657`: owner
   selections reconciled into `DEC-050` and planning entry points. Docker volume
@@ -773,8 +804,8 @@
   exhaustive. The Apex/Valorant chronology remains a visible provenance limit,
   not a current blocker or game-selection rule.
 - The owner selected Valorant; the research itself still does not constitute
-  Riot approval, prove private interfaces absent, approve a rank fallback, or
-  authorize client automation.
+  Riot approval, prove private interfaces absent, or authorize client automation.
+  The first-pass declared-rank fallback is separately approved by `DEC-048`.
 - Looking to Play exists in the researched record but is rejected for QGuard by
   `DEC-019`; no Looking to Play test may route current work.
 - Manual Steam group-chat links provide a promising non-friend text/voice path,

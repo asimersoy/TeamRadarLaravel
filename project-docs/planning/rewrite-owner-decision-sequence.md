@@ -1,8 +1,13 @@
 # QGuard Rewrite Owner Decision Sequence
 
+**Current action, 2026-10-03:** the [first-pass review packet](first-pass/README.md)
+now supplies the modular engineering plan requested here. `DEC-051` authorizes
+drafting in normal mode and one brief review before coding. Use that packet for
+the next approval; this agenda retains how earlier decision groups were settled.
+
 - **Record type:** current owner-review packet
-- **Status:** first-pass product answers and core stack selected; persistence
-  and backend/browser testing requirements approved; detailed packet next
+- **Status:** first-pass product answers/core stack selected; detailed packet
+  drafted and awaiting brief review, application implementation not started
 - **Decision owner:** project owner
 - **Created:** 2026-09-03
 - **Update trigger:** after each owner decision or when new evidence changes a
@@ -53,9 +58,10 @@ explicitly rejects them.
   Invite checks for Valorant and CS2 are approved future tests, not current
   provider facts (`DEC-021`).
 - Valorant is the current approved game under `DEC-018`; CS2 was researched as
-  an additional candidate without superseding that decision. No current stack,
-  dependable party-entry integration, data flow, decision system, deployment,
-  or implementation boundary has been approved.
+  an additional candidate without superseding that decision. The core stack is
+  now approved by `DEC-049`/`DEC-050`; dependable party-entry integration and
+  deployment are not. Proposed first-pass data/implementation contracts are
+  in the new packet and await its approval.
 
 ### Approved Owner Decisions Already In Force
 

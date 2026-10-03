@@ -2049,3 +2049,35 @@ canonical-workflow change, provider research or external action in this unit.
   Redis omission, Blade/Livewire and test direction in the earlier recommendation;
   extends `DEC-049` with persistence and explicit backend/browser coverage
 - **Superseded by:** none
+
+## DEC-051 - Prepare A Modular File-Based Plan With One Brief Review Before Implementation
+
+- **Date:** 2026-10-03
+- **Status:** approved planning workflow; concrete packet implementation approval pending
+- **Decision owner:** project owner
+- **Evidence:** after considering normal versus Plan mode and a single-shot
+  plan-to-implementation run, the owner accepted the recommended normal-mode
+  file-based planning with a brief review checkpoint: "I approve of this. If
+  you can start now, go ahead and start."
+- **Decision:** the agent now consolidates prior decisions, fills delegated
+  engineering details and writes modular specifications, technical/data contracts,
+  execution stages and acceptance tests in the existing project-docs structure.
+  The plan is primarily an executable guide for the implementation agent, not
+  one long chat document the owner must inspect line by line. No Plan-mode
+  switch is needed. Present a short owner summary linked to the complete packet.
+- **Approval boundary:** the owner reviews that summary and approves the named
+  packet before application implementation. This request starts planning, not
+  application code, container setup or a waiver of DEC-008. Earlier discussion
+  of proceeding without plan review does not override this latest checkpoint.
+- **After approval:** execute coherent stages, test and fix within the approved
+  scope and existing delegated discretion. Do not demand a new owner answer for
+  each reversible technical detail. Pause for genuine blockers, consequential
+  unapproved changes or separately controlled operations. Local coherent commits
+  remain authorized; pushes, PRs, deployments, destructive actions and history
+  rewrites still require specific explicit authorization.
+- **Current packet:** [QG-FIRST-PASS-1 revision 1](../planning/first-pass/README.md),
+  agent-proposed implementation contracts, not themselves an approved product
+  decision. The brief summary highlights observable delegated edge choices.
+- **Supersedes:** any ambiguity that normal mode removes the review gate or
+  that only a single Plan-mode document can carry an implementation plan
+- **Superseded by:** none

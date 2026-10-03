@@ -1,5 +1,11 @@
 # QGuard Product Foundations
 
+**Implementation routing update, 2026-10-03:** the
+[first-pass specification suite](first-pass/README.md) now turns these decisions
+into concrete proposed contracts and tests. Its [brief review](../planning/first-pass/README.md)
+is the pending approval checkpoint. Historical/provisional notation below is
+not a second unresolved selection or permission to omit later owner decisions.
+
 - **Record type:** current modular product specification
 - **Status:** partially approved; not implementation-ready
 - **Decision owner:** project owner

@@ -5,6 +5,12 @@ limits. Under `DEC-015`, they are settled gradually in bounded discussions when
 their dependencies become relevant; they are not one initial questionnaire.
 Historical unknowns do not automatically become requirements.
 
+**2026-10-03 planning update:** QG-FIRST-PASS-1 revision 1 now supplies concrete
+proposed contracts for the bounded local first build. Start at the
+[brief review](../planning/first-pass/README.md). `DEC-051` keeps packet approval
+before coding. Remaining public-launch/provider questions are not a new broad
+questionnaire or permission to leave first-pass contracts unspecified.
+
 ## OQ-001 - Is More Legacy Evidence Available?
 
 - **Status:** resolved 2026-09-05 for the redesign phase
@@ -151,14 +157,16 @@ Historical unknowns do not automatically become requirements.
   current session completion, feedback timing, native chat and private
   audiences now selected; reversible first-pass details delegated;
   first-pass retention and identity/rank responsibility now selected;
-  actual contracts and complete acceptance specifications remain to draft
+  actual contracts and acceptance specifications now drafted in QG-FIRST-PASS-1,
+  awaiting packet approval; later public policy questions remain open
 - **Decision owner:** project owner; qualified review may be required after a
   concrete flow exists
 - **Needed by:** matching specification, data inventory, privacy review, and
   trust/safety acceptance criteria
-- **Blocks:** collecting player or session data, ordering or excluding users,
-  displaying reputation, accepting reviews/reports, or designing moderation.
-- **Does not block:** selecting lower-risk alternatives and explicit non-goals.
+- **Blocks:** implementing these flows before packet approval, and actual
+  real-user collection/release without the remaining applicable reviews.
+- **Does not block:** drafting the bounded local-development contracts and
+  explicit non-goals under existing decisions/delegation.
 - **Current owner direction, updated 2026-10-03:** `DEC-026` selects honor in
   matchmaking from the first session-grouping version, a common starting
   baseline and similar-honor grouping as history develops. Increasing the
@@ -343,7 +351,7 @@ Historical unknowns do not automatically become requirements.
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
 - **Status:** core stack and testing direction settled by `DEC-049`/`DEC-050`;
-  concrete technical/acceptance packet and approval still needed
+  concrete technical/acceptance packet now drafted; approval pending under `DEC-051`
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
 - **Blocks:** complete technical/operating and execution approval; not drafting
@@ -366,10 +374,10 @@ Historical unknowns do not automatically become requirements.
   product surfaces, delivery horizon/resources, integration constraints,
   availability/security expectations, environments, release strategy, and
   testable completion evidence.
-- **Current readiness:** selected core stack is sufficient to draft the concrete
-  new-code layout, slice specifications, acceptance package and execution plan.
-  Their completion and applicable owner approval under `DEC-008` remain before
-  coding; drafting them is agent work, not another broad owner questionnaire.
+- **Current readiness:** [QG-FIRST-PASS-1](../planning/first-pass/README.md) supplies
+  the new-code layout, slice specifications, acceptance package and execution
+  plan. Owner packet approval under `DEC-008`/`DEC-051` remains before coding;
+  no broad owner questionnaire or repeated stack selection is needed.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).

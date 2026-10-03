@@ -8,10 +8,11 @@
   feedback and admin directions. `DEC-042` through `DEC-046` settle session/
   clock, native chat/current queue and audiences, with reversible details
   delegated. `DEC-047`/`DEC-048` settle first-pass retention and identity/rank
-  responsibility/fallback; concrete technical/data/acceptance contracts remain
-  to draft and approve, not another unanswered product questionnaire.
+  responsibility/fallback; concrete technical/data/acceptance contracts are
+  now drafted in QG-FIRST-PASS-1 and await approval, not another questionnaire.
   `DEC-049`/`DEC-050` select the core stack and persistent-storage/backend/
-  browser-testing requirements for that drafting work
+  browser-testing requirements. `DEC-051` selects modular file-based planning
+  and one brief packet-review checkpoint before coding
 - **Decision owner:** project owner
 - **Authority:** `DEC-008`
 - **Created:** 2026-09-04
@@ -43,6 +44,11 @@ required module must be approved before that slice begins unless the owner
 records an explicit narrow override under the workflow-governance policy.
 
 ## Current Modules
+
+- [QG-FIRST-PASS-1 specification manifest](first-pass/README.md) — concrete
+  proposed implementation suite, revision 1; draft complete, packet approval
+  pending under `DEC-051`. Use this suite for first-pass engineering, not older
+  historical open-detail lists. See the [brief review](../planning/first-pass/README.md).
 
 - [Product foundations](product-foundations.md) — partially approved; not
   implementation-ready
@@ -114,6 +120,7 @@ browser coverage of every implemented first-pass user/admin flow. See the
 for approved direction versus supporting agent proposals. No application test
 or persistence check has run for the rewrite yet.
 
-No current module approves a complete product/use boundary, platform/region/
-mode/audience wedge, rank or coordination data flow, detailed architecture,
-implementation plan, or release; the core technology choices above are settled.
+The new first-pass suite proposes a bounded local development scope and complete
+contracts for review; it is not yet implementation-approved. Public audience/
+region/use boundaries and release remain separately open. Core stack choices
+are already settled; do not ask the owner to choose them again.
