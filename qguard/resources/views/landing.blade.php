@@ -4,7 +4,7 @@
             <p class="eyebrow">A better kind of five-stack</p>
             <h1>Your next game.<br><span>Your kind of team.</span></h1>
             <p class="lead">Find teammates who value communication, sportsmanship and effort. Build a group for a session, not a permanent team.</p>
-            <div class="notice">Accounts and private parties are ready to explore. Matchmaking is not available at this stage.</div>
+            <div class="notice">Accounts and private parties are ready to explore. Find a five-player team with honor-aware matching. Live game joining is not integrated.</div>
             <a class="button" href="{{ route('register') }}">Create your QGuard account</a>
         </div>
         <aside class="panel hero-panel" aria-label="How QGuard works">

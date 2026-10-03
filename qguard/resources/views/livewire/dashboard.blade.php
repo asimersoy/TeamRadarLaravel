@@ -20,7 +20,11 @@
 <form wire:submit="invite"><label>Invite a friend by handle<input wire:model="inviteHandle" maxlength="24" required></label><button class="secondary">Send party invitation</button></form>
 @endif
 <div class="actions"><button wire:click="ready">I'm ready</button><button class="danger" wire:click="leaveParty">{{ $party->owner_id === auth()->id() ? 'Disband party' : 'Leave party' }}</button></div>
-<p class="muted">Matchmaking will be enabled in the next verified stage. No game lobby is created here.</p>
+@if($party->owner_id === auth()->id())
+@if($party->state === 'waiting')<div class="notice">Waiting for a compatible five. Honor preferences widen over time; shard and language never change.</div><button wire:click="cancelQueue" class="secondary">Cancel queue</button>
+@else<div class="actions"><button wire:click="enterQueue">Find teammates</button></div>@endif
+@endif
+<p class="muted">No Discord voice queue yet. Original premade members cannot rate each other. A group of four searches for a fifth; QGuard never queues you into the game.</p>
 @endif
 @foreach($invites as $invite)<div class="list-row"><span>Invitation from {{ $invite->handle }}</span><div class="actions">@if($invite->recipient_id === auth()->id())<button wire:click="invitation({{ $invite->id }}, 'accept')">Accept invitation</button><button class="secondary" wire:click="invitation({{ $invite->id }}, 'decline')">Decline invitation</button>@else<button class="secondary" wire:click="invitation({{ $invite->id }}, 'revoke')">Revoke invitation #{{ $invite->id }}</button>@endif</div></div>@endforeach
 </section>

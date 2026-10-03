@@ -1,0 +1,1 @@
+<section class="panel"><p class="eyebrow">Match found</p><h1>Your team is ready.</h1><p>Five players, one session. Open your private matched-team room.</p><div class="actions"><a class="button" href="{{ route('room',$sessionId) }}">Open team room</a></div></section>

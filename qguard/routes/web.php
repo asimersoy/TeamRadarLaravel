@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Livewire\Dashboard;
+use App\Livewire\Room;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
@@ -21,4 +22,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/verify-email/{id}/{hash}', [AuthController::class, 'verify'])->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
     Route::post('/email/verification-notification', [AuthController::class, 'resend'])->middleware('throttle:6,1')->name('verification.send');
     Route::get('/dashboard', Dashboard::class)->middleware('verified')->name('dashboard');
+    Route::get('/rooms/{session}', Room::class)->middleware('verified')->name('room');
 });

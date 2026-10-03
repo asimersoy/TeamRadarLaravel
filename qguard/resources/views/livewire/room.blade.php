@@ -1,0 +1,5 @@
+<div wire:poll.5s><p class="eyebrow">Valorant · Competitive · {{ strtoupper($room->shard) }} · {{ strtoupper($room->language) }}</p><h1>Your five are here.</h1><p class="muted">Session #{{ $room->id }} · {{ $room->state }} · Honor is the snapshot at matching, not individual feedback.</p>
+<div class="notice">{{ $handoff['message'] }} Full five-stacks can span ranks; Valorant may reduce Ranked Rating rewards. Check the game client's current rules.</div>
+<section class="panel"><h2>Matched teammates</h2><ul class="roster">@foreach($roster as $member)<li><div><strong>{{ $member->handle }}</strong><p class="muted">{{ $member->riot_id }} · {{ $member->state }} @if($member->user_id===$room->coordinator_id) · Coordinator @endif</p></div><div>{{ $ranks[$member->rank_snapshot] }} <small>Self-declared</small><p>Honor {{ number_format($member->honor_snapshot,1) }}</p></div></li>@endforeach</ul></section>
+<p class="notice">Private text and session actions will be enabled in the next verified stage.</p>
+</div>

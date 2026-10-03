@@ -12,7 +12,7 @@ it('uses the isolated PostgreSQL database and database cache', function () {
 });
 
 it('renders an honest foundation and refuses public use', function () {
-    $this->get('/')->assertOk()->assertSee('Your next game.')->assertSee('not available at this stage');
+    $this->get('/')->assertOk()->assertSee('Your next game.')->assertSee('Live game joining is not integrated');
     app()->detectEnvironment(fn () => 'production');
     $this->get('/')->assertStatus(503);
 });

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Domain\Game\Valorant;
+use App\Domain\Matching\QueueService;
 use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\PartyService;
 use App\Domain\Parties\SocialService;
@@ -145,6 +146,10 @@ class Dashboard extends Component
     public function render()
     {
         $actor = $this->actor();
+        $activeSession = DB::table('active_participations')->where('user_id', $actor->id)->value('game_session_id');
+        if ($activeSession) {
+            return view('livewire.matched', ['sessionId' => $activeSession])->layout('components.layout', ['title' => 'Team found']);
+        }
         $party = app(PartyService::class)->current($actor);
         $friends = DB::table('friendships')->where(fn ($q) => $q->where('user_low', $actor->id)->orWhere('user_high', $actor->id))->whereIn('state', ['pending', 'accepted'])->get()->map(function ($f) use ($actor) {
             $f->handle = DB::table('users')->where('id', $f->user_low === $actor->id ? $f->user_high : $f->user_low)->value('handle');
@@ -155,5 +160,17 @@ class Dashboard extends Component
         $invites = DB::table('party_invitations as i')->join('parties as p', 'p.id', '=', 'i.party_id')->join('users as u', 'u.id', '=', 'p.owner_id')->where('i.state', 'pending')->where(fn ($q) => $q->where('i.recipient_id', $actor->id)->orWhere('p.owner_id', $actor->id))->get(['i.id', 'i.recipient_id', 'u.handle']);
 
         return view('livewire.dashboard', compact('party', 'friends', 'members', 'invites') + ['honor' => DB::table('honor_states')->where('user_id', $actor->id)->value('honor_score'), 'ranks' => Valorant::ranks(), 'shards' => Valorant::SHARDS, 'languages' => Valorant::LANGUAGES])->layout('components.layout', ['title' => 'Your dashboard']);
+    }
+
+    public function enterQueue(): void
+    {
+        $this->throttle();
+        app(QueueService::class)->enter($this->actor());
+    }
+
+    public function cancelQueue(): void
+    {
+        $this->throttle();
+        app(QueueService::class)->cancel($this->actor());
     }
 }

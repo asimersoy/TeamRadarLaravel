@@ -1,7 +1,7 @@
 # First pass implementation record
 
-**Status:** S1–S2 complete and verified locally. S3 matchmaking is next;
-S3–S6 are not yet implemented. Updated 2026-10-03.
+**Status:** S1–S3 complete and verified locally. S4 sessions/chat is next;
+S4–S6 are not yet implemented. Updated 2026-10-03.
 **Owner:** primary implementation agent. Update after each stage or blocker.
 **Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
 explicit instruction to start implementation and continue through completion.
@@ -160,3 +160,38 @@ regressions cover signup→dashboard and immediate party creation. Recreating PH
 exposed Nginx's cached old IP; Docker DNS now re-resolves it. Browser acceptance
 waits for the recipient's committed state before checking the other roster.
 No public access, held integration test, push or deployment occurred.
+
+S2 committed as `3fbb182`.
+
+## S3 matching and private roster
+
+Implemented atomic queue entry/cancel, readiness rechecks, whole-party five-player
+matching with hard shard/language/mode boundaries, rank-disparity-compatible full
+five policy, individual honor spans and every-party wait allowances. DB lease,
+membership fence, row locks and unique slots protect concurrent transitions.
+Candidate pages and persisted DFS/anchor cursors distinguish exhausted budgets
+from infeasible pages, and revisit older anchors without blocking other anchors.
+Preference ties use rank span, aggregate elapsed waiting time and stable IDs.
+Candidate validation is batched, not queried for every search expansion.
+
+Matching freezes origin, declared rank/provenance, handle and aggregate honor
+snapshots. Authorized teammates see the snapshots; an outsider gets 403. The
+provider handoff remains honestly unavailable. S3 has a read-only room; S4 adds
+chat and participant lifecycle rather than pretending they already work.
+
+- Additive dev/test migrations and Vite build passed.
+- Pest **26 tests / 104 assertions passed**. New tests cover 4+1, 3+2, 2+2+1,
+  five solos/full five, individual rather than mean honor, every-party widening,
+  profile-edit cancellation, duplicate queue, rank disparity, hard compatibility,
+  candidate beyond entry 100, exhausted-budget cursor and snapshot privacy.
+- Independent PostgreSQL processes race two matchers against cancellation:
+  either cancellation or a complete five wins, never a partial/duplicate match.
+  Process tests run in their own final suite; mixing committed fixtures with
+  transaction-wrapped tests had exposed a test-isolation error, now fixed.
+- Chromium **5 tests passed**: earlier account/friend flows plus five independent
+  players queue→matched room, each seeing five rank/honor snapshots, with a sixth
+  outsider denied. Screenshot inspected and saved in outer outputs/s3.
+- Pint formatted all 58 PHP files. Test scheduler is stopped before backend
+  resets and started only for browser checks; persistent development is separate.
+
+Remaining: S4–S6 domain behavior, full acceptance mapping and recovery/load checks.
