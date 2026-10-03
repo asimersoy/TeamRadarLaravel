@@ -20,9 +20,17 @@ S1–S6 are implemented and verified in the fresh `qguard/` directory. See the
 actual stage status, commands and checks. No repeat packet approval is needed;
 the [acceptance results](planning/first-pass/verification-results.md) cover backend,
 three browser engines, concurrency, live-update recovery, load and isolated restore.
-The local demo uses `http://localhost:8120` when running; setup and synthetic
-account instructions are in [the app runbook](../qguard/README.md). At the owner's
-request on 2026-10-03, both local stacks were brought down after the work:
+The local demo is running again at `http://localhost:8120` for owner inspection
+as of the later restart request on 2026-10-03. All seven development services
+were started with the existing database volume; `/up` returned HTTP 200, database
+reachability passed and there were no pending or failed jobs. The test stack
+remains down. No migration, seeding, data reset, backup creation, push or deployment
+was performed. Browser automation could not reopen the current tab because its
+URL was blocked by browser policy; the owner was given the direct local link.
+This health check does not close NAV-WK-01. Setup and synthetic account
+instructions are in [the app runbook](../qguard/README.md).
+
+Earlier on 2026-10-03, the owner requested both local stacks be brought down:
 `docker compose -p qguard-dev --profile '*' down` and
 `docker compose -p qguard-test-local -f compose.test.yaml --profile '*' down`,
 from `qguard/`, without volume/image deletion. Docker checks found no remaining
