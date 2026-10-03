@@ -7,6 +7,12 @@ Compose project. All PHP runs in Docker. This is not approved for public users.
 
 ## First setup
 
+Accounts and parties are available; later stages remain disabled until verified.
+After migration, opt in to fictional demo accounts with
+`docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
+Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
+mode 0600). The local mail inbox is http://localhost:8123. Never share real credentials.
+
 ```sh
 node scripts/init-env.mjs
 docker compose build app

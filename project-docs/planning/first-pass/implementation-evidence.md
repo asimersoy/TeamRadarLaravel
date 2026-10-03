@@ -1,7 +1,7 @@
 # First pass implementation record
 
-**Status:** S1 complete, verified local foundation. S2 is next; S2–S6 not yet
-implemented. Updated 2026-10-03.
+**Status:** S1–S2 complete and verified locally. S3 matchmaking is next;
+S3–S6 are not yet implemented. Updated 2026-10-03.
 **Owner:** primary implementation agent. Update after each stage or blocker.
 **Authority:** QG-FIRST-PASS-1 revision 1 + DEC-052 and the owner's subsequent
 explicit instruction to start implementation and continue through completion.
@@ -119,3 +119,44 @@ exclude secrets, dependencies, protected workflows and legacy edits.
 `git diff --check` passed after removing unused generated welcome boilerplate.
 Package metadata is proprietary pending an explicit public-license decision,
 not a new open-source grant. Commit this verified foundation as one unit.
+
+S1 committed as `d73e33d`.
+
+## S2 identity, friends and partial parties
+
+Implemented framework-backed email/password registration, verification, login,
+logout, password reset/change, private own-honor display, truthful declared game
+profile, exact-handle consent-based friends, invitations and 1–5-player parties.
+Readiness is invalidated on profile/settings/membership edits. Database unique
+active slots and a PostgreSQL transaction advisory fence serialize membership
+mutations; the initial global fence favors correctness over parallel throughput.
+S3 uses the same fence and S6 measures it; no scale claim is made.
+Matchmaking remains unavailable in this independently runnable stage.
+
+No Riot access exists here. The unavailable-provider seam does not claim account
+verification or official rank and is not a public-release RSO workaround.
+Rechecked [Riot guidance](https://developer.riotgames.com/docs/valorant),
+[Laravel verification](https://laravel.com/framework/docs/13.x/verification) and
+[Mailpit API](https://mailpit.axllent.org/docs/api-v1/).
+
+Verification from qguard, using Docker commands in README:
+
+- Additive migration passed on persistent dev and disposable test databases.
+- Pest: **15 tests / 55 assertions passed**, including normalized signup,
+  verification/authorization, profile validation, crossed friend requests,
+  stale/full party invitations, readiness reset and two independent PHP/Postgres
+  processes competing for one player's party (exactly one succeeds).
+- Direct PHPUnit Unit: **3 / 3 passed**. Pint: **46 files passed**. Vite build passed.
+- Chromium foundation checks passed at 1280/390px. Real-mail registration→verify→
+  reset→login and two independent contexts friend→invite→accept→ready→disband
+  passed. Desktop/mobile dashboard screenshots inspected and copied to outer
+  outputs/qguard-first-pass/s2; no overflow. Later flows remain unrun.
+- Opt-in local/test seeder generates credentials in ignored private storage;
+  no fixed password, real identity or production seed route. Seeded dev fixtures
+  without resetting the persistent database.
+
+Repairs: model database defaults were missing on freshly created in-memory users;
+regressions cover signup→dashboard and immediate party creation. Recreating PHP
+exposed Nginx's cached old IP; Docker DNS now re-resolves it. Browser acceptance
+waits for the recipient's committed state before checking the other roster.
+No public access, held integration test, push or deployment occurred.

@@ -14,7 +14,9 @@
         <a class="brand" href="{{ route('home') }}" aria-label="QGuard home"><span class="brand-mark" aria-hidden="true">Q</span>QGuard<span class="brand-dot">.</span></a>
         <span class="pill">Private development build</span>
         @if(auth()->check() && Route::has('dashboard'))
-            <nav aria-label="Main"><a href="{{ route('dashboard') }}">Dashboard</a></nav>
+            <nav aria-label="Main" class="actions"><a href="{{ route('dashboard') }}">Dashboard</a><form method="post" action="{{ route('logout') }}">@csrf<button class="secondary">Sign out</button></form></nav>
+        @else
+            <nav aria-label="Main" class="actions"><a href="{{ route('login') }}">Sign in</a><a class="button" href="{{ route('register') }}">Get started</a></nav>
         @endif
     </header>
     <main id="main" class="page-shell">

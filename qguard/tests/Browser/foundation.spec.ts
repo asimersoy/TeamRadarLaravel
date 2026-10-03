@@ -7,7 +7,7 @@ for (const width of [1280, 390]) {
         page.on('pageerror', error => errors.push(error.message));
         await page.goto('/');
         await expect(page.getByRole('heading', { level: 1 })).toContainText('Your next game.');
-        await expect(page.getByText('Account access and matchmaking', { exact: false })).toBeVisible();
+        await expect(page.getByText('Accounts and private parties', { exact: false })).toBeVisible();
         await page.keyboard.press('Tab');
         await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();

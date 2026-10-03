@@ -27,8 +27,9 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
+            'handle' => 'test_'.Str::lower(Str::random(12)),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make(Str::random(32)),
             'remember_token' => Str::random(10),
         ];
     }
@@ -41,5 +42,10 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function readyPlayer(): static
+    {
+        return $this->state(fn () => ['riot_id' => 'Demo#TEST', 'stated_rank' => 10, 'competitive_access' => true]);
     }
 }
