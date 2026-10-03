@@ -20,8 +20,11 @@ S1–S6 are implemented and verified in the fresh `qguard/` directory. See the
 actual stage status, commands and checks. No repeat packet approval is needed;
 the [acceptance results](planning/first-pass/verification-results.md) cover backend,
 three browser engines, concurrency, live-update recovery, load and isolated restore.
-The local demo is running again at `http://localhost:8120` for owner inspection
-as of the later restart request on 2026-10-03. All seven development services
+The local demo is offline again following the owner's latest shutdown request.
+Scoped Compose down completed; Docker shows no development or test containers,
+and both named volumes remain intact. No images or persistent data were deleted.
+Before that shutdown, the demo ran at `http://localhost:8120` for owner inspection.
+All seven development services
 were started with the existing database volume; `/up` returned HTTP 200, database
 reachability passed and there were no pending or failed jobs. The test stack
 remains down. No migration, seeding, data reset, backup creation, push or deployment
