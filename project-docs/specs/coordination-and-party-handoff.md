@@ -11,7 +11,7 @@ future boundaries; its staged outline is not a competing execution plan.
 - **Status:** planning direction approved; detailed design proposed, not implementation-ready
 - **Decision owner:** project owner; primary agent owns drafting and verification
 - **Authority:** `DEC-008`, `DEC-016`, `DEC-018`, `DEC-020` through `DEC-024`,
-  `DEC-035` through `DEC-048`
+  `DEC-035` through `DEC-048`, `DEC-053`, `DEC-054`
 - **Created:** 2026-09-28
 - **Implementation boundary:** surrounding implementation is requested but
   remains gated on the applicable approved slice specifications; game-party
@@ -27,7 +27,8 @@ future boundaries; its staged outline is not a competing execution plan.
 
 Keep matched-team communication independent of the eventual method used to
 enter the game party, so changing that method does not require redesigning the
-whole match flow. Under `DEC-024`, as partially refined by `DEC-035`:
+whole match flow. Under `DEC-024`, as partially refined by `DEC-035`, `DEC-046`
+and `DEC-054`:
 
 1. Offer queue choices with or without Discord voice. Plan future Discord
    rooms/voice for the with-voice route, not as a universal requirement. Under
@@ -35,19 +36,21 @@ whole match flow. Under `DEC-024`, as partially refined by `DEC-035`:
 2. Keep game joining replaceable and unimplemented for now.
 3. Prefer a game-specific Discord Join action if it passes the applicable
    nonfriend test; a shared voice room alone is not that action.
-4. Accept the alternative in which one matched human creates the ordinary game
-   lobby, obtains its official link, and posts it in a Discord text channel
-   visible only to the matched players. The others deliberately click it.
+4. Accept the alternative in which QGuard prompts one matched human to create
+   the ordinary game lobby and submit its supported joining information in a
+   dedicated QGuard page or prompt. Present it to the other matched players in
+   a structured join interface, not as a required free-form chat post (`DEC-054`).
 5. Do not claim either joining method works until the applicable live evidence
    exists. Preserve the [owner test hold](../governance/deferred-work.md#owner-hold--discord-access--2026-09-28).
 6. Exclude actual Discord implementation from the current scope. Resume only
    after applicable feature availability, owner-run tests and later slice
    approval under [DEF-007](../governance/deferred-work.md#def-007---return-to-real-discord-integration-after-availability-and-tests).
 
-`DEC-046` requires private website text chat for matched parties now. The same
-surface may later carry a validated human-shared game-party link; displaying
-text/links is not creating or joining the party. Match participants are the
-ordinary audience, with data-cleared admin access under `DEC-045`.
+`DEC-046` requires private website text chat for matched parties now. Under
+`DEC-054`, future host submission and team join instructions are a dedicated
+workflow, separate from free-form chat. Displaying joining information is not
+creating or joining the party. Match participants are the ordinary audience,
+with data-cleared admin access under `DEC-045`.
 
 Voice-pool separation waits for the future integration unless a current
 foundational dependency needs it; then strict separation is the owner's
@@ -64,9 +67,9 @@ first-game direction under `DEC-018`.
 | Responsibility | Owns | Must not assume |
 |---|---|---|
 | QGuard match context | Matched roster, designated host, match identity and lifecycle as defined by later matching/identity specifications | That entering Discord or clicking an invitation proves in-game membership |
-| Native matched-party text | Participant communication and later human-shared handoff information, with isolation, cleared-admin access and first-pass retention under `DEC-047` | A validated game link, automated joining, secrecy from cleared admins or a settled permanent public retention policy |
-| Discord coordination | Matched-team access to voice and the private text handoff surface; access revocation and cleanup after their rules are approved | That a server invitation is a game invitation, or that the game-join method fixes unavailable voice access |
-| Game-party handoff | Describes the currently available join method or clearly reports it unavailable; can later use either approved method | An existing public QGuard party-control API, automatic lobby-link generation, or a verified membership signal |
+| Native matched-party text | Participant communication, with isolation, cleared-admin access and first-pass retention under `DEC-047` | That chat substitutes for the dedicated host setup, automated joining, secrecy from cleared admins or a settled permanent public retention policy |
+| Discord coordination | Future matched-team voice/text access; access revocation and cleanup after their rules are approved | That Discord chat is required for the manual handoff, a server invitation is a game invitation, or the game-join method fixes unavailable voice access |
+| Game-party handoff | Describes the available method or clearly reports it unavailable; future human-host setup uses dedicated submission and structured recipient instructions under `DEC-054` | An existing public QGuard party-control API, automatic lobby-link generation, or a verified membership signal |
 
 This is a separation of responsibilities, not a choice of microservices,
 libraries, framework, schema, deployment, or plugin infrastructure. Do not reuse
@@ -80,9 +83,13 @@ the legacy Laravel or relay design merely because it exists.
   admission flow. Voice and game-party status remain separate.
 - If the validated Discord-native method is available, present the relevant
   user action; do not imply that QGuard forces the game to join automatically.
-- Otherwise, if the official link method is validated and enabled, the human
-  host posts the link in the matched-only Discord text channel. This describes
-  the accepted alternative, not automatic failover on every transient error.
+- Otherwise, if the manual method is validated and enabled, prompt the host to
+  create/open the game party and submit its supported link/code in a dedicated
+  input. Show the other matched players structured joining information and the
+  relevant action. This is the accepted alternative, not automatic failover on
+  every transient error. A raw party ID is not assumed joinable; a code is
+  accepted only if its user-facing joining route is validated. Choosing a page
+  versus a modal/prompt and the detailed validation/recovery contract remains open.
 - With no implemented method, show an explicit unavailable/not-connected
   state. Do not manufacture a success, silently add friends, or expose a fake
   working Join button. Label any development-only simulation as simulated.
@@ -178,6 +185,9 @@ the owner before changing game or relying on friendship-based joining.
   structural mock pass.
 - Voice access, offered game action, user-reported progress and verified game
   membership cannot be conflated in state, UI or tests.
+- The future manual path must prompt the designated host and display submitted
+  joining information to authorized teammates without requiring a chat post.
+  Submission or clicking does not establish provider-verified game membership.
 - Real private-room acceptance requires matched-user access, ordinary-outsider
   denial, invalid/revoked admission, cleanup and unrelated-state preservation.
 - Real handoff acceptance requires the applicable nonfriend ordinary-party

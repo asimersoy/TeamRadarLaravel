@@ -433,6 +433,14 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **Latest-match rank finding, 2026-10-23:** the official matchlist/detail APIs
+  can supply the linked player's `competitiveTier` from the latest available
+  competitive match. This is not guaranteed current/post-match rank or RR;
+  timing semantics, freshness and rank-reset handling remain unresolved. See
+  the [retrieval sequence and limits](../research/valorant-client-api-and-ui-status.md#rank-from-the-latest-available-competitive-match).
+  The subsequent `DEC-055` selects retrieval plus player confirmation/manual
+  correction before every matchmaking entry. This is not implementation or
+  provider-access approval; the first-pass unavailable-integration fallback stays.
 - **Owner preference, 2026-10-23:** `DEC-053` prioritizes the officially
   documented Riot developer API. The [capability comparison](../research/valorant-client-api-and-ui-status.md#official-developer-api-preference-and-capability-comparison)
   separates that API and its production/RSO access from private cloud and local
@@ -517,8 +525,15 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
+- **Subsequent owner direction, 2026-10-23:** `DEC-055` adds per-entry official
+  rank retrieval when accessible, player confirmation/correction, and a
+  pre-play account/rank discrepancy check. The existing declared fallback
+  still covers unavailable integration. Whether a single discrepancy report
+  suffices to disband the QGuard team or needs corroboration remains open;
+  this is separate from feedback invalidation and no-show voting. See the
+  [pending contract](../specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
 - **Status:** partially resolved by `DEC-018` and `DEC-024`; Discord-native Join
-  is preferred with a private-Discord-text human-hosted link alternative;
+  is preferred with the structured human-hosted alternative under `DEC-054`;
   failure of both joining methods and later recovery remain open;
   first-pass rank fallback selected by `DEC-048`
 - **Decision owner:** project owner
@@ -561,8 +576,9 @@ questionnaire or permission to leave first-pass contracts unspecified.
   test results; remaining operational coordination decisions; and the owner's
   alternate flow proposals and tolerance for added user friction.
 - **Resolved by:** `DEC-018` for game direction; `DEC-024` for the two accepted
-  replaceable joining candidates and the private Discord link-sharing surface;
-  `DEC-048` for the first-pass rank fallback
+  replaceable joining candidates, refined by `DEC-054` for structured delivery;
+  `DEC-048` for the first-pass rank fallback and `DEC-055` for the future
+  queue/lobby confirmation direction, with dissolution threshold still open
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
@@ -585,7 +601,10 @@ questionnaire or permission to leave first-pass contracts unspecified.
   and only the no-Discord queue now. Future with/without-Discord-voice queue choice; real Discord
   integration postponed under `DEF-007`. For that future integration, preferred
   game-specific Discord Join or, as an acceptable alternative, one matched
-  player posts the official lobby link into a matched-only Discord text channel.
+  human creates the game party. `DEC-054` now requires QGuard to prompt that
+  host, accept supported joining information in a dedicated page/prompt and
+  present it structurally to the other matched players, not require a chat
+  post. Exact artifact support, host/recovery rules and UI details remain open.
   Actual game joining stays replaceable and unimplemented.
 - **Next current work:** specify native chat data/access and permission tests,
   applying `DEC-047` retention without automatic expiry until `DEF-012` review.
@@ -678,4 +697,5 @@ questionnaire or permission to leave first-pass contracts unspecified.
   recording remains outside this decision. Do not re-ask the basic provider choice.
 - **Resolved by:** `DEC-024`/`DEC-035`/`DEC-046` for native chat/current queue,
   optional future voice planning, integration deferral and replaceable alternatives;
-  the remaining specification and live-evidence items stay open
+  `DEC-054` for structured manual host submission/display. The remaining
+  specification and live-evidence items stay open

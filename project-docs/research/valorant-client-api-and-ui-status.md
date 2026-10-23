@@ -106,11 +106,14 @@ documents an authenticated player's join attempt. It is not a host command
 that adds four arbitrary users without their participation, and interchangeability
 between its code and the Activities code remains unproven.
 
-The official user-mediated alternative, consistent with earlier `DEC-021`, is
-for a selected human host to open their party in VALORANT, copy the Riot lobby
-link through the game UI, and share it in QGuard's private matched-team chat.
-The remaining four players click it; Riot's user-facing flow handles entry.
-QGuard would relay a link, not call private Activities/party endpoints. Riot
+The user-mediated alternative, refined by `DEC-054`, is for QGuard to prompt
+the selected human host to open their party in VALORANT and submit its official
+joining information in a dedicated QGuard page or prompt. QGuard then displays
+structured joining instructions/action to the other four matched players,
+rather than requiring a chat post. The initial candidate is the host-copied
+Riot link; a code needs its own validated joining route, and a raw party ID is
+not presumed sufficient. QGuard would relay the artifact, not call private
+Activities/party endpoints. Riot
 [documents the copy/share feature][riot-link], but the non-friend recipient,
 Discord-linking and region prerequisites still require the held live tests.
 Sharing through QGuard does not prove Discord account linking is unnecessary.
@@ -120,6 +123,36 @@ and data needs; keep game entry as a separate, replaceable user-mediated flow.
 Where official capabilities fall short, report the gap for owner disposition.
 Do not silently select private APIs, a companion installation or a new fallback.
 This clarification does not start implementation, applications or tests.
+
+### Rank From the Latest Available Competitive Match
+
+**Finding, 2026-10-23:** the official [VAL-MATCH-V1 reference][official-match]
+supports this candidate retrieval sequence:
+
+1. Fetch `/val/match/v1/matchlists/by-puuid/{puuid}` for the linked player.
+2. Use history entries' `queueId` and `gameStartTimeMillis` to select the most
+   recent available competitive match, not simply the latest game of any mode.
+3. Fetch `/val/match/v1/matches/{matchId}`. Confirm the relevant queue/completion
+   and season, find the player by `puuid`, and read their `competitiveTier`.
+
+This is API-sourced **match-associated rank evidence**, not self-declaration.
+The schema does not specify whether that tier reflects a promotion/demotion
+caused by the match; it provides no RR field. Therefore it does not guarantee
+current or post-match rank. Missing eligible history, unknown/unranked tier or
+stale season data must remain visible limitations, not guessed ranks. The
+reference does not establish unlimited historical coverage or instant updates.
+
+**Access requirement:** QGuard still needs approved production/RSO access and
+the player's opt-in; this does not bypass [Riot's player-data policy][policy].
+
+**Subsequent owner decision:** `DEC-055` selects this retrieval as the starting
+evidence for player confirmation/manual correction before each matchmaking
+entry. Preserve the API observation and the player's current declaration as
+different evidence. A label such as "rank observed in latest available ranked
+match," with date, is a UI proposal rather than approved exact wording.
+Freshness/reset/failure handling and tier timing semantics still need the later
+contract and validation. No access grant, implementation or live-test resumption
+follows from approving the direction.
 
 ## Documented Local Endpoints
 
@@ -364,6 +397,28 @@ engineered descriptions, not authorities for Riot approval or runtime support.
 - **Unrun and remote boundaries:** no credentials, game calls, live tests,
   provider contact/application, application changes, push or deployment.
   Provider access, non-friend behavior and recipient prerequisites remain open.
+
+### Structured Handoff and Match-Rank Follow-up
+
+- **Task:** RESEARCH-2026-10-23-MATCH-RANK; clean `new-development` baseline
+  `080386e`. Scope is documentation research and recording the owner's handoff
+  refinement, not implementation or provider operations.
+- **Route:** research, product planning, decision safety, privacy/data,
+  external/owner review and deferral procedures; existing project records used.
+- **Authority:** `DEC-054` approves structured host submission/display. The
+  initial rank question established research scope; the subsequent instruction
+  approves the queue-confirmation/lobby-check direction recorded in `DEC-055`.
+- **Evidence:** official match-history/detail schemas and VALORANT opt-in/RSO
+  policy rechecked on 2026-10-23. Missing tier timing semantics are explicitly
+  unresolved. Private MMR is not substituted for missing official data.
+- **Acceptance:** approved user flow recorded without inventing code support;
+  official rank retrieval separated from guaranteed current rank and RR;
+  active specifications, first-pass manifest, open questions and current state
+  reconciled. Discrepancy threshold retained as an owner question. Complete
+  scoped diff, local links/anchors and whitespace checked before commit.
+- **Unrun and boundaries:** no runtime, rendered UI or live-provider tests;
+  no code changes, credentials, provider application, push or deployment. The
+  portable workflow is unchanged, so its validator is not applicable.
 
 [community]: https://valdocs.prometheuz.me/
 [openapi]: https://valdocs.prometheuz.me/openapi.json

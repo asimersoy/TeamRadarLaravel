@@ -690,7 +690,8 @@ See the [CS2 feasibility findings](../research/counter-strike-2-party-entry-feas
 - **Related decisions:** refines the candidate flow in `DEC-018`, applies
   `DEC-016`, and remains separate from the coordination choice under `DEC-020`
 - **Supersedes:** none
-- **Superseded by:** none
+- **Superseded by:** `DEC-054` for host submission and recipient presentation;
+  the human-host direction and applicable evidence gates remain in force
 
 ### Subsequent Mechanism Clarification - 2026-09-06
 
@@ -843,8 +844,9 @@ are not superseded or waived.
   applicable live-evidence gates, the test hold, and controlled-operation gates
   remain unchanged.
 - **Superseded by:** `DEC-035` for optional voice queueing and the exclusion
-  of real Discord integration from the current implementation scope; preferred
-  game-join candidates and evidence gates remain in force
+  of real Discord integration from the current implementation scope; `DEC-054`
+  for structured QGuard submission/display instead of requiring a host's chat
+  post. Preferred game-join candidates and evidence gates remain in force
 
 ## DEC-025 - Start With Session Grouping
 
@@ -1957,7 +1959,10 @@ canonical-workflow change, provider research or external action in this unit.
   Neither this delegation nor the readiness request overrides `DEC-008`.
 - **Supersedes:** first-pass owner-only identity-verification/source choice and
   unapproved-fallback status under `DEC-013`, `OQ-006`, `OQ-009`, `OQ-010`
-- **Superseded by:** none
+- **Superseded by:** `DEC-055` for the future queue-time rank confirmation and
+  pre-play lobby discrepancy response. The implemented first-pass fallback,
+  truthful provenance and separate scoring/report rules remain in force until
+  the corresponding approved change is implemented.
 
 ## DEC-049 - Use Docker For Development And Deployment And Select The Stack Before Planning
 
@@ -2153,4 +2158,84 @@ canonical-workflow change, provider research or external action in this unit.
 - **Affected records:** API research, `OQ-009`, current state and future
   integration proposals.
 - **Supersedes:** none; clarifies priority without changing approved fallbacks
+- **Superseded by:** none
+
+## DEC-054 - Use Structured Host Setup And Team Join Instructions
+
+- **Date:** 2026-10-23
+- **Status:** approved product direction for future handoff; not implementation approval
+- **Decision owner:** project owner
+- **Evidence:** owner accepts a designated human creating the game party, but
+  explicitly replaces pasting into team chat with a dedicated page or prompt
+  and structured presentation to the other matched players.
+- **Decision:** QGuard prompts the designated matched host to create/open the
+  game party. The host submits its supported joining information through a
+  dedicated QGuard input. QGuard presents that information and the appropriate
+  join action/instructions to the remaining matched players in a structured
+  interface, rather than relying on everyone finding a free-form chat message.
+- **Capability boundary:** "room ID or join code" describes the owner's intended
+  input, not evidence that every identifier works. The actual supported artifact
+  may be an official lobby link or a separately validated join code. A raw party
+  ID is not presumed joinable. QGuard does not thereby create the game party,
+  generate private API codes, force entry or verify game membership.
+- **Open details:** page versus prompt layout, host selection/replacement,
+  artifact validation, expiry, retries, failure recovery and the applicable
+  data/access contract remain for the later slice specification.
+- **Unchanged:** preferred future game-specific Discord Join candidate,
+  `DEC-035`/`DEC-046` integration boundaries, `DEC-053` API preference and paused
+  live tests. No application changes or external operations are authorized here.
+  The accompanying question about last-ranked-match rank is a research request,
+  not itself approval to replace `DEC-048`'s rank fallback; the subsequent owner
+  instruction selects a rank-confirmation direction in `DEC-055`.
+- **Affected records:** coordination/handoff specification, integration research,
+  `OQ-009`, `OQ-011` and current state.
+- **Supersedes:** `DEC-021`/`DEC-024` only for the manual method's submission and
+  delivery surface; their human participation and live-evidence requirements
+  remain applicable.
+- **Superseded by:** none
+
+## DEC-055 - Refresh And Confirm Rank Before Queueing And Check Lobby Discrepancies
+
+- **Date:** 2026-10-23
+- **Status:** approved product direction; report threshold and detailed lifecycle
+  rules unresolved; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner directs QGuard, after RSO, to retrieve the latest available
+  rank and ask the player to confirm or manually correct it each time they are
+  about to enter matchmaking. After matching, players check lobby accounts and
+  ranks; discrepancies dissolve the QGuard team and users may queue again.
+- **Queue-entry decision:** with authorized official access, retrieve the
+  linked player's latest available ranked-match tier, show it to that player,
+  and require confirmation or manual correction before that matchmaking entry.
+  Repeat on subsequent entries because rank can change between sessions. The
+  owner's discussion of after-game/session refreshes does not additionally
+  require polling at each of those times; pre-queue is the selected checkpoint.
+- **Evidence labels:** preserve the distinction between API-observed tier/date,
+  player-confirmed or corrected current declaration, and linked account
+  ownership. Manual correction is allowed; it does not overwrite the meaning
+  of the official observation or turn the replacement into an API-verified
+  current rank. RSO does not prove which account is presently in the game lobby.
+- **Lobby-check decision:** after QGuard forms the team, ask matched players
+  whether everyone is present in the game lobby with the declared accounts and
+  ranks. If the discrepancy rule is met, disband the matched team **in QGuard**,
+  explain that reported account/rank discrepancies caused it, and allow users
+  to enter matchmaking again. This is interpreted as a pre-play lobby check,
+  not forced cancellation of an already-running VALORANT match.
+- **Open owner rule:** whether one discrepancy report suffices or a defined
+  confirmation threshold is required. Success confirmations, abstentions,
+  unobservable rank, response timing and dispute/recovery rules also need a
+  concrete slice contract. Do not infer the existing no-show unanimity or
+  two-reporter feedback rule as this new threshold.
+- **Unchanged boundaries:** no game-side kick/party control, automatic requeue,
+  account punishment, honor deduction or new feedback invalidation is approved.
+  Existing post-session rank feedback is not removed. `DEC-048` still permits
+  the current unavailable-integration fallback; no claim of guaranteed fresh
+  rank follows from user confirmation. Provider access, actual lobby visibility,
+  live testing and implementation remain subject to their existing gates.
+- **Affected records:** identity/rank and session specifications, first-pass
+  manifest, integration research, open questions and current state.
+- **Supersedes:** `DEC-048`'s future reliance on profile declaration/post-session
+  observation alone by adding queue-time refresh/confirmation and pre-play
+  discrepancy dissolution; existing verified first-pass behavior is not claimed
+  to have changed. Does not supersede `DEC-041` scoring or `DEC-043` no-show rules.
 - **Superseded by:** none

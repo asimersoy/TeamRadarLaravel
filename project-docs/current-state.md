@@ -2,6 +2,23 @@
 
 ## Integration Research Clarification — 2026-10-23
 
+`DEC-055` selects a future pre-queue rank flow: retrieve the latest available
+official match tier after RSO, then require player confirmation or manual
+correction on every matchmaking entry. After team formation, peers check actual
+lobby accounts/ranks; a qualifying discrepancy disbands the QGuard team with
+an explanation and an option to queue again. The report threshold is the next
+owner question. See the [approved direction and remaining contract](specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
+No implementation has changed; the existing first-pass fallback still runs.
+
+`DEC-054` approves prompting a designated host to create the game party and
+submit supported joining information in a dedicated QGuard page/prompt, then
+presenting it structurally to the other matched players instead of relying on
+a chat post. This is a future handoff requirement, not an implemented feature.
+The [latest-ranked-match research](research/valorant-client-api-and-ui-status.md#rank-from-the-latest-available-competitive-match)
+documents match-associated tier retrieval through the official API, not
+guaranteed current rank/RR or QGuard access approval. `DEC-055` selects its use
+as the starting evidence for the player's confirmation, not as infallible rank.
+
 `DEC-053` records the owner's preference for the officially documented Riot
 developer API, with unsupported requirements kept distinct from private cloud
 and local-client alternatives. See the [capability comparison](research/valorant-client-api-and-ui-status.md#official-developer-api-preference-and-capability-comparison).

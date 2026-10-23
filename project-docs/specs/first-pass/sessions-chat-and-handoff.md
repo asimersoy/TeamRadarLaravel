@@ -4,6 +4,15 @@
 DEC-039, DEC-043, DEC-046, DEC-052. Dependencies: matching, feedback, data/security.
 Acceptance: F06–F09, S01–S04, C01–C03.
 
+**Subsequent owner direction, not yet implemented:** `DEC-054` selects dedicated
+host submission/structured joining instructions; `DEC-055` adds pre-play lobby
+account/rank checks and QGuard-team dissolution on a qualifying discrepancy.
+The report threshold and detailed lifecycle contract are unresolved. See
+[queue confirmation and lobby check](identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check)
+and the [future handoff specification](../coordination-and-party-handoff.md).
+The existing no-show quorum, feedback rules and implemented states below are
+not automatically reused or rewritten by this future direction.
+
 ## Session state and attendance
 
 Creating a match commits exactly five participants and origin/rank snapshots.

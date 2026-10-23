@@ -10,6 +10,14 @@
 
 ## Purpose and scope
 
+**Later owner decisions, 2026-10-23:** `DEC-054` selects structured host setup
+for a future game handoff; `DEC-055` selects per-queue rank refresh/confirmation
+and lobby account/rank checks with discrepancy dissolution. See the
+[pending rank/lobby contract](identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check)
+and [handoff module](../coordination-and-party-handoff.md). These are approved
+directions with open rules, not an implemented revision of this verified packet.
+Provider access and live-test holds remain unchanged.
+
 Build a new QGuard application for session-based teammate grouping with honor,
 basic friends/partial parties, private web chat and report-aware post-session
 ratings. The first build is a local, synthetic-data development application,
