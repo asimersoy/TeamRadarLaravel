@@ -433,6 +433,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **2026-10-23 research addition:** the owner asked to investigate the local
+  VALORANT client API. The [dated inventory](../research/valorant-client-api-and-ui-status.md)
+  separates local chat/session services from private Riot-hosted rank, party
+  codes and shared join links. Documented private operations do not contradict
+  the earlier bounded public-API findings or establish current non-friend
+  behavior/permission. No integration decision or live-test activation results.
 - **Status:** Discord comparison complete; `DEC-018` remains current; Valorant
   party-entry verification remains open; first-pass rank/identity selection
   delegated under `DEC-048`, actual provider access/capability still unverified

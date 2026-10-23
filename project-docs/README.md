@@ -163,6 +163,7 @@ Start with:
 
 ## Current Research
 
+- [VALORANT client API inventory and UI release status](research/valorant-client-api-and-ui-status.md) — October 23 private-client documentation review; no integration approval or live-test activation
 - [Game API feasibility brief](research/game-api-feasibility.md)
 - [Game API feasibility findings](research/game-api-feasibility-findings.md)
 - [Game API source ledger](research/game-api-source-ledger.md)
