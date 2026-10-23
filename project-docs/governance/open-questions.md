@@ -433,6 +433,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **Owner preference, 2026-10-23:** `DEC-053` prioritizes the officially
+  documented Riot developer API. The [capability comparison](../research/valorant-client-api-and-ui-status.md#official-developer-api-preference-and-capability-comparison)
+  separates that API and its production/RSO access from private cloud and local
+  interfaces. No public party-control or universal current-rank/RR endpoint was
+  found; the private code/link operations are not approved replacements. The
+  user-mediated host-copy/recipient-click route remains subject to live evidence.
 - **2026-10-23 research addition:** the owner asked to investigate the local
   VALORANT client API. The [dated inventory](../research/valorant-client-api-and-ui-status.md)
   separates local chat/session services from private Riot-hosted rank, party

@@ -1,5 +1,13 @@
 # QGuard Current State
 
+## Integration Research Clarification — 2026-10-23
+
+`DEC-053` records the owner's preference for the officially documented Riot
+developer API, with unsupported requirements kept distinct from private cloud
+and local-client alternatives. See the [capability comparison](research/valorant-client-api-and-ui-status.md#official-developer-api-preference-and-capability-comparison).
+No integration implementation, provider application or live-test resumption is
+authorized; the existing first-pass behavior and fallback remain unchanged.
+
 ## Latest Checkpoint — Approved First Pass Implemented And Verified Locally
 
 As of 2026-10-03, the owner approves **QG-FIRST-PASS-1 revision 1 + DEC-052**.

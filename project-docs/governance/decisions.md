@@ -2122,3 +2122,35 @@ canonical-workflow change, provider research or external action in this unit.
 - **Supersedes:** `DEC-038`/`DEC-045` and packet wording excluding matched peers
   from aggregate honor visibility; `DEC-051`'s pending packet-review state
 - **Superseded by:** none
+
+## DEC-053 - Prefer the Officially Documented Riot Developer API
+
+- **Date:** 2026-10-23
+- **Status:** approved owner preference; not integration implementation approval
+- **Decision owner:** project owner
+- **Evidence:** owner says they would rather use Riot's documented developer
+  API than the client API and asks to identify what is possible through each.
+- **Decision:** prioritize the officially documented Riot developer API for
+  QGuard requirements it supports. Classify official developer, private
+  Riot-hosted client services and local client services separately. A Riot-hosted
+  endpoint is not automatically a supported developer endpoint.
+- **Interpretation and limits:** this is a preference, not a blanket permanent
+  prohibition on alternatives. It is not approval to substitute private
+  endpoints when public capabilities are missing, request or collect client
+  session credentials, adopt a desktop companion or assume that a production
+  key/RSO grant permits game-party control. Present unsupported requirements
+  and candidate alternatives explicitly before changing the integration scope.
+- **Reason:** owner prioritizes officially documented developer access over
+  client-specific mechanisms; the actual capability boundary must remain clear.
+- **Current evidence:** the [API comparison](../research/valorant-client-api-and-ui-status.md#official-developer-api-preference-and-capability-comparison)
+  distinguishes supported identity/match/leaderboard access from unproven
+  private rank, party-code and shared-link mechanisms. This is evidence, not a
+  provider approval or completed non-friend joining test.
+- **Unchanged:** `DEC-048`'s first-pass declared-rank fallback, `DEC-046`'s
+  implemented native chat/no-Discord queue, replaceable game joining and the
+  paused live tests. No provider application/contact, push, deployment or new
+  implementation is authorized by this request.
+- **Affected records:** API research, `OQ-009`, current state and future
+  integration proposals.
+- **Supersedes:** none; clarifies priority without changing approved fallbacks
+- **Superseded by:** none
