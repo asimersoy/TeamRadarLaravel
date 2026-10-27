@@ -85,7 +85,7 @@ feature implementation. Revisit data inventory when any real adapter is added.
 
 ## Subsequent Owner Direction — Queue Confirmation And Lobby Check
 
-**Authority/status:** `DEC-055`, 2026-10-23, refined by `DEC-056`/`DEC-057`, 2026-10-27;
+**Authority/status:** `DEC-055`, 2026-10-23, refined by `DEC-056`–`DEC-058`, 2026-10-27;
 behavior direction approved, detailed slice not implementation-ready. Current
 provider and test gates apply.
 
@@ -110,6 +110,14 @@ provider and test gates apply.
   check. A denial is a response, not failure to obey; do not force agreement or
   treat dismissal/silence as confirmation. This names the subject of the report,
   not its author, and cannot stop activity in the external game client.
+- Under `DEC-058`, offer only an explicit matches/does-not-match answer to the
+  checked declaration. There is no "I can't verify," "Not observed" or skip
+  option in this pre-game prompt. This does not remove the post-session
+  observation choices above or turn missing provider data into a known rank.
+  The owner expects checking to be possible; validate that game-client
+  assumption before reliance. If the relevant rank/account cannot actually be
+  inspected, bring that evidence to the owner rather than fabricate an answer
+  or introduce an unapproved alternative.
 - Under `DEC-057`, exclude the reporter and reported player from corroborating
   votes. Any one of the other three confirming that the declaration is wrong
   satisfies the dissolution rule, even if both other teammates say it is
@@ -117,9 +125,9 @@ provider and test gates apply.
   a majority vote. No eligible corroboration means this threshold is not met;
   that alone does not settle timeout or resumption behavior. Prompt labels must
   distinguish confirming a mismatch from confirming the declared rank itself.
-- **Next owner rules:** unknown/unobservable answers, nonresponse/timeouts,
-  response collection/closure timing and correction/recovery behavior. Do not
-  change the settled threshold or borrow the no-show/honor-report quorum.
+- **Next owner rules:** nonresponse/timeouts, response collection/closure timing
+  and correction/recovery behavior. Do not change the settled threshold or
+  borrow the no-show/honor-report quorum.
   Mandatory response is not a settled deadlock policy. What ranks/accounts
   peers can actually inspect remains a live-evidence dependency. See `OQ-010`.
 - **Implementation impact to specify:** account/rank source labels and
@@ -132,6 +140,7 @@ provider and test gates apply.
   exclusion of reporter/subject votes, a lone report not reaching the threshold,
   and one corroboration causing dissolution despite two opposing answers;
   mandatory prompt/confirm/deny behavior, no progression bypass by dismissal,
+  no abstention response in this prompt while preserving post-session options,
   no accidental agreement from silence, races against session end/requeue and
   correct user explanations. Rendered checks must cover readable target/rank
   context and keyboard-accessible responses without coercing agreement. Existing

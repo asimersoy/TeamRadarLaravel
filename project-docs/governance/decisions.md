@@ -2261,9 +2261,9 @@ canonical-workflow change, provider research or external action in this unit.
   A response is peer testimony, not official API verification.
 - **Subsequent voting rule:** `DEC-057` excludes the reporter and reported
   player, and one of the other three confirming the discrepancy is sufficient
-  even if both others deny it. Unknown/unobservable or missing answers, response
-  timing and recovery remain unresolved. No timeout approval or penalty is
-  selected by these decisions.
+  even if both others deny it. `DEC-058` rejects an unknown/"I can't verify"
+  response in this prompt. Missing answers, response timing and recovery remain
+  unresolved. No timeout approval or penalty is selected by these decisions.
 - **Unchanged:** queue-time rank confirmation/correction and QGuard-only
   discrepancy dissolution under `DEC-055`; separate no-show, scoring and
   post-session report rules; provider access and live-test holds. Once the
@@ -2274,7 +2274,8 @@ canonical-workflow change, provider research or external action in this unit.
 - **Supersedes:** the open choice in `DEC-055` between one-report immediate
   dissolution and requiring teammate confirmation; selects confirmation only
 - **Superseded by:** `DEC-057` for the previously open voter eligibility and
-  dissolution threshold; mandatory response direction otherwise remains
+  dissolution threshold; `DEC-058` for the response-option choice. Mandatory
+  response direction otherwise remains
 
 ### Documentation Checkpoint 2026-10-27
 
@@ -2313,16 +2314,18 @@ No push, provider operation or deployment is part of this unit.
 - **Unchanged:** required prompt/responses under `DEC-056`, QGuard-only
   dissolution with an explanation and voluntary requeue under `DEC-055`,
   truthful rank provenance, separate no-show/feedback rules and held live tests.
-- **Still open:** unknown/unobservable answers, nonresponse/timeouts, response
-  collection/closure timing and other recovery details. The one-of-three
-  threshold is settled; these remaining details cannot turn it into majority
-  or unanimous agreement. Later implementation still needs its full contract.
+- **Still open:** nonresponse/timeouts, response collection/closure timing and
+  other recovery details. `DEC-058` rejects an unknown/"I can't verify" answer
+  in this prompt; actual ability to inspect the relevant information remains
+  to be validated. The one-of-three threshold is settled and must not become
+  majority or unanimous agreement. Implementation still needs its full contract.
 - **Affected records:** current state, `OQ-010`, identity/rank and session specs,
   and supersession pointers in `DEC-055`/`DEC-056`.
 - **Supersedes:** the open voter/tally choices under `DEC-055`/`DEC-056`; replaces
   the agent's unapproved two-of-three proposal in `OQ-010`. The owner did not
   approve that majority proposal.
-- **Superseded by:** none
+- **Superseded by:** `DEC-058` only for the open unknown-answer choice;
+  voter eligibility and threshold remain unchanged
 
 ### Voting Rule Documentation Checkpoint
 
@@ -2335,3 +2338,46 @@ reviewed; all 77 relative links, 27 anchors and 57 unique decision headings in
 the changed records passed checks, as did `git diff --check`. One additive
 local commit records the unit. Recovery rules remain owner questions;
 no implementation, runtime/rendered tests, live-provider operations or push.
+
+## DEC-058 - Do Not Offer An Unable To Verify Response In The Lobby Check
+
+- **Date:** 2026-10-27
+- **Status:** approved response-option decision; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner rejects the proposed "I can't verify" option, expects
+  players to check the rank and wants to avoid an easy way to evade that check.
+- **Decision:** the pre-game teammate discrepancy prompt requires an explicit
+  answer that the checked rank/account matches or does not match the declaration.
+  Do not add "I can't verify," "Not observed" or another abstention/skip option
+  to this prompt. Answering remains mandatory, not agreement with the reporter.
+- **Scope:** only the pre-game discrepancy confirmation under `DEC-055` through
+  `DEC-057`. This does not remove the existing post-session "Not observed"
+  feedback answer, override honest API-unavailable/unknown states, or change
+  the approved rank correction and corroboration threshold.
+- **Evidence boundary:** the owner's expectation that checking should always
+  be possible is a product assumption, not a verified client capability.
+  Confirm the actual account/rank visibility in the held live-validation work
+  before relying on this flow. If it genuinely cannot be checked, return that
+  concrete finding to the owner; do not fabricate an observation or silently
+  reintroduce the rejected response.
+- **Unchanged/open:** response timing, nonresponse and recovery remain to be
+  specified. No silent answer, automatic penalty, test resumption or
+  implementation is authorized by this decision.
+- **Affected records:** current state, `OQ-010`, identity/rank and session specs,
+  and relevant clarifications in `DEC-056`/`DEC-057`.
+- **Supersedes:** the open unknown-answer choice under `DEC-056`/`DEC-057`;
+  rejects the agent's proposed "I can't verify" option
+- **Superseded by:** none
+
+### Lobby Response Documentation Checkpoint
+
+Baseline: clean `new-development` at `e0b5f38`. Route: product planning,
+decision safety, privacy/data, owner review, UI requirements, reconciliation
+and deferral under the previously read unchanged procedures. Scope is the
+owner's response-option decision and five dependent project records. The
+portable workflow, application and prior runtime evidence remain unchanged.
+Complete scoped diff reviewed; 77 local links, 27 anchors, 58 unique decision
+headings and `git diff --check` passed. One additive local commit records the
+unit. No runtime/rendered/provider tests, live-test resumption, provider
+operation, push or deployment occurred. Rank visibility and timeout/recovery
+handling remain unresolved dependencies, not reasons to restore the rejected option.

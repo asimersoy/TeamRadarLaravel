@@ -530,7 +530,15 @@ questionnaire or permission to leave first-pass contracts unspecified.
   dissolution. Name the reported teammate and disputed information; require an
   explicit confirm/deny response before QGuard lobby progression. Do not re-ask
   whether corroboration is needed. `DEC-057` settles eligible voters and tally;
-  unknown/missing answers, response timing and recovery remain open.
+  `DEC-058` excludes an "I can't verify"/unknown response. Missing answers,
+  response timing and recovery remain open.
+- **Response-option decision, 2026-10-27:** `DEC-058` requires an explicit
+  matches/does-not-match answer in the pre-game prompt, with no abstention/skip
+  option. The owner expects the relevant rank to be checkable and wants players
+  to perform the check. That visibility is not yet a verified live-client fact;
+  a concrete failure to inspect it must return for owner review, not silently
+  add the rejected option. Existing post-session "Not observed" and unavailable
+  provider-data states are outside this decision's scope.
 - **Voting decision, 2026-10-27:** `DEC-057` excludes the reporter and reported
   player from corroborating votes. One of the other three confirming the
   mismatch disbands the team even when the other two deny it. This replaces the
@@ -591,8 +599,9 @@ questionnaire or permission to leave first-pass contracts unspecified.
   replaceable joining candidates, refined by `DEC-054` for structured delivery;
   `DEC-048` for the first-pass rank fallback and `DEC-055` for the future
   queue/lobby confirmation direction; `DEC-056` for required teammate responses,
-  `DEC-057` for voter eligibility and dissolution threshold. Unknown/missing
-  answers, response timing and recovery remain open
+  `DEC-057` for voter eligibility and dissolution threshold; `DEC-058` for no
+  abstention in this prompt. Missing answers, response timing and recovery
+  remain open; actual account/rank visibility still needs live evidence
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 

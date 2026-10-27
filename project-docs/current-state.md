@@ -8,8 +8,10 @@ dissolution. Required respondents must explicitly confirm or deny before
 continuing past the QGuard lobby check; agreement is not compulsory. Voter
 eligibility and tally are settled by `DEC-057`: exclude reporter and reported
 player; one of the other three confirming the mismatch is enough to disband,
-even if both others deny it. Nonresponse, unknown observations and recovery
-remain open in `OQ-010`. This is a recorded direction, not an implemented change.
+even if both others deny it. `DEC-058` rejects an "I can't verify"/abstention
+option in this pre-game prompt; players must check and answer matches/does not
+match. Actual ability to inspect the rank still needs live evidence. Nonresponse,
+timing and recovery remain open in `OQ-010`. These directions are not implemented.
 
 ## Integration Research Clarification — 2026-10-23
 

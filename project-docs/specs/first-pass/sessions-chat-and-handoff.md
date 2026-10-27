@@ -11,7 +11,9 @@ account/rank checks and QGuard-team dissolution on a qualifying discrepancy.
 before proceeding past the QGuard lobby check; one report alone does not dissolve
 the team. `DEC-057` excludes the reporter/subject from corroborating votes and
 requires only one of the other three to confirm the mismatch, even against two
-denials. Response timing and recovery remain unresolved. See
+denials. `DEC-058` excludes an "I can't verify"/skip option in that pre-game
+prompt, without changing post-session observation choices. Response timing and
+recovery remain unresolved. See
 [queue confirmation and lobby check](identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check)
 and the [future handoff specification](../coordination-and-party-handoff.md).
 The existing no-show quorum, feedback rules and implemented states below are
