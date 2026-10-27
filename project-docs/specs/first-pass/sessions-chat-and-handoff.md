@@ -7,7 +7,9 @@ Acceptance: F06–F09, S01–S04, C01–C03.
 **Subsequent owner direction, not yet implemented:** `DEC-054` selects dedicated
 host submission/structured joining instructions; `DEC-055` adds pre-play lobby
 account/rank checks and QGuard-team dissolution on a qualifying discrepancy.
-The report threshold and detailed lifecycle contract are unresolved. See
+`DEC-056` now requires a named-teammate prompt and explicit confirm/deny responses
+before proceeding past the QGuard lobby check; one report alone does not dissolve
+the team. Voter eligibility, tally and recovery remain unresolved. See
 [queue confirmation and lobby check](identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check)
 and the [future handoff specification](../coordination-and-party-handoff.md).
 The existing no-show quorum, feedback rules and implemented states below are

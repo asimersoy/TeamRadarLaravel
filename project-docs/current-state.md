@@ -1,13 +1,23 @@
 # QGuard Current State
 
+## Lobby Discrepancy Confirmation — 2026-10-27
+
+`DEC-056` requires a popup/alert naming the reported teammate and the disputed
+rank/account information. A report starts confirmation, not immediate
+dissolution. Required respondents must explicitly confirm or deny before
+continuing past the QGuard lobby check; agreement is not compulsory. Voter
+eligibility, tally and unanswered/disputed-case handling remain open in
+`OQ-010`. This is a recorded direction, not an implemented change.
+
 ## Integration Research Clarification — 2026-10-23
 
 `DEC-055` selects a future pre-queue rank flow: retrieve the latest available
 official match tier after RSO, then require player confirmation or manual
 correction on every matchmaking entry. After team formation, peers check actual
 lobby accounts/ranks; a qualifying discrepancy disbands the QGuard team with
-an explanation and an option to queue again. The report threshold is the next
-owner question. See the [approved direction and remaining contract](specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
+an explanation and an option to queue again. `DEC-056` subsequently selects the
+required confirmation process; its exact voting rule is still open. See the
+[approved direction and remaining contract](specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
 No implementation has changed; the existing first-pass fallback still runs.
 
 `DEC-054` approves prompting a designated host to create the game party and

@@ -85,8 +85,9 @@ feature implementation. Revisit data inventory when any real adapter is added.
 
 ## Subsequent Owner Direction — Queue Confirmation And Lobby Check
 
-**Authority/status:** `DEC-055`, 2026-10-23; behavior direction approved,
-detailed slice not implementation-ready. Current provider and test gates apply.
+**Authority/status:** `DEC-055`, 2026-10-23, refined by `DEC-056`, 2026-10-27;
+behavior direction approved, detailed slice not implementation-ready. Current
+provider and test gates apply.
 
 - Before each matchmaking entry, use authorized official access after RSO to
   retrieve the latest available ranked-match tier. Ask the player to confirm it
@@ -102,11 +103,20 @@ detailed slice not implementation-ready. Current provider and test gates apply.
   QGuard team, explains the reported account/rank mismatch, and allows voluntary
   requeue through the same confirmation process. It does not remove players
   from VALORANT or automatically punish them.
-- **Next owner question:** is one discrepancy report enough, or must other
-  teammates corroborate it? Do not borrow the no-show or honor-report quorum.
-  Successful confirmation requirements, unobservable/unknown answers, timeout,
-  disputes and correction behavior also need specification. What ranks/accounts
-  peers can actually inspect in the game remains a live-evidence dependency.
+- Under `DEC-056`, one report opens a mandatory popup/alert for teammate
+  confirmation instead of immediately dissolving the team. Identify the reported
+  player and the rank/account information being checked. Each required respondent
+  must explicitly confirm or deny before proceeding past this QGuard lobby
+  check. A denial is a response, not failure to obey; do not force agreement or
+  treat dismissal/silence as confirmation. This names the subject of the report,
+  not its author, and cannot stop activity in the external game client.
+- **Next owner rules:** eligible respondents and the number of confirmations
+  needed for dissolution. Do not borrow the no-show or honor-report quorum.
+  Unknown/unobservable answers, nonresponse/timeouts, disputes and correction
+  behavior still need specification; mandatory response must not be mistaken for
+  a settled deadlock/recovery policy. What ranks/accounts peers can actually
+  inspect in the game remains a live-evidence dependency. The candidate voting
+  rule is recorded as a proposal in `OQ-010`, not selected here.
 - **Implementation impact to specify:** account/rank source labels and
   snapshots, queued-edit cancellation, pre-play session transitions, atomic slot
   release, member notification/access, requeue, and feedback eligibility for a
@@ -114,7 +124,10 @@ detailed slice not implementation-ready. Current provider and test gates apply.
   no new automatic score or feedback-invalidating consequence is approved.
 - **Required evidence:** tests for refresh/confirmation/correction, unavailable
   or stale data, the eventual report threshold, unauthorized/duplicate reports,
-  races against session end/requeue and correct user explanations. Existing
+  mandatory prompt/confirm/deny behavior, no progression bypass by dismissal,
+  no accidental agreement from silence, races against session end/requeue and
+  correct user explanations. Rendered checks must cover readable target/rank
+  context and keyboard-accessible responses without coercing agreement. Existing
   first-pass I01–I03/S01–S04 results do not validate this new flow. Use labeled
   fixtures for local tests and the existing gates for any real integration.
 

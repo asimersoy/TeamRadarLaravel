@@ -525,12 +525,24 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
+- **Confirmation decision, 2026-10-27:** `DEC-056` settles that a single
+  discrepancy report starts a required teammate prompt, not immediate
+  dissolution. Name the reported teammate and disputed information; require an
+  explicit confirm/deny response before QGuard lobby progression. Do not re-ask
+  whether corroboration is needed. Exact voters, tally, unknown/missing answers
+  and recovery remain owner decisions before implementation.
+- **Agent proposal for the next owner review, not approved:** exclude the reporter
+  and reported player from corroborating votes; require the other three in a
+  five-player team to respond, with at least two confirming the mismatch to
+  dissolve. This separates mandatory participation from unanimous agreement
+  and prevents the subject from deciding their own case. Collusion and absent
+  respondents remain risks; this proposal does not settle their handling.
 - **Subsequent owner direction, 2026-10-23:** `DEC-055` adds per-entry official
   rank retrieval when accessible, player confirmation/correction, and a
   pre-play account/rank discrepancy check. The existing declared fallback
-  still covers unavailable integration. Whether a single discrepancy report
-  suffices to disband the QGuard team or needs corroboration remains open;
-  this is separate from feedback invalidation and no-show voting. See the
+  still covers unavailable integration. `DEC-056` subsequently requires
+  corroboration; its threshold is separate from feedback invalidation and
+  no-show voting. See the
   [pending contract](../specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
 - **Status:** partially resolved by `DEC-018` and `DEC-024`; Discord-native Join
   is preferred with the structured human-hosted alternative under `DEC-054`;
@@ -578,7 +590,8 @@ questionnaire or permission to leave first-pass contracts unspecified.
 - **Resolved by:** `DEC-018` for game direction; `DEC-024` for the two accepted
   replaceable joining candidates, refined by `DEC-054` for structured delivery;
   `DEC-048` for the first-pass rank fallback and `DEC-055` for the future
-  queue/lobby confirmation direction, with dissolution threshold still open
+  queue/lobby confirmation direction; `DEC-056` for required teammate responses,
+  with dissolution threshold and voter eligibility still open
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 

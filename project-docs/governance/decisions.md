@@ -2221,11 +2221,11 @@ canonical-workflow change, provider research or external action in this unit.
   explain that reported account/rank discrepancies caused it, and allow users
   to enter matchmaking again. This is interpreted as a pre-play lobby check,
   not forced cancellation of an already-running VALORANT match.
-- **Open owner rule:** whether one discrepancy report suffices or a defined
-  confirmation threshold is required. Success confirmations, abstentions,
-  unobservable rank, response timing and dispute/recovery rules also need a
-  concrete slice contract. Do not infer the existing no-show unanimity or
-  two-reporter feedback rule as this new threshold.
+- **Subsequent clarification:** `DEC-056` requires teammate confirmation rather
+  than immediate dissolution on one report. Voter eligibility, the dissolution
+  threshold, unobservable rank, response timing and dispute/recovery rules
+  still need a concrete slice contract. Do not infer the existing no-show
+  unanimity or two-reporter feedback rule as this new threshold.
 - **Unchanged boundaries:** no game-side kick/party control, automatic requeue,
   account punishment, honor deduction or new feedback invalidation is approved.
   Existing post-session rank feedback is not removed. `DEC-048` still permits
@@ -2238,4 +2238,52 @@ canonical-workflow change, provider research or external action in this unit.
   observation alone by adding queue-time refresh/confirmation and pre-play
   discrepancy dissolution; existing verified first-pass behavior is not claimed
   to have changed. Does not supersede `DEC-041` scoring or `DEC-043` no-show rules.
+- **Superseded by:** `DEC-056` only for the previously unresolved requirement
+  for a mandatory teammate-confirmation process; exact tally remains open
+
+## DEC-056 - Require Teammate Responses To A Lobby Discrepancy Report
+
+- **Date:** 2026-10-27
+- **Status:** approved confirmation direction; voting and recovery contract
+  incomplete; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner requests that a discrepancy report open a popup or alert
+  for the others, naming the reported player and asking them to confirm or deny
+  the rank being checked; people must not move on without responding.
+- **Decision:** a single report initiates teammate confirmation, not immediate
+  team dissolution. Show the relevant matched teammates a required prompt
+  identifying the reported player and the disputed rank/account information.
+  They must explicitly confirm or deny before proceeding past the QGuard
+  lobby-check step. Answering is mandatory; agreement with the reporter is not.
+- **Interpretation boundary:** the gate is QGuard progression, not control of
+  VALORANT or the user's device. The owner's naming requirement concerns the
+  reported teammate; it does not authorize revealing the reporter's identity.
+  A response is peer testimony, not official API verification.
+- **Remaining owner rules:** who responds and whose answers count, including
+  the reporter/reported player; how many confirmations dissolve the team;
+  conflicting, unknown/unobservable and missing answers; timeouts and recovery.
+  No automatic dismissal, timeout approval, unanimous-agreement requirement,
+  numeric quorum or penalty is selected by this instruction.
+- **Unchanged:** queue-time rank confirmation/correction and QGuard-only
+  discrepancy dissolution under `DEC-055`; separate no-show, scoring and
+  post-session report rules; provider access and live-test holds. Once the
+  eventual discrepancy rule is met, explain dissolution and permit voluntary
+  requeue as already approved. This record does not authorize implementation.
+- **Affected records:** identity/rank and session specifications, `OQ-010`,
+  current state and the earlier `DEC-055` clarification.
+- **Supersedes:** the open choice in `DEC-055` between one-report immediate
+  dissolution and requiring teammate confirmation; selects confirmation only
 - **Superseded by:** none
+
+### Documentation Checkpoint 2026-10-27
+
+Product-planning route from clean `new-development` at `1d18da8`: mandatory
+entry/system rules, project governance, decision safety, privacy/data, external
+review, design, reconciliation and deferral procedures read. Scope is this
+owner decision and dependent project records; no workflow or code changes.
+Owner is the approving authority; tally/eligibility and recovery are the stop
+conditions for implementation. Complete five-file scoped diff reviewed; the
+changed relative link/anchor, 56 unique decision headings and `git diff --check`
+passed. One additive local documentation commit records this unit.
+Runtime/rendered/provider checks are unrun; live tests remain held.
+No push, provider operation or deployment is part of this unit.
