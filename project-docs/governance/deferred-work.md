@@ -9,6 +9,10 @@ relevant part of `DEF-010` and replaces `DEF-011`'s ten-minute feedback expiry.
 Friend discovery, unrelated session polish and real integrations remain deferred.
 Follow the [next-pass plan](../planning/product-design-pass.md) before implementation.
 
+`DEC-067` defers all Discord implementation until after Riot approval and live
+RSO integration; `DEF-007` owns that updated sequence. It is not needed in the
+Riot review prototype, including as simulated Discord rooms. Tests remain held.
+
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
 
@@ -292,19 +296,23 @@ boundary, not approval to implement either future feature.
 
 ## DEF-007 - Return To Real Discord Integration After Availability And Tests
 
-- **Status:** explicit current implementation exclusion; later slice unapproved
+- **Status:** fully excluded from version one under `DEC-067`; returns after
+  Riot approval and live RSO integration, subject to the later slice gates
 - **Decision owner:** project owner
 - **Execution owner:** unassigned until the owner resumes the relevant tests
-- **Locked decision:** `DEC-035` selects queueing with/without Discord voice
-  and delays actual Discord integration beyond this implementation.
-- **Reason postponed:** owner cannot yet run the relevant tests and wants the
-  Discord Join and Riot lobby-link availability/behavior established first.
-  This is an owner prerequisite, not a fresh verified feature-release claim.
+- **Locked decision:** `DEC-035` keeps optional Discord voice as future
+  direction. `DEC-067` excludes all Discord implementation from version one
+  and the Riot review prototype, including any obligation to build simulated
+  rooms. Native website text and the structured host-handoff design remain.
+- **Reason postponed:** owner explicitly chooses Riot approval and RSO
+  integration first; prior availability/test constraints also remain. This is
+  an owner sequence, not a fresh verified feature-release claim.
 - **Implementation state:** no Discord adapter, bot/server mutation or live
   party handoff implemented. Existing tests and their owner hold are preserved.
-- **Return condition:** owner resumption, current provider/client recheck,
-  applicable behavioral results and approval of the later coordination slice.
-  Current development completion alone cannot activate this work.
+- **Return condition:** Riot project approval and completed live RSO integration,
+  then owner resumption of applicable tests, current provider/client recheck,
+  behavioral results and approval of the later coordination slice. Current
+  development completion or credentials alone cannot activate this work.
 - **Owner recheck:** future admission, attendance/recovery, privileged access,
   lifecycle/cleanup, data and real integration dependencies before execution.
   Voice recording remains unapproved, not part of this deferral.
@@ -441,3 +449,62 @@ boundary, not approval to implement either future feature.
   and any controlled-operation authorization before execution.
 - **Invalidation:** new collected data, provider terms or a planned real-user
   environment may require earlier review of the affected boundary.
+
+## DEF-013 - Revisit The Report/Rating Timing Race After Version One
+
+- **Status:** owner explicitly accepts the limitation for version one;
+  improvements deferred until after that version
+- **Decision owner:** project owner
+- **Execution owner:** unassigned; later proposal requires owner review
+- **Locked decision:** under `DEC-065`, an eligible rating already applied
+  remains effective if two qualifying same-session conduct reports against
+  its author arrive later. If the threshold exists before application, exclude
+  that outgoing input. One report alone does not meet the threshold. The
+  owner's A/B/C/E example and subsequent confirmation acknowledge that speed
+  changes the outcome; neither this note nor a future review changes the rule.
+- **Reason postponed:** owner wants the simpler first version and explicitly
+  declines work to remove this race before it is complete.
+- **Affected records:** honor/report specifications, session history, queue
+  completion, evidence/audit labels and the later implementation packet.
+- **Implementation state:** approved future behavior only; the existing build
+  still implements the earlier settlement rules. No race fix is implemented.
+- **Return condition:** after version one, surface this known limitation for
+  owner review. Reassess observed effects and alternatives; no particular fix,
+  waiting period, rollback mechanism or sanction is preapproved.
+- **Verification still required in version one:** consistent ordering under
+  concurrency, idempotency, the before/after threshold cases, private received
+  feedback and truthful audit evidence. Do not defer ordinary correctness.
+- **Residual risk:** a fast malicious rating may retain an effect despite
+  later reports. Its magnitude/balance is not proven. Future policy changes
+  must explicitly address earlier applied inputs and preserve history honestly.
+
+## DEF-014 - Validate Non-Friend Native Party Codes After RSO Integration
+
+- **Status:** owner-approved test deferral under `DEC-068`; planning may proceed
+- **Decision owner:** project owner
+- **Execution owner:** agent prepares the check; owner supplies real consenting
+  test players/accounts when this checkpoint is reached
+- **Locked assumption:** native VALORANT party codes allow the matched
+  non-friends to enter the ordinary party. Use the structured host/code flow
+  in specifications, prototype and approved implementation; not a passed test.
+- **Reason postponed:** owner wants to proceed through Riot review and RSO
+  integration before performing the final real-player check.
+- **Dependencies / return condition:** Riot approval and completed live RSO
+  integration, followed by real-player validation before normal-use reliance.
+  Riot may raise the issue earlier; that prompts owner review rather than
+  silently replacing the selected route. Approval alone cannot close this test.
+- **Verification:** use compatible current PC accounts that are not Riot
+  friends, an ordinary intended-mode party and Discord absent from the flow.
+  Generate and relay the code via the structured QGuard form, enter it in-game,
+  confirm actual common-party membership and intended-mode eligibility, then
+  cover the intended five-player roster and invalid/expired/full-party cases.
+  Final test details and resources are prepared at activation; no live result
+  or currently supplied account is claimed.
+- **Failure disposition:** record the actual result and return to the owner
+  for an alternative; do not automatically add friends, use private APIs,
+  activate Discord or change the game.
+- **Affected artifacts:** handoff specification/UI, review explanation,
+  implementation acceptance and real-user release evidence.
+- **Invalidation:** relevant provider feedback or game-client changes may
+  require revisiting the assumption; version-one planning is not blocked on
+  running this deferred check now.

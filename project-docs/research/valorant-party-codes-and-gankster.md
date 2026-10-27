@@ -9,6 +9,14 @@
 - **Update trigger:** owner resumes game tests, current UI changes, provider
   clarification, or a proposed integration slice
 
+**Subsequent owner direction, 2026-10-27:** `DEC-068` now authorizes using native
+party codes as the working non-friend handoff assumption for specifications,
+prototype and approved implementation. Validate with real players after Riot
+approval and live RSO integration under `DEF-014`. Earlier candidate/unselected
+and test-first wording below records the prior research stage; it no longer
+blocks that work. The official patch was rechecked today; no live result was
+obtained, and owner acceptance of an assumption does not turn it into evidence.
+
 Native VALORANT Party Invite Codes are an official player feature, separate
 from the Riot–Discord lobby-link feature and from private party APIs. This
 adds a candidate for the structured human-host handoff already approved in

@@ -6,6 +6,15 @@ for the next pass. See [the current feedback direction](#current-feedback-and-se
 These changes are not implemented; `DEC-062` requires specifications/design
 and the later stack review before new application work.
 
+`DEC-066` selects open registration, guest entry for a Riot-reviewable prototype
+and live RSO before normal matchmaking. See the
+[access and prototype contract](review-prototype-and-access.md). The owner
+explicitly accepts the report/rating timing race under `DEC-065`; changing it
+is deferred until after version one (`DEF-013`).
+`DEC-067` defers Discord fully until after Riot approval and RSO integration.
+`DEC-068` authorizes the non-friend native party-code assumption for the
+structured host handoff now; actual validation returns after RSO (`DEF-014`).
+
 **Implementation routing update, 2026-10-03:** the
 [first-pass specification suite](first-pass/README.md) now turns these decisions
 into concrete contracts and tests, approved as revision 1 + DEC-052. The

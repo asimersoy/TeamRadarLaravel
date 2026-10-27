@@ -9,6 +9,14 @@ features. `DEC-062` requires specifications and page design before a fresh
 stack review, then applicable implementation approval. Review `DEC-064`'s
 [checkpoint queue](../governance/checkpoint-review-queue.md) at that gate.
 
+`DEC-066` selects [open registration and the Riot review prototype](review-prototype-and-access.md):
+guest access exercises the scoped workflows with expected provider data;
+normal matchmaking requires live RSO. `DEF-013` preserves the known report/rating
+timing race for version one and defers improvements until afterward.
+`DEC-067` excludes Discord implementation until after Riot approval and RSO;
+`DEC-068` authorizes the native party-code working assumption, with real-player
+validation deferred to that post-RSO checkpoint under `DEF-014`.
+
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
   Valorant; `DEC-024` selects Discord room/voice planning with replaceable

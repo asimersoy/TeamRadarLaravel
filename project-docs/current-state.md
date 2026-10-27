@@ -2,6 +2,12 @@
 
 ## Product and Design Pass — 2026-10-27
 
+**Readiness after `DEC-068`:** the [planning/design readiness assessment](planning/product-design-pass.md#readiness-to-begin--after-dec-068)
+finds no further upfront major decision needed to begin the bounded study,
+specifications and design pass. Draft remaining interaction/recovery details
+in context; record assumptions and escalate material policy changes. The
+stack checkpoint and later live-provider/release gates remain separate.
+
 `DEC-061` selects one required 1–10 honor rating per eligible teammate before
 requeueing, plus optional peer communication/play-style sliders. Untouched
 midpoints are omitted; descriptors affect neither honor nor matching. Their
@@ -16,6 +22,23 @@ ratings against current state without waiting for everyone; no backdating,
 undoing or retrospective recalculation. Known exclusions prevent unapplied
 inputs; later reports remain evidence without reversing prior honor effects.
 Arrival-order effects are an accepted tradeoff, not proven to always balance out.
+The owner explicitly confirmed the report/rating race and deferred changing it
+until after version one in `DEF-013`.
+
+`DEC-066` selects open registration and a guest entry on the login page for a
+Riot-reviewable prototype. Implement the scoped workflows around expected
+provider data; clearly synthetic demo access is separate from normal
+matchmaking, which waits for live RSO and required linking/opt-in. The
+[access/prototype contract](specs/review-prototype-and-access.md) separates
+approved direction and draft acceptance. `DEC-067` defers all Discord
+implementation until after Riot approval and RSO integration; even simulated
+Discord rooms are unnecessary for review. `DEC-068` authorizes assuming native
+party codes work for non-friends, using the structured host form. Proceed with
+planning/prototype work; real-player validation returns after RSO in `DEF-014`
+before normal-use reliance. Riot approval is not a passed joining test.
+[Current Riot evidence](research/riot-review-and-rso-access.md)
+supports prototype-first review and distinguishes production API approval from
+RSO client setup. No credentials, publication or submission are established.
 
 Follow the [product/design plan](planning/product-design-pass.md): resolve major
 direction choices, study relevant competitor details, prepare comprehensive
@@ -32,7 +55,11 @@ resolution is currently known; answer-origin limits and material agent defaults
 are recorded for review. The accumulated study, policy clarifications and
 next-pass decisions form the
 [consolidated documentation checkpoint](planning/product-design-pass.md#consolidated-study-and-direction-checkpoint)
-in the commit containing this update. No application change or remote action occurred.
+in commit `0d446f7`. The later report-race, access/prototype, Discord deferral,
+party-code assumption and readiness records are grouped in the
+[owner-requested scope checkpoint](planning/product-design-pass.md#owner-requested-scope-checkpoint)
+in the commit containing this update. No application change or remote action
+occurred.
 
 ## Gankster Detail Study — 2026-10-27
 

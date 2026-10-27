@@ -7,11 +7,17 @@ reusable workflow system remains separate in
 ## Current Phase
 
 **Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
-under `DEC-061`–`DEC-065`. Required honor feedback, optional descriptive sliders
+under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders
 and non-expiring session-history ratings replace the relevant first-pass rules
 for the next version. Honor now applies as eligible inputs arrive, without
-retrospective corrections. Resolve initial release access, then complete the study,
-specs and page designs before the requested stack review and new implementation.
+retrospective corrections; changing the report/rating race is deferred until
+after version one. Open registration and a
+[guest-accessible Riot review prototype](specs/review-prototype-and-access.md)
+are selected; normal matchmaking waits for live RSO. Discord implementation
+is fully deferred until after approval and RSO. Assume native party codes work
+for non-friends for this planning/prototype; validate with real players after
+RSO before normal-use reliance. Complete the study, specs and page designs
+before the requested stack review and new implementation.
 The [checkpoint review queue](governance/checkpoint-review-queue.md) must be
 presented at that review. The implemented baseline below is preserved.
 

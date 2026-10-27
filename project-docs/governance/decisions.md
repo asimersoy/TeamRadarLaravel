@@ -2668,6 +2668,10 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   review, distinguish an unapplied exclusion from a later ineligibility finding,
   and do not claim that retained mathematical effects were removed. This adds
   no global rating ban, punishment or future-session exclusion.
+- **Owner confirmation:** after the A/B/C/E example, the owner explicitly
+  acknowledges that the outcome depends on which action arrives first and
+  accepts it for version one. Improvements return only after that version;
+  see `DEF-013`. This consequence is no longer only an agent interpretation.
 - **Accepted tradeoff:** arrival order can affect later state and a quickly
   submitted rating can retain influence despite later disqualifying reports.
   The owner's expectation that differences are small and balance out is a
@@ -2686,4 +2690,126 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   part of the agent's proposed option A in `OQ-013`. `OQ-013` is resolved
 - **Affected records:** foundations, first-pass supersession notice, question
   register, current state, next-pass plan and checkpoint review queue
+- **Superseded by:** none
+
+## DEC-066 - Open Registration And A Guest-Accessible Riot Review Prototype
+
+- **Date:** 2026-10-27
+- **Status:** approved next-version direction; detailed specification/design
+  and implementation gates remain; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner selects open registration, says normal use must wait for
+  RSO, asks for everything else to be implemented using the expected provider
+  data, and explicitly requests guest login so Riot can inspect the prototype.
+- **Decision:** plan open registration, not an invite-only beta. Registration
+  does not grant normal matchmaking access before live RSO is available and
+  the player has completed the required Riot linking/opt-in flow. Build the
+  scoped QGuard workflows for a useful pre-approval review prototype, including
+  downstream behavior based on the expected identity and game-data contracts.
+- **Guest entry:** provide a guest option on the login page so reviewers can
+  experience and understand the product without working RSO. Demonstration
+  data and provider responses must be explicitly synthetic; guest access must
+  not imply verified Riot ownership or reach real-player matchmaking/data.
+- **Milestones:** specifications and page design, then the already-required
+  stack review and slice approvals; implementation of the review prototype;
+  separately authorized publication/application to Riot; production access and
+  RSO client provisioning if approved; live integration and verification before
+  normal use. This activates `DEC-017`'s prototype-first planning direction.
+- **Provider facts versus owner policy:** the [dated access research](../research/riot-review-and-rso-access.md)
+  verifies Riot's prototype and production/RSO requirements. A production API
+  key and an RSO OAuth client are separate; the key alone is not a working
+  login integration. RSO identifies a consenting player, while rank data needs
+  the separate official match-data flow. Guest login is the owner's chosen
+  review aid, not a documented Riot requirement for that exact UI control.
+- **Scope interpretation:** “everything except RSO” includes the approved
+  product workflows and downstream data behavior, not every future competitor
+  feature or a desktop companion. `DEC-067` subsequently excludes Discord
+  implementation entirely from version one and defers it until after Riot
+  approval and RSO integration. Existing live-test holds and unverified
+  game-joining capabilities remain.
+- **Supersedes:** the open-versus-invite question in `OQ-005`; any use of the
+  earlier declared-only local build as authority for normal next-version
+  matchmaking without RSO. Preserve that build and its historical evidence.
+- **Preserved:** `DEC-062`'s design/stack sequence, existing specification
+  approvals, data/release gates and explicit authorization for publication,
+  provider submission/contact and deployment. No such action is authorized here.
+- **Affected records:** access/prototype specification, current state,
+  product/design plan, specification index and `OQ-005`/`OQ-007`/`OQ-009`
+- **Superseded by:** none
+
+## DEC-067 - Defer All Discord Implementation Until After Approval And RSO
+
+- **Date:** 2026-10-27
+- **Status:** approved first-version exclusion and later sequencing
+- **Decision owner:** project owner
+- **Evidence:** owner answers the review-milestone question: defer Discord
+  implementation fully for the first version and implement it after project
+  approval and RSO integration. This is an explicit received answer, not a
+  timeout/default selection.
+- **Decision:** the first version, including the Riot review prototype, has
+  no Discord implementation. No bot, account linking, admission flow, room or
+  voice-channel creation, cleanup integration or Discord-specific game Join
+  implementation is required. Simulated Discord rooms are not a required
+  prototype feature either. Retain the future direction in separate records.
+- **Current coordination:** use the already-approved QGuard website text
+  chat and structured human-host handoff design. There is no QGuard-provided
+  voice in this version and no substitute native voice implementation selected.
+  Discord login/membership/attendance must not gate queue entry, session
+  completion, feedback or reporting in this version.
+- **Dependencies:** core matching, RSO/official rank retrieval, session history,
+  honor, descriptors and reports do not require Discord. A non-Discord party
+  entry method still needs evidence before real use; merely displaying a Riot
+  lobby URL on QGuard does not prove its underlying flow is Discord-independent.
+  Native party codes were still a candidate at this decision; `DEC-068` then
+  authorizes using them as an explicit working assumption until post-RSO tests.
+  The prototype may demonstrate handoff using labeled sample data.
+- **Return condition:** Riot project approval and completed live RSO integration,
+  then applicable current evidence, test-hold resumption and the approved later
+  integration slice under `DEF-007`. The milestone is necessary, not automatic
+  permission for provider mutations or an assertion that approval is guaranteed.
+- **Supersedes:** the pending live-versus-simulated Discord question in
+  `DEC-066`/`OQ-007`/`OQ-009`/`OQ-011`; extends the earlier first-pass exclusion
+  to the next first-version/review milestone and updates `DEF-007`'s sequence
+- **Preserved:** future optional Discord voice and replaceable joining direction,
+  owner-held tests, official API preference, no voice recording and `DEC-062`'s
+  specifications/design/stack gate. No implementation starts from this record.
+- **Affected records:** review/access and coordination specifications, next-pass
+  plan, current state, question/deferral registers and checkpoint review queue
+- **Superseded by:** none
+
+## DEC-068 - Assume Non-Friend Party Codes Work Until Post-RSO Validation
+
+- **Date:** 2026-10-27
+- **Status:** owner-approved working assumption and validation sequence;
+  not a verified capability or completed integration
+- **Decision owner:** project owner
+- **Evidence:** owner explicitly says to assume party codes work for non-friends
+  now, proceed toward Riot review, then check with real test players after
+  obtaining and integrating RSO. The owner acknowledges that Riot may flag
+  the flow, or approve the project even if that flow later fails.
+- **Decision:** plan and specify the first-version non-Discord handoff using
+  native VALORANT party codes: the designated host creates the ordinary game
+  party, generates its code in VALORANT and submits it through QGuard's
+  dedicated form; the other matched players copy it and enter it in-game.
+  Treat successful non-friend entry as an explicit owner-authorized assumption
+  for design, the review prototype and approved implementation slices.
+- **Testing sequence:** defer real non-friend verification until Riot approval
+  and completed RSO integration, then run the final real-player checks before
+  relying on this route in normal use. `DEF-014` records the return condition.
+  No accounts or live tests are needed to proceed with the present design work.
+- **Evidence boundary:** official documentation establishes the code feature,
+  not our current-client non-friend result. Riot's review/approval is not a
+  behavioral test. Keep the assumption and synthetic demonstrations honestly
+  labeled in project/review records; do not fabricate a passed result.
+- **Failure handling:** if Riot raises an issue or the later check fails,
+  revisit the handoff with the owner. No automatic friend-adding, private API
+  automation, Discord implementation or game change is preapproved.
+- **Supersedes:** the requirement to prove this native-code route before
+  proceeding with its planning/prototype or approved implementation. Moves
+  its validation to the post-RSO checkpoint; does not waive the final test.
+- **Preserved:** `DEC-062`'s spec/design/stack and slice approvals; `DEC-067`'s
+  Discord deferral; held Discord/link tests, distinct from this native-code
+  check. Planning scope is settled; the game-client result remains unverified.
+- **Affected records:** review/access and coordination specs, native-code
+  research reconciliation, plan, question/deferral registers and review queue
 - **Superseded by:** none

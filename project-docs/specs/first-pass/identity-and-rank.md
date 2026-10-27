@@ -9,6 +9,12 @@ first-pass contract and implementation remain the baseline until that change's
 open rules, data contract and acceptance tests are settled; this is not a claim
 that RSO or repeated rank confirmation is already implemented.
 
+**Next-version access change:** `DEC-066` selects open registration and guest
+entry for a Riot-reviewable prototype; normal matchmaking requires live RSO.
+The declared-only local behavior below remains the implemented first-pass
+baseline, not a bypass for that new requirement. See the
+[review-prototype/access contract](../review-prototype-and-access.md).
+
 ## QGuard identity
 
 Use framework-supported email/password authentication, hashed passwords,

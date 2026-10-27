@@ -5,13 +5,25 @@ are specified concretely in [the first-pass suite](first-pass/README.md), approv
 as revision 1 + DEC-052. This older module retains approved integration direction and
 future boundaries; its staged outline is not a competing execution plan.
 
+**Next-version authority, 2026-10-27:** `DEC-067` defers all Discord
+implementation until after Riot approval and completed RSO integration.
+`DEC-068` authorizes native party codes as the non-friend handoff working
+assumption now: host generates the code in VALORANT, submits it through the
+dedicated QGuard form, teammates copy and enter it in-game. Proceed with
+specifications/prototype and approved slices; actual non-friend verification
+returns after RSO in `DEF-014`, before normal-use reliance. The older
+test-first requirements below must not block that authorized work. They still
+prevent claiming a verified live integration from a mock or from Riot approval.
+Use website text chat; no Discord simulation or replacement voice product is
+required. See the [current dependency assessment](review-prototype-and-access.md#discord-dependency-check).
+
 ## Status And Authority
 
 - **Record type:** modular product specification and staged implementation outline
 - **Status:** planning direction approved; detailed design proposed, not implementation-ready
 - **Decision owner:** project owner; primary agent owns drafting and verification
 - **Authority:** `DEC-008`, `DEC-016`, `DEC-018`, `DEC-020` through `DEC-024`,
-  `DEC-035` through `DEC-048`, `DEC-053`, `DEC-054`
+  `DEC-035` through `DEC-048`, `DEC-053`, `DEC-054`, `DEC-067`, `DEC-068`
 - **Created:** 2026-09-28
 - **Implementation boundary:** surrounding implementation is requested but
   remains gated on the applicable approved slice specifications; game-party
@@ -160,11 +172,16 @@ items must not be treated as inherited legacy requirements.
    Do not add a real Discord adapter or manual with-voice queue to this scope.
    Native text is selected under `DEC-046` and requires its approved data/access
    and acceptance contract; irreversible data boundaries are not UI defaults.
-3. **Verify and connect Discord coordination.** Only after the owner lifts the
+3. **Later Discord coordination.** `DEC-067` additionally requires Riot approval
+   and completed live RSO integration before this implementation. Only after the owner lifts the
    relevant hold, the `DEF-007` availability/test prerequisite is met, and the
    owner names the test environment and approves a later implementation slice,
    run the admission/isolation/lifecycle tests and implement the real adapter.
-4. **Verify and connect a game-join method.** At a later authorized stage,
+4. **Game-join method.** For the next version, `DEC-068` authorizes implementing
+   the native-code relay in an approved slice before its final live check;
+   `DEF-014` schedules that check after RSO. The earlier candidate comparison
+   below remains future/reference material, not a prerequisite to this route.
+   At a later authorized stage,
    evaluate the two candidates, implement a passing method behind the same
    boundary, and retain a truthful unavailable state for any unimplemented
    alternative. Do not require both to work; do not assume either will work.

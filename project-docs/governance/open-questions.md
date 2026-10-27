@@ -110,10 +110,11 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
-- **Next bounded question, 2026-10-27:** for the first usable release, choose
-  open registration or invite-only access. This affects onboarding/access pages;
-  no answer is assumed. It does not reopen VALORANT or the session/party model,
-  and the existing local synthetic build is not a public-release approval.
+- **Access resolved, 2026-10-27:** `DEC-066` selects open registration, guest
+  entry for a Riot-reviewable prototype and live RSO before normal matchmaking.
+  Do not re-ask open versus invite-only. The existing local synthetic build and
+  this direction are not public-release approval; age/market/data boundaries
+  remain separate.
 - **Status:** partially resolved: `DEC-018` selects Valorant, `DEC-025`
   selects session grouping and `DEC-037` includes partial parties/basic friends;
   `DEC-044` reaffirms Valorant for the first pass; remaining complete launch/
@@ -408,8 +409,13 @@ questionnaire or permission to leave first-pass contracts unspecified.
   the next revision. `DEC-062` now requires product/specification/design work
   before revisiting the stack, then a concrete implementation packet. Do not
   select a replacement stack now or treat the old approval as permission to
-  bypass this sequence. The next deliverable's integration promises still need
-  bounded scope: simulated/deferred versus live RSO, game joining and Discord.
+  bypass this sequence. `DEC-066` sets the review-prototype milestone with
+  expected provider data and no live RSO; normal use follows actual RSO
+  integration. `DEC-067` resolves the Discord milestone: no implementation in
+  version one, returning after Riot approval and RSO integration. `DEC-068`
+  authorizes assuming native party-code joining works for non-friends now,
+  with real-player verification after RSO (`DEF-014`). Neither is an open
+  upfront choice or a claim of live acceptance.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
@@ -462,6 +468,14 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **Review milestone, 2026-10-27:** `DEC-066` activates prototype-first planning:
+  open registration and guest demonstration before live RSO, with normal
+  matchmaking gated on actual linking/opt-in. The [dated official-source check](../research/riot-review-and-rso-access.md)
+  separates production API approval from RSO client provisioning. Access and
+  live integration remain unverified; the [prototype specification](../specs/review-prototype-and-access.md)
+  records `DEC-067`'s complete Discord deferral and `DEC-068`'s authorized
+  native-code assumption. Non-friend testing returns after RSO under `DEF-014`;
+  do not block present planning/prototype or approved implementation on it.
 - **Native party-code addition, 2026-10-27:** Riot's patch 7.12 documents a
   player-generated code entered in-game. The [side-chat reconciliation](../research/valorant-party-codes-and-gankster.md)
   separates this from Discord links and private APIs, and proposes an ordinary-
@@ -561,6 +575,13 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
+- **Current planning disposition:** `DEC-067` defers Discord and `DEC-068`
+  selects the native-code working assumption through the structured host form.
+  This closes the upfront handoff choice for the current design/prototype;
+  `DEF-014` schedules its actual validation after RSO. Rank-unavailable,
+  discrepancy nonresponse and host/code recovery behavior are specification
+  tasks, not reasons to re-ask the settled route. Escalate any proposed material
+  exception to existing policy; do not mark all recovery details approved.
 - **Confirmation decision, 2026-10-27:** `DEC-056` settles that a single
   discrepancy report starts a required teammate prompt, not immediate
   dissolution. Name the reported teammate and disputed information; require an
@@ -641,6 +662,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
+- **Next-version direction resolved, 2026-10-27:** `DEC-067` fully defers
+  Discord until after Riot approval and RSO integration. `DEC-068` authorizes
+  native party codes as the non-friend handoff working assumption through the
+  structured QGuard form, with actual tests after RSO (`DEF-014`). Earlier
+  test-before-reliance wording below still governs verified real use, not
+  whether to proceed with design/prototype and approved implementation now.
 - **Status:** partially resolved by `DEC-024`, `DEC-035` and `DEC-046`: native
   private match chat and only no-Discord queueing now; optional future Discord
   voice queueing and replaceable joining are selected, but real Discord
