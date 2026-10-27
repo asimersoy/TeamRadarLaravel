@@ -6,8 +6,10 @@
 rank/account information. A report starts confirmation, not immediate
 dissolution. Required respondents must explicitly confirm or deny before
 continuing past the QGuard lobby check; agreement is not compulsory. Voter
-eligibility, tally and unanswered/disputed-case handling remain open in
-`OQ-010`. This is a recorded direction, not an implemented change.
+eligibility and tally are settled by `DEC-057`: exclude reporter and reported
+player; one of the other three confirming the mismatch is enough to disband,
+even if both others deny it. Nonresponse, unknown observations and recovery
+remain open in `OQ-010`. This is a recorded direction, not an implemented change.
 
 ## Integration Research Clarification — 2026-10-23
 
@@ -16,7 +18,7 @@ official match tier after RSO, then require player confirmation or manual
 correction on every matchmaking entry. After team formation, peers check actual
 lobby accounts/ranks; a qualifying discrepancy disbands the QGuard team with
 an explanation and an option to queue again. `DEC-056` subsequently selects the
-required confirmation process; its exact voting rule is still open. See the
+required confirmation process and `DEC-057` settles its voting rule. See the
 [approved direction and remaining contract](specs/first-pass/identity-and-rank.md#subsequent-owner-direction--queue-confirmation-and-lobby-check).
 No implementation has changed; the existing first-pass fallback still runs.
 

@@ -529,14 +529,14 @@ questionnaire or permission to leave first-pass contracts unspecified.
   discrepancy report starts a required teammate prompt, not immediate
   dissolution. Name the reported teammate and disputed information; require an
   explicit confirm/deny response before QGuard lobby progression. Do not re-ask
-  whether corroboration is needed. Exact voters, tally, unknown/missing answers
-  and recovery remain owner decisions before implementation.
-- **Agent proposal for the next owner review, not approved:** exclude the reporter
-  and reported player from corroborating votes; require the other three in a
-  five-player team to respond, with at least two confirming the mismatch to
-  dissolve. This separates mandatory participation from unanimous agreement
-  and prevents the subject from deciding their own case. Collusion and absent
-  respondents remain risks; this proposal does not settle their handling.
+  whether corroboration is needed. `DEC-057` settles eligible voters and tally;
+  unknown/missing answers, response timing and recovery remain open.
+- **Voting decision, 2026-10-27:** `DEC-057` excludes the reporter and reported
+  player from corroborating votes. One of the other three confirming the
+  mismatch disbands the team even when the other two deny it. This replaces the
+  agent's unapproved two-of-three proposal; majority agreement is not required.
+  The original report alone or repeated submissions by its author are not
+  sufficient. This is an integrity safeguard, not a finding of guilt.
 - **Subsequent owner direction, 2026-10-23:** `DEC-055` adds per-entry official
   rank retrieval when accessible, player confirmation/correction, and a
   pre-play account/rank discrepancy check. The existing declared fallback
@@ -591,7 +591,8 @@ questionnaire or permission to leave first-pass contracts unspecified.
   replaceable joining candidates, refined by `DEC-054` for structured delivery;
   `DEC-048` for the first-pass rank fallback and `DEC-055` for the future
   queue/lobby confirmation direction; `DEC-056` for required teammate responses,
-  with dissolution threshold and voter eligibility still open
+  `DEC-057` for voter eligibility and dissolution threshold. Unknown/missing
+  answers, response timing and recovery remain open
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 

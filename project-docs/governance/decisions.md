@@ -2197,8 +2197,8 @@ canonical-workflow change, provider research or external action in this unit.
 ## DEC-055 - Refresh And Confirm Rank Before Queueing And Check Lobby Discrepancies
 
 - **Date:** 2026-10-23
-- **Status:** approved product direction; report threshold and detailed lifecycle
-  rules unresolved; not implemented
+- **Status:** approved product direction; `DEC-056`/`DEC-057` subsequently settle
+  confirmation, voters and threshold; detailed lifecycle incomplete; not implemented
 - **Decision owner:** project owner
 - **Evidence:** owner directs QGuard, after RSO, to retrieve the latest available
   rank and ask the player to confirm or manually correct it each time they are
@@ -2222,10 +2222,10 @@ canonical-workflow change, provider research or external action in this unit.
   to enter matchmaking again. This is interpreted as a pre-play lobby check,
   not forced cancellation of an already-running VALORANT match.
 - **Subsequent clarification:** `DEC-056` requires teammate confirmation rather
-  than immediate dissolution on one report. Voter eligibility, the dissolution
-  threshold, unobservable rank, response timing and dispute/recovery rules
-  still need a concrete slice contract. Do not infer the existing no-show
-  unanimity or two-reporter feedback rule as this new threshold.
+  than immediate dissolution on one report. `DEC-057` selects the other three
+  teammates as eligible corroborators and one confirmation as sufficient even
+  against two denials. Unobservable rank, response timing and recovery still
+  need a contract; the separate no-show and feedback thresholds are unchanged.
 - **Unchanged boundaries:** no game-side kick/party control, automatic requeue,
   account punishment, honor deduction or new feedback invalidation is approved.
   Existing post-session rank feedback is not removed. `DEC-048` still permits
@@ -2239,13 +2239,13 @@ canonical-workflow change, provider research or external action in this unit.
   discrepancy dissolution; existing verified first-pass behavior is not claimed
   to have changed. Does not supersede `DEC-041` scoring or `DEC-043` no-show rules.
 - **Superseded by:** `DEC-056` only for the previously unresolved requirement
-  for a mandatory teammate-confirmation process; exact tally remains open
+  for a mandatory teammate-confirmation process; `DEC-057` for voters and tally
 
 ## DEC-056 - Require Teammate Responses To A Lobby Discrepancy Report
 
 - **Date:** 2026-10-27
-- **Status:** approved confirmation direction; voting and recovery contract
-  incomplete; not implemented
+- **Status:** approved confirmation direction; voting rule subsequently settled
+  by `DEC-057`, recovery contract incomplete; not implemented
 - **Decision owner:** project owner
 - **Evidence:** owner requests that a discrepancy report open a popup or alert
   for the others, naming the reported player and asking them to confirm or deny
@@ -2259,11 +2259,11 @@ canonical-workflow change, provider research or external action in this unit.
   VALORANT or the user's device. The owner's naming requirement concerns the
   reported teammate; it does not authorize revealing the reporter's identity.
   A response is peer testimony, not official API verification.
-- **Remaining owner rules:** who responds and whose answers count, including
-  the reporter/reported player; how many confirmations dissolve the team;
-  conflicting, unknown/unobservable and missing answers; timeouts and recovery.
-  No automatic dismissal, timeout approval, unanimous-agreement requirement,
-  numeric quorum or penalty is selected by this instruction.
+- **Subsequent voting rule:** `DEC-057` excludes the reporter and reported
+  player, and one of the other three confirming the discrepancy is sufficient
+  even if both others deny it. Unknown/unobservable or missing answers, response
+  timing and recovery remain unresolved. No timeout approval or penalty is
+  selected by these decisions.
 - **Unchanged:** queue-time rank confirmation/correction and QGuard-only
   discrepancy dissolution under `DEC-055`; separate no-show, scoring and
   post-session report rules; provider access and live-test holds. Once the
@@ -2273,7 +2273,8 @@ canonical-workflow change, provider research or external action in this unit.
   current state and the earlier `DEC-055` clarification.
 - **Supersedes:** the open choice in `DEC-055` between one-report immediate
   dissolution and requiring teammate confirmation; selects confirmation only
-- **Superseded by:** none
+- **Superseded by:** `DEC-057` for the previously open voter eligibility and
+  dissolution threshold; mandatory response direction otherwise remains
 
 ### Documentation Checkpoint 2026-10-27
 
@@ -2287,3 +2288,50 @@ changed relative link/anchor, 56 unique decision headings and `git diff --check`
 passed. One additive local documentation commit records this unit.
 Runtime/rendered/provider checks are unrun; live tests remain held.
 No push, provider operation or deployment is part of this unit.
+
+## DEC-057 - Disband On One Eligible Teammate Corroboration
+
+- **Date:** 2026-10-27
+- **Status:** approved voter eligibility and threshold; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner accepts excluding reporter and reported player, and
+  explicitly selects one confirmation from the other three as sufficient even
+  when the other two say the declared rank is correct.
+- **Decision:** for a discrepancy about one member of a five-player matched
+  team, neither the reporter nor the reported player casts a corroborating
+  vote. Any one of the remaining three explicitly confirming the mismatch
+  satisfies the QGuard-team dissolution rule. The original report alone is
+  insufficient; repeated submissions by that reporter are not corroboration.
+  Two other teammates denying the mismatch do not override a confirmation.
+- **Meaning of confirmation:** agreement that the reported account/rank differs
+  from the declaration, not agreement that the declaration is correct. Name the
+  player and make that distinction explicit in the prompt and response labels.
+- **Reason and tradeoff:** the owner prioritizes stopping a team whose declared
+  matchmaking integrity is disputed over majority agreement. This is not proof
+  the subject lied; two distinct players can still make an incorrect or
+  coordinated allegation. No new account punishment or scoring change follows.
+- **Unchanged:** required prompt/responses under `DEC-056`, QGuard-only
+  dissolution with an explanation and voluntary requeue under `DEC-055`,
+  truthful rank provenance, separate no-show/feedback rules and held live tests.
+- **Still open:** unknown/unobservable answers, nonresponse/timeouts, response
+  collection/closure timing and other recovery details. The one-of-three
+  threshold is settled; these remaining details cannot turn it into majority
+  or unanimous agreement. Later implementation still needs its full contract.
+- **Affected records:** current state, `OQ-010`, identity/rank and session specs,
+  and supersession pointers in `DEC-055`/`DEC-056`.
+- **Supersedes:** the open voter/tally choices under `DEC-055`/`DEC-056`; replaces
+  the agent's unapproved two-of-three proposal in `OQ-010`. The owner did not
+  approve that majority proposal.
+- **Superseded by:** none
+
+### Voting Rule Documentation Checkpoint
+
+Baseline: clean `new-development` at `abc4190`. Route: product planning,
+decision safety, privacy/data, owner review, UI requirement clarification,
+reconciliation and deferral under the previously read unchanged procedures.
+Scope: record the two owner annotations and reconcile five project documents;
+application and portable workflow files remain untouched. Complete scoped diff
+reviewed; all 77 relative links, 27 anchors and 57 unique decision headings in
+the changed records passed checks, as did `git diff --check`. One additive
+local commit records the unit. Recovery rules remain owner questions;
+no implementation, runtime/rendered tests, live-provider operations or push.

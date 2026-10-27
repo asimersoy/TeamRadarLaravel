@@ -85,7 +85,7 @@ feature implementation. Revisit data inventory when any real adapter is added.
 
 ## Subsequent Owner Direction — Queue Confirmation And Lobby Check
 
-**Authority/status:** `DEC-055`, 2026-10-23, refined by `DEC-056`, 2026-10-27;
+**Authority/status:** `DEC-055`, 2026-10-23, refined by `DEC-056`/`DEC-057`, 2026-10-27;
 behavior direction approved, detailed slice not implementation-ready. Current
 provider and test gates apply.
 
@@ -110,20 +110,27 @@ provider and test gates apply.
   check. A denial is a response, not failure to obey; do not force agreement or
   treat dismissal/silence as confirmation. This names the subject of the report,
   not its author, and cannot stop activity in the external game client.
-- **Next owner rules:** eligible respondents and the number of confirmations
-  needed for dissolution. Do not borrow the no-show or honor-report quorum.
-  Unknown/unobservable answers, nonresponse/timeouts, disputes and correction
-  behavior still need specification; mandatory response must not be mistaken for
-  a settled deadlock/recovery policy. What ranks/accounts peers can actually
-  inspect in the game remains a live-evidence dependency. The candidate voting
-  rule is recorded as a proposal in `OQ-010`, not selected here.
+- Under `DEC-057`, exclude the reporter and reported player from corroborating
+  votes. Any one of the other three confirming that the declaration is wrong
+  satisfies the dissolution rule, even if both other teammates say it is
+  correct. This is one corroborator in addition to the original reporter, not
+  a majority vote. No eligible corroboration means this threshold is not met;
+  that alone does not settle timeout or resumption behavior. Prompt labels must
+  distinguish confirming a mismatch from confirming the declared rank itself.
+- **Next owner rules:** unknown/unobservable answers, nonresponse/timeouts,
+  response collection/closure timing and correction/recovery behavior. Do not
+  change the settled threshold or borrow the no-show/honor-report quorum.
+  Mandatory response is not a settled deadlock policy. What ranks/accounts
+  peers can actually inspect remains a live-evidence dependency. See `OQ-010`.
 - **Implementation impact to specify:** account/rank source labels and
   snapshots, queued-edit cancellation, pre-play session transitions, atomic slot
   release, member notification/access, requeue, and feedback eligibility for a
   discrepancy-disbanded team. Existing post-session discrepancy evidence remains;
   no new automatic score or feedback-invalidating consequence is approved.
 - **Required evidence:** tests for refresh/confirmation/correction, unavailable
-  or stale data, the eventual report threshold, unauthorized/duplicate reports,
+  or stale data, the one-of-three rule, unauthorized/duplicate reports,
+  exclusion of reporter/subject votes, a lone report not reaching the threshold,
+  and one corroboration causing dissolution despite two opposing answers;
   mandatory prompt/confirm/deny behavior, no progression bypass by dismissal,
   no accidental agreement from silence, races against session end/requeue and
   correct user explanations. Rendered checks must cover readable target/rank
