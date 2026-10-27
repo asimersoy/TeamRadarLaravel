@@ -1,5 +1,16 @@
 # QGuard Current State
 
+## Gankster Detail Study — 2026-10-27
+
+`DEC-059` authorizes a [dedicated Gankster study](research/competitors/gankster/README.md)
+for UI and workflow details. The owner navigates/interacts until explicitly
+delegating exploration; the agent only observes the owner's current page.
+The [study procedure](operations/competitor-study.md) keeps that operating rule
+separate from research findings. The first observed state is appearance/profile
+onboarding, step 1 of 3, over the VALORANT ESP LFG page. No agent interaction
+or onboarding completion occurred. Ideas remain candidates; `DEC-055`'s rank
+flow, other product decisions and the held game/Discord tests are unchanged.
+
 ## Side Chat Reconciliation — 2026-10-27
 
 The [party-code and Gankster findings](research/valorant-party-codes-and-gankster.md)

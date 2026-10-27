@@ -55,6 +55,10 @@ action into a single claimed capability.
 
 ## Gankster Evidence and Limits
 
+**Subsequent owner-led study:** [current screen observations and design comparisons](competitors/gankster/README.md)
+now live in a dedicated folder under `DEC-059`. This report retains the earlier
+published-source findings and side-chat reconciliation; it is not a live UI log.
+
 | Topic | Verified documentary evidence | Implication for QGuard |
 | --- | --- | --- |
 | Products | Its [homepage](https://gankster.gg/) separates Duos, LFG Communities for five-stacks/fills, and Competitive for teams/scrims | Relevant competitor scope; not a requirement to copy those products |

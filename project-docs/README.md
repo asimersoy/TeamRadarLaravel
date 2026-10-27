@@ -163,6 +163,7 @@ Start with:
 
 ## Current Research
 
+- [Gankster product detail study](research/competitors/gankster/README.md) — owner-led site walkthrough, observed details and QGuard comparisons under `DEC-059`
 - [VALORANT party codes and Gankster findings](research/valorant-party-codes-and-gankster.md) — October 27 side-chat reconciliation; native-code evidence, competitor hypotheses and proposed validation, without a new integration decision
 - [VALORANT client API inventory and UI release status](research/valorant-client-api-and-ui-status.md) — October 23 private-client documentation review; no integration approval or live-test activation
 - [Game API feasibility brief](research/game-api-feasibility.md)
@@ -179,6 +180,7 @@ technical specification, implementation plan, or code change.
 
 ## Current Operations
 
+- [Competitor study procedure](operations/competitor-study.md) — observation-only browser boundary and evidence handling for the Gankster study
 - [Workflow governance](operations/workflow-governance.md)
 - [Workspace and repository layout](operations/workspace-layout.md)
 - [Completed workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)

@@ -2381,3 +2381,35 @@ headings and `git diff --check` passed. One additive local commit records the
 unit. No runtime/rendered/provider tests, live-test resumption, provider
 operation, push or deployment occurred. Rank visibility and timeout/recovery
 handling remain unresolved dependencies, not reasons to restore the rejected option.
+
+## DEC-059 - Study Gankster Details with Owner Controlled Navigation
+
+- **Date:** 2026-10-27
+- **Status:** approved study scope and interaction boundary; no feature adoption
+- **Decision owner:** project owner
+- **Evidence:** owner requests a dedicated folder and files documenting how
+  Gankster handles small UI/workflow details, such as rank refresh, to inform
+  QGuard; owner explicitly reserves navigation and interaction until delegating
+  independent exploration. Start from the logged-in page already open.
+- **Decision:** study Gankster progressively as a product reference. Record
+  observable behavior, documented systems, implementation uncertainties and
+  possible QGuard adaptations in distinct categories. Do not presume shared
+  API endpoints or a fully solved edge case merely because the products overlap.
+- **Interaction boundary:** agent may inspect the owner's current page and
+  rendered state. Owner performs navigation and interaction. Independent site
+  exploration requires a later explicit instruction; this study does not grant
+  permission to submit forms, join groups, send messages or change the account.
+- **Record separation:** research belongs in
+  [the Gankster folder](../research/competitors/gankster/README.md); its
+  [project-specific procedure](../operations/competitor-study.md) belongs under
+  operations. Reusable workflow rules remain untouched.
+- **Product boundary:** adopting any discovered detail uses existing approval
+  and specification rules. The automatic/manual rank-refresh example is a
+  comparison topic, not supersession of `DEC-055`. No change to API preference,
+  joining method, Discord/voice scope, data collection or implementation follows.
+- **Unchanged:** held game/Discord tests and controlled-operation gates. The
+  study is separate from proof of real game-entry behavior or provider approval.
+- **Affected records:** study index/observations/comparison, operations,
+  project index/current state and earlier Gankster research pointer
+- **Supersedes:** none
+- **Superseded by:** none
