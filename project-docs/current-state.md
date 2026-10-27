@@ -1,5 +1,15 @@
 # QGuard Current State
 
+## Side Chat Reconciliation — 2026-10-27
+
+The [party-code and Gankster findings](research/valorant-party-codes-and-gankster.md)
+add official native Party Invite Codes as a candidate for `DEC-054`'s structured
+human-host handoff. Non-friend ordinary-party behavior remains untested. The
+code-first check is a proposal; no joining method, API integration or live-test
+resumption is newly approved. Gankster's rank-refresh mechanism remains an
+inference. The side chat's claim that our discrepancy threshold is unresolved
+is stale; `DEC-057`/`DEC-058` below control. No application behavior changed.
+
 ## Lobby Discrepancy Confirmation — 2026-10-27
 
 `DEC-056` requires a popup/alert naming the reported teammate and the disputed

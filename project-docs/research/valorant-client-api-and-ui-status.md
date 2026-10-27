@@ -2,6 +2,8 @@
 
 - **Record type:** dated research findings, not an integration specification
 - **Checked:** 2026-10-23
+- **Focused addition:** native party-code evidence reconciled 2026-10-27; the
+  API inventory and UI release checks retain their original dates
 - **Research owner:** primary Codex agent; product decisions remain with the owner
 - **Authority:** owner's request to investigate the local VALORANT client API and the announced UI change
 - **Status:** documentation review complete; runtime behavior and QGuard permission remain unverified
@@ -117,6 +119,13 @@ Activities/party endpoints. Riot
 [documents the copy/share feature][riot-link], but the non-friend recipient,
 Discord-linking and region prerequisites still require the held live tests.
 Sharing through QGuard does not prove Discord account linking is unnecessary.
+
+**Native-code addition, 2026-10-27:** Riot separately documents a player-facing
+Party Invite Code feature. The [party-code and Gankster follow-up](valorant-party-codes-and-gankster.md)
+records its official source and a proposed manual relay check. This supplies
+a documented code candidate for `DEC-054`; it does not promote the private
+code endpoints below into developer-key operations or prove today's non-friend
+acceptance. A native code and a Discord-linked URL remain separate artifacts.
 
 **Planning consequence:** use official developer access for supported identity
 and data needs; keep game entry as a separate, replaceable user-mediated flow.

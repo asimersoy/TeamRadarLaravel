@@ -13,6 +13,12 @@
 
 ## Executive Finding
 
+**Correction, 2026-10-27:** Riot's official native Party Invite Codes were
+missed by the original review. The [party-code follow-up](valorant-party-codes-and-gankster.md#native-party-invite-codes)
+supersedes the matrix's earlier absence finding. Exact current non-friend
+ordinary-party behavior is still untested; the dated link comparison below
+does not establish that Discord is the only available route.
+
 This report's comparative conclusions are scoped to Valorant and Apex. A later
 [Counter-Strike 2 follow-up](counter-strike-2-party-entry-feasibility.md) found
 a credible non-friend Looking to Play route and reopened the owner comparison;
@@ -62,7 +68,7 @@ assisted flow.
 | Owner preference | Valorant | Apex Legends | Current fit |
 |---|---|---|---|
 | Official Discord/server-based direct join or shareable ordinary-lobby link without first adding an in-game friend | `supported-with-conditions`: official PC integration lets a host copy a lobby link into a Discord server, DM, or elsewhere; exact non-friend recipient prerequisites remain unverified | `not found`: Discord documents the generic mechanism, but no Apex-specific first-party support was found | Valorant is the only evidenced candidate for this tier among the two games assessed in this report |
-| Other official shareable code/link for an ordinary party | The Riot/Discord lobby link is the evidenced mechanism; no separate public party code was found | `not found`: the documented code is for Private Match, not an ordinary public/ranked party | No separate mechanism established |
+| Other official shareable code/link for an ordinary party | Corrected 2026-10-27: official native Party Invite Codes documented; current ordinary-party/non-friend acceptance untested; see the [follow-up](valorant-party-codes-and-gankster.md#native-party-invite-codes) | `not found`: the documented code is for Private Match, not an ordinary public/ranked party | Separate Valorant candidate identified; not an approved dependency |
 | Add friend, then invite and accept | `supported`: normal manual recovery path; direct Discord friend-list invitations additionally require formal Discord friendship and linked accounts | `supported`: EA documents find friend, accept request, invite, and accept | Functional last resort, with the owner-identified adoption friction |
 | QGuard programmatically creates/joins the ordinary party | `undocumented/unverified`: no public party operation is listed | `undocumented/unverified`: LiveAPI lobby requests are for Custom Match | Not an approved dependency |
 

@@ -163,6 +163,7 @@ Start with:
 
 ## Current Research
 
+- [VALORANT party codes and Gankster findings](research/valorant-party-codes-and-gankster.md) — October 27 side-chat reconciliation; native-code evidence, competitor hypotheses and proposed validation, without a new integration decision
 - [VALORANT client API inventory and UI release status](research/valorant-client-api-and-ui-status.md) — October 23 private-client documentation review; no integration approval or live-test activation
 - [Game API feasibility brief](research/game-api-feasibility.md)
 - [Game API feasibility findings](research/game-api-feasibility-findings.md)

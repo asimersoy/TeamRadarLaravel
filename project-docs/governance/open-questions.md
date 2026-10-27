@@ -433,6 +433,13 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **Native party-code addition, 2026-10-27:** Riot's patch 7.12 documents a
+  player-generated code entered in-game. The [side-chat reconciliation](../research/valorant-party-codes-and-gankster.md)
+  separates this from Discord links and private APIs, and proposes an ordinary-
+  party/non-friend check. Current acceptance, Discord independence, mode
+  eligibility and lifecycle remain untested. No test resumption, code-route
+  selection or implementation approval is inferred. Gankster's possible use
+  of match-associated rank remains a hypothesis, not an extra API capability.
 - **Latest-match rank finding, 2026-10-23:** the official matchlist/detail APIs
   can supply the linked player's `competitiveTier` from the latest available
   competitive match. This is not guaranteed current/post-match rank or RR;
