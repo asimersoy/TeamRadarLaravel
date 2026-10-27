@@ -1,5 +1,9 @@
 # Design Verification — 2026-10-27
 
+**Historical baseline:** the later [Mobbin pass verification](mobbin-pass/verification.md)
+supersedes current-artifact coverage and supplies the favicon/brand exports.
+The results below describe the earlier revision.
+
 **Scope:** local design artifact only. These results do not certify the existing
 application, a deployed system, real provider behavior or production security.
 

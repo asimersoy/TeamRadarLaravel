@@ -1,6 +1,7 @@
 # Visual Iterations And Review Rationale
 
-**Status:** three agent-prepared directions, no owner visual approval. All use
+**Status:** owner retained the brand and accepted the earlier pages/flows as a
+baseline (DEC-069); the fourth refinement awaits review. Current modes all use
 the same page templates and fictional records. Switch using the review strip.
 
 ## 01 — Monochrome Structure
@@ -26,7 +27,7 @@ evidence. Retained as an alternative, not discarded or owner-rejected.
 
 Recommended visual draft: deep green navigation, off-white workspace and white
 task surfaces, restrained green primary actions and lime navigation highlight.
-Typography and spacing emphasize the current task. The Q mark is original CSS;
+Typography and spacing emphasize the current task. At this stage the Q mark was original CSS;
 no competitor logo, imagery, personal profile data or downloaded asset is used.
 System fonts avoid a remote font dependency.
 
@@ -48,6 +49,27 @@ stacks below primary tasks, and numeric choices use two rows of five.
 - Read-only evidence and prospective policy text do not imply live authorization.
 
 Colors, wording, card density and per-card submission are reviewable proposals.
-Three modes represent design iterations, not a commitment to ship a theme picker.
+The retained modes represent design iterations, not a commitment to ship a theme picker.
 Desktop-first is the owner direction; tested viewport sizes are evidence samples,
 not a promise that every browser/device has passed accessibility certification.
+
+
+## 04 — Mobbin Refinement
+
+[References and page coverage](mobbin-pass/README.md) connect each bounded
+change to observed screens, controls or flow previews. The owner authorized
+this pass after selecting the brand. Fixed outlined SVGs now replace the CSS
+mark/live lettering, including deliberate wide and compact tagline versions.
+
+The green/off-white palette and page behaviors are retained. In-app headings
+are smaller; welcome uses a centered introduction above its illustrative team;
+forms keep a stable width; session history uses responsive rows; optional
+feedback sits together below the required numeric scale; identity and account
+sections have explicit groups. Code/Copy uses one bounded control unit.
+
+[Before/after gallery](mobbin-pass/pages.html), [brand sheet](brand/brand-sheet.html)
+and [verification](mobbin-pass/verification.md) show the result. No matching,
+honor, privacy or provider policy was adopted from a reference. Wireframe and
+Concept are retained palette modes on the updated structure; earlier images
+and Git preserve their original layout. The mode selector is a review tool,
+not an approved product theme preference.

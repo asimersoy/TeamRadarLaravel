@@ -1,0 +1,525 @@
+{
+  "date": "2026-10-27",
+  "platform": "web",
+  "metadata": {
+    "output_destination": "code",
+    "output_tool": "Codex",
+    "task_intent": "Improve QGuard's existing desktop web prototype using real interface references while preserving its brand and user flows."
+  },
+  "searches": [
+    {
+      "search": "matchmaking",
+      "query": "gaming matchmaking screen",
+      "screens": [
+        {
+          "id": "4cfcf202-e044-4d91-a9dd-150d36df783b",
+          "mobbin_url": "https://mobbin.com/screens/4cfcf202-e044-4d91-a9dd-150d36df783b",
+          "app_name": "Unity",
+          "platform": "web"
+        },
+        {
+          "id": "55a83ab0-a575-4d81-a04f-73c6cacdad75",
+          "mobbin_url": "https://mobbin.com/screens/55a83ab0-a575-4d81-a04f-73c6cacdad75",
+          "app_name": "TikTok",
+          "platform": "web"
+        },
+        {
+          "id": "1316428e-9eed-479e-81d2-c9e880a5c2f5",
+          "mobbin_url": "https://mobbin.com/screens/1316428e-9eed-479e-81d2-c9e880a5c2f5",
+          "app_name": "Duolingo",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "lobby",
+      "query": "gaming party lobby",
+      "screens": [
+        {
+          "id": "2e8706cc-05c8-494d-bac8-cdaacdd00fa0",
+          "mobbin_url": "https://mobbin.com/screens/2e8706cc-05c8-494d-bac8-cdaacdd00fa0",
+          "app_name": "Base44",
+          "platform": "web"
+        },
+        {
+          "id": "73c35adc-ad4a-408d-8d7f-090b0b158b4d",
+          "mobbin_url": "https://mobbin.com/screens/73c35adc-ad4a-408d-8d7f-090b0b158b4d",
+          "app_name": "Microsoft Copilot",
+          "platform": "web"
+        },
+        {
+          "id": "905735fa-f459-4150-a460-b960ae753f71",
+          "mobbin_url": "https://mobbin.com/screens/905735fa-f459-4150-a460-b960ae753f71",
+          "app_name": "Telegram",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "matchmaking2",
+      "query": "gaming matchmaking screen",
+      "screens": [
+        {
+          "id": "8ca0a25a-d84e-48a4-986d-64df8a66c676",
+          "mobbin_url": "https://mobbin.com/screens/8ca0a25a-d84e-48a4-986d-64df8a66c676",
+          "app_name": "Unity",
+          "platform": "web"
+        },
+        {
+          "id": "01f06d54-c036-40c0-9f75-a4a8dfc93ee3",
+          "mobbin_url": "https://mobbin.com/screens/01f06d54-c036-40c0-9f75-a4a8dfc93ee3",
+          "app_name": "TikTok",
+          "platform": "web"
+        },
+        {
+          "id": "1e78e8c6-dab1-4f1d-bec6-46f1798fb9b7",
+          "mobbin_url": "https://mobbin.com/screens/1e78e8c6-dab1-4f1d-bec6-46f1798fb9b7",
+          "app_name": "YouTube",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "friends",
+      "query": "Discord friends screen",
+      "screens": [
+        {
+          "id": "e001c6d2-6dd4-41c9-bc93-ed814b7a1eff",
+          "mobbin_url": "https://mobbin.com/screens/e001c6d2-6dd4-41c9-bc93-ed814b7a1eff",
+          "app_name": "Discord",
+          "platform": "web"
+        },
+        {
+          "id": "dfcc7846-250e-44fc-9558-81dd755e6fd4",
+          "mobbin_url": "https://mobbin.com/screens/dfcc7846-250e-44fc-9558-81dd755e6fd4",
+          "app_name": "Discord",
+          "platform": "web"
+        },
+        {
+          "id": "d90f0321-2de7-4f40-aa08-d810704bb630",
+          "mobbin_url": "https://mobbin.com/screens/d90f0321-2de7-4f40-aa08-d810704bb630",
+          "app_name": "Discord",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "waiting",
+      "query": "Zoom meeting waiting room",
+      "screens": [
+        {
+          "id": "ff70795d-3581-4114-aef4-e0b1f27cf62a",
+          "mobbin_url": "https://mobbin.com/screens/ff70795d-3581-4114-aef4-e0b1f27cf62a",
+          "app_name": "Zoom",
+          "platform": "web"
+        },
+        {
+          "id": "fca5de69-8e58-4962-ac0b-46cc5686117b",
+          "mobbin_url": "https://mobbin.com/screens/fca5de69-8e58-4962-ac0b-46cc5686117b",
+          "app_name": "Zoom",
+          "platform": "web"
+        },
+        {
+          "id": "fc27e7c1-bbfb-4880-a5ae-59988d7ae30b",
+          "mobbin_url": "https://mobbin.com/screens/fc27e7c1-bbfb-4880-a5ae-59988d7ae30b",
+          "app_name": "Zoom",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "dashboard",
+      "query": "Zoom home dashboard",
+      "screens": [
+        {
+          "id": "fb37c306-d445-4e35-8f1b-5be07c10fcaa",
+          "mobbin_url": "https://mobbin.com/screens/fb37c306-d445-4e35-8f1b-5be07c10fcaa",
+          "app_name": "Zoom",
+          "platform": "web"
+        },
+        {
+          "id": "f8875339-3a01-42f6-ae0c-936407ba6c9b",
+          "mobbin_url": "https://mobbin.com/screens/f8875339-3a01-42f6-ae0c-936407ba6c9b",
+          "app_name": "Zoom",
+          "platform": "web"
+        },
+        {
+          "id": "f6adcc28-ff41-434a-8059-aaea155bab6e",
+          "mobbin_url": "https://mobbin.com/screens/f6adcc28-ff41-434a-8059-aaea155bab6e",
+          "app_name": "Zoom",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "history",
+      "query": "session history list with completion status",
+      "screens": [
+        {
+          "id": "bd7bd721-dbb2-4624-b1e9-3195847c84f4",
+          "mobbin_url": "https://mobbin.com/screens/bd7bd721-dbb2-4624-b1e9-3195847c84f4",
+          "app_name": "Perplexity",
+          "platform": "web"
+        },
+        {
+          "id": "a4a36ca5-12d7-4a97-afec-e832fbea749f",
+          "mobbin_url": "https://mobbin.com/screens/a4a36ca5-12d7-4a97-afec-e832fbea749f",
+          "app_name": "Lyssna",
+          "platform": "web"
+        },
+        {
+          "id": "07096715-f6a3-4493-b5ac-8ac6bda166e1",
+          "mobbin_url": "https://mobbin.com/screens/07096715-f6a3-4493-b5ac-8ac6bda166e1",
+          "app_name": "Charma",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "feedback",
+      "query": "feedback form with numeric rating scale",
+      "screens": [
+        {
+          "id": "e0354e6c-e803-4c81-8e46-55a8d359e851",
+          "mobbin_url": "https://mobbin.com/screens/e0354e6c-e803-4c81-8e46-55a8d359e851",
+          "app_name": "Care.com",
+          "platform": "web"
+        },
+        {
+          "id": "ef0ce2d8-5a32-402b-8da6-0b48cc1e4b82",
+          "mobbin_url": "https://mobbin.com/screens/ef0ce2d8-5a32-402b-8da6-0b48cc1e4b82",
+          "app_name": "Hotjar",
+          "platform": "web"
+        },
+        {
+          "id": "d11fb493-8a95-4988-8c76-d1b061f8e9a2",
+          "mobbin_url": "https://mobbin.com/screens/d11fb493-8a95-4988-8c76-d1b061f8e9a2",
+          "app_name": "Expedia",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "onboarding",
+      "query": "Discord onboarding",
+      "page": 1,
+      "has_next_page": true,
+      "flows": [
+        {
+          "id": "d956e80f-8b3d-4c96-a59a-bf4062e27410",
+          "name": "Adding a new task",
+          "actions": [
+            "Adding & Creating"
+          ],
+          "mobbin_url": "https://mobbin.com/flows/d956e80f-8b3d-4c96-a59a-bf4062e27410",
+          "app_name": "Discord",
+          "platform": "web",
+          "screen_count": 7,
+          "screens": [
+            {
+              "screen_id": "9564c55d-e5e6-4f0c-bfbe-3f0d4c25c17d",
+              "position": 1
+            },
+            {
+              "screen_id": "77e2fa70-1b94-4006-9f4f-430330a3656f",
+              "position": 2
+            },
+            {
+              "screen_id": "db51a58c-2057-4ccc-9290-7c5d9dd02e33",
+              "position": 3
+            },
+            {
+              "screen_id": "87d151a5-0f5a-428a-9e81-005a2dd72755",
+              "position": 4
+            },
+            {
+              "screen_id": "aca73e81-074a-437b-a2be-81161cf2a229",
+              "position": 5
+            },
+            {
+              "screen_id": "a5b30951-b780-4b9c-b897-43d60bb512d0",
+              "position": 6
+            },
+            {
+              "screen_id": "fd64a159-9907-44b7-bcae-1fc8b3edb392",
+              "position": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "search": "signup",
+      "query": "creating an account with email verification",
+      "page": 1,
+      "has_next_page": true,
+      "flows": [
+        {
+          "id": "a9262dda-0fb7-4350-ac55-a9b8b1a5b29c",
+          "name": "Onboarding",
+          "actions": [
+            "Creating Account",
+            "Onboarding",
+            "Verifying"
+          ],
+          "mobbin_url": "https://mobbin.com/flows/a9262dda-0fb7-4350-ac55-a9b8b1a5b29c",
+          "app_name": "Jira",
+          "platform": "web",
+          "screen_count": 10,
+          "screens": [
+            {
+              "screen_id": "c0159c8e-dba3-4607-b32d-11d6cdb83a3c",
+              "position": 1
+            },
+            {
+              "screen_id": "e2d2bf98-cd9d-433a-8ce2-6018d122e5ef",
+              "position": 2
+            },
+            {
+              "screen_id": "47547f82-1cea-43cf-87f9-7fbf714df905",
+              "position": 3
+            },
+            {
+              "screen_id": "c406d853-7b88-4e60-98e0-3b5474af04ab",
+              "position": 4
+            },
+            {
+              "screen_id": "fb4d4d6b-a80c-4c8a-8af8-7b5f6e0ec9b9",
+              "position": 5
+            },
+            {
+              "screen_id": "2b237a14-d128-4d19-8ff9-6b1d270820cc",
+              "position": 6
+            },
+            {
+              "screen_id": "2c586313-8605-4bc2-a44d-66967cf6e476",
+              "position": 7
+            },
+            {
+              "screen_id": "155746b6-2e23-4097-a015-0f0485eace48",
+              "position": 8
+            },
+            {
+              "screen_id": "2a4972dc-a9a0-40a1-bf81-7bbfe29d896b",
+              "position": 9
+            },
+            {
+              "screen_id": "e4c04743-5bbf-4df0-87a1-77b9170ded34",
+              "position": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "search": "recovery",
+      "query": "password reset",
+      "page": 1,
+      "has_next_page": true,
+      "flows": [
+        {
+          "id": "5199e8ad-f2ba-4be7-8de8-f31b848a4baf",
+          "name": "Resetting password",
+          "actions": [
+            "Resetting Password"
+          ],
+          "mobbin_url": "https://mobbin.com/flows/5199e8ad-f2ba-4be7-8de8-f31b848a4baf",
+          "app_name": "Paramount+",
+          "platform": "web",
+          "screen_count": 7,
+          "screens": [
+            {
+              "screen_id": "732df0ae-2ada-462c-bf91-4499de252f58",
+              "position": 1
+            },
+            {
+              "screen_id": "edf594b7-45fa-4617-b96b-bc7b410d44af",
+              "position": 2
+            },
+            {
+              "screen_id": "b0574505-3e07-4f86-95aa-98cfcd87e8c8",
+              "position": 3
+            },
+            {
+              "screen_id": "300c9807-1070-4a3f-ba16-2b8080438188",
+              "position": 4
+            },
+            {
+              "screen_id": "95785522-4c03-4a20-aa97-4e0184b346f4",
+              "position": 5
+            },
+            {
+              "screen_id": "f18e39e4-d4df-40fe-9620-227c84106696",
+              "position": 6
+            },
+            {
+              "screen_id": "7d479455-0ef2-40b0-9de6-986507327f7c",
+              "position": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "search": "profile",
+      "query": "Discord profile screen",
+      "screens": [
+        {
+          "id": "fbb287dc-2138-4a2d-a1e6-9c6cdd77a33a",
+          "mobbin_url": "https://mobbin.com/screens/fbb287dc-2138-4a2d-a1e6-9c6cdd77a33a",
+          "app_name": "Discord",
+          "platform": "web"
+        },
+        {
+          "id": "fa793f8d-e83b-4e45-84c9-cfd78cc4bbe7",
+          "mobbin_url": "https://mobbin.com/screens/fa793f8d-e83b-4e45-84c9-cfd78cc4bbe7",
+          "app_name": "Discord",
+          "platform": "web"
+        },
+        {
+          "id": "f4f7eabb-249c-47a9-9b27-24f8b101c4bb",
+          "mobbin_url": "https://mobbin.com/screens/f4f7eabb-249c-47a9-9b27-24f8b101c4bb",
+          "app_name": "Discord",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "settings",
+      "query": "account settings with connected accounts",
+      "screens": [
+        {
+          "id": "502fe34b-4f83-442f-96fb-aded9dbd621a",
+          "mobbin_url": "https://mobbin.com/screens/502fe34b-4f83-442f-96fb-aded9dbd621a",
+          "app_name": "folk",
+          "platform": "web"
+        },
+        {
+          "id": "c3a69804-ecc9-4057-929e-395a160c996c",
+          "mobbin_url": "https://mobbin.com/screens/c3a69804-ecc9-4057-929e-395a160c996c",
+          "app_name": "NordVPN",
+          "platform": "web"
+        },
+        {
+          "id": "c8c09a99-e3fc-4b74-b1fe-995a8615e88f",
+          "mobbin_url": "https://mobbin.com/screens/c8c09a99-e3fc-4b74-b1fe-995a8615e88f",
+          "app_name": "Eventbrite",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "hero",
+      "query": "community platform hero section",
+      "page": 1,
+      "has_next_page": true,
+      "sections": [
+        {
+          "id": "ce25bf3d-4500-4bb1-a8c1-3b25595933ba",
+          "mobbin_url": "https://mobbin.com/sites/sections/ce25bf3d-4500-4bb1-a8c1-3b25595933ba",
+          "site_name": "Circle"
+        },
+        {
+          "id": "7ff428a7-f217-461f-a108-43b9afa27082",
+          "mobbin_url": "https://mobbin.com/sites/sections/7ff428a7-f217-461f-a108-43b9afa27082",
+          "site_name": "HoneyBook"
+        },
+        {
+          "id": "8f659c97-968a-4466-bd2b-c81e17f68f4b",
+          "mobbin_url": "https://mobbin.com/sites/sections/8f659c97-968a-4466-bd2b-c81e17f68f4b",
+          "site_name": "monday.com"
+        }
+      ]
+    },
+    {
+      "search": "party_setup",
+      "query": "meeting setup with participant list",
+      "screens": [
+        {
+          "id": "cb9e717e-079f-4b51-9bd8-cdcf6fd1f739",
+          "mobbin_url": "https://mobbin.com/screens/cb9e717e-079f-4b51-9bd8-cdcf6fd1f739",
+          "app_name": "Zoom",
+          "platform": "web"
+        },
+        {
+          "id": "2ad0c4b6-9d76-4794-8794-283dd76dc31d",
+          "mobbin_url": "https://mobbin.com/screens/2ad0c4b6-9d76-4794-8794-283dd76dc31d",
+          "app_name": "Dialpad",
+          "platform": "web"
+        },
+        {
+          "id": "ef97a1b4-ad6e-49ae-8d9b-4647a27bcc7d",
+          "mobbin_url": "https://mobbin.com/screens/ef97a1b4-ad6e-49ae-8d9b-4647a27bcc7d",
+          "app_name": "SavvyCal",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "admin",
+      "query": "Linear issue detail",
+      "screens": [
+        {
+          "id": "ffa2e456-85c7-4005-b361-de79dc6b6dc7",
+          "mobbin_url": "https://mobbin.com/screens/ffa2e456-85c7-4005-b361-de79dc6b6dc7",
+          "app_name": "Linear",
+          "platform": "web"
+        },
+        {
+          "id": "fd1b4d88-f021-49a3-98af-4cd3a87e1d29",
+          "mobbin_url": "https://mobbin.com/screens/fd1b4d88-f021-49a3-98af-4cd3a87e1d29",
+          "app_name": "Linear",
+          "platform": "web"
+        },
+        {
+          "id": "f00cc4fb-4083-43fc-a0fb-703a6c4ef771",
+          "mobbin_url": "https://mobbin.com/screens/f00cc4fb-4083-43fc-a0fb-703a6c4ef771",
+          "app_name": "Linear",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "invite",
+      "query": "invitation dialog with copy link button",
+      "screens": [
+        {
+          "id": "d504fcc0-e338-499e-881c-209a22feb2b0",
+          "mobbin_url": "https://mobbin.com/screens/d504fcc0-e338-499e-881c-209a22feb2b0",
+          "app_name": "Navan",
+          "platform": "web"
+        },
+        {
+          "id": "1c57f1f3-5e23-49b2-ad6a-c4cba92bd9c4",
+          "mobbin_url": "https://mobbin.com/screens/1c57f1f3-5e23-49b2-ad6a-c4cba92bd9c4",
+          "app_name": "Slite",
+          "platform": "web"
+        },
+        {
+          "id": "613720b6-9ff4-465a-9aa7-5a4e6c0b2f0e",
+          "mobbin_url": "https://mobbin.com/screens/613720b6-9ff4-465a-9aa7-5a4e6c0b2f0e",
+          "app_name": "ChatGPT",
+          "platform": "web"
+        }
+      ]
+    },
+    {
+      "search": "error",
+      "query": "error screen with retry button",
+      "screens": [
+        {
+          "id": "46945d84-1bbf-4bb5-8c41-efb07ce31baf",
+          "mobbin_url": "https://mobbin.com/screens/46945d84-1bbf-4bb5-8c41-efb07ce31baf",
+          "app_name": "Tines",
+          "platform": "web"
+        },
+        {
+          "id": "3bd32686-26bb-4d14-9fab-ccdec3c68149",
+          "mobbin_url": "https://mobbin.com/screens/3bd32686-26bb-4d14-9fab-ccdec3c68149",
+          "app_name": "Chronicle",
+          "platform": "web"
+        }
+      ]
+    }
+  ]
+}

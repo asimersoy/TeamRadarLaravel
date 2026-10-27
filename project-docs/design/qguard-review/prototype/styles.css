@@ -15,3 +15,163 @@ body[data-theme=refined] h1{font-weight:750;letter-spacing:-1.9px}body[data-them
 @media(max-width:700px){.roster-row:not(.roster-heading)>:nth-child(5){grid-column:2/5;justify-self:start}.roster-heading>:nth-child(5){display:none}.card-head{flex-wrap:wrap}.brand small{font-size:7px;letter-spacing:1px}.session-banner>a{display:inline-block;margin-top:14px}.public-nav .brand small{display:none}.public-nav .row{gap:10px}.public-nav .brand{font-size:21px}.party-code{flex-wrap:wrap}.summary-scale .pill{font-size:8px}.mini-member{flex-wrap:wrap}.rating-options{grid-template-columns:repeat(5,minmax(0,1fr))}.nav{max-width:100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media(max-width:700px){.nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}.nav a{justify-content:center;padding:9px 6px;font-size:10px}.roster-row{font-size:11px}.rating-options span{min-height:44px;display:grid;place-items:center}.descriptor input[type=range]{min-height:24px}}
+
+/* Iteration 04: bounded Mobbin moves. References and exclusions: ../mobbin-pass/README.md. */
+/* Fixed outlined artwork replaces the CSS/text lockup in every visual mode. */
+.brand { display:inline-flex; gap:0; flex-shrink:0; }
+.brand-image { display:block; max-width:100%; height:auto; }
+.brand-wide { width:222px; }
+.brand-compact { width:138px; }
+.sidebar .brand { align-self:flex-start; }
+
+/* M1: an in-app heading introduces a task; the welcome page retains display type. */
+.main-area { padding-top:24px; }
+.topline { margin-bottom:26px; }
+.app-shell .page-head { margin-bottom:24px; align-items:center; }
+.app-shell .page-head h1 { font-size:32px; line-height:1.15; letter-spacing:-1px; }
+.app-shell .page-head .eyebrow { margin-bottom:8px; }
+.app-shell .page-head p { margin-top:10px; font-size:14px; }
+.app-shell .card h2 { font-size:21px; }
+.app-shell .card-head { margin-bottom:20px; }
+.app-shell .card { box-shadow:none; }
+.nav-label { margin-top:32px; }
+
+/* M2: proposition, action, then illustrative product view. */
+.hero { display:flex; flex-direction:column; gap:40px; margin:64px auto 56px; }
+.hero>div:first-child { text-align:center; max-width:800px; }
+.hero h1 { font-size:64px; line-height:1.05; }
+.hero h1 { max-width:760px; }
+.hero p { margin:24px auto 0; max-width:570px; }
+.hero .button-row { justify-content:center; }
+.hero p.small { font-size:12px; margin-top:16px; }
+.hero-roster { width:min(100%,800px); transform:none; padding:24px 32px; }
+.hero-roster .roster-row { grid-template-columns:40px minmax(0,1fr) 100px 60px; }
+.hero-roster h2 { font-size:23px; }
+.public-shell>.grid-3 { max-width:1200px; margin:auto; }
+
+/* M3: consistent form width across entry, receipt, recovery and setup. */
+.auth-shell { grid-template-columns:minmax(320px,.85fr) minmax(0,1.35fr); }
+.auth-intro { padding:44px 48px; }
+.auth-intro h1 { font-size:42px; line-height:1.1; }
+.auth-content { padding:48px 40px; }
+.auth-form { max-width:420px; }
+.setup-steps { max-width:700px; }
+.page-setup form.card,.page-rank form.card,.page-report form { max-width:860px; }
+
+/* M4: compact party preparation while retaining the main action and explanations. */
+.queue-facts { gap:24px; padding:12px 0; }
+.queue-facts .split-stat { padding:0; border:0; }
+.queue-card>.divider { margin:20px 0; }
+.queue-card .slots { margin-top:16px!important; }
+.queue-card .card-head { margin-bottom:16px; }
+.page-dashboard .metric { font-size:36px; }
+.page-dashboard .stack>.card:nth-last-of-type(1) .divider { margin:16px 0; }
+.mini-member { gap:12px; }
+.page-friends .mini-member>div:nth-child(2) { flex:1; }
+.connections .mini-member { padding:12px 0; }
+
+/* M5: the same grouped value and Copy pattern for every recipient. */
+.party-code { background:var(--bg); border:1px solid var(--line); padding:16px; border-radius:var(--radius); }
+.party-code>div { min-width:0; }
+.party-code strong { display:block; font-size:24px; letter-spacing:2px; }
+.party-code .btn { flex-shrink:0; }
+.page-team .workspace { grid-template-columns:minmax(0,1fr) 290px; }
+
+/* M6: session rows carry their own date, context, lifecycle and feedback state. */
+.history-list { margin:0; padding:0; list-style:none; }
+.history-row { display:grid; grid-template-columns:125px minmax(160px,1fr) 110px 125px auto; gap:20px; align-items:center; padding:24px 0; border-top:1px solid var(--line); }
+.history-row strong { display:block; font-size:13px; }
+.history-row .session-date span,.history-row .session-context span { display:block; color:var(--muted); font-size:11px; margin-top:6px; }
+.session-state { display:grid; justify-items:start; gap:6px; }
+.session-state .metric-label { margin:0; font-size:9px; }
+.history-row>.btn { justify-self:end; }
+
+/* M7: required scale leads; optional descriptions remain visible and untouched. */
+.rating-options { max-width:560px; }
+.rating-fieldset>.range-labels { max-width:560px; }
+.rating-options span { min-height:44px; display:grid; place-items:center; padding:8px 0; }
+.optional-feedback { padding:18px; margin-top:24px; background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); }
+.optional-feedback h3 { font-size:14px; }
+.descriptor-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.descriptor-grid .descriptor { margin-top:0; }
+.descriptor-grid .row { font-size:12px; }
+.descriptor-grid .descriptor-status { font-size:10px; }
+.rating-card .card-head { padding-bottom:18px; border-bottom:1px solid var(--line); }
+.feedback-summary .metric { font-size:36px; }
+.page-session .session-banner { margin-bottom:24px; }
+
+/* M8: exact lookup and requests stay visible above/alongside the connection list. */
+.lookup-row { display:flex; align-items:flex-end; gap:12px; }
+.lookup-row .field { flex:1; margin:0; }
+.lookup-row>.btn { flex-shrink:0; }
+.friend-lookup .form-error { margin-bottom:0; }
+.page-friends .mini-member .btn { margin-left:auto; }
+.page-friends .mini-member .btn+.btn { margin-left:0; }
+
+/* M9: identity and observed summaries have separate groups, without cover imagery. */
+.profile-sheet .profile-identity { margin:-24px -24px 0; padding:24px; background:var(--soft); border-radius:var(--radius) var(--radius) 0 0; }
+.profile-sheet .profile-identity+.divider { margin-top:0; background:transparent; }
+.profile-sheet .summary-scale { padding:16px 0; margin:0; }
+
+/* M10: account navigation and provider status/actions use existing components. */
+.account-tabs { margin-top:-8px; margin-bottom:24px; }
+.account-tabs a { min-height:40px; display:flex; align-items:center; }
+.provider-row { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.provider-row p { margin-top:8px; }
+.connection-panel .button-row { border-top:1px solid var(--line); padding-top:20px; }
+.page-settings .workspace,.page-security .workspace { max-width:1100px; }
+
+/* M11/M12: evidence gets the main column; recovery says the message once. */
+.page-admin th,.page-admin td { padding-left:0; }
+.page-case .timeline { gap:24px; }
+.page-case .workspace>aside { position:sticky; top:60px; }
+.recovery-card { max-width:700px; margin:60px auto; padding:48px; text-align:center; }
+.recovery-card h1 { font-size:32px; line-height:1.2; letter-spacing:-1px; }
+.recovery-card p { margin:20px auto; max-width:500px; }
+.recovery-card .button-row { justify-content:center; }
+
+@media(max-width:1180px) {
+  .history-row { grid-template-columns:110px minmax(120px,1fr) 100px 115px; gap:16px; }
+  .history-row>.btn { grid-column:2/5; justify-self:start; }
+  .page-team .workspace { grid-template-columns:minmax(0,1fr); }
+  .auth-intro { padding:40px 30px; }
+}
+@media(max-width:950px) {
+  .descriptor-grid { grid-template-columns:1fr; gap:20px; }
+  .page-case .workspace>aside { position:static; }
+  .hero h1 { font-size:56px; }
+}
+@media(max-width:700px) {
+  .brand-wide { width:180px; }
+  .public-nav .brand-wide { width:150px; }
+  .brand-compact { width:120px; }
+  .sidebar { padding-top:18px; }
+  .sidebar .brand { display:inline-flex; }
+  .nav { margin-top:14px; }
+  .app-shell .page-head h1 { font-size:28px; }
+  .app-shell .page-head p { font-size:13px; }
+  .hero { margin:44px auto; gap:32px; }
+  .hero h1 { font-size:44px; letter-spacing:-1.8px; }
+  .hero p { font-size:15px; }
+  .hero-roster { padding:20px; }
+  .hero-roster .roster-row { grid-template-columns:30px minmax(0,1fr) 65px 40px; }
+  .auth-shell { display:block; }
+  .auth-intro { padding:24px; }
+  .auth-intro h1 { font-size:30px; }
+  .auth-content { padding:32px 24px; }
+  .queue-facts { grid-template-columns:1fr; gap:12px; }
+  .history-row { grid-template-columns:1fr 1fr; gap:16px; }
+  .history-row .session-context { grid-column:1/3; grid-row:2; }
+  .history-row .session-state { grid-row:3; }
+  .history-row>.btn { grid-column:2; grid-row:1; justify-self:end; }
+  .optional-feedback { padding:14px; }
+  .lookup-row { display:block; }
+  .lookup-row>.btn { margin-top:14px; width:100%; }
+  .profile-sheet .profile-identity { margin:-18px -18px 0; padding:18px; }
+  .provider-row { flex-wrap:wrap; }
+  .recovery-card { padding:28px 20px; margin:24px auto; }
+  .recovery-card h1 { font-size:28px; }
+}
+
+.review-actions select { max-width:166px; }
+@media(max-width:700px) { .review-actions select { max-width:145px; } }

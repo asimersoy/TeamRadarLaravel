@@ -96,3 +96,14 @@ Next action belongs to the owner: stack decision first, then the remaining
 review groups. Record precise dispositions, reconcile modules/design, prepare
 technical slice contracts and verification, and only then start approved work.
 Silence, elapsed time or acceptance of a screenshot is not implementation approval.
+
+
+## Subsequent Design Refinement — 2026-10-28
+
+The owner likes the previous pages/flows, retains the QGuard brand/tagline and
+requests Mobbin-guided improvements (`DEC-069`). Review the
+[updated prototype and references](../../design/qguard-review/mobbin-pass/README.md)
+and [brand assets](../../design/qguard-review/brand/README.md). These revisions
+supersede the earlier visual screenshots as the current design proposal.
+CRQ-011 records agent design choices. This visual instruction supplies no
+answer to the stack selection or consequential policy proposals above.

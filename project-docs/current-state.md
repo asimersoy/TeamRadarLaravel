@@ -1,5 +1,23 @@
 # QGuard Current State
 
+## Brand And Mobbin Design Review — 2026-10-28
+
+`DEC-069` retains the Q mark, QGuard wordmark and “Good company, good games.”
+and authorizes a Mobbin pass over the existing prototype. The owner liked the
+earlier pages/flows; this does not approve unresolved policies or a stack.
+[Fixed SVG/icon assets](design/qguard-review/brand/README.md),
+[revised HTML](design/qguard-review/qguard-review.html),
+[page comparisons](design/qguard-review/mobbin-pass/pages.html) and
+[references/moves](design/qguard-review/mobbin-pass/README.md) are ready for design
+review. Screens, controls, flow previews and a hero section were studied.
+No Mobbin limit/refusal occurred. The [actual checks](design/qguard-review/mobbin-pass/verification.md)
+cover responsive route states, selected interactions, brand images and packaging.
+
+The [task record](planning/mobbin-design-pass.md) records the coherent local
+commit boundary. Application/legacy/portable workflow remain unchanged. Stack
+choice and required policy dispositions remain at the existing owner checkpoint;
+no new application implementation, live test, push or deployment is authorized.
+
 ## Specification, Design And Stack Checkpoint — 2026-10-27
 
 The authorized pass has reached the [owner checkpoint](planning/review-version/README.md).
@@ -12,7 +30,8 @@ and protected portable workflow package are unchanged.
 
 **Stop here before new application work.** The [stack recommendation](planning/review-version/stack-review.md)
 is to retain Laravel/Livewire/PostgreSQL/Docker; the owner has not selected it at
-this new checkpoint. The visual direction and packet remain drafts. Review
+this new checkpoint. The packet remains draft; the owner subsequently retained the brand/accepted
+the earlier visual baseline and authorized DEC-069 refinement above. Review
 P-03 descriptor aggregation/privacy, P-04 excluded-author obligations and P-05
 unresolved discrepancy recovery before their affected slices. No unanswered
 policy question was auto-approved. The checkpoint visibly recaps the existing

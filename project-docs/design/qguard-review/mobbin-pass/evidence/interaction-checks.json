@@ -1,0 +1,82 @@
+[
+  {
+    "test": "Rank confirmation required",
+    "pass": true
+  },
+  {
+    "test": "Empty host code rejected",
+    "pass": true
+  },
+  {
+    "test": "Structured code handoff rendered",
+    "pass": true
+  },
+  {
+    "test": "Escape closes reversible dialog",
+    "pass": true
+  },
+  {
+    "test": "Session end opens feedback",
+    "pass": true
+  },
+  {
+    "test": "Feedback debt redirects queue attempt",
+    "pass": true
+  },
+  {
+    "test": "Untouched optional sliders omitted",
+    "pass": true
+  },
+  {
+    "test": "Touched midpoint remains included",
+    "pass": true
+  },
+  {
+    "test": "Touched slider reaches confirmation",
+    "pass": true
+  },
+  {
+    "test": "Submitted rating persists and is immutable",
+    "pass": true
+  },
+  {
+    "test": "Next queue remains blocked for three remaining ratings",
+    "pass": true
+  },
+  {
+    "test": "All required ratings unlock queue",
+    "pass": true
+  },
+  {
+    "test": "Completed feedback returns to rank confirmation",
+    "pass": true
+  },
+  {
+    "test": "Premade teammate excluded from rating",
+    "pass": true
+  },
+  {
+    "test": "Full premade has no required ratings",
+    "pass": true
+  },
+  {
+    "test": "Compact lookup creates local pending request",
+    "pass": true
+  },
+  {
+    "test": "Incoming request moves into friend list",
+    "pass": true
+  },
+  {
+    "test": "One corroboration disbands sample team",
+    "pass": true
+  },
+  {
+    "test": "Account section navigation reaches security",
+    "pass": true
+  },
+  {
+    "test": "Skip link focuses main without route change",
+    "pass": true
+  }
+]

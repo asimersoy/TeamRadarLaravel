@@ -1,0 +1,1108 @@
+[
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "QGuard, ready to walk through.",
+    "main": 1,
+    "overflow": false,
+    "route": "#review",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-light.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Good games start with good teammates.",
+    "main": 1,
+    "overflow": false,
+    "route": "#welcome",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#login",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#login?state=invalid",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#register",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#register?state=duplicate",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#verify",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#verify?state=expired",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#verify?state=throttled",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#forgot",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#forgot?state=sent",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#forgot?state=throttled",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#reset",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-wide-dark.svg",
+        "width": 222
+      }
+    ],
+    "heading": "Same game.Better company.",
+    "main": 1,
+    "overflow": false,
+    "route": "#reset?state=expired",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Make yourself at home.",
+    "main": 1,
+    "overflow": false,
+    "route": "#setup",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Connect your game identity.",
+    "main": 1,
+    "overflow": false,
+    "route": "#connect",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Connect your game identity.",
+    "main": 1,
+    "overflow": false,
+    "route": "#connect?state=linked",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Connect your game identity.",
+    "main": 1,
+    "overflow": false,
+    "route": "#connect?state=declined",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Connect your game identity.",
+    "main": 1,
+    "overflow": false,
+    "route": "#connect?state=failed",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Find your next five.",
+    "main": 1,
+    "overflow": false,
+    "route": "#dashboard",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Find your next five.",
+    "main": 1,
+    "overflow": false,
+    "route": "#dashboard?state=unlinked",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Find your next five.",
+    "main": 1,
+    "overflow": false,
+    "route": "#dashboard?state=feedback-due",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Does this look right?",
+    "main": 1,
+    "overflow": false,
+    "route": "#rank",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Does this look right?",
+    "main": 1,
+    "overflow": false,
+    "route": "#rank?state=loading",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Does this look right?",
+    "main": 1,
+    "overflow": false,
+    "route": "#rank?state=corrected",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Does this look right?",
+    "main": 1,
+    "overflow": false,
+    "route": "#rank?state=unavailable",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Does this look right?",
+    "main": 1,
+    "overflow": false,
+    "route": "#rank?state=unplaced",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party?state=partial",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party?state=full",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party?state=invitation",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party?state=stale",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Bring your people.",
+    "main": 1,
+    "overflow": false,
+    "route": "#party?state=non-owner",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Good company, again.",
+    "main": 1,
+    "overflow": false,
+    "route": "#friends",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Good company, again.",
+    "main": 1,
+    "overflow": false,
+    "route": "#friends?state=empty",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Good company, again.",
+    "main": 1,
+    "overflow": false,
+    "route": "#friends?state=not-found",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Finding your kind of team.",
+    "main": 1,
+    "overflow": false,
+    "route": "#queue",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Finding your kind of team.",
+    "main": 1,
+    "overflow": false,
+    "route": "#queue?state=error",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Finding your kind of team.",
+    "main": 1,
+    "overflow": false,
+    "route": "#queue?state=offline",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your team was formed.",
+    "main": 1,
+    "overflow": false,
+    "route": "#queue?state=formed",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=recipient",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=code-ready",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=offline",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=ready",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=no-show",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your five is ready.",
+    "main": 1,
+    "overflow": false,
+    "route": "#team?state=acknowledge",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Let’s check the same detail.",
+    "main": 1,
+    "overflow": false,
+    "route": "#discrepancy",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Let’s check the same detail.",
+    "main": 1,
+    "overflow": false,
+    "route": "#discrepancy?state=waiting",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Let’s check the same detail.",
+    "main": 1,
+    "overflow": false,
+    "route": "#discrepancy?state=excluded",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "The roster check is complete.",
+    "main": 1,
+    "overflow": false,
+    "route": "#discrepancy?state=cleared",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "This team has been disbanded.",
+    "main": 1,
+    "overflow": false,
+    "route": "#disbanded",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "This team has been disbanded.",
+    "main": 1,
+    "overflow": false,
+    "route": "#disbanded?state=no-show",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your sessions, all together.",
+    "main": 1,
+    "overflow": false,
+    "route": "#history",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your sessions, all together.",
+    "main": 1,
+    "overflow": false,
+    "route": "#history?state=empty",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session?state=partial",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session?state=complete",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session?state=premade",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session?state=full-premade",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "A session worth reflecting on.",
+    "main": 1,
+    "overflow": false,
+    "route": "#session?state=disbanded",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Tell us what happened.",
+    "main": 1,
+    "overflow": false,
+    "route": "#report",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Tell us what happened.",
+    "main": 1,
+    "overflow": false,
+    "route": "#report?state=submitted",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "The teammate you bring.",
+    "main": 1,
+    "overflow": false,
+    "route": "#profile",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "The teammate you bring.",
+    "main": 1,
+    "overflow": false,
+    "route": "#profile?state=new",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Meet Mina.",
+    "main": 1,
+    "overflow": false,
+    "route": "#profile?state=teammate",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your settings.",
+    "main": 1,
+    "overflow": false,
+    "route": "#settings",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Your settings.",
+    "main": 1,
+    "overflow": false,
+    "route": "#settings?state=queued",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Keep your account yours.",
+    "main": 1,
+    "overflow": false,
+    "route": "#security",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Review with context.",
+    "main": 1,
+    "overflow": false,
+    "route": "#admin",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Review with context.",
+    "main": 1,
+    "overflow": false,
+    "route": "#admin?state=empty",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Report R–018.",
+    "main": 1,
+    "overflow": false,
+    "route": "#case",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Report R–018.",
+    "main": 1,
+    "overflow": false,
+    "route": "#case?state=excluded",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Report R–018.",
+    "main": 1,
+    "overflow": false,
+    "route": "#case?state=stale",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "We could not find that page.",
+    "main": 1,
+    "overflow": false,
+    "route": "#error",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "This page is private.",
+    "main": 1,
+    "overflow": false,
+    "route": "#error?state=denied",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "This invitation expired.",
+    "main": 1,
+    "overflow": false,
+    "route": "#error?state=expired",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "You’re offline.",
+    "main": 1,
+    "overflow": false,
+    "route": "#error?state=offline",
+    "width": 1440
+  },
+  {
+    "brand": [
+      {
+        "loaded": true,
+        "src": "../brand/qguard-compact-dark.svg",
+        "width": 138
+      }
+    ],
+    "heading": "Policy details are still under review.",
+    "main": 1,
+    "overflow": false,
+    "route": "#error?state=policy",
+    "width": 1440
+  }
+]

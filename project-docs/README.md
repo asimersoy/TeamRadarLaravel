@@ -6,6 +6,10 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
+**Current visual review:** [Mobbin design pass](design/qguard-review/mobbin-pass/README.md)
+and [fixed QGuard brand assets](design/qguard-review/brand/README.md), under
+`DEC-069`. The [stack checkpoint](planning/review-version/README.md) remains pending.
+
 **Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
 under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders
 and non-expiring session-history ratings replace the relevant first-pass rules

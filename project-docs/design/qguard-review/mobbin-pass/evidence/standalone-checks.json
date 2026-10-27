@@ -1,0 +1,56 @@
+{
+  "pages": [
+    {
+      "embeddedBrand": true,
+      "externalAssets": [],
+      "heading": "Good games start with good teammates.",
+      "imageLoaded": true,
+      "route": "#welcome"
+    },
+    {
+      "embeddedBrand": true,
+      "externalAssets": [],
+      "heading": "Welcome back.",
+      "imageLoaded": true,
+      "route": "#login"
+    },
+    {
+      "embeddedBrand": true,
+      "externalAssets": [],
+      "heading": "Find your next five.",
+      "imageLoaded": true,
+      "route": "#dashboard"
+    },
+    {
+      "embeddedBrand": true,
+      "externalAssets": [],
+      "heading": "A session worth reflecting on.",
+      "imageLoaded": true,
+      "route": "#session"
+    },
+    {
+      "embeddedBrand": true,
+      "externalAssets": [],
+      "heading": "Your settings.",
+      "imageLoaded": true,
+      "route": "#settings"
+    }
+  ],
+  "themes": [
+    {
+      "brandLoaded": true,
+      "overflow": false,
+      "theme": "wire"
+    },
+    {
+      "brandLoaded": true,
+      "overflow": false,
+      "theme": "concept"
+    },
+    {
+      "brandLoaded": true,
+      "overflow": false,
+      "theme": "refined"
+    }
+  ]
+}

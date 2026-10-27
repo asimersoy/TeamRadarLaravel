@@ -2813,3 +2813,35 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 - **Affected records:** review/access and coordination specs, native-code
   research reconciliation, plan, question/deferral registers and review queue
 - **Superseded by:** none
+
+
+## DEC-069 - Retain QGuard Branding And Refine The Prototype With Mobbin
+
+- **Date:** 2026-10-27; work continues 2026-10-28
+- **Status:** approved brand direction and bounded design work; revised layouts
+  remain for review
+- **Decision owner:** project owner
+- **Evidence:** owner likes the existing pages/flows and specifically asks to
+  keep the Q mark, QGuard wordmark and “Good company, good games.”; requests
+  fixed images, standalone mark/favicon and wide/stacked tagline variants.
+  Owner asks for Mobbin references across all pages, later reports Pro access
+  and says proceed, then explicitly encourages element and flow references too.
+- **Decision:** retain the brand and existing product flows as the design
+  baseline. Export stable image assets, including both tagline arrangements.
+  Study relevant real interfaces in Mobbin and apply compatible refinements
+  across the existing prototype. Different page families may use different
+  products as references; references do not authorize new product features.
+- **Agent implementation choice:** outlined SVG artwork preserves letter shapes
+  and spacing without a runtime font dependency. The same Q is used in PNG/SVG
+  icons. Layout dimensions and reference selection are reversible design choices.
+- **Limits:** stop and inform the owner if Mobbin reports a limit/access refusal.
+  The owner's Pro statement is not independent evidence of unlimited tool use.
+- **Deferred:** tagline localization, with no present localization requirement.
+- **Preserved:** approved product rules, synthetic preview boundary, protected
+  portable workflow, existing application, stack checkpoint and unresolved policy
+  approvals. General satisfaction with pages/flows is not approval of P-03/04/05,
+  a new stack, application implementation, publication or provider integration.
+- **Affected records:** [design task](../planning/mobbin-design-pass.md),
+  [reference/move record](../design/qguard-review/mobbin-pass/README.md),
+  [brand assets](../design/qguard-review/brand/README.md), design/checkpoint index
+- **Superseded by:** none
