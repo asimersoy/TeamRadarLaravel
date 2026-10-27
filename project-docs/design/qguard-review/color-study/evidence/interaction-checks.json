@@ -1,0 +1,13 @@
+{
+  "keyboard": {
+    "keyboardSelected": "true",
+    "preview": "blue.html#dashboard"
+  },
+  "console": [
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-10-27T22:08:21.891Z"
+    }
+  ]
+}

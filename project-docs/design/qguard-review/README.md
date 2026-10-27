@@ -1,7 +1,7 @@
 # QGuard Review Design
 
-- **Status:** owner accepted the earlier pages/flows as a baseline; Mobbin refinement awaits design review
-- **Authority:** DEC-062/066–069 and [QG-REVIEW-1](../../specs/review-version/README.md)
+- **Status:** owner accepted the Mobbin-refined visual/layout baseline (DEC-070); color direction remains open
+- **Authority:** DEC-062/066–070 and [QG-REVIEW-1](../../specs/review-version/README.md)
 - **Scope:** original local HTML/CSS/JS, fictional data, no live integrations
 - **Owner:** project owner reviews; agent prepares and tests
 - **Source:** [prototype/index.html](prototype/index.html)
@@ -11,6 +11,7 @@
 - **Evidence:** [latest verification](mobbin-pass/verification.md); [earlier baseline](verification.md)
 - **References and changes:** [Mobbin pass](mobbin-pass/README.md)
 - **Brand:** [fixed logo assets](brand/README.md)
+- **Current review:** [color direction](color-direction.md) / [three dark samples](color-study/index.html)
 - **Comparisons:** [all page families](mobbin-pass/pages.html) / [annotated feedback](mobbin-pass/comparison.html)
 - **Owner checkpoint:** [start here](../../planning/review-version/README.md)
 

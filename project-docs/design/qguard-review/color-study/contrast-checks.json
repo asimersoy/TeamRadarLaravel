@@ -1,0 +1,266 @@
+[
+  {
+    "palette": "forest",
+    "foreground": "ink",
+    "background": "bg",
+    "ratio": 16.22,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "ink",
+    "background": "panel",
+    "ratio": 14.42,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "muted",
+    "background": "bg",
+    "ratio": 9.82,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "muted",
+    "background": "panel",
+    "ratio": 8.72,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "muted",
+    "background": "soft",
+    "ratio": 6.58,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "accent",
+    "background": "panel",
+    "ratio": 12.05,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "accent-ink",
+    "background": "accent",
+    "ratio": 12.15,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "line",
+    "background": "panel",
+    "ratio": 3.23,
+    "minimum": 3,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "nav-ink",
+    "background": "nav",
+    "ratio": 16.9,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "warning",
+    "background": "#332B1D",
+    "ratio": 9.24,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "forest",
+    "foreground": "danger",
+    "background": "#352121",
+    "ratio": 8.3,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "ink",
+    "background": "bg",
+    "ratio": 16.41,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "ink",
+    "background": "panel",
+    "ratio": 14.13,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "muted",
+    "background": "bg",
+    "ratio": 10.07,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "muted",
+    "background": "panel",
+    "ratio": 8.67,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "muted",
+    "background": "soft",
+    "ratio": 6.7,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "accent",
+    "background": "panel",
+    "ratio": 7.7,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "accent-ink",
+    "background": "accent",
+    "ratio": 7.64,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "line",
+    "background": "panel",
+    "ratio": 3.06,
+    "minimum": 3,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "nav-ink",
+    "background": "nav",
+    "ratio": 17.26,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "warning",
+    "background": "#332B1D",
+    "ratio": 9.24,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "blue",
+    "foreground": "danger",
+    "background": "#352121",
+    "ratio": 8.3,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "ink",
+    "background": "bg",
+    "ratio": 16.34,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "ink",
+    "background": "panel",
+    "ratio": 14.44,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "muted",
+    "background": "bg",
+    "ratio": 9.59,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "muted",
+    "background": "panel",
+    "ratio": 8.48,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "muted",
+    "background": "soft",
+    "ratio": 6.84,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "accent",
+    "background": "panel",
+    "ratio": 7.99,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "accent-ink",
+    "background": "accent",
+    "ratio": 8.0,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "line",
+    "background": "panel",
+    "ratio": 3.07,
+    "minimum": 3,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "nav-ink",
+    "background": "nav",
+    "ratio": 17.25,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "warning",
+    "background": "#332B1D",
+    "ratio": 9.24,
+    "minimum": 4.5,
+    "pass": true
+  },
+  {
+    "palette": "violet",
+    "foreground": "danger",
+    "background": "#352121",
+    "ratio": 8.3,
+    "minimum": 4.5,
+    "pass": true
+  }
+]

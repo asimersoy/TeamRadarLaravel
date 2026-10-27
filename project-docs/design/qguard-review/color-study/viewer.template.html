@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QGuard · Choose a color direction</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101114;color:#F0F1F4;font:14px/1.5 system-ui,sans-serif}
+header{padding:25px 32px 22px;max-width:1600px;margin:auto}h1{font-size:26px;letter-spacing:-.7px;margin:3px 0 7px}p{color:#B8BBC5;margin:0}.eyebrow{font-size:10px;letter-spacing:2px;color:#ACB1C0}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.toolbar{margin-top:20px;justify-content:space-between}.palettes{display:flex;gap:10px;flex-wrap:wrap}
+button,select,.full{font:inherit;border:1px solid #5A606D;border-radius:8px;background:#20232B;color:#F0F1F4;padding:10px 14px;min-height:44px}button{cursor:pointer;display:flex;gap:9px;align-items:center}button[aria-pressed=true]{border-color:#F0F1F4;box-shadow:0 0 0 1px #F0F1F4}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #A9C7FF;outline-offset:4px}.dot{width:13px;height:13px;border-radius:50%;display:inline-block}label{font-size:12px;color:#C7CAD3}.full{font-size:12px;text-decoration:none;display:inline-flex;align-items:center}
+.selected{margin:16px 0 0;display:flex;justify-content:space-between;gap:18px;align-items:center}.selected strong{font-size:14px}.selected p{font-size:12px}.swatches{display:flex;gap:4px}.swatches i{display:block;width:36px;height:20px;border:1px solid #ffffff20;border-radius:3px}
+.stage{margin:0 auto;width:calc(100% - 48px);max-width:1540px;border:1px solid #494E5B;border-radius:10px;overflow:hidden;background:#191C23}iframe{display:block;width:100%;height:900px;border:0;background:#101114}
+.notes{padding:18px 32px 30px;max-width:1600px;margin:auto;font-size:12px;color:#A8ADBA}.notes a{color:#CCD9FF}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:700px){header{padding:18px 16px}h1{font-size:23px}.stage{width:calc(100% - 16px)}.palettes{gap:7px}.palettes button{font-size:12px;padding:10px}.toolbar{gap:14px}.selected{align-items:start}.swatches i{width:20px}.notes{padding:18px 16px}iframe{height:950px}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">QGUARD · COLOR STUDY</div>
+<h1>Same design. Three dark palettes.</h1>
+<p>Switch colors on the same page. The logo, layout and content stay the same.</p>
+<div class="row toolbar"><div class="palettes" role="group" aria-label="Color direction"></div><div class="row"><label for="page">Page</label><select id="page"><option value="dashboard">Matchmaking</option><option value="welcome">Welcome</option><option value="login">Sign in</option><option value="session">Session feedback</option><option value="team?state=code-ready">Party code</option><option value="friends">Connections</option><option value="settings">Settings</option><option value="queue?state=error">Error state</option></select><a class="full" id="open" target="_blank" rel="noopener">Open full size ↗</a></div></div>
+<div class="selected" aria-live="polite"><div><strong id="name"></strong><p id="description"></p></div><div class="swatches" aria-hidden="true"></div></div>
+</header>
+<main class="stage"><iframe id="preview" title="QGuard palette preview"></iframe></main>
+<footer class="notes">These are review samples; no palette is selected for implementation. Fictional data only. <a href="../qguard-review.html#welcome">View the accepted light baseline</a> · <a href="comparison.html">See all three side by side</a></footer>
+<script>
+const palettes=__PALETTES__;
+const query=new URLSearchParams(location.search);
+let current=palettes.find(p=>p.id===query.get('palette'))||palettes[0];
+let page=query.get('page')||'dashboard';
+const picker=document.querySelector('#page');
+if(!Array.from(picker.options).some(o=>o.value===page))page='dashboard';
+picker.value=page;
+const group=document.querySelector('.palettes');
+for(const p of palettes){const button=document.createElement('button');button.type='button';button.dataset.palette=p.id;button.innerHTML='<span class="dot" style="background:'+p.accent+'" aria-hidden="true"></span>'+p.letter+' · '+p.name;button.addEventListener('click',()=>{current=p;show()});group.append(button)}
+function show(){document.querySelector('#name').textContent=current.name;document.querySelector('#description').textContent=current.description;document.querySelector('.swatches').innerHTML=['nav','bg','panel','accent','ink'].map(key=>'<i style="background:'+current[key]+'"></i>').join('');for(const b of group.children)b.setAttribute('aria-pressed',String(b.dataset.palette===current.id));const url=current.id+'.html#'+page;document.querySelector('#preview').src=url;document.querySelector('#open').href=url;history.replaceState(null,'','?palette='+current.id+'&page='+encodeURIComponent(page));}
+picker.addEventListener('change',()=>{page=picker.value;show()});show();
+</script>
+</body>
+</html>

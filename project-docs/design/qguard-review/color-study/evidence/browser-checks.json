@@ -1,0 +1,408 @@
+{
+  "desktop": [
+    {
+      "palette": "forest",
+      "route": "dashboard",
+      "background": "rgb(14, 23, 20)",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "login",
+      "background": "rgb(14, 23, 20)",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "welcome",
+      "background": "rgb(14, 23, 20)",
+      "brokenImages": 0,
+      "heading": "Good games start with good teammates.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "session",
+      "background": "rgb(14, 23, 20)",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "dashboard",
+      "background": "rgb(16, 22, 33)",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "login",
+      "background": "rgb(16, 22, 33)",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "welcome",
+      "background": "rgb(16, 22, 33)",
+      "brokenImages": 0,
+      "heading": "Good games start with good teammates.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "session",
+      "background": "rgb(16, 22, 33)",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "dashboard",
+      "background": "rgb(21, 19, 28)",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "login",
+      "background": "rgb(21, 19, 28)",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "welcome",
+      "background": "rgb(21, 19, 28)",
+      "brokenImages": 0,
+      "heading": "Good games start with good teammates.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "session",
+      "background": "rgb(21, 19, 28)",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    }
+  ],
+  "mobile": [
+    {
+      "palette": "forest",
+      "route": "dashboard",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "login",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "session",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    },
+    {
+      "palette": "forest",
+      "route": "queue?state=error",
+      "brokenImages": 0,
+      "heading": "Finding your kind of team.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "dashboard",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "login",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "session",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    },
+    {
+      "palette": "blue",
+      "route": "queue?state=error",
+      "brokenImages": 0,
+      "heading": "Finding your kind of team.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "dashboard",
+      "brokenImages": 0,
+      "heading": "Find your next five.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "login",
+      "brokenImages": 0,
+      "heading": "Welcome back.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "session",
+      "brokenImages": 0,
+      "heading": "A session worth reflecting on.",
+      "overflow": false
+    },
+    {
+      "palette": "violet",
+      "route": "queue?state=error",
+      "brokenImages": 0,
+      "heading": "Finding your kind of team.",
+      "overflow": false
+    }
+  ],
+  "viewer": [
+    {
+      "palette": "forest",
+      "route": "dashboard",
+      "embeddedPage": true,
+      "fullSize": "forest.html#dashboard",
+      "overflow": false,
+      "preview": "forest.html#dashboard",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "welcome",
+      "embeddedPage": true,
+      "fullSize": "forest.html#welcome",
+      "overflow": false,
+      "preview": "forest.html#welcome",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "login",
+      "embeddedPage": true,
+      "fullSize": "forest.html#login",
+      "overflow": false,
+      "preview": "forest.html#login",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "session",
+      "embeddedPage": true,
+      "fullSize": "forest.html#session",
+      "overflow": false,
+      "preview": "forest.html#session",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "team?state=code-ready",
+      "embeddedPage": true,
+      "fullSize": "forest.html#team?state=code-ready",
+      "overflow": false,
+      "preview": "forest.html#team?state=code-ready",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "friends",
+      "embeddedPage": true,
+      "fullSize": "forest.html#friends",
+      "overflow": false,
+      "preview": "forest.html#friends",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "settings",
+      "embeddedPage": true,
+      "fullSize": "forest.html#settings",
+      "overflow": false,
+      "preview": "forest.html#settings",
+      "selectedCount": 1
+    },
+    {
+      "palette": "forest",
+      "route": "queue?state=error",
+      "embeddedPage": true,
+      "fullSize": "forest.html#queue?state=error",
+      "overflow": false,
+      "preview": "forest.html#queue?state=error",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "dashboard",
+      "embeddedPage": true,
+      "fullSize": "blue.html#dashboard",
+      "overflow": false,
+      "preview": "blue.html#dashboard",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "welcome",
+      "embeddedPage": true,
+      "fullSize": "blue.html#welcome",
+      "overflow": false,
+      "preview": "blue.html#welcome",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "login",
+      "embeddedPage": true,
+      "fullSize": "blue.html#login",
+      "overflow": false,
+      "preview": "blue.html#login",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "session",
+      "embeddedPage": true,
+      "fullSize": "blue.html#session",
+      "overflow": false,
+      "preview": "blue.html#session",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "team?state=code-ready",
+      "embeddedPage": true,
+      "fullSize": "blue.html#team?state=code-ready",
+      "overflow": false,
+      "preview": "blue.html#team?state=code-ready",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "friends",
+      "embeddedPage": true,
+      "fullSize": "blue.html#friends",
+      "overflow": false,
+      "preview": "blue.html#friends",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "settings",
+      "embeddedPage": true,
+      "fullSize": "blue.html#settings",
+      "overflow": false,
+      "preview": "blue.html#settings",
+      "selectedCount": 1
+    },
+    {
+      "palette": "blue",
+      "route": "queue?state=error",
+      "embeddedPage": true,
+      "fullSize": "blue.html#queue?state=error",
+      "overflow": false,
+      "preview": "blue.html#queue?state=error",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "dashboard",
+      "embeddedPage": true,
+      "fullSize": "violet.html#dashboard",
+      "overflow": false,
+      "preview": "violet.html#dashboard",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "welcome",
+      "embeddedPage": true,
+      "fullSize": "violet.html#welcome",
+      "overflow": false,
+      "preview": "violet.html#welcome",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "login",
+      "embeddedPage": true,
+      "fullSize": "violet.html#login",
+      "overflow": false,
+      "preview": "violet.html#login",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "session",
+      "embeddedPage": true,
+      "fullSize": "violet.html#session",
+      "overflow": false,
+      "preview": "violet.html#session",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "team?state=code-ready",
+      "embeddedPage": true,
+      "fullSize": "violet.html#team?state=code-ready",
+      "overflow": false,
+      "preview": "violet.html#team?state=code-ready",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "friends",
+      "embeddedPage": true,
+      "fullSize": "violet.html#friends",
+      "overflow": false,
+      "preview": "violet.html#friends",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "settings",
+      "embeddedPage": true,
+      "fullSize": "violet.html#settings",
+      "overflow": false,
+      "preview": "violet.html#settings",
+      "selectedCount": 1
+    },
+    {
+      "palette": "violet",
+      "route": "queue?state=error",
+      "embeddedPage": true,
+      "fullSize": "violet.html#queue?state=error",
+      "overflow": false,
+      "preview": "violet.html#queue?state=error",
+      "selectedCount": 1
+    }
+  ],
+  "narrowViewer": {
+    "iframeWidth": 372,
+    "overflow": false
+  }
+}

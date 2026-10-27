@@ -2845,3 +2845,43 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   [reference/move record](../design/qguard-review/mobbin-pass/README.md),
   [brand assets](../design/qguard-review/brand/README.md), design/checkpoint index
 - **Superseded by:** none
+
+
+## DEC-070 - Accept The Revised Design And Review Color Separately
+
+- **Date:** 2026-10-28
+- **Status:** approved visual/layout baseline; color direction remains open
+- **Decision owner:** project owner
+- **Evidence:** “the new design is good,” followed by a question about which
+  colorway to use, referring to the Mobbin-refined prototype at `9cb1bbc`.
+- **Decision:** retain the revised page layouts and visual structure as the
+  accepted baseline. Discuss the palette independently; do not interpret
+  satisfaction with the design as final approval of its current colors.
+- **Preserved:** Q mark, wordmark and tagline under DEC-069. No new product
+  policy, implementation slice, stack choice or release approval is supplied.
+- **Open:** palette family and light/dark surface treatment, tracked in OQ-016.
+- **Affected records:** [color discussion](../design/qguard-review/color-direction.md),
+  design index, current state and checkpoint review queue.
+- **Superseded by:** none
+
+
+## DEC-071 - Compare Visible Dark Color Samples Before Selecting A Palette
+
+- **Date:** 2026-10-28
+- **Status:** approved comparison scope; dark-background preference; palette open
+- **Decision owner:** project owner
+- **Evidence:** asks “how will I compare? I need to see samples,” says a dark
+  background would be more appealing to gamers, and clarifies that they are
+  settling on a direction rather than expressing a concern with the design.
+- **Decision:** prepare visible dark samples of the three proposed color
+  families on the accepted QGuard layouts. Keep page structure and brand shapes
+  consistent so color can be compared directly.
+- **Interpretation:** dark surfaces are the owner's preferred exploration
+  direction; no particular accent, exact token or first-version theme picker is
+  selected. The statement about gamers is owner preference, not measured
+  audience research. OQ-016 remains open for the palette selection.
+- **Agent choices:** original forest/lime, navy/blue and charcoal/violet color
+  tokens; an isolated page/palette viewer; unchanged accepted prototype.
+- **Affected records:** [color review and evidence](../design/qguard-review/color-direction.md).
+- **Preserved:** DEC-069 brand, DEC-070 layouts, existing policy and stack gates.
+- **Superseded by:** none

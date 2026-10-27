@@ -1,5 +1,16 @@
 # QGuard Current State
 
+## Color Review — 2026-10-28
+
+The owner accepts the Mobbin-refined visual/layout baseline at `9cb1bbc`
+(`DEC-070`) and asks to settle the colorway separately.
+[Color discussion](design/qguard-review/color-direction.md) / `OQ-016` records
+the owner preference for dark samples (`DEC-071`) and the three prepared
+alternatives. Use the [palette/page viewer](design/qguard-review/color-study/index.html).
+No replacement palette is selected or applied to the accepted prototype. Stack
+and policy gates remain. A loopback preview is left available for owner review
+at `http://127.0.0.1:8765/color-study/index.html`; saved HTML is also available.
+
 ## Brand And Mobbin Design Review — 2026-10-28
 
 `DEC-069` retains the Q mark, QGuard wordmark and “Good company, good games.”
@@ -8,8 +19,8 @@ earlier pages/flows; this does not approve unresolved policies or a stack.
 [Fixed SVG/icon assets](design/qguard-review/brand/README.md),
 [revised HTML](design/qguard-review/qguard-review.html),
 [page comparisons](design/qguard-review/mobbin-pass/pages.html) and
-[references/moves](design/qguard-review/mobbin-pass/README.md) are ready for design
-review. Screens, controls, flow previews and a hero section were studied.
+[references/moves](design/qguard-review/mobbin-pass/README.md) formed the reviewed
+baseline. DEC-070 above records the subsequent owner response. Screens, controls, flow previews and a hero section were studied.
 No Mobbin limit/refusal occurred. The [actual checks](design/qguard-review/mobbin-pass/verification.md)
 cover responsive route states, selected interactions, brand images and packaging.
 
