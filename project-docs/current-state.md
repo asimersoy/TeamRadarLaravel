@@ -1,5 +1,28 @@
 # QGuard Current State
 
+## Specification, Design And Stack Checkpoint — 2026-10-27
+
+The authorized pass has reached the [owner checkpoint](planning/review-version/README.md).
+The [QG-REVIEW-1 draft](specs/review-version/README.md), Gankster transfer study,
+25 product pages plus review catalog, monochrome/color iterations and interactive
+local HTML are prepared. Prototype verification covers 79 route/state combinations,
+three responsive widths, comparison modes and key behavior; see the
+[actual results](design/qguard-review/verification.md). The existing application
+and protected portable workflow package are unchanged.
+
+**Stop here before new application work.** The [stack recommendation](planning/review-version/stack-review.md)
+is to retain Laravel/Livewire/PostgreSQL/Docker; the owner has not selected it at
+this new checkpoint. The visual direction and packet remain drafts. Review
+P-03 descriptor aggregation/privacy, P-04 excluded-author obligations and P-05
+unresolved discrepancy recovery before their affected slices. No unanswered
+policy question was auto-approved. The checkpoint visibly recaps the existing
+[question/default queue](governance/checkpoint-review-queue.md), including
+descriptor audience, party-code assumption and the accepted report timing race.
+
+Use the [work record](planning/design-checkpoint.md) for scope and verification,
+then record owner dispositions and reconcile the slice contracts. No live
+provider/game/Discord evidence or release approval is supplied by this prototype.
+
 ## Product and Design Pass — 2026-10-27
 
 **Readiness after `DEC-068`:** the [planning/design readiness assessment](planning/product-design-pass.md#readiness-to-begin--after-dec-068)

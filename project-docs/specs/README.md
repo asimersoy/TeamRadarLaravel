@@ -1,5 +1,11 @@
 # QGuard Specification Index
 
+**Review checkpoint reached:** start with [QG-REVIEW-1](review-version/README.md)
+and the [owner checkpoint](../planning/review-version/README.md) for the new
+version's complete draft modules, design, proposals and stack comparison.
+They are prepared for review, not approved for implementation. The first-pass
+suite remains the implemented baseline where later decisions have not replaced it.
+
 **Next-pass routing, 2026-10-27:** `DEC-061`/`DEC-063`/`DEC-065` replace the feedback
 format, requeue obligation, cutoff and history exclusion for the next version.
 Use [current foundations](product-foundations.md#current-feedback-and-session-history-direction)

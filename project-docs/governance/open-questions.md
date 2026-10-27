@@ -833,4 +833,32 @@ questionnaire or permission to leave first-pass contracts unspecified.
   the normal review before implementation.
 - **Does not authorize:** a new feedback expiry, automatic neutral ratings,
   bypass of mandatory completion, punishment, or weakening of reviewer privacy.
+
+## OQ-014 — Descriptor Aggregation And Sparse-Data Privacy
+
+- **Status:** open, identified during the 2026-10-27 design pass; owner decision
+- **Settled:** optional peer descriptors do not affect honor/matching; audience
+  is self and matched teammates, individual votes/authors remain private.
+- **Proposal:** P-03 uses separate arithmetic means/counts, at least three
+  distinct eligible reviewers and pre-session snapshots for teammates.
+- **Tradeoff:** threshold/aggregation controls sparse-data disclosure and how
+  quickly useful descriptions appear. Three is an agent proposal, not approval.
+- **Needed before:** live descriptive-summary implementation. Does not block
+  review of the fixed, explicitly fictional prototype summaries.
+- **Record:** [review-version proposals](../specs/review-version/proposals.md).
+
+## OQ-015 — Feedback Obligations After Author Exclusion
+
+- **Status:** open, identified during the 2026-10-27 design pass; owner decision
+- **Settled:** known qualifying exclusion blocks unapplied outgoing numeric
+  ratings; earlier applied effects remain. Every eligible required rating must
+  be completed before another queue; normal skipping/expiry is not allowed.
+- **Question:** when an author becomes ineligible to supply numeric input, do
+  their remaining obligations become ineligible, or do they still submit for
+  evidence? P-04 proposes the former but has not selected it.
+- **Tradeoff:** avoid purposeless input versus avoiding an exclusion-based
+  escape from the feedback requirement. Do not silently waive or force ratings.
+- **Needed before:** the affected eligibility/queue-gate implementation.
+- **Related:** OQ-010/P-05 still owns unresolved lobby-discrepancy nonresponse;
+  no new timeout/disband authority was chosen during design.
 - **Resolved by:** `DEC-065`, including explicit rejection of retrospective corrections

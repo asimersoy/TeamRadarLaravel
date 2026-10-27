@@ -1,0 +1,64 @@
+# QGuard Review Version — Specification Packet
+
+- **Packet:** QG-REVIEW-1, draft revision 1, 2026-10-27
+- **Status:** prepared for owner design/stack review; not implementation approval
+- **Owner:** project owner; primary agent authors and reconciles the packet
+- **Authority:** current decision register through DEC-068, especially
+  DEC-052–058 and DEC-061–068; latest explicit owner instructions prevail
+- **Baseline:** the implemented [first-pass suite](../first-pass/README.md)
+  remains historical evidence; this packet does not claim its new behavior exists
+- **Review path:** [work record](../../planning/design-checkpoint.md), then the
+  design inventory/prototype and checkpoint packet linked there
+
+## Modules
+
+| Module | Owns |
+| --- | --- |
+| [Scope and journeys](scope-and-journeys.md) | Audience, boundaries, complete user and reviewer journeys |
+| [Identity and rank](identity-and-rank.md) | Open registration, guest review, RSO boundary, pre-queue confirmation |
+| [Friends and matching](friends-and-matching.md) | Connections, intact premades, readiness and five-person formation |
+| [Sessions and party handoff](sessions-and-handoff.md) | Native code entry, roster checks, text, attendance, session history |
+| [Feedback and honor](feedback-and-honor.md) | Required immutable feedback, optional descriptions, forward-only honor |
+| [Reports and admin](reports-and-admin.md) | Conduct reports, discrepancy distinction, review evidence and limits |
+| [Data and access](data-and-access.md) | Logical records, access matrix, transactions, privacy and retention |
+| [Acceptance and traceability](acceptance-and-traceability.md) | Requirement mapping and future test obligations |
+| [Proposals for checkpoint review](proposals.md) | New design defaults and policy choices, distinct from owner decisions |
+
+## How To Read Authority
+
+**Approved rule** means supported by an owner decision. **Inherited default**
+means an agent choice accepted in the old DEC-052 packet, retained only where
+later decisions do not contradict it. **Draft detail** means a new reversible
+proposal for this packet. **Owner choice pending** is never auto-approved by
+silence. The prototype illustrates proposals and synthetic states; it cannot
+approve policy or prove providers work.
+
+Each module's requirement IDs identify a behavioral contract independent of
+framework and database names. Stack-specific schemas, endpoint naming, queue
+workers and deployment are finalized after the stack review. Shared invariants
+apply to every relevant route, API action and background job in a later build.
+
+## Supersession Map
+
+| Earlier behavior | Review-version replacement |
+| --- | --- |
+| Three optional feedback dimensions and skip | One mandatory 1–10 overall honor rating; optional peer descriptors |
+| Ten-minute feedback cutoff and session settlement batch | Feedback remains open; own unfinished obligations block queue; apply eligible submitted inputs immediately |
+| No participant history | Session list/detail owns rating and later revisit |
+| Late reports could prevent a pending batch | Known exclusions prevent future input; later reports never undo already applied effects |
+| Declared-only local identity fallback | Normal use requires live RSO; guest review uses explicit sample data |
+| Unavailable game handoff | Native code relay is the owner-authorized working assumption, validated after RSO |
+| Future Discord planning in the current review milestone | No Discord implementation, simulation or replacement voice feature in version one |
+
+The review cannot silently add a public LFG marketplace, premiums, desktop app,
+new ranking factors, sanctions or voice capture. Real-user launch obligations
+remain open where recorded; draft copy does not make global/legal promises.
+
+## Completion And Approval
+
+This packet is complete for **review** when every scoped journey, page/state,
+data boundary and acceptance family is covered, with remaining consequential
+questions exposed. Implementation readiness additionally needs owner decisions
+on relevant proposals, design and stack, then an executable slice plan. Evidence
+must distinguish source inspection, prototype interaction and real application
+tests. A local HTML demonstration is not server authorization or provider QA.

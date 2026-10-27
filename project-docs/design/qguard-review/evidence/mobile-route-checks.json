@@ -1,0 +1,499 @@
+[
+  {
+    "route": "#welcome",
+    "heading": "Good games startwith goodteammates.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Welcome"
+  },
+  {
+    "route": "#login",
+    "heading": "Welcome back.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Sign in"
+  },
+  {
+    "route": "#login?state=invalid",
+    "heading": "Welcome back.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Sign in"
+  },
+  {
+    "route": "#register",
+    "heading": "Find your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Create account"
+  },
+  {
+    "route": "#register?state=duplicate",
+    "heading": "Find your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Create account"
+  },
+  {
+    "route": "#verify",
+    "heading": "Check your inbox.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Verify email"
+  },
+  {
+    "route": "#verify?state=expired",
+    "heading": "Check your inbox.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Verify email"
+  },
+  {
+    "route": "#verify?state=throttled",
+    "heading": "Check your inbox.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Verify email"
+  },
+  {
+    "route": "#forgot",
+    "heading": "Let’s get you back.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recover account"
+  },
+  {
+    "route": "#forgot?state=sent",
+    "heading": "Let’s get you back.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recover account"
+  },
+  {
+    "route": "#reset",
+    "heading": "A fresh start.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Reset password"
+  },
+  {
+    "route": "#reset?state=expired",
+    "heading": "A fresh start.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Reset password"
+  },
+  {
+    "route": "#setup",
+    "heading": "Make yourself at home.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Player setup"
+  },
+  {
+    "route": "#connect",
+    "heading": "Connect your game identity.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Riot connection"
+  },
+  {
+    "route": "#connect?state=linked",
+    "heading": "Connect your game identity.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Riot connection"
+  },
+  {
+    "route": "#connect?state=declined",
+    "heading": "Connect your game identity.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Riot connection"
+  },
+  {
+    "route": "#connect?state=failed",
+    "heading": "Connect your game identity.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Riot connection"
+  },
+  {
+    "route": "#dashboard",
+    "heading": "Find your next five.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Matchmaking"
+  },
+  {
+    "route": "#dashboard?state=unlinked",
+    "heading": "Find your next five.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Matchmaking"
+  },
+  {
+    "route": "#dashboard?state=feedback-due",
+    "heading": "Find your next five.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Matchmaking"
+  },
+  {
+    "route": "#rank",
+    "heading": "Does this look right?",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Confirm rank"
+  },
+  {
+    "route": "#rank?state=loading",
+    "heading": "Does this look right?",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Confirm rank"
+  },
+  {
+    "route": "#rank?state=corrected",
+    "heading": "Does this look right?",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Confirm rank"
+  },
+  {
+    "route": "#rank?state=unavailable",
+    "heading": "Does this look right?",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Confirm rank"
+  },
+  {
+    "route": "#rank?state=unplaced",
+    "heading": "Does this look right?",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Confirm rank"
+  },
+  {
+    "route": "#party",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#party?state=partial",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#party?state=full",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#party?state=invitation",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#party?state=stale",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#party?state=non-owner",
+    "heading": "Bring your people.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your party"
+  },
+  {
+    "route": "#friends",
+    "heading": "Good company, again.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Connections"
+  },
+  {
+    "route": "#friends?state=empty",
+    "heading": "Good company, again.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Connections"
+  },
+  {
+    "route": "#queue",
+    "heading": "Finding your kind of team.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Finding teammates"
+  },
+  {
+    "route": "#queue?state=error",
+    "heading": "Finding your kind of team.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Finding teammates"
+  },
+  {
+    "route": "#queue?state=offline",
+    "heading": "Finding your kind of team.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Finding teammates"
+  },
+  {
+    "route": "#team",
+    "heading": "Your five is ready.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your five"
+  },
+  {
+    "route": "#team?state=recipient",
+    "heading": "Your five is ready.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your five"
+  },
+  {
+    "route": "#team?state=code-ready",
+    "heading": "Your five is ready.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your five"
+  },
+  {
+    "route": "#team?state=offline",
+    "heading": "Your five is ready.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your five"
+  },
+  {
+    "route": "#team?state=ready",
+    "heading": "Your five is ready.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your five"
+  },
+  {
+    "route": "#discrepancy",
+    "heading": "Let’s check the same detail.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Check a teammate"
+  },
+  {
+    "route": "#discrepancy?state=waiting",
+    "heading": "Let’s check the same detail.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Check a teammate"
+  },
+  {
+    "route": "#discrepancy?state=excluded",
+    "heading": "Let’s check the same detail.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Check a teammate"
+  },
+  {
+    "route": "#disbanded",
+    "heading": "This team has been disbanded.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Team disbanded"
+  },
+  {
+    "route": "#disbanded?state=no-show",
+    "heading": "This team has been disbanded.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Team disbanded"
+  },
+  {
+    "route": "#history",
+    "heading": "Your sessions, all together.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session history"
+  },
+  {
+    "route": "#history?state=empty",
+    "heading": "Your sessions, all together.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session history"
+  },
+  {
+    "route": "#session",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#session?state=partial",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#session?state=complete",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#session?state=premade",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#session?state=full-premade",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#session?state=disbanded",
+    "heading": "A session worth reflecting on.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Session detail"
+  },
+  {
+    "route": "#report",
+    "heading": "Tell us what happened.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report conduct"
+  },
+  {
+    "route": "#report?state=submitted",
+    "heading": "Tell us what happened.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report conduct"
+  },
+  {
+    "route": "#profile",
+    "heading": "The teammate you bring.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your profile"
+  },
+  {
+    "route": "#profile?state=new",
+    "heading": "The teammate you bring.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Your profile"
+  },
+  {
+    "route": "#settings",
+    "heading": "Your settings.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Account settings"
+  },
+  {
+    "route": "#settings?state=queued",
+    "heading": "Your settings.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Account settings"
+  },
+  {
+    "route": "#security",
+    "heading": "Keep your account yours.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Account security"
+  },
+  {
+    "route": "#admin",
+    "heading": "Review with context.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report inbox"
+  },
+  {
+    "route": "#admin?state=empty",
+    "heading": "Review with context.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report inbox"
+  },
+  {
+    "route": "#case",
+    "heading": "Report R–018.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report detail"
+  },
+  {
+    "route": "#case?state=excluded",
+    "heading": "Report R–018.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report detail"
+  },
+  {
+    "route": "#case?state=stale",
+    "heading": "Report R–018.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Report detail"
+  },
+  {
+    "route": "#error",
+    "heading": "We could not find that page.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recovery screens"
+  },
+  {
+    "route": "#error?state=denied",
+    "heading": "This page is private.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recovery screens"
+  },
+  {
+    "route": "#error?state=expired",
+    "heading": "This invitation expired.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recovery screens"
+  },
+  {
+    "route": "#error?state=offline",
+    "heading": "You’re offline.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recovery screens"
+  },
+  {
+    "route": "#error?state=policy",
+    "heading": "Policy details are still under review.",
+    "mainCount": 1,
+    "overflow": false,
+    "title": "QGuard · Recovery screens"
+  }
+]

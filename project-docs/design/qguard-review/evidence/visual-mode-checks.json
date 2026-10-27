@@ -1,0 +1,950 @@
+[
+  {
+    "mode": "wire",
+    "route": "#review",
+    "heading": "QGuard, ready to walk through.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#welcome",
+    "heading": "Good games startwith goodteammates.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#login",
+    "heading": "Welcome back.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#login?state=invalid",
+    "heading": "Welcome back.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#register",
+    "heading": "Find your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#register?state=duplicate",
+    "heading": "Find your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#verify",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#verify?state=expired",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#verify?state=throttled",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#forgot",
+    "heading": "Let’s get you back.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#forgot?state=sent",
+    "heading": "Let’s get you back.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#forgot?state=throttled",
+    "heading": "Try again shortly.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#reset",
+    "heading": "A fresh start.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#reset?state=expired",
+    "heading": "A fresh start.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#setup",
+    "heading": "Make yourself at home.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#connect",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#connect?state=linked",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#connect?state=declined",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#connect?state=failed",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#dashboard",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#dashboard?state=unlinked",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#dashboard?state=feedback-due",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#rank",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#rank?state=loading",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#rank?state=corrected",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#rank?state=unavailable",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#rank?state=unplaced",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party?state=partial",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party?state=full",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party?state=invitation",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party?state=stale",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#party?state=non-owner",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#friends",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#friends?state=empty",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#friends?state=not-found",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#queue",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#queue?state=error",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#queue?state=offline",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#queue?state=formed",
+    "heading": "Your team was formed.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=recipient",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=code-ready",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=offline",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=ready",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=no-show",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#team?state=acknowledge",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#discrepancy",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#discrepancy?state=waiting",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#discrepancy?state=excluded",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#discrepancy?state=cleared",
+    "heading": "The roster check is complete.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#disbanded",
+    "heading": "This team has been disbanded.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#disbanded?state=no-show",
+    "heading": "This team has been disbanded.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#history",
+    "heading": "Your sessions, all together.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#history?state=empty",
+    "heading": "Your sessions, all together.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session?state=partial",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session?state=complete",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session?state=premade",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session?state=full-premade",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#session?state=disbanded",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#report",
+    "heading": "Tell us what happened.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#report?state=submitted",
+    "heading": "Tell us what happened.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#profile",
+    "heading": "The teammate you bring.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#profile?state=new",
+    "heading": "The teammate you bring.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#profile?state=teammate",
+    "heading": "Meet Mina.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#settings",
+    "heading": "Your settings.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#settings?state=queued",
+    "heading": "Your settings.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#security",
+    "heading": "Keep your account yours.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#admin",
+    "heading": "Review with context.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#admin?state=empty",
+    "heading": "Review with context.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#case",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#case?state=excluded",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#case?state=stale",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#error",
+    "heading": "We could not find that page.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#error?state=denied",
+    "heading": "This page is private.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#error?state=expired",
+    "heading": "This invitation expired.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#error?state=offline",
+    "heading": "You’re offline.",
+    "overflow": false
+  },
+  {
+    "mode": "wire",
+    "route": "#error?state=policy",
+    "heading": "Policy details are still under review.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#review",
+    "heading": "QGuard, ready to walk through.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#welcome",
+    "heading": "Good games startwith goodteammates.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#login",
+    "heading": "Welcome back.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#login?state=invalid",
+    "heading": "Welcome back.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#register",
+    "heading": "Find your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#register?state=duplicate",
+    "heading": "Find your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#verify",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#verify?state=expired",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#verify?state=throttled",
+    "heading": "Check your inbox.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#forgot",
+    "heading": "Let’s get you back.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#forgot?state=sent",
+    "heading": "Let’s get you back.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#forgot?state=throttled",
+    "heading": "Try again shortly.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#reset",
+    "heading": "A fresh start.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#reset?state=expired",
+    "heading": "A fresh start.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#setup",
+    "heading": "Make yourself at home.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#connect",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#connect?state=linked",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#connect?state=declined",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#connect?state=failed",
+    "heading": "Connect your game identity.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#dashboard",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#dashboard?state=unlinked",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#dashboard?state=feedback-due",
+    "heading": "Find your next five.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#rank",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#rank?state=loading",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#rank?state=corrected",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#rank?state=unavailable",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#rank?state=unplaced",
+    "heading": "Does this look right?",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party?state=partial",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party?state=full",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party?state=invitation",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party?state=stale",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#party?state=non-owner",
+    "heading": "Bring your people.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#friends",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#friends?state=empty",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#friends?state=not-found",
+    "heading": "Good company, again.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#queue",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#queue?state=error",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#queue?state=offline",
+    "heading": "Finding your kind of team.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#queue?state=formed",
+    "heading": "Your team was formed.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=recipient",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=code-ready",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=offline",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=ready",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=no-show",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#team?state=acknowledge",
+    "heading": "Your five is ready.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#discrepancy",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#discrepancy?state=waiting",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#discrepancy?state=excluded",
+    "heading": "Let’s check the same detail.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#discrepancy?state=cleared",
+    "heading": "The roster check is complete.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#disbanded",
+    "heading": "This team has been disbanded.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#disbanded?state=no-show",
+    "heading": "This team has been disbanded.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#history",
+    "heading": "Your sessions, all together.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#history?state=empty",
+    "heading": "Your sessions, all together.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session?state=partial",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session?state=complete",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session?state=premade",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session?state=full-premade",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#session?state=disbanded",
+    "heading": "A session worth reflecting on.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#report",
+    "heading": "Tell us what happened.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#report?state=submitted",
+    "heading": "Tell us what happened.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#profile",
+    "heading": "The teammate you bring.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#profile?state=new",
+    "heading": "The teammate you bring.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#profile?state=teammate",
+    "heading": "Meet Mina.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#settings",
+    "heading": "Your settings.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#settings?state=queued",
+    "heading": "Your settings.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#security",
+    "heading": "Keep your account yours.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#admin",
+    "heading": "Review with context.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#admin?state=empty",
+    "heading": "Review with context.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#case",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#case?state=excluded",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#case?state=stale",
+    "heading": "Report R–018.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#error",
+    "heading": "We could not find that page.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#error?state=denied",
+    "heading": "This page is private.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#error?state=expired",
+    "heading": "This invitation expired.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#error?state=offline",
+    "heading": "You’re offline.",
+    "overflow": false
+  },
+  {
+    "mode": "concept",
+    "route": "#error?state=policy",
+    "heading": "Policy details are still under review.",
+    "overflow": false
+  }
+]

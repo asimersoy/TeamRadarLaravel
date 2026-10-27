@@ -3,13 +3,19 @@
 - **Record type:** current plan and decision agenda
 - **Authority:** `DEC-061`–`DEC-068`; project governance remains controlling
 - **Owner:** project owner approves product/design/stack; primary agent prepares artifacts
-- **Status:** ready to proceed through study, comprehensive specs and page
-  design to the stack-review checkpoint; no remaining upfront owner decision
-  identified for that bounded work; new implementation not started
+- **Status:** bounded study/spec/design work prepared and verified; at the
+  [owner stack/spec/design checkpoint](review-version/README.md). No new
+  application implementation started; review dispositions remain pending
 - **Updated:** 2026-10-27
 - **Update trigger:** owner answer, relevant study evidence, design review or stack decision
 
 ## Objective and Verified Baseline
+
+Current result: [checkpoint work record](design-checkpoint.md),
+[review-version specs](../specs/review-version/README.md) and
+[design/prototype](../design/qguard-review/README.md). The sequence below retains
+its planning rationale; later evidence is in the checkpoint packet. Prepared
+artifacts and agent recommendations do not constitute owner approval.
 
 Turn the existing QGuard decisions and relevant competitor lessons into one
 coherent product specification and a complete page design before the next

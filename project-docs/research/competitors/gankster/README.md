@@ -9,6 +9,12 @@
 - **Method:** [competitor study procedure](../../../operations/competitor-study.md)
 - **Update trigger:** further permitted observation, new source or owner direction
 
+**Design-pass closure, 2026-10-27:** [account/connections observations](observations/account-and-connections.md)
+and the [feature-transfer/future inventory](design-transfer.md) complete the
+accessible evidence needed for this pass. Unseen creation/review/session flows
+remain explicitly unverified; no participation or account mutation occurred.
+Proceed with QGuard specifications rather than requiring those gaps to close.
+
 The owner sees substantial overlap in teammate finding, rank information,
 party joining, Discord coordination and voice. The study focuses on the details:
 field defaults, explanations, progress, refresh controls, joining instructions,
