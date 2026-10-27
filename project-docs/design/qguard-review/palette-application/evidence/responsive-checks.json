@@ -1,0 +1,1266 @@
+[
+  {
+    "width": 768,
+    "route": "#review",
+    "brokenImages": 0,
+    "heading": "QGuard, ready to walk through.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#welcome",
+    "brokenImages": 0,
+    "heading": "Good games start with good teammates.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#login",
+    "brokenImages": 0,
+    "heading": "Welcome back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#login?state=invalid",
+    "brokenImages": 0,
+    "heading": "Welcome back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#register",
+    "brokenImages": 0,
+    "heading": "Find your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#register?state=duplicate",
+    "brokenImages": 0,
+    "heading": "Find your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#verify",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#verify?state=expired",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#verify?state=throttled",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#forgot",
+    "brokenImages": 0,
+    "heading": "Let’s get you back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#forgot?state=sent",
+    "brokenImages": 0,
+    "heading": "Let’s get you back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#forgot?state=throttled",
+    "brokenImages": 0,
+    "heading": "Try again shortly.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#reset",
+    "brokenImages": 0,
+    "heading": "A fresh start.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#reset?state=expired",
+    "brokenImages": 0,
+    "heading": "A fresh start.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#setup",
+    "brokenImages": 0,
+    "heading": "Make yourself at home.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#connect",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#connect?state=linked",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#connect?state=declined",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#connect?state=failed",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#dashboard",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#dashboard?state=unlinked",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#dashboard?state=feedback-due",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#rank",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#rank?state=loading",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#rank?state=corrected",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#rank?state=unavailable",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#rank?state=unplaced",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party?state=partial",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party?state=full",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party?state=invitation",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party?state=stale",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#party?state=non-owner",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#friends",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#friends?state=empty",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#friends?state=not-found",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#queue",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#queue?state=error",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#queue?state=offline",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#queue?state=formed",
+    "brokenImages": 0,
+    "heading": "Your team was formed.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=recipient",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=code-ready",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=offline",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=ready",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=no-show",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#team?state=acknowledge",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#discrepancy",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#discrepancy?state=waiting",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#discrepancy?state=excluded",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#discrepancy?state=cleared",
+    "brokenImages": 0,
+    "heading": "The roster check is complete.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#disbanded",
+    "brokenImages": 0,
+    "heading": "This team has been disbanded.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#disbanded?state=no-show",
+    "brokenImages": 0,
+    "heading": "This team has been disbanded.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#history",
+    "brokenImages": 0,
+    "heading": "Your sessions, all together.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#history?state=empty",
+    "brokenImages": 0,
+    "heading": "Your sessions, all together.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session?state=partial",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session?state=complete",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session?state=premade",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session?state=full-premade",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#session?state=disbanded",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#report",
+    "brokenImages": 0,
+    "heading": "Tell us what happened.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#report?state=submitted",
+    "brokenImages": 0,
+    "heading": "Tell us what happened.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#profile",
+    "brokenImages": 0,
+    "heading": "The teammate you bring.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#profile?state=new",
+    "brokenImages": 0,
+    "heading": "The teammate you bring.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#profile?state=teammate",
+    "brokenImages": 0,
+    "heading": "Meet Mina.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#settings",
+    "brokenImages": 0,
+    "heading": "Your settings.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#settings?state=queued",
+    "brokenImages": 0,
+    "heading": "Your settings.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#security",
+    "brokenImages": 0,
+    "heading": "Keep your account yours.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#admin",
+    "brokenImages": 0,
+    "heading": "Review with context.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#admin?state=empty",
+    "brokenImages": 0,
+    "heading": "Review with context.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#case",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#case?state=excluded",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#case?state=stale",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#error",
+    "brokenImages": 0,
+    "heading": "We could not find that page.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#error?state=denied",
+    "brokenImages": 0,
+    "heading": "This page is private.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#error?state=expired",
+    "brokenImages": 0,
+    "heading": "This invitation expired.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#error?state=offline",
+    "brokenImages": 0,
+    "heading": "You’re offline.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 768,
+    "route": "#error?state=policy",
+    "brokenImages": 0,
+    "heading": "Policy details are still under review.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#review",
+    "brokenImages": 0,
+    "heading": "QGuard, ready to walk through.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#welcome",
+    "brokenImages": 0,
+    "heading": "Good games start with good teammates.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#login",
+    "brokenImages": 0,
+    "heading": "Welcome back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#login?state=invalid",
+    "brokenImages": 0,
+    "heading": "Welcome back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#register",
+    "brokenImages": 0,
+    "heading": "Find your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#register?state=duplicate",
+    "brokenImages": 0,
+    "heading": "Find your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#verify",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#verify?state=expired",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#verify?state=throttled",
+    "brokenImages": 0,
+    "heading": "Check your inbox.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#forgot",
+    "brokenImages": 0,
+    "heading": "Let’s get you back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#forgot?state=sent",
+    "brokenImages": 0,
+    "heading": "Let’s get you back.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#forgot?state=throttled",
+    "brokenImages": 0,
+    "heading": "Try again shortly.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#reset",
+    "brokenImages": 0,
+    "heading": "A fresh start.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#reset?state=expired",
+    "brokenImages": 0,
+    "heading": "A fresh start.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#setup",
+    "brokenImages": 0,
+    "heading": "Make yourself at home.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#connect",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#connect?state=linked",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#connect?state=declined",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#connect?state=failed",
+    "brokenImages": 0,
+    "heading": "Connect your game identity.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#dashboard",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#dashboard?state=unlinked",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#dashboard?state=feedback-due",
+    "brokenImages": 0,
+    "heading": "Find your next five.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#rank",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#rank?state=loading",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#rank?state=corrected",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#rank?state=unavailable",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#rank?state=unplaced",
+    "brokenImages": 0,
+    "heading": "Does this look right?",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party?state=partial",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party?state=full",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party?state=invitation",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party?state=stale",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#party?state=non-owner",
+    "brokenImages": 0,
+    "heading": "Bring your people.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#friends",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#friends?state=empty",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#friends?state=not-found",
+    "brokenImages": 0,
+    "heading": "Good company, again.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#queue",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#queue?state=error",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#queue?state=offline",
+    "brokenImages": 0,
+    "heading": "Finding your kind of team.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#queue?state=formed",
+    "brokenImages": 0,
+    "heading": "Your team was formed.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=recipient",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=code-ready",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=offline",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=ready",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=no-show",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#team?state=acknowledge",
+    "brokenImages": 0,
+    "heading": "Your five is ready.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#discrepancy",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#discrepancy?state=waiting",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#discrepancy?state=excluded",
+    "brokenImages": 0,
+    "heading": "Let’s check the same detail.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#discrepancy?state=cleared",
+    "brokenImages": 0,
+    "heading": "The roster check is complete.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#disbanded",
+    "brokenImages": 0,
+    "heading": "This team has been disbanded.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#disbanded?state=no-show",
+    "brokenImages": 0,
+    "heading": "This team has been disbanded.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#history",
+    "brokenImages": 0,
+    "heading": "Your sessions, all together.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#history?state=empty",
+    "brokenImages": 0,
+    "heading": "Your sessions, all together.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session?state=partial",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session?state=complete",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session?state=premade",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session?state=full-premade",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#session?state=disbanded",
+    "brokenImages": 0,
+    "heading": "A session worth reflecting on.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#report",
+    "brokenImages": 0,
+    "heading": "Tell us what happened.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#report?state=submitted",
+    "brokenImages": 0,
+    "heading": "Tell us what happened.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#profile",
+    "brokenImages": 0,
+    "heading": "The teammate you bring.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#profile?state=new",
+    "brokenImages": 0,
+    "heading": "The teammate you bring.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#profile?state=teammate",
+    "brokenImages": 0,
+    "heading": "Meet Mina.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#settings",
+    "brokenImages": 0,
+    "heading": "Your settings.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#settings?state=queued",
+    "brokenImages": 0,
+    "heading": "Your settings.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#security",
+    "brokenImages": 0,
+    "heading": "Keep your account yours.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#admin",
+    "brokenImages": 0,
+    "heading": "Review with context.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#admin?state=empty",
+    "brokenImages": 0,
+    "heading": "Review with context.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#case",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#case?state=excluded",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#case?state=stale",
+    "brokenImages": 0,
+    "heading": "Report R–018.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#error",
+    "brokenImages": 0,
+    "heading": "We could not find that page.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#error?state=denied",
+    "brokenImages": 0,
+    "heading": "This page is private.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#error?state=expired",
+    "brokenImages": 0,
+    "heading": "This invitation expired.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#error?state=offline",
+    "brokenImages": 0,
+    "heading": "You’re offline.",
+    "overflow": false,
+    "theme": "refined"
+  },
+  {
+    "width": 390,
+    "route": "#error?state=policy",
+    "brokenImages": 0,
+    "heading": "Policy details are still under review.",
+    "overflow": false,
+    "theme": "refined"
+  }
+]

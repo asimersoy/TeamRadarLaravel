@@ -17,13 +17,13 @@ button,select,.full{font:inherit;border:1px solid #5A606D;border-radius:8px;back
 <body>
 <header>
 <div class="eyebrow">QGUARD · COLOR STUDY</div>
-<h1>Same design. Three dark palettes.</h1>
-<p>Switch colors on the same page. The logo, layout and content stay the same.</p>
+<h1>Earlier palette samples</h1>
+<p>Historical comparison. Calibrated A is now the approved design.</p>
 <div class="row toolbar"><div class="palettes" role="group" aria-label="Color direction"></div><div class="row"><label for="page">Page</label><select id="page"><option value="dashboard">Matchmaking</option><option value="welcome">Welcome</option><option value="login">Sign in</option><option value="session">Session feedback</option><option value="team?state=code-ready">Party code</option><option value="friends">Connections</option><option value="settings">Settings</option><option value="queue?state=error">Error state</option></select><a class="full" id="open" target="_blank" rel="noopener">Open full size ↗</a></div></div>
 <div class="selected" aria-live="polite"><div><strong id="name"></strong><p id="description"></p></div><div class="swatches" aria-hidden="true"></div></div>
 </header>
 <main class="stage"><iframe id="preview" title="QGuard palette preview"></iframe></main>
-<footer class="notes">These are review samples; no palette is selected for implementation. Fictional data only. <a href="../qguard-review.html#welcome">View the accepted light baseline</a> · <a href="comparison.html">See all three side by side</a></footer>
+<footer class="notes">These are historical samples. Fictional data only. <a href="../qguard-review.html#welcome">Open the current approved design</a> · <a href="comparison.html">See all three side by side</a></footer>
 <script>
 const palettes=[{"id": "forest", "letter": "A", "name": "Forest & lime", "description": "Deep green surfaces with a pale lime accent.", "bg": "#0E1714", "panel": "#17231E", "ink": "#EEF3ED", "muted": "#B2C2B8", "line": "#5B7568", "nav": "#09120F", "nav-ink": "#EEF3ED", "accent": "#C9E99B", "accent-ink": "#162315", "soft": "#253A2B", "danger": "#FFAAA5", "warning": "#F3CD87"}, {"id": "blue", "letter": "B", "name": "Navy & blue", "description": "Blue-black surfaces with an ice-blue accent.", "bg": "#101621", "panel": "#1A2434", "ink": "#EFF4FC", "muted": "#B6C2D5", "line": "#58708E", "nav": "#0A101A", "nav-ink": "#EFF4FC", "accent": "#8EB7FF", "accent-ink": "#122442", "soft": "#26374F", "danger": "#FFAAA5", "warning": "#F3CD87"}, {"id": "violet", "letter": "C", "name": "Charcoal & violet", "description": "Charcoal-purple surfaces with a lavender accent.", "bg": "#15131C", "panel": "#221E2D", "ink": "#F3F0FA", "muted": "#C1B7D0", "line": "#756587", "nav": "#0E0C14", "nav-ink": "#F3F0FA", "accent": "#C4A7FF", "accent-ink": "#281741", "soft": "#372B48", "danger": "#FFAAA5", "warning": "#F3CD87"}];
 const query=new URLSearchParams(location.search);

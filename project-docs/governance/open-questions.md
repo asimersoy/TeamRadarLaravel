@@ -866,15 +866,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-016 — QGuard Color Direction
 
-- **Status:** open, raised by owner 2026-10-28; not automatically resolved
+- **Status:** resolved 2026-10-28 by DEC-072/DEC-073
 - **Decision owner:** project owner
-- **Settled:** DEC-070 accepts the revised visual/layout baseline; DEC-069
-  retains the Q mark, wordmark and tagline.
-- **Question:** which of the visible dark color treatments should be taken
-  forward? DEC-071 records the owner preference for dark-background samples.
-- **Agent recommendation:** dark forest surfaces and lime accents. Dark
-  navy/blue and charcoal/violet samples are alternatives, not selected directions. [Discussion](../design/qguard-review/color-direction.md).
-- **Blocks:** final color sign-off; does not reopen layout or product rules.
-- **Evidence prepared:** three rendered dark samples on the same screens,
-  an eight-page switcher and bounded contrast checks. Owner selection remains
-  required before adopting the proposed colors into the accepted prototype.
+- **Resolution:** A · Forest & Lime with the approved darker nav/page/panel
+  calibration, retained lime/text/soft colors, subtle decorative separators and
+  stronger control outlines. Preserve accepted layouts and logo geometry.
+- **Applied evidence:** [palette application](../design/qguard-review/palette-application/README.md).
+- **Blocks:** nothing further for color selection. Do not reopen B/C or the
+  approved calibration at the stack checkpoint. Product policy/slice and stack
+  approvals remain separate.

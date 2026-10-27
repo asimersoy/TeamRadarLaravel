@@ -1,0 +1,63 @@
+{
+  "interactions": {
+    "dialog": {
+      "cardBorder": "rgb(36, 48, 43)",
+      "controlBorder": "rgb(91, 117, 104)",
+      "open": true,
+      "selected": "rgb(201, 233, 155)"
+    },
+    "escape": {
+      "closed": true,
+      "focus": "Submit rating for Mina"
+    },
+    "validation": {
+      "color": "rgb(255, 170, 165)",
+      "error": "Enter a valid sample email address."
+    },
+    "keyboard": {
+      "focusVisible": true,
+      "focused": "password",
+      "inputBorder": "rgb(91, 117, 104)",
+      "outline": "rgb(201, 233, 155)",
+      "outlineWidth": "3px"
+    }
+  },
+  "standalone": [
+    {
+      "route": "welcome",
+      "background": "rgb(13, 18, 16)",
+      "externalAssets": 0,
+      "heading": "Good games start with good teammates.",
+      "imagesEmbedded": true
+    },
+    {
+      "route": "login",
+      "background": "rgb(13, 18, 16)",
+      "externalAssets": 0,
+      "heading": "Welcome back.",
+      "imagesEmbedded": true
+    },
+    {
+      "route": "dashboard",
+      "background": "rgb(13, 18, 16)",
+      "externalAssets": 0,
+      "heading": "Find your next five.",
+      "imagesEmbedded": true
+    },
+    {
+      "route": "session",
+      "background": "rgb(13, 18, 16)",
+      "externalAssets": 0,
+      "heading": "A session worth reflecting on.",
+      "imagesEmbedded": true
+    },
+    {
+      "route": "settings",
+      "background": "rgb(13, 18, 16)",
+      "externalAssets": 0,
+      "heading": "Your settings.",
+      "imagesEmbedded": true
+    }
+  ],
+  "console": []
+}

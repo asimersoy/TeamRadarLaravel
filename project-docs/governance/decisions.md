@@ -2885,3 +2885,54 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 - **Affected records:** [color review and evidence](../design/qguard-review/color-direction.md).
 - **Preserved:** DEC-069 brand, DEC-070 layouts, existing policy and stack gates.
 - **Superseded by:** none
+
+
+## DEC-072 - Select A Forest And Lime, Review Calibration Before Applying
+
+- **Date:** 2026-10-28
+- **Status:** approved palette family; initial calibration assessment complete;
+  subsequent approval/application recorded in DEC-073
+- **Decision owner:** project owner
+- **Evidence:** “sure lets go with a,” followed by a request to assess pasted
+  third-party feedback before proceeding.
+- **Decision:** take A · Forest & Lime forward. Do not reopen B/C selection.
+  Assess the proposed darker, less green surface calibration before applying
+  the selected direction to the accepted prototype.
+- **Authority boundary:** the pasted feedback is a proposal to assess, not
+  delegated specialist approval or authorization to replace its exact tokens.
+- **Agent assessment:** agrees with exploring less tinted surfaces, keeps lime,
+  and recommends separate decorative and control border strengths. Actual
+  current border/soft values differ from those quoted; badge-compatibility and
+  attention/comfort benefits are unverified.
+- **Evidence:** [calibration assessment](../design/qguard-review/color-feedback-review.md).
+- **Preserved:** accepted layouts, brand geometry/type/tagline, product rules
+  and stack checkpoint. No UI values are changed by this assessment.
+- **Affected records:** OQ-016, color review, current state and checkpoint queue.
+- **Superseded by:** DEC-073 for the pending calibration/application disposition;
+  A selection remains approved
+
+
+## DEC-073 - Apply Calibrated Forest And Lime Across Current Design Artifacts
+
+- **Date:** 2026-10-28
+- **Status:** approved; bounded design application authorized
+- **Decision owner:** project owner
+- **Evidence:** “go ahead with your recommendation then, implement that design
+  in all design files,” following the DEC-072 calibration assessment.
+- **Decision:** use the proposed darker nav/page/panel colors, retain A's lime,
+  text and soft-highlight colors, and separate subtle decorative borders from
+  stronger control outlines. Apply consistently to current pages, standalone
+  review file, reusable brand exports and current design/spec/checkpoint records.
+- **Exact treatment:** [application record](../design/qguard-review/palette-application/README.md)
+  lists tokens and evidence. Brand lettering, geometry, tagline, approved layouts
+  and product behavior remain intact.
+- **History:** earlier screenshots and A/B/C/wireframe/concept studies remain
+  historical evidence, clearly distinguished from the selected current design.
+- **Checkpoint clarification:** the specification/design/stack checkpoint has
+  been reached. Finish this approved design application, then review the stack
+  and outstanding policy/slice requirements; do not reopen settled visuals.
+- **Does not authorize:** application implementation, new data policy, live
+  integration, stack selection, push, PR or deployment.
+- **Supersedes:** pending calibration disposition in DEC-072/OQ-016; no reversal
+  of A selection, brand retention or layout approval.
+- **Superseded by:** none

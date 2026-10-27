@@ -1,8 +1,8 @@
 # Visual Iterations And Review Rationale
 
-**Status:** owner retained the brand and accepted the earlier pages/flows as a
-baseline (DEC-069); the fourth refinement awaits review. Current modes all use
-the same page templates and fictional records. Switch using the review strip.
+**Current:** iteration 05 is owner-approved under DEC-073. Earlier sections
+and screenshots are historical design evidence. The current prototype uses
+the selected palette across all pages; it does not offer a product theme picker.
 
 ## 01 — Monochrome Structure
 
@@ -73,3 +73,16 @@ honor, privacy or provider policy was adopted from a reference. Wireframe and
 Concept are retained palette modes on the updated structure; earlier images
 and Git preserve their original layout. The mode selector is a review tool,
 not an approved product theme preference.
+
+## 05 — Calibrated Forest And Lime
+
+DEC-072 selects A; DEC-073 approves the calibration and its application.
+Navigation/page/panel surfaces become darker and less tinted. Pale lime,
+text colors, typography, logo shapes and layouts remain. Decorative borders
+are subtle; form fields, rating options and secondary actions retain stronger
+control outlines and visible keyboard focus.
+
+The current [prototype](qguard-review.html), [brand exports](brand/README.md)
+and [application evidence](palette-application/README.md) are authoritative for
+the design. Earlier comparisons are labeled historical and their builder reads
+a frozen baseline, so future current-design changes cannot alter that evidence.

@@ -1,15 +1,23 @@
 # QGuard Current State
 
-## Color Review — 2026-10-28
+## Approved Design And Checkpoint Ready — 2026-10-28
 
-The owner accepts the Mobbin-refined visual/layout baseline at `9cb1bbc`
-(`DEC-070`) and asks to settle the colorway separately.
-[Color discussion](design/qguard-review/color-direction.md) / `OQ-016` records
-the owner preference for dark samples (`DEC-071`) and the three prepared
-alternatives. Use the [palette/page viewer](design/qguard-review/color-study/index.html).
-No replacement palette is selected or applied to the accepted prototype. Stack
-and policy gates remain. A loopback preview is left available for owner review
-at `http://127.0.0.1:8765/color-study/index.html`; saved HTML is also available.
+DEC-070 accepts the layouts; DEC-072/DEC-073 selects and applies calibrated
+Forest & Lime throughout the current design. Open the
+[current prototype](design/qguard-review/qguard-review.html) or its
+[palette application evidence](design/qguard-review/palette-application/README.md).
+Earlier comparisons are historical. OQ-016 is resolved.
+
+**We are at the specification/design/stack checkpoint.** No further design
+choice is needed before that review. Start with the
+[updated checkpoint packet](planning/review-version/README.md): stack choice,
+explicit recap of recorded defaults/answer provenance, and remaining P-03/P-04/
+P-05 policy decisions before their affected implementation slices. P-06 needs
+review before live rank integration. Do not reopen approved layouts or colors.
+
+Application work remains stopped. The loopback design preview is available at
+`http://127.0.0.1:8765/qguard-review.html#dashboard`; this is not a deployment.
+The saved HTML remains available after that local server is stopped.
 
 ## Brand And Mobbin Design Review — 2026-10-28
 

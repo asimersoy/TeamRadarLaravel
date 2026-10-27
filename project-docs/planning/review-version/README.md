@@ -9,8 +9,8 @@ stopped at the requested checkpoint. No new product/stack approval is inferred.
    in a local browser, or serve the [source prototype](../../design/qguard-review/prototype/index.html).
    Start with **Sign in → Continue as guest** for the connected journey, or
    **All screens** for individual pages and recovery states. Only fictional data.
-2. Compare Wireframe, Concept and Refined from the top review strip. The Refined
-   direction is the proposed visual design, not an approved final brand.
+2. The owner-approved layouts and calibrated Forest & Lime palette are applied
+   (`DEC-070/073`). Earlier modes are historical; no new visual selection is needed.
 3. Review the [stack comparison](stack-review.md). Recommendation: retain
    Laravel/Blade/Livewire + PostgreSQL/Docker. No replacement stack was installed.
 4. Resolve the consequential policy details below, then approve/revise the
@@ -25,11 +25,12 @@ stopped at the requested checkpoint. No new product/stack approval is inferred.
   access, rank, connections/premades, matching, sessions/code/text, feedback,
   honor, reports/admin, logical data/access and acceptance evidence.
 - [Page inventory](../../design/qguard-review/pages.md): 25 product screens and
-  a catalog, with 79 route/state combinations. Shared monochrome structure and
-  two color iterations are locally interactive.
-- [Verification](../../design/qguard-review/verification.md): 395 route/layout
-  checks, representative rendered inspection and exercised session/feedback,
-  guest, premade, discrepancy and admin paths. These are prototype checks only.
+  a catalog, with 79 route/state combinations. The approved palette is
+  consistent across the current interactive artifact; earlier studies are archived.
+- [Current verification](../../design/qguard-review/palette-application/README.md):
+  responsive route coverage, rendered color/control checks, brand exports and
+  packaging. Earlier interaction evidence remains linked. These certify the
+  local prototype only, not live integrations or application behavior.
 - [Implementation outline](implementation-outline.md): coherent next slices,
   dependencies and later provider/live-use checkpoints. It is not execution approval.
 
@@ -54,8 +55,8 @@ policy when a required corroborator never answers. One additional confirming
 vote and the absence of an abstain option remain approved. No auto-vote or new
 disband authority has been silently added.
 
-**Group 4 — Design and reversible details:** review the visual direction, slider
-wording, per-teammate submit/lock interaction, oldest-unfinished-session ordering
+**Group 4 — Remaining reversible details:** recap slider wording,
+per-teammate submit/lock interaction, oldest-unfinished-session ordering
 and linked-account rank-retrieval failure fallback. Revise the affected specs;
 approve the final packet/slice requirements before application implementation.
 
@@ -77,8 +78,9 @@ Please notice these selections rather than assuming they were all new approvals:
   verify after real RSO, before normal reliance. First-version Discord remains deferred.
 - **Agent draft defaults:** per-card submission, Quiet–Talkative and
   Deliberate–Aggressive labels, oldest unfinished session first, sample guest
-  fixtures/reset, 1440px desktop review and narrow layouts, the visual direction
-  and standalone artifact format. These can be revised at this checkpoint.
+  fixtures/reset, 1440px desktop review and narrow layouts, and standalone
+  artifact format. The visual direction is subsequently approved by DEC-070/073;
+  do not present it as unanswered. Other details can be revised at this checkpoint.
 - **Agent proposals requiring separate policy approval:** P-03/P-04/P-05 above.
   The provider-failure contract P-06 also needs review before live integration.
 
@@ -98,12 +100,21 @@ technical slice contracts and verification, and only then start approved work.
 Silence, elapsed time or acceptance of a screenshot is not implementation approval.
 
 
-## Subsequent Design Refinement — 2026-10-28
+## Historical Design Refinement — 2026-10-28
 
 The owner likes the previous pages/flows, retains the QGuard brand/tagline and
 requests Mobbin-guided improvements (`DEC-069`). Review the
 [updated prototype and references](../../design/qguard-review/mobbin-pass/README.md)
 and [brand assets](../../design/qguard-review/brand/README.md). These revisions
-supersede the earlier visual screenshots as the current design proposal.
+superseded the earlier visual screenshots. The layouts were subsequently
+approved and the palette applied under DEC-070/073.
 CRQ-011 records agent design choices. This visual instruction supplies no
 answer to the stack selection or consequential policy proposals above.
+
+## Palette Application And Current Checkpoint — 2026-10-28
+
+DEC-072/073 selects calibrated A and applies it throughout current design and
+brand artifacts. The owner asked whether anything remains before this checkpoint:
+we are here. That design task is verified; start Group 1, stack review. No additional design-selection round is required.
+Remaining P-03/P-04/P-05 and required slice specifications still need their own
+dispositions before affected application work; P-06 precedes live integration.

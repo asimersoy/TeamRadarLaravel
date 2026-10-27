@@ -1,6 +1,7 @@
 # Mobbin Reference And Revision Record
 
-**Status:** prepared for owner review, design revision only · **Accessed:** 2026-10-27;
+**Status:** historical layout study, accepted under DEC-070; current colors
+are applied under [DEC-073](../palette-application/README.md). **Accessed:** 2026-10-27;
 rendered verification completed 2026-10-28.
 Authority and boundaries: [task plan](../../../planning/mobbin-design-pass.md).
 Full queries/results: [search ledger](searches.json). No access refusal or usage

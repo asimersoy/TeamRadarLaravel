@@ -2,12 +2,20 @@
 
 - **Record type:** owner discussion and agent recommendations
 - **Date:** 2026-10-28
-- **Status:** open; no replacement palette selected
+- **Status:** calibrated A · Forest & Lime approved and applied under DEC-073
 - **Authority:** DEC-070 accepts the Mobbin-refined visual/layout baseline at
-  `9cb1bbc`; DEC-071 requests visible dark samples. OQ-016 keeps color selection
-  open. This is a choice of direction, not a defect report.
+  `9cb1bbc`; DEC-071 requests visible dark samples; DEC-072 selects A and asks
+  for feedback assessment; DEC-073 accepts the recommendation and its application.
 - **Owner:** project owner selects; agent prepares comparisons.
 - **Update trigger:** owner preference, rendered comparison or color approval.
+
+## Current Owner Disposition — 2026-10-28
+
+The owner selected A in DEC-072 and accepted the calibration recommendation
+in DEC-073. The [application record](palette-application/README.md) gives the
+exact current roles, rendered verification and boundaries. OQ-016 is resolved.
+The [assessment](color-feedback-review.md) explains the two border strengths.
+The comparisons and scope below describe the preceding exploration.
 
 ## Scope And Route
 
@@ -33,7 +41,7 @@ desktop and narrow views, check text/control color pairs and local packaging,
 and record limits. One coherent local comparison/decision-record commit at the
 finished review-artifact boundary; final palette remains owner-selected.
 
-## Verified Baseline
+## Earlier Baseline
 
 The current refined CSS uses workspace `#F3F5F1`, white panels, navigation
 `#142D28`, primary action `#245F4C`, body text `#172B28` and muted text
@@ -41,7 +49,7 @@ The current refined CSS uses workspace `#F3F5F1`, white panels, navigation
 observed from the local source and exported brand assets, not inferred from
 Mobbin. The owner accepted the revised layout and is choosing its palette.
 
-## Agent Recommendation And Alternatives
+## Compared Alternatives — Historical
 
 | Direction | Proposed treatment | Design judgment, not a measured outcome |
 | --- | --- | --- |
@@ -57,7 +65,7 @@ the comparison; amber/red status states remain independent of brand accents.
 Keep the accepted logo geometry, spacing, lettering and tagline. A selected
 palette may require color variants of those assets, not a new logo design.
 
-## Samples And Source
+## Historical Samples And Source
 
 - [Interactive page/palette viewer](color-study/index.html): eight representative
   pages, A/B/C buttons and a full-size link for each preview.
@@ -103,10 +111,11 @@ search or competitor-based color claim was used.
 
 ## Handoff
 
-The accepted prototype and exported brand assets remain unchanged. Color
-selection awaits the owner; the comparison is a completed review artifact.
-Batch the preceding approval notes, dark-preference record, samples and evidence
-in one local commit. No push, application work or deployment.
+The three samples were saved in `7f21b91`. DEC-073 subsequently applies the
+calibrated A to current design and brand files. Historical samples remain
+unchanged in appearance; their controls/entrypoints explicitly identify them
+as history. Current review starts at [the approved prototype](qguard-review.html).
+No push, application work or deployment.
 
 The loopback-only preview at `http://127.0.0.1:8765/color-study/index.html` is
 left running for owner comparison, with one deliverable browser tab. Its

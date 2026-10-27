@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "generatedOutputsReproducible": {
+    "qguard-review.html": "c80bbf48c3fe87ffc4b74ed39dc66a073f9f478d3f98d23cddfdd0dd25b689f9",
+    "color-study/forest.html": "dd4a28b2834cf02a894bb6526711fe23afcd3c48bce1f60588008a0630ca19bc",
+    "color-study/blue.html": "3492442b621eb11ffaa1292858e85312e9f8eadff5401134bdc9747f5bc11b10",
+    "color-study/violet.html": "aa65b37345c444651e903b863bcd1f755b53b23a30b161794a7aa76c2332d79c",
+    "color-study/index.html": "b0898f7f84c6afa9ff7faa6826ac4d5f3e9aed754d10f64e72d8697657237dd9",
+    "color-study/comparison.html": "aef19e6f59029c055ed03e0d58955f1ec92c343adb8e6d8c654d35f10ee6dea0"
+  },
+  "sourceStandaloneEquivalent": true,
+  "interactionHandlersUnchanged": true,
+  "svgGeometryUnchangedCount": 13,
+  "pngDimensions": {
+    "qguard-icon-32.png": [
+      32,
+      32
+    ],
+    "qguard-icon-180.png": [
+      180,
+      180
+    ],
+    "qguard-icon-512.png": [
+      512,
+      512
+    ]
+  },
+  "icoHeaderValid": true,
+  "historicalBaselineMatchesPreviousStandaloneExceptLabel": true,
+  "historicalPalettesUnchanged": true,
+  "localDocumentAndHtmlReferencesChecked": 315,
+  "missingReferences": [],
+  "changesConfinedToProjectDocs": true,
+  "contrastRatios": {
+    "text/panel": 15.44,
+    "muted/panel": 9.34,
+    "accent/panel": 12.9,
+    "button text/accent": 12.15,
+    "control/panel": 3.46,
+    "decorative/panel": 1.27
+  }
+}

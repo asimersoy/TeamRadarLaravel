@@ -44,7 +44,7 @@ func lettering(_ text: String, font name: String, size: CGFloat, tracking: CGFlo
 }
 let palettes:[(String,String,String,String)] = [
     ("light","#245f4c","#172b28","#5a6c66"),
-    ("dark","#c9e99b","#ecf2e9","#b5c8bb"),
+    ("dark","#c9e99b","#eef3ed","#b2c2b8"),
     ("mono","#181818","#181818","#181818"),
     ("white","#ffffff","#ffffff","#ffffff")
 ]
@@ -70,14 +70,14 @@ for (name,ink,word,tag) in palettes {
     }
     try write("qguard-mark-\(name).svg",svg(40,40,"<g transform=\"translate(4 4)\">\(mark(ink))</g>","QGuard"))
 }
-try write("favicon.svg",svg(48,48,"<rect width=\"48\" height=\"48\" rx=\"12\" fill=\"#142d28\"/><g transform=\"translate(8 8)\">\(mark("#c9e99b"))</g>","QGuard"))
+try write("favicon.svg",svg(48,48,"<rect width=\"48\" height=\"48\" rx=\"12\" fill=\"#090d0c\"/><g transform=\"translate(8 8)\">\(mark("#c9e99b"))</g>","QGuard"))
 
 // Native raster export of the same simple mark for conventional favicon consumers.
 func color(_ hex:UInt32) -> CGColor {CGColor(red:CGFloat((hex>>16)&255)/255,green:CGFloat((hex>>8)&255)/255,blue:CGFloat(hex&255)/255,alpha:1)}
 for size in [32,180,512] {
     let ctx = CGContext(data:nil,width:size,height:size,bitsPerComponent:8,bytesPerRow:0,space:CGColorSpaceCreateDeviceRGB(),bitmapInfo:CGImageAlphaInfo.premultipliedLast.rawValue)!
     ctx.translateBy(x:0,y:CGFloat(size));ctx.scaleBy(x:CGFloat(size)/48,y:-CGFloat(size)/48)
-    ctx.setFillColor(color(0x142d28));ctx.addPath(CGPath(roundedRect:CGRect(x:0,y:0,width:48,height:48),cornerWidth:12,cornerHeight:12,transform:nil));ctx.fillPath()
+    ctx.setFillColor(color(0x090d0c));ctx.addPath(CGPath(roundedRect:CGRect(x:0,y:0,width:48,height:48),cornerWidth:12,cornerHeight:12,transform:nil));ctx.fillPath()
     ctx.translateBy(x:8,y:8);ctx.setFillColor(color(0xc9e99b))
     ctx.addEllipse(in:CGRect(x:0,y:0,width:30,height:30));ctx.addEllipse(in:CGRect(x:7,y:7,width:16,height:16));ctx.drawPath(using:.eoFill)
     ctx.translateBy(x:25,y:23.5);ctx.rotate(by:.pi/4);ctx.fill(CGRect(x:-6,y:-3.5,width:12,height:7))
