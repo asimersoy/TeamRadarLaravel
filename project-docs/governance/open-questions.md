@@ -5,6 +5,17 @@ limits. Under `DEC-015`, they are settled gradually in bounded discussions when
 their dependencies become relevant; they are not one initial questionnaire.
 Historical unknowns do not automatically become requirements.
 
+**2026-10-27 next-pass update:** `DEC-061` settles mandatory overall honor
+ratings and optional peer descriptions, including their private audience.
+`DEC-063` resolves `OQ-012`: no feedback expiry, immutable sent ratings and
+mandatory completion through session history. `DEC-065` resolves `OQ-013`:
+apply submitted eligible ratings without waiting and without retrospective
+corrections; later reports do not undo already-applied honor effects.
+`DEC-062` schedules comprehensive specifications/design followed by stack
+reconsideration before new application work. The
+[current decision agenda](../planning/product-design-pass.md#remaining-decision-agenda)
+separates immediate choices, drafting details and later release gates.
+
 **2026-10-03 planning update:** QG-FIRST-PASS-1 revision 1 now supplies concrete
 contracts for the bounded local first build, approved with the matched-honor
 amendment under `DEC-052`. Start at the [approved packet](../planning/first-pass/README.md).
@@ -99,6 +110,10 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
+- **Next bounded question, 2026-10-27:** for the first usable release, choose
+  open registration or invite-only access. This affects onboarding/access pages;
+  no answer is assumed. It does not reopen VALORANT or the session/party model,
+  and the existing local synthetic build is not a public-release approval.
 - **Status:** partially resolved: `DEC-018` selects Valorant, `DEC-025`
   selects session grouping and `DEC-037` includes partial parties/basic friends;
   `DEC-044` reaffirms Valorant for the first pass; remaining complete launch/
@@ -147,6 +162,15 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
+- **Latest direction, 2026-10-27:** `DEC-061` replaces the three-dimensional
+  honor input with one required overall 1–10 rating for each eligible teammate
+  before requeueing. Optional communication/play-style sliders are informational
+  summaries for the subject and matched teammates, with untouched values omitted
+  and individual received ratings/reviewers hidden. These choices are settled.
+  `DEC-063` resolves the deadline conflict; `DEC-065` settles application timing
+  and the no-correction policy.
+  The revised data/display contract must
+  address sparse evidence and disclosure without adding scoring inputs.
 - **Status:** partially resolved by `DEC-026` through `DEC-048` for honor's
   first-version matching role, fixed newcomer baseline and bidirectional
   teammate-feedback effects with average/deviation-based direction and a
@@ -205,9 +229,10 @@ questionnaire or permission to leave first-pass contracts unspecified.
   `DEC-034` excludes incoming-rating volatility/adaptive dampening and
   reviewer-deviation accountability from current implementation. Preserve them
   for future consideration without making their questions current blockers.
-  `DEC-041` now selects communication/sportsmanship/effort on 1–10 scales,
-  averaged into one honor input, and pending report-aware settlement. Do not
-  re-ask one overall versus dimensions. `DEC-035` selects with/without-voice
+  `DEC-041` selected communication/sportsmanship/effort on 1–10 scales for the
+  first pass; `DEC-061` now replaces those with one overall honor input and
+  optional descriptions. Report-aware eligibility remains. Do not re-ask the
+  settled feedback format. `DEC-035` selects with/without-voice
   queueing and excludes real Discord integration now. `DEC-036` selects hard
   game-rank compatibility, then honor closeness with wait-dependent widening.
   `DEC-037` adds friends/partial parties and excludes original pre-made
@@ -352,8 +377,9 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
-- **Status:** core stack and testing direction settled by `DEC-049`/`DEC-050`;
-  concrete first-pass technical/acceptance packet approved under `DEC-052`
+- **Status:** existing first-pass stack and testing direction settled by
+  `DEC-049`/`DEC-050`, packet approved under `DEC-052`; next-pass stack review
+  explicitly scheduled after specifications/design under `DEC-062`
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
 - **Blocks:** later production/operating decisions not covered by the packet;
@@ -378,9 +404,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
   testable completion evidence.
 - **Current readiness:** [QG-FIRST-PASS-1](../planning/first-pass/README.md) supplies
   the new-code layout, slice specifications, acceptance package and execution
-  plan. `DEC-052` satisfies packet approval under `DEC-008`/`DEC-051`, including
-  the matched-honor amendment; S1 entry checks are next. No broad owner
-  questionnaire or repeated stack selection is needed.
+  plan. That local slice is implemented; its evidence is not acceptance of
+  the next revision. `DEC-062` now requires product/specification/design work
+  before revisiting the stack, then a concrete implementation packet. Do not
+  select a replacement stack now or treat the old approval as permission to
+  bypass this sequence. The next deliverable's integration promises still need
+  bounded scope: simulated/deferred versus live RSO, game joining and Discord.
   Long-term business, public launch and production operations are later-stage
   questions where they do not affect the bounded development slice.
   See [current assessment](../current-state.md#first-pass-readiness-review--2026-10-03).
@@ -729,3 +758,52 @@ questionnaire or permission to leave first-pass contracts unspecified.
   optional future voice planning, integration deferral and replaceable alternatives;
   `DEC-054` for structured manual host submission/display. The remaining
   specification and live-evidence items stay open
+
+## OQ-012 - How Does Mandatory Feedback Work After the Settlement Deadline?
+
+- **Status:** resolved 2026-10-27 by `DEC-063`
+- **Decision owner:** project owner
+- **Original conflict:** the first-pass ten-minute cutoff rejected later ratings,
+  while `DEC-061` requires ratings before requeueing. Leaving both unchanged
+  could prevent a returning player from completing their obligation.
+- **Resolution:** no ten-minute feedback expiry. Required ratings stay open;
+  they still count when submitted later. Session history/detail provides the
+  rating surface; matchmaking redirects there until the player completes all
+  required eligible ratings. Sent ratings are immutable and received individual
+  ratings/reviewer identities stay hidden.
+- **Blocks:** nothing further for this decision. Do not re-ask whether late
+  ratings count or whether a normal skip/timeout can waive completion.
+- **Separate issue:** `OQ-013` owns when those ratings affect honor and the
+  interaction with later reports; it must not reopen the no-expiry decision.
+
+## OQ-013 - When Does Honor Update While Other Session Feedback Is Outstanding?
+
+- **Status:** resolved 2026-10-27 by `DEC-065`
+- **Decision owner:** project owner
+- **Needed by:** next-pass feedback/honor contract, pending-state design and tests
+- **Settled:** `DEC-061`/`DEC-063` require completion before another queue,
+  accept later eligible ratings, expose session history and lock sent ratings.
+  Existing report-based outgoing-rating invalidation remains approved.
+- **Question:** should a completed submission affect honor without waiting for
+  all other participants, or should the session's numeric batch wait until
+  every required submission arrives?
+- **Earlier option A, not adopted in full:** process completed eligible feedback
+  without waiting indefinitely for absent teammates, with retrospective
+  reconciliation for later disqualifying reports. The owner accepted immediate
+  application but explicitly rejected that correction component in `DEC-065`.
+- **Rejected option B:** retain one pending batch until every required participant
+  finishes. This keeps the existing report-before-scoring approach, but one
+  person who never returns can delay everybody's honor update indefinitely.
+  Those who completed their own obligations may still requeue using current honor.
+- **Resolution:** apply finalized eligible inputs against current state without
+  waiting for other participants. Do not backdate, undo or recalculate earlier
+  effects when later ratings/reports arrive. Existing exclusions known before
+  application still prevent that input; later reports remain review evidence
+  without reversing already-applied honor. Owner accepts order-dependent results;
+  their expected small size is not independently established.
+- **Blocks:** no remaining owner timing choice. The next specification must
+  define report/input races, idempotency and audit/display behavior, then undergo
+  the normal review before implementation.
+- **Does not authorize:** a new feedback expiry, automatic neutral ratings,
+  bypass of mandatory completion, punishment, or weakening of reviewer privacy.
+- **Resolved by:** `DEC-065`, including explicit rejection of retrospective corrections

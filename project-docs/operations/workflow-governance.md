@@ -3,8 +3,9 @@
 - **Record type:** current project-specific operating policy
 - **Status:** approved
 - **Decision owner:** project owner
-- **Authority:** `DEC-007`, `DEC-008` and `DEC-042`; owner explanation-style clarification
-  on 2026-10-02
+- **Authority:** `DEC-007`, `DEC-008` and `DEC-042`; owner explanation-style
+  clarification on 2026-10-02, commit-batching clarification on 2026-10-27,
+  and checkpoint-review visibility under `DEC-064`
 - **Created:** 2026-09-04
 - **Update trigger:** proposed change to workflow authority, approval semantics,
   decision handling, specification gates, commit design, controlled operations,
@@ -60,6 +61,23 @@ authority.
   Git history preserves the change.
 - An apparent conflict is not resolved through implementation convenience.
   Clarify it with the owner and update affected records before proceeding.
+
+## Automatically Resolved Questions and Checkpoint Review
+
+Under `DEC-064`, maintain the
+[checkpoint decision review queue](../governance/checkpoint-review-queue.md).
+Record tool-identified automatic resolutions, uncertain answer provenance,
+and material agent-selected defaults/assumptions with the exact choice,
+consequence, authority, affected artifacts and review status. Do not assume the
+tools can distinguish automatic from manual answers when they do not say so.
+
+Timeout, silence and preselection are not owner approval. Required unanswered
+choices stay open. A delegated reversible detail may proceed as an explicitly
+agent-made choice; this rule grants no extra scope, scoring, access or approval
+authority. At the next relevant checkpoint, and specifically the requested
+stack review, present the queue visibly and record owner accept/revise/defer
+dispositions. Do not rely on the owner finding a hidden note. An earlier
+checkpoint cannot approve defaults selected afterward.
 
 ## Technical Explanations And Provisional Notation
 
@@ -119,11 +137,33 @@ or acceptance criteria.
 
 ## Local Commit Design
 
+This policy applies to **all repository commits**: application implementation,
+fixes, refactors, tests, configuration, migrations, decisions, routine
+documentation, planning and research/study notes. It is not study-specific or
+documentation-only.
+
 - Create additive local commits automatically after coherent verified units;
   do not wait for ceremonial per-commit approval.
+- Record decisions and observations promptly, but batch related changes across
+  files and conversation turns before committing. An individual code or document
+  edit, observed screen, owner reply or completed assistant turn is not by itself
+  a commit boundary. Do not create one commit for every individual change.
 - Group files that jointly form one independently meaningful change. Do not
   create a commit merely because one file changed, and do not accumulate
   unrelated completed work in a perpetually dirty tree.
+- Choose boundaries by rollback meaning: reverting the whole commit should
+  undo one understandable unit of work, including its dependent code, tests,
+  configuration and documentation,
+  without undoing unrelated work or leaving half of that unit behind. Examples
+  include a working feature or fix with its tests and records, a studied user
+  flow with its findings/comparisons, a related decision group, or one completed
+  specification revision. File count and elapsed turns do not define the batch.
+- Saved changes may remain uncommitted while their batch
+  develops. Report that state accurately; returning to the owner does not require
+  a commit. Commit at a meaningful completed batch or useful review/handoff
+  checkpoint, after verification. Do not manufacture tiny batches merely to
+  keep the working tree clean, or combine unrelated changes merely to reduce
+  the commit count.
 - A commit must be a useful reversible checkpoint and must not depend on a
   later commit arriving for its basic correctness.
 - When a commit changes deployable behavior, it must be safe to push or deploy

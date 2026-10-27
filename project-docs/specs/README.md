@@ -1,5 +1,14 @@
 # QGuard Specification Index
 
+**Next-pass routing, 2026-10-27:** `DEC-061`/`DEC-063`/`DEC-065` replace the feedback
+format, requeue obligation, cutoff and history exclusion for the next version.
+Use [current foundations](product-foundations.md#current-feedback-and-session-history-direction)
+and the [product/design plan](../planning/product-design-pass.md). The first-pass
+suite below remains the implemented baseline; it does not approve the revised
+features. `DEC-062` requires specifications and page design before a fresh
+stack review, then applicable implementation approval. Review `DEC-064`'s
+[checkpoint queue](../governance/checkpoint-review-queue.md) at that gate.
+
 - **Record type:** current specification index
 - **Status:** product foundations partially approved; `DEC-018` still selects
   Valorant; `DEC-024` selects Discord room/voice planning with replaceable
@@ -117,10 +126,12 @@ storage, isolated synthetic seed data, assertion-based Pest/PHPUnit backend
 unit/integration/regression tests, PostgreSQL integration/concurrency tests and
 browser coverage of every implemented first-pass user/admin flow. See the
 [stack and testing record](../planning/rewrite-owner-decision-sequence.md#stack-recommendation--2026-10-03)
-for approved direction versus supporting agent proposals. No application test
-or persistence check has run for the rewrite yet.
+for approved direction versus supporting agent proposals. Existing first-pass
+application/persistence results are in the
+[verification record](../planning/first-pass/verification-results.md); they are
+not tests of the new requirements.
 
-The new first-pass suite has an approved bounded local development scope and
-contracts under DEC-052; application implementation has not begun. Public audience/
-region/use boundaries and release remain separately open. Core stack choices
-are already settled; do not ask the owner to choose them again.
+The first-pass suite was approved under DEC-052 and implemented locally.
+Public audience/region/use boundaries and release remain separately open.
+Its stack remains the baseline; the owner now explicitly requests reconsideration
+after the next specification/design pass under `DEC-062`.

@@ -6,6 +6,15 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
+**Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
+under `DEC-061`–`DEC-065`. Required honor feedback, optional descriptive sliders
+and non-expiring session-history ratings replace the relevant first-pass rules
+for the next version. Honor now applies as eligible inputs arrive, without
+retrospective corrections. Resolve initial release access, then complete the study,
+specs and page designs before the requested stack review and new implementation.
+The [checkpoint review queue](governance/checkpoint-review-queue.md) must be
+presented at that review. The implemented baseline below is preserved.
+
 **Latest checkpoint:** [QG-FIRST-PASS-1 revision 1 + DEC-052](planning/first-pass/README.md)
 is owner-approved for first-pass implementation. The sole amendment shows
 matched teammates' aggregate honor beside game rank while keeping feedback
@@ -133,6 +142,8 @@ Start with:
 
 ## Current Planning
 
+- [Product and design pass](planning/product-design-pass.md) — current decision agenda and ordered study/specification/sketch/HTML/stack-review work
+- [Checkpoint decision review queue](governance/checkpoint-review-queue.md) — automatic-resolution evidence, answer-origin limits and material defaults to show the owner
 - [Brief first-pass owner review](planning/first-pass/README.md) — approved with DEC-052's visibility amendment
 - [First-pass specification manifest](specs/first-pass/README.md) — approved modular implementation contracts
 - [Execution stages](planning/first-pass/execution-plan.md), [acceptance matrix](planning/first-pass/acceptance-matrix.md) and [implementation evidence](planning/first-pass/implementation-evidence.md) — current code and test status
@@ -163,7 +174,7 @@ Start with:
 
 ## Current Research
 
-- [Gankster product detail study](research/competitors/gankster/README.md) — owner-led site walkthrough, observed details and QGuard comparisons under `DEC-059`
+- [Gankster product detail study](research/competitors/gankster/README.md) — read-only desktop exploration, observed details and QGuard comparisons under `DEC-059`/`DEC-060`
 - [VALORANT party codes and Gankster findings](research/valorant-party-codes-and-gankster.md) — October 27 side-chat reconciliation; native-code evidence, competitor hypotheses and proposed validation, without a new integration decision
 - [VALORANT client API inventory and UI release status](research/valorant-client-api-and-ui-status.md) — October 23 private-client documentation review; no integration approval or live-test activation
 - [Game API feasibility brief](research/game-api-feasibility.md)
@@ -180,7 +191,7 @@ technical specification, implementation plan, or code change.
 
 ## Current Operations
 
-- [Competitor study procedure](operations/competitor-study.md) — observation-only browser boundary and evidence handling for the Gankster study
+- [Competitor study procedure](operations/competitor-study.md) — read-only navigation boundary and evidence handling for the Gankster study
 - [Workflow governance](operations/workflow-governance.md)
 - [Workspace and repository layout](operations/workspace-layout.md)
 - [Completed workflow-settlement route](routes/GOVERNANCE-2026-09-03-workflow-settlement.md)

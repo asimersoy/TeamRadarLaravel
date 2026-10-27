@@ -220,6 +220,17 @@
   remote, destructive, production, publication, or history-rewrite authority.
   Commit boundaries must be chosen around independently viable units, not file
   count.
+- **Owner clarification, 2026-10-27:** meaningful commit batching applies to
+  all repository work, including implementation, fixes, tests, configuration,
+  decisions, routine documentation and study notes. Do not commit every
+  individual change. Batch related work so reverting a commit undoes one
+  meaningful whole unit, including its dependent code, tests and records.
+  Save decisions/observations promptly;
+  related edits may remain uncommitted across conversation turns until a useful
+  batch or review/handoff checkpoint is complete and verified. This clarifies
+  item 5, does not require a new commit per clarification, and authorizes no
+  rewriting of existing history. See the
+  [canonical commit policy](../operations/workflow-governance.md#local-commit-design).
 - **Affected records:** repository `AGENTS.md`, current state, open questions,
   `project-docs/operations/workflow-governance.md`, specification index,
   planning records, and active/completed task routes
@@ -1541,7 +1552,8 @@ mathematics and empirical performance still require specification and tests.
   specifications under `DEC-008` before their implementation slice
 - **Supersedes:** `DEC-025` only for basic friends/requests and partial-party
   entry; session grouping and remaining social-history exclusions stand
-- **Superseded by:** none
+- **Superseded by:** `DEC-063` adds participant session history and rating pages;
+  friend discovery from history remains deferred
 
 ## DEC-038 - Keep Reputation And Feedback Non-Public For Now
 
@@ -1668,7 +1680,10 @@ mathematics and empirical performance still require specification and tests.
   delegated under `DEC-031`/`DEC-032`, not new owner questions
 - **Supersedes:** none; refines feedback format/eligibility direction
 - **Superseded by:** `DEC-043` for session-end/feedback-clock open components;
-  dimensions, premade exclusion and automatic report consequence remain
+  `DEC-061` replaces the three honor dimensions with one mandatory overall
+  rating and separate optional descriptors. Premade exclusion and automatic
+  report consequence remain, with `DEC-065` limiting invalidation to ratings
+  not yet applied and replacing pending whole-session settlement
 
 ### Shared Route And Evidence Boundary For DEC-035 Through DEC-041
 
@@ -1766,7 +1781,9 @@ coherent local documentation commit, no push or other external action.
   (`DEF-011`); no real-user effectiveness or production safety is established.
 - **Supersedes:** no-show vote/response and feedback-clock open components of
   `DEC-039`/`DEC-041`; existing eligibility and mathematical directions remain
-- **Superseded by:** none
+- **Superseded by:** `DEC-061` requires eligible ratings before requeueing;
+  `DEC-063` removes the ten-minute feedback expiry and adds session-history
+  completion. Session-end and no-show directions otherwise remain
 
 ## DEC-044 - Delegate Region And Language Queue Design For The Valorant First Pass
 
@@ -2002,10 +2019,15 @@ canonical-workflow change, provider research or external action in this unit.
 - **Supersedes:** treating Docker as wholly undecided in first-pass planning;
   pauses detailed execution planning until the stack discussion is settled
 - **Superseded by:** `DEC-050` for the pending core-stack selection only;
-  Docker, sequencing, drafting responsibility and approval boundaries remain
+  `DEC-062` moves the next pass's stack reconsideration after specifications
+  and design but before application implementation. Existing Docker and
+  verification requirements are not silently revoked
 
 ## DEC-050 - Approve The Core Stack, Persistent Database Storage And Docker-Based Testing
 
+- **Later review direction:** `DEC-062` explicitly schedules reconsideration
+  after the next specification/design pass. These selections still describe
+  the implemented baseline; no replacement stack has been chosen.
 - **Date:** 2026-10-03
 - **Status:** approved stack choices and acceptance direction; not a complete
   implementation-specification approval or test-pass claim
@@ -2126,7 +2148,10 @@ canonical-workflow change, provider research or external action in this unit.
   resumption is granted. Deferred work and first-build owner/data review remain.
 - **Supersedes:** `DEC-038`/`DEC-045` and packet wording excluding matched peers
   from aggregate honor visibility; `DEC-051`'s pending packet-review state
-- **Superseded by:** none
+- **Superseded by:** `DEC-061` for the next pass's feedback format, required
+  completion and descriptive summaries; `DEC-062` controls the next pass's
+  design/stack/implementation sequence. This packet's historical approval and
+  first-pass verification remain evidence of that earlier version
 
 ## DEC-053 - Prefer the Officially Documented Riot Developer API
 
@@ -2412,4 +2437,253 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 - **Affected records:** study index/observations/comparison, operations,
   project index/current state and earlier Gankster research pointer
 - **Supersedes:** none
+- **Superseded by:** `DEC-060` for owner-only navigation; study purpose,
+  evidence separation and product-approval boundaries remain
+
+## DEC-060 - Allow Read Only Gankster Exploration and Prefer Desktop Review
+
+- **Date:** 2026-10-27
+- **Status:** approved study interaction scope; no feature adoption
+- **Decision owner:** project owner
+- **Evidence:** owner explicitly permits independent read-only exploration of
+  accessible Gankster sites, excluding joining, finding teams or destructive
+  actions. Subsequent requests ask about LFG versus automatic matchmaking,
+  the source of Join/In Match states, and a normal desktop viewing experience.
+- **Decision:** the agent may navigate, scroll and inspect relevant pages,
+  non-submitting viewing controls and published sources without waiting for
+  the owner to move each screen. Do not join, apply, activate availability or
+  matchmaking, create/publish groups, contact players, submit forms, subscribe,
+  change settings/permissions or perform destructive actions.
+- **Viewing preference:** use desktop dimensions for the main study and record
+  them. The owner expects QGuard primarily on desktop with mobile compatibility;
+  the tentative comment about a mobile app does not select an implementation
+  platform or remove responsive requirements. 1440 × 900 is the agent's study
+  viewport choice, not an approved product breakpoint.
+- **Research questions:** distinguish full-team assembly, recommendations,
+  leader-approved listings, pair matching and automated game invitations.
+  Investigate whether status is synchronized or manually declared; leave the
+  exact implementation unknown where evidence is absent.
+- **Unchanged:** `DEC-059` evidence/proposal separation; all-commits batching
+  policy; current QGuard decisions, official API preference and held live tests.
+  No integration, competitor client installation or product change is approved.
+- **Affected records:** competitor-study procedure, study index/observations,
+  comparison, project index and current state
+- **Supersedes:** owner-only navigation boundary in `DEC-059`
+- **Superseded by:** none
+
+## DEC-061 - Require Overall Honor Ratings and Offer Optional Peer Style Descriptions
+
+- **Date:** 2026-10-27
+- **Status:** approved next-pass product direction; not implemented;
+  `DEC-063` subsequently resolves non-expiring feedback and history
+- **Decision owner:** project owner
+- **Evidence:** owner requests required 1–10 honor feedback with optional
+  communication/play-style sliders. The agent restates one overall honor
+  rating replacing three dimensions. Owner then explicitly selects rating
+  every eligible teammate before another queue, and summaries visible to the
+  player and their matched teammates only.
+- **Required honor:** one overall integer rating from 1 through 10 for each
+  eligible teammate at session-end feedback. The player cannot join another
+  queue until those required ratings are completed. Preserve self-rating,
+  original-premade and other existing eligibility exclusions; do not require
+  a prohibited rating. No default rating or silent neutral submission.
+- **Optional descriptors:** start with two teammate observations: communication
+  tendency and play style. Both use sliders initially shown at the midpoint.
+  If untouched, omit the value entirely. If intentionally answered, including
+  intentionally selecting the midpoint, include it as an actual response.
+  An untouched visual midpoint is not a neutral rating or a sample.
+- **Purpose:** descriptors are informational only for now. They do not affect
+  honor, matchmaking, eligibility, ordering or penalties. Combining submitted
+  values into a displayed summary is distinct from scoring; its method remains
+  to be specified. A quiet/cautious or vocal/aggressive style is not inherently
+  good or bad. Final poles/wording and interaction details await design review.
+- **Audience:** the subject player and their authorized matched teammates can
+  see descriptive summaries. Not public profiles, unrelated friends or general
+  discovery. Individual received ratings and reviewer identities remain hidden
+  from players. Existing cleared-admin access remains subject to the revised
+  data contract; no unrelated access expansion is inferred.
+- **Preserved:** honor's role, baseline, smoothed reference, dampening and
+  tuning delegation; account/rank checks; report-based eligibility and no
+  automatic punishment. These descriptive sliders are not Gankster's
+  self-declared play-preference questionnaire.
+- **Follow-up:** `DEC-063` resolves `OQ-012` by removing the ten-minute expiry,
+  requiring completion through session history and locking submitted ratings.
+  Summary aggregation, sparse evidence,
+  safe display updates, reset-to-unanswered behavior and abuse/retention
+  treatment must be specified. No covert reuse as matching inputs is allowed.
+- **Supersedes:** `DEC-041`'s three-dimension honor input and `DEC-052`'s
+  first-pass optional/skip-and-requeue behavior for the next version. The
+  verified first-pass build is preserved, not retroactively relabeled.
+- **Affected records:** foundations, first-pass supersession notices,
+  `OQ-006`/`OQ-012`, next-pass plan, comparison and current state
+- **Superseded by:** none
+
+## DEC-062 - Complete Product Specifications and Page Design Before Stack Reconsideration
+
+- **Date:** 2026-10-27
+- **Status:** approved work sequence and future direction; major decisions in
+  progress, no next-pass application implementation authorized
+- **Decision owner:** project owner
+- **Evidence:** owner requests major product decisions first, then a thorough
+  study of relevant Gankster features, QGuard-specific specifications, sketches
+  for every page, color/design iterations and HTML designs. Owner explicitly
+  requests revisiting the stack after those artifacts, before backend/frontend
+  implementation. A website with a future desktop app and Discord integration
+  is the intended direction.
+- **Sequence:** settle consequential direction choices incrementally; study
+  relevant competitor flows under the read-only boundary; translate evidence
+  into comprehensive QGuard specifications; cover all scoped user/admin pages
+  with simple monochrome wireframes; introduce color/tokens and iterate; build
+  a coherent HTML design prototype; review the stack with the owner; obtain
+  applicable final specification/design/technical approval before implementing.
+- **Study disposition:** distinguish adopted QGuard behavior, candidate details,
+  unverified implementation claims and future-only ideas. Record useful features
+  outside first-version scope separately; their existence in Gankster is not
+  adoption. Reuse ideas suited to QGuard's matching model, not its entire product.
+- **Prototype boundary:** HTML/CSS and simulated local interaction are design
+  artifacts. They may be produced before stack review. They are not production
+  frontend/backend implementation, real account connections or permission to
+  modify the existing app. Use synthetic data and truthful simulated states.
+- **Desktop direction:** retain a future companion-app option. A Chromium-based
+  shell is the owner's conditional preference if it meets the desired game-client
+  integration needs, not a selected framework or proven capability. Gankster's
+  desktop technology is an unverified owner hypothesis. `DEC-053`'s preference
+  for supported Riot developer APIs remains; private/local API use needs a
+  concrete feasibility and authorization decision, not inference from a shell.
+- **Integration boundary:** future Discord intent is reaffirmed. Existing
+  optional-voice direction, live-test hold and current implementation exclusions
+  remain until specifically revised. No voice recording is approved.
+- **Existing work:** keep the implemented local first pass and its evidence.
+  Its Laravel/Blade/Livewire/PostgreSQL/Docker stack is the review baseline, not
+  an irrevocable selection for the next pass. No rewrite/deletion/migration is
+  implied by revisiting it.
+- **Supersedes:** `DEC-049`'s stack-before-detailed-planning order for this next
+  pass. Reopens `DEC-050` for a later review without selecting replacements;
+  earlier implementation approval does not bypass the new sequence.
+- **Affected records:** [product/design plan](../planning/product-design-pass.md),
+  `OQ-007`, specification indexes and current state. Reusable workflow unchanged
+- **Superseded by:** none
+
+## DEC-063 - Keep Session Feedback Open and Require Completion Through Session History
+
+- **Date:** 2026-10-27
+- **Status:** approved next-pass requirements; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner first selects that late ratings count toward honor, then
+  explicitly changes the ten-minute decision: keep feedback open until required
+  ratings are given, expose session history, redirect pending raters there on
+  matchmaking entry, hide received individual ratings/authors, and lock sent ratings.
+- **Session record:** represent the QGuard session and its participant
+  relationships, and expose a participant's session history with a detail/rating
+  page for each session. “Session,” not one independently detected game, is the
+  unit; it may cover several games. A particular table/schema shape is not yet
+  selected; the existing first pass already has related session records.
+- **End and revisit:** when a player ends their session, send them to its
+  history/detail page for feedback. They may access their own session history
+  later. This is not a public activity feed or permission to inspect unrelated sessions.
+- **No expiry:** remove the ten-minute feedback cutoff. Required ratings remain
+  outstanding until the player submits them. Returning later does not make an
+  otherwise eligible rating too late to affect honor; no fabricated rating,
+  silent timeout completion or ordinary skip satisfies the obligation.
+- **Queue entry:** when Find match/new matchmaking is requested, check that
+  player's outstanding eligible session ratings. If any remain, route them to
+  the relevant history/rating page and require completion before admitting them
+  to a new queue. Existing self/premade/participation exclusions still apply.
+  Another teammate's missing submission is not itself this player's requeue obligation.
+- **Finality and privacy:** after the player sends/locks a rating, they cannot
+  change it. Draft interaction before submission is distinct from a sent rating.
+  Players cannot see individual received ratings or who gave them. Session
+  participation is visible as authorized roster data, not as a reviewer-rating map.
+  Optional descriptors and their audience follow `DEC-061`.
+- **Preserved:** no numeric honor for a team dissolved before eligible shared
+  play; existing honor mathematics, report-based eligibility, no automatic
+  punishments and separate live/provider holds. History is now in scope, but
+  friend discovery from history, lifetime retention promises and public history
+  are not implicitly adopted.
+- **Timing follow-up:** `DEC-065` resolves `OQ-013`: apply submitted eligible
+  ratings without waiting for everyone and perform no retrospective correction.
+  Reconcile the resulting prospective-only report invalidation,
+  abandoned obligations, account lifecycle, multiple pending sessions,
+  idempotency, queue races and disclosure-safe summaries in the next specs.
+  Do not silently remove the two-reporter rule or apply an input twice.
+- **Supersedes:** `DEC-043`'s ten-minute feedback closure; first-pass
+  skip/deadline rejection behavior under `DEC-052`; the session-history
+  exclusion in `DEC-037`/`DEF-010` for this newly selected history/rating flow.
+  Past-teammate friend-discovery tools remain deferred. `OQ-012` is resolved.
+- **Affected records:** foundations, feedback/session/flow supersession notices,
+  `DEF-010`/`DEF-011`, next-pass plan, question register and current state
+- **Superseded by:** none
+
+## DEC-064 - Review Automatically Resolved Questions and Agent Defaults at Checkpoints
+
+- **Date:** 2026-10-27
+- **Status:** approved project-specific review rule
+- **Decision owner:** project owner
+- **Evidence:** owner cannot always remain present for questions and asks that
+  detectable automatically resolved questions be recorded and presented again
+  at the stack-review checkpoint so missed decisions can be revisited.
+- **Decision:** maintain a linked review queue of tool-reported automatic
+  resolutions, uncertain answer provenance, and material agent-selected defaults
+  or assumptions. Record the question, choice, evidence/source, consequence,
+  affected artifacts, provisional authority and required review stage.
+- **Checkpoint:** explicitly show these entries at the next relevant checkpoint
+  and in the stack-review packet under `DEC-062`; record owner accept/revise/defer
+  dispositions rather than burying them in a document. Do not re-present every
+  already explicit owner decision as unresolved.
+- **Approval boundary:** timeout, silence and a preselected answer do not count
+  as owner approval. Required unanswered decisions stay open; only already
+  delegated reversible choices may proceed as agent selections. This rule does
+  not grant automatic approval for policy, scope, access, scoring or stack changes.
+- **Detection limit:** identify automatic resolution only where tool evidence
+  says so. If the interface does not distinguish manual from automatic answers,
+  record that limitation; do not invent a provenance claim.
+- **Affected records:** [workflow governance](../operations/workflow-governance.md),
+  [checkpoint review queue](checkpoint-review-queue.md), next-pass plan/current state
+- **Supersedes:** none; adds review visibility without weakening approval rules
+- **Superseded by:** none
+
+## DEC-065 - Apply Ratings As Submitted Without Retrospective Honor Corrections
+
+- **Date:** 2026-10-27
+- **Status:** approved next-pass timing and correction policy; not implemented
+- **Decision owner:** project owner
+- **Evidence:** owner explicitly selects applying submitted ratings without
+  waiting for everyone and rejects correction calculations when later inputs
+  would have changed earlier calculations. The agent explains the consequence
+  for later reports rather than silently preserving a rollback mechanism.
+- **Decision:** apply each finalized, eligible honor input once without waiting
+  for the rest of the session's feedback. Use the recipient's current honor and
+  smoothed raw-reference state when processing it. An old session's later
+  submission is a new input now, not an event backdated into an earlier sequence.
+- **No retrospective correction:** do not replay, undo or recompute prior honor,
+  raw-reference or count effects because subsequent ratings or reports arrive.
+  Future ordinary inputs still move the current state under the existing model.
+  The owner's illustrative 0–1000 numbers do not select a new stored scale or
+  formula; existing equivalent-scale discretion remains.
+- **Report consequence, explicit interpretation:** check existing eligibility
+  evidence before applying an input. If the same-session two-reporter threshold
+  or other existing exclusion already applies, omit that outgoing input from
+  honor. A threshold reached afterward cannot undo already-applied effects
+  under the no-correction rule. Keep the report and timing evidence for human
+  review, distinguish an unapplied exclusion from a later ineligibility finding,
+  and do not claim that retained mathematical effects were removed. This adds
+  no global rating ban, punishment or future-session exclusion.
+- **Accepted tradeoff:** arrival order can affect later state and a quickly
+  submitted rating can retain influence despite later disqualifying reports.
+  The owner's expectation that differences are small and balance out is a
+  rationale/assumption, not a proven bound, fairness guarantee or anti-abuse result.
+- **Preserved:** immutable sent ratings, non-expiring outstanding feedback,
+  completion before requeueing, private received ratings/reviewer identities,
+  existing honor formula and descriptor exclusion from scoring/matching.
+  No manual correction/appeal tool is added; `DEF-009` otherwise remains.
+- **Specification work:** define consistent processing order for simultaneous
+  inputs/reports, idempotency, atomic state updates, truthful audit labels and
+  privacy-safe display. Verify no double application, no replay of an old
+  session, correct pre-application exclusion and retention of previously applied
+  effects after a later report. These are acceptance requirements, not test results.
+- **Supersedes:** `DEC-041`/`DEC-043` and first-pass packet rules requiring all
+  session reports to settle before any honor input; rejects the recalculation
+  part of the agent's proposed option A in `OQ-013`. `OQ-013` is resolved
+- **Affected records:** foundations, first-pass supersession notice, question
+  register, current state, next-pass plan and checkpoint review queue
 - **Superseded by:** none

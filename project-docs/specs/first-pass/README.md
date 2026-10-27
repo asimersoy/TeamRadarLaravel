@@ -10,6 +10,14 @@
 
 ## Purpose and scope
 
+**Next-pass supersession, 2026-10-27:** `DEC-061`/`DEC-063` change feedback,
+requeueing and session history; `DEC-062` requires the new product/design sequence
+and stack reconsideration before application work. Follow the
+[next-pass plan](../../planning/product-design-pass.md) and
+[current feedback direction](../product-foundations.md#current-feedback-and-session-history-direction).
+This manifest and its acceptance evidence describe the preserved first pass;
+their approval does not cover these later changes or bypass the new checkpoint.
+
 **Later owner decisions, 2026-10-23:** `DEC-054` selects structured host setup
 for a future game handoff; `DEC-055` selects per-queue rank refresh/confirmation
 and lobby account/rank checks with discrepancy dissolution. See the

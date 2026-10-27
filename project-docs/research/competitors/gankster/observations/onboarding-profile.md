@@ -64,7 +64,12 @@ field-level privacy claims are made clear and accurate.
 
 ## Unobserved States
 
-Login/RSO, steps 2 and 3, submission rules, back/skip behavior, persistence after
+The owner subsequently reached [step 2](onboarding-gankstyle.md). This establishes
+that progression occurred, but the agent did not observe the intervening field
+edits or submission; it does not settle which profile fields were required.
+
+Step 3 is now recorded in [the notification offer](onboarding-notifications.md).
+Login/RSO, submission rules, back/skip behavior, persistence after
 reload, errors, rank retrieval/refresh and actual group or voice behavior are
 unobserved. No click, scroll, input, upload, account change or submission was
 performed. No raw screenshot or DOM dump containing account/player details was

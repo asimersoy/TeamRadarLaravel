@@ -1,5 +1,11 @@
 # QGuard Product Foundations
 
+**Latest direction, 2026-10-27:** `DEC-061`/`DEC-063`/`DEC-065` replace the feedback
+format, optional completion, ten-minute expiry and session-history exclusion
+for the next pass. See [the current feedback direction](#current-feedback-and-session-history-direction).
+These changes are not implemented; `DEC-062` requires specifications/design
+and the later stack review before new application work.
+
 **Implementation routing update, 2026-10-03:** the
 [first-pass specification suite](first-pass/README.md) now turns these decisions
 into concrete contracts and tests, approved as revision 1 + DEC-052. The
@@ -119,9 +125,10 @@ or compatible teammates.
 Under `DEC-025`, the first usable version groups players for a playing session.
 `DEC-037` partially supersedes its social-feature exclusion: solo and partial
 pre-made parties, basic QGuard friendships/add-friend requests and invitations
-into a QGuard lobby are now current scope. Persistent-team management and
-player-facing past-teammate history, including friend discovery from that
-history, remain outside this implementation and for later planning.
+into a QGuard lobby are current scope. `DEC-063` now adds participant session
+history and its required rating pages for the next pass. Persistent-team
+management and friend discovery from past-teammate history remain outside
+this scope; basic session history is no longer excluded.
 
 Original pre-made co-members cannot give one another ordinary behavior ratings.
 They can rate other matched teammates and receive ratings from those teammates,
@@ -133,8 +140,8 @@ exclude ratings between all people who happen to be QGuard friends.
 several games. Original partial-party persistence after assembled-team disband
 is optional implementation-agent discretion, not required extra complexity.
 Readiness/recovery details must be specified and tested, but reversible choices
-within the approved direction need not come back as owner questions. UI history
-exclusion does not settle session/report evidence retention.
+within the approved direction need not come back as owner questions. Session
+history does not itself settle a final retention/deletion policy.
 
 ### Current Queue And Matching Direction
 
@@ -182,7 +189,55 @@ false-no-show/collusion checks (`DEF-008`), acknowledging that a joined player
 could be falsely targeted. No automatic score deduction or ban is selected;
 development direction is not proof of safe release.
 
+### Current Feedback and Session History Direction
+
+Under `DEC-061`/`DEC-063`, each player must submit one overall 1–10 honor
+rating for every eligible teammate before entering another queue. Existing
+self, original-premade and participation exclusions remain. There is no numeric
+default, ordinary skip or ten-minute expiry. Ratings submitted later still count
+when eligible. A player's completed obligation does not require somebody else
+to submit before that player can requeue.
+
+At session end, open that session's history/detail page for rating. Provide
+the player's session history for later access. Find match checks unfinished
+eligible ratings and redirects to the relevant old session until they are
+completed. Sent/locked ratings cannot be edited; draft interaction precedes
+that commitment. Model sessions and their participant relationships; a session
+can cover several games. History is not a public review ledger.
+
+Two optional peer sliders describe communication tendency and play style.
+Initially centered, they contribute nothing unless intentionally answered;
+an intentional midpoint answer is distinct from an untouched control. Submitted
+descriptions may contribute to a displayed summary but never honor, matching,
+eligibility, ordering or punishment for now. Poles/labels, summary aggregation,
+sample sufficiency and clear-to-unanswered interaction are to be specified.
+
+Only the player and their authorized matched teammates see descriptive
+summaries. Individual received ratings and reviewer identities stay hidden.
+Quiet/cautious and vocal/aggressive are descriptions, not moral grades.
+`DEC-065` applies finalized eligible honor inputs without waiting for other
+participants. Process a later submission against current honor/reference state;
+do not backdate it or replay previous calculations. Never apply an input twice.
+The existing honor model remains, but report-based exclusions only prevent
+inputs not yet applied. Later reports remain human-review evidence and do not
+undo prior honor/reference/count effects. Label that distinction honestly in
+the admin audit. This accepts order dependence; it does not establish that all
+differences are small or self-correcting. [OQ-013](../governance/open-questions.md#oq-013---when-does-honor-update-while-other-session-feedback-is-outstanding)
+is resolved. Do not infer a new penalty, final retention policy, friend-discovery feature or live
+game detector. Acceptance must cover queue bypass attempts, return after a
+long absence, multiple pending sessions, immutable/idempotent submissions,
+ineligible targets, untouched sliders and private summary access. Also cover
+concurrent reports/ratings, pre-application exclusions, later reports retaining
+already-applied effects, old-session submissions against current state and
+privacy-safe score presentation.
+
 ### Feedback Format, Pending Settlement And Report Review
+
+The following records the implemented first-pass baseline. Its three honor
+dimensions, optional/skip behavior, feedback cutoff and whole-session pending
+settlement are superseded for the next pass by the direction above. Its other
+eligibility/report rules remain subject to `DEC-065`'s no-retrospective-correction
+boundary; old tests do not verify the new direction.
 
 `DEC-041` selects three user-facing 1–10 dimensions: communication,
 sportsmanship and effort. Their simple arithmetic mean becomes one input to

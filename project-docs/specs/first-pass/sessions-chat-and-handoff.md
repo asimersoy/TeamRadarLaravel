@@ -1,5 +1,12 @@
 # Sessions, private chat and unimplemented game handoff
 
+**Next-pass change, 2026-10-27:** `DEC-063` removes the feedback expiry and
+routes session end/unfinished requeue attempts through session history/detail.
+The timer-dependent feedback/chat lifecycle below describes the implemented
+first pass and needs reconciliation in the
+[next-pass plan](../../planning/product-design-pass.md). The no-show response
+timer is a different rule and is not removed by this feedback decision.
+
 **Status/owner/update:** [manifest](README.md). Authority: DEC-024, DEC-035,
 DEC-039, DEC-043, DEC-046, DEC-052. Dependencies: matching, feedback, data/security.
 Acceptance: F06–F09, S01–S04, C01–C03.

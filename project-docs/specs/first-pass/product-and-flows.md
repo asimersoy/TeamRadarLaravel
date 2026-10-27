@@ -1,5 +1,11 @@
 # First-pass product and user flows
 
+**Next-pass changes:** `DEC-061`/`DEC-063` replace the feedback/skip/deadline
+flow and add participant session history/detail pages. F08/F09 and the history
+exclusion below describe the old implemented packet. Use the
+[next-pass plan](../../planning/product-design-pass.md) for revised page coverage;
+the existing test IDs are not acceptance evidence for the new behavior.
+
 **Status/owner/update:** [manifest contract](README.md). Authority: DEC-009,
 DEC-010, DEC-018, DEC-025–DEC-048 and DEC-052. Additional UI choices are
 agent-authored first-pass details accepted in the packet. Acceptance: F01–F12 and X01–X04 in the

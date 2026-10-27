@@ -1,5 +1,12 @@
 # QGuard first-pass plan — brief owner review
 
+**Later direction:** this is the implemented first-pass baseline. `DEC-061`
+and `DEC-063` replace optional feedback/ten-minute expiry with mandatory,
+non-expiring session-history ratings and add private descriptive summaries.
+`DEC-062` controls the [next product/design pass](../product-design-pass.md),
+including stack reconsideration before its implementation. The old packet's
+approval does not automatically approve that next version.
+
 **Status:** owner-approved for implementation with DEC-052's visibility amendment.
 **Packet:** QG-FIRST-PASS-1, revision 1 + DEC-052, 2026-10-03.
 You do not need to review every engineering detail. This summary and its linked

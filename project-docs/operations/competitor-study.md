@@ -1,18 +1,25 @@
 # QGuard Competitor Study Procedure
 
 - **Record type:** project-specific operating instructions
-- **Authority:** `DEC-059` and the existing [workflow governance](workflow-governance.md)
+- **Authority:** `DEC-059`, `DEC-060` and the existing [workflow governance](workflow-governance.md)
 - **Owner:** project owner; primary agent maintains observations and comparisons
 - **Status:** active for the Gankster study
 - **Update trigger:** owner changes browsing permission or study scope
 
-The owner navigates and interacts with Gankster. Until the owner explicitly
-delegates exploration, the agent only reads the page the owner has reached,
-including its rendered view and page accessibility/DOM state. Do not click,
-type, scroll, submit, navigate, open additional site pages, alter account
-settings or use background requests to explore around that boundary. A
-suggested next screen is a suggestion for the owner, not permission to open it.
-Passive inspection does not require a separate confirmation at each screen.
+Under `DEC-060`, the agent may independently navigate and inspect relevant
+Gankster pages and published documentation in read-only mode. This includes
+scrolling, opening viewing menus and inspecting a setup form without submitting
+it. Do not join a community/group, request entry, activate availability or
+matchmaking, create/publish a group or post, like/connect with a player, send
+messages/reports, subscribe, submit forms or change account/permission settings.
+Do not install the desktop client or resume game/Discord tests through this
+permission. Stop at an action boundary and continue with accessible evidence;
+routine read-only navigation does not need repeated permission.
+
+Review layout primarily at a normal desktop viewport, as requested by the owner.
+The initial desktop pass uses 1440 × 900 CSS pixels; record the actual viewport
+for later captures. Compare narrow layouts separately when useful. This is a
+study preference, not approval of QGuard breakpoints or a native app strategy.
 
 ## Where Records Belong
 
@@ -27,9 +34,9 @@ Passive inspection does not require a separate confirmation at each screen.
 
 For each observed step, record the date, URL, entry context, state, visible
 controls and defaults, hierarchy, relevant wording, and what action produced
-the next state. Attribute actions to the owner. Note form validation, loading,
-empty, success, failure, recovery and persistence only when actually observed;
-do not exercise them on the owner's behalf while observation-only mode applies.
+the next state. Distinguish owner actions from agent read-only navigation.
+Note form validation, loading, empty, success, failure, recovery and persistence only when actually observed;
+do not exercise behavior that crosses the read-only boundary.
 
 Separate these classes in every finding:
 
@@ -64,6 +71,11 @@ a manual button does not supersede it.
 
 Maintain the study index as the resume point. Extend an existing feature note
 when the owner reveals another state of that feature; create a new note for
-a distinct flow. Verify links and the scoped diff, and group each coherent
-study checkpoint into an additive local commit under existing policy. No
-external site action, push or game-test resumption follows from committing notes.
+a distinct flow. Save observations as we go, but do not commit after every
+screen, note or conversation turn. Under the
+[commit-batching policy](workflow-governance.md#local-commit-design), group a
+meaningful studied flow or related findings into one reversible documentation
+batch, including its comparisons and index updates. Notes may remain
+uncommitted between study steps. Verify links and the complete scoped diff
+before the eventual additive commit. No external site action, push or game-test
+resumption follows from committing notes.

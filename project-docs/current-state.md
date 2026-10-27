@@ -1,15 +1,67 @@
 # QGuard Current State
 
+## Product and Design Pass — 2026-10-27
+
+`DEC-061` selects one required 1–10 honor rating per eligible teammate before
+requeueing, plus optional peer communication/play-style sliders. Untouched
+midpoints are omitted; descriptors affect neither honor nor matching. Their
+summaries are visible only to self and matched teammates; received individual
+ratings and reviewer identities remain hidden.
+
+`DEC-063` removes the ten-minute feedback expiry and adds session history and
+detail/rating pages. Session end opens that page; later Find match attempts
+redirect there while required ratings remain. Sent ratings are immutable.
+`OQ-012` is resolved. `DEC-065` also resolves `OQ-013`: apply submitted eligible
+ratings against current state without waiting for everyone; no backdating,
+undoing or retrospective recalculation. Known exclusions prevent unapplied
+inputs; later reports remain evidence without reversing prior honor effects.
+Arrival-order effects are an accepted tradeoff, not proven to always balance out.
+
+Follow the [product/design plan](planning/product-design-pass.md): resolve major
+direction choices, study relevant competitor details, prepare comprehensive
+QGuard specs, monochrome page sketches, color/visual iterations and an HTML
+prototype, then revisit the stack before application implementation (`DEC-062`).
+The current Laravel/Blade/Livewire/PostgreSQL/Docker build remains the earlier
+baseline; none of these new behaviors is implemented. Future desktop/Discord
+intent does not activate held tests or approve private client API use.
+
+Under `DEC-064`, visibly review the
+[checkpoint decision queue](governance/checkpoint-review-queue.md) at the stack
+checkpoint. Timeout/silence is not approval. No tool-confirmed automatic
+resolution is currently known; answer-origin limits and material agent defaults
+are recorded for review. The accumulated study, policy clarifications and
+next-pass decisions form the
+[consolidated documentation checkpoint](planning/product-design-pass.md#consolidated-study-and-direction-checkpoint)
+in the commit containing this update. No application change or remote action occurred.
+
 ## Gankster Detail Study — 2026-10-27
 
-`DEC-059` authorizes a [dedicated Gankster study](research/competitors/gankster/README.md)
-for UI and workflow details. The owner navigates/interacts until explicitly
-delegating exploration; the agent only observes the owner's current page.
-The [study procedure](operations/competitor-study.md) keeps that operating rule
-separate from research findings. The first observed state is appearance/profile
-onboarding, step 1 of 3, over the VALORANT ESP LFG page. No agent interaction
-or onboarding completion occurred. Ideas remain candidates; `DEC-055`'s rank
-flow, other product decisions and the held game/Discord tests are unchanged.
+`DEC-059` authorizes a [dedicated Gankster study](research/competitors/gankster/README.md).
+`DEC-060` now permits autonomous read-only navigation and selects desktop viewing
+for the main review. Joining, applications, matchmaking participation, posts,
+messages and account/permission changes remain outside scope. The
+[study procedure](operations/competitor-study.md) keeps these rules separate.
+
+The [desktop and discovery pass](research/competitors/gankster/observations/desktop-and-group-discovery.md)
+inspected the community list at 1440 × 900, its filters, Lf Duo, recruitment and
+scrim pages, plus the separate Duos sign-in screen. Main Groups is documented
+as listing/application/leader acceptance; Duos advertises compatible pair
+matching. No evidence was found of QGuard-style automatic full-team formation
+by similar honor. The [matching/status report](research/competitors/gankster/matching-and-game-status.md)
+records Gankster's explicit desktop game-state synchronization claim; the exact
+In Match trigger, API and manual fallback remain unverified. Onboarding is no
+longer blocking the visible list, but its intervening choices were not observed.
+Study notes are included in the consolidated checkpoint. Study findings alone
+remain candidates; later owner adoptions are explicit in `DEC-061`/`DEC-063`.
+`DEC-055` and the held game/Discord tests are unchanged.
+
+## Commit Batching Clarification — 2026-10-27
+
+The owner clarified that meaningful rollback boundaries apply to **all commits**,
+including implementation, decisions, routine documentation and study notes.
+Save work as it develops and commit coherent verified batches, not individual
+edits or replies. Apply the [commit policy](operations/workflow-governance.md#local-commit-design);
+related work may remain uncommitted between steps.
 
 ## Side Chat Reconciliation — 2026-10-27
 

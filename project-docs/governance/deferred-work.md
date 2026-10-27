@@ -4,6 +4,11 @@ Status: updated 2026-10-03; Discord-dependent execution on owner hold;
 future honor consideration preserved without feature-adoption approval;
 first-pass retention review scheduled for pass two under `DEF-012`
 
+**2026-10-27:** `DEC-063` activates session-history/rating design from the
+relevant part of `DEF-010` and replaces `DEF-011`'s ten-minute feedback expiry.
+Friend discovery, unrelated session polish and real integrations remain deferred.
+Follow the [next-pass plan](../planning/product-design-pass.md) before implementation.
+
 The legacy backlog, post-MVP roadmap, rejected approaches, and unfinished
 implementation are historical evidence, not commitments for the rewrite.
 
@@ -341,8 +346,10 @@ boundary, not approval to implement either future feature.
   correction and appeal policy are later planning/polish.
 - **Current exception / not deferred:** two distinct reports automatically
   invalidate the target's outgoing ratings for that match before human review,
-  with an admin tag (`DEC-041`). Owner explicitly calls this an eligibility
-  consequence, not a penalty. Do not defer or silently broaden it.
+  with an admin tag (`DEC-041`). For the next pass, `DEC-065` limits its score
+  effect to inputs not yet applied; later reports do not retrospectively undo
+  honor. Owner calls the exclusion an eligibility consequence, not a penalty.
+  Do not defer or silently broaden it.
 - **Implementation state:** first-pass human inbox and automatic outgoing-rating
   eligibility consequences are implemented and verified locally. Penalties,
   corrections and appeals remain unimplemented and unapproved.
@@ -354,7 +361,8 @@ boundary, not approval to implement either future feature.
 
 ## DEF-010 - Plan Past-Teammate History And Friend Discovery Later
 
-- **Status:** owner-approved later planning; implementation specification absent
+- **Status:** partially activated by `DEC-063` for participant session history
+  and required rating pages; friend discovery from history remains deferred
 - **Decision owner:** project owner
 - **Execution owner:** unassigned
 - **Locked decision:** `DEC-037` includes basic friends/invitations and partial
@@ -362,7 +370,12 @@ boundary, not approval to implement either future feature.
   requests from that history to a later plan.
 - **Reason postponed:** the core session loop can use basic friendships without
   adding this discovery/history surface now.
-- **Implementation state:** no history screen or supporting retention selected.
+- **Latest direction:** `DEC-063` selects history/list/detail access to one's
+  sessions and mandatory completion of eligible ratings there. This is current
+  next-pass scope, not merely a future idea. Exact retention/deletion policy
+  remains part of `DEF-012`; no public/lifetime history promise is inferred.
+- **Implementation state:** new history/rating requirements recorded; no new
+  screen implemented. The prior first pass and its session records remain.
 - **Return condition:** owner starts the later social-history plan; specify
   privacy/access, storage purpose and acceptance before implementation.
 - **Owner recheck:** no hidden permanent feedback ledger or lifetime session
@@ -370,18 +383,22 @@ boundary, not approval to implement either future feature.
 
 ## DEF-011 - Polish Participant-Declared Session End And Feedback Settlement Later
 
-- **Status:** explicit owner-approved later polish; concrete improvements
-  unselected, current ten-minute first-pass direction fixed
+- **Status:** feedback-expiry portion superseded by `DEC-063`; other session-end
+  polish remains deferred unless required by the revised contract
 - **Decision owner:** project owner
 - **Execution owner:** unassigned until the owner starts a later pass
-- **Locked decision:** `DEC-043` uses participant Session ended and a ten-minute
-  window from the first finalized feedback submission, with earlier closure
-  if everyone finishes. A session may span multiple games.
+- **Current decision:** participant Session ended and multiple games per session
+  remain. `DEC-063` removes the ten-minute expiry, adds history-based completion
+  and immutable sent ratings. `DEC-065` resolves `OQ-013` with immediate eligible
+  input application and no retrospective correction. Later reports cannot undo
+  already-applied effects; do not preserve the old deadline or whole-session
+  settlement as an unchangeable requirement.
 - **Reason postponed:** owner wants a simple first version and does not yet
   choose a more automated or refined completion/feedback system.
 - **Implementation state:** the approved first-pass session/settlement code and
-  deadline, missing-input, retry/concurrency tests are complete. Later polish is
-  still deferred; no real game-end observation was added.
+  deadline, missing-input, retry/concurrency tests cover the earlier version.
+  They do not verify `DEC-063`; later unrelated polish remains deferred and no
+  real game-end observation was added.
 - **Return condition:** owner first-build review or a later polish plan;
   reassess the known risks before real-user release. No automatic activation
   or approval of a particular future detector/provider integration.

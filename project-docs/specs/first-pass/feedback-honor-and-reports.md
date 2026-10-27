@@ -1,5 +1,18 @@
 # Feedback eligibility, honor calculation and human review
 
+**Next-pass supersession, 2026-10-27:** `DEC-061`/`DEC-063` replace this
+implemented packet's three-dimensional optional ratings, skip/requeue path and
+ten-minute feedback cutoff. The new direction is required overall honor,
+optional private style summaries, session-history completion without expiry
+and immutable sent ratings. See [current foundations](../product-foundations.md#current-feedback-and-session-history-direction)
+and [the next-pass plan](../../planning/product-design-pass.md). The contract
+below remains evidence of the first pass, not permission to implement its
+superseded feedback rules again. `DEC-065` now resolves `OQ-013`: apply eligible
+inputs without waiting for the session batch and perform no retrospective
+recalculation. Later reports do not remove already-applied effects; exclusions
+known before application still prevent the input. The settlement/order contract
+below is the old baseline, not the new implementation requirement.
+
 **Status/owner/update:** [manifest](README.md). Authority: DEC-026–034,
 DEC-037–043, DEC-045, DEC-047–048. Dependencies: immutable session roster,
 session state, data/security. Acceptance: F08–F10, H01–H08, R01–R06.
