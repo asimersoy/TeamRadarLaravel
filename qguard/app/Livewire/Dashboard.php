@@ -91,7 +91,7 @@ class Dashboard extends Component
         $friendId = $friendship->user_low === $actor->id ? $friendship->user_high : $friendship->user_low;
         $handle = DB::table('users')->where('id', $friendId)->value('handle');
         app(PartyService::class)->invite($actor, $handle);
-        session()->flash('status', 'Party invitation sent to '.$handle.'.');
+        session()->flash('status', __('Party invitation sent to :handle.', ['handle' => $handle]));
     }
 
     public function invitation(int $id, string $action): void

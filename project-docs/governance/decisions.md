@@ -2237,6 +2237,15 @@ canonical-workflow change, provider research or external action in this unit.
   Repeat on subsequent entries because rank can change between sessions. The
   owner's discussion of after-game/session refreshes does not additionally
   require polling at each of those times; pre-queue is the selected checkpoint.
+- **Owner clarification, 2026-10-28:** the first version consults a consenting
+  linked player's prior matches only to obtain that player's latest available
+  ranked-match tier. It does not look up or analyze the other participants'
+  statistics. A match response containing other players does not expand this
+  purpose: identify the linked player's entry, extract the required rank/source
+  evidence and ignore unrelated participant data. This clarifies the existing
+  rank flow, rather than selecting a match-statistics browsing feature or
+  recording a blanket provider-compliance verdict. See
+  [ID-05/ID-10](../specs/review-version/identity-and-rank.md).
 - **Evidence labels:** preserve the distinction between API-observed tier/date,
   player-confirmed or corrected current declaration, and linked account
   ownership. Manual correction is allowed; it does not overwrite the meaning
@@ -3288,6 +3297,10 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 
 - **Date:** 2026-10-28
 - **Status:** approved by the owner's direct instruction
+- **Later timing amendment:** DEC-092 defers the deletion/retention implementation
+  and detailed disposal review until after RSO implementation. This supersedes
+  that part of the pre-submission checkpoint below, not the remaining external
+  delivery/launch review or its authorization requirements.
 - **Decision:** prepare the implementation contracts, then implement the full
   bounded QG-REVIEW-1 web build and its data storage. Review the actual stored
   data, privacy, retention and launch boundaries with the owner after that work
@@ -3302,3 +3315,173 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   explicit post-review-build, pre-Riot-submission checkpoint. Final retention
   and launch choices remain unapproved, not implicitly selected by implementation.
 - **Execution:** [implementation contract](../planning/review-version/backend-implementation.md).
+
+## DEC-086 — Proceed With The Web Version Independently Of Client Automation
+
+- **Date:** 2026-10-28
+- **Status:** approved by direct owner instruction during provider-policy review
+- **Decision:** the first web version contains no client automation and may
+  proceed within its existing scope regardless of whether Riot permits a future
+  desktop/client-API integration. Do not make that later permission a dependency
+  of the current web version.
+- **Owner review disposition:** the listed prohibited VALORANT features do not
+  require a change to the current web scope. This records the owner's assessment,
+  not a provider verdict or blanket compliance certification.
+- **Later work:** research the applicable terms and exact intended automation
+  before undertaking a client integration. After web-product approval, ask Riot
+  for clarification if the published terms do not settle the intended use case.
+  The owner anticipates easier provider contact then; this is not a confirmed
+  response channel or permission. [DEF-015](deferred-work.md#def-015--review-client-automation-permission-before-any-later-integration)
+  owns the return condition and evidence boundary.
+- **Preserved:** official developer API preference, human party-code handoff,
+  pending owner privacy/retention/launch review, RSO access and live checks.
+  No desktop technology, client API, new data access, public release or current
+  provider message is authorized by this disposition.
+
+## DEC-087 — Prefer No Routine Business-Record Expiry Where Permitted
+
+- **Date / owner:** 2026-10-28, direct project-owner instruction.
+- **Status:** conditional retention direction and approved timestamp requirement;
+  not a completed public retention/erasure policy.
+- **Decision:** keep business records indefinitely for now if allowed, without
+  a routine age-based purge. Keep meaningful per-record/event timestamps so a
+  later approved cleanup can select records by date. Migration-file dates do not
+  satisfy this requirement. No arbitrary expiry period is selected here.
+- **Condition:** the owner explicitly conditions retention on permission and
+  asks whether Riot imposes limits. [Research](../research/retention-deletion-age-review.md)
+  finds no universal Riot duration but identifies deletion obligations and
+  applicable-law limits independent of Riot. The condition is not established
+  for blanket permanent identifiable-data storage. Do not promise that publicly.
+- **Preserved:** current synthetic development retention; token/session/cache
+  security lifetimes; later account/provider/legal erasure and justified case
+  handling. No schema change, purge or destructive execution is authorized here.
+- **Effect:** answers the preferred default in DEF-012; purpose-based exceptions,
+  disposal/backup handling and real-user policy remain under owner review.
+
+## DEC-088 — Disable Closed Accounts And Remove Their Riot Connection
+
+- **Date / owner:** 2026-10-28, direct owner discussion of account closure.
+- **Status:** owner-selected direction; complete deletion/correction contract
+  unresolved. The owner explicitly says this needs a larger focused discussion.
+- **Later timing:** DEC-092 defers implementation and the detailed disposal
+  contract until after RSO implementation; the direction below is not revoked.
+- **Direction:** closed accounts cannot log in/use QGuard. Hard-remove their
+  Riot connection material. Prefer soft deletion of the QGuard account and
+  preserving needed feedback/report relations, with identifying name hidden or
+  removed, rather than blanket cascading deletion of other people's records.
+- **Evidence limit:** blocking outside access or hiding a name is not itself
+  proof of erasure/anonymisation. Continued identifying internal use requires its
+  own permitted purpose. [Source-backed distinction and alternatives](../research/retention-deletion-age-review.md#account-closure-is-not-automatically-erasure)
+  remain part of the review, not accepted legal conclusions or a new implementation.
+- **Still to settle:** exact identifying fields and snapshots; submitted reports,
+  authorship and descriptor counts; provider-derived copies; holds and correction
+  requests; disposal evidence and backup/restore treatment; whether closure is
+  reversible and whether later re-registration is allowed. Do not infer a
+  permanent ban or require retaining an identity to enforce one.
+- **Preserved:** no score replay/correction approved; no existing records deleted
+  or marked closed; real RSO remains unimplemented. The phrase “RSO stuff” must
+  become a concrete credential, mapping and retained-data contract before use.
+
+## DEC-089 — Use One Super-Admin Account Initially
+
+- **Date / owner:** 2026-10-28, direct owner instruction.
+- **Status:** approved administrative direction; later implementation reconciliation.
+- **Decision:** one owner-operated administrative account and one administrative
+  role/type, super admin, with access to all QGuard project/case evidence and
+  responsibility for privacy/security requests. Do not build multiple staff
+  tiers or partial-data roles now; revisit if more staff are introduced.
+- **Preserved:** authenticated server-side authorization and access audit;
+  credential/reusable-secret protection. This does not introduce unrequested
+  sanctions, score edits or destruction controls. Ordinary player roles remain.
+- **Implementation fact:** the current `admin_cleared` flag does not enforce a
+  singleton administrator. No real admin was provisioned by this discussion.
+  Contact/address and actual operational particulars remain in group five.
+- **Subsequent implementation, 2026-10-29:** the [owner follow-up](../planning/review-version/owner-follow-up-implementation.md)
+  adds database singleton enforcement and audited assignment. No real account
+  has been assigned; the earlier statement records the state at policy selection.
+
+## DEC-090 — Start With EU Game Region And English/Turkish Support
+
+- **Date / owner:** 2026-10-28, direct owner instruction.
+- **Status:** approved game-region/language and capability-description direction;
+  DEC-091 subsequently selects 18+; exact legal country availability remains open.
+- **Decision:** initial VALORANT EU game region, English and Turkish product
+  localization/support. Türkiye is the likely first market because the owner can
+  operate there; broader international reach remains possible. No third language
+  or unrelated product expansion is selected.
+- **Boundary:** a game region is not the same as residence/country eligibility,
+  hosting location or legal jurisdiction. Existing English UI and language queue
+  settings do not establish completed Turkish interface localization.
+- **Age:** at least the applicable game eligibility requirement; owner requests
+  Riot/Gankster research before selecting QGuard's minimum and treatment of minors.
+  No exact age or parental-consent method is approved by this message.
+  The subsequent explicit answer on 2026-10-29 selects 18+ in DEC-091.
+- **Claims:** describe intended, unavailable and simulated flows honestly for
+  Riot review. Use current-capability language only when the feature is live and
+  verified; obtaining a key alone does not make the planned capability operational.
+  No guaranteed-conduct or official-endorsement claim is added.
+- **Review sequence:** finish the first four owner groups, then discuss hosting,
+  email, operator/contact particulars and final Privacy Notice/Terms as group five.
+  No deployment, provider submission or public opening is authorized.
+
+## DEC-091 — Limit The First Release To Players Aged Eighteen Or Older
+
+- **Date / owner:** 2026-10-29, project owner's explicit question reply:
+  “18+ for the first release.”
+- **Status:** approved product eligibility rule; age-check implementation pending.
+- **Decision:** first-release player registration and use are for ages 18 and
+  above. No under-18 parental-consent exception or minors onboarding flow is
+  included in this release. Reconsidering younger users requires a later decision.
+- **Preserved:** applicable game eligibility and all other admission rules;
+  EU game region and English/Turkish direction; pending retention/deletion review
+  and separate group-five discussion. This is not public-release authorization.
+- **Implementation boundary:** define a proportionate age-check method and its
+  necessary data before implementing the admission gate. This decision does not
+  select full birth-date storage, identity-document collection, a verification
+  vendor or reliance on RSO as proof of age. Do not silently choose a material
+  collection/assurance policy under the label of a technical detail.
+- **Effect:** resolves DEC-090's minimum-age question and that part of OQ-004/005.
+  [Scope](../specs/review-version/scope-and-journeys.md) and
+  [identity/admission](../specs/review-version/identity-and-rank.md) carry the rule.
+
+## DEC-092 — Defer Deletion And Retention Implementation Until After RSO
+
+- **Date / owner:** 2026-10-29, direct owner instruction to postpone deletion
+  and automatic age-based disposal until after RSO implementation.
+- **Status:** approved sequencing change; no deletion or expiry feature added now.
+- **Decision:** continue the local prototype without implementing account/data
+  deletion or a scheduled business-record purge. Keep the timestamps and existing
+  no-routine-expiry behavior. Return to the detailed retention, closure, correction
+  and backup contract under DEF-012 after RSO implementation. This does not extend
+  authentication/session/cache lifetimes or undo DEC-088's eventual direction.
+- **Supersession:** replaces DEC-085/DEF-012's requirement to finish this disposal
+  review before Riot submission. Other submission, hosting and launch particulars
+  still require their own review and explicit action authorization. Nothing may
+  represent a deferred capability as implemented in the provider application.
+- **Evidence boundary:** the owner's belief that KVKK only matters at public
+  launch is not recorded as a verified legal fact. Law 6698 addresses processing
+  personal data; Riot also requires compliance with applicable laws. Synthetic
+  local development can continue. Before a real-data test, review applicable
+  handling for that test, even if the broader automated feature remains deferred.
+  RSO implementation against fixtures and live processing are distinct stages.
+  [Current source findings](../research/retention-deletion-age-review.md#deletion-deferral-and-age-disclosure-follow-up--2026-10-29).
+- **Preserved:** 18+ first-release eligibility (DEC-091). The owner's question
+  about Terms-only wording does not select a live age-assurance method. No new
+  birth-date/identity collection, real-user test, provider submission or deployment
+  is authorized. No major product decision blocks further bounded local work.
+
+## DEC-093 — Initial Operator Is The Owner Personally
+
+- **Date / owner:** 2026-10-29, explicit question answer: “Me personally.”
+- **Status:** approved initial operator type for group-five planning.
+- **Decision:** QGuard initially operates under the project owner personally;
+  draft operator/provider-account particulars on that basis. This does not
+  identify a company or approve future incorporation particulars.
+- **Owner-reported inventory:** in response to the next question, “Nothing
+  exists”: no existing QGuard domain, hosting or email provider to carry forward.
+  This is owner-supplied context, not a registrar availability or account audit.
+- **Still open:** final public operator name/contact details, provider/location
+  choices, budget, domain availability and final Privacy Notice/Terms. No personal
+  address or identity details are inferred from workspace paths or account metadata.
+- **Boundary:** no purchase, provider account creation, deployment, submission or
+  public release is authorized. This is an operator decision, not legal clearance.

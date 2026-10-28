@@ -1,0 +1,1 @@
+<x-layout :title="__('Access denied')"><section class="panel"><p class="eyebrow">403</p><h1>{{ __('Access denied') }}</h1><p>{{ __('You do not have access to this page.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

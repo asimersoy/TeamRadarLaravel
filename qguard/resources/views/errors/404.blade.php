@@ -1,0 +1,1 @@
+<x-layout :title="__('Page not found')"><section class="panel"><p class="eyebrow">404</p><h1>{{ __('Page not found') }}</h1><p>{{ __('This page is not available.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

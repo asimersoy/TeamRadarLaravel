@@ -32,6 +32,7 @@ Overlap does not establish identical APIs or backend architecture.
 | [Matching and game status](matching-and-game-status.md) | Groups listing/leader acceptance versus Duos pairing; documented desktop status synchronization and unverified implementation details |
 | [QGuard design candidates](qguard-comparison.md) | Possible adaptations and evidence needed; none adopted by this study |
 | [Earlier party-code and Gankster research](../../valorant-party-codes-and-gankster.md) | Published-source findings, side-chat hypotheses and proposed game tests; retained in its existing canonical location |
+| [Published age, retention and privacy terms](../../retention-deletion-age-review.md#what-gankster-publishes) | October 28 primary-source policy comparison; no claim about private enforcement or deletion implementation |
 
 ## Study Coverage
 

@@ -34,7 +34,7 @@ final class AuthController extends Controller
         $request->merge(['email' => strtolower(trim($request->string('email')))]);
         $credentials = $request->validate(['email' => 'required|email', 'password' => 'required|string|max:128']);
         if (! Auth::attempt($credentials)) {
-            throw ValidationException::withMessages(['email' => 'These credentials do not match our records.']);
+            throw ValidationException::withMessages(['email' => __('These credentials do not match our records.')]);
         }
         $request->session()->regenerate();
 

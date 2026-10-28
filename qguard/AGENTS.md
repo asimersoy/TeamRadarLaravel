@@ -5,8 +5,9 @@ The current specifications are in ../project-docs/specs/review-version/.
 Read ../project-docs/planning/review-version/backend-implementation.md for the
 implementation contract and actual evidence, then inspect the repository.
 First-pass specs/engine remain historical compatibility evidence only.
-The next owner checkpoint is actual privacy, retention and launch boundaries
-before any Riot submission (DEC-085), not a gate on already authorized local work.
+DEC-092 defers deletion/retention implementation until after RSO. The remaining
+owner checkpoint is hosting/email/operator/final policies before external delivery,
+not a gate on authorized local work. See the owner-follow-up implementation record.
 
 - Use PHP, Composer, PostgreSQL, tests and browser runners in Docker as described
   in README.md. Do not install, repair or execute host PHP for this project.

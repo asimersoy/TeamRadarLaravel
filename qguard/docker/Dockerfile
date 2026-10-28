@@ -21,6 +21,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
 COPY resources ./resources
+COPY lang ./lang
 COPY --from=production-dependencies /app/vendor/laravel/framework/src/Illuminate/Pagination/resources/views ./vendor/laravel/framework/src/Illuminate/Pagination/resources/views
 COPY vite.config.js ./
 RUN npm run build
@@ -29,6 +30,7 @@ FROM production-dependencies AS production-build
 COPY app ./app
 COPY bootstrap ./bootstrap
 COPY config ./config
+COPY lang ./lang
 COPY database/migrations ./database/migrations
 COPY public ./public
 COPY resources/views ./resources/views

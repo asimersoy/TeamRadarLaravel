@@ -1,7 +1,17 @@
 # Review-version actual storage and owner review
 
-**Status:** implemented local inventory; owner privacy/retention/launch review
-not performed. **Authority:** DEC-047/085, QG-REVIEW-1. **Date:** 2026-10-28.
+**Status:** implemented local inventory; owner review in progress. DEC-087–090
+settle conditional retention/timestamps, closure direction, one super admin and
+EU game region with English/Turkish. DEC-091 now selects first-release age 18+.
+DEC-092 defers deletion/retention implementation and detailed disposal review
+until after RSO implementation. Applicable handling must be reviewed before
+real-data tests; it does not block local fictional development. The live age-check
+method remains open; group five is a separate later discussion.
+The October 29 [local follow-up](../planning/review-version/owner-follow-up-implementation.md)
+implements singleton admin control, English/Turkish application UI and 18+ notice.
+Group five has started: DEC-093 selects personal operation, with no existing
+domain/hosting/email provider. Provider/contact and final-policy decisions remain.
+**Authority:** DEC-047/085/087–092, QG-REVIEW-1. **Updated:** 2026-10-29.
 The database now has 41 tables, including eleven new review-version tables.
 This supplements the [baseline inventory](first-build-data-inventory.md), whose
 fields/copies still exist. Legacy repository data was not imported. All executed
@@ -53,21 +63,109 @@ old semantics. Honor continues from stored state; migrations do not reset scores
 - Collection/release gate stays closed; both matching test switches refuse
   local/production execution. Changing a switch does not grant provider access.
 
-## Owner checkpoint — before any Riot submission
+## Owner Checkpoint And Deferred Disposal Review
 
-Bring the implemented UI and this inventory to the owner. No expiry period,
-age/launch-country boundary or external submission is approved here.
+**Timing amendment, 2026-10-29:** DEC-092 supersedes the pre-submission timing
+for deletion/retention work. That work returns after
+RSO implementation. The remaining external-delivery review still applies;
+provider materials must describe the deferred capabilities accurately. Applicable
+handling needs review before real-data tests, including private tests. A full
+automated deletion feature is not required to continue the synthetic local build.
 
-1. Which ordinary session, chat, rating, code, offer and audit records should
-   remain, expire, be restricted or be deleted? How do reported cases differ?
-2. What happens on account closure, a correction/deletion request, a retained
-   allegation, an administrative hold and a restored backup?
-3. Who may receive case clearance; what access review and incident contact will
-   be operated? What logs/traces/backups are necessary and for how long?
-4. What age, platform, country/language and permitted-use boundaries govern the
-   first public offering, and which public claims are acceptable?
+Read the [current Riot policy briefing](../research/riot-policy-pre-submission-review.md)
+first. It separates published provider requirements, QGuard-specific interpretations
+and unresolved review matters. It does not select retention periods or record Riot
+approval. The owner requested this research on 2026-10-28 before giving dispositions.
+
+**Reviewed scope:** `DEC-086` confirms that future client-automation permission
+does not block the first web version; `DEF-015` owns that later review. The owner
+accepts the current scope against the listed prohibited-feature categories.
+These dispositions do not close the data/retention/launch questions below.
+
+### Owner Review Progress — 2026-10-28
+
+The owner asks whether the requested checks are complete. This status
+reconciliation compares the conversation's explicit answers with DEC-055/085/086,
+the opt-in audit, this inventory and the checkpoint queue; it is not a new approval.
+
+| Review item | Recorded disposition |
+| --- | --- |
+| Current web scope against listed prohibited-feature categories | Owner accepts proceeding within the current web scope (DEC-086); no provider verdict inferred. |
+| Required non-endorsement notice | Owner explicitly selected Riot's wording; applied and rendered checks passed. |
+| RSO opt-in and in-app sharing disclosure | Owner directs using the required disclosure; ID-04/10 records the future live enforcement. Final Privacy Notice/Terms and live RSO are separate. |
+| Use of previous matches | Owner confirms own-rank retrieval only (DEC-055/ID-05); other participants' statistics are excluded. |
+| Later client automation | Permission research deferred under DEF-015; not a dependency of the current web version. |
+| Retention | DEC-087: prefer no routine expiry where permitted, with record/event timestamps. DEC-092 defers detailed review and expiry implementation until after RSO; blanket permanent personal-data retention is not established as permissible. |
+| Account closure | DEC-088 direction remains: stop login/use, remove Riot connection material, prefer retaining needed QGuard relations via soft deletion. DEC-092 defers implementation and the full erasure/correction/backup contract until after RSO. |
+| Administrative access | DEC-089: one owner-operated super admin. Database singleton enforcement and audited assignment are implemented; actual owner account and group-five contact details remain. |
+| Initial audience and languages | DEC-090: EU game region, English/Turkish localization, likely Türkiye-first focus. DEC-091 selects 18+ with no minors flow. Age-check method and exact legal country availability remain open. |
+| Hosting/operator/final policies | Group five active: DEC-093 selects the owner personally; no existing domain or providers. Hosting/email/location/contact and final policies remain open. |
+
+The [checkpoint queue](../governance/checkpoint-review-queue.md#current-review-status--2026-10-28)
+also retains the nonblocking recap of delegated implementation defaults. No
+tool-confirmed automatic answer has been found. Stack, feedback, visibility,
+acceptance and session-end choices already settled are not reopened. Live rank
+failure handling, actual RSO and party-code checks remain later integration work;
+the owner did not forget to perform those deliberately postponed tests.
+
+Route: existing entry path, audit/reconciliation, external owner review and
+deferral/owner-review procedures. Documentation-only scope; verify links, scoped
+diff and whitespace, retaining this update in the ongoing review batch. No new
+application test, live check, remote operation or commit is required for this status update.
+
+Verification: reviewed the three-record scoped diff; 185 local links and 57
+Markdown anchors passed with no failures, as did `git diff --check`. No application
+or live test was run. The update remains uncommitted with the existing review
+batch; no push, deployment or submission occurred.
+
+### First Four Groups: Dispositions And Remaining Work
+
+Read the [focused retention/deletion/age findings](../research/retention-deletion-age-review.md)
+for the new owner answers, Riot/KVKK requirements and Gankster's published terms.
+Research is not final legal clearance; this pass changes records only.
+
+1. **Retention work deferred, DEC-092:** no routine expiry where permitted,
+   preserving record/event dates. Detailed purposes/disposal review and any
+   implementation return after RSO. Review applicable handling before a real-data
+   test; no arbitrary retention period or permanent-storage promise is selected.
+2. **Closure work deferred, DEC-092:** DEC-088's direction survives but is not
+   implemented now. Identifier removal, case holds, correction requests,
+   provider-derived copies and backups/restores remain in the post-RSO contract.
+   Hiding a name alone is not proof of anonymity.
+3. **Administrative model settled:** one owner-operated super admin; no partial
+   staff roles. Preserve authentication, case access audit and secret protection.
+   Singleton database enforcement and explicit audited assignment are implemented.
+   Specific incident/privacy contact goes to group five; log/trace/backup retention
+   stays with group one. No real admin provisioning has occurred.
+4. **Market direction and age settled:** EU game region, English/Turkish product
+   localization, likely Türkiye-first market; 18+ under DEC-091, no minors flow.
+   Define the age-check method and distinguish the game shard from permitted
+   residence countries. Describe
+   prototype plans as plans; change to current claims only for working, validated
+   capability. The owner explicitly answered the age question on 2026-10-29.
+   Terms plus a visible 18+ signup sentence is the prototype recommendation;
+   it is not a selected live age-assurance method or a requirement to collect ID.
+   The visible registration notice is now implemented in the real app and design;
+   final Terms wait for group five. The real app supports EN/TR; the standalone
+   review catalog remains identified as English.
+
+### Fifth Group: Separate Discussion After The First Four
+
+Groups one and two are now explicitly deferred rather than unanswered blockers
+to local development. This fifth discussion can proceed separately when preparing
+external delivery; the owner need not settle it to continue local synthetic work.
+
 5. What will the actual hosting, email, jurisdictions, subprocessors and notice
    say? Legal conclusions and provider requirements need their assigned review.
+   Include the final Privacy Notice/Terms content and links at Riot account
+   connection. The [RSO disclosure clarification](../research/riot-policy-pre-submission-review.md#rso-disclosure-and-checkbox-clarification--2026-10-28)
+   distinguishes the required in-app explanation from an unestablished separate
+   checkbox requirement; the current preview does not capture real consent.
+   Apply [ID-10](../specs/review-version/identity-and-rank.md#id-10--subject-opt-in-before-display-to-other-players)
+   when defining live opt-in evidence and unlink/revocation effects on history,
+   cached rank/identity and other-player display. Resolve display permission
+   separately from record retention; current participant checks alone do not
+   implement that live consent policy.
 
 Prepare any approved retention changes as a separate verified implementation
 slice. Existing data must not be purged merely because a duration is selected;

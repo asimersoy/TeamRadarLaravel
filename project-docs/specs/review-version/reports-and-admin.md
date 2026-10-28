@@ -1,6 +1,9 @@
 # Reports And Cleared-Admin Review
 
-**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085. Authority: DEC-039/041/043/045/047/052/056–058/065/078/079.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085;
+DEC-089 singleton administration is now implemented in the
+[owner follow-up](../../planning/review-version/owner-follow-up-implementation.md).
+Authority: DEC-039/041/043/045/047/052/056–058/065/078/079/089.
 **Dependencies:** sessions, feedback and data/access. Requirements RP.
 
 ## Distinct Processes
@@ -46,6 +49,16 @@ cannot grant a completion bypass; existing self/premade and pre-play exclusions
 still prevent prohibited obligations.
 
 ## Admin Screens
+
+**Post-build direction, DEC-089:** one owner-operated super-admin account and
+one administrative role owns all project/case evidence and privacy/security
+requests initially. Additional staff/partial access waits for a new owner review.
+The controls below retain authentication, audit and secret protection. A partial
+unique index permits at most one `admin_cleared` account; an audited operator
+command assigns an explicitly selected existing verified user and refuses replacing
+an existing admin. Multiple pre-existing clearances block migration without
+demotion. No real owner account has been provisioned. No punishment or score-edit
+tools are added. No first-signup promotion or player-facing role editor.
 
 - **RP-05:** inbox shows case/session, reported participant, categories, received
   time, review status and relevant automatic-effect label. Filters: open/reviewed,

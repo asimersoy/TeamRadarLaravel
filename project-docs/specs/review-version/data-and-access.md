@@ -1,6 +1,9 @@
 # Logical Data, Access And Reliability
 
-**Status:** QG-REVIEW-1 behavioral contract, implemented locally under DEC-085. Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–084.
+**Status:** QG-REVIEW-1 behavioral contract, implemented locally under DEC-085;
+DEC-089 singleton enforcement is implemented in the owner follow-up; DEC-088
+closure/disposal remains deferred by DEC-092.
+Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–084/087–089.
 **Dependencies:** all modules. Requirements DA. Physical schema and actual readers
 are recorded in the [storage inventory](../../operations/review-version-data-inventory.md).
 Verification and live-provider limits are in the implementation evidence.
@@ -49,6 +52,15 @@ CSS. Role/actor IDs and eligibility are server derived. Logs exclude secrets,
 unnecessary message text and join artifacts. Escape user text; rate limit abuse
 and retain CSRF/session protections appropriate to the selected stack.
 
+**Live Riot-data prerequisite (not yet implemented):** this audience matrix is
+necessary but not sufficient for Riot-derived individual stats/gameplay data.
+Apply the subject's QGuard signup and RSO opt-in checks in
+[ID-10](identity-and-rank.md#id-10--subject-opt-in-before-display-to-other-players)
+before another player receives those fields, including through retained session
+views or cached/broadcast payloads. A viewer's authorization and a stored roster
+snapshot do not establish the data subject's sharing permission. Future unlink,
+revocation and retention behavior must be reconciled before live use.
+
 ## Consistency And Recovery
 
 - **DA-01:** queue formation/cancellation and active-participation uniqueness
@@ -81,12 +93,35 @@ and retain CSRF/session protections appropriate to the selected stack.
 
 ## Retention, Guest Isolation And Later Release
 
-Preserve DEC-047's development evidence retention until the specific DEF-012
-review; do not promise unlimited public retention or silently purge history.
+DEC-087 preserves the owner's conditional preference for no routine business
+expiry, with per-record/event UTC timestamps for later cleanup. Keep the current
+development evidence; do not promise unlimited public retention or silently purge
+history. Provider-required disposal and applicable privacy obligations remain
+separate from the absence of a routine timer. DEC-092 defers DEF-012's detailed
+review and deletion/expiry implementation until after RSO implementation. Do not
+add those features now or make them a blocker to the local synthetic build.
+Review applicable handling before a real-data test; this may precede completion
+of the broader automated feature. No public-launch-only exemption is assumed.
 Current table/field inventory must be updated before real-user collection.
 Provider tokens, transient UI drafts, sessions and cached artifacts have distinct
 technical lifecycles; they are not permission to erase business evidence.
 No new account-erasure/purge UI or policy is adopted during visual design.
+
+**Post-build owner direction, not implemented:** DEC-088 selects closed-account
+login denial and hard removal of the Riot connection, with soft deletion preferred
+for QGuard records needed by other records. The exact erasure/anonymisation,
+identifiers, case holds, correction and backup contract is unresolved. Soft deletion
+must not be described as completed erasure without the required access/use and
+identity treatment. See [the first-four-groups review](../../research/retention-deletion-age-review.md).
+
+**Administrative scope, DEC-089:** the first operational version has one
+owner-operated super-admin account and one administrative role. This owns the
+cleared-admin column above; no partial staff roles now. Secret protection and
+auditing remain. A partial unique index now enforces at most one cleared account;
+an audited CLI assigns a specified verified user idempotently, refusing replacement.
+Actual owner provisioning and any later recovery/transfer remain explicit operator
+actions. Interface locale is a validated `en`/`tr` session preference only; it does
+not change matching language or introduce a profile/age field.
 
 Guest review uses fictional data only and never connects to live provider or
 production data stores. Production credentials are never shipped to a browser.

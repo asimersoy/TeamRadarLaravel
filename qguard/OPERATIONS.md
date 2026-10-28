@@ -37,6 +37,17 @@ the named development volume; never use volume deletion as a routine repair.
 
 ## Production-shaped build (no deployment)
 
+Before applying the single-admin migration, check whether existing data has more
+than one cleared administrator. The migration refuses that state without demoting
+anyone. Resolve the exact owner assignment before retrying; never disable the
+constraint to make a migration pass. An operator can assign an explicitly selected
+existing verified account using `qguard:assign-super-admin USER_ID` in the correct
+container. Repeating the same assignment is a no-op; another account is refused.
+There is no public role editor or automatic first-user promotion. Recovery/transfer
+requires a separately scoped owner-authorized operation; the command does not guess.
+Rolling back this index preserves accounts and audit rows but removes the singleton
+constraint, so do not operate the newer administrative model without it.
+
 ```sh
 docker build -f docker/Dockerfile --target production -t qguard-app:production .
 docker build -f docker/Dockerfile --target production-web -t qguard-web:production .

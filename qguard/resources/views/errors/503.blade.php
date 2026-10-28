@@ -1,0 +1,1 @@
+<x-layout :title="__('Service unavailable')"><section class="panel"><p class="eyebrow">503</p><h1>{{ __('Service unavailable') }}</h1><p>{{ __('QGuard is not open for public use yet.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

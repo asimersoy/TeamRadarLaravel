@@ -71,6 +71,6 @@ class AdminCase extends Component
         $noShows = DB::table('no_show_requests')->where('game_session_id', $sessionId)->get();
         $votes = DB::table('no_show_votes')->whereIn('no_show_request_id', $noShows->pluck('id'))->get();
 
-        return view('livewire.admin-case', compact('case', 'players', 'submissions', 'ratings', 'reports', 'observations', 'messages', 'settlement', 'applications', 'noShows', 'votes', 'reviewCards', 'reviewApplications', 'discrepancies', 'discrepancyVotes', 'endRequests', 'admissions', 'codeVersions'))->layout('components.layout', ['title' => 'Case #'.$case->id]);
+        return view('livewire.admin-case', compact('case', 'players', 'submissions', 'ratings', 'reports', 'observations', 'messages', 'settlement', 'applications', 'noShows', 'votes', 'reviewCards', 'reviewApplications', 'discrepancies', 'discrepancyVotes', 'endRequests', 'admissions', 'codeVersions'))->layout('components.layout', ['title' => __('Case #:value1', ['value1' => $case->id])]);
     }
 }

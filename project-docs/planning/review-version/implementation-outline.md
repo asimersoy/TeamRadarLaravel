@@ -1,8 +1,10 @@
 # Implementation Outline After Review
 
 **Status:** DEC-085 authorizes and the current local implementation completes
-R1–R5 plus R6's local build/verification. Owner privacy, retention and launch review
-is now the next checkpoint before any Riot submission. External review delivery,
+R1–R5 plus R6's local build/verification. DEC-092 defers deletion/retention work
+until after RSO implementation; no new major product decision blocks further
+bounded local work. Group-five hosting/operator/final notices and applicable
+real-data handling retain their separate review boundaries. External review delivery,
 R7/R8 and Discord remain gated. See [actual evidence](backend-implementation.md).
 Scope: QG-REVIEW-1; no delivery dates or cost estimates approved.
 
@@ -30,3 +32,9 @@ party-code checks and Discord retain their distinct milestones. No additional
 major product choice is being silently delegated to finish the current local
 build. Retention or launch changes selected at owner review become a separate
 bounded implementation slice before the affected external use.
+
+The [owner follow-up](owner-follow-up-implementation.md) implements DEC-089's
+one-super-admin model, DEC-090's English/Turkish real application and DEC-091's
+18+ eligibility presentation. The English standalone design catalog is identified
+as such. The live age-assurance method remains a later admission contract.
+DEC-092 excludes deletion/expiry from this local pass. Group five remains pending.

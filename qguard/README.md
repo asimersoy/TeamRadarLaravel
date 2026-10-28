@@ -17,7 +17,9 @@ The review-version backend implements shared session closure, immutable required
 feedback, immediate score applications, private descriptors, 20-second acceptance,
 code relay and discrepancy checks. New sessions use `review-v2`; retained older
 sessions preserve their old rules. Owner [privacy/retention/launch review](../project-docs/operations/review-version-data-inventory.md)
-comes next, before any Riot submission. Live RSO and Discord remain separate work.
+records the current dispositions: disposal implementation is deferred until after
+RSO; hosting/email/operator/final policies remain before external delivery. Live
+RSO and Discord remain separate work.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
@@ -167,6 +169,27 @@ and synthetic policy walkthrough in Chromium, Firefox and WebKit. This is
 presentation evidence for new session/feedback rules, not their backend proof.
 
 ## Current boundaries
+
+The real application supports English and Turkish using the interface selector.
+This session preference is independent of the player's communication language.
+User messages, handles, game codes and raw admin evidence are never translated.
+The standalone guest/design catalog remains an English review artifact, explicitly
+labeled at entry. Registration displays 18+; it does not collect DOB/ID or claim
+verified age. Final policy pages await the owner’s fifth discussion.
+
+At most one account may have admin clearance, enforced by a PostgreSQL partial
+unique index. `php artisan qguard:assign-super-admin USER_ID` inside the appropriate
+app container assigns an existing email-verified account and records the assignment.
+It refuses replacing another administrator. Never infer the owner from first signup;
+actual owner provisioning requires an identified account. See OPERATIONS.md.
+
+Review browser tests use five independent accounts. Chromium/Firefox render those
+flows at 1440px; WebKit uses 1280×720 on the local 4 GiB Docker VM and captures
+screenshots after releasing unused renderers. A fresh scheduler may need its first
+minute boundary before forming an offer; the 20-second acceptance period still
+starts only when the offer exists. Dashboard/current-session polling remains
+active in background tabs while the browser runs; suspended/offline browsers
+cannot be guaranteed timely delivery.
 
 No host PHP repair, legacy code/data import, real Riot/Discord credentials,
 automatic game joining, public release, push or deployment. Production web

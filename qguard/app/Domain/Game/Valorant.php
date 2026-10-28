@@ -13,10 +13,10 @@ final class Valorant
         $ranks = [];
         foreach (['Iron', 'Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Ascendant', 'Immortal'] as $tier => $name) {
             for ($level = 1; $level <= 3; $level++) {
-                $ranks[$tier * 3 + $level] = "$name $level";
+                $ranks[$tier * 3 + $level] = __($name)." $level";
             }
         }
 
-        return $ranks + [25 => 'Radiant'];
+        return $ranks + [25 => __('Radiant')];
     }
 }

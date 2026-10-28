@@ -4,8 +4,11 @@
 **Authority:** DEC-085 activates preparation and implementation through the
 pre-submission owner review. DEC-052–084 and the review-version modules own
 behavior; this file owns technical choices, sequencing and evidence.
-**State:** local implementation and verification complete; owner data/retention/
-launch checkpoint is next, before any Riot submission.
+**State:** local implementation and verification complete. DEC-092 (2026-10-29)
+subsequently defers deletion/retention work until after RSO implementation; the
+[current owner packet](../../operations/review-version-data-inventory.md) controls
+remaining external-delivery review and real-data handling. The execution evidence
+below retains its original scope and date.
 
 ## Route and boundaries
 
@@ -198,6 +201,9 @@ These apply settled policy; no timed-out owner question was treated as approval:
   choices, not additional product policy.
 
 ## Owner handoff and remaining gates
+
+The following is the October 28 handoff. DEC-092 subsequently changes its
+deletion/retention timing as noted above; it is not a present local-build blocker.
 
 The [actual stored-data inventory and owner questions](../../operations/review-version-data-inventory.md)
 are ready for the DEC-085 post-implementation, pre-Riot-submission checkpoint.

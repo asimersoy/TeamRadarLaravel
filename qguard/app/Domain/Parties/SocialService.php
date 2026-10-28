@@ -11,7 +11,7 @@ final class SocialService
     public static function require(bool $condition, string $message): void
     {
         if (! $condition) {
-            throw ValidationException::withMessages(['action' => $message]);
+            throw ValidationException::withMessages(['action' => __($message)]);
         }
     }
 

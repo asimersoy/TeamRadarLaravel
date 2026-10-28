@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\GuestReviewController;
+use App\Http\Controllers\LocaleController;
 use App\Livewire\AdminCase;
 use App\Livewire\AdminCases;
 use App\Livewire\Connections;
@@ -15,6 +16,7 @@ use App\Livewire\SessionHistory;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
+Route::post('/interface-language', LocaleController::class)->name('locale');
 Route::get('/guest', GuestReviewController::class)->name('guest.review');
 Route::middleware('guest')->group(function () {
     Route::view('/register', 'auth', ['screen' => 'register'])->name('register');

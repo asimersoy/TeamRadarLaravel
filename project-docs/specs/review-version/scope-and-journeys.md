@@ -1,6 +1,9 @@
 # Scope And Journeys
 
-**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085; [packet authority](README.md). Requirements SC.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085;
+DEC-089/090 admin and real-application localization are implemented in the
+[owner follow-up](../../planning/review-version/owner-follow-up-implementation.md).
+[Packet authority](README.md). Requirements SC.
 **Dependencies:** all modules. Review on owner scope, provider or release changes.
 
 ## Product Contract
@@ -20,6 +23,9 @@
 - **SC-05, approved:** session history, mandatory private 1–10 honor ratings,
   optional peer descriptions visible only to their subject, and human report
   review. Received individual feedback and reviewer identities are hidden from players.
+- **SC-06, approved under DEC-091, notice implemented:** first-release player
+  registration/use is 18+. No under-18 parental-consent exception or minors
+  onboarding. Apply the later age-admission contract in ID-11 before real use.
 
 ## Audiences And Access
 
@@ -31,10 +37,23 @@ Cleared admin: review relevant stored case evidence. Guest reviewer: sample-only
 version of those journeys, with explicitly separate reviewer access to sample
 admin screens. Guest entry never creates real admin privileges.
 
-English is the inherited development UI default, with localization-ready copy.
-International intent is not approval of every age, country or public claim.
-Final launch audience/retention/terms remain pre-release work; the prototype
-uses neutral draft copy and invented accounts, not a published policy.
+DEC-090 selects the initial EU game region and English/Turkish localization;
+Türkiye is the likely first market with international reach still possible.
+The real application has English/Turkish interface selection independent of queue
+language. The standalone guest/design catalog remains an English review artifact
+and its entry states that explicitly. A game shard does not decide legal
+residence-country eligibility.
+DEC-091 resolves minimum age to 18+, with no minors consent flow for this release.
+The age-check method/data and exact country availability remain for the
+[owner audience review](../../research/retention-deletion-age-review.md#minimum-age-evidence-and-open-choice).
+Prototype descriptions identify intended/unavailable/simulated capabilities;
+describe live capability only after integration and validation. Final policies
+and hosting/operator details remain the separate fifth discussion group.
+
+DEC-089 selects one owner-operated super-admin account and administrative role
+for the initial operational version; no additional staff hierarchy. The local
+build enforces at most one cleared account in PostgreSQL. Actual owner account
+provisioning awaits an explicitly identified verified account.
 
 ## Complete Journeys
 

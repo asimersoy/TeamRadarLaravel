@@ -82,6 +82,13 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-004 - What Is The Current Product Charter And Permitted-Use Boundary?
 
+- **Latest disposition, 2026-10-28:** DEC-090 selects EU game region and
+  English/Turkish localization, likely Türkiye-first market, and truthful
+  prototype-versus-live capability descriptions. DEC-091 on 2026-10-29 resolves
+  age to 18+ for the first release, with no minors consent flow. The age-check
+  method and legal residence-country availability remain open; a shard is not a
+  country policy. [Age/source findings](../research/retention-deletion-age-review.md)
+  retain the subsequent explicit answer. Do not repeat settled product directions.
 - **Status:** open
 - **Decision owner:** project owner
 - **Needed by:** approval of a current product brief
@@ -110,6 +117,12 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-005 - What Is The First User And Market Wedge?
 
+- **Latest disposition, 2026-10-28:** DEC-090 selects initial EU game region,
+  English and Turkish product localization, with likely Türkiye-first market and
+  broader international intent. Existing PC VALORANT review scope remains.
+  DEC-091 subsequently selects 18+ for the first release; its age-check method
+  and exact legal launch-country availability are still unresolved;
+  hosting/operator details wait for the separate fifth owner discussion.
 - **Access resolved, 2026-10-27:** `DEC-066` selects open registration, guest
   entry for a Riot-reviewable prototype and live RSO before normal matchmaking.
   Do not re-ask open versus invite-only. The existing local synthetic build and
@@ -163,6 +176,18 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-006 - What Matching, Trust, Moderation, And Data Behavior Is Permitted?
 
+- **Sequencing, 2026-10-29:** DEC-092 defers detailed disposal/closure review and
+  deletion/expiry implementation until after RSO implementation under DEF-012.
+  These unresolved details do not block local fictional development. Applicable
+  handling still needs review before real-data tests, and existing provider and
+  release gates remain. No routine purge is added now.
+- **Owner data-review disposition, 2026-10-28:** DEC-087 conditionally prefers
+  no routine business expiry with meaningful dates. DEC-088 selects closed-account
+  login denial/Riot connection removal and prefers preserving QGuard relations by
+  soft deletion; exact erasure, identification, case holds, corrections and backups
+  need the focused contract. DEC-089 settles one super-admin account and role.
+  [Research](../research/retention-deletion-age-review.md) does not establish
+  blanket permanent retention or soft deletion as completed legal erasure.
 - **Latest direction, 2026-10-27:** `DEC-061` replaces the three-dimensional
   honor input with one required overall 1–10 rating for each eligible teammate
   before requeueing. Optional communication/play-style sliders are informational
@@ -476,6 +501,14 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-009 - What Current Game Integrations Can QGuard Reliably And Permissibly Use?
 
+- **Client-automation disposition, 2026-10-28:** `DEC-086` confirms that the web
+  version proceeds without depending on future client-API permission. Later
+  terms research and, if necessary, Riot clarification are recorded in
+  [DEF-015](deferred-work.md#def-015--review-client-automation-permission-before-any-later-integration).
+  This does not resolve live RSO access or the separately deferred party-code test.
+  The owner's subsequent [League/VALORANT official-page comparison](../research/valorant-client-api-and-ui-status.md#official-league-client-api-comparison--2026-10-28)
+  found no equivalent public VALORANT client-API acknowledgement in the reviewed
+  sources; do not extend League's statement to VALORANT or infer a new blanket ban.
 - **Review milestone, 2026-10-27:** `DEC-066` activates prototype-first planning:
   open registration and guest demonstration before live RSO, with normal
   matchmaking gated on actual linking/opt-in. The [dated official-source check](../research/riot-review-and-rso-access.md)

@@ -4,9 +4,58 @@
 - **Authority:** `DEC-064` and the [workflow policy](../operations/workflow-governance.md)
 - **Owner:** project owner gives dispositions; primary agent maintains provenance
 - **Status:** active; explicitly present this queue at the stack-review checkpoint
-- **Updated:** 2026-10-28
+- **Updated:** 2026-10-29
 - **Update trigger:** automatic-resolution signal, missing/uncertain answer,
   material agent default, checkpoint review or owner correction
+
+## Current Review Status — 2026-10-28
+
+DEC-082–085 and the completed local implementation supersede earlier
+implementation-pending wording below. The stack and major product policies are
+settled. The [current owner inventory](../operations/review-version-data-inventory.md#owner-review-progress--2026-10-28)
+separates reviewed provider-policy items from remaining owner work before Riot
+submission. DEC-087–090 supplies conditional retention/timestamps, closure
+direction, one super admin and EU/en/tr direction. DEC-091 records the explicit
+2026-10-29 answer choosing 18+ for the first release, with no minors consent flow.
+The question is resolved by the owner's answer, not an automatic selection.
+DEC-092 explicitly defers deletion/retention implementation and detailed disposal
+review until after RSO implementation. Applicable handling needs review before
+real-data tests; it is not a blocker for local fictional development. The live
+age-check method remains open. The owner authorized the remaining local work:
+singleton administration, English/Turkish application UI and 18+ notice are now
+implemented; final Terms remain group five. Notice is not proof of age.
+DEC-093 explicitly selects the owner personally as initial operator. The owner
+also confirms no existing domain, hosting or email provider; those selections,
+public contact details and final policies remain open.
+
+No tool-confirmed automatically resolved question is known. The following
+delegated technical choices remain a visibility recap, not missing foundational
+approval or a reason to reopen settled product policy:
+
+- Guest walkthrough fixtures are fictional and tab-scoped; sample reset is
+  isolated. Desktop review used 1440px plus narrow layouts; the standalone HTML
+  is a review artifact, not the application stack (CRQ-004/006/P-09).
+- Existing matching/honor tuning is carried forward, with independent descriptor
+  streams on the same permitted scale (CRQ-013); no new tuning is selected here.
+- The [implementation handoff](../planning/review-version/backend-implementation.md#agent-selected-implementation-details-for-owner-visibility)
+  records exceptional multiple-debt recovery, a 256-character code input limit,
+  unsent feedback held only in the browser component, reused settings components
+  and UTC display times. These remain agent-selected details, not owner answers.
+
+Earlier dated entries preserve their evidence and question history. Subsequent
+explicit decisions control; an earlier pending statement does not undo them.
+
+**Follow-up implementation defaults for visibility:** PostgreSQL partial unique
+index instead of additional staff roles; explicit audited CLI assignment instead
+of first-user promotion; interface language in the existing session instead of
+changing the player's matchmaking language; no new age-data collection. The
+standalone English design catalog remains a separately identified review artifact.
+These are agent implementation choices, not automatically answered questions.
+See the [follow-up evidence](../planning/review-version/owner-follow-up-implementation.md).
+The same verification found that default background polling can delay 20-second
+offers; dashboard/session polling now stays active while the page is running.
+This is a reliability correction within the existing acceptance/session policy,
+not an extension of its deadlines or a guarantee for suspended/offline browsers.
 
 ## Interpretation
 

@@ -2,9 +2,15 @@
 
 **Reached:** 2026-10-27. **Current:** DEC-085 local implementation is complete;
 [implementation evidence](backend-implementation.md) records actual checks.
-Next is [owner privacy, retention and launch-boundary review](../../operations/review-version-data-inventory.md)
-before any Riot submission. The earlier checkpoint agenda below preserves its
+The [owner review](../../operations/review-version-data-inventory.md) records
+DEC-092's deletion/retention deferral until after RSO implementation. Local synthetic
+work may continue; applicable real-data handling and external-delivery particulars
+remain separate. The earlier checkpoint agenda below preserves its
 history; resolved stack/policy choices are not reopened.
+
+The [October 29 owner follow-up](owner-follow-up-implementation.md) records
+singleton administration, Turkish localization, the 18+ notice and current
+verification. Personal operation is selected; domain/provider choices remain open.
 
 ## Start Here
 

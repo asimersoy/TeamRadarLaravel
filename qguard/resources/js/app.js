@@ -1,3 +1,4 @@
+import { t } from './locale';
 import Pusher from 'pusher-js';
 
 function messageId() {
@@ -19,7 +20,7 @@ function startChat(root) {
     const messages = new Map();
     function display() {
         list.replaceChildren();
-        if (!messages.size) { const empty = document.createElement('li'); empty.textContent = 'No messages yet. Say hello to your team.'; list.append(empty); }
+        if (!messages.size) { const empty = document.createElement('li'); empty.textContent = t("No messages yet. Say hello to your team."); list.append(empty); }
         for (const message of [...messages.values()].sort((a,b)=>a.id-b.id)) {
             const item = document.createElement('li'), label = document.createElement('strong'), body = document.createElement('p');
             label.textContent = message.handle; item.append(label);
@@ -33,14 +34,14 @@ function startChat(root) {
     async function refresh(before = null) {
         try {
             const response = await fetch(endpoint+(before?`?before=${before}`:''), {headers:{Accept:'application/json'}});
-            if ([401,403,419].includes(response.status)) { messages.clear(); display(); form.hidden=true; connection.textContent='Room access unavailable. Sign in again or return to your dashboard.'; return; }
+            if ([401,403,419].includes(response.status)) { messages.clear(); display(); form.hidden=true; connection.textContent=t("Room access unavailable. Sign in again or return to your dashboard."); return; }
             if (!response.ok) throw new Error();
             const data = await response.json();
             data.messages.forEach(m=>messages.set(m.id,m));
             if (before || !initialized) olderCursor = data.older_cursor;
             initialized = true;
             older.hidden = !olderCursor; form.hidden = !data.can_post; display();
-        } catch { connection.textContent='Connection interrupted · retrying with polling'; }
+        } catch { connection.textContent=t("Connection interrupted · retrying with polling"); }
     }
     input.addEventListener('keydown', event=>{
         // Enter confirms IME composition; Shift+Enter keeps normal multiline editing.
@@ -50,22 +51,22 @@ function startChat(root) {
     });
     form.addEventListener('submit', async event=>{
         event.preventDefault(); if(busy || form.hidden)return;
-        if(!pending && !input.value.trim()){status.textContent='Type a message first.';return;}
+        if(!pending && !input.value.trim()){status.textContent=t("Type a message first.");return;}
         pending ??= {client_message_id:messageId(),body:input.value};
-        busy=true; sendButton.disabled=true; input.readOnly=true; status.textContent='Sending…';
+        busy=true; sendButton.disabled=true; input.readOnly=true; status.textContent=t("Sending…");
         try {
             const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json','X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content},body:JSON.stringify(pending)});
-            if(!response.ok) { const data=await response.json(); if(response.status===422)pending=null; throw new Error(response.status===422?Object.values(data.errors??{}).flat().join(' '):'Message could not be sent. Check your connection and room access.'); }
-            pending=null;input.value='';status.textContent='Sent';await refresh();
-        }catch(error){status.textContent=`Failed — ${error.message} Submit again to retry the same message.`;}
+            if(!response.ok) { const data=await response.json(); if(response.status===422)pending=null; throw new Error(response.status===422?Object.values(data.errors??{}).flat().join(' '):t("Message could not be sent. Check your connection and room access.")); }
+            pending=null;input.value='';status.textContent=t("Sent");await refresh();
+        }catch(error){status.textContent=t('Failed — :message Submit again to retry the same message.', {message:error.message});}
         finally{busy=false;sendButton.disabled=false;input.readOnly=false;}
     });
     older.addEventListener('click',()=>refresh(olderCursor));
     // Never hold message bodies in socket payloads. Reauthorize every HTTP fetch.
     const pusher=new Pusher(root.dataset.reverbKey,{wsHost:root.dataset.reverbHost,wsPort:Number(root.dataset.reverbPort),wssPort:Number(root.dataset.reverbPort),forceTLS:location.protocol==='https:',enabledTransports:['ws','wss'],disableStats:true,cluster:'local',channelAuthorization:{endpoint:'/broadcasting/auth',transport:'ajax',headers:{'X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content}}});
-    pusher.connection.bind('connected',()=>{connection.textContent='Live updates connected · polling backup active';refresh();});
-    pusher.connection.bind('disconnected',()=>{connection.textContent='Live updates disconnected · polling backup active';});
-    for (const state of ['unavailable','connecting','failed']) pusher.connection.bind(state,()=>{connection.textContent='Live updates unavailable · polling backup active';});
+    pusher.connection.bind('connected',()=>{connection.textContent=t("Live updates connected · polling backup active");refresh();});
+    pusher.connection.bind('disconnected',()=>{connection.textContent=t("Live updates disconnected · polling backup active");});
+    for (const state of ['unavailable','connecting','failed']) pusher.connection.bind(state,()=>{connection.textContent=t("Live updates unavailable · polling backup active");});
     pusher.subscribe(`private-room.${session}`).bind('room.changed',()=>refresh());
     refresh();const timer=setInterval(()=>refresh(),5000);
     const stop=()=>{

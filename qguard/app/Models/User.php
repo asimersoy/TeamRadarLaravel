@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Database\Factories\UserFactory;
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -19,6 +21,16 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasFactory, Notifiable;
 
     protected $attributes = ['shard' => 'eu', 'language' => 'en', 'competitive_access' => false, 'admin_cleared' => false, 'is_synthetic' => false];
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify((new VerifyEmail)->locale(app()->getLocale()));
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify((new ResetPassword($token))->locale(app()->getLocale()));
+    }
 
     protected static function booted(): void
     {

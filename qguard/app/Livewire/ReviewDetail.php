@@ -73,6 +73,6 @@ class ReviewDetail extends Component
         $roster = DB::table('session_participants')->where('game_session_id', $this->sessionId)->get(['user_id', 'handle', 'riot_id', 'rank_snapshot', 'honor_snapshot']);
         $excluded = app(ReviewFeedback::class)->exclusion($this->sessionId, auth()->id()) !== null;
 
-        return view('livewire.review-detail', compact('room', 'cards', 'roster', 'excluded'))->layout('components.layout', ['title' => 'Session #'.$this->sessionId]);
+        return view('livewire.review-detail', compact('room', 'cards', 'roster', 'excluded'))->layout('components.layout', ['title' => __('Session #:value1', ['value1' => $this->sessionId])]);
     }
 }

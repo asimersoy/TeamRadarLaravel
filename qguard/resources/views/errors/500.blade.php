@@ -1,0 +1,1 @@
+<x-layout :title="__('Something went wrong')"><section class="panel"><p class="eyebrow">500</p><h1>{{ __('Something went wrong') }}</h1><p>{{ __('Please try again later.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

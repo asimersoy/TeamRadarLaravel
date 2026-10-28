@@ -1,0 +1,1 @@
+<x-layout :title="__('Your page has expired')"><section class="panel"><p class="eyebrow">419</p><h1>{{ __('Your page has expired') }}</h1><p>{{ __('Reload the page and try again.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

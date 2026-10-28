@@ -9,8 +9,15 @@ reusable workflow system remains separate in
 **Current work:** the [local review-version implementation](planning/review-version/backend-implementation.md)
 is complete under DEC-085. It includes durable session/feedback data and the
 settled matching, shared closure, privacy and score rules through DEC-084.
-Next is the owner's [actual data, retention and launch review](operations/review-version-data-inventory.md),
-before any Riot submission. Live RSO/game tests, Discord and public release remain
+The owner's [actual data and launch review](operations/review-version-data-inventory.md)
+now records DEC-092: deletion/retention work waits until after RSO implementation;
+it does not block further local synthetic development. Hosting/email/operator and
+final notices remain the separate fifth discussion before external delivery.
+The [owner follow-up](planning/review-version/owner-follow-up-implementation.md)
+implements singleton admin control, English/Turkish application UI and 18+ notice;
+it does not implement live age assurance or the deferred disposal flow.
+Applicable handling must be reviewed before real-data tests. Live RSO/game tests,
+Discord and public release remain
 separate. The following records preserve earlier planning and baseline evidence.
 
 **Earlier design pass:** [product/specification/design plan](planning/product-design-pass.md)

@@ -4,6 +4,8 @@
 - **Checked:** 2026-10-23
 - **Focused addition:** native party-code evidence reconciled 2026-10-27; the
   API inventory and UI release checks retain their original dates
+- **Official-policy comparison:** 2026-10-28; owner-requested search for a
+  VALORANT equivalent to Riot's League Client API page, recorded below
 - **Research owner:** primary Codex agent; product decisions remain with the owner
 - **Authority:** owner's request to investigate the local VALORANT client API and the announced UI change
 - **Status:** documentation review complete; runtime behavior and QGuard permission remain unverified
@@ -18,6 +20,51 @@ shipped in 13.08 on October 13, 2026.
 **Owner follow-up:** `DEC-053` prefers the officially documented Riot developer
 API. The comparison below distinguishes that preference from private cloud
 and local-client capabilities; neither alternative is approved for use.
+
+## Official League Client API Comparison — 2026-10-28
+
+**QG-CLIENT-PAGE-1 / scope:** the owner requested this specific source search now,
+following DEC-086's deferral of a future client integration. Mandatory entry and
+research, privacy/legal evidence separation, content/record reconciliation and
+deferral procedures apply. This check does not activate implementation, game
+tests or provider contact, and preserves the existing uncommitted review batch.
+
+**Finding:** the exact League page exists. No equivalent public Riot-authored
+VALORANT client-API page or specific acknowledgement of its local/private party
+interfaces was found in the reviewed sources. This is a bounded search result,
+not proof that no internal documentation or permission path exists.
+
+| Official source, checked 2026-10-28 | Finding and boundary |
+| --- | --- |
+| [League developer documentation — League Client API](https://developer.riotgames.com/docs/lol#league-client-api) | Riot describes the local CEF/C++ interface, offers no support/documentation/availability/change-notice guarantees, and directs users to disclose endpoints and use cases through product registration or an existing application. This acknowledges third-party use, subject to the broader policies; registration is not blanket approval of every operation. The separate Game Client API section concerns League too. |
+| [General developer policies](https://developer.riotgames.com/policies/general) | The product-registration section specifically names the League Client API and links its documentation. No parallel VALORANT client-API provision appears there. |
+| [VALORANT developer documentation](https://developer.riotgames.com/docs/valorant) and [Developer Relations article](https://support-developer.riotgames.com/hc/en-us/articles/22698769097107-VALORANT) | Require registration even when a product does not use officially documented APIs. Neither reviewed page supplies a local-client endpoint reference or a League-style client-use/support statement. The official API inventory covers public data services; RSO client means OAuth client, not the installed VALORANT game client. |
+| [Vanguard developer FAQ](https://support-developer.riotgames.com/hc/en-us/articles/28021427366163-Vanguard), dated 2024-04-18 | Mentions VALORANT in its introduction and says LCU/in-game API tools should continue working without Developer Relations support. Its rollout and applicability discussion explicitly concern League/TFT. Treating it as a VALORANT client-API permission statement would extend its demonstrated scope. |
+
+**Interpretation:** the owner's League example correctly distinguishes lack of
+support from an outright ban. The VALORANT registration requirement similarly
+does not say every undocumented interface is prohibited, but does not grant
+permission for every such interface either. Do not carry League-specific wording
+over to VALORANT. The local/private endpoint catalogues referenced elsewhere in
+this file remain community documentation, not the requested Riot counterpart.
+
+**Search coverage:** inspected the developer portal's League/VALORANT documents,
+general policies and public API index, Developer Relations VALORANT/League/general
+articles and the Vanguard FAQ. Searched Riot domains (developer, developer-support
+and engineering included) for VALORANT combined with client API, local API,
+private API, unsupported, undocumented, lockfile and local-client identifiers.
+A broader exact-phrase search surfaced community libraries/catalogues; those
+were not promoted to Riot policy evidence. No client or private API was queried.
+
+**Consequence:** keep [DEF-015](../governance/deferred-work.md#def-015--review-client-automation-permission-before-any-later-integration)
+open for the exact proposed operations and any necessary later Riot clarification.
+The first web version remains independent of that answer. No provider approval,
+new prohibition or architecture decision follows from the missing public page.
+
+**Verification:** reviewed the scoped record changes; 167 local link targets and
+49 Markdown anchors pass with no failures, as do whitespace checks. No application
+or live-provider tests were run for this research-only task. Records remain
+uncommitted with the ongoing owner-review batch; no remote action was performed.
 
 ## Three Different API Surfaces
 

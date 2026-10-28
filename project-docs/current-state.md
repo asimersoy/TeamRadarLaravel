@@ -1,5 +1,32 @@
 # QGuard Current State
 
+## Owner Follow-up And Fifth Discussion — 2026-10-29
+
+The owner explicitly authorized finishing remaining local changes before the
+hosting/policy discussion. The [follow-up contract and evidence](planning/review-version/owner-follow-up-implementation.md)
+implements one-super-admin enforcement and audited assignment, English/Turkish
+real application UI, translated system messages and visible 18+ registration copy.
+Interface language does not change matchmaking language. No DOB/ID is collected;
+this is not age verification. The standalone guest/design catalog remains an
+English review artifact, identified at entry; the logo/tagline and exact English
+Riot notice remain. No real owner admin has been provisioned.
+
+The core web workflows already exist under DEC-085. Retention/deletion is deferred
+under DEC-092, not a local-build blocker. Group five now concerns actual operator,
+hosting, transactional email, contact details and final Privacy Notice/Terms.
+DEC-093 selects the owner personally as initial operator; the owner confirms no
+domain, hosting or email provider exists yet. No provider is selected. Live RSO/
+rank ingestion, live opt-in enforcement, game-entry testing, Discord, public release
+and external submission remain separate. See the follow-up for exact verification
+state and remaining release work.
+
+Verification: 99 backend tests (90,486 assertions), six Chromium/Firefox browser
+cases and three WebKit follow-up cases passed. Final production packaging and
+view compilation passed. The follow-up records the WebKit memory constraint,
+scheduler-startup correction, rendered evidence and remaining live-use boundaries.
+The related owner-review/disclosure and implementation changes form one local
+commit batch; no push, deployment, purchase or submission has occurred.
+
 ## Local Review Implementation Complete — 2026-10-28
 
 DEC-085 preparation and bounded implementation are complete. The
@@ -10,11 +37,63 @@ New review sessions use required immutable per-teammate cards, immediate
 forward-only numerical effects, independent private descriptors, shared session
 closure, 20-second all-five offers and host-supplied native code relay.
 
-**Next checkpoint:** owner [privacy, actual retention and launch boundaries](operations/review-version-data-inventory.md)
-review before any Riot submission. No automatic business purge or retention
-period was added. RSO/provider integration, party-code live tests, Discord and
+**Current sequencing, DEC-092 (2026-10-29):** deletion/retention implementation
+and detailed disposal review are deferred until after RSO implementation. They
+do not block further local synthetic work. The owner's [review packet](operations/review-version-data-inventory.md)
+retains hosting/email/operator/final-notice decisions for the separate fifth
+discussion before external delivery. Review applicable handling before the first
+real-data test; public launch is not the trigger for all privacy obligations.
+No automatic business purge or retention period was added.
+RSO/provider integration, party-code live tests, Discord and
 normal/public operation remain gated. Existing development storage and the
 protected portable workflow are untouched. No push, deployment or submission.
+
+**Review input, 2026-10-28:** the owner requested a current Riot terms/API/VALORANT
+briefing before deciding that packet. The [source-backed policy comparison](research/riot-policy-pre-submission-review.md)
+records opt-in, conduct-versus-skill ranking, notices, deletion obligations and
+the remaining interpretation questions. Research is not an owner disposition,
+provider approval or a change to the implemented data lifecycle.
+
+**Owner-authorized disclosure:** Riot's prescribed non-endorsement wording is
+now in the shared application footer and the generated review designs, including
+guest/account screens. See the [implementation and rendered checks](research/riot-policy-pre-submission-review.md#owner-authorized-notice-follow-up--2026-10-28).
+Privacy/retention/launch dispositions remain pending; this is only the requested
+notice edit, retained with the ongoing review batch.
+
+**RSO disclosure clarification:** the owner also directs including Riot-required
+opt-in information. The connection screen now explains game identity/rank use and
+matched-teammate visibility before the future RSO redirect. The reviewed public
+policy does not prescribe a separate QGuard checkbox. See the [source/scope and checks](research/riot-policy-pre-submission-review.md#rso-disclosure-and-checkbox-clarification--2026-10-28).
+Final Privacy Notice/Terms content and links remain in the pending owner review;
+sample linking captures no real consent and live RSO remains unimplemented.
+The owner's [explicit opt-in policy audit](research/riot-policy-pre-submission-review.md#explicit-opt-in-policy-audit--2026-10-28)
+adds ID-10: subject signup/consent must gate other-player Riot-data display,
+including non-member match participants and historical/cached fields. These
+live checks remain unimplemented; current synthetic isolation is not their proof.
+The [owner-review progress reconciliation](operations/review-version-data-inventory.md#owner-review-progress--2026-10-28)
+now distinguishes reviewed policy items from remaining privacy/retention/launch
+work. DEC-087–090 records the owner's conditional no-expiry preference and dates,
+closed-account/Riot-removal direction, one super admin, and EU game region with
+English/Turkish localization. The [focused research](research/retention-deletion-age-review.md)
+keeps erasure/retention constraints unresolved and records their DEC-092 deferral.
+DEC-091 (2026-10-29) selects 18+ for first-release player registration/use;
+the live age-check method is not selected or implemented. Terms plus a visible
+signup sentence is the recorded prototype recommendation, not verified age
+assurance. Hosting/operator
+details and final notices are explicitly the separate fifth discussion. These
+requirements were pending at this review; the October 29 follow-up above records
+which are now implemented and which remain deferred. The checkpoint queue retains a short
+delegated-default recap; no tool-confirmed automatically answered question is known.
+
+**Owner provider-scope disposition:** `DEC-086` accepts proceeding with the
+current web scope; future client automation is not its dependency. `DEF-015`
+returns to terms research and possible Riot clarification before a later client
+integration. The [review record](research/riot-policy-pre-submission-review.md#owner-disposition-web-scope-and-later-automation--2026-10-28)
+separates that decision from the branding clarification: non-endorsement alone
+does not settle Riot asset-use or monetization conditions.
+The owner's subsequent [official client-API page search](research/valorant-client-api-and-ui-status.md#official-league-client-api-comparison--2026-10-28)
+found the League page but no equivalent VALORANT statement in reviewed public
+sources. Specific client-use permission remains unresolved under DEF-015.
 
 The loopback preview is `http://127.0.0.1:55000/guest#welcome`, with both matching
 test engines disabled outside deliberate isolated verification. Port 8121 remains

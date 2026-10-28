@@ -13,6 +13,10 @@
 
 ## Executive Finding
 
+**Policy review, 2026-10-28:** use the [pre-submission Riot policy briefing](riot-policy-pre-submission-review.md)
+for the current build's privacy, retention and launch review. This earlier document
+remains a dated party-entry comparison, not a complete application-policy assessment.
+
 **Correction, 2026-10-27:** Riot's official native Party Invite Codes were
 missed by the original review. The [party-code follow-up](valorant-party-codes-and-gankster.md#native-party-invite-codes)
 supersedes the matrix's earlier absence finding. Exact current non-friend

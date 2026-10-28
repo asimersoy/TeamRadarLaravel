@@ -4,6 +4,10 @@ Status: updated 2026-10-03; Discord-dependent execution on owner hold;
 future honor consideration preserved without feature-adoption approval;
 first-pass retention review scheduled for pass two under `DEF-012`
 
+**2026-10-28:** `DEC-086` explicitly keeps client automation outside the first
+web version. `DEF-015` records the later permission review; it does not block
+the current web build or its owner review.
+
 **2026-10-27:** `DEC-063` activates session-history/rating design from the
 relevant part of `DEF-010` and replaces `DEF-011`'s ten-minute feedback expiry.
 Friend discovery, unrelated session polish and real integrations remain deferred.
@@ -420,9 +424,13 @@ boundary, not approval to implement either future feature.
   honor application. The five-minute timer is not a feedback deadline. Future
   improvements need their own approved contract and evidence.
 
-## DEF-012 - Review Actual Data Retention Before Riot Submission
+## DEF-012 - Review Data Retention And Deletion After RSO Implementation
 
-- **Status:** owner-approved second-pass review; final retention policy unselected
+- **Status, updated 2026-10-29:** deferred under DEC-092 until after RSO
+  implementation, superseding the previous pre-submission return condition. DEC-087
+  selects conditional no routine expiry with timestamps and DEC-088 gives closure
+  direction. Final permitted retention, erasure/correction and backup contract
+  remains unresolved; no deletion/expiry implementation in the current slice.
 - **Decision owner:** project owner
 - **Preparation owner:** implementation agent
 - **Locked decision:** `DEC-047` keeps records stored by approved first-pass
@@ -430,6 +438,8 @@ boundary, not approval to implement either future feature.
   Data-cleared admins retain full project-context access under `DEC-045`.
 - **Reason postponed:** the owner wants to see what the implemented system
   actually stores before deciding which details should survive and for how long.
+  After reviewing that inventory, the owner explicitly defers the detailed work
+  until after RSO implementation (DEC-092).
 - **Implementation state:** the review build adds eleven tables and four session
   fields to the retained first-pass schema. Business evidence survives closure;
   runtime slots/caches retain their documented lifecycle. No business purge.
@@ -437,14 +447,23 @@ boundary, not approval to implement either future feature.
   supplement the linked baseline inventory. Verification is recorded in the
   [implementation evidence](../planning/review-version/backend-implementation.md);
   no real-user collection or final retention policy is approved.
-- **Return condition, updated by DEC-085:** after the review-version implementation
-  is complete and before any Riot RSO/production-key submission. Prepare a concrete inventory of fields,
-  records, purposes, sources, readers, storage, logs and backups where present.
-  Existing review gates still apply before real-user collection or release.
+- **Return condition, updated by DEC-092:** after RSO implementation, replacing
+  DEC-085's pre-submission disposal-review timing. Refresh the actual inventory
+  of fields, purposes, sources, readers, storage, logs and backups. Before any
+  real-data test, settle applicable handling for that test; this is distinct from
+  requiring the whole automated disposal feature now. Provider-imposed conditions
+  may require earlier targeted work. Do not imply that private testing is exempt
+  from applicable law or that Riot approval certifies compliance.
 - **Owner review:** select what to retain, restrict, expire or delete; ordinary
   versus reported-session evidence; account closure/deletion and correction;
   retention periods, holds and backup/restore behavior as relevant. Do not
   automatically adopt the earlier report-only or short-retention proposals.
+  DEC-087's preference is no routine expiry where allowed, not a requirement to
+  choose an arbitrary duration. DEC-088 prefers soft-deleted QGuard relations and
+  hard removal of the Riot connection, with exact lawful erasure still to settle.
+  DEC-089 resolves the admin model to one super admin. The
+  [current source-backed review](../research/retention-deletion-age-review.md)
+  explains limits and open questions; do not infer a completed disposal mechanism.
 - **Verification required:** demonstrate authorized admin access and ordinary-
   user isolation; verify that settlement does not silently discard evidence.
   Later expiry/deletion changes need explicit scope, tests, recovery assessment
@@ -510,3 +529,38 @@ boundary, not approval to implement either future feature.
 - **Invalidation:** relevant provider feedback or game-client changes may
   require revisiting the assumption; version-one planning is not blocked on
   running this deferred check now.
+
+## DEF-015 — Review Client Automation Permission Before Any Later Integration
+
+- **Status / authority:** owner-deferred research under `DEC-086`; no client
+  integration selected or approved.
+- **Objective:** determine whether Riot permits the precise future client-API
+  use cases proposed for QGuard, separating technical capability from permission.
+- **Locked boundary:** the first web version proceeds without client automation,
+  irrespective of the later answer. Do not add a desktop or private-API dependency.
+- **Reason postponed:** this question does not affect the current web scope;
+  the owner expects provider clarification to be easier after web approval.
+- **Return condition:** when considering the later desktop/client integration,
+  before implementing it. Recheck current Terms, developer/game policies and
+  relevant integration documentation for the actual operations and data access.
+  If those remain ambiguous, prepare a concrete clarification for Riot after
+  web approval rather than infer permission from endpoint availability or a
+  competitor's behavior.
+- **Owners:** primary agent prepares evidence; project owner selects the later
+  product scope; Riot is the source of provider-specific permission/clarification.
+- **Evidence needed:** dated sources, exact operations, local versus private
+  cloud access, credentials/data involved, and the scope of any provider answer.
+  Later capability tests and implementation need their own bounded specification;
+  web approval alone does not approve client automation.
+- **Current state:** no new research experiment, game/client action, provider
+  contact or implementation performed for this item. Existing research remains
+  dated background; current-policy uncertainty is not a first-web-version blocker.
+- **Scoped research, 2026-10-28:** the owner separately requested looking now for
+  a Riot-authored VALORANT counterpart to the League Client API page. The
+  [official-page comparison](../research/valorant-client-api-and-ui-status.md#official-league-client-api-comparison--2026-10-28)
+  found the League acknowledgement and no comparable VALORANT page in the
+  reviewed sources. This does not settle permission for specific operations or
+  close this item; broader integration work and provider contact remain deferred.
+- **Invalidation / owner recheck:** changed terms, endpoints, scope or provider
+  response require reassessment before reliance. No particular fallback or
+  automation technique is preapproved.

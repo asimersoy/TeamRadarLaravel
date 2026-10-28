@@ -1,0 +1,33 @@
+import {test,expect} from '@playwright/test';
+import {login} from '../Browser/helpers';
+
+test('Turkish registration, validation, navigation and admin remain readable on desktop and mobile',async({page},info)=>{
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto('/register');
+  await page.getByLabel('Interface language').selectOption('tr');
+  await page.getByRole('button',{name:'Apply language'}).click();
+  await expect(page.getByText('QGuard, 18 yaş ve üzeri oyuncular içindir.',{exact:true})).toBeVisible();
+  await page.locator('input[name=handle]').fill('demo_a');
+  await page.locator('input[name=email]').fill('invalid');
+  await page.locator('input[name=password]').fill('a-valid-long-password');
+  await page.locator('input[name=password_confirmation]').fill('a-valid-long-password');
+  await page.locator('form').filter({has:page.locator('input[name=handle]')}).evaluate((form:HTMLFormElement)=>{form.noValidate=true;form.requestSubmit();});
+  await expect(page.getByRole('alert')).toContainText('E-posta geçerli bir e-posta adresi olmalıdır.');
+  await page.screenshot({path:info.outputPath('registration-tr-1440.png'),fullPage:true});
+  await page.setViewportSize({width:390,height:950});
+  await page.screenshot({path:info.outputPath('registration-tr-390.png'),fullPage:true});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+  await page.getByLabel('Arayüz dili').selectOption('en');await page.getByRole('button',{name:'Dili uygula'}).click();
+  await login(page,'admin');
+  await page.getByLabel('Interface language').selectOption('tr');await page.getByRole('button',{name:'Apply language'}).click();
+  await page.getByRole('link',{name:'Yönetici incelemesi',exact:true}).click();
+  await expect(page.getByRole('heading',{name:'Yönetici inceleme listesi'})).toBeVisible();
+  await page.screenshot({path:info.outputPath('admin-tr-390.png'),fullPage:true});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+  await page.getByRole('link',{name:'Ayarlar',exact:true}).click();
+  await expect(page.locator('html')).toHaveAttribute('lang','tr');
+  await expect(page.getByRole('combobox',{name:'İletişim dili',exact:true})).toHaveValue('en');
+  await page.screenshot({path:info.outputPath('settings-tr-390.png'),fullPage:true});
+  expect(errors).toEqual([]);
+});

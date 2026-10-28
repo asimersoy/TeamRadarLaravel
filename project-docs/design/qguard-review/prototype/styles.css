@@ -189,3 +189,7 @@ body[data-theme=refined] textarea::placeholder { color:var(--muted); opacity:1; 
 body[data-theme=refined] .btn.danger { color:#251512; }
 .review-bar { background:#090d0c; color:#eef3ed; border-color:#24302b; }
 .current-palette { color:#b2c2b8; font-size:10px; }
+
+/* Riot-required notice stays readable in every public, auth and app footer. */
+.footer { flex-wrap:wrap; gap:16px; }
+.riot-notice { flex:0 0 100%; max-width:100%; margin:0; color:var(--muted); font-size:12px; line-height:1.6; }

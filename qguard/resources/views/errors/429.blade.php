@@ -1,0 +1,1 @@
+<x-layout :title="__('Too many requests')"><section class="panel"><p class="eyebrow">429</p><h1>{{ __('Too many requests') }}</h1><p>{{ __('Please wait a moment before trying again.') }}</p><a href="{{ route('home') }}">{{ __('Return home') }}</a></section></x-layout>

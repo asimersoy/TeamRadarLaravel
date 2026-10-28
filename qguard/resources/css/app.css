@@ -59,6 +59,7 @@ label { display:block; font-size:14px; font-weight:600; margin:14px 0; } input:n
 @media(max-width:700px) { .friends-sidebar { padding:0; }.main-nav { width:100%; gap:12px; }.main-nav a { font-size:14px; } }
 
 /* Approved Obsidian-Forest surfaces and pale lime; shared application shell. */
+.riot-notice { flex:0 0 100%; max-width:100%; margin:4px 0 0; color:var(--muted); font-size:12px; line-height:1.6; }
 .site-header,.friends-sidebar { background:var(--nav); }
 .brand img { display:block; width:220px; height:auto; max-width:100%; }
 .notice { background:var(--soft); border-color:#486551; }
@@ -96,3 +97,5 @@ meter { display:block; width:100%; height:18px; accent-color:var(--accent); marg
 .signed-in .main-nav form { margin-top:32px; }
 @media(max-width:1100px) { .signed-in .page-shell { padding:30px; }.matchmaking-layout { grid-template-columns:1fr; }.friends-sidebar { position:static; } }
 @media(max-width:760px) { .signed-in .site-header { position:static; width:auto; flex-direction:row; flex-wrap:wrap; padding:20px; gap:16px; }.signed-in .main-nav { flex-direction:row; flex-wrap:wrap; gap:4px; }.signed-in .main-nav a { padding:8px; }.signed-in .main-nav form { margin-top:0; }.signed-in .page-shell,.signed-in .site-footer { margin-left:0; padding:24px 18px; }.rating-options { grid-template-columns:repeat(5,minmax(0,1fr)); } }
+
+.locale-switch{display:flex;align-items:end;gap:.5rem;flex-wrap:wrap;font-size:.8rem}.locale-switch label{margin:0}.locale-switch select{min-width:100px}.locale-switch button{padding:.55rem .75rem}.site-header{flex-wrap:wrap}.main-nav{flex-wrap:wrap}
