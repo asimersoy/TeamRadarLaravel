@@ -2936,3 +2936,56 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 - **Supersedes:** pending calibration disposition in DEC-072/OQ-016; no reversal
   of A selection, brand retention or layout approval.
 - **Superseded by:** none
+
+## DEC-074 - Confirm Livewire For The Next Web Interface
+
+- **Date:** 2026-10-28
+- **Status:** approved frontend choice at the stack checkpoint
+- **Decision owner:** project owner
+- **Evidence:** “Livewire is confirmed,” after the dynamic-interface and
+  SPA-navigation capability discussion. The owner then asks what Laravel Reverb is.
+- **Decision:** retain Blade/Livewire for the next QGuard web interface, using
+  its SPA-style navigation and local browser interactions for the desired
+  dynamic dialogs and automatic room transitions. Do not reopen React merely
+  because the interface must update live or navigate automatically.
+- **Scope:** settles the frontend choice reopened under DEC-062. Reverb is
+  being explained, not separately approved by this response. No blanket approval
+  of the remaining stack recommendations, implementation slices or live services.
+- **Required follow-through:** specify navigation/event lifecycle, reconnect,
+  access checks and multi-client evidence; settle the distinct match-acceptance
+  policy before that implementation slice. Capability documentation is not a
+  passed application test.
+- **Affected records:** [stack review](../planning/review-version/stack-review.md),
+  checkpoint packet/CRQ-010, OQ-007 and current state.
+- **Supersedes:** the pending/conditional Livewire-versus-React selection at
+  this checkpoint; preserves other applicable specification and operation gates.
+- **Superseded by:** none
+
+## DEC-075 - Confirm The Next-Version Core Stack Including Reverb
+
+- **Date:** 2026-10-28
+- **Status:** approved; core-stack reconsideration complete
+- **Decision owner:** project owner
+- **Evidence:** owner explicitly confirms Laravel/PHP, Blade with Livewire,
+  Alpine/JavaScript, Tailwind CSS, PostgreSQL, Docker Compose and nginx. The
+  transcribed “Laravel Vapor” is immediately clarified by both a direct question
+  reply and a typed correction: the owner said **Laravel Reverb**. No Vapor or
+  new hosting-provider selection was intended.
+- **Decision:** retain that full named stack for the next QGuard web version,
+  including Reverb for realtime event delivery and the dynamic/SPA-style
+  interface direction established in DEC-074. Core technology choice no longer
+  blocks the checkpoint's next discussions.
+- **Preserved:** DEC-050's persistent PostgreSQL storage, database-backed
+  jobs/cache with no initial Redis, and backend/browser testing requirements.
+  Supporting build/dependency/test tooling and exact compatible versions remain
+  engineering details within the existing delegation, not new owner questions
+  for every package. No new version, capacity or runtime-health claim is made.
+- **Next:** review recorded assumptions/draft defaults, then remaining policy
+  choices and the required technical/slice contracts. Stack confirmation alone
+  does not approve the implementation packet, match-acceptance rules, live
+  integrations, hosting purchase, push, deployment or production data changes.
+- **Affected records:** [stack record](../planning/review-version/stack-review.md),
+  checkpoint packet/CRQ-010, OQ-007, specification entry and current state.
+- **Supersedes:** pending next-version stack reconsideration under DEC-062 and
+  the Reverb question following DEC-074. Does not revoke specification gates.
+- **Superseded by:** none

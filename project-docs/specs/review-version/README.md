@@ -1,7 +1,8 @@
 # QGuard Review Version — Specification Packet
 
 - **Packet:** QG-REVIEW-1, draft revision 1, 2026-10-27
-- **Status:** prepared for owner design/stack review; not implementation approval
+- **Status:** core stack confirmed under DEC-074/075; remaining owner policy,
+  draft-detail and implementation-slice review pending; not implementation approval
 - **Owner:** project owner; primary agent authors and reconciles the packet
 - **Authority:** current decision register through DEC-068, especially
   DEC-052–058 and DEC-061–068; latest explicit owner instructions prevail

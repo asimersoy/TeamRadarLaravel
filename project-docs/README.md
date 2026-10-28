@@ -8,8 +8,9 @@ reusable workflow system remains separate in
 
 **Current checkpoint:** [specification/design/stack review](planning/review-version/README.md).
 The owner-approved [calibrated Forest & Lime design](design/qguard-review/README.md)
-is applied under `DEC-073`; layouts and colors need not be reselected. The stack
-and remaining consequential policy/slice approvals are still pending.
+is applied under `DEC-073`; layouts and colors need not be reselected. The core
+stack is confirmed under `DEC-074/075`. Next review assumptions/defaults, then
+the remaining consequential policy and slice approvals.
 
 **Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
 under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders

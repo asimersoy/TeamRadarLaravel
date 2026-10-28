@@ -63,6 +63,16 @@ has no invented counterpart. Prototype formation is explicitly a sample action.
 
 ## Acceptance
 
+**Stack-checkpoint clarification, 2026-10-28:** support realtime matching UI and
+smooth system-driven navigation into the session. The owner cites a
+match-acceptance popup as the intended interaction; the exact acceptance/decline/
+nonresponse policy must be reconciled in this draft before that slice is ready.
+Do not infer a deadline, penalty, acceptance quorum or auto-accept from the
+example. Premade pre-queue readiness and post-match acceptance are distinct.
+The [stack assessment](../../planning/review-version/stack-review.md#dynamic-navigation-clarification--2026-10-28)
+records capability evidence and required multi-client/navigation checks. This
+does not claim the existing application or design artifact implements the flow.
+
 Exercise whole-party combinations, no splitting, all-member feedback gates,
 readiness reset, owner/non-owner actions, invitation races, duplicate/crossed
 friend requests, insufficient players and oldest-entry liveness. Preserve the

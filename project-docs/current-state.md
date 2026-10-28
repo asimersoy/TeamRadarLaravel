@@ -8,9 +8,22 @@ Forest & Lime throughout the current design. Open the
 [palette application evidence](design/qguard-review/palette-application/README.md).
 Earlier comparisons are historical. OQ-016 is resolved.
 
+**Stack review complete:** DEC-074/075 confirms Laravel/PHP, Blade/Livewire,
+Alpine/JavaScript, Tailwind CSS, PostgreSQL, Laravel Reverb, Docker Compose and
+nginx for the next web version. “Vapor” was a transcription error corrected by
+the owner; no hosting change was intended. The
+[stack record](planning/review-version/stack-review.md) gives evidence and limits.
+Next: review assumptions/draft defaults, then remaining policy choices and slice
+contracts. No additional core-stack confirmation or implementation approval is
+inferred for unrelated work.
+The owner clarifies that dynamic match dialogs and automatic SPA-style room
+navigation are important. Livewire's documented navigation/realtime capabilities
+fit; the existing first pass needs lifecycle work, and match-acceptance policy
+must be specified separately. The Livewire choice is now settled.
+
 **We are at the specification/design/stack checkpoint.** No further design
 choice is needed before that review. Start with the
-[updated checkpoint packet](planning/review-version/README.md): stack choice,
+[updated checkpoint packet](planning/review-version/README.md): completed stack choice,
 explicit recap of recorded defaults/answer provenance, and remaining P-03/P-04/
 P-05 policy decisions before their affected implementation slices. P-06 needs
 review before live rank integration. Do not reopen approved layouts or colors.

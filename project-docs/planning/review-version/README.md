@@ -1,7 +1,8 @@
 # QGuard Specification, Design And Stack Checkpoint
 
-**Reached:** 2026-10-27. **Status:** ready for owner review, application work
-stopped at the requested checkpoint. No new product/stack approval is inferred.
+**Reached:** 2026-10-27. **Status:** checkpoint review in progress; core stack
+confirmed under DEC-074/075. Application work remains stopped pending applicable
+policy/specification and slice approvals.
 
 ## Start Here
 
@@ -11,9 +12,9 @@ stopped at the requested checkpoint. No new product/stack approval is inferred.
    **All screens** for individual pages and recovery states. Only fictional data.
 2. The owner-approved layouts and calibrated Forest & Lime palette are applied
    (`DEC-070/073`). Earlier modes are historical; no new visual selection is needed.
-3. Review the [stack comparison](stack-review.md). Recommendation: retain
-   Laravel/Blade/Livewire + PostgreSQL/Docker. No replacement stack was installed.
-4. Resolve the consequential policy details below, then approve/revise the
+3. The [stack record](stack-review.md) is confirmed under DEC-075. Review the
+   assumptions/defaults recap below next, as requested by the owner.
+4. Then resolve the consequential policy details below and approve/revise the
    [spec packet](../../specs/review-version/README.md) and design for named slices.
 
 ## What Is Ready
@@ -36,9 +37,11 @@ stopped at the requested checkpoint. No new product/stack approval is inferred.
 
 ## Decisions To Settle In Order
 
-**Group 1 — Stack:** keep the existing Laravel/Livewire direction (recommended),
-use React/Inertia with Laravel, or replace the application stack. Decide this
-as its own group; no need to answer every remaining detail at once.
+**Group 1 — Stack, complete:** DEC-074/075 confirms Laravel/PHP, Blade/Livewire,
+Alpine/JavaScript, Tailwind CSS, PostgreSQL, Reverb, Docker Compose and nginx.
+Do not repeat the core selection. Next present the assumptions/defaults recap
+below, then work through the following policy groups. Implementation still
+awaits applicable specifications and approvals.
 
 **Group 2 — Consequential feedback/privacy details:**
 
@@ -94,8 +97,8 @@ The portable workflow package, existing application, legacy code and runtime
 configuration remain untouched. No push, PR, deployment, submission, external
 message, real account creation or live game/Discord test was performed.
 
-Next action belongs to the owner: stack decision first, then the remaining
-review groups. Record precise dispositions, reconcile modules/design, prepare
+Next discussion is the assumptions/defaults recap, followed by the remaining
+policy groups. Record precise dispositions, reconcile modules/design, prepare
 technical slice contracts and verification, and only then start approved work.
 Silence, elapsed time or acceptance of a screenshot is not implementation approval.
 
@@ -115,6 +118,8 @@ answer to the stack selection or consequential policy proposals above.
 
 DEC-072/073 selects calibrated A and applies it throughout current design and
 brand artifacts. The owner asked whether anything remains before this checkpoint:
-we are here. That design task is verified; start Group 1, stack review. No additional design-selection round is required.
+we are here. That design task is verified and DEC-074/075 subsequently completes
+Group 1, stack review. Continue with the assumptions/defaults recap; no additional
+design-selection round is required.
 Remaining P-03/P-04/P-05 and required slice specifications still need their own
 dispositions before affected application work; P-06 precedes live integration.

@@ -378,9 +378,15 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-007 - What Delivery, Business, And Technical Constraints Govern The MVP?
 
+- **Checkpoint update, 2026-10-28:** DEC-074/075 confirms the next-version core
+  stack, including Reverb after an explicit transcription correction. Core
+  selection is settled; later hosting/operating and implementation-slice matters
+  retain their own gates. Use the
+  [active stack review](../planning/review-version/stack-review.md).
+
 - **Status:** existing first-pass stack and testing direction settled by
   `DEC-049`/`DEC-050`, packet approved under `DEC-052`; next-pass stack review
-  explicitly scheduled after specifications/design under `DEC-062`
+  scheduled under `DEC-062` and now completed under `DEC-075`
 - **Decision owner:** project owner
 - **Needed by:** technical specification and implementation plan
 - **Blocks:** later production/operating decisions not covered by the packet;
