@@ -21,7 +21,7 @@ final class SettlementService
     {
         return MembershipTransaction::run(function () use ($sessionId) {
             $room = DB::table('game_sessions')->where('id', $sessionId)->lockForUpdate()->first();
-            if (! $room || $room->state !== 'active') {
+            if (! $room || $room->state !== 'active' || $room->workflow_version !== 'first-pass-v1') {
                 return null;
             }
             if ($room->settled_at) {

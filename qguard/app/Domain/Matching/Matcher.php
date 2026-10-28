@@ -3,6 +3,10 @@
 namespace App\Domain\Matching;
 
 use App\Domain\Parties\MembershipTransaction;
+use App\Domain\Parties\SocialService;
+use App\Domain\Review\MatchOffer;
+use App\Domain\Review\ReviewFeedback;
+use App\Domain\Review\ReviewSession;
 use App\Support\ReviewVersion;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
@@ -12,9 +16,11 @@ final class Matcher
 {
     public function tick(): array
     {
-        if (! ReviewVersion::historicalEngineEnabled()) {
+        if (! ReviewVersion::historicalEngineEnabled() && ! ReviewVersion::reviewEngineEnabled()) {
             return ['status' => 'awaiting_riot_linking', 'matched' => 0, 'expansions' => 0];
         }
+        app(MatchOffer::class)->due();
+        app(ReviewSession::class)->due();
         $lease = Cache::lock('qguard-matcher', 30);
         if (! $lease->get()) {
             return ['status' => 'leased', 'matched' => 0, 'expansions' => 0];
@@ -47,7 +53,11 @@ final class Matcher
                         $cursor = max($cursor, $id);
                         $chosen = $this->search($anchor, $budget);
                         if ($chosen) {
-                            $this->createSession($chosen);
+                            if (ReviewVersion::reviewEngineEnabled()) {
+                                app(MatchOffer::class)->reserve($chosen);
+                            } else {
+                                $this->activate($chosen);
+                            }
                             $matched++;
                         }
                     }
@@ -92,6 +102,7 @@ final class Matcher
                 $slot = $slots[$id] ?? null;
                 $m = $ready[$id] ?? null;
                 $entry->valid = $entry->valid && $u && $slot && $m && $slot->party_id === $entry->party_id && $m->party_id === $entry->party_id && $m->ready && $u->email_verified_at && $u->riot_id && $u->stated_rank && $u->competitive_access && $u->shard === $entry->shard && $u->language === $entry->language;
+                $entry->valid = $entry->valid && ! app(ReviewFeedback::class)->debt($id);
             }
         }
         $anchor = $entries[$anchor->id];
@@ -181,15 +192,21 @@ final class Matcher
         return [$span, max($ranks) - min($ranks), $wait, $ids];
     }
 
-    private function createSession(array $entries): void
+    public function activate(array $entries, string $workflow = 'first-pass-v1'): int
     {
         usort($entries, fn ($a, $b) => $a->id <=> $b->id);
+        foreach ($entries as $entry) {
+            foreach ($entry->members as $userId) {
+                $slot = DB::table('active_participations')->where('user_id', $userId)->first();
+                SocialService::require($slot && $slot->party_id === $entry->party_id && $slot->game_session_id === null && ! app(ReviewFeedback::class)->debt($userId), 'A player is no longer eligible for this session.');
+            }
+        }
         $first = $entries[0];
-        $id = DB::table('game_sessions')->insertGetId(['shard' => $first->shard, 'language' => $first->language, 'mode' => $first->mode, 'coordinator_id' => min($first->members), 'created_at' => now(), 'updated_at' => now()]);
+        $id = DB::table('game_sessions')->insertGetId(['workflow_version' => $workflow, 'shard' => $first->shard, 'language' => $first->language, 'mode' => $first->mode, 'coordinator_id' => min($first->members), 'created_at' => now(), 'updated_at' => now()]);
         foreach ($entries as $entry) {
             foreach ($entry->members as $userId) {
                 $u = DB::table('users as u')->join('honor_states as h', 'h.user_id', '=', 'u.id')->where('u.id', $userId)->first(['u.*', 'h.honor_score']);
-                DB::table('session_participants')->insert(['game_session_id' => $id, 'user_id' => $userId, 'origin_party_id' => $entry->party_id, 'handle' => $u->handle, 'riot_id' => $u->riot_id, 'rank_snapshot' => $u->stated_rank, 'honor_snapshot' => $u->honor_score, 'created_at' => now(), 'updated_at' => now()]);
+                DB::table('session_participants')->insert(['game_session_id' => $id, 'user_id' => $userId, 'origin_party_id' => $entry->party_id, 'handle' => $u->handle, 'riot_id' => $u->riot_id, 'rank_snapshot' => $u->stated_rank, 'rank_source' => $workflow === 'review-v2' ? 'synthetic_declared' : 'self_declared', 'honor_snapshot' => $u->honor_score, 'created_at' => now(), 'updated_at' => now()]);
                 DB::table('active_participations')->where(['user_id' => $userId, 'party_id' => $entry->party_id])->update(['party_id' => null, 'game_session_id' => $id]);
             }
             DB::table('party_memberships')->where('party_id', $entry->party_id)->whereNull('left_at')->update(['left_at' => now()]);
@@ -197,5 +214,7 @@ final class Matcher
             DB::table('party_invitations')->where(['party_id' => $entry->party_id, 'state' => 'pending'])->update(['state' => 'revoked', 'updated_at' => now()]);
             DB::table('queue_entries')->where('id', $entry->id)->update(['state' => 'matched', 'search_cursor' => null, 'updated_at' => now()]);
         }
+
+        return $id;
     }
 }

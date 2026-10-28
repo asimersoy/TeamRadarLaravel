@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\SocialService;
+use App\Domain\Review\ReviewSession;
 use App\Domain\Sessions\SessionService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,6 +14,7 @@ final class ChatController extends Controller
 {
     public function index(Request $request, int $session)
     {
+        app(ReviewSession::class)->due();
         $service = app(SessionService::class);
         $participant = $service->participant($request->user(), $session);
         $request->validate(['before' => 'nullable|integer|min:1']);
@@ -27,6 +29,7 @@ final class ChatController extends Controller
 
     public function store(Request $request, int $session)
     {
+        app(ReviewSession::class)->due();
         $data = $request->validate(['body' => ['required', 'string', 'max:2000', function ($attribute, $value, $fail) {
             if (preg_match('/(?:javascript|data|vbscript)\s*:/iu', $value)) {
                 $fail('Script and embedded-data URLs are not allowed.');

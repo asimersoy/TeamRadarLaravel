@@ -1,6 +1,6 @@
 # Reports And Cleared-Admin Review
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-039/041/043/045/047/052/056–058/065/078/079.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085. Authority: DEC-039/041/043/045/047/052/056–058/065/078/079.
 **Dependencies:** sessions, feedback and data/access. Requirements RP.
 
 ## Distinct Processes

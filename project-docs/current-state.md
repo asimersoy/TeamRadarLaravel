@@ -1,5 +1,26 @@
 # QGuard Current State
 
+## Local Review Implementation Complete — 2026-10-28
+
+DEC-085 preparation and bounded implementation are complete. The
+[technical contract and verification](planning/review-version/backend-implementation.md)
+record the additive schema, retained historical data semantics, real multi-client
+flows, privacy/authorization checks, races, rendered UI and recovery checks.
+New review sessions use required immutable per-teammate cards, immediate
+forward-only numerical effects, independent private descriptors, shared session
+closure, 20-second all-five offers and host-supplied native code relay.
+
+**Next checkpoint:** owner [privacy, actual retention and launch boundaries](operations/review-version-data-inventory.md)
+review before any Riot submission. No automatic business purge or retention
+period was added. RSO/provider integration, party-code live tests, Discord and
+normal/public operation remain gated. Existing development storage and the
+protected portable workflow are untouched. No push, deployment or submission.
+
+The loopback preview is `http://127.0.0.1:55000/guest#welcome`, with both matching
+test engines disabled outside deliberate isolated verification. Port 8121 remains
+an unrelated service. Earlier sections below describe past milestones; their
+in-progress/stop wording does not override this current completed local build.
+
 ## Reconciled Design And Implementation Entry — 2026-10-28
 
 DEC-082 authorizes reconciling the settled specifications/design and beginning

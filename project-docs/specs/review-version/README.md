@@ -1,15 +1,16 @@
 # QGuard Review Version — Specification Packet
 
-- **Packet:** QG-REVIEW-1, draft revision 1, 2026-10-27
-- **Status:** settled owner rules reconciled; DEC-082 authorizes bounded
-  implementation. R1a uses the approved ID-01–04/guest-boundary subset and
-  [technical contract](../../planning/review-version/reconciliation-and-implementation.md).
-  Remaining consequential choices are not approved by this execution direction.
+- **Packet:** QG-REVIEW-1, revision 2, 2026-10-28
+- **Status:** owner-settled rules implemented locally under DEC-085. The
+  [backend contract and verification](../../planning/review-version/backend-implementation.md)
+  record actual coverage. Live provider work and owner data/release review remain
+  separate; local completion does not approve external use.
 - **Owner:** project owner; primary agent authors and reconciles the packet
-- **Authority:** current decision register through DEC-084, especially
+- **Authority:** current decision register through DEC-085, especially
   DEC-052–058, DEC-061–068 and DEC-076–081; latest explicit owner instructions prevail
 - **Baseline:** the implemented [first-pass suite](../first-pass/README.md)
-  remains historical evidence; this packet does not claim its new behavior exists
+  remains historical compatibility evidence. New sessions use review-v2; old stored
+  sessions retain first-pass semantics
 - **Review path:** [work record](../../planning/design-checkpoint.md), then the
   design inventory/prototype and checkpoint packet linked there
 
@@ -37,9 +38,10 @@ silence. The prototype illustrates proposals and synthetic states; it cannot
 approve policy or prove providers work.
 
 Each module's requirement IDs identify a behavioral contract independent of
-framework and database names. Stack-specific schemas, endpoint naming, queue
-workers and deployment are finalized after the stack review. Shared invariants
-apply to every relevant route, API action and background job in a later build.
+framework and database names. Stack-specific schema, transactions and worker
+contracts are in the implementation record and actual storage inventory. Shared
+invariants apply to every route, API action and background job; deployment remains
+separately authorized.
 
 ## Supersession Map
 

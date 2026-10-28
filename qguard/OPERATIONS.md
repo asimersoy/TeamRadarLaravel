@@ -1,6 +1,6 @@
 # QGuard operation and recovery runbook
 
-All commands run from `qguard/`. This is a local first build. Production artifacts
+All commands run from `qguard/`. This is the local review-version build. Production artifacts
 are prepared, **not deployed**. Do not use root legacy Compose, host PHP, existing
 legacy credentials or a persistent database reset.
 
@@ -9,6 +9,9 @@ legacy credentials or a persistent database reset.
 Use README setup, then `docker compose exec -T app php artisan qguard:status`.
 This checks DB reachability and reports last successful match/no-show/feedback
 sweeps, waiting parties, overdue records and pending/failed jobs without payloads.
+Review-specific counters include overdue offers, overdue shared closures and
+unfinished required cards. Unfinished cards are obligations, not overdue errors:
+there is no feedback expiry.
 `/up` proves PHP boots, not DB/worker health. Review both checks and Compose service
 status. A null heartbeat means no successful tick yet or expired monitoring cache.
 The development scheduler begins on a minute boundary: allow up to a minute on
@@ -138,10 +141,10 @@ test files, not routes; reset the clock only with the test scheduler/worker stop
 then begin a fresh suite. Within a browser run, time only advances. Test data and
 the normal development database never share a schema or credential.
 
-## Known first-build boundaries
+## Current review-version boundaries
 
 No real game observation, verified rank/account integration, live Discord, join
-links or recording. Reports are allegations; two-party collusion, false no-shows,
+links or recording. Host-supplied native party codes are relayed as unverified data. Reports are allegations; two-party collusion, false no-shows,
 self-acknowledgment abuse and early session-end deadline abuse are not solved.
 Private reputation is not a conduct guarantee. Aggregate team snapshots remain
 visible under DEC-052; individual received ratings/authors do not.
@@ -152,5 +155,17 @@ sizes waiting; later arrivals are needed. The synthetic load report is not a
 production capacity promise. One late-evidence entry per actor/target/category is
 immutable in this pass, with explicit error on attempts to replace it.
 
-The [actual data inventory](../project-docs/operations/first-build-data-inventory.md)
-is the required immediate next owner review, not authorization to purge or launch.
+The [review-version data inventory](../project-docs/operations/review-version-data-inventory.md)
+and linked baseline inventory are the next owner checkpoint, before any Riot
+submission (DEC-085). They do not authorize purge, collection, hosting or launch.
+
+The additive review migration retains old session semantics and honor values.
+Do not run old application code against active `review-v2` sessions: old deadline
+or settlement workers do not understand the new lifecycle. A rollback stops new
+queue admission/workers, preserves the database and uses a reviewed forward fix
+or an explicitly authorized restore. `down()` deliberately refuses evidence
+erasure. Keep the new code and migration together as one release/rollback unit.
+
+The test-only overlay is documented in README. Both engines remain unavailable
+in local/production until the later approved live-integration slice. The final
+owner preview has both test-engine switches disabled.

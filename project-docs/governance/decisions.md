@@ -3282,3 +3282,23 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 - **Affected:** feedback/data/access/acceptance specs, self-profile mockup,
   checkpoint queue and downstream schema/calculation tests. No honor threshold
   or matchmaking input is added.
+
+
+## DEC-085 — Complete Local Review Implementation Before Owner Data Review
+
+- **Date:** 2026-10-28
+- **Status:** approved by the owner's direct instruction
+- **Decision:** prepare the implementation contracts, then implement the full
+  bounded QG-REVIEW-1 web build and its data storage. Review the actual stored
+  data, privacy, retention and launch boundaries with the owner after that work
+  and before submitting anything to Riot for RSO / production-key approval.
+- **Scope:** settled specifications through DEC-084; local synthetic verification,
+  meaningful local commits, and an evidence-backed owner review packet.
+- **Preserved:** no live RSO implementation without provider access; no normal
+  matchmaking before RSO and live checks; Discord remains deferred. No external
+  submission, push, deployment, real-user collection or destructive data operation
+  is authorized. Existing persistent records and the protected workflow survive.
+- **Supersedes:** DEF-012's earlier first-implementation review timing with this
+  explicit post-review-build, pre-Riot-submission checkpoint. Final retention
+  and launch choices remain unapproved, not implicitly selected by implementation.
+- **Execution:** [implementation contract](../planning/review-version/backend-implementation.md).

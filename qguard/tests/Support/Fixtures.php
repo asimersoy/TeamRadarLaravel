@@ -5,7 +5,9 @@ namespace Tests\Support;
 use App\Domain\Matching\Matcher;
 use App\Domain\Matching\QueueService;
 use App\Domain\Parties\PartyService;
+use App\Domain\Review\RankConfirmation;
 use App\Models\User;
+use App\Support\ReviewVersion;
 use Illuminate\Support\Facades\DB;
 
 final class Fixtures
@@ -21,6 +23,11 @@ final class Fixtures
         }
         foreach ($users as $user) {
             $service->ready($user);
+        }
+        if (ReviewVersion::reviewEngineEnabled()) {
+            foreach ($users as $user) {
+                app(RankConfirmation::class)->confirm($user, $user->stated_rank);
+            }
         }
         app(QueueService::class)->enter($users[0]);
 

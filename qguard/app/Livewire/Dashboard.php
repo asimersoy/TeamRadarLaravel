@@ -6,6 +6,10 @@ use App\Domain\Game\Valorant;
 use App\Domain\Matching\QueueService;
 use App\Domain\Parties\PartyService;
 use App\Domain\Parties\SocialService;
+use App\Domain\Review\MatchOffer;
+use App\Domain\Review\RankConfirmation;
+use App\Domain\Review\ReviewFeedback;
+use App\Domain\Review\ReviewSession;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\RateLimiter;
@@ -13,6 +17,8 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
+    public string $confirmedRank = '';
+
     public string $friendHandle = '';
 
     public string $inviteHandle = '';
@@ -108,11 +114,17 @@ class Dashboard extends Component
 
     public function render()
     {
+        app(MatchOffer::class)->due();
+        app(ReviewSession::class)->due();
         $actor = $this->actor();
+        $offer = app(MatchOffer::class)->current($actor);
+        $acceptedCount = $offer ? DB::table('match_offer_members')->where(['offer_id' => $offer->id, 'accepted' => true])->count() : 0;
+        $reviewDebt = app(ReviewFeedback::class)->debt($actor->id);
         $activeSession = DB::table('active_participations')->where('user_id', $actor->id)->value('game_session_id');
         $pendingFeedback = DB::table('session_participants as p')->join('game_sessions as g', 'g.id', '=', 'p.game_session_id')->leftJoin('feedback_submissions as f', 'f.participant_id', '=', 'p.id')->where('p.user_id', $actor->id)->where('p.state', 'ended')->where('g.state', 'active')->whereNull('g.settled_at')->whereNull('f.id')->where(fn ($q) => $q->whereNull('g.feedback_deadline')->orWhere('g.feedback_deadline', '>', now()))->orderBy('g.id')->limit(20)->pluck('g.id');
         $ownHonor = DB::table('honor_states')->where('user_id', $actor->id)->value('honor_score');
         $party = app(PartyService::class)->current($actor);
+        $queueOutcome = $party ? DB::table('queue_entries')->where('party_id', $party->id)->orderByDesc('id')->value('state') : null;
         $friends = DB::table('friendships')->where(fn ($q) => $q->where('user_low', $actor->id)->orWhere('user_high', $actor->id))->whereIn('state', ['pending', 'accepted'])->get()->map(function ($f) use ($actor) {
             $f->handle = DB::table('users')->where('id', $f->user_low === $actor->id ? $f->user_high : $f->user_low)->value('handle');
 
@@ -121,13 +133,47 @@ class Dashboard extends Component
         $members = $party ? DB::table('party_memberships as m')->join('users as u', 'u.id', '=', 'm.user_id')->where('m.party_id', $party->id)->whereNull('m.left_at')->get(['u.id', 'u.handle', 'm.ready']) : collect();
         $invites = DB::table('party_invitations as i')->join('parties as p', 'p.id', '=', 'i.party_id')->join('users as u', 'u.id', '=', 'p.owner_id')->where('i.state', 'pending')->where(fn ($q) => $q->where('i.recipient_id', $actor->id)->orWhere('p.owner_id', $actor->id))->get(['i.id', 'i.recipient_id', 'u.handle']);
 
-        return view('livewire.dashboard', compact('party', 'friends', 'members', 'invites', 'pendingFeedback', 'activeSession') + ['honor' => $ownHonor, 'ranks' => Valorant::ranks(), 'shards' => Valorant::SHARDS, 'languages' => Valorant::LANGUAGES])->layout('components.layout', ['title' => 'Matchmaking']);
+        return view('livewire.dashboard', compact('party', 'friends', 'members', 'invites', 'pendingFeedback', 'activeSession', 'offer', 'acceptedCount', 'reviewDebt', 'queueOutcome') + ['honor' => $ownHonor, 'ranks' => Valorant::ranks(), 'shards' => Valorant::SHARDS, 'languages' => Valorant::LANGUAGES])->layout('components.layout', ['title' => 'Matchmaking']);
     }
 
     public function enterQueue(): void
     {
         $this->throttle();
+        if ($id = DB::table('active_participations')->where('user_id', auth()->id())->value('game_session_id')) {
+            $this->redirectRoute('room', ['session' => $id], navigate: true);
+
+            return;
+        }
+        if ($id = app(ReviewFeedback::class)->debt(auth()->id())) {
+            $this->redirectRoute('session.detail', ['session' => $id], navigate: true);
+
+            return;
+        }
         app(QueueService::class)->enter($this->actor());
+    }
+
+    public function confirmRank(): void
+    {
+        $this->throttle();
+        app(RankConfirmation::class)->confirm($this->actor(), (int) $this->confirmedRank);
+        session()->flash('status', 'Rank confirmed for your next queue attempt.');
+    }
+
+    public function respondOffer(int $offer, bool $accepted): void
+    {
+        $this->throttle();
+        app(MatchOffer::class)->respond($this->actor(), $offer, $accepted);
+        $this->refreshState();
+    }
+
+    public function refreshState(): void
+    {
+        $this->actor();
+        app(MatchOffer::class)->due();
+        $id = DB::table('active_participations')->where('user_id', auth()->id())->value('game_session_id');
+        if ($id && DB::table('game_sessions')->where('id', $id)->value('workflow_version') === 'review-v2') {
+            $this->redirectRoute('room', ['session' => $id], navigate: true);
+        }
     }
 
     public function cancelQueue(): void

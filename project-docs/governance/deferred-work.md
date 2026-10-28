@@ -420,7 +420,7 @@ boundary, not approval to implement either future feature.
   honor application. The five-minute timer is not a feedback deadline. Future
   improvements need their own approved contract and evidence.
 
-## DEF-012 - Review Actual Data Retention Immediately After The First Implementation
+## DEF-012 - Review Actual Data Retention Before Riot Submission
 
 - **Status:** owner-approved second-pass review; final retention policy unselected
 - **Decision owner:** project owner
@@ -430,14 +430,15 @@ boundary, not approval to implement either future feature.
   Data-cleared admins retain full project-context access under `DEC-045`.
 - **Reason postponed:** the owner wants to see what the implemented system
   actually stores before deciding which details should survive and for how long.
-- **Implementation state:** the local first pass now has 30 PostgreSQL tables and
-  synthetic fixtures. Business evidence survives settlement; runtime slots and
-  caches have their documented lifecycle. No business purge is implemented.
-  [Actual fields, readers, copies and backup inventory](../operations/first-build-data-inventory.md)
-  is ready for the required immediate owner review. The isolated restore passed;
-  this does not approve real-user collection or a final retention policy.
-- **Return condition:** immediately after the first implementation is fleshed
-  out, at the second-pass review. Prepare a concrete inventory of fields,
+- **Implementation state:** the review build adds eleven tables and four session
+  fields to the retained first-pass schema. Business evidence survives closure;
+  runtime slots/caches retain their documented lifecycle. No business purge.
+  [Current fields, readers, copies and owner questions](../operations/review-version-data-inventory.md)
+  supplement the linked baseline inventory. Verification is recorded in the
+  [implementation evidence](../planning/review-version/backend-implementation.md);
+  no real-user collection or final retention policy is approved.
+- **Return condition, updated by DEC-085:** after the review-version implementation
+  is complete and before any Riot RSO/production-key submission. Prepare a concrete inventory of fields,
   records, purposes, sources, readers, storage, logs and backups where present.
   Existing review gates still apply before real-user collection or release.
 - **Owner review:** select what to retain, restrict, expire or delete; ordinary

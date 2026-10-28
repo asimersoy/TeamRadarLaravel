@@ -6,14 +6,14 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-**Current work:** [reconciliation and implementation entry](planning/review-version/reconciliation-and-implementation.md)
-under DEC-082. Stack, brand/layout and Forest & Lime palette are settled.
-DEC-076–081 is reconciled into the current specifications and interactive design.
-R1a starts isolated guest review access and the normal-queue RSO boundary.
-DEC-083 stops failed premades intact; DEC-084 shows private descriptors after
-three distinct eligible reviewers. OQ-014/OQ-017 are resolved. Application-wide completion is not claimed.
+**Current work:** the [local review-version implementation](planning/review-version/backend-implementation.md)
+is complete under DEC-085. It includes durable session/feedback data and the
+settled matching, shared closure, privacy and score rules through DEC-084.
+Next is the owner's [actual data, retention and launch review](operations/review-version-data-inventory.md),
+before any Riot submission. Live RSO/game tests, Discord and public release remain
+separate. The following records preserve earlier planning and baseline evidence.
 
-**Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
+**Earlier design pass:** [product/specification/design plan](planning/product-design-pass.md)
 under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders
 and non-expiring session-history ratings replace the relevant first-pass rules
 for the next version. Honor now applies as eligible inputs arrive, without
@@ -28,7 +28,7 @@ entry described above; live integration and release gates remain separate.
 The [checkpoint review queue](governance/checkpoint-review-queue.md) must be
 presented at that review. The implemented baseline below is preserved.
 
-**Latest checkpoint:** [QG-FIRST-PASS-1 revision 1 + DEC-052](planning/first-pass/README.md)
+**Historical first-pass checkpoint:** [QG-FIRST-PASS-1 revision 1 + DEC-052](planning/first-pass/README.md)
 is owner-approved for first-pass implementation. The sole amendment shows
 matched teammates' aggregate honor beside game rank while keeping feedback
 authors/individual received ratings hidden. Specs, plan and tests reflect that

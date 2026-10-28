@@ -16,6 +16,7 @@ final class FeedbackService
         return MembershipTransaction::run(function () use ($actor, $sessionId, $targets, $admitted, $skip) {
             $room = DB::table('game_sessions')->where('id', $sessionId)->lockForUpdate()->first();
             $p = app(SessionService::class)->participant($actor, $sessionId);
+            SocialService::require($room->workflow_version === 'first-pass-v1', 'Use the session history cards for this session.');
             $existing = DB::table('feedback_submissions')->where(['game_session_id' => $sessionId, 'participant_id' => $p->id])->first();
             if ($existing) {
                 return $existing->id;
@@ -70,6 +71,7 @@ final class FeedbackService
         MembershipTransaction::run(function () use ($actor, $sessionId, $targetId, $category, $note) {
             $room = DB::table('game_sessions')->where('id', $sessionId)->lockForUpdate()->first();
             $p = app(SessionService::class)->participant($actor, $sessionId);
+            SocialService::require($room->workflow_version === 'first-pass-v1', 'Use the session history cards for this session.');
             SocialService::require($room->settled_at || $room->state !== 'active' || ($room->feedback_deadline && now()->gte(Carbon::parse($room->feedback_deadline))), 'Use ordinary feedback while its window is open.');
             $target = DB::table('session_participants')->where(['game_session_id' => $sessionId, 'user_id' => $targetId])->first();
             SocialService::require($target && $target->id !== $p->id, 'Choose another matched teammate.');

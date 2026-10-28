@@ -1,0 +1,15 @@
+# Optional overlay for isolated synthetic review-version browser checks only.
+# ReviewVersion refuses these switches outside the guarded disposable test DB.
+services:
+  app:
+    environment:
+      QGUARD_FIRST_PASS_TEST_ENGINE: "false"
+      QGUARD_REVIEW_TEST_ENGINE: "true"
+  php:
+    environment:
+      QGUARD_FIRST_PASS_TEST_ENGINE: "false"
+      QGUARD_REVIEW_TEST_ENGINE: "true"
+  scheduler:
+    environment:
+      QGUARD_FIRST_PASS_TEST_ENGINE: "false"
+      QGUARD_REVIEW_TEST_ENGINE: "true"

@@ -1,9 +1,10 @@
 # QGuard Specification, Design And Stack Checkpoint
 
-**Reached:** 2026-10-27. **Current:** stack and settled policy review complete;
-DEC-082 starts [reconciliation and bounded implementation](reconciliation-and-implementation.md).
-DEC-083/084 resolves OQ-017/OQ-014. The earlier review
-agenda below records decisions and provenance; it is not a blanket stop.
+**Reached:** 2026-10-27. **Current:** DEC-085 local implementation is complete;
+[implementation evidence](backend-implementation.md) records actual checks.
+Next is [owner privacy, retention and launch-boundary review](../../operations/review-version-data-inventory.md)
+before any Riot submission. The earlier checkpoint agenda below preserves its
+history; resolved stack/policy choices are not reopened.
 
 ## Start Here
 

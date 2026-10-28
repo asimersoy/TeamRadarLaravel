@@ -61,9 +61,16 @@ class AdminCase extends Component
         $messages = DB::table('chat_messages')->where('game_session_id', $sessionId)->orderBy('id')->paginate(50);
         $settlement = DB::table('honor_settlements')->where('game_session_id', $sessionId)->first();
         $applications = $settlement ? DB::table('honor_applications')->where('settlement_id', $settlement->id)->orderBy('id')->get() : collect();
+        $reviewCards = DB::table('review_feedback_cards')->where('game_session_id', $sessionId)->get();
+        $reviewApplications = DB::table('review_score_applications')->whereIn('card_id', $reviewCards->pluck('id'))->orderBy('id')->get();
+        $discrepancies = DB::table('lobby_discrepancies')->where('game_session_id', $sessionId)->get();
+        $discrepancyVotes = DB::table('lobby_discrepancy_votes')->whereIn('discrepancy_id', $discrepancies->pluck('id'))->get();
+        $endRequests = DB::table('session_end_requests')->where('game_session_id', $sessionId)->get();
+        $codeVersions = DB::table('party_code_versions')->where('game_session_id', $sessionId)->orderBy('version')->get();
+        $admissions = DB::table('session_admissions')->where('game_session_id', $sessionId)->get();
         $noShows = DB::table('no_show_requests')->where('game_session_id', $sessionId)->get();
         $votes = DB::table('no_show_votes')->whereIn('no_show_request_id', $noShows->pluck('id'))->get();
 
-        return view('livewire.admin-case', compact('case', 'players', 'submissions', 'ratings', 'reports', 'observations', 'messages', 'settlement', 'applications', 'noShows', 'votes'))->layout('components.layout', ['title' => 'Case #'.$case->id]);
+        return view('livewire.admin-case', compact('case', 'players', 'submissions', 'ratings', 'reports', 'observations', 'messages', 'settlement', 'applications', 'noShows', 'votes', 'reviewCards', 'reviewApplications', 'discrepancies', 'discrepancyVotes', 'endRequests', 'admissions', 'codeVersions'))->layout('components.layout', ['title' => 'Case #'.$case->id]);
     }
 }

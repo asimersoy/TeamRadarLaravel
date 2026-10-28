@@ -1,6 +1,6 @@
 # Sessions, Party Codes And History
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-025/039/043/045/046/052/054–058/063/067/068/076/077/079/080/081.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085. Authority: DEC-025/039/043/045/046/052/054–058/063/067/068/076/077/079/080/081.
 **Dependencies:** matching, identity, feedback, reports and data/access. Requirements SS.
 
 ## Session And Handoff

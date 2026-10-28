@@ -4,6 +4,10 @@
         <div class="score"><span>Your honor</span><strong>{{ number_format($honor, 1) }}</strong><small>Fixed neutral start · 0–100</small></div>
     </div>
     <x-errors />
+    <section class="panel private-summaries"><h2>How teammates describe you</h2><p class="muted">Visible only to you. These descriptions never affect honor or matching.</p>
+    @foreach(['communication'=>['Communication','Quiet','Talkative'],'play_style'=>['Play style','Deliberate','Aggressive']] as $trait=>$labels)
+    <div class="summary-scale"><h3>{{ $labels[0] }}</h3>@if($summaries[$trait]['value'] !== null)<meter min="0" max="100" value="{{ $summaries[$trait]['value'] }}" aria-label="{{ $labels[0] }} summary">{{ round($summaries[$trait]['value']) }}</meter><div class="range-labels"><span>{{ $labels[1] }}</span><span>{{ $labels[2] }}</span></div>@else<p class="muted">{{ $summaries[$trait]['status'] }}. Appears after three different eligible teammates contribute.</p>@endif</div>
+    @endforeach</section>
     <nav class="profile-sections" aria-label="Profile sections"><a href="#game-profile">Game profile</a><a href="#public-profile">Public handle</a><a href="#account-security">Account security</a></nav>
     <div class="profile-grid">
         <section id="game-profile" class="panel">

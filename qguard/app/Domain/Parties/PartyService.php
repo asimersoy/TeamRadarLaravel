@@ -40,6 +40,7 @@ final class PartyService
 
     public function cancelWaiting(object $party): void
     {
+        SocialService::require($party->state !== 'offered', 'Respond to your match offer before changing this party.');
         if ($party->state === 'waiting') {
             DB::table('queue_entries')->where(['party_id' => $party->id, 'state' => 'waiting'])->update(['state' => 'cancelled', 'updated_at' => now()]);
             DB::table('parties')->where('id', $party->id)->update(['state' => 'idle', 'updated_at' => now()]);

@@ -1,9 +1,10 @@
 # Acceptance And Decision Traceability
 
-**Status:** QG-REVIEW-1 review contract; cases below are requirements, not passed
-implementation tests. Prototype results are recorded separately in the work record.
+**Status:** QG-REVIEW-1 requirements with local implementation evidence below.
+Requirements that depend on live providers or public use remain unverified.
+A requirement row alone is not a passing test result.
 
-| Family | Authority / requirement | Required later application evidence |
+| Family | Authority / requirement | Required application / later-provider evidence |
 | --- | --- | --- |
 | A01 Access | DEC-066; ID-01–04 | Open signup; verification/recovery; no unlinked/guest bypass; real OAuth decline/failure and identity uniqueness |
 | A02 Rank | DEC-053/055; ID-05–09 | Every entry retrieves/asks; last observed versus corrected values distinct; absent/stale data, edit/version invalidation |
@@ -45,7 +46,7 @@ implementation tests. Prototype results are recorded separately in the work reco
 6. Read every route at desktop and mobile sizes, check keyboard order and
    dialog escape/focus return, visible labels, layout and copy. Record failures
    and fixes rather than treating screenshots as behavioral proof.
-7. Verify source scope: design and authorized R1a application changes only,
+7. Verify source scope: design and DEC-085 bounded review application changes only,
    no portable workflow edits; no external
    credentials, real player data, provider calls, remote publication or native
    game access. Record no real RSO/Discord/game tests.
@@ -64,3 +65,26 @@ DEC-078/079/080 resolve the calculation/obligation/nonresponse choices. DEC-083/
 policy still needs disposition before that later integration. Backend tests, provider tests, load/concurrency, actual browser auth,
 security review, real-data retention and release approval cannot be replaced
 by this static prototype. Known report timing and code assumptions stay explicit.
+
+
+## Executed local coverage — 2026-10-28
+
+See the [execution record](../../planning/review-version/backend-implementation.md)
+for exact counts, commands, failures/fixes, renders and recovery. Test paths below
+are relative to `qguard/tests/`. Backend checks use real isolated PostgreSQL;
+browser journeys use five separately authenticated fictional users.
+
+| Families | Executed coverage | Remaining boundary |
+| --- | --- | --- |
+| A01–A02 | Feature IdentityParty, SecurityRegression, ReviewEntry and ReviewWorkflow; browser registration/recovery plus guest isolation; fresh declaration, settings/identity snapshot and one-attempt consumption | Live OAuth, provider tier retrieval/absence/staleness and P-06 remain R7 |
+| A03–A06 | IdentityParty/Matching/ReviewWorkflow; original-party failure and two-premade failures; active/debt bypass; separate-connection matcher and offer races | Production capacity not established by these checks |
+| A07–A08 | ReviewWorkflow host/version/access, mandatory three-person checks, one corroboration, all-denial clearing and unanswered closure; real UI code relay | Native VALORANT validity/non-friend entry remains DEF-014 |
+| A09–A10 | Session/Chat and ReviewWorkflow; rendered chat/retry/offline/no-show; five-minute/third-request closure and separate-connection race; SPA room re-entry | No live game completion observation |
+| A11–A14 | ReviewWorkflow, ReviewConcurrency and HonorCalculator; immutable/late/excluded cards, omission/midpoint, repeated versus distinct authors, private payloads; complete five-user UI loop | No retrospective report correction by approved design |
+| A15–A16 | FeedbackHonor/SecurityRegression/ReviewWorkflow; cleared/admin-only evidence and audit, restricted endpoints, report timing and separate-connection race | Owner operational clearance/retention review remains |
+| A17 | Additive populated-schema/no-op check; test guard, transactions/uniqueness, backup/restore rehearsal and authorization checks | No persistent dev migration, real data, production host/load or erasure policy proof |
+| A18 | Real UI desktop/mobile render and keyboard actions, all three browser engines; existing full browser suite and 83-state guest catalog | No claim of an external accessibility certification |
+
+R1–R5 and the local build part of R6 are complete. Owner privacy/retention/launch
+review occurs next under DEC-085, before any Riot submission. Hosting/submission,
+RSO, live game checks and public access remain distinct later authorizations.

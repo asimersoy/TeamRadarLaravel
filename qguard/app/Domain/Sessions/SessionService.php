@@ -5,6 +5,8 @@ namespace App\Domain\Sessions;
 use App\Domain\Feedback\CaseEvidence;
 use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\SocialService;
+use App\Domain\Review\MatchOffer;
+use App\Domain\Review\ReviewSession;
 use App\Events\RoomChanged;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -37,9 +39,11 @@ final class SessionService
 
     public function acknowledge(User $actor, int $id): void
     {
+        app(ReviewSession::class)->due();
         MembershipTransaction::run(function () use ($actor, $id) {
             $room = DB::table('game_sessions')->where('id', $id)->lockForUpdate()->first();
             $p = $this->participant($actor, $id);
+            SocialService::require(! DB::table('lobby_discrepancies')->where(['game_session_id' => $id, 'state' => 'pending'])->exists(), 'Complete the account/rank check before proceeding.');
             SocialService::require($room->state === 'active' && in_array($p->state, ['matched', 'acknowledged']), 'This participation is no longer active.');
             $request = DB::table('no_show_requests')->where(['game_session_id' => $id, 'target_id' => $actor->id])->whereIn('state', ['voting', 'responding'])->lockForUpdate()->first();
             SocialService::require(! $request?->response_deadline || now()->lt(Carbon::parse($request->response_deadline)), 'The response deadline has passed.');
@@ -54,6 +58,11 @@ final class SessionService
 
     public function end(User $actor, int $id): void
     {
+        if (DB::table('game_sessions')->where('id', $id)->value('workflow_version') === 'review-v2') {
+            app(ReviewSession::class)->end($actor, $id);
+
+            return;
+        }
         MembershipTransaction::run(function () use ($actor, $id) {
             DB::table('game_sessions')->where('id', $id)->lockForUpdate()->first();
             $p = $this->participant($actor, $id);
@@ -71,6 +80,7 @@ final class SessionService
 
     public function vote(User $actor, int $id, int $target): void
     {
+        app(ReviewSession::class)->due();
         MembershipTransaction::run(function () use ($actor, $id, $target) {
             $room = DB::table('game_sessions')->where('id', $id)->lockForUpdate()->first();
             $p = $this->participant($actor, $id);
@@ -93,6 +103,8 @@ final class SessionService
 
     public function deadlines(): int
     {
+        app(MatchOffer::class)->due();
+        app(ReviewSession::class)->due();
         $count = 0;
         foreach (DB::table('no_show_requests')->where('state', 'responding')->where('response_deadline', '<=', now())->pluck('id') as $requestId) {
             $count += MembershipTransaction::run(function () use ($requestId) {
@@ -109,7 +121,11 @@ final class SessionService
                     return 0;
                 }
                 DB::table('session_participants')->where('id', $target->id)->update(['state' => 'removed_no_show', 'updated_at' => now()]);
-                DB::table('game_sessions')->where('id', $room->id)->update(['state' => 'disbanded_no_show', 'updated_at' => now()]);
+                if ($room->workflow_version === 'review-v2') {
+                    app(ReviewSession::class)->close($room->id, 'no_show');
+                } else {
+                    DB::table('game_sessions')->where('id', $room->id)->update(['state' => 'disbanded_no_show', 'updated_at' => now()]);
+                }
                 DB::table('active_participations')->where('game_session_id', $room->id)->delete();
                 $this->changed($room->id);
 
@@ -122,6 +138,6 @@ final class SessionService
 
     public function canPost(object $room, object $participant): bool
     {
-        return $room->state === 'active' && ! $room->settled_at && (! $room->feedback_deadline || now()->lt(Carbon::parse($room->feedback_deadline))) && in_array($participant->state, ['matched', 'acknowledged']);
+        return $room->state === 'active' && (! $room->end_deadline || now()->lt(Carbon::parse($room->end_deadline))) && ! $room->settled_at && (! $room->feedback_deadline || now()->lt(Carbon::parse($room->feedback_deadline))) && in_array($participant->state, ['matched', 'acknowledged']);
     }
 }

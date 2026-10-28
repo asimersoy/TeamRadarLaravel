@@ -29,6 +29,9 @@ class Feedback extends Component
     {
         $this->sessionId = $session;
         $this->participant();
+        if (DB::table('game_sessions')->where('id', $session)->value('workflow_version') === 'review-v2') {
+            $this->redirectRoute('session.detail', ['session' => $session], navigate: true);
+        }
     }
 
     private function participant(): object

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Domain\Game\UnavailableGamePartyHandoff;
 use App\Domain\Game\Valorant;
+use App\Domain\Review\ReviewSession;
 use App\Domain\Sessions\SessionService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\RateLimiter;
@@ -15,10 +16,16 @@ class Room extends Component
     #[Locked]
     public int $sessionId;
 
+    public string $partyCode = '';
+
+    #[Locked]
+    public int $codeVersion = 0;
+
     public function mount(int $session): void
     {
         $this->sessionId = $session;
         $this->participant();
+        $this->codeVersion = (int) DB::table('party_code_versions')->where('game_session_id', $session)->max('version');
     }
 
     protected function participant(): object
@@ -32,7 +39,20 @@ class Room extends Component
 
     public function render()
     {
+        app(ReviewSession::class)->due();
         $participant = $this->participant();
+        $room = DB::table('game_sessions')->find($this->sessionId);
+        if ($room->workflow_version === 'review-v2') {
+            $code = DB::table('party_code_versions')->where('game_session_id', $this->sessionId)->orderByDesc('version')->first();
+            $discrepancy = DB::table('lobby_discrepancies')->where(['game_session_id' => $this->sessionId, 'state' => 'pending'])->first();
+            $canVote = $discrepancy && ! in_array(auth()->id(), [$discrepancy->reporter_id, $discrepancy->target_id]) && ! DB::table('lobby_discrepancy_votes')->where(['discrepancy_id' => $discrepancy->id, 'user_id' => auth()->id()])->exists();
+            $endCount = DB::table('session_end_requests')->where('game_session_id', $this->sessionId)->count();
+            $requestedEnd = DB::table('session_end_requests')->where(['game_session_id' => $this->sessionId, 'user_id' => auth()->id()])->exists();
+            $noShow = DB::table('no_show_requests')->where('game_session_id', $this->sessionId)->whereIn('state', ['voting', 'responding'])->first();
+            $roster = DB::table('session_participants')->where('game_session_id', $this->sessionId)->get(['user_id', 'handle', 'riot_id', 'rank_snapshot', 'honor_snapshot', 'state']);
+
+            return view('livewire.review-room', compact('room', 'participant', 'code', 'discrepancy', 'canVote', 'endCount', 'requestedEnd', 'noShow', 'roster') + ['ranks' => Valorant::ranks()])->layout('components.layout', ['title' => 'Your team']);
+        }
 
         $noShow = DB::table('no_show_requests')->where('game_session_id', $this->sessionId)->whereIn('state', ['voting', 'responding'])->first();
 
@@ -51,7 +71,9 @@ class Room extends Component
         $this->throttle();
         $this->participant();
         app(SessionService::class)->end(auth()->user(), $this->sessionId);
-        $this->redirectRoute('feedback', ['session' => $this->sessionId]);
+        if (DB::table('game_sessions')->find($this->sessionId)->workflow_version !== 'review-v2' || DB::table('game_sessions')->find($this->sessionId)->state !== 'active') {
+            $this->redirectRoute('feedback', ['session' => $this->sessionId], navigate: true);
+        }
     }
 
     public function vote(int $target): void
@@ -59,6 +81,37 @@ class Room extends Component
         $this->throttle();
         $this->participant();
         app(SessionService::class)->vote(auth()->user(), $this->sessionId, $target);
+    }
+
+    public function saveCode(): void
+    {
+        $this->throttle();
+        app(ReviewSession::class)->code(auth()->user(), $this->sessionId, $this->partyCode, $this->codeVersion);
+        $this->codeVersion++;
+        $this->partyCode = '';
+        session()->flash('status', 'Party code shared with your team.');
+    }
+
+    public function dispute(int $target): void
+    {
+        $this->throttle();
+        app(ReviewSession::class)->dispute(auth()->user(), $this->sessionId, $target);
+    }
+
+    public function corroborate(int $id, bool $mismatch): void
+    {
+        $this->throttle();
+        app(ReviewSession::class)->corroborate(auth()->user(), $this->sessionId, $id, $mismatch);
+    }
+
+    public function refreshState(): void
+    {
+        $this->participant();
+        app(ReviewSession::class)->due();
+        $room = DB::table('game_sessions')->find($this->sessionId);
+        if ($room->workflow_version === 'review-v2' && $room->state !== 'active') {
+            $this->redirectRoute('session.detail', ['session' => $this->sessionId], navigate: true);
+        }
     }
 
     protected function throttle(): void

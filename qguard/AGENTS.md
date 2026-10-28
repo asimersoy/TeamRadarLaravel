@@ -1,9 +1,12 @@
 # QGuard application instructions
 
 The repository root AGENTS.md and its mandatory workflow entry path apply.
-The approved first-pass specifications are in ../project-docs/specs/first-pass/.
-Read ../project-docs/planning/first-pass/implementation-evidence.md for actual
-stage status, then inspect the repository before resuming.
+The current specifications are in ../project-docs/specs/review-version/.
+Read ../project-docs/planning/review-version/backend-implementation.md for the
+implementation contract and actual evidence, then inspect the repository.
+First-pass specs/engine remain historical compatibility evidence only.
+The next owner checkpoint is actual privacy, retention and launch boundaries
+before any Riot submission (DEC-085), not a gate on already authorized local work.
 
 - Use PHP, Composer, PostgreSQL, tests and browser runners in Docker as described
   in README.md. Do not install, repair or execute host PHP for this project.

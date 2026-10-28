@@ -1,6 +1,6 @@
 # Feedback, Honor And Descriptive Summaries
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-027–034/037/041/043/047/052/061/063/065/076/077/078/079/084.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085. Authority: DEC-027–034/037/041/043/047/052/061/063/065/076/077/078/079/084.
 **Dependencies:** immutable session roster, reports, queue gate, data/access.
 Requirements FB. Update on scoring, eligibility, display or timing decisions.
 

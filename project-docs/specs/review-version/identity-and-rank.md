@@ -1,7 +1,8 @@
 # Identity, Guest Access And Rank
 
-**Status:** ID-01–04 approved for bounded R1a execution under DEC-082; live
-provider/recovery details remain deferred. Authority: DEC-044/048/052–055/066/082.
+**Status:** ID-01–04 and the synthetic rank-confirmation/storage boundary are
+implemented locally under DEC-085. Live provider/recovery details remain deferred;
+see P-06 and the implementation evidence. Authority: DEC-044/048/052–055/066/082/085.
 **Dependencies:** matching, sessions, data/access. Requirements ID; update on
 provider contract, account policy or rank-source changes.
 

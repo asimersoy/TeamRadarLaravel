@@ -1,7 +1,9 @@
 # Logical Data, Access And Reliability
 
-**Status:** QG-REVIEW-1 draft, stack-neutral. Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–084.
-**Dependencies:** all modules. Requirements DA. Exact physical schema follows stack review.
+**Status:** QG-REVIEW-1 behavioral contract, implemented locally under DEC-085. Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–084.
+**Dependencies:** all modules. Requirements DA. Physical schema and actual readers
+are recorded in the [storage inventory](../../operations/review-version-data-inventory.md).
+Verification and live-provider limits are in the implementation evidence.
 
 ## Logical Records
 

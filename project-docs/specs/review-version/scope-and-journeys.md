@@ -1,6 +1,6 @@
 # Scope And Journeys
 
-**Status:** QG-REVIEW-1 draft; [packet authority](README.md). Requirements SC.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085; [packet authority](README.md). Requirements SC.
 **Dependencies:** all modules. Review on owner scope, provider or release changes.
 
 ## Product Contract

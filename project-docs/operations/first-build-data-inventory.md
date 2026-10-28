@@ -1,4 +1,8 @@
-# First-build data inventory — DEF-012 owner review
+# First-build data inventory — historical baseline
+
+**Current additions and review timing:** [review-version inventory](review-version-data-inventory.md)
+and DEC-085 supersede this baseline's immediate-review timing and changed
+feedback semantics. The tables and runtime copies below remain retained.
 
 Status: implementation inventory, 2026-10-03. Not a new retention policy or legal
 approval. Scope: fresh `qguard/` PostgreSQL schema and local Docker runtime;

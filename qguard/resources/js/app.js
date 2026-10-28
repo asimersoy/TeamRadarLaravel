@@ -8,6 +8,8 @@ function messageId() {
 }
 
 function startChat(root) {
+    if (root.dataset.chatStarted) return;
+    root.dataset.chatStarted="true";
     const session = root.dataset.chatRoom;
     const endpoint = `/rooms/${session}/messages`;
     const list = root.querySelector('.messages'), form = root.querySelector('form'), input = root.querySelector('textarea');
@@ -66,12 +68,20 @@ function startChat(root) {
     for (const state of ['unavailable','connecting','failed']) pusher.connection.bind(state,()=>{connection.textContent='Live updates unavailable · polling backup active';});
     pusher.subscribe(`private-room.${session}`).bind('room.changed',()=>refresh());
     refresh();const timer=setInterval(()=>refresh(),5000);
-    window.addEventListener('pagehide',()=>{clearInterval(timer);pusher.disconnect();},{once:true});
+    const stop=()=>{
+        clearInterval(timer);pusher.disconnect();delete root.dataset.chatStarted;
+        window.removeEventListener('pagehide',stop);
+        document.removeEventListener('livewire:navigating',stop);
+    };
+    window.addEventListener('pagehide',stop,{once:true});
+    document.addEventListener('livewire:navigating',stop,{once:true});
 }
-document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-chat-room]').forEach(startChat));
+const startChats=()=>document.querySelectorAll('[data-chat-room]').forEach(startChat);
+document.addEventListener('DOMContentLoaded',startChats);
+document.addEventListener('livewire:navigated',startChats);
 
 // Associate server validation with controls; focus a changed summary, not every poll.
-document.addEventListener('DOMContentLoaded',()=>{
+function setupValidation(){
     let previous = '';
     const associate = ()=>{
         const summary=document.querySelector('[data-error-fields]');
@@ -87,5 +97,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         }
         previous=signature;
     };
-    associate();new MutationObserver(associate).observe(document.querySelector('main')??document.body,{childList:true,characterData:true,attributes:true,attributeFilter:['data-error-fields'],subtree:true});
-});
+    associate(); const observer=new MutationObserver(associate);
+    observer.observe(document.querySelector('main')??document.body,{childList:true,characterData:true,attributes:true,attributeFilter:['data-error-fields'],subtree:true});
+    document.addEventListener('livewire:navigating',()=>observer.disconnect(),{once:true});
+}
+document.addEventListener('livewire:navigated',setupValidation);

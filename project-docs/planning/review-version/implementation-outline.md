@@ -1,9 +1,10 @@
 # Implementation Outline After Review
 
-**Status:** DEC-082 authorizes execution of settled slices; the outline itself
-does not approve pending policy. [R1a contract and progress](reconciliation-and-implementation.md)
-starts the isolated review entry and queue boundary, not the entire R1 shell. Scope: QG-REVIEW-1. No dates or cost estimates
-have been approved.
+**Status:** DEC-085 authorizes and the current local implementation completes
+R1–R5 plus R6's local build/verification. Owner privacy, retention and launch review
+is now the next checkpoint before any Riot submission. External review delivery,
+R7/R8 and Discord remain gated. See [actual evidence](backend-implementation.md).
+Scope: QG-REVIEW-1; no delivery dates or cost estimates approved.
 
 | Slice | Reviewable result | Required decisions / evidence before completion |
 | --- | --- | --- |
@@ -17,11 +18,15 @@ have been approved.
 | R8 Controlled real-player checks | Verify non-friend ordinary party-code entry and actual account/rank visibility | DEF-014, recruited authorized players, compatible game accounts/devices and test resumption; before normal-use reliance |
 | Later Discord/desktop | Separately scoped integrations after their return conditions | DEC-067 and existing deferred records; provider permission/capability evidence and owner scope approval |
 
-## Current readiness — DEC-082
+## Current readiness — DEC-085
 
-Specifications and mockup are reconciled for the settled DEC-076–081 rules.
-R1a execution has begun under the linked contract. DEC-083/084 resolves OQ-017/OQ-014; no remaining upfront choice for those
-behaviors. Complete a slice's
-technical contract and verification before claiming that slice finished.
-P-06 belongs before live rank integration; RSO, live-player party-code checks
-and Discord retain their distinct milestones.
+The review-version schema and real Blade/Livewire flows are implemented with
+synthetic verification. The [evidence record](backend-implementation.md) and
+[actual data review](../../operations/review-version-data-inventory.md) separate
+completed local behavior from untested providers and unapproved public use.
+
+P-06 is still required before live rank retrieval. RSO, ordinary non-friend
+party-code checks and Discord retain their distinct milestones. No additional
+major product choice is being silently delegated to finish the current local
+build. Retention or launch changes selected at owner review become a separate
+bounded implementation slice before the affected external use.

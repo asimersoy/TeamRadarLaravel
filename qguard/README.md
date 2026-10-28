@@ -2,7 +2,7 @@
 
 Fresh Laravel application isolated from the legacy app at the repository root.
 Current work follows the [review-version specification](../project-docs/specs/review-version/README.md)
-and [R1a execution contract](../project-docs/planning/review-version/reconciliation-and-implementation.md).
+and [implementation contract/evidence](../project-docs/planning/review-version/backend-implementation.md).
 The first-pass engine is retained as historical implementation evidence.
 Run every command below **from this qguard directory**, never the root legacy
 Compose project. All PHP runs in Docker. This is not approved for public users.
@@ -13,8 +13,11 @@ Registration remains open. `/guest#welcome` serves the approved fictional
 walkthrough, with tab-scoped state and no provider/business writes. Its own
 reset affects only that tab. Normal queue admission and background formation
 are disabled until the later RSO slice; typed identities cannot bypass this.
-The remaining backend flows still use first-pass behavior pending migration. The [local acceptance checks](../project-docs/planning/first-pass/verification-results.md)
-have passed; owner flow/data review remains before any later release work.
+The review-version backend implements shared session closure, immutable required
+feedback, immediate score applications, private descriptors, 20-second acceptance,
+code relay and discrepancy checks. New sessions use `review-v2`; retained older
+sessions preserve their old rules. Owner [privacy/retention/launch review](../project-docs/operations/review-version-data-inventory.md)
+comes next, before any Riot submission. Live RSO and Discord remain separate work.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
@@ -71,7 +74,7 @@ docker compose -f compose.test.yaml run --rm browser
 
 The browser image and runner version must match. Tests exercise the real app,
 not standalone mock pages. Browser artifacts are ignored; durable results and
-remaining criteria belong in the [implementation evidence](../project-docs/planning/first-pass/implementation-evidence.md).
+remaining criteria belong in the [implementation evidence](../project-docs/planning/review-version/backend-implementation.md).
 Backend tests reset only the guarded disposable database. Stop its scheduler and
 worker first; reset the test clock, reseed and restart before browser checks. The default seeder refuses
 implicit accounts. Browser time controls exist only in the isolated testing stack,
@@ -83,6 +86,42 @@ fixtures. Stop on the first failure and start from a fresh guarded backend reset
 before claiming a complete rerun. Within one run, simulated time only advances.
 The [operational runbook](OPERATIONS.md) covers status, image builds, backup/restore,
 release gates and known limitations.
+
+## Review-version backend walkthrough and verification
+
+After the default suite, stop test workers and reset only the guarded disposable
+test target before another scenario. `tests/Support/review-migration-check.php`
+explicitly checks that target, creates a populated historical schema, upgrades
+it and verifies unchanged honor plus a no-op second migration. Reset the browser
+clock and seed synthetic users again before browser tests.
+
+```sh
+docker compose -f compose.test.yaml stop scheduler worker
+docker compose -f compose.test.yaml run --rm php tests/Support/review-migration-check.php
+docker compose -f compose.test.yaml run --rm php tests/Support/reset-browser-clock.php
+docker compose -f compose.test.yaml run --rm php artisan qguard:seed-demo --confirm-synthetic
+docker compose -f compose.test.yaml -f compose.review-test.yaml up -d app nginx mail reverb scheduler worker
+docker compose -f compose.test.yaml -f compose.review-test.yaml run --rm browser --config=playwright.review.config.ts
+```
+
+Use an explicit port override if 8121 is occupied; the verified local preview uses
+loopback port 55000, preserving the unrelated service on 8121. The optional
+review overlay requires the isolated testing environment and database. Never use
+it for persistent development, a real-user service or a production deployment.
+The **default backend suite** runs without that overlay: its review tests enable
+the new engine individually while historical compatibility tests keep the old one.
+
+Five independent fictional accounts create parties, confirm sample ranks and
+queue. All accept within 20 seconds, then land in the same room. The host enters
+a game-supplied code; the others copy it. This test does not prove the code works
+in VALORANT. Each acknowledges the roster. Three end requests or five minutes
+from the first close the session. History then requires each eligible teammate
+card before queueing again. Optional sliders stay omitted unless touched; sent
+cards cannot change. Profiles show each private trait only after three distinct
+eligible reviewers. Admin case reads are audited and reveal the restricted evidence.
+
+The current guest walkthrough stays independent of these backend fixtures. It is
+a presentation route for reviewers, not an alternative authentication identity.
 
 ## Historical engine walkthrough (isolated regression tests only)
 

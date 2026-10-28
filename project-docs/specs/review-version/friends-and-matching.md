@@ -1,6 +1,6 @@
 # Friends, Parties And Five-Person Matching
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-026–037/042/044/046/052/055/061/063/077/079/081/083.
+**Status:** QG-REVIEW-1 settled requirements; local implementation under DEC-085. Authority: DEC-026–037/042/044/046/052/055/061/063/077/079/081/083.
 **Dependencies:** identity/rank, honor, sessions and data/access. Requirements MM.
 
 ## Connections And Premades

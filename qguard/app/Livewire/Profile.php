@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Domain\Game\Valorant;
 use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\PartyService;
+use App\Domain\Review\ReviewFeedback;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\RateLimiter;
@@ -100,6 +101,7 @@ class Profile extends Component
         $actor = $this->actor();
 
         return view('livewire.profile', [
+            'summaries' => app(ReviewFeedback::class)->summaries($actor),
             'honor' => DB::table('honor_states')->where('user_id', $actor->id)->value('honor_score'),
             'ranks' => Valorant::ranks(),
             'shards' => Valorant::SHARDS,
