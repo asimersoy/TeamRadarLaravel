@@ -1,14 +1,19 @@
 # QGuard local development
 
 Fresh Laravel application isolated from the legacy app at the repository root.
-The approved scope is in [the first pass specifications](../project-docs/specs/first-pass/README.md).
+Current work follows the [review-version specification](../project-docs/specs/review-version/README.md)
+and [R1a execution contract](../project-docs/planning/review-version/reconciliation-and-implementation.md).
+The first-pass engine is retained as historical implementation evidence.
 Run every command below **from this qguard directory**, never the root legacy
 Compose project. All PHP runs in Docker. This is not approved for public users.
 
 ## First setup
 
-Accounts, parties, matching, private session chat, feedback, honor and cleared-admin
-review are available. The [local acceptance checks](../project-docs/planning/first-pass/verification-results.md)
+Registration remains open. `/guest#welcome` serves the approved fictional
+walkthrough, with tab-scoped state and no provider/business writes. Its own
+reset affects only that tab. Normal queue admission and background formation
+are disabled until the later RSO slice; typed identities cannot bypass this.
+The remaining backend flows still use first-pass behavior pending migration. The [local acceptance checks](../project-docs/planning/first-pass/verification-results.md)
 have passed; owner flow/data review remains before any later release work.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
@@ -79,7 +84,7 @@ before claiming a complete rerun. Within one run, simulated time only advances.
 The [operational runbook](OPERATIONS.md) covers status, image builds, backup/restore,
 release gates and known limitations.
 
-## Try the local build
+## Historical engine walkthrough (isolated regression tests only)
 
 Use **Matchmaking** (`/dashboard`) for parties, queueing and the **Your connections**
 friends sidebar. Add friends by QGuard handle, accept their requests and use their
@@ -100,6 +105,27 @@ reviewing a report does not apply a penalty.
 The seeder does not reset ongoing demo sessions; end them normally before reusing
 those users. `unverified`, `unranked` and `observer` demonstrate access/setup gates.
 Do not expose the local mail inbox, credentials or raw test traces externally.
+
+## Review bundle and tests
+
+From the repository root, regenerate both the design and application copies:
+
+```sh
+python3 project-docs/design/qguard-review/build-standalone.py
+python3 project-docs/design/qguard-review/build-standalone.py --check
+```
+
+The production Dockerfile includes `resources/review/`; do not hand-edit its
+HTML. `/guest` sets a CSP that prevents network connections and form submission.
+The historical engine is available only when the test Compose flag is set and
+`EnvironmentSafety` verifies the disposable testing database. Setting the flag
+in local/production cannot enable normal matching. New backend policies are
+not inferred from that historical test suite.
+
+`tests/Feature/ReviewEntryTest.php` covers guest/real-user boundaries and queue
+bypass attempts. `tests/Browser/guest-review.spec.ts` covers the real guest entry
+and synthetic policy walkthrough in Chromium, Firefox and WebKit. This is
+presentation evidence for new session/feedback rules, not their backend proof.
 
 ## Current boundaries
 

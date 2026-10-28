@@ -2,7 +2,7 @@
 
 - **Record type:** comparison and candidate ideas, not approved specifications
 - **Owner:** project owner decides adoption; primary agent maintains evidence
-- **Updated:** 2026-10-27
+- **Updated:** 2026-10-28 (owner dispositions only; no new competitor observation)
 - **Authority:** study scope under `DEC-059`/`DEC-060`; existing product decisions prevail
 - **Update trigger:** new observed behavior or owner disposition of a candidate
 
@@ -27,7 +27,7 @@ is evidence of a design choice, not proof that it is optimal or fully reliable.
 | Roster and access at a glance | Group rows expose occupancy, member slots, rank and entry/status controls | Make capacity and next action legible while distinguishing matched membership from actual game-party presence | Candidate only; do not assume a listed avatar is already in the game lobby |
 | Separate activity from entry actions | Join, In Match and code controls are distinct; [status synchronization is documented](matching-and-game-status.md) | Explain whether a team is assembling, entering or playing; label manual/observed states honestly | Candidate only; no desktop/private API integration or automatic session end adopted |
 | Discovery versus automatic assembly | Main Groups uses listings/leader acceptance; Duos advertises pair matching | Borrow useful presentation details without replacing QGuard's similar-honor team matching | Current QGuard matching decisions remain; no new listing mode approved |
-| Optional descriptive peer feedback | Owner adaptation inspired by play-style dimensions; Gankster's observed onboarding sliders were self-description, not this peer-rating system | Two optional peer sliders; untouched midpoint omitted; summaries private to self/matched teammates; no honor or matching effect | Adopted direction under `DEC-061`, not implemented; aggregation/poles await specification/design |
+| Optional descriptive peer feedback | Owner adaptation inspired by play-style dimensions; Gankster's observed onboarding sliders were self-description, not this peer-rating system | Two optional peer sliders; untouched midpoint omitted; self-only summaries under DEC-076; no honor or matching effect | DEC-076 corrects the old audience attribution and approves slider labels; DEC-078 subsequently selects independent honor-formula updates; display detail pending, not implemented |
 | Session history as the rating surface | Owner instruction, not a verified Gankster flow | End session and unfinished Find match redirect to session detail; required ratings never expire and sent ratings lock | Adopted under `DEC-063`; `DEC-065` selects immediate eligible input application with no retrospective correction |
 
 ## Automatic Versus Manual Rank Refresh

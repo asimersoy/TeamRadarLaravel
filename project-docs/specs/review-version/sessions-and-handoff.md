@@ -1,11 +1,12 @@
 # Sessions, Party Codes And History
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-025/039/043/045/046/052/054–058/063/067/068.
+**Status:** QG-REVIEW-1 draft. Authority: DEC-025/039/043/045/046/052/054–058/063/067/068/076/077/079/080/081.
 **Dependencies:** matching, identity, feedback, reports and data/access. Requirements SS.
 
 ## Session And Handoff
 
-- **SS-01:** formation creates a five-person session with immutable account,
+- **SS-01:** all-five acceptance under MM-11 activates a five-person session
+  with immutable account,
   rank/source, honor and original-premade snapshots. “Matched” is QGuard state,
   not proof of game-party membership. Identify one human host; inherit the
   oldest queued participant plus stable tie-break default until revised.
@@ -34,12 +35,15 @@ the QGuard team even if two disagree. Do not wait for all three once disband is
 decided. Without corroboration, completion still requires the other three
 answers. No participant can advance through an unresolved check.
 
-**Draft recovery, needs checkpoint review:** preserve the prompt on refresh;
-offer an explicit way to leave/disband an unresolved pre-play session rather
-than inventing a default vote or endless forced wait. A safe timeout/cancellation
-policy is an owner choice if it changes disband authority. The prototype shows
-both resolved and waiting states; it does not silently approve a quorum change.
-Actual rank visibility remains a live evidence item, not proved by party codes.
+**Approved nonresponse handling (DEC-080):** preserve the pending prompt on
+refresh. Progression stays blocked until responses resolve it or the QGuard
+lobby closes. No independent discrepancy timeout, default vote or new cancellation
+authority. Keep SS-08's ordinary end-request action usable while the check is
+blocking: three requests or five minutes from the first, or another authorized
+disband, closes the lobby. Missing answers alone do not start that timer.
+Retain unresolved history on closure, reject late votes and do not mark the
+check cleared/confirmed. Pre-play closure creates no rating debt. Actual rank
+visibility remains live evidence work, not proved by party codes.
 
 On a corroborated mismatch, explain the account/rank discrepancy without
 publishing voter identities, close code/chat writes, release active slots and
@@ -57,16 +61,22 @@ create a conduct penalty or create ratings for a pre-play disband.
   acknowledgment cancels removal. Otherwise disband QGuard's team and offer
   requeue. Keep the known false-report limitation and DEF-008; no implicit
   client attendance evidence. An unresolved rank dispute is a separate flow.
-- **SS-08:** a participant's Session ended action ends their own participation
-  and opens their history/detail rating page; a session may span multiple games.
-  Teammates can continue. Confirm that this is a declaration, not detected game
-  completion or an automatic confession of early leaving. One active slot per
-  user remains; outstanding feedback may outlive that slot.
-- **SS-09, inherited text lifecycle:** current participants may continue room
-  chat; the ending participant's composer becomes read-only while their
-  authorized history remains. Closing/disbanding the room closes all writes.
-  Historical visibility remains limited to participants/cleared admins; prior
-  removal restrictions remain. Exact retention returns under DEF-012.
+- **SS-08, approved shared end:** the first participant's Session ended request
+  starts five minutes. Three distinct participants requesting end closes the
+  QGuard session immediately; otherwise timer expiry closes it. Two requests
+  continue the same countdown. Count each participant once; later/repeated
+  requests do not restart time. Persist the first request, deadline, distinct
+  requests and one shared closure server-side (DEC-077). An end request alone
+  retains active membership; it does not open ratings or unlock another queue.
+  On shared closure, route to history/detail feedback. The session may span
+  multiple games; this declaration is not detected game completion, an
+  automatic early-leaving admission, or a command to end the VALORANT party.
+- **SS-09, text lifecycle applied to shared closure:** current participants can
+  continue chat during the end-request countdown. Shared closure/disband closes
+  all writes; authorized history remains. Historical visibility stays limited
+  to participants/cleared admins, with existing removal restrictions. Exact
+  retention returns under DEF-012. No extra override or withdrawal rule is
+  inferred; pre-play discrepancy and no-show closure remain separate.
 
 ## History And Feedback Routing
 
@@ -76,16 +86,27 @@ create a conduct penalty or create ratings for a pre-play disband.
 - **SS-11:** a session detail page is the durable rating surface, containing
   session context, eligible targets, own submission status and report entry.
   Show disbanded-before-play and no-eligible-target states without rating debt.
-- **SS-12, draft ordering:** Find match opens the oldest unfinished eligible
-  session first. After completion, move to the next, then rank confirmation.
-  Direct navigation can view any accessible history entry; it cannot bypass
-  the server queue gate. No feedback expiry or automatic neutral input exists.
+- **SS-12, approved queue invariant:** Find match routes an active player back
+  to their session, including during its end countdown. After closure, missing
+  required ratings, including numerically excluded submissions (DEC-079),
+  redirect to that session's detail; complete those before
+  rank confirmation/new queue. A player cannot normally have multiple active
+  sessions or unfinished feedback from more than one session (DEC-077/P-07).
+  Direct history access cannot bypass the server gate. If legacy/corrupt state
+  contains multiple debts, define explicit recovery in the technical slice;
+  do not silently drop ratings or make backlog traversal the normal journey.
+  No feedback expiry or automatic neutral input exists.
 
 ## Acceptance
 
 Test host-only code editing, participant-only copy/view, stale versions, invalid
 code recovery and clipboard failure; actual game acceptance is separate. Test
 one corroboration versus two denials, excluded voters, duplicate votes, no
-abstention, unresolved recovery and forbidden progress. Test independent player
-end times, session history isolation, multiple feedback debts, no-show timing,
-room reconnection and a removed outsider's direct access attempts.
+abstention, pending nonresponse until lobby closure, usable end requests during
+the blocking prompt, late votes after closure and forbidden progress. For shared end, test
+first request starts five minutes; two requests wait; third closes immediately;
+expiry closes with fewer than three; duplicates/reloads/disconnects do not reset;
+third-request/expiry races close once. Test active-session and own-feedback
+queue gates, session history isolation and prevention of multiple unfinished
+sessions. Keep no-show timing, room reconnection and removed-user access checks
+separate. These are required future checks, not passed implementation evidence.

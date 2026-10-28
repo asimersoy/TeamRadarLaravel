@@ -6,11 +6,12 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
-**Current checkpoint:** [specification/design/stack review](planning/review-version/README.md).
-The owner-approved [calibrated Forest & Lime design](design/qguard-review/README.md)
-is applied under `DEC-073`; layouts and colors need not be reselected. The core
-stack is confirmed under `DEC-074/075`. Next review assumptions/defaults, then
-the remaining consequential policy and slice approvals.
+**Current work:** [reconciliation and implementation entry](planning/review-version/reconciliation-and-implementation.md)
+under DEC-082. Stack, brand/layout and Forest & Lime palette are settled.
+DEC-076–081 is reconciled into the current specifications and interactive design.
+R1a starts isolated guest review access and the normal-queue RSO boundary.
+OQ-014 descriptor display and OQ-017 premade recovery remain pending only for
+those dependent behaviors. Application-wide completion is not claimed.
 
 **Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
 under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders
@@ -22,8 +23,8 @@ after version one. Open registration and a
 are selected; normal matchmaking waits for live RSO. Discord implementation
 is fully deferred until after approval and RSO. Assume native party codes work
 for non-friends for this planning/prototype; validate with real players after
-RSO before normal-use reliance. Complete the study, specs and page designs
-before the requested stack review and new implementation.
+RSO before normal-use reliance. The study, specs, visual design and stack review have reached the implementation
+entry described above; live integration and release gates remain separate.
 The [checkpoint review queue](governance/checkpoint-review-queue.md) must be
 presented at that review. The implemented baseline below is preserved.
 

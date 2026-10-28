@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\GuestReviewController;
 use App\Livewire\AdminCase;
 use App\Livewire\AdminCases;
 use App\Livewire\Dashboard;
@@ -11,6 +12,7 @@ use App\Livewire\Room;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
+Route::get('/guest', GuestReviewController::class)->name('guest.review');
 Route::middleware('guest')->group(function () {
     Route::view('/register', 'auth', ['screen' => 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:6,1');

@@ -1,11 +1,13 @@
 # QGuard Review Version — Specification Packet
 
 - **Packet:** QG-REVIEW-1, draft revision 1, 2026-10-27
-- **Status:** core stack confirmed under DEC-074/075; remaining owner policy,
-  draft-detail and implementation-slice review pending; not implementation approval
+- **Status:** settled owner rules reconciled; DEC-082 authorizes bounded
+  implementation. R1a uses the approved ID-01–04/guest-boundary subset and
+  [technical contract](../../planning/review-version/reconciliation-and-implementation.md).
+  Remaining consequential choices are not approved by this execution direction.
 - **Owner:** project owner; primary agent authors and reconciles the packet
-- **Authority:** current decision register through DEC-068, especially
-  DEC-052–058 and DEC-061–068; latest explicit owner instructions prevail
+- **Authority:** current decision register through DEC-082, especially
+  DEC-052–058, DEC-061–068 and DEC-076–081; latest explicit owner instructions prevail
 - **Baseline:** the implemented [first-pass suite](../first-pass/README.md)
   remains historical evidence; this packet does not claim its new behavior exists
 - **Review path:** [work record](../../planning/design-checkpoint.md), then the
@@ -45,6 +47,10 @@ apply to every relevant route, API action and background job in a later build.
 | --- | --- |
 | Three optional feedback dimensions and skip | One mandatory 1–10 overall honor rating; optional peer descriptors |
 | Ten-minute feedback cutoff and session settlement batch | Feedback remains open; own unfinished obligations block queue; apply eligible submitted inputs immediately |
+| Individual end immediately opens ratings | Shared closure after three requests or five minutes from the first; active-session and own-feedback queue gates |
+| Teammate-visible descriptor summaries/arithmetic-mean proposal | Self-only player visibility; separate honor-formula state for each descriptor; display evidence/update detail still open |
+| Unspecified acceptance and nonresponse recovery | Five acceptances in 20 seconds; non-acceptors leave, others requeue (premade edge pending); unanswered discrepancy blocks until lobby closure |
+| Proposed waiver for numerically excluded authors | Required cards still submitted; preserve evidence, skip excluded numerical effects |
 | No participant history | Session list/detail owns rating and later revisit |
 | Late reports could prevent a pending batch | Known exclusions prevent future input; later reports never undo already applied effects |
 | Declared-only local identity fallback | Normal use requires live RSO; guest review uses explicit sample data |

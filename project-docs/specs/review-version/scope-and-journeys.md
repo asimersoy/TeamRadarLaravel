@@ -18,8 +18,8 @@
   Non-friend entry is an explicit assumption; verify after RSO. No Discord,
   desktop app, game-client automation or native voice in this version.
 - **SC-05, approved:** session history, mandatory private 1–10 honor ratings,
-  optional peer descriptions and human report review. Received individual
-  feedback and reviewer identities are hidden from players.
+  optional peer descriptions visible only to their subject, and human report
+  review. Received individual feedback and reviewer identities are hidden from players.
 
 ## Audiences And Access
 
@@ -42,12 +42,13 @@ uses neutral draft copy and invented accounts, not a published policy.
 | --- | --- | --- |
 | Reviewer | Landing → login guest → guided sample → rank check → queue → team/code → session end → history/rating → queue again | Understands the product without RSO or real peers |
 | New account | Register → verify email → profile defaults → Riot connection/consent when available → rank check | Eligible local identity and separate linked game identity |
-| Returning solo | Find match → any outstanding feedback → current rank check → ready/queue → five-person team | A QGuard session, not an automatically joined game |
+| Returning solo | Find match → current active session if present; otherwise finish required feedback → current rank check → ready/queue → five-person acceptance offer → all accept within 20 seconds → session | A QGuard session, not an automatically joined game |
 | Premade | Exact-handle friendship → create party → recipient accepts → everyone confirms rank/ready → owner queues | Intact original party matched to reach five |
 | Party handoff | Designated host opens VALORANT party → submits code in dedicated form → others copy/enter code → acknowledge and check account/rank | Players declare common game-party readiness; QGuard has no client sensor |
-| Discrepancy | Participant reports named account/rank mismatch → other three must confirm/deny → one corroboration disbands | Explain discrepancy and offer voluntary requeue; no automatic punishment |
-| Session finish | Player declares their session ended → session detail → rate eligible teammates → individual receipt | Own queue obligation complete; other players may still owe feedback |
-| Return with debt | Find match → oldest unfinished session → required ratings → remaining unfinished sessions → rank check | No silent expiry, skip or bypass |
+| Discrepancy | Named account/rank report → other three confirm/deny → one corroboration disbands; missing responses block until resolution or lobby closure | Keep unresolved evidence on closure; no default vote, automatic punishment or pre-play rating debt |
+| Session finish | First end request starts five minutes → third request or expiry closes shared session → session detail → rate eligible teammates → individual receipts | Session closed and own queue obligation complete; other players may still owe feedback |
+| Return with debt | Find match → the single unfinished session's detail → required ratings → rank check | No silent expiry, skip or bypass; normal multi-session backlog is prevented |
+| Failed acceptance | Decline or timeout → stop matchmaking for declining/nonresponding players → others return to pool | No played session or rating debt; premade edge pending OQ-017 |
 | Conduct report | Session participant opens report → selects target/category and optional context → submits → receipt | Evidence and applicable automatic exclusion; no promised sanction |
 | Admin | Cleared access → inbox → case/evidence → note/mark reviewed | Audited review state; no honor rewrite or punishment |
 

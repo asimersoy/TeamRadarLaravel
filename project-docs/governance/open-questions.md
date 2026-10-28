@@ -166,8 +166,10 @@ questionnaire or permission to leave first-pass contracts unspecified.
 - **Latest direction, 2026-10-27:** `DEC-061` replaces the three-dimensional
   honor input with one required overall 1–10 rating for each eligible teammate
   before requeueing. Optional communication/play-style sliders are informational
-  summaries for the subject and matched teammates, with untouched values omitted
-  and individual received ratings/reviewers hidden. These choices are settled.
+  summaries, with untouched values omitted and individual received ratings/
+  reviewers hidden. DEC-076 corrects the prior audience attribution: only the
+  subject sees their summaries. DEC-077 replaces individual end with shared
+  three-request/five-minute closure and prevents multiple unfinished sessions.
   `DEC-063` resolves the deadline conflict; `DEC-065` settles application timing
   and the no-correction policy.
   The revised data/display contract must
@@ -581,6 +583,10 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-010 - What QGuard Flow Applies When A Preferred Game Integration Is Unavailable?
 
+- **Nonresponse decision, 2026-10-28:** DEC-080 keeps unanswered discrepancy
+  checks blocking until resolution or QGuard lobby closure. No independent
+  response timeout or default vote. Ordinary DEC-077 end requests remain usable;
+  preserve unresolved evidence on closure and no pre-play rating debt.
 - **Current planning disposition:** `DEC-067` defers Discord and `DEC-068`
   selects the native-code working assumption through the structured host form.
   This closes the upfront handoff choice for the current design/prototype;
@@ -594,7 +600,8 @@ questionnaire or permission to leave first-pass contracts unspecified.
   explicit confirm/deny response before QGuard lobby progression. Do not re-ask
   whether corroboration is needed. `DEC-057` settles eligible voters and tally;
   `DEC-058` excludes an "I can't verify"/unknown response. Missing answers,
-  response timing and recovery remain open.
+  response timing/recovery were open here; DEC-080 above now selects waiting
+  until resolution or lobby closure.
 - **Response-option decision, 2026-10-27:** `DEC-058` requires an explicit
   matches/does-not-match answer in the pre-game prompt, with no abstention/skip
   option. The owner expects the relevant rank to be checkable and wants players
@@ -663,8 +670,8 @@ questionnaire or permission to leave first-pass contracts unspecified.
   `DEC-048` for the first-pass rank fallback and `DEC-055` for the future
   queue/lobby confirmation direction; `DEC-056` for required teammate responses,
   `DEC-057` for voter eligibility and dissolution threshold; `DEC-058` for no
-  abstention in this prompt. Missing answers, response timing and recovery
-  remain open; actual account/rank visibility still needs live evidence
+  abstention in this prompt; DEC-080 for nonresponse until lobby closure.
+  Actual account/rank visibility still needs live evidence
 
 ## OQ-011 - Which Coordination Backbone And Party-Handoff Dependency Should QGuard Use?
 
@@ -842,33 +849,37 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-014 — Descriptor Aggregation And Sparse-Data Privacy
 
-- **Status:** open, identified during the 2026-10-27 design pass; owner decision
-- **Settled:** optional peer descriptors do not affect honor/matching; audience
-  is self and matched teammates, individual votes/authors remain private.
-- **Proposal:** P-03 uses separate arithmetic means/counts, at least three
-  distinct eligible reviewers and pre-session snapshots for teammates.
-- **Tradeoff:** threshold/aggregation controls sparse-data disclosure and how
-  quickly useful descriptions appear. Three is an agent proposal, not approval.
-- **Needed before:** live descriptive-summary implementation. Does not block
-  review of the fixed, explicitly fictional prototype summaries.
+- **Status:** partially resolved by DEC-078, 2026-10-28; display detail remains
+- **Settled:** optional peer descriptors never feed honor/matching. DEC-076
+  selects self-only player visibility; individual received votes/authors stay
+  hidden. DEC-078 uses the honor formula independently for each dimension;
+  arithmetic-mean aggregation is no longer proposed.
+- **Remaining:** minimum evidence and disclosure-safe display updates. The owner
+  answered the calculation question; that does not approve the earlier proposed
+  three-distinct-reviewer threshold. No-observation state must remain distinct
+  from a numerical midpoint baseline.
+- **Tradeoff:** early/per-input visibility versus inferring a recent individual
+  response from score movement. Do not claim a threshold alone guarantees privacy.
+- **Needed before:** live descriptor-summary display; does not block drafting
+  or independently testing the approved per-dimension calculation.
 - **Record:** [review-version proposals](../specs/review-version/proposals.md).
 
 ## OQ-015 — Feedback Obligations After Author Exclusion
 
-- **Status:** open, identified during the 2026-10-27 design pass; owner decision
-- **Settled:** known qualifying exclusion blocks unapplied outgoing numeric
-  ratings; earlier applied effects remain. Every eligible required rating must
-  be completed before another queue; normal skipping/expiry is not allowed.
-- **Question:** when an author becomes ineligible to supply numeric input, do
-  their remaining obligations become ineligible, or do they still submit for
-  evidence? P-04 proposes the former but has not selected it.
-- **Tradeoff:** avoid purposeless input versus avoiding an exclusion-based
-  escape from the feedback requirement. Do not silently waive or force ratings.
-- **Needed before:** the affected eligibility/queue-gate implementation.
-- **Related:** OQ-010/P-05 still owns unresolved lobby-discrepancy nonresponse;
-  no new timeout/disband authority was chosen during design.
-- **Resolved by:** `DEC-065`, including explicit rejection of retrospective corrections
-
+- **Status:** resolved by DEC-079, 2026-10-28
+- **Resolution:** authors whose numerical influence is excluded must still
+  submit their permitted required teammate cards before requeue. Submission
+  completes the obligation and retains immutable evidence without applying
+  excluded numerical effects. Optional descriptors remain optional; prohibited
+  self/premade and pre-play ratings do not become required.
+- **Preserved:** no expiry/skip, immutable receipts, earlier applied effects
+  remain and no report-based completion bypass. No automatic neutral input.
+- **Historical correction:** the earlier stray DEC-065 resolved marker was
+  incorrect: that decision settled OQ-013 honor timing. This question is now
+  resolved by the owner's new explicit DEC-079 answer, not by that old marker.
+- **Related:** DEC-080 resolves P-05's discrepancy nonresponse choice separately.
+- **Blocks:** no remaining policy choice for this obligation; implementation
+  still needs its approved data/queue/acceptance contract.
 
 ## OQ-016 — QGuard Color Direction
 
@@ -881,3 +892,17 @@ questionnaire or permission to leave first-pass contracts unspecified.
 - **Blocks:** nothing further for color selection. Do not reopen B/C or the
   approved calibration at the stack checkpoint. Product policy/slice and stack
   approvals remain separate.
+
+## OQ-017 — Premade Return After Failed Match Acceptance
+
+- **Status:** open; owner question sent 2026-10-28, answer pending
+- **Settled:** DEC-081 requires five acceptances within 20 seconds; decliners/
+  nonresponders leave matchmaking and the rest return to the pool. DEC-037 keeps
+  original premades together during matching.
+- **Question:** if one member of a premade fails acceptance, do the others
+  continue together without them, or does the entire premade stop while other
+  parties/solos return? No answer is inferred from the preselected option/time.
+- **Needed before:** premade acceptance failure/return implementation; does not
+  block the settled solo acceptance or other independent specification work.
+- **Owner:** project owner; exact group membership and queue outcomes must be
+  reconciled in MM-13/DEC-081 before reliance.

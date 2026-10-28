@@ -32,6 +32,7 @@ COPY config ./config
 COPY database/migrations ./database/migrations
 COPY public ./public
 COPY resources/views ./resources/views
+COPY resources/review ./resources/review
 COPY routes ./routes
 COPY artisan ./
 RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs storage/app/private bootstrap/cache \

@@ -3,6 +3,7 @@
 namespace App\Domain\Matching;
 
 use App\Domain\Parties\MembershipTransaction;
+use App\Support\ReviewVersion;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,9 @@ final class Matcher
 {
     public function tick(): array
     {
+        if (! ReviewVersion::historicalEngineEnabled()) {
+            return ['status' => 'awaiting_riot_linking', 'matched' => 0, 'expansions' => 0];
+        }
         $lease = Cache::lock('qguard-matcher', 30);
         if (! $lease->get()) {
             return ['status' => 'leased', 'matched' => 0, 'expansions' => 0];

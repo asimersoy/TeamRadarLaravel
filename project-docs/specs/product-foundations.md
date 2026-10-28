@@ -198,31 +198,59 @@ false-no-show/collusion checks (`DEF-008`), acknowledging that a joined player
 could be falsely targeted. No automatic score deduction or ban is selected;
 development direction is not proof of safe release.
 
+### Match Acceptance And Pending Lobby Checks — Current Direction
+
+DEC-081 requires all five proposed participants to accept within 20 seconds.
+Declining/nonresponding players leave matchmaking; the others return to the
+pool, without a played-session feedback debt or new honor penalty. Premade
+failure handling is pending OQ-017; preserve the intact-party rule until that
+exception is resolved. Record server-timed, atomic offer/return behavior in the
+technical slice. This is distinct from the in-lobby rank-discrepancy vote.
+
+DEC-080 keeps a missing discrepancy response blocking until resolved or the
+QGuard lobby closes. Existing end requests remain usable; no independent
+response timeout/default vote is introduced. Retain unresolved evidence on
+closure and preserve the no-rating rule for teams closed before shared play.
+
 ### Current Feedback and Session History Direction
 
 Under `DEC-061`/`DEC-063`, each player must submit one overall 1–10 honor
 rating for every eligible teammate before entering another queue. Existing
 self, original-premade and participation exclusions remain. There is no numeric
 default, ordinary skip or ten-minute expiry. Ratings submitted later still count
-when eligible. A player's completed obligation does not require somebody else
-to submit before that player can requeue.
+when eligible. After shared session closure, completing one's own obligation
+allows requeue without waiting for another player's ratings.
 
-At session end, open that session's history/detail page for rating. Provide
+DEC-077 replaces immediate individual end: the first end request starts five
+minutes; three distinct participants requesting end closes the shared QGuard
+session immediately, otherwise expiry closes it. Later/duplicate requests do
+not restart the first deadline. No queue while active, including the countdown;
+this is not proof of game completion or a command to end a VALORANT party.
+At shared session end, open that session's history/detail page for rating. Provide
 the player's session history for later access. Find match checks unfinished
 eligible ratings and redirects to the relevant old session until they are
-completed. Sent/locked ratings cannot be edited; draft interaction precedes
-that commitment. Model sessions and their participant relationships; a session
-can cover several games. History is not a public review ledger.
+completed, even if reports exclude their numerical effect (DEC-079). Such
+submissions remain immutable evidence and complete the card without numerical
+updates; self/premade/prohibited targets remain excluded.
+Normal operation therefore cannot accumulate more than one session
+of unfinished feedback. Sent/locked ratings cannot be edited; DEC-076 approves
+confirming/submitting one teammate card at a time, with other cards still drafts.
+Model sessions and their participant relationships; a session can cover several games. History is not a public review ledger.
 
 Two optional peer sliders describe communication tendency and play style.
 Initially centered, they contribute nothing unless intentionally answered;
 an intentional midpoint answer is distinct from an untouched control. Submitted
 descriptions may contribute to a displayed summary but never honor, matching,
-eligibility, ordering or punishment for now. Poles/labels, summary aggregation,
-sample sufficiency and clear-to-unanswered interaction are to be specified.
+eligibility, ordering or punishment for now. DEC-076 approves Quiet–Talkative
+and Deliberate–Aggressive labels. DEC-078 uses the honor update formula for
+each descriptor independently, with separate value/reference/count and the same
+internal 0–100 representation. Omitted sliders update nothing. Minimum display
+evidence and disclosure-safe updates remain P-03/OQ-014; no combined metric.
 
-Only the player and their authorized matched teammates see descriptive
-summaries. Individual received ratings and reviewer identities stay hidden.
+Only the player being described sees their summaries (DEC-076 corrects the
+earlier audience attribution). Matched teammates do not. Individual received
+ratings and reviewer identities stay hidden; cleared-admin case access is
+unchanged. Peer descriptions are not a newly approved signup biography.
 Quiet/cautious and vocal/aggressive are descriptions, not moral grades.
 `DEC-065` applies finalized eligible honor inputs without waiting for other
 participants. Process a later submission against current honor/reference state;
@@ -234,7 +262,8 @@ the admin audit. This accepts order dependence; it does not establish that all
 differences are small or self-correcting. [OQ-013](../governance/open-questions.md#oq-013---when-does-honor-update-while-other-session-feedback-is-outstanding)
 is resolved. Do not infer a new penalty, final retention policy, friend-discovery feature or live
 game detector. Acceptance must cover queue bypass attempts, return after a
-long absence, multiple pending sessions, immutable/idempotent submissions,
+long absence, prevention of multiple active/unfinished sessions, shared-end
+request/expiry races, immutable/idempotent submissions,
 ineligible targets, untouched sliders and private summary access. Also cover
 concurrent reports/ratings, pre-application exclusions, later reports retaining
 already-applied effects, old-session submissions against current state and
@@ -244,7 +273,8 @@ privacy-safe score presentation.
 
 The following records the implemented first-pass baseline. Its three honor
 dimensions, optional/skip behavior, feedback cutoff and whole-session pending
-settlement are superseded for the next pass by the direction above. Its other
+settlement and individual end trigger are superseded for the next pass by the
+direction above (DEC-076/077 included). Its other
 eligibility/report rules remain subject to `DEC-065`'s no-retrospective-correction
 boundary; old tests do not verify the new direction.
 

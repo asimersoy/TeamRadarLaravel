@@ -6,12 +6,14 @@ use App\Domain\Parties\MembershipTransaction;
 use App\Domain\Parties\PartyService;
 use App\Domain\Parties\SocialService;
 use App\Models\User;
+use App\Support\ReviewVersion;
 use Illuminate\Support\Facades\DB;
 
 final class QueueService
 {
     public function enter(User $actor): void
     {
+        SocialService::require(ReviewVersion::historicalEngineEnabled(), ReviewVersion::QUEUE_MESSAGE);
         MembershipTransaction::run(function () use ($actor) {
             $party = app(PartyService::class)->current($actor);
             abort_unless($party && $party->owner_id === $actor->id, 403);

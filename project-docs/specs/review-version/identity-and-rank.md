@@ -1,6 +1,7 @@
 # Identity, Guest Access And Rank
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-044/048/052–055/066.
+**Status:** ID-01–04 approved for bounded R1a execution under DEC-082; live
+provider/recovery details remain deferred. Authority: DEC-044/048/052–055/066/082.
 **Dependencies:** matching, sessions, data/access. Requirements ID; update on
 provider contract, account policy or rank-source changes.
 
@@ -8,7 +9,7 @@ provider contract, account policy or rank-source changes.
 
 - **ID-01:** keep QGuard account identity and Riot account identity separate.
   Normal signup is open; inherited email/password, verification and recovery
-  behavior remains a baseline pending the stack review. A typed Riot ID is
+  behavior remains the approved baseline on the confirmed stack. A typed Riot ID is
   not ownership proof. Credentials and reset tokens never appear in reports.
 - **ID-02:** normal matchmaking requires actual RSO linking/opt-in when live
   access exists. Before then, show a clear unavailable/pending-approval state.

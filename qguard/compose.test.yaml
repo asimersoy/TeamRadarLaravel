@@ -35,6 +35,7 @@ x-test: &test
     MAIL_PORT: 1025
     MAIL_FROM_ADDRESS: hello@qguard.test
     QGUARD_TEST_DATABASE: "true"
+    QGUARD_FIRST_PASS_TEST_ENGINE: "true"
     QGUARD_PUBLIC_ENABLED: "false"
   depends_on:
     postgres:

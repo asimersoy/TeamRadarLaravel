@@ -1,36 +1,38 @@
 # QGuard Current State
 
-## Approved Design And Checkpoint Ready — 2026-10-28
+## Reconciled Design And Implementation Entry — 2026-10-28
 
-DEC-070 accepts the layouts; DEC-072/DEC-073 selects and applies calibrated
-Forest & Lime throughout the current design. Open the
-[current prototype](design/qguard-review/qguard-review.html) or its
-[palette application evidence](design/qguard-review/palette-application/README.md).
-Earlier comparisons are historical. OQ-016 is resolved.
+DEC-082 authorizes reconciling the settled specifications/design and beginning
+implementation. DEC-074/075 confirms the stack; DEC-076–081 controls the updated
+feedback, summary privacy, session-end and acceptance behavior. The approved
+brand/layout/palette remains. The [execution record](planning/review-version/reconciliation-and-implementation.md)
+contains the exact route, first-slice contract and verification scope.
 
-**Stack review complete:** DEC-074/075 confirms Laravel/PHP, Blade/Livewire,
-Alpine/JavaScript, Tailwind CSS, PostgreSQL, Laravel Reverb, Docker Compose and
-nginx for the next web version. “Vapor” was a transcription error corrected by
-the owner; no hosting change was intended. The
-[stack record](planning/review-version/stack-review.md) gives evidence and limits.
-Next: review assumptions/draft defaults, then remaining policy choices and slice
-contracts. No additional core-stack confirmation or implementation approval is
-inferred for unrelated work.
-The owner clarifies that dynamic match dialogs and automatic SPA-style room
-navigation are important. Livewire's documented navigation/realtime capabilities
-fit; the existing first pass needs lifecycle work, and match-acceptance policy
-must be specified separately. The Livewire choice is now settled.
+The saved [design](design/qguard-review/qguard-review.html) now shows the all-five
+20-second match offer, shared end requests/countdown, active-session queue gate,
+private descriptor views, excluded-author required cards and discrepancy closure.
+Descriptor values are explicitly fictional layout examples, not implemented
+calculation/display evidence. OQ-014 display timing and OQ-017 premade failure
+remain unanswered and block only dependent implementation.
 
-**We are at the specification/design/stack checkpoint.** No further design
-choice is needed before that review. Start with the
-[updated checkpoint packet](planning/review-version/README.md): completed stack choice,
-explicit recap of recorded defaults/answer provenance, and remaining P-03/P-04/
-P-05 policy decisions before their affected implementation slices. P-06 needs
-review before live rank integration. Do not reopen approved layouts or colors.
+**Implementation started:** R1a adds `/guest` with isolated tab-scoped sample
+state, no service calls, packaged approved design and real server-side queue/
+background-formation guards until RSO. Existing backend behavior remains the
+historical first pass until its subsequent slices are migrated. No new schema,
+RSO, game client or Discord integration is included. Application completion and
+release are not claimed. See the execution record for checks and current limits.
 
-Application work remains stopped. The loopback design preview is available at
-`http://127.0.0.1:8765/qguard-review.html#dashboard`; this is not a deployment.
-The saved HTML remains available after that local server is stopped.
+Historical checkpoint sections below describe earlier stops/evidence; they do
+not override DEC-082 or certify these new changes. The portable workflow and
+legacy application remain untouched. No remote/public action is authorized.
+
+**Verified R1a:** 64 backend tests passed; 22 browser tests passed with two
+intentional duplicate-catalog skips; 81 catalog states checked. The isolated
+application image builds and serves the packaged review. See the execution
+record for distinctions between new server checks and historical regressions.
+The current loopback review is `http://127.0.0.1:55000/guest#welcome`; its app
+has normal matchmaking disabled. Port 8121 belongs to another local service.
+Changes are grouped into one local checkpoint commit; no push or deployment.
 
 ## Brand And Mobbin Design Review — 2026-10-28
 
@@ -85,12 +87,13 @@ stack checkpoint and later live-provider/release gates remain separate.
 `DEC-061` selects one required 1–10 honor rating per eligible teammate before
 requeueing, plus optional peer communication/play-style sliders. Untouched
 midpoints are omitted; descriptors affect neither honor nor matching. Their
-summaries are visible only to self and matched teammates; received individual
+summaries were initially recorded as self-and-matched visibility. DEC-076 above
+corrects that attribution and selects self-only visibility; individual received
 ratings and reviewer identities remain hidden.
 
 `DEC-063` removes the ten-minute feedback expiry and adds session history and
-detail/rating pages. Session end opens that page; later Find match attempts
-redirect there while required ratings remain. Sent ratings are immutable.
+detail/rating pages. DEC-077 now defines shared session end as the trigger;
+later Find match attempts redirect there while required ratings remain. Sent ratings are immutable.
 `OQ-012` is resolved. `DEC-065` also resolves `OQ-013`: apply submitted eligible
 ratings against current state without waiting for everyone; no backdating,
 undoing or retrospective recalculation. Known exclusions prevent unapplied

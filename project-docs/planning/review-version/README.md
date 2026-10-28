@@ -1,8 +1,9 @@
 # QGuard Specification, Design And Stack Checkpoint
 
-**Reached:** 2026-10-27. **Status:** checkpoint review in progress; core stack
-confirmed under DEC-074/075. Application work remains stopped pending applicable
-policy/specification and slice approvals.
+**Reached:** 2026-10-27. **Current:** stack and settled policy review complete;
+DEC-082 starts [reconciliation and bounded implementation](reconciliation-and-implementation.md).
+OQ-014/OQ-017 remain open only for dependent behaviors. The earlier review
+agenda below records decisions and provenance; it is not a blanket stop.
 
 ## Start Here
 
@@ -25,15 +26,15 @@ policy/specification and slice approvals.
 - Nine modular spec/proposal/acceptance documents plus their manifest cover
   access, rank, connections/premades, matching, sessions/code/text, feedback,
   honor, reports/admin, logical data/access and acceptance evidence.
-- [Page inventory](../../design/qguard-review/pages.md): 25 product screens and
-  a catalog, with 79 route/state combinations. The approved palette is
+- [Page inventory](../../design/qguard-review/pages.md): 26 product screens and
+  a catalog, including the added acceptance route and revised behavior states. The approved palette is
   consistent across the current interactive artifact; earlier studies are archived.
 - [Current verification](../../design/qguard-review/palette-application/README.md):
   responsive route coverage, rendered color/control checks, brand exports and
   packaging. Earlier interaction evidence remains linked. These certify the
   local prototype only, not live integrations or application behavior.
 - [Implementation outline](implementation-outline.md): coherent next slices,
-  dependencies and later provider/live-use checkpoints. It is not execution approval.
+  dependencies and later provider/live-use checkpoints. DEC-082 and the concrete R1a contract now authorize its settled first slice.
 
 ## Decisions To Settle In Order
 
@@ -43,27 +44,36 @@ Do not repeat the core selection. Next present the assumptions/defaults recap
 below, then work through the following policy groups. Implementation still
 awaits applicable specifications and approvals.
 
-**Group 2 — Consequential feedback/privacy details:**
+**Group 2 — Feedback/privacy dispositions:** DEC-078 selects the existing
+honor formula independently for each optional descriptor; self-only visibility
+remains DEC-076. Minimum evidence/disclosure-safe display is the remaining
+OQ-014 detail; the earlier mean/three-reviewer proposal was not approved as a
+whole. DEC-079 settles P-04: numerically excluded authors still complete their
+required cards before requeue, retaining evidence without excluded updates.
 
-- P-03 proposes averaging each optional descriptor separately, showing it after
-  at least three distinct eligible reviewers, and giving teammates a pre-session
-  snapshot. Audience is already approved; aggregation/sparse-data protection is not.
-- P-04 asks what happens to remaining rating obligations when an author's
-  outgoing ratings become ineligible: waive those now-ineligible obligations,
-  or still require input for evidence? The escape/abuse tradeoff needs an owner
-  choice. No UI bypass has been selected.
+**Group 3 — Lobby check and match acceptance:** DEC-080 settles P-05: unanswered
+checks stay blocking until resolved or the QGuard lobby closes; existing end
+requests remain usable. DEC-081 requires all five to accept within 20 seconds,
+removes decliners/nonresponders from matchmaking and returns the others to the
+pool. OQ-017 is a pending owner question about preserving a premade when one
+member fails acceptance. No independent discrepancy timeout or new penalty.
 
-**Group 3 — Unresolved lobby check:** P-05/OQ-010 needs a cancellation/timeout
-policy when a required corroborator never answers. One additional confirming
-vote and the absence of an abstain option remain approved. No auto-vote or new
-disband authority has been silently added.
-
-**Group 4 — Remaining reversible details:** recap slider wording,
-per-teammate submit/lock interaction, oldest-unfinished-session ordering
-and linked-account rank-retrieval failure fallback. Revise the affected specs;
-approve the final packet/slice requirements before application implementation.
+**Group 4 — Remaining defaults/contracts:** labels and per-card submission are
+approved; multi-session feedback backlog is prevented. Recap guest/artifact and
+inherited numeric defaults, including the agent's same-scale descriptor mapping.
+Complete technical contracts and the affected mockup changes. P-06 is required
+before live rank retrieval, not the synthetic review version. Only affected
+slices await remaining display/premade decisions and their specification approval.
 
 ## Explicit Recap Of Defaults And Question Provenance
+
+**Active, 2026-10-28:** owner starts this review after stack confirmation.
+The provenance recap and P-01/P-02/P-07 group are reviewed: labels/per-card
+submission approved; ordinary multiple unfinished sessions rejected. DEC-077
+adds shared closure after three requests or five minutes from the first. The
+[live review queue](../../governance/checkpoint-review-queue.md#active-assumptionsdefaults-review--2026-10-28)
+tracks remaining guest/artifact/numeric defaults and the separate policy groups,
+including the newly surfaced match-acceptance protocol.
 
 The [checkpoint queue](../../governance/checkpoint-review-queue.md) is part of
 this review. No tool-confirmed automatically resolved answer is known. Earlier
@@ -72,20 +82,26 @@ instructions independently confirm the mandatory/no-expiry feedback rules.
 
 Please notice these selections rather than assuming they were all new approvals:
 
-- **Received question answer:** descriptor summaries visible to the player and
-  matched teammates, not public; individual received scores and reviewers hidden.
+- **Corrected fresh answer (DEC-076):** only the described player sees their
+  communication/play-style summaries. The prior audience attribution and
+  misclicked answer were disregarded; this is peer feedback, not a signup bio.
+  Individual received scores and reviewer identities remain hidden.
 - **Explicit owner directions:** every eligible teammate must be rated before
   requeue; no expiry, immutable submissions; apply eligible ratings immediately,
   no retrospective correction; retain the accepted report/rating timing race.
 - **Explicit owner assumption:** native codes work for non-friends for planning;
   verify after real RSO, before normal reliance. First-version Discord remains deferred.
-- **Agent draft defaults:** per-card submission, Quiet–Talkative and
-  Deliberate–Aggressive labels, oldest unfinished session first, sample guest
-  fixtures/reset, 1440px desktop review and narrow layouts, and standalone
-  artifact format. The visual direction is subsequently approved by DEC-070/073;
-  do not present it as unanswered. Other details can be revised at this checkpoint.
-- **Agent proposals requiring separate policy approval:** P-03/P-04/P-05 above.
-  The provider-failure contract P-06 also needs review before live integration.
+- **Approved UI details:** per-card submit/confirm/lock and Quiet–Talkative /
+  Deliberate–Aggressive labels (DEC-076). P-07 is corrected: route an active
+  player to their current session, or missing feedback to that one ended
+  session; no ordinary backlog of unfinished sessions (DEC-077).
+- **Agent defaults still to recap:** sample guest fixtures/reset, 1440px desktop
+  review with narrow layouts and standalone artifact format. Visual direction
+  is already approved by DEC-070/073; do not present it as unanswered.
+- **Latest owner dispositions:** DEC-078/079/080 settle descriptor calculation,
+  mandatory excluded submissions and discrepancy waiting; DEC-081 selects the
+  20-second all-five acceptance rule. OQ-014 display detail and OQ-017 premade
+  failure handling remain. P-06 precedes live integration.
 
 The earlier accepted first-pass numeric matching/scoring defaults are explicitly
 preserved in the new modules; no new algorithm parameters or desktop framework
@@ -97,8 +113,10 @@ The portable workflow package, existing application, legacy code and runtime
 configuration remain untouched. No push, PR, deployment, submission, external
 message, real account creation or live game/Discord test was performed.
 
-Next discussion is the assumptions/defaults recap, followed by the remaining
-policy groups. Record precise dispositions, reconcile modules/design, prepare
+Next discussion covers remaining guest/artifact/numeric defaults, then policy
+groups. Specs now record DEC-076–081; the saved HTML needs the privacy, shared
+end, descriptor, obligation, discrepancy and acceptance updates, checked before its next
+behavior review. Record precise dispositions, reconcile design, prepare
 technical slice contracts and verification, and only then start approved work.
 Silence, elapsed time or acceptance of a screenshot is not implementation approval.
 
@@ -121,5 +139,6 @@ brand artifacts. The owner asked whether anything remains before this checkpoint
 we are here. That design task is verified and DEC-074/075 subsequently completes
 Group 1, stack review. Continue with the assumptions/defaults recap; no additional
 design-selection round is required.
-Remaining P-03/P-04/P-05 and required slice specifications still need their own
-dispositions before affected application work; P-06 precedes live integration.
+DEC-078–081 subsequently settles the main policy group. OQ-014 display detail,
+OQ-017 premade failure handling and required slice contracts remain before
+affected application work; P-06 precedes live integration.

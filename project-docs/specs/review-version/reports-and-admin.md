@@ -1,6 +1,6 @@
 # Reports And Cleared-Admin Review
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-039/041/043/045/047/052/056–058/065.
+**Status:** QG-REVIEW-1 draft. Authority: DEC-039/041/043/045/047/052/056–058/065/078/079.
 **Dependencies:** sessions, feedback and data/access. Requirements RP.
 
 ## Distinct Processes
@@ -38,6 +38,12 @@ Record whether input was excluded before application or had already taken
 effect; do not label retained effects removed. Incoming ratings, future sessions,
 accounts and game ranks are not automatically penalized. Reports themselves
 are not recursively erased when a reviewer's numeric input is ineligible.
+
+DEC-079 keeps an excluded author's permitted teammate cards required. Submission
+completes the obligation and retains immutable evidence without applying
+excluded honor/descriptor updates. Optional sliders remain optional. Reports
+cannot grant a completion bypass; existing self/premade and pre-play exclusions
+still prevent prohibited obligations.
 
 ## Admin Screens
 

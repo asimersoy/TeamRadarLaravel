@@ -1,6 +1,6 @@
 # Friends, Parties And Five-Person Matching
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-026–037/042/044/046/052/055/061/063.
+**Status:** QG-REVIEW-1 draft. Authority: DEC-026–037/042/044/046/052/055/061/063/077/079/081.
 **Dependencies:** identity/rank, honor, sessions and data/access. Requirements MM.
 
 ## Connections And Premades
@@ -27,11 +27,16 @@
 
 ## Queue Eligibility And Matching
 
-- **MM-06:** before queueing, check every member's outstanding eligible feedback,
+- **MM-06:** before queueing, reject any member with an active session, including
+  an end-request countdown; route them to it. Then check outstanding required
+  feedback, including numerically excluded submissions under DEC-079,
   account/linking, rank confirmation and current party version. A party owner
   cannot bypass another member's feedback debt. Redirect each affected player
   to their own session detail; show others only a neutral “not ready” reason
   where exposing the underlying evidence would reveal private information.
+  These gates prevent multiple unfinished sessions in normal operation (DEC-077);
+  another participant's missing ratings do not block a completed reviewer after
+  shared session closure.
 - **MM-07:** hard constraints remain five distinct eligible accounts, same game,
   mode, shard and common selected language, intact parties and no conflicting
   active membership. Candidate identities and scores are not exposed in queue.
@@ -44,9 +49,32 @@
   allowance must be satisfied. Hard constraints never widen. These are prior
   accepted development values, not Riot rules or a wait-time guarantee.
 - **MM-10:** matching/cancel/reconnect is atomic and idempotent. Recheck all
-  member eligibility and state before committing five participants. Concurrent
-  cancellation either wins, or the user is routed to the committed session.
+  member eligibility/state before reserving five participants in an offer and
+  before all-five acceptance activates a session. Concurrent cancellation either
+  wins, or the user recovers the canonical offer/session state.
   Never leave half a team or duplicate active membership.
+
+## Match Acceptance — DEC-081
+
+- **MM-11, approved:** all five proposed participants must accept within one
+  server-timed 20-second window. Show each a popup/countdown. Premade readiness
+  is not acceptance; nobody can accept for someone else. Five valid acceptances
+  activate the shared session and trigger navigation to it.
+- **MM-12, approved core failure:** a decline or deadline nonresponse prevents
+  that proposed team proceeding. Stop matchmaking for declining/nonresponding
+  players; automatically return the others to the pool. No honor penalty,
+  cooldown or rating debt follows from a failed pre-session offer.
+- **MM-13, pending premade detail:** ask whether remaining friends continue
+  together after a member fails acceptance, or the entire premade stops while
+  independent parties/solos return. DEC-037 keeps premades intact; neither
+  exception is silently selected. Preserve unaffected groups atomically.
+- **MM-14, technical requirements:** persist offer membership, the common
+  deadline, each response and one terminal result. Deduplicate retries; reject
+  stale/late responses; prevent concurrent offer/queue/session membership.
+  Server timeout continues through browser disconnect. Specify early-decline
+  processing without treating not-yet-due answers as timeouts. Reconnect restores
+  canonical state. Return ordering/queue-attempt continuity belongs in the
+  technical contract; no new rank/API calls or wait-priority reset is selected.
 
 ## Interface And Failure States
 
@@ -65,16 +93,22 @@ has no invented counterpart. Prototype formation is explicitly a sample action.
 
 **Stack-checkpoint clarification, 2026-10-28:** support realtime matching UI and
 smooth system-driven navigation into the session. The owner cites a
-match-acceptance popup as the intended interaction; the exact acceptance/decline/
-nonresponse policy must be reconciled in this draft before that slice is ready.
-Do not infer a deadline, penalty, acceptance quorum or auto-accept from the
-example. Premade pre-queue readiness and post-match acceptance are distinct.
+match-acceptance popup as the intended interaction. DEC-081 now selects all five
+within twenty seconds and removal/requeue outcomes. Premade failure handling is
+pending; no automatic acceptance or extra punishment is selected. Premade
+pre-queue readiness and post-match acceptance remain distinct.
 The [stack assessment](../../planning/review-version/stack-review.md#dynamic-navigation-clarification--2026-10-28)
 records capability evidence and required multi-client/navigation checks. This
-does not claim the existing application or design artifact implements the flow.
+does not claim the existing backend implements the flow. The current design
+artifact demonstrates it with fictional peers under DEC-082.
 
 Exercise whole-party combinations, no splitting, all-member feedback gates,
 readiness reset, owner/non-owner actions, invitation races, duplicate/crossed
 friend requests, insufficient players and oldest-entry liveness. Preserve the
 prior bounded-search/concurrency requirements when writing the technical
 packet, but do not choose a replacement worker/database architecture here.
+
+Also test 5/5 before deadline, 4/5 timeout, explicit decline, multiple missing
+responses, duplicate/late acceptance, reconnect with the original deadline,
+accept/decline/expiry races, exactly-once return/removal and no failed-offer
+feedback debt. Add the owner-selected premade behavior before its slice.

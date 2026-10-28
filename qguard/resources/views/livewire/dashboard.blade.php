@@ -4,6 +4,9 @@
         <div class="score"><span>Your honor</span><strong>{{ number_format($honor, 1) }}</strong><small>Fixed neutral start · 0–100</small></div>
     </div>
     <x-errors />
+    @unless(\App\Support\ReviewVersion::historicalEngineEnabled())
+        <div class="notice">{{ \App\Support\ReviewVersion::QUEUE_MESSAGE }} <a href="{{ route('guest.review') }}#welcome">Explore as guest</a></div>
+    @endunless
     <x-pending-feedback :sessions="$pendingFeedback" />
     <div class="matchmaking-layout">
         <div class="matchmaking-main">
@@ -29,7 +32,7 @@
 <div class="actions"><button wire:click="ready">I'm ready</button><button class="danger" wire:click="leaveParty">{{ $party->owner_id === auth()->id() ? 'Disband party' : 'Leave party' }}</button></div>
 @if($party->owner_id === auth()->id())
 @if($party->state === 'waiting')<div class="notice">Waiting for a compatible five. Honor preferences widen over time; shard and language never change.</div><button wire:click="cancelQueue" class="secondary">Cancel queue</button>
-@else<div class="actions"><button wire:click="enterQueue">Find teammates</button></div>@endif
+@else<div class="actions"><button wire:click="enterQueue" @disabled(!\App\Support\ReviewVersion::historicalEngineEnabled())>Find teammates</button></div>@endif
 @endif
 <p class="muted">No Discord voice queue yet. Original premade members cannot rate each other. A group of four searches for a fifth; QGuard never queues you into the game.</p>
 @endif

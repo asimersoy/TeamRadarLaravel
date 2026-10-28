@@ -50,8 +50,10 @@ The decision register is canonical; this is a navigation summary.
 | Known timing limitation | Owner explicitly accepts the report/rating race for version one; improvements return afterward (`DEF-013`) |
 | Access and review milestone | Open registration; guest entry for a Riot-reviewable prototype; expected provider data drives downstream flows, normal matchmaking waits for live RSO (`DEC-066`) |
 | Discord and party entry | Defer all Discord implementation until after approval and RSO (`DEC-067`); assume native non-friend party codes work now, with real-player checks after RSO (`DEC-068`, `DEF-014`) |
-| Descriptions | Two optional peer sliders, communication tendency and play style; untouched means absent; summaries for self and matched teammates; no scoring/matching use |
-| Session history | Participant history and detail/rating pages; feedback has no ten-minute expiry; unfinished required ratings redirect from Find match; sent ratings are immutable (`DEC-063`) |
+| Descriptions | Two optional peer sliders, communication tendency and play style; untouched means absent; self-only summaries under DEC-076 with independent honor-formula updates (DEC-078); no honor/matching use |
+| Session history | Shared session ends after three requests or five minutes from the first; no new queue while active or own required feedback unfinished (DEC-077). History/detail owns immutable per-card ratings, without expiry (DEC-063/076) |
+| Acceptance/checks | All five accept within 20 seconds; non-acceptors leave and others requeue (premade edge OQ-017). Unanswered lobby discrepancy blocks until resolution or closure (DEC-080/081) |
+| Excluded feedback | Required cards still submitted before requeue; preserve evidence without excluded numerical updates (DEC-079) |
 | Rank and joining | Official API preference, latest-observed-rank confirmation/correction, structured human-host handoff and replaceable joining; existing discrepancy decisions remain |
 | Surfaces | Desktop-oriented website with mobile compatibility; future companion app and Discord direction, not a selected shell or completed integration |
 | Sequence | Major decisions → relevant competitor study → comprehensive QGuard specs → monochrome pages → color/iterations → HTML prototype → stack review → approved implementation |

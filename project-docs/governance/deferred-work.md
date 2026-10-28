@@ -391,33 +391,34 @@ boundary, not approval to implement either future feature.
 
 ## DEF-011 - Polish Participant-Declared Session End And Feedback Settlement Later
 
-- **Status:** feedback-expiry portion superseded by `DEC-063`; other session-end
-  polish remains deferred unless required by the revised contract
+- **Status:** expiry/batch settlement superseded by DEC-063/065; individual end
+  superseded by DEC-077. Further detection/anti-griefing polish remains deferred.
 - **Decision owner:** project owner
-- **Execution owner:** unassigned until the owner starts a later pass
-- **Current decision:** participant Session ended and multiple games per session
-  remain. `DEC-063` removes the ten-minute expiry, adds history-based completion
-  and immutable sent ratings. `DEC-065` resolves `OQ-013` with immediate eligible
-  input application and no retrospective correction. Later reports cannot undo
-  already-applied effects; do not preserve the old deadline or whole-session
-  settlement as an unchangeable requirement.
-- **Reason postponed:** owner wants a simple first version and does not yet
-  choose a more automated or refined completion/feedback system.
-- **Implementation state:** the approved first-pass session/settlement code and
-  deadline, missing-input, retry/concurrency tests cover the earlier version.
-  They do not verify `DEC-063`; later unrelated polish remains deferred and no
-  real game-end observation was added.
-- **Return condition:** owner first-build review or a later polish plan;
-  reassess the known risks before real-user release. No automatic activation
-  or approval of a particular future detector/provider integration.
-- **Risks retained:** premature/malicious end declarations, mismatched end
-  times while teammates continue playing, long/multiple-game sessions,
-  nonresponse and late feedback/reports. Stronger no-show involvement evidence
-  remains alongside this under `DEF-008`, not a current Discord implementation.
-- **Verification needed:** initial implementation must still test deadline,
-  all-complete early closure, return/nonresponse, pending report invalidation,
-  duplicate submissions and no double honor/reference application. Future
-  improvements need their own approved contract and abuse/failure evidence.
+- **Execution owner:** unassigned until an approved implementation/polish slice
+- **Current decision:** sessions may span multiple games. DEC-077 ends the shared
+  session after three distinct requests or five minutes from the first request;
+  active sessions and unfinished own feedback block requeue. DEC-063 keeps
+  feedback open indefinitely and sent ratings immutable. DEC-065 applies
+  eligible inputs immediately without undoing earlier effects after late reports.
+- **Reason postponed:** the owner selects the simple web-version declaration
+  rule. Better detection through a future desktop app is a possibility, not an
+  approved integration or verified capability; do not defer implementing the
+  new shared-end contract under the name of future polish.
+- **Implementation state:** first-pass backend code/tests still reflect earlier
+  end behavior. The saved design and its behavior tests are now reconciled;
+  they prove synthetic presentation, not persisted multi-user closure. Real
+  implementation follows in its session slice under DEC-082.
+- **Return condition:** approved session slice for DEC-077; owner request or a
+  later polish plan for stronger detection. Reassess risks before real-user
+  release; no automatic provider/test activation is authorized.
+- **Risks retained:** one participant can force QGuard closure after five minutes
+  while others still play; early/malicious requests, nonresponse, multiple-game
+  sessions and late reports remain. Stronger no-show evidence stays DEF-008.
+- **Verification needed:** first-request deadline, two-versus-three requests,
+  expiry/third-request race, deduplicated requests, reload/disconnect persistence,
+  one closure, queue/feedback gating, immutable/idempotent ratings and no double
+  honor application. The five-minute timer is not a feedback deadline. Future
+  improvements need their own approved contract and evidence.
 
 ## DEF-012 - Review Actual Data Retention Immediately After The First Implementation
 

@@ -2,6 +2,10 @@
 <section class="panel auth-panel"><p class="eyebrow">Your next team starts here</p>
 <h1>{{ ['login'=>'Welcome back', 'register'=>'Create your account', 'verify'=>'Check your email', 'forgot'=>'Reset your password', 'reset'=>'Choose a new password'][$screen] }}</h1>
 <x-errors />
+@if($screen === 'login')
+<div class="notice">Normal matchmaking awaits Riot account linking. Explore the planned experience with fictional players.</div>
+<p><a class="button secondary" href="{{ route('guest.review') }}#welcome">Continue as guest</a></p>
+@endif
 @if($screen === 'verify')
 <p>Verify your email before accessing QGuard. In this private build, email arrives in the local mail inbox.</p>
 <form method="post" action="{{ route('verification.send') }}">@csrf<button>Resend verification email</button></form>

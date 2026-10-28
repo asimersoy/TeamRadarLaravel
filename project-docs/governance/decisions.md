@@ -1783,7 +1783,9 @@ coherent local documentation commit, no push or other external action.
   `DEC-039`/`DEC-041`; existing eligibility and mathematical directions remain
 - **Superseded by:** `DEC-061` requires eligible ratings before requeueing;
   `DEC-063` removes the ten-minute feedback expiry and adds session-history
-  completion. Session-end and no-show directions otherwise remain
+  completion. DEC-077 replaces individual session-end declarations with shared
+  closure after three requests or five minutes from the first request. The
+  separate no-show direction remains
 
 ## DEC-044 - Delegate Region And Language Queue Design For The Valorant First Pass
 
@@ -2475,7 +2477,8 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 
 - **Date:** 2026-10-27
 - **Status:** approved next-pass product direction; not implemented;
-  `DEC-063` subsequently resolves non-expiring feedback and history
+  `DEC-063` subsequently resolves non-expiring feedback and history; DEC-076
+  corrects the audience attribution and selects self-only summaries
 - **Decision owner:** project owner
 - **Evidence:** owner requests required 1–10 honor feedback with optional
   communication/play-style sliders. The agent restates one overall honor
@@ -2497,7 +2500,8 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   values into a displayed summary is distinct from scoring; its method remains
   to be specified. A quiet/cautious or vocal/aggressive style is not inherently
   good or bad. Final poles/wording and interaction details await design review.
-- **Audience:** the subject player and their authorized matched teammates can
+- **Audience, historical recording superseded by DEC-076:** the subject player
+  and their authorized matched teammates can
   see descriptive summaries. Not public profiles, unrelated friends or general
   discovery. Individual received ratings and reviewer identities remain hidden
   from players. Existing cleared-admin access remains subject to the revised
@@ -2516,7 +2520,14 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   verified first-pass build is preserved, not retroactively relabeled.
 - **Affected records:** foundations, first-pass supersession notices,
   `OQ-006`/`OQ-012`, next-pass plan, comparison and current state
-- **Superseded by:** none
+- **Correction, 2026-10-28:** the owner explicitly disputed the earlier audience
+  answer attributed above, then requested a misclicked follow-up be disregarded.
+  After the distinction from a signup bio was explained and the question reissued,
+  the owner answered “Only the player being described.” DEC-076 controls. The
+  earlier attribution is retained as evidence of the correction, not approval.
+  No manual-versus-automatic origin flag is available for the old reply.
+- **Superseded by:** DEC-076 for audience and final slider wording; other approved
+  descriptor/required-honor directions remain
 
 ## DEC-062 - Complete Product Specifications and Page Design Before Stack Reconsideration
 
@@ -2594,7 +2605,8 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   change it. Draft interaction before submission is distinct from a sent rating.
   Players cannot see individual received ratings or who gave them. Session
   participation is visible as authorized roster data, not as a reviewer-rating map.
-  Optional descriptors and their audience follow `DEC-061`.
+  Optional descriptors follow `DEC-061`; DEC-076 now restricts their summaries
+  to the described player and corrects the earlier audience attribution.
 - **Preserved:** no numeric honor for a team dissolved before eligible shared
   play; existing honor mathematics, report-based eligibility, no automatic
   punishments and separate live/provider holds. History is now in scope, but
@@ -2612,7 +2624,9 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   Past-teammate friend-discovery tools remain deferred. `OQ-012` is resolved.
 - **Affected records:** foundations, feedback/session/flow supersession notices,
   `DEF-010`/`DEF-011`, next-pass plan, question register and current state
-- **Superseded by:** none
+- **Superseded by:** DEC-077 for the session-end trigger and ordinary at-most-one
+  unfinished-session invariant. No-expiry, immutable submissions and completion
+  before requeue remain; DEC-076 confirms per-teammate submission granularity.
 
 ## DEC-064 - Review Automatically Resolved Questions and Agent Defaults at Checkpoints
 
@@ -2988,4 +3002,228 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   checkpoint packet/CRQ-010, OQ-007, specification entry and current state.
 - **Supersedes:** pending next-version stack reconsideration under DEC-062 and
   the Reverb question following DEC-074. Does not revoke specification gates.
+- **Superseded by:** none
+
+## DEC-076 - Show Peer Descriptions Only To Their Subject And Confirm Feedback Details
+
+- **Date:** 2026-10-28
+- **Status:** approved owner review dispositions; not implemented
+- **Decision owner:** project owner
+- **Evidence:** during the checkpoint recap, the owner confirms required honor,
+  descriptive-only sliders, immediate eligible rating application, party-code
+  planning assumptions and Discord deferral, and approves P-01/P-02. The owner
+  disputes the recorded descriptor-audience answer, asks for a misclicked answer
+  to be discarded, then answers the reissued, explained question with **“Only
+  the player being described.”** That fresh response controls; the disregarded
+  answer supplies no authority and is not labeled automatically resolved.
+- **Meaning and audience:** these are summaries of optional post-session peer
+  observations about communication/play style, not a signup biography or
+  self-selected preference. Only the described player sees their summaries as
+  a player-facing feature. Matched teammates, unrelated users and friends do
+  not. Received individual votes and reviewer identities remain hidden. Existing
+  case-scoped cleared-admin evidence access under DEC-045 is unchanged.
+- **Approved UI details:** Quiet ↔ Talkative and Deliberate ↔ Aggressive are the
+  slider endpoints (P-01), without a good/bad color scale. Submit and confirm
+  one teammate card at a time (P-02); the sent card locks, other cards remain
+  drafts. Untouched optional sliders are omitted; they never affect honor or
+  matching. A self-written signup bio was not separately approved.
+- **Reconfirmed, not new decisions:** every eligible teammate needs an immutable
+  1–10 honor rating before requeue, without expiry; apply eligible ratings
+  immediately without retrospective corrections (DEC-061/063/065). Native
+  non-friend codes remain an assumption to validate after RSO before normal-use
+  reliance (DEC-068/DEF-014); Discord remains deferred (DEC-067).
+- **Still open:** aggregation, minimum evidence and disclosure-safe update
+  behavior under P-03/OQ-014. Remove the proposed teammate summary snapshot;
+  self-only access does not prove individual reviewers cannot be inferred.
+  P-04's excluded-author obligation question is not answered by this approval.
+  Subsequent DEC-078 selects independent honor-formula updates (display detail
+  remains OQ-014); DEC-079 separately settles the excluded-author obligation.
+- **Supersedes:** DEC-061's earlier audience attribution/selection and the
+  teammate-summary portions of the draft spec/design; settles P-01/P-02.
+- **Affected records:** checkpoint queue, OQ-014, feedback/data contracts,
+  foundations, planning and design-reconciliation notices.
+- **Superseded by:** none
+
+## DEC-077 - End A Shared Session After Three Requests Or Five Minutes
+
+- **Date:** 2026-10-28
+- **Status:** approved version-one direction; not implemented
+- **Decision owner:** project owner
+- **Evidence:** the owner points out that the queue gate prevents multiple
+  unfinished sessions, requires the current session to end before another queue,
+  and selects shared end after three participants click, or five minutes after
+  a first participant clicks if three requests do not arrive.
+- **Shared end:** the first participant's Session ended request starts a
+  five-minute countdown. Three distinct participants requesting end closes the
+  QGuard session immediately; otherwise expiry closes it. Two requests alone
+  do not close it early. This replaces immediate individual-participation end.
+- **Recorded implementation interpretation:** count each participant once;
+  measure five minutes from the first accepted request, with no restart from
+  later or duplicate requests. Persist server time/state so refresh, disconnect
+  or retry cannot restart the countdown or cause duplicate closure. These are
+  applications of the selected threshold/timing, not extra penalties or votes.
+- **Queue and feedback:** one active QGuard session per player; no new queue
+  while it is active, including the end-request countdown. Shared closure opens
+  the history/detail rating flow. Afterwards, each player must finish their own
+  eligible required feedback before requeue; they need not wait for other
+  players' ratings. Normal operation therefore permits unfinished feedback for
+  at most one session, not an accumulating backlog. Existing pre-play disband
+  and no-eligible-target cases remain distinct.
+- **P-07 correction:** oldest-first navigation is unnecessary in the normal
+  model. Route an active player to that session, or an ended-session player
+  with missing ratings to that session's detail. An abnormal/legacy multi-debt
+  state needs explicit recovery in the technical slice; it must not be enabled
+  as a normal product flow or silently resolved by discarding obligations.
+- **Limits:** closes QGuard's shared session, not the VALORANT party/game.
+  Clicking end is not proof of actual game completion or an early-leaving
+  admission. Current participants retain the existing active chat access until
+  shared closure, after which writes close and authorized history remains.
+  The separate no-show and pre-play rank-discrepancy rules are unchanged.
+- **Risk and later work:** one participant can end QGuard's session after five
+  minutes even if others continue playing. This is the owner's simple web-version
+  choice. A future desktop app might improve detection, but no sensor, client
+  API integration or dependable detection capability is selected or established.
+  Any additional withdrawal/override policy needs its own explicit contract.
+- **Supersedes:** DEC-043's individual end trigger, corresponding DEC-063 routing
+  and P-07's ordinary multi-session-debt premise. No feedback expiry is restored;
+  this five-minute timer ends the session, not the opportunity to rate.
+- **Affected records:** session/matching/feedback/data specs and acceptance,
+  checkpoint queue, foundations, DEF-011 and scoped design-reconciliation notice.
+- **Superseded by:** none
+
+## DEC-078 - Apply The Honor Update Formula Independently To Each Peer Descriptor
+
+- **Date:** 2026-10-28
+- **Status:** approved calculation direction; display-evidence detail still open
+- **Decision owner:** project owner
+- **Evidence:** the owner distinguishes updating each communication/play-style
+  description from combining dimensions for matchmaking, and directs using the
+  existing honor formula for each. The same backend scale as honor or an
+  equivalent scale such as 0–1000 is allowed.
+- **Decision:** communication and play style have independent running values,
+  smoothed references and eligible-input counts. Use the honor update formula
+  on each dimension's intentionally supplied input, with existing startup,
+  deviation attenuation and forward-only handling. Never mix dimensions with
+  one another or into honor, matchmaking, eligibility, ordering or punishment.
+- **Engineering representation, agent-selected within the owner's allowance:**
+  retain honor's 0–100 internal scale, midpoint initialization 50 and existing
+  development parameters for each independent stream. Slider endpoints map to
+  0 and 100; do not apply the honor input's 1–10 conversion to a 0–100 slider.
+  These are units, not a public score or good/bad judgment. An equivalent 0–1000
+  representation would require corresponding parameter scaling.
+- **Omission:** untouched/cleared sliders supply no input and do not advance
+  count/reference/value. An intentionally selected midpoint is real input.
+  Store no-observation separately from midpoint initialization; a baseline is
+  not evidence that teammates described the player that way.
+- **Privacy:** DEC-076 self-only summaries and hidden votes/authors remain.
+  Calculation choice does not approve the earlier three-reviewer display
+  threshold or specify disclosure-safe updates. OQ-014 now concerns those
+  display details only, not the formula.
+- **Supersedes:** P-03's proposed arithmetic mean; no combined style/matching score.
+- **Affected records:** feedback/data/acceptance contracts, P-03/OQ-014,
+  checkpoint queue, foundations and design-reconciliation scope.
+- **Superseded by:** none
+
+## DEC-079 - Require Feedback Submission Even When Its Numerical Effect Is Excluded
+
+- **Date:** 2026-10-28
+- **Status:** approved; resolves P-04/OQ-015
+- **Decision owner:** project owner
+- **Evidence:** asked whether excluded authors must still fill out feedback,
+  the owner explicitly says yes and requires them to do so.
+- **Decision:** conduct-report/early-leaving numerical exclusion does not waive
+  the author's outstanding required teammate cards. Submit before requeue.
+  Preserve self, original-premade and pre-play no-rating cases; do not create
+  a card for a prohibited relationship.
+- **Separate states:** required/submitted describes the completion obligation;
+  applied/excluded describes numerical effect. A valid excluded submission
+  completes its card and remains immutable evidence, without changing numerical
+  value/reference/count. Reusing the same eligible-input formula for descriptors
+  does not restore an excluded author's numerical influence.
+- **Preserved:** optional descriptors remain optional; no forced slider input,
+  neutral fill, skip, expiry or numerical eligibility restoration from submitting.
+  Already-applied effects remain under DEC-065. Later reports cannot reverse
+  them or reopen completed obligations.
+- **Supersedes:** rejects P-04's waiver proposal. “Eligible feedback” must
+  distinguish permitted targets from current numerical eligibility.
+- **Affected records:** feedback/reports/data, queue/session gates, acceptance,
+  proposal/open-question registers and checkpoint review.
+- **Superseded by:** none
+
+## DEC-080 - Keep An Unanswered Lobby Discrepancy Blocking Until Lobby Closure
+
+- **Date:** 2026-10-28
+- **Status:** approved; resolves P-05's nonresponse recovery choice
+- **Decision owner:** project owner
+- **Evidence:** the owner says an unanswered discrepancy stays until lobby end.
+- **Decision:** missing required responses keep the check pending and block
+  progression while the QGuard lobby/session is open. No default vote, abstention,
+  automatic clearance or independent discrepancy timeout. Existing answers may
+  resolve it; one eligible corroboration still disbands.
+- **End interpretation:** lobby end means QGuard's recorded closure, not detected
+  VALORANT closure. Keep the ordinary DEC-077 end-request action available while
+  the check blocks progression: three requests or five minutes from the first
+  closes the shared session. Existing authorized disband paths also close it.
+  Nonresponse alone does not start the five-minute end timer.
+- **Closure:** retain unresolved evidence; do not mark the check confirmed or
+  denied. Reject late writes into a closed check. Closure before eligible shared
+  play creates no rating debt. End is not game progression, misconduct proof
+  or an automatic penalty.
+- **Supersedes:** P-05's proposed new cancellation/timeout policy. Preserves
+  DEC-056–058's voters, one-corroboration rule and no abstention.
+- **Affected records:** session/discrepancy contract, OQ-010/P-05, acceptance
+  and design-reconciliation scope; actual game rank visibility remains unproven.
+- **Superseded by:** none
+
+## DEC-081 - Require Five Acceptances Within Twenty Seconds
+
+- **Date:** 2026-10-28
+- **Status:** approved core acceptance policy; premade failure handling pending
+- **Decision owner:** project owner
+- **Evidence:** owner selects all five accepting within 20 seconds. Decliners
+  or nonresponders leave matchmaking and the rest return to the pool.
+- **Decision:** offer the proposed five-player team to all five with one
+  twenty-second acceptance window. Only all five acceptances before expiry
+  allow shared-session entry. Nobody can accept on behalf of teammates.
+- **Failed attempt:** a decline or deadline nonresponse prevents that proposed
+  team proceeding. Stop matchmaking for those declining/failing to respond;
+  automatically return the others to the pool. No honor deduction, cooldown,
+  ban or rating obligation for a failed pre-session offer is selected.
+- **Technical contract to finish:** server deadline, terminal outcomes,
+  duplicate/late requests, decline/expiry races, reconnect and atomic reservation/
+  return. A pending answer before expiry is not a timeout merely because another
+  player declines. Exact early-decline processing belongs in the slice contract.
+- **Premade dependency:** DEC-037 keeps original premades intact. A question is
+  pending: after one member fails acceptance, do the remaining friends continue
+  together without them, or does the whole premade stop while other parties/solos
+  requeue? Do not silently split or eject a whole premade.
+- **Supersedes:** the open quorum/deadline/basic failure part of CRQ-012;
+  premade handling and exact slice mechanics remain to reconcile.
+- **Affected records:** matching/session/data, acceptance, checkpoint queue and
+  implementation outline. No live matchmaking or client behavior was tested.
+- **Superseded by:** none
+
+
+## DEC-082 - Reconcile The Reviewed Rules And Begin Settled Implementation Slices
+
+- **Date:** 2026-10-28
+- **Status:** approved execution direction; unanswered policy remains pending
+- **Decision owner:** project owner
+- **Evidence:** “reconcile the specifications … add whatever we talked about
+  to mockup sketches and designs and then start with the implementation.”
+- **Decision:** apply the already-approved product choices to specifications
+  and the current mockup, verify them, then implement bounded settled slices
+  on the confirmed stack. This ends the blanket stop before application work;
+  it does not approve unanswered choices or override the specification gate.
+- **First slice:** R1a isolated guest review entry and server-side normal-queue
+  block until RSO, applying DEC-066 and ID-01–04. The agent's concrete contract,
+  verification and scope are in the [execution record](../planning/review-version/reconciliation-and-implementation.md).
+  Full backend behavior for revised feedback/session/acceptance follows in its
+  own slices; serving a walkthrough is not implementation of those services.
+- **Pending:** OQ-014 summary display and OQ-017 failed-premade recovery questions
+  remain open. No timeout/preselected answer is counted as approval. Live RSO,
+  real-player checks, Discord, public release and controlled operations retain
+  their existing gates.
+- **Preserved:** approved brand, palette, layouts, portable workflow separation,
+  legacy files, unrelated work and meaningful commit batches.
 - **Superseded by:** none

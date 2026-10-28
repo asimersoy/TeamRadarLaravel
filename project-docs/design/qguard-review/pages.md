@@ -32,6 +32,7 @@ part of coverage rather than separate backend routes.
 | D22 `#security` | Self: account safety | Password/logout sample actions | Validation, confirmation; no actual credentials |
 | D23 `#admin` | Cleared-admin sample | Open case | Open, reviewed, empty; unauthorized recovery is D25 |
 | D24 `#case` | Cleared-admin sample | Evidence sections, note, mark reviewed | Excluded before application, applied before reports, stale review |
+| D26 `#acceptance` | Proposed five / reviewer | Accept, decline, review peer responses | 20-second deadline, all-five activation, solo removal/return, pending premade exception |
 | D25 `#error` | Visitor/player | Retry, home or login as relevant | Denied, session expired, offline, not found |
 
 ## Shared Interaction Coverage
@@ -49,7 +50,7 @@ Riot-friend/game presence or friend honor disclosure.
 
 ## Key Test Paths
 
-Guest: D02→D07→D08 sample→D09→D10→D13→D14→D18→D09.
+Guest: D02→D07→D08 sample→D09→D10→D13→D26→D14→D18→D09.
 Feedback debt: D09 Find match→D18 incomplete→D18 complete→D10.
 Premade: D12→D11, all-member readiness then D10/D13.
 Report: D18→D19→receipt; admin reviewer D23→D24.
@@ -59,3 +60,23 @@ Security/error states use separate direct catalog routes and are simulations.
 No voice/Discord screen, public player browse or competitor-like paid tier is
 part of this inventory. Complete five-person roster and per-participant history
 are required; a landing page alone is not this design deliverable.
+
+
+## Current behavior additions — DEC-076–082
+
+- `#acceptance` / queue offer dialog: common 20-second counter, own acceptance,
+  fictional peer actions, unanimous activation, solo removal/return on expiry.
+  A decline prevents activation; pending peers retain the remainder of the
+  window in this preview. Exact server early-failure contract belongs to R4.
+- `#team?state=ending`: shared-end design sketch; actual demo countdown starts
+  on Request to end. Third request or deadline opens eligible feedback.
+- `#discrepancy?state=waiting`: end requests stay available, no separate vote
+  timeout, pre-play closure creates no rating cards.
+- `#session?state=excluded-author`: required immutable cards remain; explain
+  that numerical effects are excluded. Sample UI only, no calculator evidence.
+- `#profile?state=teammate`: rank/honor snapshot only, no descriptor summaries.
+  `#profile`: self-only descriptor layout; display threshold explicitly pending.
+
+The revised design
+has 26 product routes plus the review catalog; historical coverage counts stay
+attached to the versions that were actually tested.
