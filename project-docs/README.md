@@ -10,8 +10,8 @@ reusable workflow system remains separate in
 under DEC-082. Stack, brand/layout and Forest & Lime palette are settled.
 DEC-076–081 is reconciled into the current specifications and interactive design.
 R1a starts isolated guest review access and the normal-queue RSO boundary.
-OQ-014 descriptor display and OQ-017 premade recovery remain pending only for
-those dependent behaviors. Application-wide completion is not claimed.
+DEC-083 stops failed premades intact; DEC-084 shows private descriptors after
+three distinct eligible reviewers. OQ-014/OQ-017 are resolved. Application-wide completion is not claimed.
 
 **Current next-pass work:** [product/specification/design plan](planning/product-design-pass.md)
 under `DEC-061`–`DEC-068`. Required honor feedback, optional descriptive sliders

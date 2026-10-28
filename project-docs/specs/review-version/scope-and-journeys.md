@@ -48,7 +48,7 @@ uses neutral draft copy and invented accounts, not a published policy.
 | Discrepancy | Named account/rank report → other three confirm/deny → one corroboration disbands; missing responses block until resolution or lobby closure | Keep unresolved evidence on closure; no default vote, automatic punishment or pre-play rating debt |
 | Session finish | First end request starts five minutes → third request or expiry closes shared session → session detail → rate eligible teammates → individual receipts | Session closed and own queue obligation complete; other players may still owe feedback |
 | Return with debt | Find match → the single unfinished session's detail → required ratings → rank check | No silent expiry, skip or bypass; normal multi-session backlog is prevented |
-| Failed acceptance | Decline or timeout → stop matchmaking for declining/nonresponding players → others return to pool | No played session or rating debt; premade edge pending OQ-017 |
+| Failed acceptance | Decline or timeout → stop failed solos and whole failed premades → fully accepted independent entries return | No played session or rating debt; premade membership preserved under DEC-083 |
 | Conduct report | Session participant opens report → selects target/category and optional context → submits → receipt | Evidence and applicable automatic exclusion; no promised sanction |
 | Admin | Cleared access → inbox → case/evidence → note/mark reviewed | Audited review state; no honor rewrite or punishment |
 

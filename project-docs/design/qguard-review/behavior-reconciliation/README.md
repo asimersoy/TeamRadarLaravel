@@ -1,6 +1,8 @@
 # Reconciled behavior review — 2026-10-28
 
-**Authority:** DEC-076–082. Approved layout, Forest & Lime palette and brand
+**Baseline authority:** DEC-076–082; the original checks/screens below belong
+to commit `6639dce`. **Current follow-up:** DEC-083/084 resolves the previously
+pending premade/display choices; see the final section. Approved layout, Forest & Lime palette and brand
 retained. Canonical source: [prototype](../prototype/index.html); current
 [standalone](../qguard-review.html). [Application entry contract](../../../planning/review-version/reconciliation-and-implementation.md).
 
@@ -78,3 +80,32 @@ closure, report-order concurrency, game-code validity, RSO, Discord or launch
 readiness. Only guest routing/isolation and the real queue block are implemented
 in R1a. The earlier first-pass backend suite continues to test its historical
 engine, not the revised policies.
+
+
+## Follow-up — explicit premade and descriptor answers
+
+DEC-083 stops the entire premade if any member declines or misses the deadline,
+keeping membership intact. Other fully accepted premades and accepted solos
+return. The preview now differentiates failure inside the current premade from
+failure by an independent solo, rather than stopping every premade.
+
+DEC-084 requires three distinct eligible reviewers per descriptor before its
+self-only summary appears. `#profile?state=new` shows no feedback, `insufficient`
+shows one/two-reviewer placeholder wording, `mixed` demonstrates communication
+qualified while play style is not, and the default shows both qualified.
+No midpoint is presented as an observed description. Counts and values are
+fictional fixtures; server counting/calculation remains for the backend slice.
+
+**Checks:** 15 focused browser tests passed across Chromium, Firefox and WebKit.
+They cover same-premade decline, own timeout, unaffected-premade return, retained
+membership, no session/debt from a failed offer, existing solo recovery and
+independent private descriptor states at 1440px and 390px. Source JS syntax,
+bundle equality, scoped diff/whitespace and Markdown link checks also passed.
+No backend/PHP changes, new image build, live API or player tests in this follow-up.
+Earlier broad test totals and image hash remain dated baseline evidence.
+
+Inspected renders: [stopped premade](premade-stopped.png),
+[mixed descriptor desktop](descriptor-mixed-1440.png),
+[mixed descriptor mobile](descriptor-mixed-390.png). The owner subsequently
+requested committing this coherent decision/specification/preview/test batch.
+It is one rollback unit, not separate commits for each answer. No remote action.

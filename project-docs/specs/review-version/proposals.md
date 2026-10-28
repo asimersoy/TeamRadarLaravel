@@ -7,7 +7,7 @@ auto-resolved questions. Requirements remain subject to the [packet](README.md).
 | --- | --- | --- | --- |
 | P-01 | Descriptor endpoints Quiet–Talkative and Deliberate–Aggressive; no good/bad color scale | Short readable tendencies; alternatives include Reserved–Communicative and Calculated–Aggressive. Words can mischaracterize skill or imply value | Approved in DEC-076; later copy changes remain subject to normal review |
 | P-02 | Save/confirm each teammate card independently; sent card locks; unsubmitted cards remain drafts | Supports interrupted sessions and visible progress; alternative is one immutable whole-form submission | Approved in DEC-076; does not permit editing sent ratings |
-| P-03 | Independent honor-formula updates for each descriptor (DEC-078), with self-only audience (DEC-076) | Replaces arithmetic mean; omitted sliders do not update state | Calculation approved; minimum evidence/disclosure-safe display remains OQ-014. Three-reviewer display threshold is unapproved |
+| P-03 | Independent honor-formula updates for each descriptor (DEC-078), with self-only audience (DEC-076) | Replaces arithmetic mean; omitted sliders do not update state | Resolved DEC-078/084: calculate independently from first input; display each trait after three distinct eligible reviewers; hide values before then |
 | P-04 | Require permitted teammate cards even when numerical effect is excluded | Completion and numerical eligibility are separate; no prohibited self/premade card | Resolved DEC-079: waiver rejected; retain immutable evidence with no excluded numerical update |
 | P-05 | Missing discrepancy responses block until resolution or QGuard lobby closure | No default vote or separate response timeout; existing shared end remains available | Resolved DEC-080: retain unresolved evidence at closure, no pre-play rating debt |
 | P-06 | Retry retrieval or declare current rank when an already RSO-linked user's match-data request fails; keep failure provenance visible | Continues existing fallback/manual-confirmation direction; alternative blocks queue until retrieval recovers | Draft live-provider failure contract; does not allow bypassing RSO or queueing unknown/unplaced |
@@ -19,8 +19,9 @@ Existing approved rules are not reopened by these proposals: no skip or feedback
 expiry, no descriptor use in matching, private received ratings, one corroborating
 discrepancy vote, no “can't verify” option, forward-only honor and no first-version
 Discord. P-04/P-05 are settled by explicit owner answers (DEC-079/080).
-DEC-081 selects all-five acceptance in twenty seconds; premade failure handling
-is awaiting the owner’s answer, not an automatic default.
+DEC-081/083 selects all-five acceptance in twenty seconds and stops an entire
+premade if any member fails; fully accepted other entries return. DEC-084 selects
+three reviewers per descriptor. Both answers are explicit, not automatic defaults.
 
 Final review should distinguish acceptance of the visible prototype from policy
 approval. A request to adjust color/layout does not approve missing data rules.

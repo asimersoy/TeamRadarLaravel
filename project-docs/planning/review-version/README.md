@@ -2,7 +2,7 @@
 
 **Reached:** 2026-10-27. **Current:** stack and settled policy review complete;
 DEC-082 starts [reconciliation and bounded implementation](reconciliation-and-implementation.md).
-OQ-014/OQ-017 remain open only for dependent behaviors. The earlier review
+DEC-083/084 resolves OQ-017/OQ-014. The earlier review
 agenda below records decisions and provenance; it is not a blanket stop.
 
 ## Start Here
@@ -46,17 +46,16 @@ awaits applicable specifications and approvals.
 
 **Group 2 — Feedback/privacy dispositions:** DEC-078 selects the existing
 honor formula independently for each optional descriptor; self-only visibility
-remains DEC-076. Minimum evidence/disclosure-safe display is the remaining
-OQ-014 detail; the earlier mean/three-reviewer proposal was not approved as a
-whole. DEC-079 settles P-04: numerically excluded authors still complete their
+remains DEC-076. DEC-084 now selects three distinct eligible reviewers per trait before display;
+the earlier arithmetic mean remains superseded. DEC-079 settles P-04: numerically excluded authors still complete their
 required cards before requeue, retaining evidence without excluded updates.
 
 **Group 3 — Lobby check and match acceptance:** DEC-080 settles P-05: unanswered
 checks stay blocking until resolved or the QGuard lobby closes; existing end
 requests remain usable. DEC-081 requires all five to accept within 20 seconds,
 removes decliners/nonresponders from matchmaking and returns the others to the
-pool. OQ-017 is a pending owner question about preserving a premade when one
-member fails acceptance. No independent discrepancy timeout or new penalty.
+pool. DEC-083 resolves OQ-017: a failed member stops their entire premade intact;
+only fully accepted independent entries return. No independent discrepancy timeout or new penalty.
 
 **Group 4 — Remaining defaults/contracts:** labels and per-card submission are
 approved; multi-session feedback backlog is prevented. Recap guest/artifact and
@@ -100,8 +99,8 @@ Please notice these selections rather than assuming they were all new approvals:
   is already approved by DEC-070/073; do not present it as unanswered.
 - **Latest owner dispositions:** DEC-078/079/080 settle descriptor calculation,
   mandatory excluded submissions and discrepancy waiting; DEC-081 selects the
-  20-second all-five acceptance rule. OQ-014 display detail and OQ-017 premade
-  failure handling remain. P-06 precedes live integration.
+  20-second all-five acceptance rule. DEC-083/084 now resolves premade recovery and the three-reviewer display
+  threshold. P-06 precedes live integration.
 
 The earlier accepted first-pass numeric matching/scoring defaults are explicitly
 preserved in the new modules; no new algorithm parameters or desktop framework
@@ -139,6 +138,5 @@ brand artifacts. The owner asked whether anything remains before this checkpoint
 we are here. That design task is verified and DEC-074/075 subsequently completes
 Group 1, stack review. Continue with the assumptions/defaults recap; no additional
 design-selection round is required.
-DEC-078–081 subsequently settles the main policy group. OQ-014 display detail,
-OQ-017 premade failure handling and required slice contracts remain before
-affected application work; P-06 precedes live integration.
+DEC-078–081 subsequently settles the main policy group. DEC-083/084 resolves the subsequent display and premade choices. Complete
+required technical slice contracts before their implementation; P-06 precedes live integration.

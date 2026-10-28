@@ -12,8 +12,10 @@ The saved [design](design/qguard-review/qguard-review.html) now shows the all-fi
 20-second match offer, shared end requests/countdown, active-session queue gate,
 private descriptor views, excluded-author required cards and discrepancy closure.
 Descriptor values are explicitly fictional layout examples, not implemented
-calculation/display evidence. OQ-014 display timing and OQ-017 premade failure
-remain unanswered and block only dependent implementation.
+calculation evidence. DEC-083 resolves premade failure: stop that whole party
+intact and return fully accepted independent entries. DEC-084 resolves descriptor
+display: three distinct eligible reviewers per trait; empty states before then.
+OQ-014/OQ-017 no longer block policy readiness; backend slice contracts remain.
 
 **Implementation started:** R1a adds `/guest` with isolated tab-scoped sample
 state, no service calls, packaged approved design and real server-side queue/
@@ -32,7 +34,12 @@ application image builds and serves the packaged review. See the execution
 record for distinctions between new server checks and historical regressions.
 The current loopback review is `http://127.0.0.1:55000/guest#welcome`; its app
 has normal matchmaking disabled. Port 8121 belongs to another local service.
-Changes are grouped into one local checkpoint commit; no push or deployment.
+R1a was saved in `6639dce`. The owner now requests a coherent local commit of
+the DEC-083/084 decisions, reconciled specs, preview and verification evidence;
+15 focused browser checks pass. No push or deployment. See the behavior review
+for the newer evidence and the [readiness audit](planning/review-version/reconciliation-and-implementation.md#implementation-readiness-and-owner-requested-commit--2026-10-28)
+for what remains: no further major owner choice blocks the next bounded
+prototype slices; technical slice contracts and later live-use gates remain.
 
 ## Brand And Mobbin Design Review — 2026-10-28
 

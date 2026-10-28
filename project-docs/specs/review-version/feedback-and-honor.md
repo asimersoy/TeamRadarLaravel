@@ -1,6 +1,6 @@
 # Feedback, Honor And Descriptive Summaries
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-027–034/037/041/043/047/052/061/063/065/076/077/078/079.
+**Status:** QG-REVIEW-1 draft. Authority: DEC-027–034/037/041/043/047/052/061/063/065/076/077/078/079/084.
 **Dependencies:** immutable session roster, reports, queue gate, data/access.
 Requirements FB. Update on scoring, eligibility, display or timing decisions.
 
@@ -35,8 +35,9 @@ Requirements FB. Update on scoring, eligibility, display or timing decisions.
 - **FB-06, approved labels:** Quiet ↔ Talkative and Deliberate ↔ Aggressive
   describe tendencies, not good/bad conduct (DEC-076/P-01). DEC-078 selects
   independent honor-formula updates for each descriptor, specified below.
-  Minimum evidence and disclosure-safe display remain P-03/OQ-014; the earlier
-  arithmetic-mean proposal is superseded. Sample fixtures prove no calculation.
+  DEC-084 requires three distinct eligible reviewers per descriptor before
+  display. The earlier arithmetic-mean proposal is superseded. Sample fixtures
+  prove no backend calculation or reviewer-count enforcement.
 - **FB-07, approved audience:** only the player being described may see their
   summary (DEC-076). Matched teammates, friends and unrelated players cannot.
   Individual received votes/authors remain hidden; existing cleared-admin case
@@ -105,8 +106,25 @@ Omission means no state/count/reference change; intentional midpoint is input.
 Apply each supplied dimension at most once per card, with separate eligibility/
 order evidence. Excluded input cannot regain influence through a descriptor.
 Use current-state/forward-only handling without replay; no combined style score
-or influence on honor/matching. Minimum display count/update privacy remains
-OQ-014; three reviewers is an unapproved display proposal, not a calculation gate.
+or influence on honor/matching.
+
+### Display threshold and reviewer evidence — DEC-084
+
+Display each summary after three distinct eligible reviewers have contributed
+that descriptor. Counts are separate per trait and are not eligible-input counts:
+repeat reviewers still affect the formula but count only once toward display.
+Use retained internal reviewer identity/application evidence; do not send that
+identity set or raw received answers to player payloads. Omitted or numerically
+excluded answers contribute no reviewer. Later reports do not undo already
+applied evidence or decrement qualifying history under the forward-only rule.
+Calculations occur from the first eligible answer; display begins at three and
+then reflects the current value. No new honor/matching criterion follows.
+
+At zero, show “No feedback yet”; at one or two, “Not enough feedback yet.” Hide
+the summary value bar until qualified, rather than representing the initialized
+midpoint as a received description. Owner permitted either empty wording or a
+midpoint; these labels are agent-selected reversible UI details. Only self sees
+a qualified summary. Three reviewers is not a guarantee against all inference.
 
 ## Required Submission Despite Numerical Exclusion — DEC-079
 
@@ -125,7 +143,8 @@ rejection; immutable retry receipt; unauthorized targets; full-premade/no-target
 state; long-late returns; prevention of multiple active/unfinished sessions;
 shared closure before rating/requeue; per-author completion;
 excluded-author completion without numerical effect; independent descriptor
-states/counts and endpoints; omitted versus intentional midpoint; no descriptor
+states/counts and endpoints; zero/one/two/three distinct reviewers, repeat reviewer,
+one-trait-only input, exclusion before versus after application, and self-only display; omitted versus intentional midpoint; no descriptor
 influence on honor/matching; known/late report threshold; one versus two distinct
 reporters; no double apply;
 reference input unaffected by attenuation; no raw ratings in shared responses.

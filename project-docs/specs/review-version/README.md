@@ -6,7 +6,7 @@
   [technical contract](../../planning/review-version/reconciliation-and-implementation.md).
   Remaining consequential choices are not approved by this execution direction.
 - **Owner:** project owner; primary agent authors and reconciles the packet
-- **Authority:** current decision register through DEC-082, especially
+- **Authority:** current decision register through DEC-084, especially
   DEC-052–058, DEC-061–068 and DEC-076–081; latest explicit owner instructions prevail
 - **Baseline:** the implemented [first-pass suite](../first-pass/README.md)
   remains historical evidence; this packet does not claim its new behavior exists
@@ -48,8 +48,8 @@ apply to every relevant route, API action and background job in a later build.
 | Three optional feedback dimensions and skip | One mandatory 1–10 overall honor rating; optional peer descriptors |
 | Ten-minute feedback cutoff and session settlement batch | Feedback remains open; own unfinished obligations block queue; apply eligible submitted inputs immediately |
 | Individual end immediately opens ratings | Shared closure after three requests or five minutes from the first; active-session and own-feedback queue gates |
-| Teammate-visible descriptor summaries/arithmetic-mean proposal | Self-only player visibility; separate honor-formula state for each descriptor; display evidence/update detail still open |
-| Unspecified acceptance and nonresponse recovery | Five acceptances in 20 seconds; non-acceptors leave, others requeue (premade edge pending); unanswered discrepancy blocks until lobby closure |
+| Teammate-visible descriptor summaries/arithmetic-mean proposal | Self-only player visibility; separate honor-formula state for each descriptor; display at three distinct eligible reviewers per trait |
+| Unspecified acceptance and nonresponse recovery | Five acceptances in 20 seconds; failed premades stop intact; fully accepted other entries requeue; unanswered discrepancy blocks until lobby closure |
 | Proposed waiver for numerically excluded authors | Required cards still submitted; preserve evidence, skip excluded numerical effects |
 | No participant history | Session list/detail owns rating and later revisit |
 | Late reports could prevent a pending batch | Known exclusions prevent future input; later reports never undo already applied effects |

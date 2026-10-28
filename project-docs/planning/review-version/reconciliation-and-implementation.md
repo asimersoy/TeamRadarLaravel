@@ -31,10 +31,11 @@ slice; the existing migrations run only against disposable `qguard_test`.
 3. Continue backend session/feedback slices against their complete contracts,
    with concurrency and migration evidence. No claim that R1a implements them.
 
-OQ-014 display timing/minimum evidence and OQ-017 failed-premade recovery remain
-pending explicit answers. The questions have been sent; silence is not approval.
-Their dependent implementation is excluded from R1a. The prototype marks the
-premade failure branch as pending and private descriptor values as layout samples.
+At the R1a checkpoint these two choices were pending. The subsequent explicit
+answers DEC-083/084 resolve both: stop whole failed premades intact and display
+each private descriptor after three distinct eligible reviewers. Current mockup
+and specifications reflect them; R1a's dated checks below remain evidence for
+its earlier artifact. Backend policies still need their implementation slices.
 
 ## R1a technical contract (agent implementation choices)
 
@@ -106,8 +107,7 @@ PR, deployment, live player/provider test or destructive operation authorized.
 
 No migration was added, no persistent data transformed, and no live RSO/game/
 Discord/player test was run. Full backend session/feedback/acceptance conversion,
-complete Livewire shell migration, retention/public release review and the two
-pending policy answers remain. No claim that the Riot-reviewable build is
+complete Livewire shell migration, retention/public release review remain; the two policy answers were subsequently resolved by DEC-083/084. No claim that the Riot-reviewable build is
 complete or that live use is authorized.
 
 ## Commit and next work
@@ -120,5 +120,39 @@ deployment, history rewrite or production-data operation occurred.
 
 Next execute R2/R3 with a complete additive schema/compatibility contract for
 shared closure, immutable per-target obligations and forward-only applications;
-R4 depends on OQ-017, and real descriptor display depends on OQ-014. Do not
+R4 must implement DEC-083, and real descriptor display must implement DEC-084. Do not
 convert the sample HTML timers/values into claims of server enforcement.
+
+## Implementation readiness and owner-requested commit — 2026-10-28
+
+**Request:** commit the current changes and identify anything still needed
+before implementation. **Audit baseline:** `6639dce` on `new-development` plus
+the related DEC-083/084 decision/specification/preview/test changes. Route this
+as audit/reconciliation, product planning, decision safety and Git checkpoint
+work under the existing workflow; no protected workflow edits or new policy.
+
+**Finding:** no further major owner decision blocks continuing the bounded
+prototype implementation. DEC-083/084 resolves OQ-017/OQ-014. The stack and
+current product behavior are selected; the mockup reflects both new answers.
+R1a already works, but the revised backend services and complete application
+shell are not yet implemented. This is readiness to continue, not completion.
+
+| Remaining item | When required | Responsibility / boundary |
+| --- | --- | --- |
+| Concrete schema, service transitions, compatibility/migration approach, access checks and concurrency acceptance | Before and during each affected implementation slice | Agent prepares the contract from approved policy, then implements and verifies it; ask the owner only if a genuine new policy choice emerges |
+| Actual stored-data inventory and retention/privacy review (DEF-012, OQ-006), audience/use/public-claim boundaries (OQ-004/005) | Data review remains the next implementation review; applicable boundaries must be settled before real-user collection or release | Owner decisions remain open; synthetic prototype work does not settle them |
+| Live rank retrieval failure/fallback behavior (P-06), Riot production approval and RSO configuration | Before the later live integration / normal matchmaking slice | Provider evidence and affected owner choices; normal queue remains closed |
+| Real non-friend party-code and rank/account visibility checks (DEF-014) | After RSO integration, before normal real-player use | Owner-assisted live tests; planning assumption is not verified capability |
+| Discord implementation (DEF-007) | Later, after approval and RSO | Explicitly deferred; not a prerequisite for this web review build |
+
+**Commit boundary:** save both decisions, their specifications and current-state
+links, both identical generated review artifacts, focused browser regressions
+and inspected screenshots as one local rollback unit. The prior R1a commit
+remains intact. No push, PR, deployment or history rewrite is included.
+
+**Evidence:** the unchanged preview/test source retains its 15 passing focused
+browser checks across Chromium, Firefox and WebKit. JS syntax, both generated
+bundles, 296 local link targets, 46 Markdown anchors and diff whitespace checks
+passed again for this checkpoint. The complete scoped diff was reviewed; no
+unrelated changes were present. Earlier backend totals and image hash apply to
+R1a, not new backend behavior.

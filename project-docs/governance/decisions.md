@@ -3178,7 +3178,7 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
 ## DEC-081 - Require Five Acceptances Within Twenty Seconds
 
 - **Date:** 2026-10-28
-- **Status:** approved core acceptance policy; premade failure handling pending
+- **Status:** approved core acceptance policy; premade handling resolved by DEC-083
 - **Decision owner:** project owner
 - **Evidence:** owner selects all five accepting within 20 seconds. Decliners
   or nonresponders leave matchmaking and the rest return to the pool.
@@ -3193,12 +3193,13 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   duplicate/late requests, decline/expiry races, reconnect and atomic reservation/
   return. A pending answer before expiry is not a timeout merely because another
   player declines. Exact early-decline processing belongs in the slice contract.
-- **Premade dependency:** DEC-037 keeps original premades intact. A question is
-  pending: after one member fails acceptance, do the remaining friends continue
+- **Premade dependency, resolved by DEC-083:** DEC-037 keeps original premades
+  intact. The question at this decision was: after one member fails acceptance, do the remaining friends continue
   together without them, or does the whole premade stop while other parties/solos
   requeue? Do not silently split or eject a whole premade.
 - **Supersedes:** the open quorum/deadline/basic failure part of CRQ-012;
-  premade handling and exact slice mechanics remain to reconcile.
+  premade handling is subsequently resolved in DEC-083; exact slice mechanics
+  remain to reconcile.
 - **Affected records:** matching/session/data, acceptance, checkpoint queue and
   implementation outline. No live matchmaking or client behavior was tested.
 - **Superseded by:** none
@@ -3220,10 +3221,64 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   verification and scope are in the [execution record](../planning/review-version/reconciliation-and-implementation.md).
   Full backend behavior for revised feedback/session/acceptance follows in its
   own slices; serving a walkthrough is not implementation of those services.
-- **Pending:** OQ-014 summary display and OQ-017 failed-premade recovery questions
-  remain open. No timeout/preselected answer is counted as approval. Live RSO,
+- **Pending at this instruction:** OQ-014 summary display and OQ-017 premade
+  recovery were open; subsequent explicit answers DEC-083/084 resolve them.
+  No timeout/preselected answer is counted as approval. Live RSO,
   real-player checks, Discord, public release and controlled operations retain
   their existing gates.
 - **Preserved:** approved brand, palette, layouts, portable workflow separation,
   legacy files, unrelated work and meaningful commit batches.
 - **Superseded by:** none
+
+
+## DEC-083 - Stop The Entire Premade After Any Member Fails Acceptance
+
+- **Date:** 2026-10-28
+- **Status:** approved; resolves OQ-017 and completes MM-13
+- **Decision owner:** project owner
+- **Evidence:** direct owner reply: “Stop that entire premade party; only the
+  other parties or solo players return to matchmaking.”
+- **Decision:** if any member declines or fails to respond by the common
+  20-second deadline, stop matchmaking for the entire original premade,
+  including members who accepted. Keep the premade together; do not eject the
+  non-acceptor or dissolve its membership. Returning to queue needs a new
+  deliberate normal queue attempt, not automatic re-entry of that party.
+- **Unaffected entries:** return accepted solos and other premades whose every
+  member accepted. Evaluate each original entry independently: another premade
+  with its own non-acceptor also stops. Do not requeue a nonresponding solo.
+- **Preserved:** five-of-five acceptance, no premature timeout before the
+  deadline, no extra penalty/cooldown/rating debt. Atomic reservation release,
+  exactly-once outcomes and reconnect remain technical requirements for R4.
+- **Supersedes:** the pending premade exception in DEC-081; the core acceptance
+  rule remains. No new party disband, split or sanction authority.
+- **Affected:** matching/data/acceptance specs, current plans, mockup failure flow.
+
+## DEC-084 - Show Each Private Descriptor After Three Distinct Reviewers
+
+- **Date:** 2026-10-28
+- **Status:** approved; resolves OQ-014's display threshold
+- **Decision owner:** project owner
+- **Evidence:** after explanation of first display, owner says “let's wait for
+  three reviewers” and permits either a midpoint or an empty-feedback message.
+- **Decision:** show each descriptor summary only after three distinct eligible
+  teammates have contributed to that descriptor. Communication and play style
+  qualify independently. Keep applying eligible inputs immediately with the
+  separate honor-formula streams under DEC-078; this threshold gates display,
+  not calculation. After qualification, display the current summary as eligible
+  inputs arrive. Self-only access remains DEC-076.
+- **Counting implementation:** use the internal author identity already retained
+  with immutable feedback/application evidence. Count distinct author IDs per
+  recipient and descriptor, not submissions or sessions. Repeated answers from
+  the same reviewer can update the value but add no new unique reviewer.
+  An omitted slider adds neither an input nor a reviewer. Numerically excluded
+  answers do not qualify; later reports do not remove already-applied evidence
+  under the forward-only rule. No reviewers or individual votes are exposed.
+- **Delegated empty state:** agent chooses “No feedback yet” for zero eligible
+  reviewers and “Not enough feedback yet” for one or two; omit the value bar.
+  Do not present initialized midpoint 50 as an observed description. These are
+  reversible labels within the owner's explicit flexibility, not new policy.
+- **Limits:** the threshold reduces single-review exposure; it does not promise
+  that a player can never infer a recent contribution from later score movement.
+- **Affected:** feedback/data/access/acceptance specs, self-profile mockup,
+  checkpoint queue and downstream schema/calculation tests. No honor threshold
+  or matchmaking input is added.

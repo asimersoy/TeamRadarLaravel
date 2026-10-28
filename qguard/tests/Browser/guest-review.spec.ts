@@ -137,3 +137,49 @@ test('every catalog route remains renderable after behavior reconciliation', asy
     expect(failures).toEqual([]);
     console.log('Catalog routes checked:',routes.length);
 });
+
+for (const scenario of ['member declines', 'self misses deadline', 'independent solo declines']) {
+    test(`premade acceptance: ${scenario}`, async ({page}, info) => {
+        await page.clock.install();
+        await route(page,'friends');
+        await page.locator('[data-action="invite-friend"][data-name="Mina"]').click();
+        await page.locator('[data-action="invite-friend"][data-name="Vega"]').click();
+        await route(page,'queue');
+        await action(page,'form-team').click();
+        await expect(page.getByRole('dialog')).toContainText('Your premade: Ari, Mina, Vega');
+        if (scenario !== 'self misses deadline') await action(page,'accept-offer').click();
+        if (scenario === 'member declines') await action(page,'sample-decline-premade').click();
+        if (scenario === 'independent solo declines') await action(page,'sample-decline-peer').click();
+        await action(page,'sample-accept-peers').click();
+        await page.clock.fastForward(20001);
+        await expect(page).toHaveURL(scenario === 'independent solo declines' ? /#queue$/ : /#party$/);
+        await expect(page.locator('#toast')).toContainText(scenario === 'independent solo declines' ? 'search continues together' : 'Your party stays together');
+        const saved = await page.evaluate(()=>JSON.parse(sessionStorage.getItem('qguard_design_review_v2')!));
+        expect(saved.party).toEqual(['Ari','Mina','Vega']);
+        expect(saved.sessionActive).toBe(false);
+        expect(saved.owed).toBe(false);
+        if (scenario !== 'independent solo declines') expect(saved.queueStarted).toBeNull();
+        if (scenario === 'member declines') await page.screenshot({path:info.outputPath('premade-stopped.png'),fullPage:false});
+    });
+}
+
+test('private descriptor sketches distinguish zero, two, three and independent trait qualification', async ({page}, info) => {
+    for (const width of [1440,390]) {
+        await page.setViewportSize({width,height:1000});
+        await route(page,'profile?state=new');
+        await expect(page.getByText('No feedback yet.',{exact:true})).toHaveCount(2);
+        await expect(page.locator('.summary-scale .progress-track')).toHaveCount(0);
+        await route(page,'profile?state=insufficient');
+        await expect(page.getByText('Not enough feedback yet.',{exact:true})).toHaveCount(2);
+        await expect(page.locator('.summary-scale .progress-track')).toHaveCount(0);
+        await route(page,'profile?state=mixed');
+        await expect(page.locator('.summary-scale .progress-track')).toHaveCount(1);
+        await expect(page.getByText('Not enough feedback yet.',{exact:true})).toHaveCount(1);
+        expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+        await page.screenshot({path:info.outputPath(`descriptor-mixed-${width}.png`),fullPage:true});
+        await route(page,'profile');
+        await expect(page.locator('.summary-scale .progress-track')).toHaveCount(2);
+        await route(page,'profile?state=teammate');
+        await expect(page.locator('.summary-scale')).toHaveCount(0);
+    }
+});

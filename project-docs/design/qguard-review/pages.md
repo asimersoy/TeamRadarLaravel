@@ -32,7 +32,7 @@ part of coverage rather than separate backend routes.
 | D22 `#security` | Self: account safety | Password/logout sample actions | Validation, confirmation; no actual credentials |
 | D23 `#admin` | Cleared-admin sample | Open case | Open, reviewed, empty; unauthorized recovery is D25 |
 | D24 `#case` | Cleared-admin sample | Evidence sections, note, mark reviewed | Excluded before application, applied before reports, stale review |
-| D26 `#acceptance` | Proposed five / reviewer | Accept, decline, review peer responses | 20-second deadline, all-five activation, solo removal/return, pending premade exception |
+| D26 `#acceptance` | Proposed five / reviewer | Accept, decline, review peer responses | 20-second deadline, all-five activation, solo removal/return, whole-premade failure |
 | D25 `#error` | Visitor/player | Retry, home or login as relevant | Denied, session expired, offline, not found |
 
 ## Shared Interaction Coverage
@@ -65,7 +65,7 @@ are required; a landing page alone is not this design deliverable.
 ## Current behavior additions — DEC-076–082
 
 - `#acceptance` / queue offer dialog: common 20-second counter, own acceptance,
-  fictional peer actions, unanimous activation, solo removal/return on expiry.
+  fictional peer actions, unanimous activation, solo removal/return and whole-premade failure on expiry.
   A decline prevents activation; pending peers retain the remainder of the
   window in this preview. Exact server early-failure contract belongs to R4.
 - `#team?state=ending`: shared-end design sketch; actual demo countdown starts
@@ -75,7 +75,7 @@ are required; a landing page alone is not this design deliverable.
 - `#session?state=excluded-author`: required immutable cards remain; explain
   that numerical effects are excluded. Sample UI only, no calculator evidence.
 - `#profile?state=teammate`: rank/honor snapshot only, no descriptor summaries.
-  `#profile`: self-only descriptor layout; display threshold explicitly pending.
+  `#profile`: self-only descriptor layout; display after three distinct eligible reviewers, plus new/insufficient states.
 
 The revised design
 has 26 product routes plus the review catalog; historical coverage counts stay

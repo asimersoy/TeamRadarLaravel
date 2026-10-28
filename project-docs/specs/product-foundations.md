@@ -244,8 +244,10 @@ descriptions may contribute to a displayed summary but never honor, matching,
 eligibility, ordering or punishment for now. DEC-076 approves Quiet–Talkative
 and Deliberate–Aggressive labels. DEC-078 uses the honor update formula for
 each descriptor independently, with separate value/reference/count and the same
-internal 0–100 representation. Omitted sliders update nothing. Minimum display
-evidence and disclosure-safe updates remain P-03/OQ-014; no combined metric.
+internal 0–100 representation. Omitted sliders update nothing. DEC-084 requires three distinct eligible reviewers per trait before displaying
+its self-only summary. Empty/insufficient-feedback messages precede qualification;
+repeat reviewers count once for display, while eligible repeated inputs still
+update that independent value. No combined metric.
 
 Only the player being described sees their summaries (DEC-076 corrects the
 earlier audience attribution). Matched teammates do not. Individual received

@@ -1,6 +1,6 @@
 # Friends, Parties And Five-Person Matching
 
-**Status:** QG-REVIEW-1 draft. Authority: DEC-026–037/042/044/046/052/055/061/063/077/079/081.
+**Status:** QG-REVIEW-1 draft. Authority: DEC-026–037/042/044/046/052/055/061/063/077/079/081/083.
 **Dependencies:** identity/rank, honor, sessions and data/access. Requirements MM.
 
 ## Connections And Premades
@@ -62,12 +62,15 @@
   activate the shared session and trigger navigation to it.
 - **MM-12, approved core failure:** a decline or deadline nonresponse prevents
   that proposed team proceeding. Stop matchmaking for declining/nonresponding
-  players; automatically return the others to the pool. No honor penalty,
+  players and their whole original premades under MM-13; return only unaffected
+  fully accepted entries. No honor penalty,
   cooldown or rating debt follows from a failed pre-session offer.
-- **MM-13, pending premade detail:** ask whether remaining friends continue
-  together after a member fails acceptance, or the entire premade stops while
-  independent parties/solos return. DEC-037 keeps premades intact; neither
-  exception is silently selected. Preserve unaffected groups atomically.
+- **MM-13, approved DEC-083:** any member declining or missing the deadline
+  stops the entire original premade, including its acceptors. Preserve membership;
+  do not split, eject or disband. Return only solos who accepted and other
+  premades whose every member accepted. Evaluate every original queue entry
+  separately; multiple failed premades each stop. A stopped party needs a new
+  deliberate queue attempt. Apply all outcomes exactly once and atomically.
 - **MM-14, technical requirements:** persist offer membership, the common
   deadline, each response and one terminal result. Deduplicate retries; reject
   stale/late responses; prevent concurrent offer/queue/session membership.
@@ -94,8 +97,7 @@ has no invented counterpart. Prototype formation is explicitly a sample action.
 **Stack-checkpoint clarification, 2026-10-28:** support realtime matching UI and
 smooth system-driven navigation into the session. The owner cites a
 match-acceptance popup as the intended interaction. DEC-081 now selects all five
-within twenty seconds and removal/requeue outcomes. Premade failure handling is
-pending; no automatic acceptance or extra punishment is selected. Premade
+within twenty seconds and removal/requeue outcomes. Premade failure stops that whole party under DEC-083; no automatic acceptance or extra punishment is selected. Premade
 pre-queue readiness and post-match acceptance remain distinct.
 The [stack assessment](../../planning/review-version/stack-review.md#dynamic-navigation-clarification--2026-10-28)
 records capability evidence and required multi-client/navigation checks. This
@@ -111,4 +113,6 @@ packet, but do not choose a replacement worker/database architecture here.
 Also test 5/5 before deadline, 4/5 timeout, explicit decline, multiple missing
 responses, duplicate/late acceptance, reconnect with the original deadline,
 accept/decline/expiry races, exactly-once return/removal and no failed-offer
-feedback debt. Add the owner-selected premade behavior before its slice.
+feedback debt. Cover 3+2 and 2+2+1: a failed member stops their whole entry;
+fully accepted independent entries return. Preserve membership, stop every
+failed entry, and never duplicate a return or silently requeue a stopped party.

@@ -40,9 +40,10 @@ request or five minutes from the first, active-session/feedback queue gates,
 required cards despite numerical exclusion, and unanswered discrepancy closure.
 The palette and brand are retained. New review scenarios are in the catalog.
 
-Premade failure stops at an explicitly pending branch; it does not choose OQ-017.
-Private descriptor values remain fictional layout samples; OQ-014 controls when
-real summaries may appear. No honor/descriptor backend calculation is claimed.
+DEC-083 stops the entire failed premade while preserving its membership;
+fully accepted independent entries return. DEC-084 shows each private descriptor
+after three distinct reviewers, with zero/insufficient-feedback sample states.
+Private descriptor values remain fictional layout samples. No honor/descriptor backend calculation is claimed.
 See [current behavior evidence](behavior-reconciliation/README.md) and the
 [R1a execution record](../../planning/review-version/reconciliation-and-implementation.md).
 Earlier screenshots are historical, not evidence for these new behaviors.

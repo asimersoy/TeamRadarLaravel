@@ -1,6 +1,6 @@
 # Logical Data, Access And Reliability
 
-**Status:** QG-REVIEW-1 draft, stack-neutral. Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–081.
+**Status:** QG-REVIEW-1 draft, stack-neutral. Authority: DEC-037/045/047/052/055/061/063/065/066/076/077/078–084.
 **Dependencies:** all modules. Requirements DA. Exact physical schema follows stack review.
 
 ## Logical Records
@@ -12,14 +12,14 @@
 | Rank observation/declaration | Observed tier/match time/source/status; declared tier and confirmation version/time | Never overwrite observation with declaration; new queue attempt rechecks |
 | Friendship/request and premade | Canonical pair, owner, members, invitations, readiness/settings version | Distinct users, capacity and owner checks; one active party/session per player |
 | Queue entry | Whole-party/version snapshot, compatible settings, enqueue time/state | Atomic consumption/cancellation and consistent retries |
-| Match offer/acceptance | Reserved proposed five, common 20-second deadline, responses and terminal outcome | All-five acceptance before session activation; removal/return once on failure; premade disposition pending |
+| Match offer/acceptance | Reserved proposed five, common 20-second deadline, responses and terminal outcome | All-five acceptance before session activation; removal/return once on failure; failed original premades stop intact; fully accepted other entries return |
 | Session/participant | Five users, immutable original premade and display/rank/honor snapshots, participant state/times | Participation grants scoped access; later account edits do not rewrite history |
 | Session end requests | Distinct participant requests, first request time/deadline, shared closed time/reason | One request per participant; three requests or five minutes close once; no client-controlled reset |
 | Party-code handoff | Session/host, supplied artifact/version and status | Participant-only; no proof of game validity; no URL/API secret conflation |
 | Chat/attendance/discrepancy | Actor/session, plain text or testimony, timestamps, unique operation key | Evidence separate from actual game observation; closed-state and vote constraints |
 | Feedback obligation/submission | Session/author/target obligation and separate numerical eligibility; overall rating; optional nullable descriptors; finalized receipt | One immutable finalized rating per pair/session; drafts separate; no expiry/neutral fill |
 | Honor state/application | Score/reference/count/version; unique input application, current-state transition and exclusion reason | Exactly once, forward only, atomic with accepted eligibility |
-| Descriptor state/application | Separate communication and play-style value/reference/count; application/exclusion evidence | Honor formula per dimension; omission changes nothing; no combined/matching score |
+| Descriptor state/application | Separate communication and play-style value/reference/count; application/exclusion evidence | Honor formula per dimension; distinct eligible reviewer evidence per recipient/trait; display at three; omission changes nothing; no combined/matching score |
 | Conduct report/admin review | Author/target/session/categories/context/time; cleared reviewer note/status/audit | Count reporters, not flags; report arrival never rewrites applied honor |
 
 The prototype's fixture structure is not the physical schema. Legacy SQL tables
@@ -34,7 +34,7 @@ Retained evidence is distinct from the algorithm's single smoothed reference.
 | Exact handle lookup | Minimal identity | Minimal identity | Minimal identity | Relevant context |
 | Current honor | Own score | Match-time snapshot only | No | Relevant evidence |
 | Rank/account session snapshot | Own authorized session | Same session only | No | Relevant case |
-| Peer descriptor summary | Own only; formula selected, minimum-evidence/display detail pending | No | No | Relevant case evidence under existing clearance |
+| Peer descriptor summary | Own only; each summary shown after three distinct eligible reviewers | No | No | Relevant case evidence under existing clearance |
 | Received individual ratings/authors | No | No | No | Authorized case detail |
 | Own sent receipt | Own | No | No | Authorized case detail |
 | Chat/history | Authorized participation/lifecycle | Same boundary | No | Audited relevant case access |
@@ -75,7 +75,7 @@ and retain CSRF/session protections appropriate to the selected stack.
 - **DA-07:** reserve an acceptance offer atomically; do not permit concurrent
   queue/offer/session membership. Five valid acceptances before the fixed deadline
   activate one session. Failed offers remove/return once under MM-12 and the
-  pending premade rule. Late responses cannot resurrect a terminated offer.
+  DEC-083 whole-premade failure rule. Late responses cannot resurrect a terminated offer.
 
 ## Retention, Guest Isolation And Later Release
 

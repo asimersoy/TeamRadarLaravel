@@ -27,17 +27,17 @@ instructions are the evidence recorded in `DEC-061` and `DEC-063`.
 | ID | Question/selection and provenance | Consequence/authority | Checkpoint action |
 | --- | --- | --- | --- |
 | CRQ-001 | Earlier received answer and later typed session-history instruction confirm every eligible teammate before another queue | DEC-061/063, explicitly reconfirmed at this checkpoint in DEC-076 | Reviewed; no expiry and immutable submissions reconfirmed, not tool-confirmed automatic |
-| CRQ-002 | Earlier “player and matched teammates” reply was recorded in DEC-061; owner disputes its attribution and asks a misclicked follow-up be disregarded. After explanation/reissue, the fresh answer is “Only the player being described.” | DEC-076 corrects the old record: self-only summaries; no teammate access; individual received votes/authors hidden. No automatic-origin flag is available | Corrected and reviewed 2026-10-28; fresh answer controls. DEC-078 subsequently selects the formula; sparse-data/display policy remains OQ-014 |
+| CRQ-002 | Earlier “player and matched teammates” reply was recorded in DEC-061; owner disputes its attribution and asks a misclicked follow-up be disregarded. After explanation/reissue, the fresh answer is “Only the player being described.” | DEC-076 corrects the old record: self-only summaries; no teammate access; individual received votes/authors hidden. No automatic-origin flag is available | Corrected and reviewed 2026-10-28; fresh answer controls. DEC-078 subsequently selects the formula; DEC-084 resolves display at three distinct eligible reviewers per trait |
 | CRQ-003 | Late-rating question received “late ratings should count”; owner then explicitly typed that the ten-minute closure is removed | `DEC-063` independently confirms no expiry and mandatory history-based completion | Reviewed/reconfirmed in DEC-076; do not reopen the superseded cutoff |
 | CRQ-004 | Agent selected 1440 × 900 as the main desktop study sample under the owner's desktop-view preference | Reversible research setting only; not a QGuard breakpoint or platform decision | Note if reused for design; review actual desktop/mobile requirements in the design packet |
 | CRQ-005 | Owner explicitly selects immediate honor application without corrections, then confirms the A/B/C/E report-timing example and defers changing it until after version one | `DEC-065` keeps already-applied effects and only excludes not-yet-applied ratings; `DEF-013` records the known race and return condition | Reviewed/reconfirmed in DEC-076; the explicit acceptance and deferral remain, not a tool-auto-resolution |
 | CRQ-006 | Agent drafts isolated synthetic guest state and success/failure fixtures to apply the owner's explicit guest-review request (`DEC-066`, 2026-10-27) | [Prototype specification](../specs/review-prototype-and-access.md) labels these as draft details, not a selected auth framework or live integration; no application work proceeds | Review the guest boundary with page designs and stack packet; exact isolation/reset mechanics remain reversible implementation choices. Owner resolved the Discord milestone in `DEC-067` |
 | CRQ-007 | Owner explicitly instructs assuming non-friend party-code joining works now and testing after RSO (`DEC-068`, 2026-10-27) | Planning/prototype and approved implementation may proceed; `DEF-014` retains real-player validation before normal-use reliance | Reviewed/reconfirmed in DEC-076; owner-directed assumption, not an automatic choice or passed test; Discord deferral reconfirmed |
 | CRQ-008 | Agent drafts P-01/P-02/P-07/P-08/P-09 during the design pass; owner approves labels and per-card submission, corrects the multiple-pending-session premise | DEC-076 approves P-01/P-02; DEC-077 requires one active session and completion of its feedback before requeue, so oldest-first backlog traversal is unnecessary. P-08 already approved | First UI group reviewed 2026-10-28. P-09/artifact mechanics remain a recap item; no timed-out question used as approval |
-| CRQ-009 | Former P-03/P-04/P-05 proposals reviewed by owner | DEC-078 replaces mean with separate honor-formula updates; DEC-079 requires excluded authors to submit; DEC-080 keeps discrepancy pending until lobby closure | Main choices resolved. OQ-014 minimum-evidence/display detail remains; P-06 before live rank integration |
+| CRQ-009 | Former P-03/P-04/P-05 proposals reviewed by owner | DEC-078 replaces mean with separate honor-formula updates; DEC-079 requires excluded authors to submit; DEC-080 keeps discrepancy pending until lobby closure | Main choices resolved. DEC-084 resolves the three-reviewer display threshold; P-06 before live rank integration |
 | CRQ-010 | Agent compared the existing stack with alternatives; owner explicitly confirmed the named core stack and corrected the transcription to Reverb | [Stack record](../planning/review-version/stack-review.md); DEC-074/075, direct owner confirmation rather than automatic resolution | Core stack settled 2026-10-28. No app/runtime changes or implementation approval; next review the other assumptions/defaults |
 | CRQ-011 | Owner retains the Q mark/wordmark/tagline and authorizes Mobbin refinement (DEC-069). Agent chooses outlined SVG, compact/wide variants, a task-focused layout and reference-backed spacing/grouping | Reversible prototype work in [the design record](../design/qguard-review/mobbin-pass/README.md); existing product behavior and stack gate preserved | Owner accepted the revised visual/layout baseline under DEC-070; DEC-072/073 selects and applies calibrated A; OQ-016 is resolved. Brand retention is owner-directed; no tool-confirmed automatic answer or new policy approval |
-| CRQ-012 | Owner selects all five accepting within 20 seconds; decline/nonresponse stops that player and returns others to pool | DEC-081; independent of in-lobby discrepancy voting and session-end requests | Core rule settled; premade failure handling pending OQ-017 and exact technical contract still needed |
+| CRQ-012 | Owner selects all five accepting within 20 seconds; decline/nonresponse stops that player and returns others to pool | DEC-081; independent of in-lobby discrepancy voting and session-end requests | Policy settled by DEC-081/083: stop the whole failed premade intact; return fully accepted independent entries. Exact technical contract still needed |
 | CRQ-013 | Earlier first-pass numeric matching/honor defaults are carried into the next draft; no new tuning chosen during design | [Matching defaults](../specs/review-version/friends-and-matching.md) and [honor defaults](../specs/review-version/feedback-and-honor.md) identify prior accepted/delegated parameters | Recap separately with meaning/effect; preserving the prior baseline does not prove tuning quality or authorize silent changes |
 | CRQ-014 | Owner selects shared end: three participants request it, or five minutes elapse after the first request | DEC-077 supersedes immediate individual end. Agent interpretation counts distinct participants once and keeps the first deadline fixed; no game detection or early-leaving admission | Recorded in specs; reconcile the static end flow and privacy views before later design/slice approval. Actual implementation and tests remain pending |
 
@@ -179,3 +179,31 @@ Show these pending items and any material implementation defaults at next review
 
 Earlier “docs only/no code” evidence above belongs to its named prior batch;
 new design/application checks are in the execution record.
+
+
+## Explicit answers — DEC-083/084, 2026-10-28
+
+Owner answers resolve both pending policies: stop a whole premade after any
+member fails acceptance; show each private descriptor after three distinct
+eligible reviewers. The threshold answer follows the owner's clarification
+request and an explanation; it is explicit typed approval, not a timeout/default.
+Agent selects empty/insufficient-feedback messages within the owner's stated
+flexibility. Count distinct internal authors per trait, without exposing them.
+Earlier pending statements above describe prior review stages.
+
+Route: existing product/code/content, decision/privacy, design, external review,
+audit and recovery procedures apply. Reconcile current requirements and both
+mockup bundles; test premade failure/return and self-only threshold states.
+No backend domain service, schema, protected workflow or live integration changes.
+Keep this follow-up with the developing implementation batch; do not commit
+merely because these two replies arrived.
+
+
+**Follow-up verification:** DEC-083/084 requirements, current plans and both
+mockup bundles reconciled. Fifteen focused browser tests passed in the three
+engines, including stopped/returning premades and independently qualified
+private descriptors. JS syntax, deterministic packaging, scoped diff and local
+links passed. Backend count/offer persistence is not implemented by this preview.
+The owner subsequently requested committing the complete related batch after
+the readiness audit. No remote action; later implementation contracts and
+live-use gates remain as recorded in the execution record.

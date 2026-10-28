@@ -849,20 +849,17 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-014 — Descriptor Aggregation And Sparse-Data Privacy
 
-- **Status:** partially resolved by DEC-078, 2026-10-28; display detail remains
-- **Settled:** optional peer descriptors never feed honor/matching. DEC-076
-  selects self-only player visibility; individual received votes/authors stay
-  hidden. DEC-078 uses the honor formula independently for each dimension;
-  arithmetic-mean aggregation is no longer proposed.
-- **Remaining:** minimum evidence and disclosure-safe display updates. The owner
-  answered the calculation question; that does not approve the earlier proposed
-  three-distinct-reviewer threshold. No-observation state must remain distinct
-  from a numerical midpoint baseline.
-- **Tradeoff:** early/per-input visibility versus inferring a recent individual
-  response from score movement. Do not claim a threshold alone guarantees privacy.
-- **Needed before:** live descriptor-summary display; does not block drafting
-  or independently testing the approved per-dimension calculation.
-- **Record:** [review-version proposals](../specs/review-version/proposals.md).
+- **Status:** resolved by DEC-078/084, 2026-10-28
+- **Resolution:** independent honor-formula streams, self-only summaries, and
+  display after three distinct eligible reviewers for each descriptor. Count
+  reviewer identities from retained internal evidence; omission and excluded
+  input do not qualify. Repeated reviews from one person count once for display.
+- **Empty presentation:** owner permits flexibility; agent selects no-feedback /
+  insufficient-feedback messages without an observed-value bar before three.
+- **Preserved:** individual votes/authors stay private, no combined score or
+  influence on honor/matching, immediate calculations before/after qualification.
+- **Blocks:** no remaining owner display choice; implement the data/access and
+  distinct-reviewer boundary tests in the descriptor slice.
 
 ## OQ-015 — Feedback Obligations After Author Exclusion
 
@@ -895,14 +892,11 @@ questionnaire or permission to leave first-pass contracts unspecified.
 
 ## OQ-017 — Premade Return After Failed Match Acceptance
 
-- **Status:** open; owner question sent 2026-10-28, answer pending
-- **Settled:** DEC-081 requires five acceptances within 20 seconds; decliners/
-  nonresponders leave matchmaking and the rest return to the pool. DEC-037 keeps
-  original premades together during matching.
-- **Question:** if one member of a premade fails acceptance, do the others
-  continue together without them, or does the entire premade stop while other
-  parties/solos return? No answer is inferred from the preselected option/time.
-- **Needed before:** premade acceptance failure/return implementation; does not
-  block the settled solo acceptance or other independent specification work.
-- **Owner:** project owner; exact group membership and queue outcomes must be
-  reconciled in MM-13/DEC-081 before reliance.
+- **Status:** resolved by DEC-083, 2026-10-28
+- **Resolution:** any decline/deadline nonresponse stops the entire original
+  premade, keeping membership intact. Return only accepted solos and premades
+  whose every member accepted. Other failed entries also stop.
+- **Preserved:** twenty seconds, all-five activation, no new sanction, cooldown
+  or rating debt. No automatic splitting, member removal or party disband.
+- **Blocks:** no remaining owner recovery choice; R4 still needs its concrete
+  atomic offer/outcome contract and concurrent browser/backend evidence.
