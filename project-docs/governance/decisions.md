@@ -3652,3 +3652,21 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   Normal user collection/matchmaking, live RSO and Riot submission are not
   activated by this hosting instruction. Final policy/contact review remains.
 - **Evidence:** [initial Cloud deployment](../planning/riot-submission/cloud-deployment.md).
+
+## DEC-102 — Preserve The Legacy Tip And Promote QGuard To Master
+
+- **Date / owner:** 2026-10-30, owner response to the Cloud import question:
+  name the existing master “new master” and move QGuard to master.
+- **Precise interpretation:** use the valid Git branch name `new-master` for
+  the preserved legacy tip, and make `master` contain the current QGuard work
+  from `new-development`. Keep GitHub's default branch named `master`.
+- **Execution:** verify the old master is an ancestor of the current QGuard
+  branch; publish the preserved legacy ref first, then fast-forward `master`.
+  Keep `new-development` as another existing reference. This achieves the
+  requested branch contents without removing refs, moving application files,
+  force-pushing or rewriting commits. Continue current work on `master`.
+- **Scope:** authorizes these branch publications/promotion and their execution
+  record. It replaces the proposed temporary default-branch switch/restore
+  plan. It does not answer the separate environment-editor permission request
+  or approve deleting the empty Cloud application.
+- **Evidence:** [deployment record](../planning/riot-submission/cloud-deployment.md).

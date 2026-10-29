@@ -160,9 +160,9 @@ preflight observations above.
   `qguard-test-cloud-20261030-postgres-1` was stopped after checks. No local worker
   or scheduler was started; existing previews and persistent volumes preserved.
 
-### Remaining actions, not completed
+### Earlier interruption checkpoint (superseded below)
 
-Both explicit permission requests remain unanswered at this checkpoint. Do not
+Both explicit permission requests remained unanswered at that checkpoint. Do not
 interpret silence as permission. After answers, correct/import the `qguard/`
 directory, preserve the app key while adding non-secret runtime safeguards,
 attach the existing database/Reverb resources (do not create duplicates), size
@@ -170,3 +170,62 @@ the app at the authorized 1 GiB tier, and configure/test shared worker/scheduler
 behavior. Then commit/push any necessary bounded fixes, deploy and verify the
 Cloud URL before adding exact DNS records for `q-guard.team`. Verify TLS, access
 restrictions, actual resource cost and transfer lock; record all outcomes.
+
+### Owner branch promotion — 2026-10-30
+
+DEC-102 replaces the temporary-default-branch proposal. Route remains Git,
+deployment and interruption/recovery with existing approval/data boundaries.
+Readiness evidence: clean local tree at `cd66b70`; live `master` is
+`3822e6159377304432834ddbafd7ffca90d3a0fa`, live `new-development` is
+`cd66b700520f6e642ee5c585d41be4054ea17208`, and `new-master` is absent.
+Ancestry check passes; divergence is 0 legacy-only / 83 QGuard-only commits.
+GitHub reports no open PRs. Existing Actions trigger on `main`/`develop`, not
+these branch names; Cloud push-to-deploy was disabled in the preceding setup.
+
+Authorized sequence: create `new-master` at the exact legacy SHA, verify it,
+then fast-forward `master` to the verified QGuard SHA with an expected-head
+check and no force. Refresh local refs and use local `master`. Verify remote
+tips, default branch and the presence of `qguard/`. Preserve `new-development`.
+No application files, database contents or domain settings change. On a failed
+step, retain completed refs and report actual state; do not automatically
+delete refs or reset remote history. The preserved legacy SHA remains available
+for comparison/recovery through a separately reviewed follow-up.
+
+Execution completed: GitHub `new-master` was created at the legacy SHA and
+independently verified before promotion. `master` was advanced to `cd66b70`
+with `force=false` and the exact expected old SHA. Fetch verified both remote
+refs, local `master` was advanced without force and checked out, and local
+`new-master` tracks the preserved remote branch. GitHub metadata still reports
+`master` as default; `git ls-tree origin/master qguard` confirms the intended
+directory. No open PRs were retargeted and no application files changed.
+The decision/execution record and bounded managed-Reverb compatibility fix are
+being committed on `master`; `new-development` remains at `cd66b70` as a preserved reference.
+
+Cloud re-import now detects `/qguard`. Created `qguard-web` in Frankfurt from
+`master` and verified its application-directory setting is `/qguard`. The first
+empty `qguard` application is retained undeployed; no deletion was performed.
+
+The key-reveal request remains unanswered but is **no longer needed**: Cloud's
+[shared settings facility](https://laravel.com/cloud/docs/secrets), verified
+2026-10-30, accepts new values without opening existing credentials. Created
+only non-secret `QGUARD_HOSTED_REVIEW_ONLY=true` and `SESSION_DRIVER=database`,
+linked exclusively to `qguard-web` production. Their presence/link was verified
+in the UI. No APP_KEY, database password or Reverb secret was revealed, copied,
+changed or stored in records. This safer path avoids the rejected credential
+access; it does not treat the owner as having approved it.
+
+New app uses PHP 8.5/Node 24, 90-second graceful shutdown, manual deployment,
+Composer production install plus npm build and config/route/view caching,
+then `php artisan migrate --force` for its fresh empty database. Existing
+PostgreSQL and Reverb resources are attached and saved, without duplicate
+resources. Queue connection is `database`. App cluster is Flex 1 GiB/1 vCPU,
+one replica, autoscaling off, five-minute scale-to-zero enabled, scheduler on,
+and one shared `php artisan queue:work database --sleep=1 --timeout=60 --tries=3`
+process. Saved configuration shows $14/month maximum app compute. Frequent
+schedules and DB polling may prevent idle savings. Push-to-deploy was reopened
+and verified off before the next push. Deployment has not started yet.
+
+Bounded compatibility fix: browser Reverb host/port now fall back to Cloud's
+standard `REVERB_HOST`/`REVERB_PORT` when explicit local browser overrides are
+absent. Docker checks verify the provider values and preservation of local
+overrides; scoped Pint passes. No backend policy or data model changes.

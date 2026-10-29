@@ -1,5 +1,19 @@
 # QGuard Current State
 
+## QGuard Promoted To Master — 2026-10-30
+
+DEC-102 preserves the old `master` tip (`3822e61`) as `new-master`, using a
+hyphen because Git branch names cannot contain spaces. GitHub `master` was
+fast-forwarded to QGuard at `cd66b70` and remains the repository default. Local
+work now uses `master`; `new-development` is retained at the pre-promotion tip.
+All commits and the `qguard/` folder are preserved. No force push, history
+rewrite, branch deletion or application-file move occurred. Cloud now detects
+`/qguard`, imported as `qguard-web` in Frankfurt; the actual application-directory
+setting confirms it. A safer configuration path resolved the editor blocker:
+non-secret flags can be linked separately without reading/changing APP_KEY.
+That key-reveal permission is no longer needed. The original empty Cloud setup
+has not been deleted. Follow the [deployment record](planning/riot-submission/cloud-deployment.md).
+
 ## Authorized Cloud Setup In Progress — 2026-10-30
 
 DEC-100 authorizes committing/pushing `new-development`, setting up Laravel Cloud

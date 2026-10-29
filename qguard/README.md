@@ -158,6 +158,11 @@ not authorize launch: normal-use, RSO and final-policy gates still apply. See
 for actual provider configuration and verification evidence. HTTP infrastructure
 logs remain a separate provider concern; this mode does not claim zero telemetry.
 
+Managed Reverb uses the provider's `REVERB_HOST`/`REVERB_PORT` for browser
+connections unless `REVERB_BROWSER_HOST`/`REVERB_BROWSER_PORT` explicitly override
+them. The local Compose overrides remain independent of the internal service
+hostname. Provider credentials are injected by Cloud; never copy them into Git.
+
 ## Historical engine walkthrough (isolated regression tests only)
 
 Use **Matchmaking** (`/dashboard`) for parties, queueing and the **Your connections**
