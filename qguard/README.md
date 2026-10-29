@@ -9,6 +9,12 @@ Compose project. All PHP runs in Docker. This is not approved for public users.
 
 ## First setup
 
+For the portable, fictional Riot reviewer artifact, use the
+[submission package](../project-docs/planning/riot-submission/README.md). It needs
+no application/background services. Its browser checks use
+`playwright.riot-review.config.ts` against the generated static site in a temporary
+Docker browser container. This does not enable real registration or matchmaking.
+
 Registration remains open. `/guest#welcome` serves the approved fictional
 walkthrough, with tab-scoped state and no provider/business writes. Its own
 reset affects only that tab. Normal queue admission and background formation
@@ -43,6 +49,16 @@ securely; rerunning the initializer preserves it. Never paste it into reports.
 Domain features are enabled only as their implementation stages pass.
 
 ## Persistence and safe lifecycle
+
+**Idle-machine policy (DEC-095):** do not leave workers, the scheduler or unused
+Reverb running between active development/tests. After the relevant run, use
+`docker compose stop worker scheduler reverb` with the **same Compose files and
+project identity used to start that run**, then verify they stopped. For an
+existing custom preview, inspect its container names instead of starting or
+stopping the default project by mistake. Start only the services needed for the
+next active check. Preserve the preview and database volumes. Background matching,
+deadline processing and queued notifications pause while their services are stopped;
+stored wall-clock deadlines still elapse.
 
 Development data uses the named `qguard-dev-postgres` volume at
 `/var/lib/postgresql`. Normal rebuild/recreate reuses it. Container storage is

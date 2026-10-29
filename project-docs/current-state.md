@@ -1,5 +1,55 @@
 # QGuard Current State
 
+## Riot Games Submission Preparation — 2026-10-29
+
+The owner explicitly requested preparation for Riot Games. The
+[submission packet](planning/riot-submission/README.md) now includes a product/API
+application draft, guided fictional review entry, reproducible allowlisted ZIP
+and [readiness checklist](planning/riot-submission/readiness.md). Nine focused
+browser tests passed across three engines, including the portable journey,
+tab isolation, blocked API calls and desktop/mobile rendering. This packages
+the existing approved design; it does not implement live RSO or alter matching.
+DEC-096 retains honor → rank → waiting time and records the rank-gap concern.
+
+Official sources were rechecked. External readiness still requires host/domain,
+actual contact and final Terms/Privacy, hosted verification and owner submission
+authorization. No final policies or provider facts are invented. No deployment,
+purchase, provider message or submission occurred. The temporary test server
+exited; local worker, scheduler and Reverb remain stopped under DEC-095.
+The related audit/operating clarifications and review package form one coherent
+local readiness commit; earlier uncommitted-state notes describe work in progress.
+
+## Idle Local Services — 2026-10-29
+
+DEC-095 requires local workers/schedulers to stop when active work or testing
+ends or pauses. The local preview's worker, scheduler and unused Reverb service
+were stopped after the audit below. The preview web services and databases remain
+available; no volumes were removed and unrelated services were untouched.
+Future work must start only the background services needed for that check and
+stop them afterward. Earlier running-service/heartbeat evidence below describes
+the completed audit, not an instruction to keep those services running.
+
+## Implementation Status Audit And Hosting Priorities — 2026-10-29
+
+The [code/runtime audit](planning/review-version/implementation-status-audit.md)
+confirms a real persistent player queue, bounded honor-first matcher, whole-party
+20-second acceptance flow and running local scheduler/worker. They have been
+tested with synthetic accounts; the whole live product is not complete. The
+current preview still disables both matching test engines and public use.
+Live RSO/consent/rank integration and production enablement are remaining work,
+not merely missing credentials. Large-scale throughput/autoscaling is unproven.
+
+The audit recovered a stale lock on the retained historical settlement routine;
+current immediate review feedback is independent of that routine. All three
+scheduled heartbeats then advanced, and an isolated cache-only queued job passed.
+The report preserves the recovery/probe limitations and release-hardening follow-up.
+
+DEC-094 records lowest practical starting cost and scaling without rebuilding,
+with automatic scaling/scale-to-zero preferred. Laravel Cloud is a candidate for
+later evaluation, not selected. New records remain in the ongoing hosting/review
+batch; baseline application commit is `92a34b9`. No application code change,
+push, purchase, deployment or provider submission occurred in this audit.
+
 ## Owner Follow-up And Fifth Discussion — 2026-10-29
 
 The owner explicitly authorized finishing remaining local changes before the

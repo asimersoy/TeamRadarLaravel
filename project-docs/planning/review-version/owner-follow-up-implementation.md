@@ -126,8 +126,10 @@ required immutable ratings, honor/descriptors and report/admin review. These are
 local synthetic capabilities, not working live Riot integration.
 
 - DEC-093 records **personal operation by the owner** and the owner's statement
-  that **no domain, hosting or email provider exists**. Budget is the next pending
-  question; no provider or public contact details have been selected or inferred.
+  that **no domain, hosting or email provider exists**. DEC-094 subsequently
+  records lowest practical starting cost and easy scaling; no numeric ceiling,
+  provider or public contact details have been selected or inferred. The
+  [status audit](implementation-status-audit.md) precedes later hosting evaluation.
 - Hosting/email/domain choices, operator contact and final Privacy Notice/Terms
   remain group five. No account purchase, deployment or Riot submission occurred.
 - Real RSO, consent enforcement and rank retrieval require their integration

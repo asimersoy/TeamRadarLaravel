@@ -8,6 +8,10 @@ real-data handling retain their separate review boundaries. External review deli
 R7/R8 and Discord remain gated. See [actual evidence](backend-implementation.md).
 Scope: QG-REVIEW-1; no delivery dates or cost estimates approved.
 
+**Riot submission preparation, 2026-10-29:** the [review package](../riot-submission/README.md)
+adds a verified standalone reviewer handoff and application draft. Hosting,
+operator contact, final policies and actual submission remain owner-controlled.
+
 | Slice | Reviewable result | Required decisions / evidence before completion |
 | --- | --- | --- |
 | R1 Foundations and isolated review access | Updated application shell, open local registration and isolated guest data; normal queue visibly gated on Riot linking | Stack/design approval, guest isolation/auth contract, data inventory; guest cannot touch real accounts or services |

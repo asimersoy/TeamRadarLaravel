@@ -12,6 +12,9 @@ not a gate on authorized local work. See the owner-follow-up implementation reco
 - Use PHP, Composer, PostgreSQL, tests and browser runners in Docker as described
   in README.md. Do not install, repair or execute host PHP for this project.
 - Do not run the legacy application or its Compose files one directory above.
+- Stop local QGuard workers, schedulers and temporary background services when
+  active work/testing ends or pauses (DEC-095). Start only what the next check
+  needs; verify shutdown and preserve database volumes/unrelated services.
 - Keep domain decisions in ../project-docs, not the protected reusable workflow.
 - Test data is synthetic. Never reset the persistent development database or
   destroy its volume; resets must positively identify the disposable test target.

@@ -27,6 +27,10 @@ implemented; final Terms remain group five. Notice is not proof of age.
 DEC-093 explicitly selects the owner personally as initial operator. The owner
 also confirms no existing domain, hosting or email provider; those selections,
 public contact details and final policies remain open.
+DEC-094 records the owner's lowest-practical-cost and scale-without-rebuilding
+priorities. Laravel Cloud is only a candidate to evaluate later; its capabilities,
+total costs and fit are unverified. The [implementation status audit](../planning/review-version/implementation-status-audit.md)
+answers the owner's intervening request to verify queue/matcher/worker completion.
 
 No tool-confirmed automatically resolved question is known. The following
 delegated technical choices remain a visibility recap, not missing foundational

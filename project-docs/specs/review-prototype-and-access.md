@@ -1,7 +1,10 @@
 # Review Prototype And Access
 
-- **Status:** approved product direction plus draft acceptance contract;
-  not implemented or an approved implementation slice
+- **Status:** approved product direction; implemented locally under DEC-085.
+  The original draft contract below records the planning baseline. Current
+  implementation evidence and remaining gates are in the
+  [submission packet](../planning/riot-submission/README.md); earlier pending
+  implementation/stack wording below does not reopen completed milestones.
 - **Authority:** `DEC-066`–`DEC-068`, with `DEC-017`, `DEC-053`–`DEC-055` and `DEC-062`
 - **Owner:** project owner; agent prepares specification/design
 - **Updated:** 2026-10-27

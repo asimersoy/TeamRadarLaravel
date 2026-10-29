@@ -3481,7 +3481,66 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   exists”: no existing QGuard domain, hosting or email provider to carry forward.
   This is owner-supplied context, not a registrar availability or account audit.
 - **Still open:** final public operator name/contact details, provider/location
-  choices, budget, domain availability and final Privacy Notice/Terms. No personal
+  choices, a numeric budget ceiling, domain availability and final Privacy Notice/Terms.
+  DEC-094 subsequently records the qualitative cost/scaling priorities. No personal
   address or identity details are inferred from workspace paths or account metadata.
 - **Boundary:** no purchase, provider account creation, deployment, submission or
   public release is authorized. This is an operator decision, not legal clearance.
+
+## DEC-094 — Minimize Initial Hosting Cost And Prefer Scaling Without Rebuilding
+
+- **Date / owner:** 2026-10-29, direct project-owner instruction.
+- **Status:** approved evaluation priorities; no provider or spend approved.
+- **Decision:** start at the lowest practical monthly cost before traction.
+  Prefer a setup that can grow through capacity/tier changes without setting the
+  application up again; automatic scaling and scale-to-zero are desirable.
+  No numeric monthly ceiling or guaranteed zero-cost operation is selected.
+- **Candidate, not fact:** the owner names Laravel Cloud because its advertised
+  pricing/scaling caught their interest. Its current pricing, service coverage,
+  idle costs and compatibility with QGuard's scheduler, worker, realtime service
+  and database have not been evaluated in this discussion. Do not treat those
+  capabilities or a no-code-change scaling guarantee as established.
+- **Sequence:** first audit and explain whether the queue, matcher and workers
+  are actually implemented; evaluate hosting later. The [status audit](../planning/review-version/implementation-status-audit.md)
+  separates local implementation, current runtime verification and remaining
+  live integration/operational work.
+- **Boundary:** no provider selection, purchase, account creation, migration,
+  deployment, external submission or public release is authorized.
+
+## DEC-095 — Stop Local Background Services When Work Is Idle
+
+- **Date / owner:** 2026-10-29, explicit owner instruction to avoid unnecessary
+  local machine load while development/testing is not active.
+- **Status:** approved local operating policy, effective immediately.
+- **Decision:** do not leave local QGuard queue workers or scheduled processing
+  running while idle. Start them for work that needs them and stop them when the
+  work ends or pauses, unless the owner explicitly requests an ongoing demo/run.
+  Apply the same resource discipline to unused temporary background services.
+- **Effect:** recorded in [project operating policy](../operations/workflow-governance.md#local-background-service-lifecycle)
+  and application instructions. Background deadline processing and queued deliveries pause;
+  this is local lifecycle management, not a change to product rules or deployment
+  availability. Preserve data, unrelated services and the owner's preview.
+- **Batch:** record and verify now; include with the coherent ongoing local
+  operations/review batch rather than creating a commit for this reminder alone.
+
+## DEC-096 — Retain Honor-First Matching And Record The Rank-Compatibility Concern
+
+- **Date / owner:** 2026-10-29, direct owner clarification following the
+  implementation-status explanation.
+- **Status:** current ordering explicitly reaffirmed; no matcher change approved.
+- **Decision:** keep similar individual honor first, similar rank second and
+  waiting time last. The owner considered rank-first ordering, then explicitly
+  chose to retain the existing order for now; do not implement the earlier
+  suggestion as though it were the final instruction.
+- **Owner concern:** a large rank gap could prevent teammates from queueing
+  together under a game's rules. On the other hand, prioritizing rank over honor
+  might weaken QGuard's central goal of grouping people with compatible conduct
+  or mindset. Preserve this trade-off for a later matching-quality discussion.
+- **Evidence distinction:** this records an owner concern, not a newly verified
+  VALORANT rule for the selected mode and full five-player party. Actual game-side
+  eligibility is separate from ranking otherwise eligible combinations; changing
+  preference order alone would not enforce a hard eligibility rule. Existing
+  live game-entry/mode checks remain under DEF-014. No maximum rank gap, weighted
+  score, changed widening behavior or new implementation blocker is introduced.
+- **Affected specification:** [MM-08](../specs/review-version/friends-and-matching.md#queue-eligibility-and-matching).
+  No application change or test-service startup is needed for this clarification.

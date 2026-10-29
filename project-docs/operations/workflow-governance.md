@@ -179,6 +179,22 @@ authorizes a push or deployment.
 
 ## Controlled Operations
 
+### Local background-service lifecycle
+
+Under DEC-095, start QGuard's local queue workers, scheduler and other temporary
+background services only when needed for active development, tests or an
+owner-requested live demonstration. Stop them when that work finishes or pauses,
+before handing back an idle environment, unless the owner explicitly asks to
+keep them running. Documentation/planning discussion alone does not need them.
+Check the actual running processes/containers, target only this project's
+services and verify the stop. Preserve database volumes, the owner's browser
+preview and unrelated services. Restart only the needed services for the next
+active check, and verify their health; scheduled deadline processing and queued
+event delivery pause, but stored wall-clock deadlines continue to elapse. This policy does
+not apply to a future deployed service's uptime requirements.
+
+### Explicit authorization boundaries
+
 Pushes, pull requests, deployments, destructive operations, and Git history
 rewrites each require separate exact owner authorization. Approval for a plan,
 local commit, or one controlled action does not authorize another.

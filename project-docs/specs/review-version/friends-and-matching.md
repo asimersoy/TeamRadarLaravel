@@ -44,6 +44,13 @@
   proximity second, then waiting order/stable tie-breaks. Do not let an average
   hide a party's high/low spread. Keep game-side eligibility separate from
   QGuard preferences; do not invent a rank gap that excludes a legal five-stack.
+  **Owner reaffirmation, DEC-096 (2026-10-29):** retain this order for now. Record
+  the concern that rank gaps might affect game-side queue eligibility, balanced
+  against rank-first matching weakening QGuard's honor/compatible-conduct goal.
+  This concern does not establish a current VALORANT restriction or authorize
+  reordering, a new rank cap or a combined score. Actual eligibility checks remain
+  distinct from preference ordering; revisit the trade-off with evidence in a
+  later matching-quality discussion.
 - **MM-09, inherited tunable defaults:** honor span starts at 20 on the 0–100
   internal scale, widens by 5 per 30 seconds to 100, and every party's wait-based
   allowance must be satisfied. Hard constraints never widen. These are prior

@@ -1,7 +1,7 @@
 # Riot Review And RSO Access
 
 - **Type:** dated primary-source findings, separate from owner decisions
-- **Checked:** 2026-10-27; recheck before preparing the actual application
+- **Checked:** 2026-10-27; submission-preparation recheck 2026-10-29 below
 - **Owner:** primary agent maintains evidence; Riot controls provider approval
 - **Supports:** `DEC-066` and the [review prototype contract](../specs/review-prototype-and-access.md)
 - **Method:** official Developer Portal search and documentation reads; no
@@ -40,3 +40,34 @@ defers it fully under `DEC-067` and authorizes assuming non-friend native-code
 entry under `DEC-068`, with real-player validation after RSO. Those are owner
 decisions, not new research findings. Nothing here proves friendship-free party
 entry or authorizes private APIs. No request was sent to Riot.
+
+## Submission-preparation recheck — 2026-10-29
+
+Scope: current official review/access requirements for the owner's requested
+[submission preparation](../planning/riot-submission/README.md). Read VALORANT,
+general policies, FAQ and portal pages directly; no signed-in portal form,
+provider communication or application was accessed. Earlier findings remain
+dated evidence; the current operational implications are:
+
+- [VALORANT documentation](https://developer.riotgames.com/docs/valorant): a
+  testable prototype/mockup and understandable signup/login/queue flow can support
+  review. LFG remains an opt-in use case; production approval precedes RSO access.
+  This is not approval of QGuard's specific conduct score or party-code assumption.
+- [Developer FAQ](https://developer.riotgames.com/docs/faqs): provide a website
+  with Terms and Privacy Policy and complete ownership verification using the
+  issued challenge. A source repository is insufficient. Missing final policy
+  links/domain are real submission gaps, even with a working fictional demo.
+  The FAQ describes moving new inquiries to developer support while approvals,
+  rejection reasons and RSO instructions may still arrive via app messages.
+- [General policies](https://developer.riotgames.com/policies/general), displayed
+  update 2025-05-29: retain the prescribed non-endorsement wording, supported
+  data ingestion and product registration; clearly separate conduct reputation
+  from prohibited alternative skill-ranking/MMR systems.
+- [Portal guide](https://developer.riotgames.com/docs/portal): the registration
+  process gathers product information and ownership evidence. Actual form labels
+  and any application-specific instructions must be checked when authorized.
+
+The portable review package is an agent-selected delivery format for already
+approved fictional review access. It needs no live game services or backend, but
+hosting access logs still need a truthful policy based on the selected provider.
+No host, spend, email operator, verification token or public policy was invented.

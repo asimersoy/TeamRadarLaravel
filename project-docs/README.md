@@ -6,6 +6,10 @@ reusable workflow system remains separate in
 
 ## Current Phase
 
+**Riot Games preparation:** the [submission packet](planning/riot-submission/README.md)
+contains the verified portable review artifact, draft application and remaining
+hosting/contact/policy gates. It is prepared locally, not published or submitted.
+
 **Current work:** the [local review-version implementation](planning/review-version/backend-implementation.md)
 is complete under DEC-085. It includes durable session/feedback data and the
 settled matching, shared closure, privacy and score rules through DEC-084.

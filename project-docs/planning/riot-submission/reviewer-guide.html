@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>QGuard · Riot Games review</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0D1210;--panel:#141C19;--line:#24302B;--text:#ECF3EE;--muted:#B7C7BD;--accent:#C9E99B}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,sans-serif}
+    main{max-width:1080px;margin:auto;padding:48px 24px}header{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-bottom:64px}
+    .brand{width:222px;max-width:65%;height:auto}.badge{font-size:12px;color:var(--accent);border:1px solid var(--line);padding:6px 12px;border-radius:99px}
+    h1,h2,h3{line-height:1.2}h1{font-size:clamp(32px,5vw,56px);letter-spacing:-.04em;max-width:760px;margin:12px 0 20px}h2{font-size:25px;margin-top:0}h3{font-size:18px;margin:0 0 8px}
+    p{margin:0 0 16px}.intro{max-width:760px;color:var(--muted);font-size:18px}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.14em;font-weight:700;text-transform:uppercase}
+    a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid var(--accent);outline-offset:6px}
+    .actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:28px 0 40px}.button{display:inline-block;background:var(--accent);color:#111B14;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none}
+    section{margin:40px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.card p:last-child{margin:0}
+    ol{padding:0;list-style:none;counter-reset:steps;display:grid;gap:12px}li.step{counter-increment:steps;display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px;border:1px solid var(--line);border-radius:12px}
+    li.step:before{content:counter(steps,decimal-leading-zero);color:var(--accent);font-weight:700}.step p{color:var(--muted);margin:8px 0 0}
+    .small,footer{font-size:13px;color:var(--muted)}.note{border-left:3px solid var(--accent);padding:4px 0 4px 20px;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:24px;margin-top:48px}.skip{position:absolute;top:-80px;left:16px}.skip:focus{top:12px}
+    @media(max-width:650px){main{padding:28px 18px}header{margin-bottom:40px;align-items:flex-start}.badge{max-width:112px;text-align:center}.grid{grid-template-columns:1fr}li.step{padding:18px;gap:10px;grid-template-columns:28px 1fr}}
+  </style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<main id="main">
+  <header><img class="brand" src="brand.svg" alt="QGuard — Good company. Good games."><span class="badge">Fictional review build</span></header>
+  <p class="eyebrow">For Riot Games review</p>
+  <h1>Five teammates.<br>Better company.</h1>
+  <p class="intro">QGuard helps VALORANT players find a full team using peer conduct feedback, rank, game region and a shared language. Explore the intended experience without an account, API key or game client.</p>
+  <div class="actions"><a class="button" href="walkthrough.html#welcome">Start the walkthrough</a><a href="walkthrough.html#review">Browse every screen and state</a></div>
+  <p class="note">This English walkthrough uses fictional people and tab-local sample state. Do not enter real credentials or personal information. Buttons simulate outcomes; nothing in the walkthrough signs into Riot, forms a real team or enters VALORANT.</p>
+
+  <section aria-labelledby="scope"><h2 id="scope">What this review demonstrates</h2>
+    <div class="grid">
+      <article class="card"><h3>Conduct, separate from game skill</h3><p>Honor comes from teammate conduct ratings. QGuard groups nearby honor scores, then nearby game ranks and waiting time. It does not calculate MMR or replace Riot's skill ranking.</p></article>
+      <article class="card"><h3>Official data, after opt-in</h3><p>The planned integration uses RSO and official match data to retrieve only the linked player's observed rank. Players confirm or correct it before queueing. The review values are fictional.</p></article>
+      <article class="card"><h3>A player creates the game party</h3><p>The selected host enters a native party code into QGuard. Teammates copy it into VALORANT themselves. Non-friend entry still needs real-player verification after RSO integration.</p></article>
+      <article class="card"><h3>Local backend, separate demo</h3><p>The Laravel application has a persistent queue, matcher, sessions, chat and feedback tested with synthetic accounts. This portable walkthrough demonstrates those flows in the browser; it is not a live backend session.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="steps"><h2 id="steps">Suggested review order</h2><ol>
+    <li class="step"><div><h3><a href="walkthrough.html#login">Account and guest entry</a></h3><p>Choose the guest option, complete sample setup and use the sample connection control. No real signup or Riot credentials are needed.</p></div></li>
+    <li class="step"><div><h3><a href="walkthrough.html#connect">Linking disclosure and rank confirmation</a></h3><p>Review planned data sharing, then compare <a href="walkthrough.html#rank">observed and declared rank</a>. Also inspect <a href="walkthrough.html#rank?state=unavailable">unavailable rank</a> and <a href="walkthrough.html#connect?state=declined">declined linking</a>. Failure screens illustrate states; the live retry/fallback contract remains pending.</p></div></li>
+    <li class="step"><div><h3><a href="walkthrough.html#queue">Queue and accept a team</a></h3><p>Use the sample team-formation control, accept your offer, then use the sample peer-acceptance control within the twenty-second window. These controls replace other reviewers for the demonstration.</p></div></li>
+    <li class="step"><div><h3><a href="walkthrough.html#team">Party handoff and private text</a></h3><p>Enter a fictional code such as SAMPLE-CODE. Inspect the recipient view, roster check and session-end controls. A sample peer control demonstrates the three-request closure; otherwise the five-minute timer applies.</p></div></li>
+    <li class="step"><div><h3><a href="walkthrough.html#session">History and required feedback</a></h3><p>After closing the sample session, rate eligible teammates. Each submitted card locks; incomplete feedback blocks the next queue. Optional sliders do not affect matching.</p></div></li>
+    <li class="step"><div><h3><a href="walkthrough.html#profile">Private summaries and reports</a></h3><p>Compare <a href="walkthrough.html#profile?state=teammate">a teammate's view</a> with your own summaries, then inspect <a href="walkthrough.html#report">reporting</a>. The <a href="walkthrough.html#case">admin example</a> is fictional evidence, not administrative account access.</p></div></li>
+  </ol><p class="small">Use “Reset sample” in the walkthrough's top bar to start again. “All screens” opens the state catalog. Direct screen links are review shortcuts; a complete journey starts with the guest entry.</p></section>
+
+  <section class="card"><h2>Before normal player use</h2><p>Live RSO, API rank retrieval and per-player consent enforcement still need implementation after provider access. Real-player party-code tests and release checks follow. Discord, voice recording and desktop/client automation are outside this review scope.</p><p>The intended first release is 18+, EU game region, with English and Turkish interfaces. This artifact does not open registration or matchmaking.</p></section>
+  <section class="note"><h2>Local preparation status</h2><p>Hosting, operator contact and final Terms and Privacy Notice are still being settled. This package has not been submitted to Riot. This status notice is not a Privacy Policy or Terms of Service; final policies and their links must be added before external submission.</p></section>
+  <footer><p>QGuard isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p></footer>
+</main>
+</body>
+</html>
