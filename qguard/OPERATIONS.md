@@ -1,8 +1,10 @@
 # QGuard operation and recovery runbook
 
-All commands run from `qguard/`. This is the local review-version build. Production artifacts
-are prepared, **not deployed**. Do not use root legacy Compose, host PHP, existing
-legacy credentials or a persistent database reset.
+Local commands run from `qguard/`. The review-version backend is also deployed
+on Laravel Cloud in hosted-review-only mode at https://q-guard.team. Normal
+registration/live play remains closed. Do not use root legacy Compose, host PHP,
+legacy credentials or a persistent database reset. Cloud console commands run
+in its managed application runtime; local PHP verification still uses Docker.
 
 ## Local operation
 
@@ -35,7 +37,7 @@ For an ordinary code update restart only the relevant QGuard long-lived services
 `docker compose restart worker scheduler reverb`. Recreating PostgreSQL reuses
 the named development volume; never use volume deletion as a routine repair.
 
-## Production-shaped build (no deployment)
+## Alternative production Compose build (not the Cloud deployment)
 
 Before applying the single-admin migration, check whether existing data has more
 than one cleared administrator. The migration refuses that state without demoting
@@ -71,9 +73,35 @@ Before a **separately authorized** deployment, an operator must supply:
 - Owner/public/provider/privacy gates, then an explicit change to the public
   collection flag. The committed false setting is deliberate, not a launch bug.
 
-No production credential, hostname, bill or external service is selected here.
+These Compose examples do not configure the selected Laravel Cloud deployment.
 Do not run production Compose up simply because these images build. Reverb remains
 single-instance; Redis/distributed scaling is not part of this design.
+
+## Managed Cloud review deployment
+
+See the [deployment record](../project-docs/planning/riot-submission/cloud-deployment.md)
+for the exact live configuration, costs, DNS/TLS, proof and scope. Application
+`qguard-web` uses `master` and `/qguard`, PHP 8.5/Node 24, one Flex 1 GiB instance,
+PostgreSQL 18 and managed Reverb. Scheduler plus one database queue worker share
+the app instance. Cloud runs/restarts those processes; never start another
+manual scheduler or worker as a diagnostic. Use `php artisan qguard:status` and
+`php artisan migrate:status` through its authorized console, without dumping
+environment values or credentials.
+
+Push-to-deploy is off. Future deployment needs the applicable explicit owner
+authorization; this task's deployment is not standing authority for every push.
+Preserve `QGUARD_HOSTED_REVIEW_ONLY=true` and `QGUARD_PUBLIC_ENABLED=false` until
+the later approved integration/launch work. No production demo seed was run.
+The current review writes no accounts or application sessions; provider access
+logs/security cookies are separate and need final policy treatment.
+
+For recovery, retain database and resource attachments, diagnose scoped logs,
+and prefer a reviewed forward fix or a known schema-compatible Cloud revision.
+Do not redeploy legacy `new-master`, run destructive rollback/reset, or change
+DNS to an unverified target. There was no preceding deployed QGuard revision
+before deployment 1. The original empty `qguard` Cloud app remains undeployed.
+The 1-day provider PITR setting is configured; no Cloud restore drill has been
+performed, and local restore evidence must not be presented as a Cloud drill.
 
 ## Extended synthetic browser recovery checks
 

@@ -1,5 +1,30 @@
 # QGuard Current State
 
+## Hosted Review Deployed — 2026-10-30
+
+The review site is live at **https://q-guard.team**; www redirects to it and TLS
+checks pass. Cloud deployment 1 serves `a0a7ae3` from `master`, application root
+`qguard/`, on `qguard-web` in Frankfurt. PostgreSQL 18 migrations completed;
+scheduler heartbeats and one synthetic queued Reverb publication passed.
+Production debug/test/public-use flags are false; hosted review is true. The
+fictional guest walkthrough is available, registration/login/live play remain
+blocked, and the user table is empty. This is not a public product launch.
+
+App 1 GiB + fixed 0.25-CU PostgreSQL + 100-connection Reverb is approximately
+$38.85/month before tax/storage/extras. The verified $40 stop-compute threshold
+leaves headroom under the authorized $50 budget. Scale-to-zero is enabled but
+frequent background tasks can keep compute awake. No local background workers
+were left running. Domain transfer lock and WHOIS redaction remain intact.
+
+Legacy `master` is preserved as `new-master`; current work uses `master`, with
+`new-development` retained. The original empty Cloud configuration is undeployed.
+The protected environment editor was avoided using separate non-secret settings.
+See the [deployment evidence/runbook](planning/riot-submission/cloud-deployment.md)
+and [submission readiness](planning/riot-submission/readiness.md). Final operator/
+contact/email and Terms/Privacy review, then explicit Riot submission authority,
+remain. Earlier dated entries below describe their historical checkpoints and
+are superseded by this deployment status.
+
 ## QGuard Promoted To Master — 2026-10-30
 
 DEC-102 preserves the old `master` tip (`3822e61`) as `new-master`, using a

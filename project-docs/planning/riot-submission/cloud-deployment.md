@@ -1,8 +1,9 @@
 # Initial Cloud deployment
 
 **Task:** QG-CLOUD-DEPLOY-1. **Date:** 2026-10-30. **Owner:** project owner.
-**Status:** branch published; full backend setup authorized up to $50/month by
-DEC-101, concrete Cloud configuration and verification in progress.
+**Status:** deployed and verified on https://q-guard.team in hosted-review-only
+mode. Full backend resources run within the authorized configuration; real-player
+use and Riot submission remain closed. DEC-100/101/102 authorize this work.
 **Baseline:** `new-development` at `5541b36`, clean before this record.
 **Authority:** latest owner explicitly authorizes committing/pushing the branch,
 setting up Laravel Cloud and pointing the existing domain to it through DNS.
@@ -80,7 +81,7 @@ pointing and must stay in force throughout. Configure only required hostnames.
 After deployment: verify actual revision, build and health, HTTPS/certificate,
 domain routing, public-access restrictions, absence of secrets/test accounts,
 security headers and the intended rendered journey. Inspect active resources and
-billing settings. No runtime or hosted capacity check has happened yet.
+billing settings. Runtime evidence is recorded below; no capacity claim is implied.
 
 On a failed deployment keep the domain on its preceding target; do not point it
 to a broken service. After a DNS change, restore only this task's changed records
@@ -89,7 +90,7 @@ billable compute if it breaches the authorized configuration; do not delete a
 database or domain. Database migrations/restore require their own scoped checks
 if a database is part of the final authorized configuration.
 
-## Current evidence and next action
+## Earlier setup evidence (chronological record)
 
 Branch publication is complete and remote head `1623fe7` was independently
 verified with `ls-remote`. Cloud's empty QGuard application exists in Frankfurt;
@@ -229,3 +230,65 @@ Bounded compatibility fix: browser Reverb host/port now fall back to Cloud's
 standard `REVERB_HOST`/`REVERB_PORT` when explicit local browser overrides are
 absent. Docker checks verify the provider values and preservation of local
 overrides; scoped Pint passes. No backend policy or data model changes.
+
+### First deployment and runtime checks — 2026-10-30
+
+- `a0a7ae3` committed/pushed on `master`; deployment 1 succeeded in 1m21s.
+  Cloud URL: https://qguard-web-production-wj5xfs.laravel.cloud/ . All nine
+  migrations completed against the new database; no seed/reset command ran.
+- Live allowlisted configuration check: production, debug false, hosted review
+  true, public access false, both test engines/browser clock false; session,
+  queue and cache use database; mail uses log; broadcasting uses managed
+  Reverb over its provider host and port 443. No credential values were read.
+- `qguard:status`: database reachable, all three scheduler heartbeats current,
+  all queue/session/feedback/failed-job counters zero. One synthetic framework
+  broadcast job on an otherwise unused private health channel was dispatched
+  to the database queue; the worker consumed it with no failed jobs. This
+  exercises worker-to-Reverb publication, not a real player's socket session.
+- Live PHP-kernel checks: root 302, guest 200, register/login/dashboard 503;
+  noindex/nofollow/noarchive and no application cookies on these routes. User
+  count stays zero. Browser HTTPS navigation confirms guest rendering and the
+  registration denial. A separate unauthenticated command-line probe was
+  blocked by the provider's edge protection; it is not application evidence.
+  Cloudflare may set its own security cookies independently of QGuard.
+- Evidence outside Git: runtime-health.png, runtime-config.png,
+  review-boundary.png and queue-and-guest-health.png in the existing deployment
+  output folder. Custom domain/DNS/TLS work remains in progress.
+
+### Domain and final handoff — 2026-10-30
+
+- Cloud reports **Connected** for `q-guard.team`, with `www.q-guard.team`
+  redirecting to the apex. Added exactly two Cloudflare DNS-only CNAME records:
+  `@` and `www`, both targeting provider-prescribed `to.laravel.cloud`, TTL Auto.
+  The zone was empty beforehand; no existing record was replaced or deleted.
+  Cloud's managed edge supplies TLS/DDoS protection; no separate zone proxy or
+  wildcard route was introduced. Nameservers and registrar ownership unchanged.
+- System-trust TLS verification passed for both names (certificate expiry
+  2027-01-27 at this check). Browser root resolves to `/guest#welcome`; www
+  reaches the same canonical URL; `/up` reports Application up; `/register`
+  remains denied. Guest navigation opens fictional setup successfully. This
+  hosted smoke test supplements the existing comprehensive local review checks.
+- Registrar recheck: initial 60-day transfer lock still makes Unlock disabled;
+  account move remains disabled under the initial 10-day restriction; WHOIS
+  redaction enabled. DNSSEC was already off and remains unchanged. No transfer
+  code, unlock, registrar move or deletion was requested.
+- Evidence outside Git: `qguard-live.png`, `domain-connected.png`,
+  `dns-configured.png`, `required-dns.png`, `domain-lock.png` under
+  `/Users/asime/Github/TeamRadarLaravel/outputs/cloud-deployment-20261030/`.
+- Full-awake estimate remains $14 app + up to $19.35 database compute + $5
+  Reverb = $38.85/month before tax/storage/extra usage. Starter's $5 fee includes
+  $5 usage credit. The $40 stop-compute threshold leaves headroom but is not an
+  exact invoice cap. Frequent scheduler/database work prevents promising
+  scale-to-zero savings. No paid upgrade, duplicate database or worker cluster.
+- Original wrong-root `qguard` configuration is retained **never deployed**;
+  deletion was not approved and is not needed for this deployment. `qguard-web`
+  is the sole deployed application from this task. Credentials were never
+  revealed, copied or rotated. Push-to-deploy remains disabled.
+- Local Docker inspection confirms no QGuard worker/scheduler/Reverb is running.
+  Existing preview/database and unrelated project containers are preserved.
+  Cloud worker/scheduler stay enabled as part of the explicitly authorized
+  hosted backend; the local idle-machine rule does not shut down that service.
+- Remaining before Riot submission: actual operator/contact/email particulars,
+  final Terms/Privacy covering provider logs, portal ownership challenge if
+  requested, owner review and explicit submission authorization. RSO/real-data
+  integration, live-player tests and public launch remain separate later work.

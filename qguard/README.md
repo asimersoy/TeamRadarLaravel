@@ -5,7 +5,9 @@ Current work follows the [review-version specification](../project-docs/specs/re
 and [implementation contract/evidence](../project-docs/planning/review-version/backend-implementation.md).
 The first-pass engine is retained as historical implementation evidence.
 Run every command below **from this qguard directory**, never the root legacy
-Compose project. All PHP runs in Docker. This is not approved for public users.
+Compose project. All local PHP runs in Docker. Normal public use is not approved.
+The hosted fictional review is at
+[https://q-guard.team](https://q-guard.team); see [Cloud operations](OPERATIONS.md#managed-cloud-review-deployment).
 
 ## First setup
 
@@ -24,8 +26,8 @@ feedback, immediate score applications, private descriptors, 20-second acceptanc
 code relay and discrepancy checks. New sessions use `review-v2`; retained older
 sessions preserve their old rules. Owner [privacy/retention/launch review](../project-docs/operations/review-version-data-inventory.md)
 records the current dispositions: disposal implementation is deferred until after
-RSO; hosting/email/operator/final policies remain before external delivery. Live
-RSO and Discord remain separate work.
+RSO; the review-only host is deployed, while email/operator/final policies remain
+before Riot submission. Live RSO and Discord remain separate work.
 After migration, opt in to fictional demo accounts with
 `docker compose exec -T app php artisan qguard:seed-demo --confirm-synthetic`.
 Generated credentials are in `storage/app/private/demo-credentials.json` (ignored,
