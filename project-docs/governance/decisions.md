@@ -3611,3 +3611,25 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   Domain, transactional email, public operator contact, final policies and
   deployment specifics remain open. No purchase, account creation, provisioning,
   publication, live integration or Riot submission is authorized by this choice.
+
+## DEC-100 — Authorize Branch Push And Bounded Cloud/Domain Setup
+
+- **Date / owner:** 2026-10-30, explicit owner authorization in this chat.
+- **Decision:** commit local QGuard work and publish `new-development` to its
+  GitHub remote, then set up Laravel Cloud and connect the existing Cloudflare
+  domain through DNS. Prefer the $5 Starter plan if suitable; the $20 plan is
+  allowed only within the clarified spending scope. No force push is requested.
+- **Spending boundary:** owner said “maximum twenty dollars on Laravel Cloud.”
+  Treat this as a $20 total ceiling until their pending clarification establishes
+  otherwise; do not silently equate a $20 subscription with a $39+ total bill.
+  This immediate execution limit narrows DEC-099's earlier ~$50 review envelope.
+- **Domain boundary:** the identified domain is `q-guard.team`, already registered
+  at Cloudflare. Only necessary DNS pointing/verification is authorized. Preserve
+  transfer lock, ownership, nameservers, unrelated DNS and existing security.
+  No unlock, transfer, transfer code, destructive registration operation or new
+  domain purchase is authorized.
+- **Other limits:** keep real-user/RSO/launch and final-policy gates intact. No
+  Riot submission, live integration, provider message, real-data import or broad
+  access credential is authorized. No need to ask again for the same bounded
+  branch push and DNS/deployment actions once their prerequisites are satisfied.
+- **Execution evidence:** [initial Cloud deployment](../planning/riot-submission/cloud-deployment.md).

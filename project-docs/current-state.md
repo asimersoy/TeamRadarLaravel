@@ -1,5 +1,15 @@
 # QGuard Current State
 
+## Authorized Cloud Setup In Progress — 2026-10-30
+
+DEC-100 authorizes committing/pushing `new-development`, setting up Laravel Cloud
+and pointing the existing Cloudflare domain `q-guard.team` through DNS while
+preserving its transfer lock. The owner specified a $20 Cloud maximum; total-bill
+versus subscription interpretation is pending, so no ~$39 backend provisioning
+is inferred. Follow the [deployment record](planning/riot-submission/cloud-deployment.md)
+for observed state, exact mutations and remaining gates. Public use, RSO and Riot
+submission remain separate. No resource or DNS change has happened yet.
+
 ## Laravel Cloud Selected; Domain And Deployment Particulars Remain — 2026-10-30
 
 DEC-099 selects all-Laravel-Cloud hosting for the application, PostgreSQL and Reverb.

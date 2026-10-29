@@ -28,6 +28,8 @@ work with the related status/owner-operating decisions; no per-file commits.
 
 ## Artifacts
 
+- [Initial Cloud deployment](cloud-deployment.md): DEC-100's authorized push/DNS/
+  setup work, exact cost boundary, transfer protection and verification record.
 - [Application draft](application-draft.md): product description, data purpose,
   intended endpoints and provider-review distinctions. Not an exact portal form.
 - [Readiness checklist](readiness.md): verified local work versus external gates.
