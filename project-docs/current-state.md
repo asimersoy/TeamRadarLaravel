@@ -4,11 +4,21 @@
 
 DEC-100 authorizes committing/pushing `new-development`, setting up Laravel Cloud
 and pointing the existing Cloudflare domain `q-guard.team` through DNS while
-preserving its transfer lock. The owner specified a $20 Cloud maximum; total-bill
-versus subscription interpretation is pending, so no ~$39 backend provisioning
-is inferred. Follow the [deployment record](planning/riot-submission/cloud-deployment.md)
+preserving its transfer lock. DEC-101 then explicitly authorizes up to $50/month
+for the full backend, accepting the approximately $39 estimate and requesting
+safe idle downscaling. The cost clarification is resolved. Follow the [deployment record](planning/riot-submission/cloud-deployment.md)
 for observed state, exact mutations and remaining gates. Public use, RSO and Riot
-submission remain separate. No resource or DNS change has happened yet.
+submission remain separate. The branch was published at `1623fe7`; Cloud's empty
+application exists but has never deployed. Its initial legacy-root selection is
+being corrected before deployment. Frankfurt PostgreSQL 18 now exists with
+fixed 0.25 compute units and 300-second idle sleep; Frankfurt Reverb exists at
+100 connections/$5 monthly. Neither has been integrated with a deployed app.
+The organization has a $40
+compute-stop spending threshold, leaving headroom below $50 for charges outside
+that cutoff. DNS remains unchanged. A tested hosted-review
+mode serves the fictional walkthrough without opening registration or storing
+application sessions. Provider setup evidence and pending access/import questions
+are recorded in the deployment record, not treated as completed deployment.
 
 ## Laravel Cloud Selected; Domain And Deployment Particulars Remain — 2026-10-30
 

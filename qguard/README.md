@@ -15,7 +15,7 @@ no application/background services. Its browser checks use
 `playwright.riot-review.config.ts` against the generated static site in a temporary
 Docker browser container. This does not enable real registration or matchmaking.
 
-Registration remains open. `/guest#welcome` serves the approved fictional
+Registration remains open in local development. `/guest#welcome` serves the approved fictional
 walkthrough, with tab-scoped state and no provider/business writes. Its own
 reset affects only that tab. Normal queue admission and background formation
 are disabled until the later RSO slice; typed identities cannot bypass this.
@@ -140,6 +140,23 @@ eligible reviewers. Admin case reads are audited and reveal the restricted evide
 
 The current guest walkthrough stays independent of these backend fixtures. It is
 a presentation route for reviewers, not an alternative authentication identity.
+
+## Hosted review access
+
+The initial Cloud deployment uses `APP_ENV=production`, `APP_DEBUG=false`,
+`QGUARD_HOSTED_REVIEW_ONLY=true` and `QGUARD_PUBLIC_ENABLED=false`. Its root
+redirects to `/guest#welcome`; the fictional walkthrough is served before web
+session/authentication middleware and adds a no-index header. `/up` remains the
+platform health check. All other application requests return 503, including
+registration, sign-in, Livewire and broadcasting authentication. No fictional
+test users are seeded. The PostgreSQL database, queue and WebSocket resources
+can be prepared independently without opening normal use.
+
+This explicit mode takes precedence over the public flag. Turning it off does
+not authorize launch: normal-use, RSO and final-policy gates still apply. See
+[Cloud deployment](../project-docs/planning/riot-submission/cloud-deployment.md)
+for actual provider configuration and verification evidence. HTTP infrastructure
+logs remain a separate provider concern; this mode does not claim zero telemetry.
 
 ## Historical engine walkthrough (isolated regression tests only)
 

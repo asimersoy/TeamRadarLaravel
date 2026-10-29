@@ -87,6 +87,24 @@ Acceptance for that later slice must cover under-18 rejection, the 18-year
 boundary, incomplete/invalid age evidence for the chosen method, and direct-action
 bypasses. These are future checks, not results of this documentation update.
 
+### ID-12 — Initial Hosted Review Boundary
+
+Under DEC-100/101's deployment authorization, the first hosted instance exposes
+only the existing fictional guest walkthrough, a root redirect to it, and the
+platform health endpoint. Keep real registration, authentication, Livewire
+mutations and player/private routes unavailable. This applies the existing
+synthetic-review and pending-policy gates; it does not alter the approved future
+open-registration direction. The review route does not start a database session,
+set an application session cookie or create business records, and requests
+search-engine exclusion. Provider infrastructure logs are separate.
+
+Acceptance: production mode with review enabled serves the walkthrough, creates
+no application sessions/accounts, retains its network/form-restricting CSP, and
+rejects all business/mutation routes even if the public flag is accidentally
+also true. With both flags false, normal production remains closed. The
+[deployment record](../../planning/riot-submission/cloud-deployment.md) records
+test evidence and actual hosting state.
+
 ## Pre-Queue Rank Flow
 
 - **ID-05, approved:** on each matchmaking entry retrieve the latest available

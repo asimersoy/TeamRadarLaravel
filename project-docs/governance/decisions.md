@@ -3633,3 +3633,22 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   access credential is authorized. No need to ask again for the same bounded
   branch push and DNS/deployment actions once their prerequisites are satisfied.
 - **Execution evidence:** [initial Cloud deployment](../planning/riot-submission/cloud-deployment.md).
+
+## DEC-101 — Authorize Up To $50 Monthly For The Full Cloud Backend
+
+- **Date / owner:** 2026-10-30, explicit follow-up: “up to fifty dollars per
+  month for the full backend setup,” accepting the approximately $39 estimate.
+- **Status:** approved spending/deployment scope for this setup.
+- **Decision:** proceed with the full Laravel Cloud backend within $50/month.
+  Prefer safe idle downscaling because initial usage is expected to be low.
+  Starter remains suitable unless actual configuration evidence says otherwise;
+  do not upgrade merely because Growth's subscription is $20.
+- **Supersession:** replaces DEC-100's conservative $20-total execution limit
+  and resolves its pending question. Preserves its branch-push authority,
+  domain/DNS limits and transfer protection. DEC-099's economic review still
+  applies before exceeding this new explicit spending limit.
+- **Runtime boundary:** preserve queue/deadline correctness when enabling sleep;
+  no claim that frequent scheduled/database activity will sleep automatically.
+  Normal user collection/matchmaking, live RSO and Riot submission are not
+  activated by this hosting instruction. Final policy/contact review remains.
+- **Evidence:** [initial Cloud deployment](../planning/riot-submission/cloud-deployment.md).

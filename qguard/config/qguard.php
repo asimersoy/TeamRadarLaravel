@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'hosted_review_only' => (bool) env('QGUARD_HOSTED_REVIEW_ONLY', false),
     'public_enabled' => (bool) env('QGUARD_PUBLIC_ENABLED', false),
     'disposable_test_database' => (bool) env('QGUARD_TEST_DATABASE', false),
     'review_test_engine' => (bool) env('QGUARD_REVIEW_TEST_ENGINE', false),
