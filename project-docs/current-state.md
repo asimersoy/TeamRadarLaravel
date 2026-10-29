@@ -1,5 +1,27 @@
 # QGuard Current State
 
+## Laravel Cloud Selected; Domain And Deployment Particulars Remain — 2026-10-30
+
+DEC-099 selects all-Laravel-Cloud hosting for the application, PostgreSQL and Reverb.
+About $50/month is the hosting reassessment point: compare measured usage, active
+users, performance and revenue prospects before expanding spend. Growing on Cloud
+is acceptable in principle when justified; the threshold is not an automatic
+shutdown instruction or unlimited paid-upgrade authorization.
+
+The [hosting plan](planning/riot-submission/hosting-and-domain.md) retains Starter
+with shared worker/scheduler and a 1 GiB app as the proposed initial configuration,
+around $39/month under its stated database/Reverb/email assumptions. Sizing is not
+load-tested. Region, exact resources, billing controls, domain, email/contact and
+final policies remain open. `playqguard.com` is only a domain candidate; prior
+registry absence does not reserve it. The [alternatives and growth comparison](planning/riot-submission/hosting-lower-cost-options.md)
+remain reference research; no split database or Hetzner deployment is selected.
+No 50,000-concurrent-user capacity or inevitable price convergence is established.
+
+The provider choice closes the coherent hosting research/decision batch for a
+verified local commit. No provider account, purchase, deployment, background
+service startup or Riot submission occurred. Next is domain selection and the
+remaining group-five particulars, then an explicitly authorized deployment plan.
+
 ## Riot Games Submission Preparation — 2026-10-29
 
 The owner explicitly requested preparation for Riot Games. The

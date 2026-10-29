@@ -2,7 +2,7 @@
 
 **Status:** local preparation; external submission not ready or authorized.
 **Owner:** project owner decides missing provider/operator/policy particulars and
-authorizes external actions; Riot decides access. **Updated:** 2026-10-29.
+authorizes external actions; Riot decides access. **Updated:** 2026-10-30.
 
 ## Submission checklist
 
@@ -13,15 +13,17 @@ authorizes external actions; Riot decides access. **Updated:** 2026-10-29.
 | Local backend exists beyond the demonstration | [Implementation audit](../review-version/implementation-status-audit.md), plus linked test evidence |
 | Exact Riot non-endorsement | Present in application and walkthrough; also included in reviewer entry |
 | Linking disclosure and own-rank-only purpose | Demonstrated; live subject-specific consent enforcement remains later work |
-| Accessible HTTPS product/review site | Missing host/domain and deployment authorization; localhost/ZIP/Git repository are not a verified public website |
+| Accessible HTTPS product/review site | [All-Laravel-Cloud hosting selected under DEC-099](hosting-and-domain.md); domain, concrete configuration and deployment authorization pending. Localhost/ZIP/Git repository are not a verified public website |
 | Final Terms / Privacy Notice | Missing actual operator/contact/provider facts and owner approval; draft-policy screens are not final notices |
 | Ownership verification | Await real portal challenge; do not invent a token or publish a fabricated `riot.txt` |
 | Hosted smoke/security/header check | Cannot be completed until an authorized host exists |
 | Owner authorization to submit | Not granted by “get ready”; show the finished URL, text and policy links before requesting it |
 | Riot approval and subsequent RSO provisioning | Not requested or granted; post-submission milestones |
 
-The remaining prerequisite discussion is the existing group five: domain/hosting,
-email/contact particulars and final policies. Operator type, 18+, EU game region,
+The remaining prerequisite discussion is the existing group five: domain and
+Cloud deployment particulars, email/contact and final policies. Hosting provider
+and the roughly $50 monthly reassessment point are settled by DEC-099.
+Operator type, 18+, EU game region,
 English/Turkish, Discord deferral and matching priority are already recorded.
 No new broad product questionnaire is needed. A static reviewer artifact has no
 registration backend or email dispatch; future product email remains a separate

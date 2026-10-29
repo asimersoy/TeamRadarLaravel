@@ -4,7 +4,7 @@
 **Date:** 2026-10-29. **Status:** local package prepared and verified; external
 hosting/policies and submission remain pending.
 **Authority:** owner's explicit “get ready to be sent to Riot Games,” DEC-066–068,
-085, 092–096. No authorization to publish, purchase, contact or submit.
+085, 092–099. No authorization to publish, purchase, contact or submit.
 **Baseline:** `new-development`, `92a34b9`, preserving the ongoing owner-review
 documentation batch. Update this packet when scope, hosted artifact or Riot's
 requirements change.
@@ -19,8 +19,9 @@ to matching priorities, live provider access, retention or public admission.
 
 Prepare a self-contained fictional review bundle, a guided reviewer entry,
 draft application text and an evidence/gate checklist. Reuse the approved design;
-do not choose a host or expose local accounts. The source repository is not a
-submission substitute. Final policies and deployment facts remain owner work.
+DEC-099 now supplies the owner's Cloud hosting choice; do not expose local accounts.
+The source repository is not a submission substitute. Final policies and
+deployment facts remain owner work.
 Run package/link/isolation and rendered browser checks, preserve their evidence,
 then stop temporary services under DEC-095. Batch the completed local readiness
 work with the related status/owner-operating decisions; no per-file commits.
@@ -30,6 +31,11 @@ work with the related status/owner-operating decisions; no per-file commits.
 - [Application draft](application-draft.md): product description, data purpose,
   intended endpoints and provider-review distinctions. Not an exact portal form.
 - [Readiness checklist](readiness.md): verified local work versus external gates.
+- [Hosting and domain plan](hosting-and-domain.md): DEC-099 selects all Cloud and
+  a roughly $50 hosting review point; domain/deployment particulars remain open.
+- [Lower-cost full-backend alternatives](hosting-lower-cost-options.md): separate
+  managed-database options and growth trade-offs studied under DEC-098; retained
+  reference after the all-Cloud selection.
 - [Reviewer entry source](reviewer-guide.html): navigation and capability guide
   packaged alongside the existing fictional walkthrough.
 - [Package builder](build-package.py): emits only allowlisted public review files,

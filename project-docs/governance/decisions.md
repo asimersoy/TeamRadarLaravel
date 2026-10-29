@@ -3544,3 +3544,70 @@ handling remain unresolved dependencies, not reasons to restore the rejected opt
   score, changed widening behavior or new implementation blocker is introduced.
 - **Affected specification:** [MM-08](../specs/review-version/friends-and-matching.md#queue-eligibility-and-matching).
   No application change or test-service startup is needed for this clarification.
+
+## DEC-097 — Price The Starter Configuration Before Selecting A Budget
+
+- **Date / owner:** 2026-10-30, explicit owner answer: “Price the smallest
+  suitable Starter setup first, then let me choose the budget.”
+- **Status:** approved evaluation sequence, not a spending limit or purchase.
+- **Decision:** use Laravel Cloud Starter as the working basis for a concrete
+  hosting and transactional-email estimate. Include resource usage, distinguish
+  the review-only artifact from the full backend, and show untested sizing
+  assumptions. Return the estimate to the owner before fixing a monthly budget.
+- **Preserved:** DEC-094's low initial cost and scalable growth priorities.
+  Both Starter and Growth are managed; do not imply that inexpensive options
+  necessarily require operating an unmanaged server.
+- **Evidence:** [Starter sizing and email estimate](../planning/riot-submission/hosting-and-domain.md#starter-configuration-and-email-estimate--2026-10-30).
+  The region, domain, email provider, final deployment configuration and numeric
+  budget still need their applicable choices; this answer does not approve the
+  proposed $32/$39 totals or authorize an external action.
+
+## DEC-098 — Investigate Cheaper Full-Backend Hosting Before Choosing A Budget
+
+- **Date / owner:** 2026-10-30, explicit answer: “Investigate a cheaper
+  full-backend setup before choosing a budget.”
+- **Status:** approved research direction; no numeric budget or provider change.
+- **Decision:** compare less expensive ways to operate the complete backend,
+  retaining clear distinctions between managed services, limited development
+  tiers, application changes and self-managed infrastructure. A cheaper static
+  reviewer site alone does not answer this request.
+- **Effect:** the proposed $10 review/$45 backend targets are not accepted.
+  [Findings and source evidence](../planning/riot-submission/hosting-lower-cost-options.md)
+  compare retaining Cloud for the app with separate managed PostgreSQL and
+  other alternatives. Their service sizes and cost totals remain proposals.
+- **Boundary:** existing stack/product rules remain; no database-engine switch,
+  changed deadlines, lowered recovery/access expectations, account creation,
+  purchase, deployment or external-data transfer is authorized by this research.
+
+## DEC-099 — Start On All-Laravel-Cloud Hosting And Reassess Around $50 Monthly
+
+- **Date / owner:** 2026-10-30, explicit owner choice to use all Laravel Cloud
+  now and reconsider scaling economics when approximately $50/month no longer
+  covers hosting needs.
+- **Status:** approved initial hosting provider/direction and cost-review trigger.
+- **Decision:** keep the application, PostgreSQL and Reverb under Laravel Cloud's
+  managed offering. Start with the smallest validated suitable configuration;
+  the researched Starter/shared-worker configuration is the planning baseline,
+  not a tested capacity guarantee. Do not pursue Render/Aiven split databases or
+  self-managed Hetzner for the initial deployment.
+- **Cost review:** use about $50/month for hosting as the reassessment point.
+  Review actual active users, workload/performance, costs and revenue prospects
+  before expanding spend beyond that working envelope. If traction/revenue
+  justifies it, scaling on Cloud is acceptable in principle; migration is not
+  required merely because the initial envelope is exceeded. Compare alternatives
+  if the measured economics make them worthwhile.
+- **Meaning and limits:** this is not an automatic shutdown threshold, a fixed
+  user-capacity promise, or unlimited authorization for paid upgrades. Alert and
+  hard-limit behavior, exact resources/region and any external spending/action
+  remain to be settled in the concrete deployment plan. Existing estimates
+  separately identify domain, tax, mailbox and usage extras; no all-inclusive
+  $50 bill is guaranteed and no email provider is selected by this answer.
+- **Supersession:** settles the provider choice left open by DEC-093/094/097/098
+  and supplies a working cost-review threshold after their research. Preserves
+  low initial cost, evidence-backed scaling, public-use gates and controlled
+  operations policy. Alternatives remain dated research, not active rollout plans.
+- **Evidence and remaining work:** [hosting plan](../planning/riot-submission/hosting-and-domain.md)
+  and [growth/cost comparison](../planning/riot-submission/hosting-lower-cost-options.md).
+  Domain, transactional email, public operator contact, final policies and
+  deployment specifics remain open. No purchase, account creation, provisioning,
+  publication, live integration or Riot submission is authorized by this choice.
